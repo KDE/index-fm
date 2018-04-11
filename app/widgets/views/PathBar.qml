@@ -18,8 +18,57 @@ Item
         border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
     }
 
+
     RowLayout
     {
+        id: pathEntry
+        anchors.fill:  parent
+        visible: false
+
+        TextInput
+        {
+            id: entry
+            height: parent.height
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.leftMargin: contentMargins
+            Layout.alignment: Qt.AlignVCenter
+            verticalAlignment: Qt.AlignVCenter
+
+            onAccepted:
+            {
+                browser.openFolder(text)
+                showEntryBar()
+            }
+
+
+        }
+
+
+        Item
+        {
+            Layout.fillHeight: true
+            Layout.leftMargin: 10
+            Layout.rightMargin: 10
+
+            width: 22
+            IndexButton
+            {
+                anchors.centerIn: parent
+                iconName: "go-next"
+                iconSize: 22
+                onClicked:
+                {
+                    browser.openFolder(entry.text)
+                    showEntryBar()
+                }
+            }
+        }
+    }
+
+    RowLayout
+    {
+        id: pathCrumbs
         anchors.fill: parent
         spacing: 0
 
@@ -87,6 +136,7 @@ Item
                 anchors.centerIn: parent
                 iconName: "filename-space-amarok"
                 iconSize: 22
+                onClicked: showEntryBar()
             }
         }
 
@@ -113,6 +163,13 @@ Item
     {
         //        rollList.currentIndex = index
         //        rollList.positionViewAtIndex(index, ListView.Center)
+    }
+
+    function showEntryBar()
+    {
+        pathEntry.visible = !pathEntry.visible
+        entry.text = browser.currentPath
+        pathCrumbs.visible = !pathCrumbs.visible
     }
 
 
