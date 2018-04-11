@@ -25,12 +25,7 @@ Item
 
 
     //When settings are updated sources need to be redrawn.
-    MouseArea
-    {
-        anchors.fill: parent
-        propagateComposedEvents: true
-        onClicked: kterminal.forceActiveFocus()
-    }
+
 
 
     QMLTermWidget
@@ -52,7 +47,16 @@ Item
         }
 
 
-
+        MouseArea
+        {
+            anchors.fill: parent
+            propagateComposedEvents: true
+            onClicked:
+            {
+                console.log("temrinal cliked")
+                kterminal.forceActiveFocus()
+            }
+        }
         QMLTermScrollbar
         {
             id: kterminalScrollbar
