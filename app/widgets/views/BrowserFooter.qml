@@ -23,6 +23,7 @@ ToolBar
                 anchors.centerIn: parent
 
                 iconName: "view-refresh"
+                onClicked: browser.refresh()
             }
         }
 

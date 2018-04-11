@@ -10,7 +10,19 @@
 
 Index::Index(QObject *parent) : QObject(parent)
 {
+    watcher = new QFileSystemWatcher(this);
+    connect(watcher, &QFileSystemWatcher::directoryChanged, [this](const QString &path)
+    {
+        qDebug()<< " path modified"+path;
+        emit pathModified(path);
 
+    });
+}
+
+void Index::watchPath(const QString &path)
+{
+    watcher->removePaths(watcher->directories());
+    watcher->addPath(path);
 }
 
 QVariantList Index::getPathContent(const QString &path)
@@ -50,35 +62,35 @@ QVariantList Index::getDevices()
 {
     QVariantList drives;
 
-        auto devices = QStorageInfo::mountedVolumes();
-        for(auto device : devices)
+    auto devices = QStorageInfo::mountedVolumes();
+    for(auto device : devices)
+    {
+        if(device.isValid() && !device.isReadOnly())
         {
-            if(device.isValid() && !device.isReadOnly())
+            QVariantMap drive =
             {
-                QVariantMap drive =
-                {
-                    {"iconName", "drive-harddisk"},
-                    {"label", device.displayName()},
-                    {"path", device.rootPath()},
-                    {"type", "Drives"}
-                };
+                {"iconName", "drive-harddisk"},
+                {"label", device.displayName()},
+                {"path", device.rootPath()},
+                {"type", "Drives"}
+            };
 
-                drives << drive;
-            }
+            drives << drive;
         }
+    }
 
-//    for(auto device : QDir::drives())
-//    {
-//        QVariantMap drive =
-//        {
-//            {"iconName", "drive-harddisk"},
-//            {"label", device.baseName()},
-//            {"path", device.absoluteFilePath()},
-//            {"type", "Drives"}
-//        };
+    //    for(auto device : QDir::drives())
+    //    {
+    //        QVariantMap drive =
+    //        {
+    //            {"iconName", "drive-harddisk"},
+    //            {"label", device.baseName()},
+    //            {"path", device.absoluteFilePath()},
+    //            {"type", "Drives"}
+    //        };
 
-//        drives << drive;
-//    }
+    //        drives << drive;
+    //    }
 
     return drives;
 }

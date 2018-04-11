@@ -2,7 +2,8 @@ import QMLTermWidget 1.0
 import QtQuick 2.2
 import QtQuick.Controls 1.1
 
-Item{
+Item
+{
     id: terminalContainer
 
     property size virtualResolution: Qt.size(kterminal.width, kterminal.height)
@@ -24,11 +25,18 @@ Item{
 
 
     //When settings are updated sources need to be redrawn.
+    MouseArea
+    {
+        anchors.fill: parent
+        propagateComposedEvents: true
+        onClicked: kterminal.forceActiveFocus()
+    }
 
 
     QMLTermWidget
     {
         id: kterminal
+        focus: true
         anchors.fill: parent
         smooth: true
         enableBold: false

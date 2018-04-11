@@ -4,12 +4,15 @@
 #include <QObject>
 #include <QVariantList>
 #include <QStringList>
+#include <QFileSystemWatcher>
+
 
 class Index : public QObject
 {
     Q_OBJECT
 public:
     explicit Index(QObject *parent = nullptr);
+    Q_INVOKABLE void watchPath(const QString &path);
     Q_INVOKABLE static QVariantList getPathContent(const QString &path);
     Q_INVOKABLE static QVariantList getDefaultPaths();
     Q_INVOKABLE static bool isDefaultPath(const QString &path);
@@ -24,7 +27,12 @@ public:
     Q_INVOKABLE static void saveSettings(const QString &key, const QVariant &value, const QString &group);
     Q_INVOKABLE static QVariant loadSettings(const QString &key, const QString &group, const QVariant &defaultValue);
     Q_INVOKABLE static QVariantMap getDirInfo(const QString &path, const QString &type);
+
+private:
+    QFileSystemWatcher *watcher;
+
 signals:
+    void pathModified(QString path);
 
 public slots:
 };

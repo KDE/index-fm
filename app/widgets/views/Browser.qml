@@ -21,13 +21,17 @@ ColumnLayout
                           })
     property int currentView : views.icon
 
-
+    Connections
+    {
+        target: inx
+        onPathModified: browser.refresh()
+    }
 
     IndexPage
     {
         Layout.fillHeight: true
         Layout.fillWidth: true
-
+        focus: true
         headerbarTitle: iconsGrid.grid.count + qsTr(" files")
         headerbarExit: false
         headerBarLeft: [
@@ -69,7 +73,7 @@ ColumnLayout
             id: browserFooter
         }
 
-        contentItem:ColumnLayout
+        contentItem : ColumnLayout
         {
 
             spacing: 0
@@ -144,13 +148,14 @@ ColumnLayout
     {
         previousPath.push(currentPath)
         populate(path)
+        konsole.session.sendText("cd " + currentPath + "\n")
+
 
     }
 
     function populate(path)
     {
         currentPath = path
-
         clear()
 
         var items = inx.getPathContent(path)
@@ -163,7 +168,7 @@ ColumnLayout
                 placesSidebar.placesList.currentIndex = i
 
         mainHeader.pathBar.append(currentPath)
-        konsole.session.sendText("cd " + currentPath + "\n")
+        inx.watchPath(currentPath)
 
     }
 
@@ -182,6 +187,11 @@ ColumnLayout
     function goUp()
     {
         openFolder(inx.parentDir(currentPath))
+    }
+
+    function refresh()
+    {
+        populate(currentPath)
     }
 
 
