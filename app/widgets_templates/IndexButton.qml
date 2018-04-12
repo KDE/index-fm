@@ -11,10 +11,11 @@ ToolButton
     property color iconColor: textColor
     readonly property string defaultColor :  textColor
     property bool anim : false
+    property alias kirigamiIcon : kirigamiIcon
 
     Kirigami.Icon
     {
-        id: pixIcon
+        id: kirigamiIcon
         anchors.centerIn: parent
         width: iconSize
         height: iconSize
@@ -36,7 +37,7 @@ ToolButton
         id: animIcon
         PropertyAnimation
         {
-            target: pixIcon
+            target: kirigamiIcon
             property: "color"
             easing.type: Easing.InOutQuad
             from: highlightColor

@@ -140,6 +140,13 @@ Item
             }
         }
 
+//        MouseArea
+//        {
+//            anchors.fill: parent
+//            propagateComposedEvents: true
+//            onClicked: showEntryBar()
+//        }
+
     }
 
     function append(path)

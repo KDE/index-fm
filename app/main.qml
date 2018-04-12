@@ -96,6 +96,13 @@ Kirigami.ApplicationWindow
         id: itemMenu
 
         onBookmarkClicked: INX.bookmarkFolder(path)
+        onCopyClicked:
+        {
+            if(browser.selectedPaths.indexOf(path) > -1)
+                browser.copy(browser.selectedPaths)
+            else browser.copy(path)
+
+        }
     }
 
 

@@ -19,5 +19,8 @@
         <file>widgets/views/PathBar.qml</file>
         <file>widgets/views/PathBarDelegate.qml</file>
         <file>widgets/terminal/Terminal.qml</file>
+        <file>widgets/views/SelectionBar.qml</file>
+        <file>widgets/views/BrowserOptions.qml</file>
+        <file>widgets/views/BrowserMenu.qml</file>
     </qresource>
 </RCC>

@@ -6,7 +6,9 @@ import QtQuick.Layouts 1.3
 GridView
 {
     id: folderGridRoot
-    property int gridSize : 64
+
+    property int itemIconSize : 32
+    property int gridSize : itemIconSize + (itemIconSize * 0.5)
 
     signal folderClicked(int index)
 
@@ -28,7 +30,7 @@ GridView
     delegate: IndexIconDelegate
     {
         id: delegate
-        folderSize : 32
+        folderSize : itemIconSize
 
         Connections
         {
@@ -39,8 +41,18 @@ GridView
                 folderClicked(index)
             }
 
-            onRightClicked: itemMenu.show(folderGridRoot.model.get(index).path)
+            onRightClicked:
+            {
+                folderGridRoot.currentIndex = index
+                itemMenu.show(folderGridRoot.model.get(index).path)
+            }
 
+            onEmblemClicked:
+            {
+                var item = folderGridRoot.model.get(index)
+                browser.addToSelection(item, true)
+
+            }
         }
     }
 

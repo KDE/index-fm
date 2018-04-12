@@ -158,6 +158,26 @@ QVariantMap Index::getDirInfo(const QString &path, const QString &type)
     return data;
 }
 
+bool Index::copy(const QString &path, const QString &where)
+{
+
+}
+
+bool Index::cut(const QString &path, const QString &where)
+{
+
+}
+
+bool Index::remove(const QString &path)
+{
+
+}
+
+bool Index::rename(const QString &path, const QString &name)
+{
+
+}
+
 void Index::saveSettings(const QString &key, const QVariant &value, const QString &group)
 {
     INX::saveSettings(key, value, group);

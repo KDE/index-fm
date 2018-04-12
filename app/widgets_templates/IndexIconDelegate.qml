@@ -6,13 +6,18 @@ import org.kde.kirigami 2.2 as Kirigami
 ItemDelegate
 {
     property int folderSize : 32
-    property color labelColor : GridView.isCurrentItem && !hovered ? highlightedTextColor : textColor
-    property color hightlightedColor : GridView.isCurrentItem || hovered ? highlightColor : "transparent"
+    property bool showLabel : true
+    property bool showSelectionBackground : true
+    property bool emblemAdded : false
+    property bool keepEmblemOverlay : true
+    property color labelColor : (GridView.isCurrentItem || (keepEmblemOverlay && emblemAdded)) && !hovered && showSelectionBackground? highlightedTextColor : textColor
+    property color hightlightedColor : GridView.isCurrentItem || hovered || (keepEmblemOverlay && emblemAdded) ? highlightColor : "transparent"
     signal rightClicked();
+    signal emblemClicked(int index);
 
-    height: folderSize*2
-    width: folderSize*3
-
+    height: folderSize + (folderSize * 0.6)
+    width: folderSize+ (folderSize * 0.7)
+    focus: true
     hoverEnabled: true
 
     background: Rectangle
@@ -30,26 +35,52 @@ ItemDelegate
                 rightClicked()
         }
     }
+    IndexButton
+    {
+        id: emblem
+        iconSize:  iconSizes.medium
+        iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
+        visible: parent.hovered || (keepEmblemOverlay && emblemAdded)
+        kirigamiIcon.isMask: false
+        z: 999
+        anchors
+        {
+            top: parent.top
+            left: parent.left
+        }
+
+        onClicked:
+        {
+            emblemAdded = !emblemAdded
+            emblemClicked(index)
+        }
+    }
 
     ColumnLayout
     {
         anchors.fill: parent
 
-        Kirigami.Icon
+
+        Item
         {
             Layout.fillHeight: true
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignCenter
-            source: iconName
-            isMask: false
+            Kirigami.Icon
+            {
+                anchors.centerIn: parent
+                source: iconName
+                isMask: false
 
-            height: folderSize
-
+                width: folderSize
+                height: folderSize
+            }
         }
 
 
         Label
         {
+            visible: showLabel
             text: label
             width: parent.width
             Layout.fillWidth: true
@@ -60,6 +91,7 @@ ItemDelegate
 
             Rectangle
             {
+                visible: parent.visible && showSelectionBackground
                 anchors.fill: parent
                 z: -1
                 radius: 3
@@ -69,4 +101,5 @@ ItemDelegate
 
         }
     }
+
 }

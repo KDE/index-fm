@@ -10,10 +10,14 @@ import org.kde.kirigami 2.0 as Kirigami
 ColumnLayout
 {
     property string currentPath: inx.homePath()
+    property var selectedPaths : []
+    property var copyPaths : []
+    property var cutPaths : []
+
     property alias terminal : konsole
     property var previousPath: []
     property var nextPath: []
-
+    property bool terminalVisible : inx.loadSettings("TERMINAL_VISIBLE", "INX", false) === "true" ? true : false
     property var views : ({
                               icon : 0,
                               details : 1,
@@ -26,6 +30,18 @@ ColumnLayout
         target: inx
         onPathModified: browser.refresh()
     }
+
+    BrowserOptions
+    {
+        id: browserOptions
+    }
+
+    BrowserMenu
+    {
+        id: browserMenu
+    }
+
+
 
     IndexPage
     {
@@ -65,6 +81,7 @@ ColumnLayout
             IndexButton
             {
                 iconName: "overflow-menu"
+                onClicked:  browserOptions.popup()
             }
         ]
 
@@ -75,8 +92,8 @@ ColumnLayout
 
         contentItem : ColumnLayout
         {
-
             spacing: 0
+
             IconsView
             {
                 id: iconsGrid
@@ -86,20 +103,40 @@ ColumnLayout
                                    browser.openFolder(path):
                                    browser.openFile(path)
                 anchors.top: parent.top
-                anchors.bottom: handle.top
+                anchors.bottom: terminalVisible ? handle.top : parent.bottom
+
+                //                SelectionBar
+                //                {
+                //                    id: selectionBar
+                //                    visible: false
+                //                    anchors.bottom: parent.bottom
+                //                }
+
+                MouseArea
+                {
+                    anchors.fill: parent
+                    z: -1
+                    acceptedButtons:  Qt.RightButton
+                    onClicked:
+                    {
+                        console.log("right clicked")
+                        if(!isMobile && mouse.button === Qt.RightButton)
+                            browserMenu.popup()
+                    }
+                }
 
             }
 
             Rectangle
             {
                 id: handle
+                visible: terminalVisible
+
                 Layout.fillWidth: true
                 height: 5
                 color: "transparent"
                 Kirigami.Separator
                 {
-                    color: "#333"
-
                     anchors
                     {
                         bottom: parent.bottom
@@ -115,6 +152,7 @@ ColumnLayout
                     drag.axis: Drag.YAxis
                     drag.smoothed: true
                     cursorShape: Qt.SizeVerCursor
+
                 }
             }
 
@@ -122,14 +160,15 @@ ColumnLayout
             Terminal
             {
                 id: konsole
+                visible: terminalVisible
                 focus: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignBottom
                 Layout.minimumHeight: 100
+                Layout.maximumHeight: parent.height *0.5
                 anchors.bottom: parent.bottom
                 anchors.top: handle.bottom
             }
-
         }
     }
 
@@ -149,8 +188,8 @@ ColumnLayout
         previousPath.push(currentPath)
         populate(path)
         konsole.session.sendText("cd " + currentPath + "\n")
-
-
+        if(selectedPaths.length > 0)
+            clearSelection()
     }
 
     function populate(path)
@@ -194,5 +233,44 @@ ColumnLayout
         populate(currentPath)
     }
 
+    function addToSelection(item, append)
+    {
 
+        var index = selectedPaths.indexOf(item.path)
+        console.log("insertes",index, item.path)
+        if(index<0)
+            selectedPaths.push(item.path)
+        else
+        {
+            if (index !== -1)
+                selectedPaths.splice(index, 1)
+        }
+    }
+
+
+    //    function handleSelection()
+    //    {
+    //        if(selectedPaths.length > 0)
+    //            selectionBar.visible = true
+
+    //    }
+
+    function clearSelection()
+    {
+        selectedPaths = []
+        //        selectionBar.selectionList.model.clear()
+    }
+
+    function copy(paths)
+    {
+        copyPaths = paths
+        console.log("Paths to copy", copyPaths)
+    }
+
+    function paste()
+    {
+        console.log("paste to", currentPath, copyPaths)
+    }
 }
+
+
