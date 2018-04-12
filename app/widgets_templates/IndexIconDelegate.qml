@@ -6,12 +6,17 @@ import org.kde.kirigami 2.2 as Kirigami
 ItemDelegate
 {
     property int folderSize : 32
+
     property bool showLabel : true
     property bool showSelectionBackground : true
+    property bool showTooltip : false
+
     property bool emblemAdded : false
-    property bool keepEmblemOverlay : true
+    property bool keepEmblemOverlay : false
+
     property color labelColor : (GridView.isCurrentItem || (keepEmblemOverlay && emblemAdded)) && !hovered && showSelectionBackground? highlightedTextColor : textColor
     property color hightlightedColor : GridView.isCurrentItem || hovered || (keepEmblemOverlay && emblemAdded) ? highlightColor : "transparent"
+
     signal rightClicked();
     signal emblemClicked(int index);
 
@@ -19,7 +24,6 @@ ItemDelegate
     width: folderSize+ (folderSize * 0.7)
     focus: true
     hoverEnabled: true
-
     background: Rectangle
     {
         color: "transparent"
@@ -40,7 +44,7 @@ ItemDelegate
         id: emblem
         iconSize:  iconSizes.medium
         iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
-        visible: parent.hovered || (keepEmblemOverlay && emblemAdded)
+        visible: parent.hovered /*|| (keepEmblemOverlay && emblemAdded)*/
         kirigamiIcon.isMask: false
         z: 999
         anchors
@@ -75,6 +79,11 @@ ItemDelegate
                 width: folderSize
                 height: folderSize
             }
+
+            ToolTip.delay: 1000
+            ToolTip.timeout: 5000
+            ToolTip.visible: hovered && showTooltip
+            ToolTip.text: path
         }
 
 

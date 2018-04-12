@@ -51,11 +51,24 @@ GridView
             {
                 var item = folderGridRoot.model.get(index)
                 browser.addToSelection(item, true)
-
             }
         }
     }
 
     ScrollBar.vertical: ScrollBar{ visible: true}
 
+    MouseArea
+    {
+        anchors.fill: parent
+        z: -1
+        acceptedButtons:  Qt.RightButton | Qt.LeftButton
+        onClicked:
+        {
+            console.log("right clicked")
+            if(!isMobile && mouse.button === Qt.RightButton)
+                browserMenu.popup()
+            else
+                clearSelection()
+        }
+    }
 }

@@ -105,24 +105,12 @@ ColumnLayout
                 anchors.top: parent.top
                 anchors.bottom: terminalVisible ? handle.top : parent.bottom
 
-                //                SelectionBar
-                //                {
-                //                    id: selectionBar
-                //                    visible: false
-                //                    anchors.bottom: parent.bottom
-                //                }
-
-                MouseArea
+                SelectionBar
                 {
-                    anchors.fill: parent
-                    z: -1
-                    acceptedButtons:  Qt.RightButton
-                    onClicked:
-                    {
-                        console.log("right clicked")
-                        if(!isMobile && mouse.button === Qt.RightButton)
-                            browserMenu.popup()
-                    }
+                    id: selectionBar
+                    y: -20
+                    visible: selectionList.count > 0
+                    anchors.bottom: parent.bottom
                 }
 
             }
@@ -170,6 +158,7 @@ ColumnLayout
                 anchors.top: handle.bottom
             }
         }
+
     }
 
 
@@ -188,8 +177,8 @@ ColumnLayout
         previousPath.push(currentPath)
         populate(path)
         konsole.session.sendText("cd " + currentPath + "\n")
-        if(selectedPaths.length > 0)
-            clearSelection()
+//        if(selectedPaths.length > 0)
+//            clearSelection()
     }
 
     function populate(path)
@@ -237,28 +226,30 @@ ColumnLayout
     {
 
         var index = selectedPaths.indexOf(item.path)
-        console.log("insertes",index, item.path)
         if(index<0)
-            selectedPaths.push(item.path)
-        else
         {
-            if (index !== -1)
-                selectedPaths.splice(index, 1)
+            selectedPaths.push(item.path)
+            selectionBar.append(item)
         }
+//        else
+//        {
+//            if (index !== -1)
+//                selectedPaths.splice(index, 1)
+//        }
     }
 
 
-    //    function handleSelection()
-    //    {
-    //        if(selectedPaths.length > 0)
-    //            selectionBar.visible = true
+    function handleSelection()
+    {
+        if(selectedPaths.length > 0)
+            selectionBar.visible = true
 
-    //    }
+    }
 
     function clearSelection()
     {
         selectedPaths = []
-        //        selectionBar.selectionList.model.clear()
+        selectionBar.selectionList.model.clear()
     }
 
     function copy(paths)

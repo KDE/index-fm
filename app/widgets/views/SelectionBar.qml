@@ -8,11 +8,10 @@ Item
 {
     property alias selectionList : selectionList
 
-    property int barHeight : 54
+    property int barHeight : 64
 
     height: barHeight
     width: parent.width
-
 
     Rectangle
     {
@@ -20,48 +19,130 @@ Item
         z:-1
         color: Kirigami.Theme.complementaryBackgroundColor
         radius: 4
-        opacity: 0.8
+        opacity: 0.9
         border.color: "black"
     }
 
-    ListView
+    RowLayout
     {
-        id: selectionList
-        width: parent.width* 0.9
-        height: parent.height * 0.9
-        anchors.centerIn: parent
-
-        orientation: ListView.Horizontal
-        clip: true
-        spacing: 2
-
-        focus: true
-        interactive: true
-
-        model: ListModel{}
-
-        delegate: IndexIconDelegate
+        anchors.fill: parent
+        Rectangle
         {
-            id: delegate
-            folderSize: 32
-            showLabel: true
-            emblemAdded: true
-            keepEmblemOverlay: true
-            showSelectionBackground: false
-            labelColor: "white"
-            Connections
+           height: 22
+           width: 22
+           radius: Math.min(width, height)
+           color: Kirigami.Theme.complementaryBackgroundColor
+           border.color: "black"
+
+           anchors.verticalCenter: parent.top
+           anchors.horizontalCenter: parent.left
+
+            IndexButton
             {
-                target: delegate
-                onEmblemClicked: selectionList.model.remove(index)
+                anchors.centerIn: parent
+                iconName: "edit-clear"
+                iconColor: "white"
+                iconSize: 16
+                flat: true
+                onClicked: clearSelection()
             }
         }
+
+
+        ListView
+        {
+            id: selectionList
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            anchors.verticalCenter: parent.verticalCenter
+            height: parent.height
+
+            orientation: ListView.Horizontal
+            clip: true
+            spacing: 10
+
+            focus: true
+            interactive: true
+
+            model: ListModel{}
+
+            delegate: IndexIconDelegate
+            {
+                id: delegate
+                anchors.verticalCenter: parent.verticalCenter
+                width: 80
+                folderSize: 32
+                showLabel: true
+                emblemAdded: true
+                keepEmblemOverlay: true
+                showSelectionBackground: false
+                labelColor: "white"
+                showTooltip: true
+                Connections
+                {
+                    target: delegate
+                    onEmblemClicked: removeSelection(index)
+                }
+            }
+        }
+
+        Item
+        {
+            Layout.alignment: Qt.AlignRight
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.maximumWidth: 44
+            IndexButton
+            {
+                anchors.centerIn: parent
+                iconName: "overflow-menu"
+                iconColor: "white"
+                onClicked: itemMenu.popup()
+            }
+        }
+
+        Rectangle
+        {
+            height: 22
+            width: 22
+            radius: Math.min(width, height)
+            color: highlightColor
+            border.color: "black"
+
+            anchors.verticalCenter: parent.top
+            anchors.horizontalCenter: parent.right
+
+            Label
+            {
+                anchors.fill: parent
+                anchors.centerIn: parent
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+                font.pointSize: fontSizes.small
+                font.bold: true
+                color: highlightedTextColor
+                text: selectionList.count
+            }
+        }
+
+    }
+
+    function removeSelection(index)
+    {
+        var item = selectionList.model.get(index)
+
+        var indexof = selectedPaths.indexOf(item.path)
+        if (indexof !== -1)
+        {
+            selectedPaths.splice(index, 1)
+            selectionList.model.remove(index)
+        }
+
     }
 
     function append(item)
     {
-
         for(var i = 0; i < selectionList.count ; i++ )
-
             if(selectionList.model.get(i).path === item.path)
             {
                 selectionList.model.remove(i)
@@ -69,5 +150,6 @@ Item
             }
 
         selectionList.model.append(item)
+        selectionList.positionViewAtEnd()
     }
 }
