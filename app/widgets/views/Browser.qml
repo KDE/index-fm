@@ -94,25 +94,40 @@ ColumnLayout
         {
             spacing: 0
 
-            IconsView
+            Item
             {
-                id: iconsGrid
+                id: browserContainer
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                onItemClicked: inx.isDir(path) ?
-                                   browser.openFolder(path):
-                                   browser.openFile(path)
-                anchors.top: parent.top
-                anchors.bottom: terminalVisible ? handle.top : parent.bottom
 
-                SelectionBar
+                ColumnLayout
                 {
-                    id: selectionBar
-                    y: -20
-                    visible: selectionList.count > 0
-                    anchors.bottom: parent.bottom
+                    anchors.fill: parent
+                    IconsView
+                    {
+                        id: iconsGrid
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        onItemClicked: inx.isDir(path) ?
+                                           browser.openFolder(path):
+                                           browser.openFile(path)
+
+                    }
+
+                    SelectionBar
+                    {
+                        id: selectionBar
+                        y: -20
+                        visible: selectionList.count > 0
+                        Layout.fillWidth: true
+                        Layout.leftMargin: contentMargins*2
+                        Layout.rightMargin: contentMargins*2
+                        Layout.bottomMargin: contentMargins*2
+                    }
                 }
 
+                anchors.top: parent.top
+                anchors.bottom: terminalVisible ? handle.top : parent.bottom
             }
 
             Rectangle
@@ -177,8 +192,8 @@ ColumnLayout
         previousPath.push(currentPath)
         populate(path)
         konsole.session.sendText("cd " + currentPath + "\n")
-//        if(selectedPaths.length > 0)
-//            clearSelection()
+        //        if(selectedPaths.length > 0)
+        //            clearSelection()
     }
 
     function populate(path)
@@ -231,11 +246,11 @@ ColumnLayout
             selectedPaths.push(item.path)
             selectionBar.append(item)
         }
-//        else
-//        {
-//            if (index !== -1)
-//                selectedPaths.splice(index, 1)
-//        }
+        //        else
+        //        {
+        //            if (index !== -1)
+        //                selectedPaths.splice(index, 1)
+        //        }
     }
 
 

@@ -32,7 +32,6 @@ Item
            width: 22
            radius: Math.min(width, height)
            color: Kirigami.Theme.complementaryBackgroundColor
-           border.color: "black"
 
            anchors.verticalCenter: parent.top
            anchors.horizontalCenter: parent.left
@@ -40,7 +39,7 @@ Item
             IndexButton
             {
                 anchors.centerIn: parent
-                iconName: "edit-clear"
+                iconName: "window-close"
                 iconColor: "white"
                 iconSize: 16
                 flat: true
@@ -107,7 +106,6 @@ Item
             width: 22
             radius: Math.min(width, height)
             color: highlightColor
-            border.color: "black"
 
             anchors.verticalCenter: parent.top
             anchors.horizontalCenter: parent.right
