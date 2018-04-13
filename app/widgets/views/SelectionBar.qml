@@ -19,7 +19,7 @@ Item
         z:-1
         color: Kirigami.Theme.complementaryBackgroundColor
         radius: 4
-        opacity: 0.9
+        opacity: 0.6
         border.color: "black"
     }
 
@@ -96,7 +96,7 @@ Item
                 anchors.centerIn: parent
                 iconName: "overflow-menu"
                 iconColor: "white"
-                onClicked: itemMenu.popup()
+                onClicked: itemMenu.showMultiple()
             }
         }
 

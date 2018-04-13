@@ -98,9 +98,9 @@ Kirigami.ApplicationWindow
         onBookmarkClicked: INX.bookmarkFolder(path)
         onCopyClicked:
         {
-            if(browser.selectedPaths.indexOf(path) > -1)
+            if(multiple)
                 browser.copy(browser.selectedPaths)
-            else browser.copy(path)
+            else browser.copy([path])
 
         }
     }

@@ -14,6 +14,9 @@ ColumnLayout
     property var copyPaths : []
     property var cutPaths : []
 
+    property bool isCopy : false
+    property bool isCut : false
+
     property alias terminal : konsole
     property var previousPath: []
     property var nextPath: []
@@ -270,12 +273,25 @@ ColumnLayout
     function copy(paths)
     {
         copyPaths = paths
+        isCut = false
+        isCopy = true
         console.log("Paths to copy", copyPaths)
+    }
+
+    function cut(paths)
+    {
+        copyPaths = paths
+        isCut = false
+        isCopy = true
     }
 
     function paste()
     {
         console.log("paste to", currentPath, copyPaths)
+        if(isCopy)
+            inx.copy(copyPaths, currentPath)
+        else if(isCut)
+            inx.cut(cutPaths, currentPath)
     }
 }
 

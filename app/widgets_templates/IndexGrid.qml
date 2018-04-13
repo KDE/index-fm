@@ -64,9 +64,8 @@ GridView
         acceptedButtons:  Qt.RightButton | Qt.LeftButton
         onClicked:
         {
-            console.log("right clicked")
             if(!isMobile && mouse.button === Qt.RightButton)
-                browserMenu.popup()
+                browserMenu.show()
             else
                 clearSelection()
         }

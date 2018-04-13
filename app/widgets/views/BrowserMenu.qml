@@ -12,15 +12,23 @@ Menu
     margins: 1
     padding: 2
 
+    property int copiedFiles : 0
+
     Column
     {
         MenuItem
         {
-            text: qsTr("Paste ")+"["+copyPaths.length+"]"
-            enabled: copyPaths.length > 0
+            text: qsTr("Paste ")+"["+copiedFiles+"]"
+            enabled: copiedFiles > 0
             onTriggered: browser.paste()
         }
 
+    }
+
+    function show()
+    {
+        copiedFiles = copyPaths.length
+        popup()
     }
 
 }

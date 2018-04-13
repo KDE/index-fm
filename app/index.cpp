@@ -158,12 +158,17 @@ QVariantMap Index::getDirInfo(const QString &path, const QString &type)
     return data;
 }
 
-bool Index::copy(const QString &path, const QString &where)
+bool Index::copy(const QStringList &paths, const QString &where)
 {
-
+    for(auto path : paths)
+    {
+        QFile file(path);
+        auto state = file.copy(where+"/"+QFileInfo(path).baseName());
+        qDebug()<<"trying to paste item to"<<path<<where<<state;
+    }
 }
 
-bool Index::cut(const QString &path, const QString &where)
+bool Index::cut(const QStringList &paths, const QString &where)
 {
 
 }

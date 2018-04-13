@@ -13,9 +13,10 @@ Menu
     margins: 1
     padding: 2
 
-
     property string path : ""
     property bool isDir : false
+
+    property bool multiple : false
 
     signal bookmarkClicked(string path)
     signal removeClicked(string path)
@@ -92,7 +93,15 @@ Menu
     function show(url)
     {
         path = url
+        multiple = false
         isDir = inx.isDir(path)
+        popup()
+    }
+
+    function showMultiple()
+    {
+        multiple = true
+        path = ""
         popup()
     }
 }

@@ -29,8 +29,8 @@ public:
     Q_INVOKABLE static QVariantMap getDirInfo(const QString &path, const QString &type);
 
     /*FILE ACTIONS*/
-    Q_INVOKABLE static bool copy(const QString &path, const QString &where);
-    Q_INVOKABLE static bool cut(const QString &path, const QString &where);
+    Q_INVOKABLE static bool copy(const QStringList &paths, const QString &where);
+    Q_INVOKABLE static bool cut(const QStringList &paths, const QString &where);
     Q_INVOKABLE static bool remove(const QString &path);
     Q_INVOKABLE static bool rename(const QString &path, const QString &name);
 
