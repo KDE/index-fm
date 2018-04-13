@@ -99,9 +99,19 @@ Kirigami.ApplicationWindow
         onCopyClicked:
         {
             if(multiple)
+            {
                 browser.copy(browser.selectedPaths)
-            else browser.copy([path])
+                browser.selectionBar.animate("black")
+            }else browser.copy([path])
 
+        }
+        onCutClicked:
+        {
+            if(multiple)
+            {
+                browser.cut(browser.selectedPaths)
+                browser.selectionBar.animate("red")
+            }else browser.cut([path])
         }
     }
 

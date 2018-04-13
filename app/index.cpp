@@ -163,14 +163,23 @@ bool Index::copy(const QStringList &paths, const QString &where)
     for(auto path : paths)
     {
         QFile file(path);
-        auto state = file.copy(where+"/"+QFileInfo(path).baseName());
-        qDebug()<<"trying to paste item to"<<path<<where<<state;
+        auto state = file.copy(where+"/"+QFileInfo(path).fileName());
+        if(!state) return false;
     }
+
+    return true;
 }
 
 bool Index::cut(const QStringList &paths, const QString &where)
 {
+    for(auto path : paths)
+    {
+        QFile file(path);
+        auto state = file.rename(where+"/"+QFileInfo(path).fileName());
+        if(!state) return false;
+    }
 
+    return true;
 }
 
 bool Index::remove(const QString &path)

@@ -7,20 +7,36 @@ import "../../widgets_templates"
 Item
 {
     property alias selectionList : selectionList
-
+    property alias anim : anim
     property int barHeight : 64
+    property color animColor : "black"
 
     height: barHeight
     width: parent.width
 
     Rectangle
     {
+        id: bg
         anchors.fill: parent
         z:-1
         color: Kirigami.Theme.complementaryBackgroundColor
         radius: 4
         opacity: 0.6
         border.color: "black"
+
+        SequentialAnimation
+        {
+            id: anim
+            PropertyAnimation
+            {
+                target: bg
+                property: "color"
+                easing.type: Easing.InOutQuad
+                from: animColor
+                to: Kirigami.Theme.complementaryBackgroundColor
+                duration: 500
+            }
+        }
     }
 
     RowLayout
@@ -28,13 +44,13 @@ Item
         anchors.fill: parent
         Rectangle
         {
-           height: 22
-           width: 22
-           radius: Math.min(width, height)
-           color: Kirigami.Theme.complementaryBackgroundColor
+            height: 22
+            width: 22
+            radius: Math.min(width, height)
+            color: Kirigami.Theme.complementaryBackgroundColor
 
-           anchors.verticalCenter: parent.top
-           anchors.horizontalCenter: parent.left
+            anchors.verticalCenter: parent.top
+            anchors.horizontalCenter: parent.left
 
             IndexButton
             {
@@ -149,5 +165,11 @@ Item
 
         selectionList.model.append(item)
         selectionList.positionViewAtEnd()
+    }
+
+    function animate(color)
+    {
+        animColor = color
+        anim.running = true
     }
 }

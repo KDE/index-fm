@@ -31,7 +31,7 @@ GridView
     {
         id: delegate
         folderSize : itemIconSize
-
+        showTooltip: true
         Connections
         {
             target: delegate

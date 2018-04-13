@@ -18,6 +18,8 @@ ColumnLayout
     property bool isCut : false
 
     property alias terminal : konsole
+    property alias selectionBar : selectionBar
+
     property var previousPath: []
     property var nextPath: []
     property bool terminalVisible : inx.loadSettings("TERMINAL_VISIBLE", "INX", false) === "true" ? true : false
@@ -267,6 +269,9 @@ ColumnLayout
     function clearSelection()
     {
         selectedPaths = []
+        copyPaths = []
+        cutPaths = []
+        browserMenu.pasteFiles = 0
         selectionBar.selectionList.model.clear()
     }
 
@@ -280,9 +285,9 @@ ColumnLayout
 
     function cut(paths)
     {
-        copyPaths = paths
-        isCut = false
-        isCopy = true
+        cutPaths = paths
+        isCut = true
+        isCopy = false
     }
 
     function paste()
@@ -291,7 +296,9 @@ ColumnLayout
         if(isCopy)
             inx.copy(copyPaths, currentPath)
         else if(isCut)
-            inx.cut(cutPaths, currentPath)
+            if(inx.cut(cutPaths, currentPath))
+                clearSelection()
+
     }
 }
 
