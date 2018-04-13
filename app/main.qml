@@ -101,7 +101,7 @@ Kirigami.ApplicationWindow
             if(multiple)
             {
                 browser.copy(browser.selectedPaths)
-                browser.selectionBar.animate("black")
+                browser.selectionBar.animate("#6fff80")
             }else browser.copy([path])
 
         }
@@ -110,7 +110,7 @@ Kirigami.ApplicationWindow
             if(multiple)
             {
                 browser.cut(browser.selectedPaths)
-                browser.selectionBar.animate("red")
+                browser.selectionBar.animate("#fff44f")
             }else browser.cut([path])
         }
     }
