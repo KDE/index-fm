@@ -1,3 +1,9 @@
 [submodule "qmltermwidget"]
 	path = qmltermwidget
 	url = https://github.com/Swordfish90/qmltermwidget
+[submodule "kirigami"]
+	path = 3rdparty/kirigami
+	url = https://github.com/KDE/kirigami.git
+[submodule "breeze-icons"]
+	path = 3rdparty/brezee-icons
+	url = https://github.com/KDE/breeze-icons.git

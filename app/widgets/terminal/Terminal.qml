@@ -89,7 +89,7 @@ Item
         function startSession()
         {
 
-            ksession.setShellProgram("/usr/bin/zsh");
+            ksession.setShellProgram("/usr/bin/bash");
             ksession.setArgs("");
 
 
