@@ -57,7 +57,7 @@ Item
                 anchors.centerIn: parent
                 iconName: "window-close"
                 iconColor: "white"
-                iconSize: 16
+                size: iconSizes.small
                 flat: true
                 onClicked: clearSelection()
             }

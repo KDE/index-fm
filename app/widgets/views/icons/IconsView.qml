@@ -14,7 +14,7 @@ Pane
         id: grid
         onFolderClicked: itemClicked(model.get(index).path)
 
-        itemIconSize: 48
+        itemIconSize: iconSizes.large
 
     }
 }

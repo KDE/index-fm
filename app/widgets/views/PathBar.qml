@@ -50,13 +50,10 @@ Item
             Layout.fillHeight: true
             Layout.leftMargin: 10
             Layout.rightMargin: 10
-
-            width: 22
             IndexButton
             {
                 anchors.centerIn: parent
                 iconName: "go-next"
-                iconSize: 22
                 onClicked:
                 {
                     browser.openFolder(entry.text)
@@ -75,15 +72,14 @@ Item
         Item
         {
             Layout.fillHeight: true
-            Layout.leftMargin: 10
-            Layout.rightMargin: 10
+            Layout.leftMargin: space.small
+            Layout.rightMargin: space.small
+            width: iconSize
 
-            width: 22
             IndexButton
             {
                 anchors.centerIn: parent
                 iconName: "go-home"
-                iconSize: 22
                 onClicked: browser.openFolder(inx.homePath())
             }
         }
@@ -127,25 +123,23 @@ Item
         Item
         {
             Layout.fillHeight: true
-            Layout.leftMargin: 10
-            Layout.rightMargin: 10
-
-            width: 22
+            Layout.leftMargin: space.small
+            Layout.rightMargin: space.small
+            width: iconSize
             IndexButton
             {
                 anchors.centerIn: parent
                 iconName: "filename-space-amarok"
-                iconSize: 22
                 onClicked: showEntryBar()
             }
         }
 
-//        MouseArea
-//        {
-//            anchors.fill: parent
-//            propagateComposedEvents: true
-//            onClicked: showEntryBar()
-//        }
+        //        MouseArea
+        //        {
+        //            anchors.fill: parent
+        //            propagateComposedEvents: true
+        //            onClicked: showEntryBar()
+        //        }
 
     }
 

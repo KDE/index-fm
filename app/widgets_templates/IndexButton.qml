@@ -6,25 +6,17 @@ ToolButton
 {
     id: babeButton
 
+    property bool isMask :  true
     property string iconName
-    property int iconSize : iconSizes.medium
+    property int size : iconSizes.medium
     property color iconColor: textColor
     readonly property string defaultColor :  textColor
     property bool anim : false
-    property alias kirigamiIcon : kirigamiIcon
 
-    Kirigami.Icon
-    {
-        id: kirigamiIcon
-        anchors.centerIn: parent
-        width: iconSize
-        height: iconSize
-        visible: true
-        color: iconColor
-        source: iconName
-        isMask: true
-    }
-
+    icon.name:  iconName
+    icon.width:  size
+    icon.height:  size
+    icon.color: isMask  ?  "transparent" : (down ? babeColor : (iconColor || defaultColor))
 
     onClicked: if(anim) animIcon.running = true
 
@@ -37,7 +29,7 @@ ToolButton
         id: animIcon
         PropertyAnimation
         {
-            target: kirigamiIcon
+            target: babeButton
             property: "color"
             easing.type: Easing.InOutQuad
             from: highlightColor
