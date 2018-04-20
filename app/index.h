@@ -12,6 +12,9 @@ class Index : public QObject
     Q_OBJECT
 public:
     explicit Index(QObject *parent = nullptr);
+
+    Q_INVOKABLE static bool isAndroid();
+
     Q_INVOKABLE void watchPath(const QString &path);
     Q_INVOKABLE static QVariantList getPathContent(const QString &path);
     Q_INVOKABLE static QVariantList getDefaultPaths();

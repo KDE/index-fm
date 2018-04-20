@@ -19,6 +19,11 @@ Index::Index(QObject *parent) : QObject(parent)
     });
 }
 
+bool Index::isAndroid()
+{
+    INX::isAndroid();
+}
+
 void Index::watchPath(const QString &path)
 {
     watcher->removePaths(watcher->directories());

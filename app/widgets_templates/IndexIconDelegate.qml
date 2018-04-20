@@ -24,6 +24,7 @@ ItemDelegate
     width: folderSize+ (folderSize * 0.7)
     focus: true
     hoverEnabled: true
+
     background: Rectangle
     {
         color: "transparent"
@@ -39,6 +40,7 @@ ItemDelegate
                 rightClicked()
         }
     }
+
     IndexButton
     {
         id: emblem

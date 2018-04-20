@@ -2,6 +2,7 @@ import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
+import QtQuick.Window 2.0
 
 import "widgets"
 import "widgets/views"
@@ -15,11 +16,11 @@ Kirigami.ApplicationWindow
 {
     id: root
     visible: true
-    width: 640
-    height: 480
+    width: Screen.width * (isMobile ? 1 : 0.4)
+    height: Screen.height * (isMobile ? 1 : 0.4)
     title: qsTr("Index")
 
-    property int sidebarWidth: Kirigami.Units.gridUnit * 11
+    property int sidebarWidth: Kirigami.Units.gridUnit * 17
 
     pageStack.defaultColumnWidth: sidebarWidth
     pageStack.initialPage: [placesSidebar, browser]
@@ -27,16 +28,7 @@ Kirigami.ApplicationWindow
     pageStack.separatorVisible: pageStack.wideMode
 
     readonly property bool isMobile : Kirigami.Settings.isMobile
-
-    readonly property int contentMargins: isMobile ? 8 : 10
-    readonly property int defaultFontSize: Kirigami.Theme.defaultFont.pointSize
-    readonly property var fontSizes: ({
-                                          tiny: defaultFontSize - 2,
-                                          small: defaultFontSize -1,
-                                          default: defaultFontSize,
-                                          big: defaultFontSize + 1,
-                                          large: defaultFontSize + 2
-                                      })
+    readonly property bool isAndroid : inx.isAndroid()
 
     property string backgroundColor: Kirigami.Theme.backgroundColor
     property string textColor: Kirigami.Theme.textColor
@@ -46,14 +38,76 @@ Kirigami.ApplicationWindow
     property string viewBackgroundColor: Kirigami.Theme.viewBackgroundColor
     property string altColor: Kirigami.Theme.complementaryBackgroundColor
 
-    property var iconSizes : ({
-                                  small :  16,
-                                  medium : 22,
-                                  large:  48,
-                              })
+
+
+
+    /***************************************************/
+    /******************** UI UNITS ********************/
+    /*************************************************/
+
     property int iconSize : iconSizes.medium
 
-    property int rowHeight : 32
+    readonly property int rowHeight: (defaultFontSize*2) + space.big
+
+    readonly property real factor : Kirigami.Units.gridUnit * (isMobile ? 0.2 : 0.2)
+
+    readonly property int contentMargins: space.medium
+    readonly property int defaultFontSize: Kirigami.Theme.defaultFont.pointSize
+    readonly property var fontSizes: ({
+                                          tiny: defaultFontSize * 0.4,
+
+                                          small: (isMobile ? defaultFontSize * 0.4 :
+                                                             defaultFontSize * 0.6),
+
+                                          medium: (isMobile ? defaultFontSize * 0.6 :
+                                                              defaultFontSize * 0.8),
+
+                                          default: (isMobile ? defaultFontSize * 0.8 :
+                                                               defaultFontSize),
+
+                                          big: (isMobile ? defaultFontSize :
+                                                           defaultFontSize * 1.2),
+
+                                          large: (isMobile ? defaultFontSize * 1.2 :
+                                                             defaultFontSize * 1.4)
+                                      })
+
+    readonly property var space : ({
+                                       tiny: Kirigami.Units.smallSpacing,
+                                       small: Kirigami.Units.smallSpacing*2,
+                                       medium: Kirigami.Units.largeSpacing,
+                                       big: Kirigami.Units.largeSpacing*2,
+                                       large: Kirigami.Units.largeSpacing*3,
+                                       huge: Kirigami.Units.largeSpacing*4,
+                                       enormus: Kirigami.Units.largeSpacing*5
+                                   })
+
+    readonly property var iconSizes : ({
+                                           tiny : Kirigami.Units.iconSizes.small*0.5,
+
+                                           small :  (isMobile ? Kirigami.Units.iconSizes.small*0.5:
+                                                                Kirigami.Units.iconSizes.small),
+
+                                           medium : (isMobile ? (isAndroid ? 22 : Kirigami.Units.iconSizes.small) :
+                                                                Kirigami.Units.iconSizes.smallMedium),
+
+                                           big:  (isMobile ? Kirigami.Units.iconSizes.smallMedium :
+                                                             Kirigami.Units.iconSizes.medium),
+
+                                           large: (isMobile ? Kirigami.Units.iconSizes.medium :
+                                                              Kirigami.Units.iconSizes.large),
+
+                                           huge: (isMobile ? Kirigami.Units.iconSizes.large :
+                                                             Kirigami.Units.iconSizes.huge),
+
+                                           enormous: (isMobile ? Kirigami.Units.iconSizes.huge :
+                                                                 Kirigami.Units.iconSizes.enormous)
+
+                                       })
+
+    /***************************************************/
+    /**************************************************/
+    /*************************************************/
 
     overlay.modal: Rectangle {
         color: isMobile ? darkColor : "transparent"
@@ -114,7 +168,4 @@ Kirigami.ApplicationWindow
             }else browser.cut([path])
         }
     }
-
-
-
 }
