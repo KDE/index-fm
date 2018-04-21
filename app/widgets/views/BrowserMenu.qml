@@ -17,6 +17,13 @@ Menu
 
     MenuItem
     {
+        text: qsTr(browser.selectionMode ? "Selection OFF" : "Selection ON")
+        onTriggered: browser.selectionMode = !browser.selectionMode
+    }
+
+
+    MenuItem
+    {
         text: qsTr("Paste ")+"["+pasteFiles+"]"
         enabled: pasteFiles > 0
         onTriggered: browser.paste()
@@ -27,6 +34,20 @@ Menu
         text: qsTr("Bookmark")
         onTriggered: INX.bookmarkFolder(browser.currentPath)
     }
+
+    MenuItem
+    {
+        text: qsTr(terminalVisible ? "Hide terminal" : "Show terminal")
+        onTriggered:
+        {
+            terminalVisible = !terminalVisible
+            inx.saveSettings("TERMINAL_VISIBLE", terminalVisible, "INX")
+            close()
+        }
+    }
+
+
+
 
     function show()
     {

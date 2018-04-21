@@ -7,13 +7,14 @@ import "../../../widgets_templates"
 Pane
 {
     property alias grid : grid
-    signal itemClicked (string path)
+    signal itemClicked (var item)
     signal itemSelected(var item)
     IndexGrid
     {
         id: grid
-        onFolderClicked: itemClicked(model.get(index).path)
+        onFolderClicked: itemClicked(model.get(index))
 
-        itemSize: iconSizes.large
+        itemSize: browser.grid.detailsView ?  iconSizes.medium : iconSizes.large
+        detailsView: false
     }
 }

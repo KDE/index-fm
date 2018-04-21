@@ -22,9 +22,11 @@ ToolBar
             {
                 id: viewBtn
                 anchors.centerIn: parent
+                isMask: true
+                iconName:  browser.grid.detailsView ? "view-list-icons" : "view-list-details"
+                iconColor: highlightColor
 
-                iconName: "view-list-icons"
-                iconColor: currentView === views.icon ? highlightColor : textColor
+                onClicked: browser.grid.switchView()
             }
 
         }

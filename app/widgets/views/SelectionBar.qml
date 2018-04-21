@@ -87,7 +87,7 @@ Item
                 id: delegate
                 anchors.verticalCenter: parent.verticalCenter
                 height:  iconSizes.big + (isMobile ? space.medium : space.big)
-                width: iconSizes.big + space.large
+                width: iconSizes.big + (isMobile? space.big : space.large)
                 folderSize: iconSizes.big
                 showLabel: true
                 emblemAdded: true
@@ -140,6 +140,12 @@ Item
                 font.bold: true
                 color: highlightedTextColor
                 text: selectionList.count
+            }
+
+            MouseArea
+            {
+                anchors.fill: parent
+                onClicked: clean()
             }
         }
 

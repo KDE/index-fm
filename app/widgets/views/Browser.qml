@@ -17,8 +17,12 @@ Page
     property bool isCopy : false
     property bool isCut : false
 
+    property bool selectionMode : false
+
     property alias terminal : konsole
     property alias selectionBar : selectionBar
+
+    property alias grid : iconsGrid.grid
 
     property var previousPath: []
     property var nextPath: []
@@ -36,17 +40,10 @@ Page
         onPathModified: browser.refresh()
     }
 
-    BrowserOptions
-    {
-        id: browserOptions
-    }
-
     BrowserMenu
     {
         id: browserMenu
     }
-
-
 
     IndexPage
     {
@@ -57,7 +54,6 @@ Page
         headerbarExit: false
         headerBarLeft: IndexButton
         {
-
             iconName: "view-refresh"
             onClicked: browser.refresh()
         }
@@ -65,7 +61,7 @@ Page
         headerBarRight: IndexButton
         {
             iconName: "overflow-menu"
-            onClicked:  isMobile ? browserOptions.open() : browserOptions.popup()
+            onClicked:  browserMenu.show()
         }
 
 
@@ -92,10 +88,18 @@ Page
                         id: iconsGrid
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        onItemClicked: inx.isDir(path) ?
-                                           browser.openFolder(path):
-                                           browser.openFile(path)
-
+                        onItemClicked:
+                        {
+                            if(selectionMode)
+                                addToSelection(item, true)
+                            else
+                            {
+                                if(inx.isDir(item.path))
+                                    browser.openFolder(item.path)
+                                else
+                                    browser.openFile(item.path)
+                            }
+                        }
                     }
 
                     SelectionBar
@@ -243,6 +247,12 @@ Page
     }
 
     function clearSelection()
+    {
+        clean()
+        browser.selectionMode = false
+    }
+
+    function clean()
     {
         selectedPaths = []
         copyPaths = []

@@ -7,16 +7,21 @@ GridView
 {
     id: folderGridRoot
 
+    property bool detailsView : false
     property int itemSize : iconSizes.large
-    property int itemSpacing: itemSize*0.5 + (isMobile ? space.small : space.large)
+    property int itemSpacing: itemSize * 0.5 + (isMobile ? (detailsView ? space.medium : space.big) :
+                                                           (detailsView ? space.big : space.large))
 
     signal folderClicked(int index)
 
+    flow: detailsView ? GridView.FlowTopToBottom : GridView.FlowLeftToRight
     clip: true
     width: parent.width
     height: parent.height
 
-    cellWidth: itemSize + itemSpacing
+    cacheBuffer: cellHeight * 2
+
+    cellWidth: (itemSize * (detailsView ? 5 : 1)) + itemSpacing
     cellHeight: itemSize + itemSpacing
 
     focus: true
@@ -25,14 +30,15 @@ GridView
     flickableDirection: Flickable.AutoFlickDirection
     snapMode: GridView.SnapToRow
 
-    model: ListModel {id: gridModel  }
+    model: ListModel { id: gridModel  }
 
     delegate: IndexIconDelegate
     {
         id: delegate
 
-        width: cellWidth * 0.9
-        height: cellHeight * 0.9
+        isDetails: detailsView
+        width: cellWidth * (detailsView ? 1 : 0.9)
+        height: cellHeight * (detailsView ? 0.5 : 0.9)
 
         folderSize : itemSize
         showTooltip: true
@@ -66,19 +72,10 @@ GridView
         }
     }
 
-    ScrollBar.vertical: ScrollBar{ visible: true}
+    ScrollBar.horizontal: ScrollBar{ visible: folderGridRoot.flow === GridView.FlowTopToBottom}
+    // ScrollBar.vertical: ScrollBar{ visible: folderGridRoot.flow === GridView.FlowLeftToRight}
 
-    onWidthChanged:
-    {
-        var amount = parseInt(width/(itemSize + itemSpacing),10)
-        var leftSpace = parseInt(width-(amount*(itemSize + itemSpacing)), 10)
-        var size = parseInt((itemSize + itemSpacing)+(parseInt(leftSpace/amount, 10)), 10)
-
-        size = size > itemSize + itemSpacing ? size : itemSize + itemSpacing
-
-        cellWidth = size
-        //            grid.cellHeight = size
-    }
+    onWidthChanged: adaptGrid()
 
     MouseArea
     {
@@ -95,4 +92,29 @@ GridView
 
         onPressAndHold: browserMenu.show()
     }
+
+    function switchView()
+    {
+        detailsView = !detailsView
+        adaptGrid()
+
+    }
+
+    function adaptGrid()
+    {
+        if(detailsView)
+            cellWidth = (itemSize * (detailsView ? 5 : 1))+ itemSpacing
+        else {
+            var amount = parseInt(width/(itemSize + itemSpacing),10)
+            var leftSpace = parseInt(width-(amount*(itemSize + itemSpacing)), 10)
+            var size = parseInt((itemSize + itemSpacing)+(parseInt(leftSpace/amount, 10)), 10)
+
+            size = size > itemSize + itemSpacing ? size : itemSize + itemSpacing
+
+            cellWidth = size
+            //            grid.cellHeight = size
+        }
+
+    }
+
 }

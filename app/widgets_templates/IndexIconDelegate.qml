@@ -5,6 +5,7 @@ import org.kde.kirigami 2.2 as Kirigami
 
 ItemDelegate
 {
+    property bool isDetails : false
     property int folderSize : iconSize
     property bool isHovered :  hovered
     property bool showLabel : true
@@ -21,8 +22,9 @@ ItemDelegate
     signal emblemClicked(int index);
 
 
+
     focus: true
-    hoverEnabled: true
+    hoverEnabled: !isMobile
 
     background: Rectangle
     {
@@ -40,17 +42,42 @@ ItemDelegate
         }
     }
 
-
-    ColumnLayout
+    IndexButton
     {
-        anchors.fill: parent
+        id: emblem
+        isMask: false
+        iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
+        visible: isHovered || (keepEmblemOverlay && emblemAdded)
+        z: 999
+        anchors.top: parent.top
+        anchors.left: parent.left
+        onClicked:
+        {
+            emblemAdded = !emblemAdded
+            emblemClicked(index)
+        }
+    }
 
+
+
+    GridLayout
+    {
+        id: delegatelayout
+        anchors.fill: parent
+        rows: isDetails ? 1 : 2
+        columns: isDetails ? 2 : 1
+        rowSpacing: space.tiny
+        columnSpacing: space.tiny
 
         Item
         {
             Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.maximumWidth: folderSize
+            Layout.row: 1
+            Layout.column: 1
             Layout.alignment: Qt.AlignCenter
+
             Kirigami.Icon
             {
                 anchors.centerIn: parent
@@ -59,23 +86,6 @@ ItemDelegate
 
                 width: folderSize
                 height: folderSize
-
-                IndexButton
-                {
-                    id: emblem
-                    isMask: false
-                    iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
-                    visible: isHovered /*|| (keepEmblemOverlay && emblemAdded)*/
-                    z: 999
-                    anchors.top: parent.top
-                    anchors.horizontalCenter: parent.left
-                    onClicked:
-                    {
-                        emblemAdded = !emblemAdded
-                        emblemClicked(index)
-                    }
-                }
-
             }
 
             ToolTip.delay: 1000
@@ -85,27 +95,36 @@ ItemDelegate
         }
 
 
-        Label
+        Item
         {
-            visible: showLabel
-            text: label
-            width: parent.width
+            Layout.fillHeight: true
             Layout.fillWidth: true
-            horizontalAlignment: Qt.AlignHCenter
-            elide: Qt.ElideRight
-            font.pointSize: fontSizes.default
-            color: labelColor
+            Layout.row: isDetails ? 1 : 2
+            Layout.column: isDetails ? 2 : 1
 
-            Rectangle
+            Label
             {
-                visible: parent.visible && showSelectionBackground
-                anchors.fill: parent
-                z: -1
-                radius: 3
-                color: hightlightedColor
-                opacity: hovered ? 0.25 : 1
-            }
 
+                visible: showLabel
+                text: label
+                width: parent.width * (isDetails ? 0.5 : 1)
+                height: parent.height
+                horizontalAlignment: Qt.AlignHCenter
+                elide: Qt.ElideRight
+                font.pointSize: fontSizes.default
+                color: labelColor
+
+                Rectangle
+                {
+                    visible: parent.visible && showSelectionBackground
+                    anchors.fill: parent
+                    z: -1
+                    radius: Kirigami.Units.devicePixelRatio * 3
+                    color: hightlightedColor
+                    opacity: hovered ? 0.25 : 1
+                }
+
+            }
         }
     }
 
