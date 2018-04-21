@@ -5,8 +5,7 @@ import org.kde.kirigami 2.0 as Kirigami
 
 ItemDelegate
 {
-    height: 30
-    width: 80
+
     property color labelColor : ListView.isCurrentItem ? highlightColor : textColor
     property color borderColor : Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
     anchors.verticalCenter: parent.verticalCenter
@@ -37,7 +36,7 @@ ItemDelegate
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignHCenter
-            Layout.margins: 10
+            Layout.margins: space.small
 
             Label
             {

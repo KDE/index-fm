@@ -6,7 +6,7 @@ import "../../widgets_templates"
 
 Item
 {
-    height: 32
+    height: iconSizes.big
 
     Rectangle
     {
@@ -48,8 +48,8 @@ Item
         Item
         {
             Layout.fillHeight: true
-            Layout.leftMargin: 10
-            Layout.rightMargin: 10
+            Layout.leftMargin: space.small
+            Layout.rightMargin: space.small
             IndexButton
             {
                 anchors.centerIn: parent
@@ -107,6 +107,8 @@ Item
             delegate: PathBarDelegate
             {
                 id: delegate
+                height: iconSizes.big - (Kirigami.Units.devicePixelRatio * 2)
+                width: iconSizes.big *3
 
                 Connections
                 {
