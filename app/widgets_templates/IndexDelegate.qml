@@ -11,6 +11,7 @@ ItemDelegate
     property bool isSection : false
     property bool boldLabel : false
     property alias label: labelTxt.text
+    property alias labelTxt : labelTxt
     property string labelColor: ListView.isCurrentItem ? highlightedTextColor : textColor
 
 

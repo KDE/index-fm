@@ -8,7 +8,7 @@ Item
 {
     property alias selectionList : selectionList
     property alias anim : anim
-    property int barHeight : 64
+    property int barHeight : iconSizes.big + (isMobile ? space.big : space.large)
     property color animColor : "black"
 
     height: barHeight
@@ -44,8 +44,8 @@ Item
         anchors.fill: parent
         Rectangle
         {
-            height: 22
-            width: 22
+            height: iconSizes.medium
+            width: iconSizes.medium
             radius: Math.min(width, height)
             color: Kirigami.Theme.complementaryBackgroundColor
 
@@ -55,6 +55,7 @@ Item
             IndexButton
             {
                 anchors.centerIn: parent
+                isMask: true
                 iconName: "window-close"
                 iconColor: "white"
                 size: iconSizes.small
@@ -74,7 +75,7 @@ Item
 
             orientation: ListView.Horizontal
             clip: true
-            spacing: 10
+            spacing: space.small
 
             focus: true
             interactive: true
@@ -85,8 +86,9 @@ Item
             {
                 id: delegate
                 anchors.verticalCenter: parent.verticalCenter
-                width: 80
-                folderSize: 32
+                height:  iconSizes.big + (isMobile ? space.medium : space.big)
+                width: iconSizes.big + space.large
+                folderSize: iconSizes.big
                 showLabel: true
                 emblemAdded: true
                 keepEmblemOverlay: true
@@ -106,7 +108,8 @@ Item
             Layout.alignment: Qt.AlignRight
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.maximumWidth: 44
+            Layout.maximumWidth: iconSizes.medium
+
             IndexButton
             {
                 anchors.centerIn: parent
@@ -118,8 +121,8 @@ Item
 
         Rectangle
         {
-            height: 22
-            width: 22
+            height: iconSizes.medium
+            width: iconSizes.medium
             radius: Math.min(width, height)
             color: highlightColor
 
@@ -132,7 +135,8 @@ Item
                 anchors.centerIn: parent
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
-                font.pointSize: fontSizes.small
+                font.pointSize: fontSizes.default
+                font.weight: Font.Bold
                 font.bold: true
                 color: highlightedTextColor
                 text: selectionList.count

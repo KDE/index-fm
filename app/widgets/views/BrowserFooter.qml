@@ -16,15 +16,17 @@ ToolBar
             Layout.alignment: Qt.AlignLeft
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.maximumWidth: 44
+            Layout.maximumWidth: iconSize*2
 
             IndexButton
             {
+                id: viewBtn
                 anchors.centerIn: parent
 
-                iconName: "view-refresh"
-                onClicked: browser.refresh()
+                iconName: "view-list-icons"
+                iconColor: currentView === views.icon ? highlightColor : textColor
             }
+
         }
 
         Item { Layout.fillWidth: true }
@@ -83,16 +85,13 @@ ToolBar
             Layout.alignment: Qt.AlignRight
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.maximumWidth: 44
+            Layout.maximumWidth: iconSize*2
 
 
             IndexButton
             {
                 anchors.centerIn: parent
-
                 iconName: "documentinfo"
-
-
             }
         }
 

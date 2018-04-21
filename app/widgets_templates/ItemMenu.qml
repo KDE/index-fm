@@ -25,69 +25,68 @@ Menu
     signal cutClicked(string path)
     signal tagsClicked(string path)
 
-    Column
+
+    MenuItem
     {
-        MenuItem
+        text: qsTr("Bookmark")
+        enabled: isDir
+        onTriggered:
         {
-            text: qsTr("Bookmark")
-            enabled: isDir
-            onTriggered:
-            {
-                bookmarkClicked(path)
-                close()
-            }
-        }
-        MenuItem
-        {
-            text: qsTr("Tags...")
-            onTriggered:
-            {
-                tagsClicked(path)
-                close()
-            }
-        }
-
-
-        MenuItem
-        {
-            text: qsTr("Share...")
-            enabled: !isDir
-            onTriggered:
-            {
-                shareClicked(path)
-                close()
-            }
-        }
-        MenuItem
-        {
-            text: qsTr("Copy...")
-            onTriggered:
-            {
-                copyClicked(path)
-                close()
-            }
-        }
-
-        MenuItem
-        {
-            text: qsTr("Cut...")
-            onTriggered:
-            {
-                cutClicked(path)
-                close()
-            }
-        }
-
-        MenuItem
-        {
-            text: qsTr("Remove...")
-            onTriggered:
-            {
-                removeClicked(path)
-                close()
-            }
+            bookmarkClicked(path)
+            close()
         }
     }
+    MenuItem
+    {
+        text: qsTr("Tags...")
+        onTriggered:
+        {
+            tagsClicked(path)
+            close()
+        }
+    }
+
+
+    MenuItem
+    {
+        text: qsTr("Share...")
+        enabled: !isDir
+        onTriggered:
+        {
+            shareClicked(path)
+            close()
+        }
+    }
+    MenuItem
+    {
+        text: qsTr("Copy...")
+        onTriggered:
+        {
+            copyClicked(path)
+            close()
+        }
+    }
+
+    MenuItem
+    {
+        text: qsTr("Cut...")
+        onTriggered:
+        {
+            cutClicked(path)
+            close()
+        }
+    }
+
+    MenuItem
+    {
+        text: qsTr("Remove...")
+        onTriggered:
+        {
+            removeClicked(path)
+            close()
+        }
+    }
+
 
 
     function show(url)
@@ -95,13 +94,16 @@ Menu
         path = url
         multiple = false
         isDir = inx.isDir(path)
-        popup()
+        if(isMobile) open()
+        else popup()
     }
 
     function showMultiple()
     {
         multiple = true
         path = ""
-        popup()
+
+        if(isMobile) open()
+        else popup()
     }
 }

@@ -32,8 +32,8 @@ ItemDelegate
                 anchors.centerIn: parent
                 source: iconName? iconName : ""
                 color: labelColor
-                width: iconSizes.small
-                height: iconSizes.small
+                width: isMobile ? iconSizes.medium : iconSizes.small
+                height: isMobile? iconSizes.medium : iconSizes.small
             }
         }
 
@@ -54,7 +54,7 @@ ItemDelegate
                 font.bold: false
                 elide: Text.ElideRight
 
-                font.pointSize: fontSizes.default
+                font.pointSize: isMobile ? fontSizes.big : fontSizes.default
                 color: labelColor
             }
         }

@@ -26,7 +26,7 @@ ToolBar
             Layout.alignment: Qt.AlignLeft
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.maximumWidth: 44
+            Layout.maximumWidth: iconSize
 
             IndexButton
             {
@@ -63,8 +63,7 @@ ToolBar
             Layout.alignment: Qt.AlignRight
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.maximumWidth: 44
-
+            Layout.maximumWidth: iconSize
 
             IndexButton
             {

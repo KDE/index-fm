@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
+import "../../Index.js" as INX
 
 Menu
 {
@@ -14,15 +15,17 @@ Menu
 
     property int pasteFiles : 0
 
-    Column
+    MenuItem
     {
-        MenuItem
-        {
-            text: qsTr("Paste ")+"["+pasteFiles+"]"
-            enabled: pasteFiles > 0
-            onTriggered: browser.paste()
-        }
+        text: qsTr("Paste ")+"["+pasteFiles+"]"
+        enabled: pasteFiles > 0
+        onTriggered: browser.paste()
+    }
 
+    MenuItem
+    {
+        text: qsTr("Bookmark")
+        onTriggered: INX.bookmarkFolder(browser.currentPath)
     }
 
     function show()
@@ -32,7 +35,8 @@ Menu
         else if(browser.isCut)
             pasteFiles = cutPaths.length
 
-        popup()
+        if(isMobile) open()
+        else popup()
     }
 
 }

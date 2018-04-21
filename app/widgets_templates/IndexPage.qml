@@ -5,8 +5,6 @@ import org.kde.kirigami 2.2 as Kirigami
 
 Page
 {
-
-    property int toolbarHeight: 48
     property int pageMargins : contentMargins
     property bool headerbarVisible : true
     property bool headerbarExit : true
@@ -27,7 +25,6 @@ Page
         visible: headerbarVisible
         position: ToolBar.Header
 
-
         RowLayout
         {
             id: headerbarLayout
@@ -37,7 +34,6 @@ Page
             {
                 id: exitBtn
                 Layout.alignment : Qt.AlignLeft
-                Layout.leftMargin: contentMargins
                 visible: headerbarExit
                 anim : true
                 iconName : headerbarExitIcon
@@ -48,9 +44,7 @@ Page
             {
                 id: headerbarActionsLeft
                 Layout.alignment : Qt.AlignLeft
-                Layout.leftMargin: headerbarExit ? 0 : contentMargins
-                spacing: contentMargins
-
+                spacing: space.small
             }
 
             Label
@@ -71,9 +65,8 @@ Page
             Row
             {
                 id: headerbarActionsRight
-                spacing: contentMargins
+                spacing: space.small
                 Layout.alignment : Qt.AlignRight
-                Layout.rightMargin: contentMargins
             }
         }     
     }

@@ -7,7 +7,7 @@ import "../terminal"
 import org.kde.kirigami 2.0 as Kirigami
 
 
-ColumnLayout
+Page
 {
     property string currentPath: inx.homePath()
     property var selectedPaths : []
@@ -50,45 +50,24 @@ ColumnLayout
 
     IndexPage
     {
-        Layout.fillHeight: true
-        Layout.fillWidth: true
+        anchors.fill: parent
+
         focus: true
         headerbarTitle: iconsGrid.grid.count + qsTr(" files")
         headerbarExit: false
-        headerBarLeft: [
-            IndexButton
-            {
-                iconName: "view-list-icons"
-                iconColor: currentView === views.icon ? highlightColor : textColor
-            },
-            IndexButton
-            {
-                iconName: "view-list-details"
-                iconColor: currentView === views.details ? highlightColor : textColor
+        headerBarLeft: IndexButton
+        {
 
-            },
-            IndexButton
-            {
-                iconName: "view-list-tree"
-                iconColor: currentView === views.tree ? highlightColor : textColor
+            iconName: "view-refresh"
+            onClicked: browser.refresh()
+        }
 
-            }
+        headerBarRight: IndexButton
+        {
+            iconName: "overflow-menu"
+            onClicked:  isMobile ? browserOptions.open() : browserOptions.popup()
+        }
 
-        ]
-
-        headerBarRight: [
-
-
-            IndexButton
-            {
-                iconName: "view-preview"
-            },
-            IndexButton
-            {
-                iconName: "overflow-menu"
-                onClicked:  browserOptions.popup()
-            }
-        ]
 
         footer: BrowserFooter
         {
@@ -164,7 +143,6 @@ ColumnLayout
                 }
             }
 
-
             Terminal
             {
                 id: konsole
@@ -178,10 +156,7 @@ ColumnLayout
                 anchors.top: handle.bottom
             }
         }
-
     }
-
-
     function clear()
     {
         iconsGrid.grid.model.clear()
@@ -196,6 +171,7 @@ ColumnLayout
     {
         previousPath.push(currentPath)
         populate(path)
+
         konsole.session.sendText("cd " + currentPath + "\n")
         //        if(selectedPaths.length > 0)
         //            clearSelection()
@@ -301,5 +277,3 @@ ColumnLayout
 
     }
 }
-
-

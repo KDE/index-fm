@@ -13,9 +13,10 @@ Item
         anchors.fill: parent
         z:-1
         color: Kirigami.Theme.viewBackgroundColor
-        radius: 4
+        radius: Math.floor(Kirigami.Units.devicePixelRatio) * 3
         opacity: 1
         border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
+        border.width: Math.floor(Kirigami.Units.devicePixelRatio)
     }
 
 
@@ -40,16 +41,15 @@ Item
                 browser.openFolder(text)
                 showEntryBar()
             }
-
-
         }
-
 
         Item
         {
             Layout.fillHeight: true
             Layout.leftMargin: space.small
             Layout.rightMargin: space.small
+            width: iconSize
+
             IndexButton
             {
                 anchors.centerIn: parent
@@ -80,7 +80,13 @@ Item
             {
                 anchors.centerIn: parent
                 iconName: "go-home"
-                onClicked: browser.openFolder(inx.homePath())
+                onClicked:
+                {
+                    if(pageStack.currentIndex !== 0 && !pageStack.wideMode)
+                        pageStack.currentIndex = 0
+
+                    browser.openFolder(inx.homePath())
+                }
             }
         }
 
@@ -108,7 +114,7 @@ Item
             {
                 id: delegate
                 height: iconSizes.big - (Kirigami.Units.devicePixelRatio * 2)
-                width: iconSizes.big *3
+                width: iconSizes.big * (isMobile ? 2 : 3)
 
                 Connections
                 {

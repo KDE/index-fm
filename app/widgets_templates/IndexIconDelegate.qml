@@ -5,8 +5,8 @@ import org.kde.kirigami 2.2 as Kirigami
 
 ItemDelegate
 {
-    property int folderSize : 32
-
+    property int folderSize : iconSize
+    property bool isHovered :  hovered
     property bool showLabel : true
     property bool showSelectionBackground : true
     property bool showTooltip : false
@@ -20,8 +20,7 @@ ItemDelegate
     signal rightClicked();
     signal emblemClicked(int index);
 
-    height: folderSize + (folderSize * 0.6)
-    width: folderSize+ (folderSize * 0.7)
+
     focus: true
     hoverEnabled: true
 
@@ -41,25 +40,6 @@ ItemDelegate
         }
     }
 
-    IndexButton
-    {
-        id: emblem
-        iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
-        visible: parent.hovered /*|| (keepEmblemOverlay && emblemAdded)*/
-        isMask: false
-        z: 999
-        anchors
-        {
-            top: parent.top
-            left: parent.left
-        }
-
-        onClicked:
-        {
-            emblemAdded = !emblemAdded
-            emblemClicked(index)
-        }
-    }
 
     ColumnLayout
     {
@@ -79,6 +59,23 @@ ItemDelegate
 
                 width: folderSize
                 height: folderSize
+
+                IndexButton
+                {
+                    id: emblem
+                    isMask: false
+                    iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
+                    visible: isHovered /*|| (keepEmblemOverlay && emblemAdded)*/
+                    z: 999
+                    anchors.top: parent.top
+                    anchors.horizontalCenter: parent.left
+                    onClicked:
+                    {
+                        emblemAdded = !emblemAdded
+                        emblemClicked(index)
+                    }
+                }
+
             }
 
             ToolTip.delay: 1000

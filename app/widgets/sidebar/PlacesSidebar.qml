@@ -36,6 +36,8 @@ ColumnLayout
         {
             id: delegate
             label: section
+            labelTxt.font.pointSize: fontSizes.big
+
             isSection: true
             boldLabel: true
             height: mainHeader.height
@@ -57,6 +59,9 @@ ColumnLayout
                 {
                     placesList.currentIndex = index
                     placeClicked(placesList.model.get(index).path)
+
+                    if(pageStack.currentIndex === 0 && !pageStack.wideMode)
+                        pageStack.currentIndex = 1
                 }
             }
 

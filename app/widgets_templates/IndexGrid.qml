@@ -7,8 +7,8 @@ GridView
 {
     id: folderGridRoot
 
-    property int itemIconSize : 32
-    property int gridSize : itemIconSize + (itemIconSize * 0.5)
+    property int itemSize : iconSizes.large
+    property int itemSpacing: itemSize*0.5 + (isMobile ? space.small : space.large)
 
     signal folderClicked(int index)
 
@@ -16,8 +16,8 @@ GridView
     width: parent.width
     height: parent.height
 
-    cellHeight: gridSize+(contentMargins*2)
-    cellWidth: gridSize+gridSize
+    cellWidth: itemSize + itemSpacing
+    cellHeight: itemSize + itemSpacing
 
     focus: true
 
@@ -30,8 +30,13 @@ GridView
     delegate: IndexIconDelegate
     {
         id: delegate
-        folderSize : itemIconSize
+
+        width: cellWidth * 0.9
+        height: cellHeight * 0.9
+
+        folderSize : itemSize
         showTooltip: true
+
         Connections
         {
             target: delegate
@@ -39,6 +44,12 @@ GridView
             {
                 folderGridRoot.currentIndex = index
                 folderClicked(index)
+            }
+
+            onPressAndHold:
+            {
+                folderGridRoot.currentIndex = index
+                itemMenu.show(folderGridRoot.model.get(index).path)
             }
 
             onRightClicked:
@@ -57,6 +68,18 @@ GridView
 
     ScrollBar.vertical: ScrollBar{ visible: true}
 
+    onWidthChanged:
+    {
+        var amount = parseInt(width/(itemSize + itemSpacing),10)
+        var leftSpace = parseInt(width-(amount*(itemSize + itemSpacing)), 10)
+        var size = parseInt((itemSize + itemSpacing)+(parseInt(leftSpace/amount, 10)), 10)
+
+        size = size > itemSize + itemSpacing ? size : itemSize + itemSpacing
+
+        cellWidth = size
+        //            grid.cellHeight = size
+    }
+
     MouseArea
     {
         anchors.fill: parent
@@ -69,5 +92,7 @@ GridView
             else
                 clearSelection()
         }
+
+        onPressAndHold: browserMenu.show()
     }
 }

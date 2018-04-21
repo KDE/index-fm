@@ -6,7 +6,7 @@ ToolButton
 {
     id: babeButton
 
-    property bool isMask :  true
+    property bool isMask :  false
     property string iconName
     property int size : iconSizes.medium
     property color iconColor: textColor
@@ -16,7 +16,7 @@ ToolButton
     icon.name:  iconName
     icon.width:  size
     icon.height:  size
-    icon.color: isMask  ?  "transparent" : (down ? babeColor : (iconColor || defaultColor))
+    icon.color: !isMask  ?  "transparent" : (down ? highlightColor : (iconColor || defaultColor))
 
     onClicked: if(anim) animIcon.running = true
 

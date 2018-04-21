@@ -20,7 +20,7 @@ Kirigami.ApplicationWindow
     height: Screen.height * (isMobile ? 1 : 0.4)
     title: qsTr("Index")
 
-    property int sidebarWidth: Kirigami.Units.gridUnit * 17
+    property int sidebarWidth: Kirigami.Units.gridUnit * 14
 
     pageStack.defaultColumnWidth: sidebarWidth
     pageStack.initialPage: [placesSidebar, browser]
@@ -110,7 +110,7 @@ Kirigami.ApplicationWindow
     /*************************************************/
 
     overlay.modal: Rectangle {
-        color: isMobile ? darkColor : "transparent"
+        color: isMobile ? altColor : "transparent"
         opacity: 0.5
         height: root.height
     }
