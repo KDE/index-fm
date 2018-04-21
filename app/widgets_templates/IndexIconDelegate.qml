@@ -110,7 +110,9 @@ ItemDelegate
                 width: parent.width * (isDetails ? 0.5 : 1)
                 height: parent.height
                 horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
                 elide: Qt.ElideRight
+                wrapMode: Text.Wrap
                 font.pointSize: fontSizes.default
                 color: labelColor
 
