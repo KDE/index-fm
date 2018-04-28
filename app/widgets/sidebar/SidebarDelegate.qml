@@ -3,6 +3,8 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
 import org.kde.kirigami 2.2 as Kirigami
 
+import "../../widgets_templates"
+
 ItemDelegate
 {
     width: parent.width
@@ -27,13 +29,12 @@ ItemDelegate
             Layout.fillHeight: true
             width: parent.height
 
-            Kirigami.Icon
+            IndexButton
             {
                 anchors.centerIn: parent
-                source: iconName? iconName : ""
-                color: labelColor
-                width: isMobile ? iconSizes.medium : iconSizes.small
-                height: isMobile? iconSizes.medium : iconSizes.small
+                iconName: model.iconName? model.iconName : ""
+                size: isMobile ? iconSizes.medium : iconSizes.small
+                isMask: false
             }
         }
 

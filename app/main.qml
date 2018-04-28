@@ -3,6 +3,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import QtQuick.Window 2.0
+import QtQuick.Controls.Material 2.1
 
 import "widgets"
 import "widgets/views"
@@ -38,8 +39,12 @@ Kirigami.ApplicationWindow
     property string viewBackgroundColor: Kirigami.Theme.viewBackgroundColor
     property string altColor: Kirigami.Theme.complementaryBackgroundColor
 
-
-
+    /* FOR MATERIAL*/
+    Material.theme: Material.Light
+    Material.accent: highlightColor
+    Material.background: viewBackgroundColor
+    Material.primary: backgroundColor
+    Material.foreground: textColor
 
     /***************************************************/
     /******************** UI UNITS ********************/
@@ -167,5 +172,29 @@ Kirigami.ApplicationWindow
                 browser.selectionBar.animate("#fff44f")
             }else browser.cut([path])
         }
+
+        onRemoveClicked:
+        {
+            if(multiple)
+            {
+                browser.remove(browser.selectedPaths)
+                browser.selectionBar.animate("red")
+            }else  browser.remove([path])
+        }
+    }
+
+    NewDialog
+    {
+        id: newFolderDialog
+        title: "New folder..."
+        onFinished: inx.createDir(browser.currentPath, text)
+
+    }
+
+    NewDialog
+    {
+        id: newFileDialog
+        title: "New file..."
+        onFinished: inx.createFile(browser.currentPath, text)
     }
 }

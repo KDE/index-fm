@@ -19,7 +19,7 @@ Page
 
     property bool selectionMode : false
 
-    property alias terminal : konsole
+    property alias terminal : terminalLoader.item
     property alias selectionBar : selectionBar
 
     property alias grid : iconsGrid.grid
@@ -127,6 +127,7 @@ Page
                 Layout.fillWidth: true
                 height: 5
                 color: "transparent"
+
                 Kirigami.Separator
                 {
                     anchors
@@ -148,10 +149,9 @@ Page
                 }
             }
 
-            Terminal
+            Loader
             {
-                id: konsole
-                visible: terminalVisible
+                id: terminalLoader
                 focus: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignBottom
@@ -159,7 +159,10 @@ Page
                 Layout.maximumHeight: parent.height *0.5
                 anchors.bottom: parent.bottom
                 anchors.top: handle.bottom
+                source: !isMobile ? "../terminal/Terminal.qml" : undefined
             }
+
+
         }
     }
     function clear()
@@ -177,7 +180,8 @@ Page
         previousPath.push(currentPath)
         populate(path)
 
-        konsole.session.sendText("cd " + currentPath + "\n")
+        if(!isMobile)
+            terminal.session.sendText("cd " + currentPath + "\n")
         //        if(selectedPaths.length > 0)
         //            clearSelection()
     }
@@ -285,5 +289,13 @@ Page
             if(inx.cut(cutPaths, currentPath))
                 clearSelection()
 
+    }
+
+    function remove(paths)
+    {
+        clearSelection()
+
+        for(var i in paths)
+            inx.remove(paths[i])
     }
 }

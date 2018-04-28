@@ -26,7 +26,7 @@ ToolBar
             Layout.alignment: Qt.AlignLeft
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.maximumWidth: iconSize
+            Layout.maximumWidth: iconSize * 2
 
             IndexButton
             {
@@ -46,7 +46,12 @@ ToolBar
         }
 
 
-        Item { Layout.fillWidth: true; Layout.maximumWidth: parent.width*0.05 }
+        Item
+        {
+            Layout.fillWidth: true
+            Layout.maximumWidth: parent.width*0.05
+            Layout.minimumHeight: 0
+        }
 
         PathBar
         {
@@ -54,8 +59,13 @@ ToolBar
             Layout.fillWidth: true
         }
 
-        Item { Layout.fillWidth: true; Layout.maximumWidth: parent.width*0.05 }
 
+        Item
+        {
+            Layout.fillWidth: true
+            Layout.maximumWidth: parent.width*0.05
+            Layout.minimumHeight: 0
+        }
 
 
         Item
@@ -63,7 +73,7 @@ ToolBar
             Layout.alignment: Qt.AlignRight
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.maximumWidth: iconSize
+            Layout.maximumWidth:  iconSize * 2
 
             IndexButton
             {

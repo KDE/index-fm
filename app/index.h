@@ -36,7 +36,10 @@ public:
     static bool copyPath(QString sourceDir, QString destinationDir, bool overWriteDirectory);
     Q_INVOKABLE static bool cut(const QStringList &paths, const QString &where);
     Q_INVOKABLE static bool remove(const QString &path);
+    static bool removeDir(const QString &path);
     Q_INVOKABLE static bool rename(const QString &path, const QString &name);
+    Q_INVOKABLE static bool createDir(const QString &path, const QString &name);
+    Q_INVOKABLE static bool createFile(const QString &path, const QString &name);
 
 
 private:

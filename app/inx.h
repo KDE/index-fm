@@ -18,6 +18,43 @@ namespace INX
 {
 Q_NAMESPACE
 
+inline bool isMobile()
+{
+#if defined(Q_OS_ANDROID)
+    return true;
+#elif defined(Q_OS_LINUX)
+    return false;
+#elif defined(Q_OS_WIN32)
+    return false;
+#elif defined(Q_OS_WIN64)
+    return false;
+#elif defined(Q_OS_MACOS)
+    return false;
+#elif defined(Q_OS_IOS)
+    return true;
+#elif defined(Q_OS_HAIKU)
+    return false;
+#endif
+}
+
+inline bool isAndroid()
+{
+#if defined(Q_OS_ANDROID)
+    return true;
+#elif defined(Q_OS_LINUX)
+    return false;
+#elif defined(Q_OS_WIN32)
+    return false;
+#elif defined(Q_OS_WIN64)
+    return false;
+#elif defined(Q_OS_MACOS)
+    return false;
+#elif defined(Q_OS_IOS)
+    return false;
+#elif defined(Q_OS_HAIKU)
+    return false;
+#endif
+}
 
 inline QString getNameFromLocation(const QString &str)
 {
@@ -73,8 +110,8 @@ inline QString getIconName(const QString &path)
     {
         QMimeDatabase mime;
         auto type = mime.mimeTypeForFile(path);
-        qDebug()<< type.genericIconName();
-        return type.iconName();
+
+        return isAndroid() ? type.genericIconName() : type.iconName();
     }
     return "text-css";
 
@@ -83,10 +120,9 @@ inline QString getIconName(const QString &path)
 const QString SettingPath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)+"/pix/";
 const QString CachePath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation)+"/pix/";
 const QString NotifyDir = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
-const QString App = "Index";
-const QString version = "1.0";
-
-
+const QString app = "Index";
+const QString version = "0.1.0";
+const QString description = "File manager";
 
 
 inline QString ucfirst(const QString &str)/*uppercase first letter*/
@@ -139,44 +175,6 @@ inline QVariant loadSettings(const QString &key, const QString &group, const QVa
     setting.endGroup();
 
     return variant;
-}
-
-inline bool isMobile()
-{
-#if defined(Q_OS_ANDROID)
-    return true;
-#elif defined(Q_OS_LINUX)
-    return false;
-#elif defined(Q_OS_WIN32)
-    return false;
-#elif defined(Q_OS_WIN64)
-    return false;
-#elif defined(Q_OS_MACOS)
-    return false;
-#elif defined(Q_OS_IOS)
-    return true;
-#elif defined(Q_OS_HAIKU)
-    return false;
-#endif
-}
-
-inline bool isAndroid()
-{
-#if defined(Q_OS_ANDROID)
-    return true;
-#elif defined(Q_OS_LINUX)
-    return false;
-#elif defined(Q_OS_WIN32)
-    return false;
-#elif defined(Q_OS_WIN64)
-    return false;
-#elif defined(Q_OS_MACOS)
-    return false;
-#elif defined(Q_OS_IOS)
-    return false;
-#elif defined(Q_OS_HAIKU)
-    return false;
-#endif
 }
 
 }

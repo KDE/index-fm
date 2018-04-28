@@ -22,5 +22,6 @@
         <file>widgets/views/SelectionBar.qml</file>
         <file>widgets/views/BrowserMenu.qml</file>
         <file>widgets/views/FolderItemDelegate.qml</file>
+        <file>widgets_templates/NewDialog.qml</file>
     </qresource>
 </RCC>

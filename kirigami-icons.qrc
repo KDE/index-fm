@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="org/kde/kirigami/icons/go-up.svg">3rdparty/breeze-icons/icons/actions/22/go-up.svg</file>
+        <file alias="org/kde/kirigami/icons/overflow-menu.svg">3rdparty/breeze-icons/icons/actions/22/overflow-menu.svg</file>
+        <file alias="org/kde/kirigami/icons/applications-graphics.svg">3rdparty/breeze-icons/icons/categories/32/applications-graphics.svg</file>
+        <file alias="org/kde/kirigami/icons/image-multiple.svg">3rdparty/breeze-icons/icons/actions/22/image-multiple.svg</file>
+        <file alias="org/kde/kirigami/icons/image-frames.svg">3rdparty/breeze-icons/icons/actions/22/image-frames.svg</file>
+        <file alias="org/kde/kirigami/icons/image-folder-view.svg">3rdparty/breeze-icons/icons/actions/22/image-folder-view.svg</file>
+        <file alias="org/kde/kirigami/icons/object-rotate-right.svg">3rdparty/breeze-icons/icons/actions/22/object-rotate-right.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/process-stop.svg</file>
+        <file alias="org/kde/kirigami/icons/tag.svg">3rdparty/breeze-icons/icons/actions/22/tag.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/view-list-icons.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/view-list-details.svg</file>
+        <file alias="org/kde/kirigami/icons/view-fullscreen.svg">3rdparty/breeze-icons/icons/actions/22/view-fullscreen.svg</file>
+        <file alias="org/kde/kirigami/icons/view-preview.svg">3rdparty/breeze-icons/icons/actions/22/view-preview.svg</file>
+        <file alias="org/kde/kirigami/icons/view-refresh.svg">3rdparty/breeze-icons/icons/actions/22/view-refresh.svg</file>
+        <file alias="org/kde/kirigami/icons/window-close.svg">3rdparty/breeze-icons/icons/actions/22/window-close.svg</file>
+        <file alias="org/kde/kirigami/icons/list-add.svg">3rdparty/breeze-icons/icons/actions/22/list-add.svg</file>
+        <file alias="org/kde/kirigami/icons/list-remove.svg">3rdparty/breeze-icons/icons/actions/22/list-remove.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/image.svg</file>
+        <file alias="org/kde/kirigami/icons/go-previous.svg">3rdparty/breeze-icons/icons/actions/22/go-previous.svg</file>
+        <file alias="org/kde/kirigami/icons/go-next.svg">3rdparty/breeze-icons/icons/actions/22/go-next.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/go-last.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/go-home.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/go-first.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/go-down.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/edit-undo.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/edit-redo.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/draw-text.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/edit-clear.svg</file>
+        <file alias="org/kde/kirigami/icons/edit-find.svg">3rdparty/breeze-icons/icons/actions/22/edit-find.svg</file>
+        <file alias="org/kde/kirigami/icons/document-save-as.svg">3rdparty/breeze-icons/icons/actions/22/document-save-as.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/document-save.svg</file>
+        <file alias="org/kde/kirigami/icons/document-share.svg">3rdparty/breeze-icons/icons/actions/22/document-share.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/document-open.svg</file>
+        <file alias="org/kde/kirigami/icons/dialog-close.svg">3rdparty/breeze-icons/icons/actions/22/dialog-close.svg</file>
+        <file>3rdparty/breeze-icons/icons/actions/22/configure.svg</file>
+        <file alias="org/kde/kirigami/icons/love.svg">3rdparty/breeze-icons/icons/actions/22/love.svg</file>
+        <file alias="org/kde/kirigami/icons/application-menu.svg">3rdparty/breeze-icons/icons/actions/22/application-menu.svg</file>
+        <file alias="org/kde/kirigami/icons/folder.svg">3rdparty/breeze-icons/icons/places/32/folder.svg</file>
+        <file alias="org/kde/kirigami/icons/emblem-added.svg">3rdparty/breeze-icons/icons/emblems/16/emblem-added.svg</file>
+        <file alias="org/kde/kirigami/icons/emblem-remove.svg">3rdparty/breeze-icons/icons/emblems/16/emblem-remove.svg</file>
+    </qresource>
+</RCC>

@@ -74,14 +74,13 @@ ItemDelegate
             Layout.column: 1
             Layout.alignment: Qt.AlignCenter
 
-            Kirigami.Icon
+            IndexButton
             {
                 anchors.centerIn: parent
-                source: iconName
+                iconName: model.iconName
                 isMask: false
-
-                width: folderSize
-                height: folderSize
+                size: folderSize
+                enabled: false
             }
 
             ToolTip.delay: 1000

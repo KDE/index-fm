@@ -37,6 +37,7 @@ Menu
 
     MenuItem
     {
+        visible: !isMobile
         text: qsTr(terminalVisible ? "Hide terminal" : "Show terminal")
         onTriggered:
         {
@@ -46,7 +47,17 @@ Menu
         }
     }
 
+    MenuItem
+    {
+        text: qsTr("New folder")
+        onTriggered: newFolderDialog.open()
+    }
 
+    MenuItem
+    {
+        text: qsTr("New file")
+        onTriggered: newFileDialog.open()
+    }
 
 
     function show()

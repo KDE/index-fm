@@ -246,12 +246,61 @@ bool Index::cut(const QStringList &paths, const QString &where)
 
 bool Index::remove(const QString &path)
 {
+    if(QFileInfo(path).isDir())
+        return removeDir(path);
+    else return QFile(path).remove();
+}
 
+bool Index::removeDir(const QString &path)
+{
+    bool result = true;
+    QDir dir(path);
+
+    if (dir.exists(path))
+    {
+        Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst))
+        {
+            if (info.isDir())
+            {
+                result = removeDir(info.absoluteFilePath());
+            }
+            else
+            {
+                result = QFile::remove(info.absoluteFilePath());
+            }
+
+            if (!result)
+            {
+                return result;
+            }
+        }
+        result = dir.rmdir(path);
+    }
+
+    return result;
 }
 
 bool Index::rename(const QString &path, const QString &name)
 {
 
+}
+
+bool Index::createDir(const QString &path, const QString &name)
+{
+    return QDir(path).mkdir(name);
+}
+
+bool Index::createFile(const QString &path, const QString &name)
+{
+    QFile file(path + "/" + name);
+
+    if(file.open(QIODevice::ReadWrite))
+    {
+        file.close();
+        return true;
+    }
+
+    return false;
 }
 
 void Index::saveSettings(const QString &key, const QVariant &value, const QString &group)

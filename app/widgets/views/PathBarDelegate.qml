@@ -5,13 +5,14 @@ import org.kde.kirigami 2.0 as Kirigami
 
 ItemDelegate
 {
-
-    property color labelColor : ListView.isCurrentItem ? highlightColor : textColor
+property bool isCurrentListItem : ListView.isCurrentItem
+    property color labelColor : isCurrentListItem ? highlightColor : textColor
     property color borderColor : Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
     anchors.verticalCenter: parent.verticalCenter
+
     background: Rectangle
     {
-        color: buttonBackgroundColor
+        color: isCurrentListItem ? buttonBackgroundColor : "transparent"
 
         Kirigami.Separator
         {
@@ -40,9 +41,11 @@ ItemDelegate
 
             Label
             {
-                text: label              
-                anchors.fill: parent
+                text: label
+                width: parent.width
+                height: parent.height
                 horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment:  Qt.AlignVCenter
                 elide: Qt.ElideRight
                 font.pointSize: fontSizes.default
                 color: labelColor
