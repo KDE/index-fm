@@ -21,8 +21,6 @@ ItemDelegate
     signal rightClicked();
     signal emblemClicked(int index);
 
-
-
     focus: true
     hoverEnabled: !isMobile
 
@@ -57,8 +55,6 @@ ItemDelegate
             emblemClicked(index)
         }
     }
-
-
 
     GridLayout
     {
@@ -99,6 +95,8 @@ ItemDelegate
         {
             Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.maximumHeight: parent.height * (isDetails ? 1 : 0.3)
+
             Layout.row: isDetails ? 1 : 2
             Layout.column: isDetails ? 2 : 1
 
@@ -107,7 +105,7 @@ ItemDelegate
 
                 visible: showLabel
                 text: label
-                width: parent.width * (isDetails ? 0.5 : 1)
+                width: parent.width * (isDetails ? 0.7 : 1)
                 height: parent.height
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter

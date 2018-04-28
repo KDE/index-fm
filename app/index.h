@@ -33,6 +33,7 @@ public:
 
     /*FILE ACTIONS*/
     Q_INVOKABLE static bool copy(const QStringList &paths, const QString &where);
+    static bool copyPath(QString sourceDir, QString destinationDir, bool overWriteDirectory);
     Q_INVOKABLE static bool cut(const QStringList &paths, const QString &where);
     Q_INVOKABLE static bool remove(const QString &path);
     Q_INVOKABLE static bool rename(const QString &path, const QString &name);

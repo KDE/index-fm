@@ -36,14 +36,13 @@ ItemDelegate
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignHCenter
-            Layout.margins: space.small
+//            Layout.margins: space.small
 
             Label
             {
-                text: label
+                text: label              
                 anchors.fill: parent
                 horizontalAlignment: Qt.AlignHCenter
-
                 elide: Qt.ElideRight
                 font.pointSize: fontSizes.default
                 color: labelColor

@@ -32,6 +32,7 @@ Page
                               details : 1,
                               tree : 2
                           })
+
     property int currentView : views.icon
 
     Connections
@@ -237,7 +238,6 @@ Page
         //                selectedPaths.splice(index, 1)
         //        }
     }
-
 
     function handleSelection()
     {
