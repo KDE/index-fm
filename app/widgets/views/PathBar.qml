@@ -114,7 +114,7 @@ Item
             {
                 id: delegate
                 height: iconSizes.big - (Kirigami.Units.devicePixelRatio * 2)
-                width: iconSizes.big * (isMobile ? 2 : 3)
+                width: iconSizes.big * 3
 
                 Connections
                 {

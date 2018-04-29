@@ -197,4 +197,7 @@ Kirigami.ApplicationWindow
         title: "New file..."
         onFinished: inx.createFile(browser.currentPath, text)
     }
+
+    Component.onCompleted: if(isAndroid) android.statusbarColor(backgroundColor, true)
+
 }

@@ -57,5 +57,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     index.h \
     inx.h
-
-
