@@ -17,8 +17,8 @@ linux:unix:!android {
 
     message(Building helpers for Android)
     include($$PWD/../android/android.pri)
-
     include($$PWD/../3rdparty/kirigami/kirigami.pri)
+
     DEFINES += STATIC_KIRIGAMI
 
 } else {
@@ -41,7 +41,6 @@ SOURCES += main.cpp \
 
 RESOURCES += qml.qrc \
     assets.qrc \
-
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("android", &android);
 #else
     QStringList importPathList = engine.importPathList();
-    importPathList.prepend(QCoreApplication::applicationDirPath() + "/qmltermwidget");
+    importPathList.prepend(QCoreApplication::applicationDirPath() + "/kde/qmltermwidget");
     engine.setImportPathList(importPathList);
 #endif
 

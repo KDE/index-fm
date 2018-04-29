@@ -26,7 +26,7 @@ Page
 
     property var previousPath: []
     property var nextPath: []
-    property bool terminalVisible : inx.loadSettings("TERMINAL_VISIBLE", "INX", false) === "true" ? true : false
+    property bool terminalVisible : inx.loadSettings("TERMINAL_VISIBLE", "BROWSER", false) === "true" ? true : false
     property var views : ({
                               icon : 0,
                               details : 1,
@@ -152,6 +152,7 @@ Page
             Loader
             {
                 id: terminalLoader
+                visible: terminalVisible
                 focus: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignBottom
@@ -161,8 +162,6 @@ Page
                 anchors.top: handle.bottom
                 source: !isMobile ? "../terminal/Terminal.qml" : undefined
             }
-
-
         }
     }
     function clear()

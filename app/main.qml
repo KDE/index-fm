@@ -21,7 +21,7 @@ Kirigami.ApplicationWindow
     height: Screen.height * (isMobile ? 1 : 0.4)
     title: qsTr("Index")
 
-    property int sidebarWidth: Kirigami.Units.gridUnit * 14
+    property int sidebarWidth: Kirigami.Units.gridUnit * (isMobile ? 14 : 11)
 
     pageStack.defaultColumnWidth: sidebarWidth
     pageStack.initialPage: [placesSidebar, browser]
