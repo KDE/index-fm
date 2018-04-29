@@ -1,6 +1,3 @@
-[submodule "qmltermwidget"]
-	path = qmltermwidget
-	url = https://github.com/Swordfish90/qmltermwidget
 [submodule "kirigami"]
 	path = 3rdparty/kirigami
 	url = https://github.com/KDE/kirigami.git
