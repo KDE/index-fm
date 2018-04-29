@@ -1,3 +1,5 @@
 *.qmlc
 *.*~
 *.properties
+*.pro.user
+*.user
