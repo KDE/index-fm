@@ -3,3 +3,6 @@
 *.properties
 *.pro.user
 *.user
+*.*.user
+~*.*
+~.*
