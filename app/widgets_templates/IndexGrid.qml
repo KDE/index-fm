@@ -13,6 +13,7 @@ GridView
                                                            (detailsView ? space.big : space.large))
 
     signal folderClicked(int index)
+    signal folderDoubleClicked(int index)
 
     flow: detailsView ? GridView.FlowTopToBottom : GridView.FlowLeftToRight
     clip: true
@@ -49,7 +50,15 @@ GridView
             onClicked:
             {
                 folderGridRoot.currentIndex = index
-                folderClicked(index)
+                if(isMobile)
+                    folderClicked(index)
+            }
+
+            onDoubleClicked:
+            {
+                folderGridRoot.currentIndex = index
+                if(!isMobile)
+                    folderClicked(index)
             }
 
             onPressAndHold:
@@ -112,7 +121,6 @@ GridView
             size = size > itemSize + itemSpacing ? size : itemSize + itemSpacing
 
             cellWidth = size
-            //            grid.cellHeight = size
         }
 
     }

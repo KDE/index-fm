@@ -50,7 +50,7 @@ ToolBar
         {
             Layout.fillWidth: true
             Layout.maximumWidth: parent.width*0.05
-            Layout.minimumHeight: 0
+            Layout.minimumWidth: 0
         }
 
         PathBar
@@ -64,7 +64,7 @@ ToolBar
         {
             Layout.fillWidth: true
             Layout.maximumWidth: parent.width*0.05
-            Layout.minimumHeight: 0
+            Layout.minimumWidth: 0
         }
 
 

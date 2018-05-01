@@ -23,5 +23,6 @@
         <file>widgets/views/BrowserMenu.qml</file>
         <file>widgets/views/FolderItemDelegate.qml</file>
         <file>widgets_templates/NewDialog.qml</file>
+        <file>widgets/views/DetailsDrawer.qml</file>
     </qresource>
 </RCC>

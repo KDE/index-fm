@@ -6,8 +6,7 @@ import "icons"
 import "../terminal"
 import org.kde.kirigami 2.0 as Kirigami
 
-
-Page
+IndexPage
 {
     property string currentPath: inx.homePath()
     property var selectedPaths : []
@@ -22,7 +21,8 @@ Page
     property alias terminal : terminalLoader.item
     property alias selectionBar : selectionBar
 
-    property alias grid : iconsGrid.grid
+    property alias grid : iconsGrid
+    property alias detailsDrawer: detailsDrawer
 
     property var previousPath: []
     property var nextPath: []
@@ -46,127 +46,132 @@ Page
         id: browserMenu
     }
 
-    IndexPage
+    DetailsDrawer
     {
-        anchors.fill: parent
+        id: detailsDrawer
+    }
 
-        focus: true
-        headerbarTitle: iconsGrid.grid.count + qsTr(" files")
-        headerbarExit: false
-        headerBarLeft: IndexButton
+
+    focus: true
+    headerbarTitle: iconsGrid.count + qsTr(" files")
+    headerbarExit: false
+    headerBarLeft: IndexButton
+    {
+        iconName: "view-refresh"
+        onClicked: browser.refresh()
+    }
+
+    headerBarRight: IndexButton
+    {
+        iconName: "overflow-menu"
+        onClicked:  browserMenu.show()
+    }
+
+
+    footer: BrowserFooter
+    {
+        id: browserFooter
+    }
+
+    contentItem : ColumnLayout
+    {
+        spacing: 0
+
+        Item
         {
-            iconName: "view-refresh"
-            onClicked: browser.refresh()
-        }
+            id: browserContainer
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.margins: contentMargins * 2
 
-        headerBarRight: IndexButton
-        {
-            iconName: "overflow-menu"
-            onClicked:  browserMenu.show()
-        }
-
-
-        footer: BrowserFooter
-        {
-            id: browserFooter
-        }
-
-        contentItem : ColumnLayout
-        {
-            spacing: 0
-
-            Item
+            ColumnLayout
             {
-                id: browserContainer
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                anchors.fill: parent
 
-                ColumnLayout
+                IndexGrid
                 {
-                    anchors.fill: parent
-                    IconsView
+                    id: iconsGrid
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    onFolderClicked:
                     {
-                        id: iconsGrid
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        onItemClicked:
+                        if(selectionMode)
+                            addToSelection(model.get(currentIndex), true)
+                        else
                         {
-                            if(selectionMode)
-                                addToSelection(item, true)
+                            if(inx.isDir(model.get(currentIndex).path))
+                                browser.openFolder(model.get(currentIndex).path)
                             else
-                            {
-                                if(inx.isDir(item.path))
-                                    browser.openFolder(item.path)
-                                else
-                                    browser.openFile(item.path)
-                            }
+                                isMobile ? detailsDrawer.show(model.get(currentIndex).path):
+                                           browser.openFile(currentItem.path)
                         }
                     }
-
-                    SelectionBar
-                    {
-                        id: selectionBar
-                        y: -20
-                        visible: selectionList.count > 0
-                        Layout.fillWidth: true
-                        Layout.leftMargin: contentMargins*2
-                        Layout.rightMargin: contentMargins*2
-                        Layout.bottomMargin: contentMargins*2
-                    }
                 }
 
-                anchors.top: parent.top
-                anchors.bottom: terminalVisible ? handle.top : parent.bottom
-            }
-
-            Rectangle
-            {
-                id: handle
-                visible: terminalVisible
-
-                Layout.fillWidth: true
-                height: 5
-                color: "transparent"
-
-                Kirigami.Separator
+                SelectionBar
                 {
-                    anchors
-                    {
-                        bottom: parent.bottom
-                        right: parent.right
-                        left: parent.left
-                    }
-                }
-
-                MouseArea
-                {
-                    anchors.fill: parent
-                    drag.target: parent
-                    drag.axis: Drag.YAxis
-                    drag.smoothed: true
-                    cursorShape: Qt.SizeVerCursor
-
+                    id: selectionBar
+                    y: -20
+                    visible: selectionList.count > 0
+                    Layout.fillWidth: true
+                    Layout.leftMargin: contentMargins*2
+                    Layout.rightMargin: contentMargins*2
+                    Layout.bottomMargin: contentMargins*2
                 }
             }
 
-            Loader
+            anchors.top: parent.top
+            anchors.bottom: terminalVisible ? handle.top : parent.bottom
+        }
+
+        Rectangle
+        {
+            id: handle
+            visible: terminalVisible
+
+            Layout.fillWidth: true
+            height: 5
+            color: "transparent"
+
+            Kirigami.Separator
             {
-                id: terminalLoader
-                visible: terminalVisible
-                focus: true
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignBottom
-                Layout.minimumHeight: 100
-                Layout.maximumHeight: parent.height *0.5
-                anchors.bottom: parent.bottom
-                anchors.top: handle.bottom
-                source: !isMobile ? "../terminal/Terminal.qml" : undefined
+                anchors
+                {
+                    bottom: parent.bottom
+                    right: parent.right
+                    left: parent.left
+                }
+            }
+
+            MouseArea
+            {
+                anchors.fill: parent
+                drag.target: parent
+                drag.axis: Drag.YAxis
+                drag.smoothed: true
+                cursorShape: Qt.SizeVerCursor
+
             }
         }
+
+        Loader
+        {
+            id: terminalLoader
+            visible: terminalVisible
+            focus: true
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignBottom
+            Layout.minimumHeight: 100
+            Layout.maximumHeight: parent.height *0.5
+            anchors.bottom: parent.bottom
+            anchors.top: handle.bottom
+            source: !isMobile ? "../terminal/Terminal.qml" : undefined
+        }
     }
+
     function clear()
     {
-        iconsGrid.grid.model.clear()
+        iconsGrid.model.clear()
     }
 
     function openFile(path)
@@ -193,7 +198,7 @@ Page
         var items = inx.getPathContent(path)
         if(items.length > 0)
             for(var i in items)
-                iconsGrid.grid.model.append(items[i])
+                iconsGrid.model.append(items[i])
 
         for(i=0; i < placesSidebar.placesList.count; i++)
             if(currentPath === placesSidebar.placesList.model.get(i).path)

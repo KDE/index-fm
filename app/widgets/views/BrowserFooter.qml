@@ -89,11 +89,13 @@ ToolBar
             Layout.fillHeight: true
             Layout.maximumWidth: iconSize * 2
 
-
             IndexButton
             {
                 anchors.centerIn: parent
                 iconName: "documentinfo"
+                iconColor: detailsDrawer.visible ? highlightColor : textColor
+                onClicked: detailsDrawer.visible ? detailsDrawer.close() :
+                                                           detailsDrawer.show(currentPath)
             }
         }
 

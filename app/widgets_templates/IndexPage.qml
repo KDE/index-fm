@@ -10,7 +10,7 @@ Page
     property bool headerbarExit : true
     property string headerbarExitIcon : "dialog-close"
     property string headerbarTitle: ""
-
+    property alias headerBar: headerBar
     property alias headerBarRight : headerbarActionsRight.children
     property alias headerBarLeft : headerbarActionsLeft.children
 
@@ -22,6 +22,8 @@ Page
 
     header:  ToolBar
     {
+        id: headerBar
+        height: implicitHeight
         visible: headerbarVisible
         position: ToolBar.Header
 
@@ -68,6 +70,6 @@ Page
                 spacing: space.small
                 Layout.alignment : Qt.AlignRight
             }
-        }     
+        }
     }
 }
