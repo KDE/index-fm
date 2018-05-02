@@ -78,21 +78,27 @@ inline QString getNameFromLocation(const QString &str)
     return ret;
 }
 
-const QString PicturesPath = isAndroid() ? PATHS::PicturesPath :
-            QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-const QString DownloadsPath = isAndroid ? PATHS::DownloadsPath :
-            QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
-const QString DocumentsPath = isAndroid ? PATHS::DocumentsPath :
-            QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-const QString HomePath = isAndroid ? PATHS::HomePath :
-            QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
-const QString MusicPath = isAndroid ? PATHS::MusicPath :
-            QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
-const QString VideosPath = isAndroid ? PATHS::VideosPath :
-            QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
+#if defined(Q_OS_ANDROID)
+const QString PicturesPath = PATHS::PicturesPath;
+const QString DownloadsPath = PATHS::DownloadsPath;
+const QString DocumentsPath = PATHS::DocumentsPath;
+const QString HomePath = PATHS::HomePath;
+const QString MusicPath = PATHS::MusicPath;
+const QString VideosPath = PATHS::VideosPath;
+const QString DesktopPath = PATHS::HomePath;
+const QStringList defaultPaths = {HomePath, DocumentsPath, PicturesPath, MusicPath, VideosPath, DownloadsPath };
+#else
+const QString PicturesPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+const QString DownloadsPath = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+const QString DocumentsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+const QString HomePath =  QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+const QString MusicPath = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
+const QString VideosPath = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
 const QString DesktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-
 const QStringList defaultPaths = {HomePath, DesktopPath, DocumentsPath, PicturesPath, MusicPath, VideosPath, DownloadsPath };
+
+#endif
+
 
 
 const QMap<QString, QString> folderIcon
