@@ -7,8 +7,11 @@ import "../../widgets_templates"
 
 ItemDelegate
 {
+
+    property int sidebarIconSize : isMobile ? iconSizes.big : iconSizes.small
     width: parent.width
-    height: rowHeight
+    height: sidebarIconSize + space.big
+
     clip: true
 
     property string labelColor: ListView.isCurrentItem ? highlightedTextColor : textColor
@@ -33,7 +36,7 @@ ItemDelegate
             {
                 anchors.centerIn: parent
                 iconName: model.iconName? model.iconName : ""
-                size: isMobile ? iconSizes.medium : iconSizes.small
+                size: sidebarIconSize
                 isMask: !isMobile
                 iconColor: labelColor
             }
