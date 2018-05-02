@@ -130,7 +130,7 @@ IndexPage
             id: browserContainer
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.margins: detailsView ? 0 : contentMargins * 2
+            Layout.margins: detailsView ? 0 : contentMargins
 
             ColumnLayout
             {

@@ -66,6 +66,7 @@ Item
             {
                 spacing: space.small
                 width: parent.width
+                height: parent.height
 
                 Label
                 {

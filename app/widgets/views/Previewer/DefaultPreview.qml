@@ -61,7 +61,8 @@ Item
             Column
             {
                 spacing: space.small
-
+                width: parent.width
+                height: parent.height
                 Label
                 {
                     text: qsTr("Type: ")+ iteminfo.mimetype
