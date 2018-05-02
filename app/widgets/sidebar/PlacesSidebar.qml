@@ -17,12 +17,6 @@ ColumnLayout
         Layout.fillWidth: true
 
         keyNavigationEnabled: true
-        highlight: Rectangle
-        {
-            width: placesList.width
-            height: placesList.currentItem.height
-            color: highlightColor
-        }
 
         focus: true
         interactive: true

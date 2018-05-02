@@ -7,6 +7,7 @@ import "../../widgets_templates"
 
 ItemDelegate
 {
+    property bool isCurrentListItem :  ListView.isCurrentItem
 
     property int sidebarIconSize : isMobile ? iconSizes.big : iconSizes.small
     width: parent.width
@@ -19,8 +20,9 @@ ItemDelegate
     Rectangle
     {
         anchors.fill: parent
-        color: index % 2 === 0 ? Qt.darker(backgroundColor) : "transparent"
-        opacity: 0.05
+        color: isCurrentListItem ? highlightColor :
+                                   index % 2 === 0 ? Qt.lighter(backgroundColor,1.2) :
+                                                     backgroundColor
     }
 
     RowLayout

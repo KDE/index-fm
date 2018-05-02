@@ -28,7 +28,7 @@ ItemDelegate
     background: Rectangle
     {
         color: !isDetails? "transparent" : (isCurrentListItem ? highlightColor :
-                                                                index % 2 === 0 ? Qt.lighter(backgroundColor) : backgroundColor)
+                                                                index % 2 === 0 ? Qt.lighter(backgroundColor,1.2) : backgroundColor)
 
     }
 
