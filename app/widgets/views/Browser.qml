@@ -2,7 +2,6 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import "../../widgets_templates"
-import "icons"
 import "../terminal"
 import org.kde.kirigami 2.0 as Kirigami
 
@@ -18,10 +17,12 @@ IndexPage
 
     property bool selectionMode : false
 
+    property bool detailsView: inx.loadSettings("BROWSER_VIEW", "BROWSER", false) === "false" ? false: true
+
     property alias terminal : terminalLoader.item
     property alias selectionBar : selectionBar
 
-    property alias grid : iconsGrid
+    property alias grid : viewLoader.item
     property alias detailsDrawer: detailsDrawer
 
     property var previousPath: []
@@ -51,9 +52,52 @@ IndexPage
         id: detailsDrawer
     }
 
+    Component
+    {
+        id: listViewBrowser
+        IndexList
+        {}
+
+    }
+
+    Component
+    {
+        id: gridViewBrowser
+
+        IndexGrid
+        {}
+    }
+
+    Connections
+    {
+        target: viewLoader.item
+        onItemClicked:
+        {
+            var item = viewLoader.item.model.get(index)
+            if(selectionMode)
+                addToSelection(item, true)
+            else
+            {
+                if(inx.isDir(item.path))
+                    browser.openFolder(item.path)
+                else
+                    detailsDrawer.show(item.path)
+            }
+        }
+
+        onItemDoubleClicked:
+        {
+            var item = viewLoader.item.model.get(index)
+
+            if(inx.isDir(item.path))
+                browser.openFolder(item.path)
+            else
+                browser.openFile(item.path)
+        }
+    }
 
     focus: true
-    headerbarTitle: iconsGrid.count + qsTr(" files")
+    headerbarTitle: viewLoader.item.count + qsTr(" files")
     headerbarExit: false
     headerBarLeft: IndexButton
     {
@@ -82,30 +126,21 @@ IndexPage
             id: browserContainer
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.margins: contentMargins * 2
+            Layout.margins: detailsView ? 0 : contentMargins * 2
 
             ColumnLayout
             {
                 anchors.fill: parent
 
-                IndexGrid
+                Loader
                 {
-                    id: iconsGrid
+                    id: viewLoader
+                    sourceComponent: detailsView ? listViewBrowser : gridViewBrowser
+
+                    Layout.topMargin: detailsView ? 0 : contentMargins * 2
+
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    onFolderClicked:
-                    {
-                        if(selectionMode)
-                            addToSelection(model.get(currentIndex), true)
-                        else
-                        {
-                            if(inx.isDir(model.get(currentIndex).path))
-                                browser.openFolder(model.get(currentIndex).path)
-                            else
-                                isMobile ? detailsDrawer.show(model.get(currentIndex).path):
-                                           browser.openFile(currentItem.path)
-                        }
-                    }
                 }
 
                 SelectionBar
@@ -171,11 +206,12 @@ IndexPage
 
     function clear()
     {
-        iconsGrid.model.clear()
+        viewLoader.item.model.clear()
     }
 
     function openFile(path)
     {
+        console.log("open file", path)
         inx.openFile(path)
     }
 
@@ -198,7 +234,7 @@ IndexPage
         var items = inx.getPathContent(path)
         if(items.length > 0)
             for(var i in items)
-                iconsGrid.model.append(items[i])
+                viewLoader.item.model.append(items[i])
 
         for(i=0; i < placesSidebar.placesList.count; i++)
             if(currentPath === placesSidebar.placesList.model.get(i).path)
@@ -297,9 +333,16 @@ IndexPage
 
     function remove(paths)
     {
-        clearSelection()
-
         for(var i in paths)
             inx.remove(paths[i])
     }
+
+
+    function switchView()
+    {
+        detailsView = !detailsView
+        inx.saveSettings("BROWSER_VIEW", detailsView, "BROWSER")
+        populate(currentPath)
+    }
+
 }

@@ -14,8 +14,9 @@ ItemDelegate
 
     property bool emblemAdded : false
     property bool keepEmblemOverlay : false
+    property bool isCurrentListItem :  ListView.isCurrentItem
 
-    property color labelColor : (GridView.isCurrentItem || (keepEmblemOverlay && emblemAdded)) && !hovered && showSelectionBackground? highlightedTextColor : textColor
+    property color labelColor : (isCurrentListItem || GridView.isCurrentItem || (keepEmblemOverlay && emblemAdded)) && !hovered && showSelectionBackground ? highlightedTextColor : textColor
     property color hightlightedColor : GridView.isCurrentItem || hovered || (keepEmblemOverlay && emblemAdded) ? highlightColor : "transparent"
 
     signal rightClicked();
@@ -26,7 +27,9 @@ ItemDelegate
 
     background: Rectangle
     {
-        color: "transparent"
+        color: !isDetails? "transparent" : (isCurrentListItem ? highlightColor :
+                                                                index % 2 === 0 ? Qt.lighter(backgroundColor) : backgroundColor)
+
     }
 
     MouseArea
@@ -44,6 +47,7 @@ ItemDelegate
     {
         id: emblem
         isMask: false
+
         iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
         visible: isHovered || (keepEmblemOverlay && emblemAdded)
         z: 999
@@ -73,12 +77,13 @@ ItemDelegate
             Layout.row: 1
             Layout.column: 1
             Layout.alignment: Qt.AlignCenter
-
+            Layout.leftMargin: isDetails ? space.medium : 0
             IndexButton
             {
                 anchors.centerIn: parent
                 iconName: model.iconName
-                isMask: false
+                isMask: folderSize <= iconSizes.medium
+                iconColor: labelColor
                 size: folderSize
                 enabled: false
             }
@@ -99,14 +104,15 @@ ItemDelegate
             Layout.row: isDetails ? 1 : 2
             Layout.column: isDetails ? 2 : 1
 
+            Layout.leftMargin: isDetails ? space.medium : 0
+
             Label
             {
-
                 visible: showLabel
                 text: label
-                width: parent.width * (isDetails ? 0.7 : 1)
+                width: parent.width
                 height: parent.height
-                horizontalAlignment: Qt.AlignHCenter
+                horizontalAlignment: isDetails? Qt.AlignLeft : Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
                 elide: Qt.ElideRight
                 wrapMode: Text.Wrap
@@ -115,16 +121,14 @@ ItemDelegate
 
                 Rectangle
                 {
-                    visible: parent.visible && showSelectionBackground
+                    visible: parent.visible && showSelectionBackground && !isDetails
                     anchors.fill: parent
                     z: -1
                     radius: Kirigami.Units.devicePixelRatio * 3
                     color: hightlightedColor
                     opacity: hovered ? 0.25 : 1
                 }
-
             }
         }
     }
-
 }

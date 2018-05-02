@@ -30,6 +30,7 @@ public:
     Q_INVOKABLE static void saveSettings(const QString &key, const QVariant &value, const QString &group);
     Q_INVOKABLE static QVariant loadSettings(const QString &key, const QString &group, const QVariant &defaultValue);
     Q_INVOKABLE static QVariantMap getDirInfo(const QString &path, const QString &type);
+    Q_INVOKABLE static QVariantMap getFileInfo(const QString &path);
 
     /*FILE ACTIONS*/
     Q_INVOKABLE static bool copy(const QStringList &paths, const QString &where);
@@ -40,6 +41,16 @@ public:
     Q_INVOKABLE static bool rename(const QString &path, const QString &name);
     Q_INVOKABLE static bool createDir(const QString &path, const QString &name);
     Q_INVOKABLE static bool createFile(const QString &path, const QString &name);
+
+    /*KDE*/
+    Q_INVOKABLE static QVariantList openWith(const QString &url);
+    Q_INVOKABLE static void runApplication(const QString &exec, const QString &url);
+
+    Q_INVOKABLE static QVariantList getKDEConnectDevices();
+    Q_INVOKABLE static bool sendToDevice(const QString &name, const QString &id, const QString &url);
+
+    Q_INVOKABLE static void attachToEmail(const QString &url);
+
 
 
 private:

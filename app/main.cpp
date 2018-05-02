@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
     QStringList importPathList = engine.importPathList();
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/kde/qmltermwidget");
     engine.setImportPathList(importPathList);
+//    QQuickStyle::setStyle("material");
 #endif
 
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));

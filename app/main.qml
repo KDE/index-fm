@@ -8,6 +8,7 @@ import QtQuick.Controls.Material 2.1
 import "widgets"
 import "widgets/views"
 import "widgets/sidebar"
+import "widgets/dialogs/share"
 
 import "widgets_templates"
 
@@ -38,6 +39,7 @@ Kirigami.ApplicationWindow
     property string buttonBackgroundColor: Kirigami.Theme.buttonBackgroundColor
     property string viewBackgroundColor: Kirigami.Theme.viewBackgroundColor
     property string altColor: Kirigami.Theme.complementaryBackgroundColor
+    property string altColorText: Kirigami.Theme.complementaryTextColor
 
     /* FOR MATERIAL*/
     Material.theme: Material.Light
@@ -59,23 +61,23 @@ Kirigami.ApplicationWindow
     readonly property int contentMargins: space.medium
     readonly property int defaultFontSize: Kirigami.Theme.defaultFont.pointSize
     readonly property var fontSizes: ({
-                                        tiny: defaultFontSize * 0.7,
+                                          tiny: defaultFontSize * 0.7,
 
-                                        small: (isMobile ? defaultFontSize * 0.7 :
-                                                            defaultFontSize * 0.8),
+                                          small: (isMobile ? defaultFontSize * 0.7 :
+                                                             defaultFontSize * 0.8),
 
-                                        medium: (isMobile ? defaultFontSize * 0.8 :
-                                                            defaultFontSize * 0.9),
+                                          medium: (isMobile ? defaultFontSize * 0.8 :
+                                                              defaultFontSize * 0.9),
 
-                                        default: (isMobile ? defaultFontSize * 0.9 :
-                                                            defaultFontSize),
+                                          default: (isMobile ? defaultFontSize * 0.9 :
+                                                               defaultFontSize),
 
-                                        big: (isMobile ? defaultFontSize :
-                                                        defaultFontSize * 1.1),
+                                          big: (isMobile ? defaultFontSize :
+                                                           defaultFontSize * 1.1),
 
-                                        large: (isMobile ? defaultFontSize * 1.1 :
-                                                            defaultFontSize * 1.2)
-                                    })
+                                          large: (isMobile ? defaultFontSize * 1.1 :
+                                                             defaultFontSize * 1.2)
+                                      })
 
     readonly property var space : ({
                                        tiny: Kirigami.Units.smallSpacing,
@@ -177,6 +179,7 @@ Kirigami.ApplicationWindow
         {
             if(multiple)
             {
+                clearSelection()
                 browser.remove(browser.selectedPaths)
                 browser.selectionBar.animate("red")
             }else  browser.remove([path])
@@ -196,6 +199,12 @@ Kirigami.ApplicationWindow
         id: newFileDialog
         title: "New file..."
         onFinished: inx.createFile(browser.currentPath, text)
+    }
+
+    ShareDialog
+    {
+        id: shareDialog
+        parent: browser
     }
 
     Component.onCompleted: if(isAndroid) android.statusbarColor(backgroundColor, true)

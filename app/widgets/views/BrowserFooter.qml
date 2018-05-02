@@ -23,10 +23,10 @@ ToolBar
                 id: viewBtn
                 anchors.centerIn: parent
                 isMask: true
-                iconName:  browser.grid.detailsView ? "view-list-icons" : "view-list-details"
+                iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
                 iconColor: highlightColor
 
-                onClicked: browser.grid.switchView()
+                onClicked: browser.switchView()
             }
 
         }
@@ -92,12 +92,12 @@ ToolBar
             IndexButton
             {
                 anchors.centerIn: parent
+                isMask: true
                 iconName: "documentinfo"
                 iconColor: detailsDrawer.visible ? highlightColor : textColor
                 onClicked: detailsDrawer.visible ? detailsDrawer.close() :
                                                            detailsDrawer.show(currentPath)
             }
         }
-
     }
 }

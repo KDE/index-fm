@@ -14,6 +14,10 @@
 #include <QMimeData>
 #include <QMimeDatabase>
 
+#if defined(Q_OS_ANDROID)
+#include "../android/android.h"
+#endif
+
 namespace INX
 {
 Q_NAMESPACE
@@ -74,14 +78,21 @@ inline QString getNameFromLocation(const QString &str)
     return ret;
 }
 
-const QString PicturesPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-const QString DownloadsPath = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
-const QString DocumentsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-const QString HomePath = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
-const QString MusicPath = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
-const QString VideosPath = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
+const QString PicturesPath = isAndroid() ? PATHS::PicturesPath :
+            QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+const QString DownloadsPath = isAndroid ? PATHS::DownloadsPath :
+            QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+const QString DocumentsPath = isAndroid ? PATHS::DocumentsPath :
+            QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+const QString HomePath = isAndroid ? PATHS::HomePath :
+            QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+const QString MusicPath = isAndroid ? PATHS::MusicPath :
+            QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
+const QString VideosPath = isAndroid ? PATHS::VideosPath :
+            QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
 const QString DesktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-const QStringList defaultPaths = {HomePath, DocumentsPath, MusicPath, VideosPath,PicturesPath, DownloadsPath, DesktopPath};
+
+const QStringList defaultPaths = {HomePath, DesktopPath, DocumentsPath, PicturesPath, MusicPath, VideosPath, DownloadsPath };
 
 
 const QMap<QString, QString> folderIcon
@@ -93,7 +104,6 @@ const QMap<QString, QString> folderIcon
     {MusicPath, "folder-music"},
     {VideosPath, "folder-videos"},
     {DesktopPath, "user-desktop"}
-
 };
 
 
@@ -101,7 +111,6 @@ inline QString getIconName(const QString &path)
 {
     if(QFileInfo(path).isDir())
     {
-
         if(folderIcon.contains(path))
             return folderIcon[path];
         else return "folder";
@@ -111,7 +120,7 @@ inline QString getIconName(const QString &path)
         QMimeDatabase mime;
         auto type = mime.mimeTypeForFile(path);
 
-        return isAndroid() ? type.genericIconName() : type.iconName();
+        return isAndroid() ? type.genericIconName() : type.genericIconName();
     }
     return "text-css";
 

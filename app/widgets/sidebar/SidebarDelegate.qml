@@ -34,7 +34,8 @@ ItemDelegate
                 anchors.centerIn: parent
                 iconName: model.iconName? model.iconName : ""
                 size: isMobile ? iconSizes.medium : iconSizes.small
-                isMask: false
+                isMask: !isMobile
+                iconColor: labelColor
             }
         }
 

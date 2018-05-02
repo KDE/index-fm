@@ -57,4 +57,28 @@ void Android::shareDialog(const QString &url)
         throw InterfaceConnFailedException();
 }
 
+QString Android::homePath()
+{
+
+    QAndroidJniObject mediaDir = QAndroidJniObject::callStaticObjectMethod("android/os/Environment", "getExternalStorageDirectory", "()Ljava/io/File;");
+    QAndroidJniObject mediaPath = mediaDir.callObjectMethod( "getAbsolutePath", "()Ljava/lang/String;" );
+
+    return mediaPath.toString();
+}
+
+
+QStringList Android::defaultPaths()
+{
+    QStringList paths;
+
+    paths.append(PATHS::HomePath);
+    paths.append(PATHS::DocumentsPath);
+    paths.append(PATHS::MusicPath);
+    paths.append(PATHS::VideosPath);
+    paths.append(PATHS::PicturesPath);
+    paths.append(PATHS::DownloadsPath);
+
+    return paths;
+}
+
 

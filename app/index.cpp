@@ -5,8 +5,17 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QStorageInfo>
-
+#include <QDebug>
 #include "inx.h"
+
+#if defined(Q_OS_ANDROID)
+#include "../android/android.h"
+#elif (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+#include "../kde/notify.h"
+#include "../kde/kdeconnect.h"
+#include "../kde/kde.h"
+#endif
+
 
 Index::Index(QObject *parent) : QObject(parent)
 {
@@ -26,7 +35,8 @@ bool Index::isAndroid()
 
 void Index::watchPath(const QString &path)
 {
-    watcher->removePaths(watcher->directories());
+    if(!watcher->directories().isEmpty())
+        watcher->removePaths(watcher->directories());
     watcher->addPath(path);
 }
 
@@ -143,7 +153,8 @@ QVariantList Index::packItems(const QStringList &items, const QString &type)
     QVariantList data;
 
     for(auto path : items)
-        data << getDirInfo(path, type);
+        if(INX::fileExists(path))
+            data << getDirInfo(path, type);
 
 
     return data;
@@ -161,6 +172,29 @@ QVariantMap Index::getDirInfo(const QString &path, const QString &type)
     };
 
     return data;
+}
+
+QVariantMap Index::getFileInfo(const QString &path)
+{
+    QFileInfo file(path);
+    if(!file.exists()) return QVariantMap();
+    QMimeDatabase mimedb;
+    auto mime = mimedb.mimeTypeForFile(path);
+
+    QVariantMap res =
+    {
+        {"group", file.group()},
+        {"owner", file.owner()},
+        {"suffix", file.completeSuffix()},
+        {"name", file.completeBaseName()},
+        {"fullname", file.fileName()},
+        {"date", file.birthTime().toString()},
+        {"modified", file.lastModified().toString()},
+        {"mimetype", mime.name()},
+        {"iconName", INX::getIconName(path)}
+    };
+
+    return res;
 }
 
 bool Index::copy(const QStringList &paths, const QString &where)
@@ -301,6 +335,43 @@ bool Index::createFile(const QString &path, const QString &name)
     }
 
     return false;
+}
+
+QVariantList Index::openWith(const QString &url)
+{
+#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+    return KDE::mimeApps(url);
+#elif defined (Q_OS_ANDROID)
+    return QVariantList();
+#endif
+}
+
+void Index::runApplication(const QString &exec, const QString &url)
+{
+#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+    return KDE::openWithApp(exec, url);
+#endif
+}
+
+QVariantList Index::getKDEConnectDevices()
+{
+#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+    return  KdeConnect::getDevices();
+#endif
+}
+
+bool Index::sendToDevice(const QString &name, const QString &id, const QString &url)
+{
+#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+    return KdeConnect::sendToDevice(name, id, url);
+#endif
+}
+
+void Index::attachToEmail(const QString &url)
+{
+#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+    KDE::attachEmail(url);
+#endif
 }
 
 void Index::saveSettings(const QString &key, const QVariant &value, const QString &group)

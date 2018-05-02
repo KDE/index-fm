@@ -7,22 +7,21 @@ GridView
 {
     id: folderGridRoot
 
-    property bool detailsView : false
     property int itemSize : iconSizes.large
-    property int itemSpacing: itemSize * 0.5 + (isMobile ? (detailsView ? space.medium : space.big) :
-                                                           (detailsView ? space.big : space.large))
+    property int itemSpacing: itemSize * 0.5 + (isMobile ? space.big :
+                                                           space.large)
 
-    signal folderClicked(int index)
-    signal folderDoubleClicked(int index)
+    signal itemClicked(int index)
+    signal itemDoubleClicked(int index)
 
-    flow: detailsView ? GridView.FlowTopToBottom : GridView.FlowLeftToRight
+    flow: GridView.FlowLeftToRight
     clip: true
     width: parent.width
     height: parent.height
 
-    cacheBuffer: cellHeight * 2
+    //    cacheBuffer: cellHeight * 2
 
-    cellWidth: (itemSize * (detailsView ? 5 : 1)) + itemSpacing
+    cellWidth: itemSize + itemSpacing
     cellHeight: itemSize + itemSpacing
 
     focus: true
@@ -37,10 +36,9 @@ GridView
     {
         id: delegate
 
-        isDetails: detailsView
-        width: cellWidth * (detailsView ? 1 : 0.9)
-        height: cellHeight * (detailsView ? 0.5 : 0.9)
-
+        isDetails: false
+        width: cellWidth * 0.9
+        height: cellHeight * 0.9
         folderSize : itemSize
         showTooltip: true
 
@@ -50,15 +48,13 @@ GridView
             onClicked:
             {
                 folderGridRoot.currentIndex = index
-                if(isMobile)
-                    folderClicked(index)
+                itemClicked(index)
             }
 
             onDoubleClicked:
             {
                 folderGridRoot.currentIndex = index
-                if(!isMobile)
-                    folderClicked(index)
+                itemDoubleClicked(index)
             }
 
             onPressAndHold:
@@ -81,8 +77,7 @@ GridView
         }
     }
 
-    ScrollBar.horizontal: ScrollBar{ visible: folderGridRoot.flow === GridView.FlowTopToBottom}
-    // ScrollBar.vertical: ScrollBar{ visible: folderGridRoot.flow === GridView.FlowLeftToRight}
+    ScrollBar.vertical: ScrollBar{ visible: true}
 
     onWidthChanged: adaptGrid()
 
@@ -102,18 +97,8 @@ GridView
         onPressAndHold: browserMenu.show()
     }
 
-    function switchView()
-    {
-        detailsView = !detailsView
-        adaptGrid()
-
-    }
-
     function adaptGrid()
     {
-        if(detailsView)
-            cellWidth = (itemSize * (detailsView ? 5 : 1))+ itemSpacing
-        else {
             var amount = parseInt(width/(itemSize + itemSpacing),10)
             var leftSpace = parseInt(width-(amount*(itemSize + itemSpacing)), 10)
             var size = parseInt((itemSize + itemSpacing)+(parseInt(leftSpace/amount, 10)), 10)
@@ -121,8 +106,5 @@ GridView
             size = size > itemSize + itemSpacing ? size : itemSize + itemSpacing
 
             cellWidth = size
-        }
-
     }
-
 }

@@ -2,6 +2,8 @@ QT += qml
 QT += quick
 QT += sql
 QT += widgets
+#QT += quickcontrols2
+
 CONFIG += c++11
 
 TARGET = index
