@@ -90,8 +90,7 @@ GridView
         {
             if(!isMobile && mouse.button === Qt.RightButton)
                 browserMenu.show()
-            else
-                clearSelection()
+
         }
 
         onPressAndHold: browserMenu.show()
@@ -99,12 +98,12 @@ GridView
 
     function adaptGrid()
     {
-            var amount = parseInt(width/(itemSize + itemSpacing),10)
-            var leftSpace = parseInt(width-(amount*(itemSize + itemSpacing)), 10)
-            var size = parseInt((itemSize + itemSpacing)+(parseInt(leftSpace/amount, 10)), 10)
+        var amount = parseInt(width/(itemSize + itemSpacing),10)
+        var leftSpace = parseInt(width-(amount*(itemSize + itemSpacing)), 10)
+        var size = parseInt((itemSize + itemSpacing)+(parseInt(leftSpace/amount, 10)), 10)
 
-            size = size > itemSize + itemSpacing ? size : itemSize + itemSpacing
+        size = size > itemSize + itemSpacing ? size : itemSize + itemSpacing
 
-            cellWidth = size
+        cellWidth = size
     }
 }
