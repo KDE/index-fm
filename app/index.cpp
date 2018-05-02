@@ -53,12 +53,11 @@ QVariantList Index::getPathContent(const QString &path)
             QVariantMap item =
             {
                 {"iconName", INX::getIconName(url)},
-                {"label", file.isDir() ? file.baseName() : file.baseName() + "."+file.suffix()},
+                {"label", file.isDir() ? file.baseName() : file.baseName() + "."+file.completeSuffix()},
                 {"path", url}
             };
             content << item;
         }
-
     }
     return content;
 }

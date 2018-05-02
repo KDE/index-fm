@@ -54,6 +54,7 @@ Item
             {
                 anchors.centerIn: parent
                 iconName: "go-next"
+                isMask: true
                 onClicked:
                 {
                     browser.openFolder(entry.text)
@@ -80,6 +81,7 @@ Item
             {
                 anchors.centerIn: parent
                 iconName: "go-home"
+                isMask: true
                 onClicked:
                 {
                     if(pageStack.currentIndex !== 0 && !pageStack.wideMode)

@@ -31,7 +31,7 @@ ToolBar
             IndexButton
             {
                 anchors.centerIn: parent
-
+                isMask: true
                 iconName: "application-menu"
                 onClicked: menuClicked()
 
@@ -81,7 +81,7 @@ ToolBar
                 anchors.centerIn: parent
 
                 //                iconColor: currentIndex === views.search? accentColor : textColor
-
+                isMask: true
                 iconName: "edit-find"
                 onClicked: searchClicked()
 

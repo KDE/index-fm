@@ -44,8 +44,7 @@ ColumnLayout
         }
 
 
-        model: ListModel
-        {}
+        model: ListModel {}
 
         delegate: SidebarDelegate
         {
