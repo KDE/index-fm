@@ -66,8 +66,7 @@ Item
                 Label
                 {
                     text: qsTr("Type: ")+ iteminfo.mimetype
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -77,8 +76,7 @@ Item
                 Label
                 {
                     text: qsTr("Date: ")+ iteminfo.date
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -88,8 +86,7 @@ Item
                 Label
                 {
                     text: qsTr("Modified: ")+ iteminfo.modified
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -99,8 +96,7 @@ Item
                 Label
                 {
                     text: qsTr("Owner: ")+ iteminfo.owner
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -110,8 +106,7 @@ Item
                 Label
                 {
                     text: qsTr("Tags: ")+ iteminfo.tags
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -121,8 +116,7 @@ Item
                 Label
                 {
                     text: qsTr("Permisions: ")+ iteminfo.permissions
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default

@@ -78,8 +78,6 @@ Item
                 Label
                 {
                     text: qsTr("Title: ")+ player.metaData.title
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -89,8 +87,7 @@ Item
                 Label
                 {
                     text: qsTr("Artist: ")+ player.metaData.albumArtist
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -100,8 +97,7 @@ Item
                 Label
                 {
                     text: qsTr("Album: ")+ player.metaData.albumTitle
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -111,8 +107,7 @@ Item
                 Label
                 {
                     text: qsTr("Author: ")+ player.metaData.author
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -122,8 +117,7 @@ Item
                 Label
                 {
                     text: qsTr("Codec: ")+ player.metaData.audioCodec
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -133,8 +127,7 @@ Item
                 Label
                 {
                     text: qsTr("Copyright: ")+ player.metaData.copyright
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -145,8 +138,7 @@ Item
                 Label
                 {
                     text: qsTr("Duration: ")+ player.metaData.duration
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -157,8 +149,7 @@ Item
                 Label
                 {
                     text: qsTr("Number: ")+ player.metaData.trackNumber
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -169,8 +160,7 @@ Item
                 Label
                 {
                     text: qsTr("Year: ")+ player.metaData.year
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -181,8 +171,7 @@ Item
                 Label
                 {
                     text: qsTr("Mood: ")+ player.metaData.mood
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
@@ -193,8 +182,7 @@ Item
                 Label
                 {
                     text: qsTr("Rating: ")+ player.metaData.userRating
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
+
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
