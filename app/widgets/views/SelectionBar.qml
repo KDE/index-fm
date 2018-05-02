@@ -113,6 +113,7 @@ Item
             IndexButton
             {
                 anchors.centerIn: parent
+                isMask: true
                 iconName: "overflow-menu"
                 iconColor: "white"
                 onClicked: itemMenu.showMultiple()

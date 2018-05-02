@@ -74,7 +74,7 @@ IndexPage
         onItemClicked:
         {
             var item = viewLoader.item.model.get(index)
-            if(selectionMode)
+            if(selectionMode && !inx.isDir(item.path))
                 addToSelection(item, true)
             else
             {
