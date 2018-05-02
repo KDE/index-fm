@@ -50,21 +50,34 @@ QVariantList Index::getPathContent(const QString &path)
         {
             auto url = it.next();
             QFileInfo file(url);
-            QVariantMap item =
+            content << QVariantMap
             {
-                {"iconName", INX::getIconName(url)},
-                {"label", file.isDir() ? file.baseName() : file.baseName() + "."+file.completeSuffix()},
-                {"path", url}
+            {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(url)},
+            {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], file.isDir() ? file.baseName() :
+                                                                    file.fileName()},
+                {INX::MODEL_NAME[INX::MODEL_KEY::PATH], url}
             };
-            content << item;
         }
     }
     return content;
 }
 
+QVariantList Index::getCustomPathContent(const QString &path)
+{
+    QVariantList res;
+#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+    if(path.startsWith(INX::CUSTOMPATH_PATH[INX::CUSTOMPATH::APPS]+"/"))
+        return KDE::getApps(QString(path).replace(INX::CUSTOMPATH_PATH[INX::CUSTOMPATH::APPS]+"/",""));
+    else
+        return KDE::getApps();
+
+#endif
+    return res;
+}
+
 QVariantList Index::getDefaultPaths()
 {
-    return packItems(INX::defaultPaths, "Places");
+    return packItems(INX::defaultPaths, INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::PLACES]);
 }
 
 bool Index::isDefaultPath(const QString &path)
@@ -83,10 +96,10 @@ QVariantList Index::getDevices()
         {
             QVariantMap drive =
             {
-                {"iconName", "drive-harddisk"},
-                {"label", device.displayName()},
-                {"path", device.rootPath()},
-                {"type", "Drives"}
+                {INX::MODEL_NAME[INX::MODEL_KEY::ICON], "drive-harddisk"},
+                {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], device.displayName()},
+                {INX::MODEL_NAME[INX::MODEL_KEY::PATH], device.rootPath()},
+                {INX::MODEL_NAME[INX::MODEL_KEY::TYPE], INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::DRIVES]}
             };
 
             drives << drive;
@@ -127,6 +140,16 @@ bool Index::isDir(const QString &path)
     return QFileInfo(path).isDir();
 }
 
+bool Index::isCustom(const QString &path)
+{
+    return path.startsWith("#");
+}
+
+bool Index::isApp(const QString &path)
+{
+    return QFileInfo(path).isExecutable() || path.endsWith(".desktop");
+}
+
 bool Index::openFile(const QString &path)
 {
     return QDesktopServices::openUrl(QUrl::fromLocalFile(path));
@@ -144,7 +167,21 @@ bool Index::bookmark(const QString &path)
 QVariantList Index::getBookmarks()
 {
     auto bookmarks = INX::loadSettings("BOOKMARKS", "INX", QStringList()).toStringList();
-    return packItems(bookmarks, "Bookmarks");
+    return packItems(bookmarks, INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::BOOKMARKS]);
+}
+
+QVariantList Index::getCustomPaths()
+{
+    return QVariantList
+    {
+        QVariantMap
+        {
+            {INX::MODEL_NAME[INX::MODEL_KEY::ICON], "system-run"},
+            {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], INX::CUSTOMPATH_NAME[INX::CUSTOMPATH::APPS]},
+            {INX::MODEL_NAME[INX::MODEL_KEY::PATH], INX::CUSTOMPATH_PATH[INX::CUSTOMPATH::APPS]},
+            {INX::MODEL_NAME[INX::MODEL_KEY::TYPE], INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::PLACES]}
+        }
+    };
 }
 
 QVariantList Index::packItems(const QStringList &items, const QString &type)
@@ -155,7 +192,6 @@ QVariantList Index::packItems(const QStringList &items, const QString &type)
         if(INX::fileExists(path))
             data << getDirInfo(path, type);
 
-
     return data;
 }
 
@@ -164,10 +200,10 @@ QVariantMap Index::getDirInfo(const QString &path, const QString &type)
     QFileInfo file (path);
     QVariantMap data =
     {
-        {"iconName", INX::getIconName(path)},
-        {"label", file.baseName()},
-        {"path", path},
-        {"type", type}
+        {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(path)},
+        {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], file.baseName()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::PATH], path},
+        {INX::MODEL_NAME[INX::MODEL_KEY::TYPE], type}
     };
 
     return data;
@@ -182,15 +218,15 @@ QVariantMap Index::getFileInfo(const QString &path)
 
     QVariantMap res =
     {
-        {"group", file.group()},
-        {"owner", file.owner()},
-        {"suffix", file.completeSuffix()},
-        {"name", file.completeBaseName()},
-        {"fullname", file.fileName()},
-        {"date", file.birthTime().toString()},
-        {"modified", file.lastModified().toString()},
-        {"mimetype", mime.name()},
-        {"iconName", INX::getIconName(path)}
+        {INX::MODEL_NAME[INX::MODEL_KEY::GROUP], file.group()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::OWNER], file.owner()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::SUFFIX], file.completeSuffix()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], file.completeBaseName()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::NAME], file.fileName()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::DATE], file.birthTime().toString()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::MODIFIED], file.lastModified().toString()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::MIME], mime.name()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(path)}
     };
 
     return res;
@@ -348,7 +384,7 @@ QVariantList Index::openWith(const QString &url)
 void Index::runApplication(const QString &exec, const QString &url)
 {
 #if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
-    return KDE::openWithApp(exec, url);
+    return url.isEmpty() ? KDE::launchApp(exec) : KDE::openWithApp(exec, url);
 #endif
 }
 

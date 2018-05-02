@@ -62,13 +62,16 @@ Menu
 
     function show()
     {
-        if(browser.isCopy)
-            pasteFiles = copyPaths.length
-        else if(browser.isCut)
-            pasteFiles = cutPaths.length
+        if(inx.isDir(browser.currentPath))
+        {
+            if(browser.isCopy)
+                pasteFiles = copyPaths.length
+            else if(browser.isCut)
+                pasteFiles = cutPaths.length
 
-        if(isMobile) open()
-        else popup()
+            if(isMobile) open()
+            else popup()
+        }
     }
 
 }

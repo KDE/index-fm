@@ -33,7 +33,7 @@ Item
                 anchors.centerIn: parent
                 flat: true
                 size: iconSizes.huge
-                iconName: iteminfo.iconName
+                iconName: iteminfo.icon
                 onClicked: player.playbackState === MediaPlayer.PlayingState ? player.pause() : player.play()
             }
         }

@@ -23,7 +23,7 @@ Item
                 anchors.centerIn: parent
                 flat: true
                 size: iconSizes.huge
-                iconName: iteminfo.iconName
+                iconName: iteminfo.icon
             }
         }
 
@@ -63,9 +63,10 @@ Item
                 spacing: space.small
                 width: parent.width
                 height: parent.height
+
                 Label
                 {
-                    text: qsTr("Type: ")+ iteminfo.mimetype
+                    text: qsTr("Type: ")+ iteminfo.mime
 
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap

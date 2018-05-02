@@ -78,10 +78,15 @@ IndexPage
                 addToSelection(item, true)
             else
             {
-                if(inx.isDir(item.path))
-                    browser.openFolder(item.path)
+                var path = item.path
+                if(inx.isDir(path))
+                    browser.openFolder(path)
+                else if(inx.isCustom(path))
+                    browser.openFolder(path)
+                else if(inx.isApp(path))
+                    browser.launchApp(path)
                 else
-                    detailsDrawer.show(item.path)
+                    detailsDrawer.show(path)
             }
         }
 
@@ -97,6 +102,7 @@ IndexPage
     }
 
     focus: true
+    headerbarVisible: inx.isDir(currentPath)
     headerbarTitle: viewLoader.item.count + qsTr(" files")
     headerbarExit: false
     headerBarLeft: IndexButton
@@ -189,7 +195,6 @@ IndexPage
                 drag.axis: Drag.YAxis
                 drag.smoothed: true
                 cursorShape: Qt.SizeVerCursor
-
             }
         }
 
@@ -213,9 +218,13 @@ IndexPage
         viewLoader.item.model.clear()
     }
 
+    function launchApp(path)
+    {
+        inx.runApplication(path, "")
+    }
+
     function openFile(path)
     {
-        console.log("open file", path)
         inx.openFile(path)
     }
 
@@ -230,10 +239,32 @@ IndexPage
         //            clearSelection()
     }
 
+    function openCustomPath(path)
+    {
+        console.log("openign custom location")
+
+        var items = inx.getCustomPathContent(path)
+        if(items.length > 0)
+            for(var i in items)
+                viewLoader.item.model.append(items[i])
+
+        for(i=0; i < placesSidebar.placesList.count; i++)
+            if(currentPath === placesSidebar.placesList.model.get(i).path)
+                placesSidebar.placesList.currentIndex = i
+
+        mainHeader.pathBar.append(currentPath)
+    }
+
     function populate(path)
     {
         currentPath = path
         clear()
+
+        if(path.indexOf("#") === 0)
+        {
+            browser.openCustomPath(path)
+            return;
+        }
 
         var items = inx.getPathContent(path)
         if(items.length > 0)
@@ -246,7 +277,6 @@ IndexPage
 
         mainHeader.pathBar.append(currentPath)
         inx.watchPath(currentPath)
-
     }
 
     function goBack()

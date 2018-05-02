@@ -51,7 +51,7 @@ ListView
             onRightClicked:
             {
                 viewerRoot.currentIndex = index
-                itemMenu.show(viewerRoot.model.get(index).path)
+                    itemMenu.show(viewerRoot.model.get(index).path)
             }
 
             onEmblemClicked:

@@ -60,24 +60,6 @@ inline bool isAndroid()
 #endif
 }
 
-inline QString getNameFromLocation(const QString &str)
-{
-    QString ret;
-    int index = 0;
-
-    for(int i = str.size() - 1; i >= 0; i--)
-        if(str[i] == '/')
-        {
-            index = i + 1;
-            i = -1;
-        }
-
-    for(; index < str.size(); index++)
-        ret.push_back(str[index]);
-
-    return ret;
-}
-
 #if defined(Q_OS_ANDROID)
 const QString PicturesPath = PATHS::PicturesPath;
 const QString DownloadsPath = PATHS::DownloadsPath;
@@ -86,20 +68,15 @@ const QString HomePath = PATHS::HomePath;
 const QString MusicPath = PATHS::MusicPath;
 const QString VideosPath = PATHS::VideosPath;
 const QString DesktopPath = PATHS::HomePath;
-const QStringList defaultPaths = {HomePath, DocumentsPath, PicturesPath, MusicPath, VideosPath, DownloadsPath };
-#else
-const QString PicturesPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-const QString DownloadsPath = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
-const QString DocumentsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-const QString HomePath =  QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
-const QString MusicPath = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
-const QString VideosPath = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
-const QString DesktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-const QStringList defaultPaths = {HomePath, DesktopPath, DocumentsPath, PicturesPath, MusicPath, VideosPath, DownloadsPath };
-
-#endif
-
-
+const QStringList defaultPaths =
+{
+    HomePath,
+    DocumentsPath,
+    PicturesPath,
+    MusicPath,
+    VideosPath,
+    DownloadsPath
+};
 
 const QMap<QString, QString> folderIcon
 {
@@ -112,6 +89,42 @@ const QMap<QString, QString> folderIcon
     {DesktopPath, "user-desktop"}
 };
 
+
+#else
+const QString PicturesPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+const QString DownloadsPath = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+const QString DocumentsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+const QString HomePath =  QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+const QString MusicPath = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
+const QString VideosPath = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
+const QString DesktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+const QString AppsPath = QStandardPaths::writableLocation(QStandardPaths::ApplicationsLocation);
+const QString RootPath = "/";
+const QStringList defaultPaths =
+{
+    HomePath,
+    DesktopPath,
+    DocumentsPath,
+    PicturesPath,
+    MusicPath,
+    VideosPath,
+    DownloadsPath
+};
+
+const QMap<QString, QString> folderIcon
+{
+    {PicturesPath, "folder-pictures"},
+    {DownloadsPath, "folder-download"},
+    {DocumentsPath, "folder-documents"},
+    {HomePath, "user-home"},
+    {MusicPath, "folder-music"},
+    {VideosPath, "folder-videos"},
+    {DesktopPath, "user-desktop"},
+    {AppsPath, "system-run"},
+    {RootPath, "folder-root"}
+};
+
+#endif
 
 inline QString getIconName(const QString &path)
 {
@@ -128,9 +141,80 @@ inline QString getIconName(const QString &path)
 
         return isAndroid() ? type.genericIconName() : type.genericIconName();
     }
-    return "text-css";
 
+    return "unkown";
 }
+
+enum class MODEL_KEY : uint_fast8_t
+{
+    ICON,
+    LABEL,
+    PATH,
+    TYPE,
+    GROUP,
+    OWNER,
+    SUFFIX,
+    NAME,
+    DATE,
+    MODIFIED,
+    MIME,
+    TAGS,
+    PERMISSIONS
+};
+
+static const QMap<MODEL_KEY, QString> MODEL_NAME =
+{
+    {MODEL_KEY::ICON, "icon"},
+    {MODEL_KEY::LABEL, "label"},
+    {MODEL_KEY::PATH, "path"},
+    {MODEL_KEY::TYPE, "type"},
+    {MODEL_KEY::GROUP, "group"},
+    {MODEL_KEY::OWNER, "owner"},
+    {MODEL_KEY::SUFFIX, "suffix"},
+    {MODEL_KEY::NAME, "name"},
+    {MODEL_KEY::DATE, "date"},
+    {MODEL_KEY::MODIFIED, "modified"},
+    {MODEL_KEY::MIME, "mime"},
+    {MODEL_KEY::TAGS, "tags"},
+    {MODEL_KEY::PERMISSIONS, "permissions"}
+};
+
+enum class CUSTOMPATH : uint_fast8_t
+{
+    APPS,
+    TAGS,
+    TRASH
+};
+
+static const QMap<CUSTOMPATH, QString> CUSTOMPATH_PATH =
+{
+    {CUSTOMPATH::APPS, "#apps"},
+    {CUSTOMPATH::TAGS, "#tags"},
+    {CUSTOMPATH::TRASH, "#trash"}
+};
+
+static const QMap<CUSTOMPATH, QString> CUSTOMPATH_NAME =
+{
+    {CUSTOMPATH::APPS, "Apps"},
+    {CUSTOMPATH::TAGS, "Tags"},
+    {CUSTOMPATH::TRASH, "Trash"}
+};
+
+enum class PATHTYPE_KEY : uint_fast8_t
+{
+    PLACES,
+    DRIVES,
+    BOOKMARKS,
+    TAGS
+};
+
+static const QMap<PATHTYPE_KEY, QString> PATHTYPE_NAME =
+{
+    {PATHTYPE_KEY::PLACES, "Places"},
+    {PATHTYPE_KEY::DRIVES, "Drives"},
+    {PATHTYPE_KEY::BOOKMARKS, "Bookmarks"},
+    {PATHTYPE_KEY::TAGS, "Tags"}
+};
 
 const QString SettingPath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)+"/pix/";
 const QString CachePath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation)+"/pix/";
@@ -139,39 +223,12 @@ const QString app = "Index";
 const QString version = "0.1.0";
 const QString description = "File manager";
 
-
-inline QString ucfirst(const QString &str)/*uppercase first letter*/
-{
-    if (str.isEmpty()) return "";
-
-    QStringList tokens;
-    QStringList result;
-    QString output;
-
-    if(str.contains(" "))
-    {
-        tokens = str.split(" ");
-
-        for(auto str : tokens)
-        {
-            str = str.toLower();
-            str[0] = str[0].toUpper();
-            result<<str;
-        }
-
-        output = result.join(" ");
-    }else output = str;
-
-    return output.simplified();
-}
-
 inline bool fileExists(const QString &url)
 {
     QFileInfo path(url);
     if (path.exists()) return true;
     else return false;
 }
-
 
 inline void saveSettings(const QString &key, const QVariant &value, const QString &group)
 {

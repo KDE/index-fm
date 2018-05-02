@@ -37,7 +37,7 @@ ItemDelegate
             IndexButton
             {
                 anchors.centerIn: parent
-                iconName: model.iconName? model.iconName : ""
+                iconName: model.icon? model.icon : ""
                 size: sidebarIconSize
                 isMask: !isMobile
                 iconColor: labelColor
@@ -57,7 +57,7 @@ ItemDelegate
                 verticalAlignment:  Qt.AlignVCenter
                 horizontalAlignment: Qt.AlignLeft
 
-                text: label
+                text: model.label
                 font.bold: false
                 elide: Text.ElideRight
 

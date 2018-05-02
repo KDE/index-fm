@@ -19,7 +19,6 @@ Item
         border.width: Math.floor(Kirigami.Units.devicePixelRatio)
     }
 
-
     RowLayout
     {
         id: pathEntry
@@ -35,7 +34,7 @@ Item
             Layout.leftMargin: contentMargins
             Layout.alignment: Qt.AlignVCenter
             verticalAlignment: Qt.AlignVCenter
-
+            color: textColor
             onAccepted:
             {
                 browser.openFolder(text)

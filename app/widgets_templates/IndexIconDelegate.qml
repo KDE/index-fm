@@ -78,10 +78,11 @@ ItemDelegate
             Layout.column: 1
             Layout.alignment: Qt.AlignCenter
             Layout.leftMargin: isDetails ? space.medium : 0
+
             IndexButton
             {
                 anchors.centerIn: parent
-                iconName: model.iconName
+                iconName: model.icon
                 isMask: folderSize <= iconSizes.medium
                 iconColor: labelColor
                 size: folderSize
@@ -109,7 +110,7 @@ ItemDelegate
             Label
             {
                 visible: showLabel
-                text: label
+                text: model.label
                 width: parent.width
                 height: parent.height
                 horizontalAlignment: isDetails? Qt.AlignLeft : Qt.AlignHCenter

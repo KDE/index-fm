@@ -99,11 +99,14 @@ Menu
 
     function show(url)
     {
-        path = url
-        multiple = false
-        isDir = inx.isDir(path)
-        if(isMobile) open()
-        else popup()
+        if(!inx.isCustom(browser.currentPath))
+        {
+            path = url
+            multiple = false
+            isDir = inx.isDir(path)
+            if(isMobile) open()
+            else popup()
+        }
     }
 
     function showMultiple()

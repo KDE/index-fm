@@ -206,7 +206,7 @@ Drawer
     {
         currentUrl = path
         iteminfo = inx.getFileInfo(path)
-        var mimetype = iteminfo.mimetype.slice(0, iteminfo.mimetype.indexOf("/"))
+        var mimetype = iteminfo.mime.slice(0, iteminfo.mime.indexOf("/"))
         isDir = false
 
         switch(mimetype)

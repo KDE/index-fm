@@ -71,7 +71,7 @@ Item
                 Label
                 {
 
-                    text: qsTr("Type: ")+ iteminfo.mimetype
+                    text: qsTr("Type: ")+ iteminfo.mime
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default

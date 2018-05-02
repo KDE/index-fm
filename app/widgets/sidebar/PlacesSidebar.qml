@@ -37,7 +37,6 @@ ColumnLayout
             height: mainHeader.height
         }
 
-
         model: ListModel {}
 
         delegate: SidebarDelegate
@@ -57,7 +56,6 @@ ColumnLayout
                         pageStack.currentIndex = 1
                 }
             }
-
         }
     }
 
@@ -67,6 +65,7 @@ ColumnLayout
     {
         clear()
         var places = inx.getDefaultPaths()
+        places.push(inx.getCustomPaths())
         places.push(inx.getBookmarks())
         places.push(inx.getDevices())
 

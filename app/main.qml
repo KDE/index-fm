@@ -208,5 +208,4 @@ Kirigami.ApplicationWindow
     }
 
     Component.onCompleted: if(isAndroid) android.statusbarColor(backgroundColor, true)
-
 }
