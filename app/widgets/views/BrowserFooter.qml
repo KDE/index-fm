@@ -42,6 +42,7 @@ ToolBar
             IndexButton
             {
                 anchors.centerIn: parent
+                isMask: true
 
                 iconName: "go-previous"
                 onClicked: browser.goBack()
@@ -58,6 +59,7 @@ ToolBar
             {
                 id: favIcon
                 anchors.centerIn: parent
+                isMask: true
 
                 iconName: "go-up"
                 onClicked: browser.goUp()
@@ -74,7 +76,7 @@ ToolBar
             IndexButton
             {
                 anchors.centerIn: parent
-
+                isMask: true
                 iconName: "go-next"
                 onClicked: browser.goNext()
             }

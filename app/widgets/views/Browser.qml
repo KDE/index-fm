@@ -102,12 +102,16 @@ IndexPage
     headerBarLeft: IndexButton
     {
         iconName: "view-refresh"
+        isMask: true
+
         onClicked: browser.refresh()
     }
 
     headerBarRight: IndexButton
     {
         iconName: "overflow-menu"
+        isMask: true
+
         onClicked:  browserMenu.show()
     }
 

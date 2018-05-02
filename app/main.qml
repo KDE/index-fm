@@ -54,7 +54,7 @@ Kirigami.ApplicationWindow
 
     property int iconSize : iconSizes.medium
 
-    readonly property int rowHeight: (defaultFontSize*2) + (isMobile ? space.big : space.large)
+    readonly property int rowHeight: (defaultFontSize*2) + (isMobile ? space.large : space.big)
 
     readonly property real factor : Kirigami.Units.gridUnit * (isMobile ? 0.2 : 0.2)
 
@@ -117,7 +117,7 @@ Kirigami.ApplicationWindow
     /*************************************************/
 
     overlay.modal: Rectangle {
-        color: isMobile ? altColor : "transparent"
+        color: isAndroid ? altColor : "transparent"
         opacity: 0.5
         height: root.height
     }

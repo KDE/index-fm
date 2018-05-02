@@ -139,6 +139,8 @@ Item
             IndexButton
             {
                 anchors.centerIn: parent
+                isMask: true
+
                 iconName: "filename-space-amarok"
                 onClicked: showEntryBar()
             }
