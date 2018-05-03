@@ -147,7 +147,7 @@ bool Index::isCustom(const QString &path)
 
 bool Index::isApp(const QString &path)
 {
-    return QFileInfo(path).isExecutable() || path.endsWith(".desktop");
+    return /*QFileInfo(path).isExecutable() ||*/ path.endsWith(".desktop");
 }
 
 bool Index::openFile(const QString &path)
