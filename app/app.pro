@@ -9,7 +9,6 @@ CONFIG += c++11
 TARGET = index
 DESTDIR = $$OUT_PWD/../
 
-
 linux:unix:!android {
 
     message(Building for Linux KDE)
