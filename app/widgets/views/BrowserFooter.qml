@@ -1,105 +1,52 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import "../../widgets_templates"
+import org.kde.maui 1.0 as Maui
 
-ToolBar
+Maui.ToolBar
 {
     position: ToolBar.Footer
 
-    RowLayout
+    leftContent: Maui.ToolButton
     {
-        anchors.fill: parent
+        id: viewBtn
+        iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
+        iconColor: highlightColor
 
-        Item
+        onClicked: browser.switchView()
+    }
+
+    middleContent: Row
+    {
+        anchors.centerIn: parent
+        spacing: space.medium
+        Maui.ToolButton
         {
-            Layout.alignment: Qt.AlignLeft
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.maximumWidth: iconSize * 2
+            iconName: "go-previous"
+            onClicked: browser.goBack()
+        }
 
-            IndexButton
-            {
-                id: viewBtn
-                anchors.centerIn: parent
-                isMask: true
-                iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
-                iconColor: highlightColor
 
-                onClicked: browser.switchView()
-            }
+        Maui.ToolButton
+        {
+            id: favIcon
+            iconName: "go-up"
+            onClicked: browser.goUp()
 
         }
 
-        Item { Layout.fillWidth: true }
-
-        Item
+        Maui.ToolButton
         {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.maximumWidth: iconSize*2
-
-            IndexButton
-            {
-                anchors.centerIn: parent
-                isMask: true
-
-                iconName: "go-previous"
-                onClicked: browser.goBack()
-            }
+            iconName: "go-next"
+            onClicked: browser.goNext()
         }
+    }
 
-        Item
-        {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.maximumWidth: iconSize*2
-
-            IndexButton
-            {
-                id: favIcon
-                anchors.centerIn: parent
-                isMask: true
-
-                iconName: "go-up"
-                onClicked: browser.goUp()
-
-            }
-        }
-
-        Item
-        {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.maximumWidth: iconSize*2
-
-            IndexButton
-            {
-                anchors.centerIn: parent
-                isMask: true
-                iconName: "go-next"
-                onClicked: browser.goNext()
-            }
-        }
-
-        Item { Layout.fillWidth: true }
-
-        Item
-        {
-            Layout.alignment: Qt.AlignRight
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.maximumWidth: iconSize * 2
-
-            IndexButton
-            {
-                anchors.centerIn: parent
-                isMask: true
-                iconName: "documentinfo"
-                iconColor: detailsDrawer.visible ? highlightColor : textColor
-                onClicked: detailsDrawer.visible ? detailsDrawer.close() :
-                                                           detailsDrawer.show(currentPath)
-            }
-        }
+    rightContent: Maui.ToolButton
+    {
+        iconName: "documentinfo"
+        iconColor: detailsDrawer.visible ? highlightColor : textColor
+        onClicked: detailsDrawer.visible ? detailsDrawer.close() :
+                                           detailsDrawer.show(currentPath)
     }
 }

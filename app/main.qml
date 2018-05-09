@@ -2,6 +2,8 @@ import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.maui 1.0 as Maui
+
 import QtQuick.Window 2.0
 import QtQuick.Controls.Material 2.1
 
@@ -14,12 +16,9 @@ import "widgets_templates"
 
 import "Index.js" as INX
 
-Kirigami.ApplicationWindow
+Maui.ApplicationWindow
 {
     id: root
-    visible: true
-    width: Screen.width * (isMobile ? 1 : 0.4)
-    height: Screen.height * (isMobile ? 1 : 0.4)
     title: qsTr("Index")
 
     property int sidebarWidth: Kirigami.Units.gridUnit * (isMobile ? 14 : 11)
@@ -116,20 +115,12 @@ Kirigami.ApplicationWindow
     /**************************************************/
     /*************************************************/
 
-    overlay.modal: Rectangle {
-        color: isAndroid ? altColor : "transparent"
-        opacity: 0.5
-        height: root.height
-    }
 
-    overlay.modeless: Rectangle {
-        color: "transparent"
-    }
-
-
-    header: IndexToolbar
+    headBar.middleContent: PathBar
     {
-        id: mainHeader
+        id: pathBar
+        height: iconSizes.big
+        width: parent.width
     }
 
     PlacesSidebar
@@ -138,7 +129,6 @@ Kirigami.ApplicationWindow
         anchors.fill: parent
 
         onPlaceClicked: browser.openFolder(path)
-
     }
 
     Browser

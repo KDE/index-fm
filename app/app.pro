@@ -9,6 +9,8 @@ CONFIG += c++11
 TARGET = index
 DESTDIR = $$OUT_PWD/../
 
+include($$PWD/../mauikit/mauikit.pri)
+
 linux:unix:!android {
 
     message(Building for Linux KDE)

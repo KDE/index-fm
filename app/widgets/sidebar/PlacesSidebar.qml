@@ -34,7 +34,7 @@ ColumnLayout
 
             isSection: true
             boldLabel: true
-            height: mainHeader.height
+            height: headBar.height
         }
 
         model: ListModel {}

@@ -6,8 +6,6 @@ import "../../widgets_templates"
 
 Item
 {
-    height: iconSizes.big
-
     Rectangle
     {
         anchors.fill: parent
@@ -28,6 +26,7 @@ Item
         TextInput
         {
             id: entry
+            clip: true
             height: parent.height
             Layout.fillHeight: true
             Layout.fillWidth: true

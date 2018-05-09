@@ -20,7 +20,7 @@ Page
     clip: true
     padding: 0
 
-    header:  ToolBar
+    header: ToolBar
     {
         id: headerBar
         height: implicitHeight

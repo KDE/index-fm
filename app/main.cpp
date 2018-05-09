@@ -21,6 +21,9 @@
 #include "../3rdparty/kirigami/src/kirigamiplugin.h"
 #endif
 
+#include "../mauikit/src/mauikit.h"
+
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -50,7 +53,6 @@ int main(int argc, char *argv[])
 
     context->setContextProperty("inx", &index);
 
-
 #ifdef STATIC_KIRIGAMI
     KirigamiPlugin::getInstance().registerTypes();
 #endif
@@ -64,6 +66,10 @@ int main(int argc, char *argv[])
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/kde/qmltermwidget");
     engine.setImportPathList(importPathList);
 //    QQuickStyle::setStyle("material");
+#endif
+
+#ifdef MAUI_APP
+    MauiKit::getInstance().registerTypes();
 #endif
 
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));

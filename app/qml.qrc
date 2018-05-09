@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>widgets/IndexToolbar.qml</file>
         <file>widgets_templates/IndexPage.qml</file>
         <file>widgets_templates/IndexListDelegate.qml</file>
         <file>widgets_templates/IndexList.qml</file>

@@ -4,8 +4,9 @@ import QtQuick.Layouts 1.3
 import "../../widgets_templates"
 import "../terminal"
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.maui 1.0 as Maui
 
-IndexPage
+Maui.Page
 {
     property string currentPath: inx.homePath()
     property var selectedPaths : []
@@ -57,7 +58,6 @@ IndexPage
         id: listViewBrowser
         IndexList
         {}
-
     }
 
     Component
@@ -102,25 +102,20 @@ IndexPage
     }
 
     focus: true
-    headerbarVisible: inx.isDir(currentPath)
-    headerbarTitle: viewLoader.item.count + qsTr(" files")
-    headerbarExit: false
-    headerBarLeft: IndexButton
+    headBarVisible: inx.isDir(currentPath)
+    headBarTitle: viewLoader.item.count + qsTr(" files")
+    headBarExit: false
+    headBar.leftContent: Maui.ToolButton
     {
         iconName: "view-refresh"
-        isMask: true
-
         onClicked: browser.refresh()
     }
 
-    headerBarRight: IndexButton
+    headBar.rightContent: Maui.ToolButton
     {
         iconName: "overflow-menu"
-        isMask: true
-
         onClicked:  browserMenu.show()
     }
-
 
     footer: BrowserFooter
     {
@@ -252,7 +247,7 @@ IndexPage
             if(currentPath === placesSidebar.placesList.model.get(i).path)
                 placesSidebar.placesList.currentIndex = i
 
-        mainHeader.pathBar.append(currentPath)
+        pathBar.append(currentPath)
     }
 
     function populate(path)
@@ -275,7 +270,7 @@ IndexPage
             if(currentPath === placesSidebar.placesList.model.get(i).path)
                 placesSidebar.placesList.currentIndex = i
 
-        mainHeader.pathBar.append(currentPath)
+        pathBar.append(currentPath)
         inx.watchPath(currentPath)
     }
 
