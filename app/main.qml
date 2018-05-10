@@ -28,99 +28,11 @@ Maui.ApplicationWindow
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
 
-    readonly property bool isMobile : Kirigami.Settings.isMobile
-    readonly property bool isAndroid : inx.isAndroid()
-
-    property string backgroundColor: Kirigami.Theme.backgroundColor
-    property string textColor: Kirigami.Theme.textColor
-    property string highlightColor: Kirigami.Theme.highlightColor
-    property string highlightedTextColor: Kirigami.Theme.highlightedTextColor
-    property string buttonBackgroundColor: Kirigami.Theme.buttonBackgroundColor
-    property string viewBackgroundColor: Kirigami.Theme.viewBackgroundColor
-    property string altColor: Kirigami.Theme.complementaryBackgroundColor
-    property string altColorText: Kirigami.Theme.complementaryTextColor
-
-    /* FOR MATERIAL*/
-    Material.theme: Material.Light
-    Material.accent: highlightColor
-    Material.background: viewBackgroundColor
-    Material.primary: backgroundColor
-    Material.foreground: textColor
-
-    /***************************************************/
-    /******************** UI UNITS ********************/
-    /*************************************************/
-
-    property int iconSize : iconSizes.medium
-
-    readonly property int rowHeight: (defaultFontSize*2) + (isMobile ? space.large : space.big)
-
-    readonly property real factor : Kirigami.Units.gridUnit * (isMobile ? 0.2 : 0.2)
-
-    readonly property int contentMargins: space.medium
-    readonly property int defaultFontSize: Kirigami.Theme.defaultFont.pointSize
-    readonly property var fontSizes: ({
-                                          tiny: defaultFontSize * 0.7,
-
-                                          small: (isMobile ? defaultFontSize * 0.7 :
-                                                             defaultFontSize * 0.8),
-
-                                          medium: (isMobile ? defaultFontSize * 0.8 :
-                                                              defaultFontSize * 0.9),
-
-                                          default: (isMobile ? defaultFontSize * 0.9 :
-                                                               defaultFontSize),
-
-                                          big: (isMobile ? defaultFontSize :
-                                                           defaultFontSize * 1.1),
-
-                                          large: (isMobile ? defaultFontSize * 1.1 :
-                                                             defaultFontSize * 1.2)
-                                      })
-
-    readonly property var space : ({
-                                       tiny: Kirigami.Units.smallSpacing,
-                                       small: Kirigami.Units.smallSpacing*2,
-                                       medium: Kirigami.Units.largeSpacing,
-                                       big: Kirigami.Units.largeSpacing*2,
-                                       large: Kirigami.Units.largeSpacing*3,
-                                       huge: Kirigami.Units.largeSpacing*4,
-                                       enormus: Kirigami.Units.largeSpacing*5
-                                   })
-
-    readonly property var iconSizes : ({
-                                           tiny : Kirigami.Units.iconSizes.small*0.5,
-
-                                           small :  (isMobile ? Kirigami.Units.iconSizes.small*0.5:
-                                                                Kirigami.Units.iconSizes.small),
-
-                                           medium : (isMobile ? (isAndroid ? 22 : Kirigami.Units.iconSizes.small) :
-                                                                Kirigami.Units.iconSizes.smallMedium),
-
-                                           big:  (isMobile ? Kirigami.Units.iconSizes.smallMedium :
-                                                             Kirigami.Units.iconSizes.medium),
-
-                                           large: (isMobile ? Kirigami.Units.iconSizes.medium :
-                                                              Kirigami.Units.iconSizes.large),
-
-                                           huge: (isMobile ? Kirigami.Units.iconSizes.large :
-                                                             Kirigami.Units.iconSizes.huge),
-
-                                           enormous: (isMobile ? Kirigami.Units.iconSizes.huge :
-                                                                 Kirigami.Units.iconSizes.enormous)
-
-                                       })
-
-    /***************************************************/
-    /**************************************************/
-    /*************************************************/
-
-
     headBar.middleContent: PathBar
     {
         id: pathBar
         height: iconSizes.big
-        width: parent.width
+        width: headBar.width * (isMobile ? 0.6 : 0.7)
     }
 
     PlacesSidebar

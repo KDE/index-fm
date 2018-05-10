@@ -204,7 +204,7 @@ Maui.Page
             Layout.maximumHeight: parent.height *0.5
             anchors.bottom: parent.bottom
             anchors.top: handle.bottom
-            source: !isMobile ? "../terminal/Terminal.qml" : undefined
+            source: !isMobile ? "../terminal/Terminal.qml" : ""
         }
     }
 

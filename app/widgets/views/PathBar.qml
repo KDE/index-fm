@@ -2,8 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
-import "../../widgets_templates"
-
+import org.kde.maui 1.0 as Maui
 Item
 {
     Rectangle
@@ -48,11 +47,10 @@ Item
             Layout.rightMargin: space.small
             width: iconSize
 
-            IndexButton
+            Maui.ToolButton
             {
                 anchors.centerIn: parent
                 iconName: "go-next"
-                isMask: true
                 onClicked:
                 {
                     browser.openFolder(entry.text)
@@ -75,11 +73,10 @@ Item
             Layout.rightMargin: space.small
             width: iconSize
 
-            IndexButton
+            Maui.ToolButton
             {
                 anchors.centerIn: parent
                 iconName: "go-home"
-                isMask: true
                 onClicked:
                 {
                     if(pageStack.currentIndex !== 0 && !pageStack.wideMode)
@@ -134,11 +131,9 @@ Item
             Layout.leftMargin: space.small
             Layout.rightMargin: space.small
             width: iconSize
-            IndexButton
+            Maui.ToolButton
             {
                 anchors.centerIn: parent
-                isMask: true
-
                 iconName: "filename-space-amarok"
                 onClicked: showEntryBar()
             }

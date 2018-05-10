@@ -2,7 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
-import "../../widgets_templates"
+import org.kde.maui 1.0 as Maui
 import "Previewer"
 
 Drawer
@@ -11,7 +11,7 @@ Drawer
     edge: Qt.RightEdge
     width: Kirigami.Units.gridUnit * 17
     height: browserContainer.height
-    y: headerBar.height + headBar.height
+    y: isMobile ?browser.headBar.height: browser.headBar.height + headBar.height
     //    visible: opened ? pageStack.currentIndex = 1 && pageStack.wideMode : false
     clip: true
     property string currentUrl: ""
@@ -122,7 +122,7 @@ Drawer
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        IndexButton
+                        Maui.ToolButton
                         {
                             anchors.centerIn: parent
                             isMask: true
@@ -142,7 +142,7 @@ Drawer
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        IndexButton
+                        Maui.ToolButton
                         {
                             anchors.centerIn: parent
                             isMask: true
@@ -157,7 +157,7 @@ Drawer
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        IndexButton
+                        Maui.ToolButton
                         {
                             anchors.centerIn: parent
                             isMask: true
@@ -178,7 +178,7 @@ Drawer
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        IndexButton
+                        Maui.ToolButton
                         {
                             anchors.centerIn: parent
                             isMask: true

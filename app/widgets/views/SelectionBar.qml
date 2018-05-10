@@ -3,6 +3,7 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import "../../widgets_templates"
+import org.kde.maui 1.0 as Maui
 
 Item
 {
@@ -52,10 +53,9 @@ Item
             anchors.verticalCenter: parent.top
             anchors.horizontalCenter: parent.left
 
-            IndexButton
+            Maui.ToolButton
             {
                 anchors.centerIn: parent
-                isMask: true
                 iconName: "window-close"
                 iconColor: "white"
                 size: iconSizes.small
@@ -110,10 +110,9 @@ Item
             Layout.fillHeight: true
             Layout.maximumWidth: iconSizes.medium
 
-            IndexButton
+            Maui.ToolButton
             {
                 anchors.centerIn: parent
-                isMask: true
                 iconName: "overflow-menu"
                 iconColor: "white"
                 onClicked: itemMenu.showMultiple()

@@ -11,21 +11,18 @@ Maui.ToolBar
     {
         id: viewBtn
         iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
-        iconColor: highlightColor
-
         onClicked: browser.switchView()
     }
 
     middleContent: Row
     {
-        anchors.centerIn: parent
+
         spacing: space.medium
         Maui.ToolButton
         {
             iconName: "go-previous"
             onClicked: browser.goBack()
         }
-
 
         Maui.ToolButton
         {

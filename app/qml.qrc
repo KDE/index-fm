@@ -1,12 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>widgets_templates/IndexPage.qml</file>
         <file>widgets_templates/IndexListDelegate.qml</file>
         <file>widgets_templates/IndexList.qml</file>
         <file>widgets_templates/IndexIconDelegate.qml</file>
         <file>widgets_templates/IndexGrid.qml</file>
-        <file>widgets_templates/IndexButton.qml</file>
         <file>widgets/sidebar/SidebarDelegate.qml</file>
         <file>widgets/sidebar/PlacesSidebar.qml</file>
         <file>widgets_templates/IndexDelegate.qml</file>

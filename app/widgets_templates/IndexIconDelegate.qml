@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.2 as Kirigami
+import org.kde.maui 1.0 as Maui
 
 ItemDelegate
 {
@@ -43,11 +44,10 @@ ItemDelegate
         }
     }
 
-    IndexButton
+    Maui.ToolButton
     {
         id: emblem
         isMask: false
-
         iconName: (keepEmblemOverlay && emblemAdded) ? "emblem-remove" : "emblem-added"
         visible: isHovered || (keepEmblemOverlay && emblemAdded)
         z: 999
@@ -79,7 +79,7 @@ ItemDelegate
             Layout.alignment: Qt.AlignCenter
             Layout.leftMargin: isDetails ? space.medium : 0
 
-            IndexButton
+            Maui.ToolButton
             {
                 anchors.centerIn: parent
                 iconName: model.icon
