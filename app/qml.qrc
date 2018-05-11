@@ -5,7 +5,6 @@
         <file>widgets_templates/IndexList.qml</file>
         <file>widgets_templates/IndexIconDelegate.qml</file>
         <file>widgets_templates/IndexGrid.qml</file>
-        <file>widgets/sidebar/SidebarDelegate.qml</file>
         <file>widgets/sidebar/PlacesSidebar.qml</file>
         <file>widgets_templates/IndexDelegate.qml</file>
         <file>widgets/views/Browser.qml</file>

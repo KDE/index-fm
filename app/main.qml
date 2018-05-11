@@ -21,12 +21,14 @@ Maui.ApplicationWindow
     id: root
     title: qsTr("Index")
 
-    property int sidebarWidth: Kirigami.Units.gridUnit * (isMobile ? 14 : 11)
+    property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
+                                                           Kirigami.Units.gridUnit * (isMobile ? 14 : 11)
 
     pageStack.defaultColumnWidth: sidebarWidth
     pageStack.initialPage: [placesSidebar, browser]
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
+    highlightColor: "#8682dd"
 
     headBar.middleContent: PathBar
     {
@@ -38,8 +40,10 @@ Maui.ApplicationWindow
     PlacesSidebar
     {
         id: placesSidebar
-        anchors.fill: parent
         onPlaceClicked: browser.openFolder(path)
+
+        width: isCollapsed ? iconSize*2 : parent.width
+        height: parent.height
     }
 
     Browser

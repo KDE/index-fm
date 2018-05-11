@@ -11,7 +11,7 @@ Drawer
     edge: Qt.RightEdge
     width: Kirigami.Units.gridUnit * 17
     height: browserContainer.height
-    y: isMobile ?browser.headBar.height: browser.headBar.height + headBar.height
+    y: isMobile ? browser.headBar.height : headBar.height
     //    visible: opened ? pageStack.currentIndex = 1 && pageStack.wideMode : false
     clip: true
     property string currentUrl: ""

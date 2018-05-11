@@ -1,62 +1,42 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import org.kde.maui 1.0 as Maui
 import "../../widgets_templates"
 
-ColumnLayout
+Maui.SideBar
 {
-    property alias placesList : placesList
+    id: placesList
+
     signal placeClicked (string path)
     focus: true
+    clip: true
 
-    ListView
+    section.property :  !placesList.isCollapsed ? "type" : ""
+    section.criteria: ViewSection.FullString
+    section.delegate: IndexDelegate
     {
-        id: placesList
-        clip: true
-        Layout.fillHeight: true
-        Layout.fillWidth: true
+        id: delegate
+        label: section
+        labelTxt.font.pointSize: fontSizes.big
 
-        keyNavigationEnabled: true
+        isSection: true
+        boldLabel: true
+        height: headBar.height
 
-        focus: true
-        interactive: true
-        highlightFollowsCurrentItem: true
-        highlightMoveDuration: 0
-        snapMode: ListView.SnapToItem
-
-        section.property : "type"
-        section.criteria: ViewSection.FullString
-        section.delegate: IndexDelegate
+        Connections
         {
-            id: delegate
-            label: section
-            labelTxt.font.pointSize: fontSizes.big
-
-            isSection: true
-            boldLabel: true
-            height: headBar.height
+            target: delegate
+            onClicked: placesList.isCollapsed = true
         }
+    }
 
-        model: ListModel {}
+    onItemClicked:
+    {
+        placeClicked(item.path)
 
-        delegate: SidebarDelegate
-        {
-            id: placeDelegate
-
-            Connections
-            {
-                target: placeDelegate
-
-                onClicked:
-                {
-                    placesList.currentIndex = index
-                    placeClicked(placesList.model.get(index).path)
-
-                    if(pageStack.currentIndex === 0 && !pageStack.wideMode)
-                        pageStack.currentIndex = 1
-                }
-            }
-        }
+        if(pageStack.currentIndex === 0 && !pageStack.wideMode)
+            pageStack.currentIndex = 1
     }
 
     Component.onCompleted: populate()
