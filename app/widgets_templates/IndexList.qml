@@ -10,6 +10,10 @@ ListView
     signal itemClicked(int index)
     signal itemDoubleClicked(int index)
 
+//    maximumFlickVelocity: 400
+
+    snapMode: ListView.SnapToItem
+
     width: parent.width
     height: parent.height
 

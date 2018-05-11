@@ -102,20 +102,7 @@ Maui.Page
     }
 
     focus: true
-    headBarVisible: inx.isDir(currentPath)
-    headBarTitle: viewLoader.item.count + qsTr(" files")
-    headBarExit: false
-    headBar.leftContent: Maui.ToolButton
-    {
-        iconName: "view-refresh"
-        onClicked: browser.refresh()
-    }
-
-    headBar.rightContent: Maui.ToolButton
-    {
-        iconName: "overflow-menu"
-        onClicked:  browserMenu.show()
-    }
+    headBarVisible: false
 
     footer: BrowserFooter
     {

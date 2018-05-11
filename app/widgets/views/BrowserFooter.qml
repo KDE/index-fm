@@ -39,11 +39,18 @@ Maui.ToolBar
         }
     }
 
-    rightContent: Maui.ToolButton
-    {
-        iconName: "documentinfo"
-        iconColor: detailsDrawer.visible ? highlightColor : textColor
-        onClicked: detailsDrawer.visible ? detailsDrawer.close() :
-                                           detailsDrawer.show(currentPath)
-    }
+    rightContent:  [
+        Maui.ToolButton
+        {
+            iconName: "documentinfo"
+            iconColor: detailsDrawer.visible ? highlightColor : textColor
+            onClicked: detailsDrawer.visible ? detailsDrawer.close() :
+                                               detailsDrawer.show(currentPath)
+        },
+        Maui.ToolButton
+        {
+            iconName: "overflow-menu"
+            onClicked:  browserMenu.show()
+        }
+    ]
 }

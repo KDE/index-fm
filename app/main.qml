@@ -39,7 +39,6 @@ Maui.ApplicationWindow
     {
         id: placesSidebar
         anchors.fill: parent
-
         onPlaceClicked: browser.openFolder(path)
     }
 
@@ -57,7 +56,6 @@ Maui.ApplicationWindow
     ItemMenu
     {
         id: itemMenu
-
         onBookmarkClicked: INX.bookmarkFolder(path)
         onCopyClicked:
         {

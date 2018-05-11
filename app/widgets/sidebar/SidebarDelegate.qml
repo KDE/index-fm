@@ -3,7 +3,6 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
 import org.kde.kirigami 2.2 as Kirigami
 import org.kde.maui 1.0 as Maui
-import "../../widgets_templates"
 
 ItemDelegate
 {
@@ -20,9 +19,9 @@ ItemDelegate
     Rectangle
     {
         anchors.fill: parent
-        color: isCurrentListItem ? highlightColor :
-                                   index % 2 === 0 ? Qt.lighter(backgroundColor,1.2) :
-                                                     backgroundColor
+        color: isCurrentListItem ? highlightColor : "transparent"
+//                                   index % 2 === 0 ? Qt.lighter(backgroundColor,1.2) :
+//                                                     backgroundColor
     }
 
     RowLayout
