@@ -23,12 +23,6 @@ Maui.SideBar
         isSection: true
         boldLabel: true
         height: headBar.height
-
-        Connections
-        {
-            target: delegate
-            onClicked: placesList.isCollapsed = true
-        }
     }
 
     onItemClicked:

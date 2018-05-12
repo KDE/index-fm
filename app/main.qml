@@ -29,12 +29,13 @@ Maui.ApplicationWindow
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
     highlightColor: "#8682dd"
+    altColor: "#43455a"
 
     headBar.middleContent: PathBar
     {
         id: pathBar
         height: iconSizes.big
-        width: headBar.width * (isMobile ? 0.6 : 0.7)
+        width: headBar.width * (isMobile ? 0.6 : 0.8)
     }
 
     PlacesSidebar

@@ -25,6 +25,7 @@ Maui.Page
 
     property alias grid : viewLoader.item
     property alias detailsDrawer: detailsDrawer
+    property alias browserMenu: browserMenu
 
     property var previousPath: []
     property var nextPath: []
@@ -230,9 +231,9 @@ Maui.Page
             for(var i in items)
                 viewLoader.item.model.append(items[i])
 
-        for(i=0; i < placesSidebar.placesList.count; i++)
-            if(currentPath === placesSidebar.placesList.model.get(i).path)
-                placesSidebar.placesList.currentIndex = i
+        for(i=0; i < placesSidebar.count; i++)
+            if(currentPath === placesSidebar.model.get(i).path)
+                placesSidebar.currentIndex = i
 
         pathBar.append(currentPath)
     }

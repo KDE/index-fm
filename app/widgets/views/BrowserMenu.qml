@@ -59,6 +59,12 @@ Menu
         onTriggered: newFileDialog.open()
     }
 
+    MenuItem
+    {
+        text: qsTr("Compact mode")
+        onTriggered: placesSidebar.isCollapsed = !placesSidebar.isCollapsed
+    }
+
 
     function show()
     {

@@ -20,10 +20,10 @@ Item
         id: bg
         anchors.fill: parent
         z:-1
-        color: Kirigami.Theme.complementaryBackgroundColor
+        color: altColor
         radius: 4
         opacity: 0.6
-        border.color: "black"
+        border.color: Qt.darker(altColor, 1.6)
 
         SequentialAnimation
         {
@@ -48,7 +48,7 @@ Item
             height: iconSizes.medium
             width: iconSizes.medium
             radius: Math.min(width, height)
-            color: Kirigami.Theme.complementaryBackgroundColor
+            color: altColor
 
             anchors.verticalCenter: parent.top
             anchors.horizontalCenter: parent.left
@@ -57,7 +57,7 @@ Item
             {
                 anchors.centerIn: parent
                 iconName: "window-close"
-                iconColor: "white"
+                iconColor: altColorText
                 size: iconSizes.small
                 flat: true
                 onClicked: clearSelection()
@@ -93,7 +93,7 @@ Item
                 emblemAdded: true
                 keepEmblemOverlay: true
                 showSelectionBackground: false
-                labelColor: "white"
+                labelColor: altColorText
                 showTooltip: true
                 Connections
                 {
@@ -114,7 +114,7 @@ Item
             {
                 anchors.centerIn: parent
                 iconName: "overflow-menu"
-                iconColor: "white"
+                iconColor: altColorText
                 onClicked: itemMenu.showMultiple()
             }
         }
