@@ -159,6 +159,6 @@ Maui.ApplicationWindow
     Maui.ShareDialog
     {
         id: shareDialog
-        parent: browser
+//        parent: browser
     }
 }

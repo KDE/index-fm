@@ -89,6 +89,16 @@ Menu
 
     MenuItem
     {
+        text: qsTr("Info...")
+        onTriggered:
+        {
+            browser.detailsDrawer.show(path)
+            close()
+        }
+    }
+
+    MenuItem
+    {
         visible: browser.selectionMode
         text: qsTr("Select")
         enabled: isDir

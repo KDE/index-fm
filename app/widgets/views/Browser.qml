@@ -87,7 +87,7 @@ Maui.Page
                 else if(inx.isApp(path))
                     browser.launchApp(path)
                 else
-                    detailsDrawer.show(path)
+                    isMobile ? detailsDrawer.show(path) : browser.openFile(path)
             }
         }
 
