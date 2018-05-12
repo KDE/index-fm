@@ -12,7 +12,6 @@
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
 #include <QIcon>
-#include "../android/android.h"
 #else
 #include <QApplication>
 #endif
@@ -59,8 +58,6 @@ int main(int argc, char *argv[])
 
 #ifdef Q_OS_ANDROID
     QIcon::setThemeName("Luv");
-    Android android;
-    context->setContextProperty("android", &android);
 #else
     QStringList importPathList = engine.importPathList();
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/kde/qmltermwidget");

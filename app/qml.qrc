@@ -8,7 +8,6 @@
         <file>widgets/sidebar/PlacesSidebar.qml</file>
         <file>widgets_templates/IndexDelegate.qml</file>
         <file>widgets/views/Browser.qml</file>
-        <file>widgets/views/BrowserFooter.qml</file>
         <file>widgets_templates/ItemMenu.qml</file>
         <file>Index.js</file>
         <file>widgets/views/PathBar.qml</file>

@@ -29,10 +29,7 @@ class KDE : public QObject
 {
         Q_OBJECT
     public:
-        explicit KDE(QObject *parent = nullptr);
-        static QVariantList mimeApps(const QUrl &url);
-        static void openWithApp(const QString &exec, const QString &url);
-        static void attachEmail(const QString &url);
+        explicit KDE(QObject *parent = nullptr);     
         static QVariantList getApps();
         static QVariantList getApps(const QString &groupStr);
         static void launchApp(const QString &app);

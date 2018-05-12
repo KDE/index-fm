@@ -11,7 +11,7 @@ Drawer
     edge: Qt.RightEdge
     width: Kirigami.Units.gridUnit * 17
     height: browserContainer.height
-    y: isMobile ? browser.headBar.height : headBar.height
+    y: root.headBar.height
     //    visible: opened ? pageStack.currentIndex = 1 && pageStack.wideMode : false
     clip: true
     property string currentUrl: ""
@@ -130,7 +130,7 @@ Drawer
                             iconColor: altColorText
                             onClicked:
                             {
-                                isAndroid ? android.shareDialog(currentUrl) :
+                                isAndroid ? Maui.Android.shareDialog(currentUrl) :
                                             shareDialog.show(currentUrl)
                                 close()
                             }

@@ -105,11 +105,6 @@ Maui.Page
     focus: true
     headBarVisible: false
 
-    footer: BrowserFooter
-    {
-        id: browserFooter
-    }
-
     contentItem : ColumnLayout
     {
         spacing: 0

@@ -47,14 +47,7 @@ public:
     Q_INVOKABLE static bool createFile(const QString &path, const QString &name);
 
     /*KDE*/
-    Q_INVOKABLE static QVariantList openWith(const QString &url);
     Q_INVOKABLE static void runApplication(const QString &exec, const QString &url);
-
-    Q_INVOKABLE static QVariantList getKDEConnectDevices();
-    Q_INVOKABLE static bool sendToDevice(const QString &name, const QString &id, const QString &url);
-
-    Q_INVOKABLE static void attachToEmail(const QString &url);
-
 
 
 private:

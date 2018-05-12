@@ -30,6 +30,7 @@ Maui.ApplicationWindow
     pageStack.separatorVisible: pageStack.wideMode
     highlightColor: "#8682dd"
     altColor: "#43455a"
+    altToolBars: false
 
     headBar.middleContent: PathBar
     {
@@ -37,6 +38,55 @@ Maui.ApplicationWindow
         height: iconSizes.big
         width: headBar.width * (isMobile ? 0.6 : 0.8)
     }
+
+    footBar.visible: pageStack.currentIndex !== 0 || pageStack.wideMode
+
+    footBar.leftContent: Maui.ToolButton
+    {
+        id: viewBtn
+        iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
+        onClicked: browser.switchView()
+    }
+
+    footBar.middleContent: Row
+    {
+
+        spacing: space.medium
+        Maui.ToolButton
+        {
+            iconName: "go-previous"
+            onClicked: browser.goBack()
+        }
+
+        Maui.ToolButton
+        {
+            id: favIcon
+            iconName: "go-up"
+            onClicked: browser.goUp()
+
+        }
+
+        Maui.ToolButton
+        {
+            iconName: "go-next"
+            onClicked: browser.goNext()
+        }
+    }
+
+    footBar.rightContent:  [
+        Maui.ToolButton
+        {
+            iconName: "documentinfo"
+            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
+            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
+                                               browser.detailsDrawer.show(browser.currentPath)
+        },
+        Maui.ToolButton
+        {
+            iconName: "overflow-menu"
+            onClicked:  browser.browserMenu.show()
+        }
+    ]
 
     PlacesSidebar
     {
@@ -106,11 +156,9 @@ Maui.ApplicationWindow
         onFinished: inx.createFile(browser.currentPath, text)
     }
 
-    ShareDialog
+    Maui.ShareDialog
     {
         id: shareDialog
         parent: browser
     }
-
-    Component.onCompleted: if(isAndroid) android.statusbarColor(backgroundColor, true)
 }

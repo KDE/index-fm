@@ -11,10 +11,8 @@ DISTFILES += \
 
 HEADERS += \
     $$PWD/kde.h \
-    $$PWD/kdeconnect.h \
     $$PWD/notify.h
 
 SOURCES += \
     $$PWD/kde.cpp \
-    $$PWD/kdeconnect.cpp \
     $$PWD/notify.cpp

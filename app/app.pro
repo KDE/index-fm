@@ -9,7 +9,6 @@ CONFIG += c++11
 TARGET = index
 DESTDIR = $$OUT_PWD/../
 
-include($$PWD/../mauikit/mauikit.pri)
 
 linux:unix:!android {
 
@@ -27,6 +26,9 @@ linux:unix:!android {
 } else {
     message("Unknown configuration")
 }
+
+
+include($$PWD/../mauikit/mauikit.pri)
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings

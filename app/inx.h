@@ -13,9 +13,8 @@
 #include <QMimeType>
 #include <QMimeData>
 #include <QMimeDatabase>
-
 #if defined(Q_OS_ANDROID)
-#include "../android/android.h"
+#include "../mauikit/src/android/mauiandroid.h"
 #endif
 
 namespace INX
@@ -67,7 +66,7 @@ const QString DocumentsPath = PATHS::DocumentsPath;
 const QString HomePath = PATHS::HomePath;
 const QString MusicPath = PATHS::MusicPath;
 const QString VideosPath = PATHS::VideosPath;
-const QString DesktopPath = PATHS::HomePath;
+
 const QStringList defaultPaths =
 {
     HomePath,
@@ -86,7 +85,6 @@ const QMap<QString, QString> folderIcon
     {HomePath, "user-home"},
     {MusicPath, "folder-music"},
     {VideosPath, "folder-videos"},
-    {DesktopPath, "user-desktop"}
 };
 
 
@@ -248,7 +246,6 @@ inline QVariant loadSettings(const QString &key, const QString &group, const QVa
 
     return variant;
 }
-
 }
 
 #endif // INX_H

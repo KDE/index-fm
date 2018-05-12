@@ -8,11 +8,8 @@
 #include <QDebug>
 #include "inx.h"
 
-#if defined(Q_OS_ANDROID)
-#include "../android/android.h"
-#elif (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
+#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
 #include "../kde/notify.h"
-#include "../kde/kdeconnect.h"
 #include "../kde/kde.h"
 #endif
 
@@ -172,6 +169,9 @@ QVariantList Index::getBookmarks()
 
 QVariantList Index::getCustomPaths()
 {
+#ifdef Q_OS_ANDROID
+    return QVariantList();
+#endif
     return QVariantList
     {
         QVariantMap
@@ -372,40 +372,10 @@ bool Index::createFile(const QString &path, const QString &name)
     return false;
 }
 
-QVariantList Index::openWith(const QString &url)
-{
-#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
-    return KDE::mimeApps(url);
-#elif defined (Q_OS_ANDROID)
-    return QVariantList();
-#endif
-}
-
 void Index::runApplication(const QString &exec, const QString &url)
 {
 #if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
-    return url.isEmpty() ? KDE::launchApp(exec) : KDE::openWithApp(exec, url);
-#endif
-}
-
-QVariantList Index::getKDEConnectDevices()
-{
-#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
-    return  KdeConnect::getDevices();
-#endif
-}
-
-bool Index::sendToDevice(const QString &name, const QString &id, const QString &url)
-{
-#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
-    return KdeConnect::sendToDevice(name, id, url);
-#endif
-}
-
-void Index::attachToEmail(const QString &url)
-{
-#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
-    KDE::attachEmail(url);
+    return  KDE::launchApp(exec);
 #endif
 }
 
