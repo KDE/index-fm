@@ -26,9 +26,9 @@ Maui.ApplicationWindow
     pageStack.initialPage: [placesSidebar, browser]
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
-    highlightColor: "#8682dd"
-    altColor: "#43455a"
-    altColorText: "#ffffff"
+//    highlightColor: "#8682dd"
+//    altColor: "#43455a"
+//    altColorText: "#ffffff"
     altToolBars: false
 
     headBar.middleContent: PathBar
@@ -78,7 +78,7 @@ Maui.ApplicationWindow
             iconName: "documentinfo"
             iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
             onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
-                                               browser.detailsDrawer.show(browser.currentPath)
+                                                       browser.detailsDrawer.show(browser.currentPath)
         },
         Maui.ToolButton
         {
@@ -160,6 +160,6 @@ Maui.ApplicationWindow
     Maui.ShareDialog
     {
         id: shareDialog
-//        parent: browser
+        //        parent: browser
     }
 }

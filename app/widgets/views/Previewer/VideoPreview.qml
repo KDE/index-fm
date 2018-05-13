@@ -63,7 +63,7 @@ Item
                 font.pointSize: fontSizes.big
                 font.weight: Font.Bold
                 font.bold: true
-                color: altColorText
+
 
             }
         }
@@ -86,7 +86,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
                 Label
@@ -96,7 +96,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
                 Label
@@ -106,7 +106,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
                 Label
@@ -116,7 +116,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
                 Label
@@ -126,7 +126,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
                 Label
@@ -136,7 +136,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
 
@@ -147,7 +147,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
 
@@ -158,7 +158,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
 
@@ -169,7 +169,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
 
@@ -179,7 +179,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
 
@@ -190,7 +190,7 @@ Item
                     elide: Qt.ElideRight
                     wrapMode: Text.Wrap
                     font.pointSize: fontSizes.default
-                    color: altColorText
+
 
                 }
             }

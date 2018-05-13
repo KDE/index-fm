@@ -3,20 +3,22 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.maui 1.0 as Maui
+
 import "Previewer"
 
-Drawer
+Maui.Drawer
 {
     id: detailsDrawerRoot
     edge: Qt.RightEdge
     width: Kirigami.Units.gridUnit * 17
-    height: browserContainer.height
+    height: parent.height - root.headBar.height -root.footBar.height
     y: root.headBar.height
     //    visible: opened ? pageStack.currentIndex = 1 && pageStack.wideMode : false
-    clip: true
     property string currentUrl: ""
     property var iteminfo : ({})
     property bool isDir : false
+
+    bg: browser
 
     Component
     {
@@ -25,11 +27,6 @@ Drawer
         {
             id: imagePreviewer
         }
-    }
-
-    background:  Rectangle
-    {
-        color: altColor
     }
 
     Component
@@ -49,7 +46,6 @@ Drawer
             id: audioPreviewer
         }
     }
-
 
     Component
     {
@@ -99,7 +95,7 @@ Drawer
             width: parent.width
             height: previewToolbar.height
 
-            ToolBar
+            Maui.ToolBar
             {
                 id: previewToolbar
                 position: ToolBar.Footer
@@ -109,87 +105,48 @@ Drawer
                 background: Rectangle
                 {
                     implicitHeight: iconSize * 2
-                    color: altColor
+                    color: "transparent"
                 }
 
-                RowLayout
+                leftContent: Maui.ToolButton
                 {
-                    anchors.fill: parent
-                    Item
-                    {
-                        visible: !isDir
-                        Layout.alignment: Qt.AlignLeft
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
+                    visible: !isDir
 
-                        Maui.ToolButton
+                    iconName: "document-share"
+                    onClicked:
+                    {
+                        isAndroid ? Maui.Android.shareDialog(currentUrl) :
+                                    shareDialog.show(currentUrl)
+                        close()
+                    }
+                }
+
+                middleContent:   [
+                    Maui.ToolButton
+                    {
+                        iconName: "love"
+                    },
+                    Maui.ToolButton
+                    {
+
+                        iconName: "document-open"
+                        onClicked:
                         {
-                            anchors.centerIn: parent
-                            isMask: true
-                            iconName: "document-share"
-                            iconColor: altColorText
-                            onClicked:
-                            {
-                                isAndroid ? Maui.Android.shareDialog(currentUrl) :
-                                            shareDialog.show(currentUrl)
-                                close()
-                            }
+                            if(previewLoader.item.player)
+                            previewLoader.item.player.stop()
+
+                            browser.openFile(currentUrl)
                         }
                     }
+                ]
 
-                    Item
+                rightContent:  Maui.ToolButton
+                {
+                    iconName: "archive-remove"
+                    onClicked:
                     {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        Maui.ToolButton
-                        {
-                            anchors.centerIn: parent
-                            isMask: true
-                            iconName: "love"
-                            iconColor: altColorText
-                        }
-                    }
-
-                    Item
-                    {
-                        visible: !isDir
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        Maui.ToolButton
-                        {
-                            anchors.centerIn: parent
-                            isMask: true
-                            iconName: "document-open"
-                            iconColor: altColorText
-                            onClicked:
-                            {
-                                if(previewLoader.item.player)
-                                    previewLoader.item.player.stop()
-
-                                browser.openFile(currentUrl)
-                            }
-                        }
-                    }
-
-                    Item
-                    {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        Maui.ToolButton
-                        {
-                            anchors.centerIn: parent
-                            isMask: true
-                            iconName: "archive-remove"
-                            iconColor: altColorText
-                            onClicked:
-                            {
-                                close()
-                                browser.remove([currentUrl])
-                            }
-                        }
+                        close()
+                        browser.remove([currentUrl])
                     }
                 }
             }
