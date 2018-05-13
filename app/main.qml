@@ -28,6 +28,7 @@ Maui.ApplicationWindow
     pageStack.separatorVisible: pageStack.wideMode
     highlightColor: "#8682dd"
     altColor: "#43455a"
+    altColorText: "#ffffff"
     altToolBars: false
 
     headBar.middleContent: PathBar
