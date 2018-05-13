@@ -22,7 +22,7 @@ Maui.SideBar
 
         isSection: true
         boldLabel: true
-        height: headBar.height
+        height: toolBarHeightAlt
     }
 
     onItemClicked:
