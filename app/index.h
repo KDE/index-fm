@@ -35,6 +35,7 @@ public:
     Q_INVOKABLE static QVariant loadSettings(const QString &key, const QString &group, const QVariant &defaultValue);
     Q_INVOKABLE static QVariantMap getDirInfo(const QString &path, const QString &type);
     Q_INVOKABLE static QVariantMap getFileInfo(const QString &path);
+    Q_INVOKABLE static bool fileExists(const QString &path);
 
     /*FILE ACTIONS*/
     Q_INVOKABLE static bool copy(const QStringList &paths, const QString &where);

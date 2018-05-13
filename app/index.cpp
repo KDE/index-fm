@@ -232,6 +232,11 @@ QVariantMap Index::getFileInfo(const QString &path)
     return res;
 }
 
+bool Index::fileExists(const QString &path)
+{
+    return QFile(path).exists();
+}
+
 bool Index::copy(const QStringList &paths, const QString &where)
 {
     for(auto path : paths)

@@ -110,9 +110,22 @@ Maui.Page
     focus: true
     headBarVisible: false
 
-    contentItem : ColumnLayout
+    Maui.Holder
+    {
+        id: holder
+        message: inx.fileExists(currentPath) ? qsTr("<h3>Folder is empty!</h3><p>You can add new files to it</p>"):
+                                               qsTr("<h3>Folder doesn't exists!</h3><p>Create Folder?</p>")
+        visible: viewLoader.item.count === 0
+
+        onActionTriggered: console.log("nana")
+
+    }
+
+    ColumnLayout
     {
         spacing: 0
+        anchors.fill: parent
+        visible: !holder.visible
 
         Item
         {
