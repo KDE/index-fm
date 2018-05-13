@@ -38,6 +38,11 @@ Maui.Page
 
     property int currentView : views.icon
 
+    leftPadding: detailsView ? 0 : contentMargins
+    rightPadding: leftPadding
+    topPadding: leftPadding
+    bottomPadding: leftPadding
+
     Connections
     {
         target: inx
