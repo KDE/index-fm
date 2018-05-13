@@ -10,8 +10,6 @@ import QtQuick.Controls.Material 2.1
 import "widgets"
 import "widgets/views"
 import "widgets/sidebar"
-import "widgets/dialogs/share"
-
 import "widgets_templates"
 
 import "Index.js" as INX
@@ -139,6 +137,8 @@ Maui.ApplicationWindow
                 browser.selectionBar.animate("red")
             }else  browser.remove([path])
         }
+
+        onShareClicked: shareDialog.show(path)
     }
 
     NewDialog

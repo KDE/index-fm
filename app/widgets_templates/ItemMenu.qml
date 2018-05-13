@@ -105,8 +105,6 @@ Menu
         onTriggered: browser.selectionBar.append(browser.grid.model.get(browser.grid.currentIndex))
     }
 
-
-
     function show(url)
     {
         if(!inx.isCustom(browser.currentPath))
