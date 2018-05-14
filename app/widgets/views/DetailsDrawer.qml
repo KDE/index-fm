@@ -10,7 +10,6 @@ Maui.Drawer
 {
     id: detailsDrawerRoot
     edge: Qt.RightEdge
-    width: Kirigami.Units.gridUnit * 17
     height: parent.height - root.headBar.height -root.footBar.height
     y: root.headBar.height
     //    visible: opened ? pageStack.currentIndex = 1 && pageStack.wideMode : false
