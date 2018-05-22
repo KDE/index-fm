@@ -16,7 +16,7 @@ public:
     Q_INVOKABLE static bool isAndroid();
 
     Q_INVOKABLE void watchPath(const QString &path);
-    Q_INVOKABLE static QVariantList getPathContent(const QString &path);
+    Q_INVOKABLE QVariantList getPathContent(const QString &path);
     Q_INVOKABLE static QVariantList getCustomPathContent(const QString &path);
     Q_INVOKABLE static QVariantList getDefaultPaths();
     Q_INVOKABLE static bool isDefaultPath(const QString &path);
@@ -56,6 +56,7 @@ private:
 
 signals:
     void pathModified(QString path);
+    void itemReady(QVariantMap item);
 
 public slots:
 };

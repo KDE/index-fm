@@ -47,13 +47,15 @@ QVariantList Index::getPathContent(const QString &path)
         {
             auto url = it.next();
             QFileInfo file(url);
-            content << QVariantMap
-            {
+            auto item = QVariantMap {
             {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(url)},
             {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], file.isDir() ? file.baseName() :
                                                                     file.fileName()},
                 {INX::MODEL_NAME[INX::MODEL_KEY::PATH], url}
             };
+
+            content << item;
+            emit this->itemReady(item);
         }
     }
     return content;

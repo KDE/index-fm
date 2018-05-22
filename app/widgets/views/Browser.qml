@@ -47,6 +47,7 @@ Maui.Page
     {
         target: inx
         onPathModified: browser.refresh()
+        onItemReady: browser.append(item)
     }
 
     BrowserMenu
@@ -263,9 +264,9 @@ Maui.Page
         }
 
         var items = inx.getPathContent(path)
-        if(items.length > 0)
-            for(var i in items)
-                viewLoader.item.model.append(items[i])
+//        if(items.length > 0)
+//            for(var i in items)
+//                append(items[i])
 
         for(i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
@@ -273,6 +274,11 @@ Maui.Page
 
         pathBar.append(currentPath)
         inx.watchPath(currentPath)
+    }
+
+    function append(item)
+    {
+        viewLoader.item.model.append(item)
     }
 
     function goBack()
