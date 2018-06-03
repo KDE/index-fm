@@ -263,12 +263,10 @@ Maui.Page
             return;
         }
 
+        /* should it really return the paths or just use the signal? */
         var items = inx.getPathContent(path)
-//        if(items.length > 0)
-//            for(var i in items)
-//                append(items[i])
 
-        for(i=0; i < placesSidebar.count; i++)
+        for(var i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
                 placesSidebar.currentIndex = i
 

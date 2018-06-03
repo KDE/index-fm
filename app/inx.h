@@ -137,7 +137,7 @@ inline QString getIconName(const QString &path)
         QMimeDatabase mime;
         auto type = mime.mimeTypeForFile(path);
 
-        return isAndroid() ? type.genericIconName() : type.genericIconName();
+        return isAndroid() ? type.genericIconName() : type.iconName();
     }
 
     return "unkown";

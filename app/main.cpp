@@ -21,7 +21,7 @@
 #endif
 
 #include "../mauikit/src/mauikit.h"
-
+#include "../mauikit/src/utils/tagging/tagging.h"
 
 int main(int argc, char *argv[])
 {
@@ -45,12 +45,14 @@ int main(int argc, char *argv[])
     parser.process(app);
 
     Index index;
+    Tagging tag;
 
     QQmlApplicationEngine engine;
 
     auto context = engine.rootContext();
 
     context->setContextProperty("inx", &index);
+    context->setContextProperty("tag", &tag);
 
 #ifdef STATIC_KIRIGAMI
     KirigamiPlugin::getInstance().registerTypes();

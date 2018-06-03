@@ -49,6 +49,7 @@ Maui.Drawer
     Component
     {
         id: videoPreview
+
         VideoPreview
         {
             id: videoPreviewer
