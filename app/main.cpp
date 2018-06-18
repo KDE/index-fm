@@ -45,14 +45,14 @@ int main(int argc, char *argv[])
     parser.process(app);
 
     Index index;
-    Tagging tag;
+    auto tag = Tagging::getInstance(INX::app, INX::version, "org.kde.index");
 
     QQmlApplicationEngine engine;
 
     auto context = engine.rootContext();
 
     context->setContextProperty("inx", &index);
-    context->setContextProperty("tag", &tag);
+    context->setContextProperty("tag", tag);
 
 #ifdef STATIC_KIRIGAMI
     KirigamiPlugin::getInstance().registerTypes();

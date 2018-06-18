@@ -24,7 +24,7 @@ Menu
     signal copyClicked(string path)
     signal cutClicked(string path)
     signal tagsClicked(string path)
-
+    signal saveToClicked(string path)
 
     MenuItem
     {
@@ -36,6 +36,7 @@ Menu
             close()
         }
     }
+
     MenuItem
     {
         text: qsTr("Tags...")
@@ -57,6 +58,7 @@ Menu
             close()
         }
     }
+
     MenuItem
     {
         text: qsTr("Copy...")
@@ -73,6 +75,16 @@ Menu
         onTriggered:
         {
             cutClicked(path)
+            close()
+        }
+    }
+
+    MenuItem
+    {
+        text: qsTr("Save to...")
+        onTriggered:
+        {
+            saveToClicked(path)
             close()
         }
     }

@@ -26,16 +26,26 @@ Maui.ApplicationWindow
     pageStack.initialPage: [placesSidebar, browser]
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
-//    highlightColor: "#8682dd"
-//    altColor: "#43455a"
-//    altColorText: "#ffffff"
+    //    highlightColor: "#8682dd"
+    //    altColor: "#43455a"
+    //    altColorText: "#ffffff"
     altToolBars: false
 
-    headBar.middleContent: PathBar
+    headBar.middleContent: Maui.PathBar
     {
         id: pathBar
         height: iconSizes.big
         width: headBar.width * (isMobile ? 0.6 : 0.8)
+        onPathChanged: browser.openFolder(path)
+        onHomeClicked:
+        {
+            if(pageStack.currentIndex !== 0 && !pageStack.wideMode)
+                pageStack.currentIndex = 0
+
+            browser.openFolder(inx.homePath())
+        }
+
+        onPlaceClicked: browser.openFolder(path)
     }
 
     footBar.visible: pageStack.currentIndex !== 0 || pageStack.wideMode
@@ -59,10 +69,8 @@ Maui.ApplicationWindow
 
         Maui.ToolButton
         {
-            id: favIcon
             iconName: "go-up"
             onClicked: browser.goUp()
-
         }
 
         Maui.ToolButton
@@ -130,6 +138,17 @@ Maui.ApplicationWindow
             }else browser.cut([path])
         }
 
+        onSaveToClicked:
+        {
+            console.log(path)
+            var myPath = path
+            fmDialog.show(function(selectedPaths)
+            {
+                console.log("EMITIDOooooooo", myPath, selectedPaths.length)
+//                inx.copy()
+            })
+        }
+
         onRemoveClicked:
         {
             if(multiple)
@@ -162,5 +181,13 @@ Maui.ApplicationWindow
     {
         id: shareDialog
         //        parent: browser
+    }
+
+    onSearchButtonClicked: fmDialog.show()
+    Maui.FileDialog
+    {
+        id:fmDialog
+        onlyDirs: true
+        onSelectionReady: console.log(paths.length)
     }
 }

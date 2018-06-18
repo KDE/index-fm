@@ -72,30 +72,13 @@ Maui.Page
         id: gridViewBrowser
 
         IndexGrid
-        {}
+        { }
     }
 
     Connections
     {
         target: viewLoader.item
-        onItemClicked:
-        {
-            var item = viewLoader.item.model.get(index)
-            if(selectionMode && !inx.isDir(item.path))
-                addToSelection(item, true)
-            else
-            {
-                var path = item.path
-                if(inx.isDir(path))
-                    browser.openFolder(path)
-                else if(inx.isCustom(path))
-                    browser.openFolder(path)
-                else if(inx.isApp(path))
-                    browser.launchApp(path)
-                else
-                    isMobile ? detailsDrawer.show(path) : browser.openFile(path)
-            }
-        }
+        onItemClicked: openItem(index)
 
         onItemDoubleClicked:
         {
@@ -207,6 +190,33 @@ Maui.Page
             anchors.bottom: parent.bottom
             anchors.top: handle.bottom
             source: !isMobile ? "../terminal/Terminal.qml" : ""
+        }
+    }
+
+    function openItem(index)
+    {
+        console.log("exde",index)
+        var item = viewLoader.item.model.get(index)
+
+
+        if(selectionMode && !inx.isDir(item.path))
+            addToSelection(item, true)
+        else
+        {
+            var path = item.path
+            if(inx.isDir(path))
+                browser.openFolder(path)
+            else if(inx.isCustom(path))
+                browser.openFolder(path)
+            else if(inx.isApp(path))
+                browser.launchApp(path)
+            else
+            {
+                if (isMobile)
+                    detailsDrawer.show(path)
+                else
+                    browser.openFile(path)
+            }
         }
     }
 

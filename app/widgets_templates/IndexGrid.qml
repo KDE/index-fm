@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-
+import org.kde.maui 1.0 as Maui
 
 GridView
 {
@@ -32,7 +32,7 @@ GridView
 
     model: ListModel { id: gridModel  }
 
-    delegate: IndexIconDelegate
+    delegate: Maui.IconDelegate
     {
         id: delegate
 
@@ -48,7 +48,9 @@ GridView
             onClicked:
             {
                 folderGridRoot.currentIndex = index
-                itemClicked(index)
+                console.log(index,   folderGridRoot.currentIndex)
+
+                folderGridRoot.itemClicked(index)
             }
 
             onDoubleClicked:

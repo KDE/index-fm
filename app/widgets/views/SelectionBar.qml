@@ -82,7 +82,7 @@ Item
 
             model: ListModel{}
 
-            delegate: IndexIconDelegate
+            delegate: Maui.IconDelegate
             {
                 id: delegate
                 anchors.verticalCenter: parent.verticalCenter

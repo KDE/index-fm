@@ -14,7 +14,7 @@ Maui.SideBar
 
     section.property :  !placesList.isCollapsed ? "type" : ""
     section.criteria: ViewSection.FullString
-    section.delegate: IndexDelegate
+    section.delegate: Maui.LabelDelegate
     {
         id: delegate
         label: section

@@ -272,5 +272,6 @@
         <file>icons/Luv/mimetypes/32/text-plain.svg</file>
         <file>icons/Luv/mimetypes/32/text-x-generic.svg</file>
         <file>icons/Luv/mimetypes/32/video-x-generic.svg</file>
+        <file>icons/Luv/actions/22/dialog-ok.svg</file>
     </qresource>
 </RCC>

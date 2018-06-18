@@ -25,11 +25,6 @@ Index::Index(QObject *parent) : QObject(parent)
     });
 }
 
-bool Index::isAndroid()
-{
-    return INX::isAndroid();
-}
-
 void Index::watchPath(const QString &path)
 {
     if(!watcher->directories().isEmpty())
