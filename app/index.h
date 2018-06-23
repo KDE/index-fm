@@ -35,17 +35,7 @@ public:
     Q_INVOKABLE static QVariantMap getFileInfo(const QString &path);
     Q_INVOKABLE static bool fileExists(const QString &path);
 
-    /*FILE ACTIONS*/
-    Q_INVOKABLE static bool copy(const QStringList &paths, const QString &where);
-    static bool copyPath(QString sourceDir, QString destinationDir, bool overWriteDirectory);
-    Q_INVOKABLE static bool cut(const QStringList &paths, const QString &where);
-    Q_INVOKABLE static bool remove(const QString &path);
-    static bool removeDir(const QString &path);
-    Q_INVOKABLE static bool rename(const QString &path, const QString &name);
-    Q_INVOKABLE static bool createDir(const QString &path, const QString &name);
-    Q_INVOKABLE static bool createFile(const QString &path, const QString &name);
-
-    /*KDE*/
+       /*KDE*/
     Q_INVOKABLE static void runApplication(const QString &exec, const QString &url);
 
 

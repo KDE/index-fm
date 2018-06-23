@@ -368,9 +368,9 @@ Maui.Page
     {
         console.log("paste to", currentPath, copyPaths)
         if(isCopy)
-            inx.copy(copyPaths, currentPath)
+            Maui.FM.copy(copyPaths, currentPath)
         else if(isCut)
-            if(inx.cut(cutPaths, currentPath))
+            if(Maui.FM.cut(cutPaths, currentPath))
                 clearSelection()
 
     }
@@ -378,7 +378,7 @@ Maui.Page
     function remove(paths)
     {
         for(var i in paths)
-            inx.remove(paths[i])
+            Maui.FM.remove(paths[i])
     }
 
 
