@@ -140,12 +140,15 @@ Maui.ApplicationWindow
 
         onSaveToClicked:
         {
-            console.log(path)
+            fmDialog.saveDialog = false
+            fmDialog.multipleSelection = true
+            fmDialog.onlyDirs= true
+
             var myPath = path
+
             fmDialog.show(function(selectedPaths)
             {
-                console.log("EMITIDOooooooo", myPath, selectedPaths.length)
-//                inx.copy()
+                Maui.FM.copy(selectedPaths, myPath)
             })
         }
 
@@ -162,19 +165,19 @@ Maui.ApplicationWindow
         onShareClicked: shareDialog.show(path)
     }
 
-    NewDialog
+    Maui.NewDialog
     {
         id: newFolderDialog
         title: "New folder..."
-        onFinished: inx.createDir(browser.currentPath, text)
+        onFinished: Maui.FM.createDir(browser.currentPath, text)
 
     }
 
-    NewDialog
+    Maui.NewDialog
     {
         id: newFileDialog
         title: "New file..."
-        onFinished: inx.createFile(browser.currentPath, text)
+        onFinished: Maui.FM.createFile(browser.currentPath, text)
     }
 
     Maui.ShareDialog
@@ -187,7 +190,5 @@ Maui.ApplicationWindow
     Maui.FileDialog
     {
         id:fmDialog
-        onlyDirs: true
-        onSelectionReady: console.log(paths.length)
     }
 }

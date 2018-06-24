@@ -11,7 +11,6 @@
         <file>widgets/terminal/Terminal.qml</file>
         <file>widgets/views/SelectionBar.qml</file>
         <file>widgets/views/BrowserMenu.qml</file>
-        <file>widgets_templates/NewDialog.qml</file>
         <file>widgets/views/DetailsDrawer.qml</file>
         <file>widgets/views/Previewer/AudioPreview.qml</file>
         <file>widgets/views/Previewer/ImagePreview.qml</file>
