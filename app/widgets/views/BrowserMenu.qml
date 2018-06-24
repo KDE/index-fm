@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
+import org.kde.maui 1.0 as Maui
 import "../../Index.js" as INX
 
 Menu
@@ -32,7 +33,7 @@ Menu
     MenuItem
     {
         text: qsTr("Bookmark")
-        onTriggered: INX.bookmarkFolder(browser.currentPath)
+        onTriggered: browser.bookmarkFolder(browser.currentPath)
     }
 
     MenuItem

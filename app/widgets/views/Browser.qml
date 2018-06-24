@@ -248,8 +248,6 @@ Maui.Page
 
     function openCustomPath(path)
     {
-        console.log("openign custom location")
-
         var items = inx.getCustomPathContent(path)
         if(items.length > 0)
             for(var i in items)
@@ -368,9 +366,9 @@ Maui.Page
     {
         console.log("paste to", currentPath, copyPaths)
         if(isCopy)
-            Maui.FM.copy(copyPaths, currentPath)
+            inx.copy(copyPaths, currentPath)
         else if(isCut)
-            if(Maui.FM.cut(cutPaths, currentPath))
+            if(inx.cut(cutPaths, currentPath))
                 clearSelection()
 
     }
@@ -378,7 +376,7 @@ Maui.Page
     function remove(paths)
     {
         for(var i in paths)
-            Maui.FM.remove(paths[i])
+            inx.remove(paths[i])
     }
 
 
@@ -387,6 +385,23 @@ Maui.Page
         detailsView = !detailsView
         inx.saveSettings("BROWSER_VIEW", detailsView, "BROWSER")
         populate(currentPath)
+    }
+
+    function bookmarkFolder(path)
+    {
+        if(inx.isDefaultPath(path)) return
+
+        inx.bookmark(path)
+        placesSidebar.populate()
+    }
+
+    function populateTags(myTag)
+    {
+        console.log("GETTIN TAGS CONTENT")
+        currentPath = myTag
+        clear()
+        var data = inx.getTagContent(myTag)
+        pathBar.append(currentPath)
     }
 
 }

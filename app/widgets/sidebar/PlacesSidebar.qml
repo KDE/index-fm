@@ -8,7 +8,7 @@ Maui.SideBar
 {
     id: placesList
 
-    signal placeClicked (string path)
+    signal placeClicked (var item)
     focus: true
     clip: true
 
@@ -27,7 +27,7 @@ Maui.SideBar
 
     onItemClicked:
     {
-        placeClicked(item.path)
+        placeClicked(item)
 
         if(pageStack.currentIndex === 0 && !pageStack.wideMode)
             pageStack.currentIndex = 1
@@ -42,6 +42,7 @@ Maui.SideBar
         places.push(inx.getCustomPaths())
         places.push(inx.getBookmarks())
         places.push(inx.getDevices())
+        places.push(inx.getTags())
 
         if(places.length > 0)
             for(var i in places)

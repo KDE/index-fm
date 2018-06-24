@@ -98,7 +98,13 @@ Maui.ApplicationWindow
     PlacesSidebar
     {
         id: placesSidebar
-        onPlaceClicked: browser.openFolder(path)
+        onPlaceClicked:
+        {
+            if(item.type === "Tags")
+                browser.populateTags(item.path)
+            else
+                browser.openFolder(path)
+        }
 
         width: isCollapsed ? iconSize*2 : parent.width
         height: parent.height
@@ -148,7 +154,7 @@ Maui.ApplicationWindow
 
             fmDialog.show(function(selectedPaths)
             {
-                Maui.FM.copy(selectedPaths, myPath)
+                inx.copy(myPath, selectedPaths)
             })
         }
 
@@ -169,7 +175,7 @@ Maui.ApplicationWindow
     {
         id: newFolderDialog
         title: "New folder..."
-        onFinished: Maui.FM.createDir(browser.currentPath, text)
+        onFinished: inx.createDir(browser.currentPath, text)
 
     }
 
@@ -177,7 +183,7 @@ Maui.ApplicationWindow
     {
         id: newFileDialog
         title: "New file..."
-        onFinished: Maui.FM.createFile(browser.currentPath, text)
+        onFinished: inx.createFile(browser.currentPath, text)
     }
 
     Maui.ShareDialog

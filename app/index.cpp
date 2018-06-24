@@ -4,7 +4,6 @@
 #include <QDirIterator>
 #include <QDesktopServices>
 #include <QUrl>
-#include <QStorageInfo>
 #include <QDebug>
 #include "inx.h"
 
@@ -14,46 +13,9 @@
 #endif
 
 
-Index::Index(QObject *parent) : QObject(parent)
+Index::Index(QObject *parent) : FM(parent)
 {
-    watcher = new QFileSystemWatcher(this);
-    connect(watcher, &QFileSystemWatcher::directoryChanged, [this](const QString &path)
-    {
-        qDebug()<< " path modified"+path;
-        emit pathModified(path);
 
-    });
-}
-
-void Index::watchPath(const QString &path)
-{
-    if(!watcher->directories().isEmpty())
-        watcher->removePaths(watcher->directories());
-    watcher->addPath(path);
-}
-
-QVariantList Index::getPathContent(const QString &path)
-{
-    QVariantList content;
-    if (QFileInfo(path).isDir())
-    {
-        QDirIterator it(path, QDir::Files | QDir::AllDirs | QDir::NoDotDot | QDir::NoDot, QDirIterator::NoIteratorFlags);
-        while (it.hasNext())
-        {
-            auto url = it.next();
-            QFileInfo file(url);
-            auto item = QVariantMap {
-            {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(url)},
-            {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], file.isDir() ? file.baseName() :
-                                                                    file.fileName()},
-                {INX::MODEL_NAME[INX::MODEL_KEY::PATH], url}
-            };
-
-            content << item;
-            emit this->itemReady(item);
-        }
-    }
-    return content;
 }
 
 QVariantList Index::getCustomPathContent(const QString &path)
@@ -67,71 +29,6 @@ QVariantList Index::getCustomPathContent(const QString &path)
 
 #endif
     return res;
-}
-
-QVariantList Index::getDefaultPaths()
-{
-    return packItems(INX::defaultPaths, INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::PLACES]);
-}
-
-bool Index::isDefaultPath(const QString &path)
-{
-    return INX::defaultPaths.contains(path);
-}
-
-QVariantList Index::getDevices()
-{
-    QVariantList drives;
-
-    auto devices = QStorageInfo::mountedVolumes();
-    for(auto device : devices)
-    {
-        if(device.isValid() && !device.isReadOnly())
-        {
-            QVariantMap drive =
-            {
-                {INX::MODEL_NAME[INX::MODEL_KEY::ICON], "drive-harddisk"},
-                {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], device.displayName()},
-                {INX::MODEL_NAME[INX::MODEL_KEY::PATH], device.rootPath()},
-                {INX::MODEL_NAME[INX::MODEL_KEY::TYPE], INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::DRIVES]}
-            };
-
-            drives << drive;
-        }
-    }
-
-    //    for(auto device : QDir::drives())
-    //    {
-    //        QVariantMap drive =
-    //        {
-    //            {"iconName", "drive-harddisk"},
-    //            {"label", device.baseName()},
-    //            {"path", device.absoluteFilePath()},
-    //            {"type", "Drives"}
-    //        };
-
-    //        drives << drive;
-    //    }
-
-    return drives;
-}
-
-QString Index::homePath()
-{
-    return INX::HomePath;
-}
-
-QString Index::parentDir(const QString &path)
-{
-    auto dir = QDir(path);
-    dir.cdUp();
-    return dir.absolutePath();
-
-}
-
-bool Index::isDir(const QString &path)
-{
-    return QFileInfo(path).isDir();
 }
 
 bool Index::isCustom(const QString &path)
@@ -149,21 +46,6 @@ bool Index::openFile(const QString &path)
     return QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
-bool Index::bookmark(const QString &path)
-{
-    auto bookmarks = INX::loadSettings("BOOKMARKS", "INX", QStringList()).toStringList();
-    bookmarks.append(path);
-    INX::saveSettings("BOOKMARKS", bookmarks, "INX");
-
-    return true;
-}
-
-QVariantList Index::getBookmarks()
-{
-    auto bookmarks = INX::loadSettings("BOOKMARKS", "INX", QStringList()).toStringList();
-    return packItems(bookmarks, INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::BOOKMARKS]);
-}
-
 QVariantList Index::getCustomPaths()
 {
 #ifdef Q_OS_ANDROID
@@ -179,17 +61,6 @@ QVariantList Index::getCustomPaths()
             {INX::MODEL_NAME[INX::MODEL_KEY::TYPE], INX::PATHTYPE_NAME[INX::PATHTYPE_KEY::PLACES]}
         }
     };
-}
-
-QVariantList Index::packItems(const QStringList &items, const QString &type)
-{
-    QVariantList data;
-
-    for(auto path : items)
-        if(INX::fileExists(path))
-            data << getDirInfo(path, type);
-
-    return data;
 }
 
 QVariantMap Index::getDirInfo(const QString &path, const QString &type)
@@ -227,11 +98,6 @@ QVariantMap Index::getFileInfo(const QString &path)
     };
 
     return res;
-}
-
-bool Index::fileExists(const QString &path)
-{
-    return QFile(path).exists();
 }
 
 void Index::runApplication(const QString &exec, const QString &url)
