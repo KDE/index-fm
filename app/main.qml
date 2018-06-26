@@ -103,7 +103,7 @@ Maui.ApplicationWindow
             if(item.type === "Tags")
                 browser.populateTags(item.path)
             else
-                browser.openFolder(path)
+                browser.openFolder(item.path)
         }
 
         width: isCollapsed ? iconSize*2 : parent.width
