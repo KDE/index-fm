@@ -81,8 +81,7 @@ QVariantMap Index::getFileInfo(const QString &path)
 {
     QFileInfo file(path);
     if(!file.exists()) return QVariantMap();
-    QMimeDatabase mimedb;
-    auto mime = mimedb.mimeTypeForFile(path);
+    auto mime = FMH::getMime(path);
 
     QVariantMap res =
     {
@@ -93,7 +92,7 @@ QVariantMap Index::getFileInfo(const QString &path)
         {INX::MODEL_NAME[INX::MODEL_KEY::NAME], file.fileName()},
         {INX::MODEL_NAME[INX::MODEL_KEY::DATE], file.birthTime().toString()},
         {INX::MODEL_NAME[INX::MODEL_KEY::MODIFIED], file.lastModified().toString()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::MIME], mime.name()},
+        {INX::MODEL_NAME[INX::MODEL_KEY::MIME], mime },
         {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(path)}
     };
 

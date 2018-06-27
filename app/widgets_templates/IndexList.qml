@@ -31,6 +31,7 @@ ListView
 
         folderSize : itemSize
         showTooltip: true
+        showThumbnails: browser.previews
 
         Connections
         {

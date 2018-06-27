@@ -41,6 +41,7 @@ GridView
         height: cellHeight * 0.9
         folderSize : itemSize
         showTooltip: true
+        showThumbnails: browser.previews
 
         Connections
         {

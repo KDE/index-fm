@@ -221,13 +221,6 @@ const QString app = "Index";
 const QString version = "0.1.0";
 const QString description = "File manager";
 
-inline bool fileExists(const QString &url)
-{
-    QFileInfo path(url);
-    if (path.exists()) return true;
-    else return false;
-}
-
 inline void saveSettings(const QString &key, const QVariant &value, const QString &group)
 {
     QSettings setting("Babe","babe");

@@ -19,6 +19,7 @@ Maui.Page
     property bool selectionMode : false
 
     property bool detailsView: inx.loadSettings("BROWSER_VIEW", "BROWSER", false) === "false" ? false: true
+    property bool previews: inx.loadSettings("SHOW_PREVIEWS", "BROWSER", false) === "false" ? false: true
 
     property alias terminal : terminalLoader.item
     property alias selectionBar : selectionBar
@@ -99,7 +100,7 @@ Maui.Page
         id: holder
         message: inx.fileExists(currentPath) ? qsTr("<h3>Folder is empty!</h3><p>You can add new files to it</p>"):
                                                qsTr("<h3>Folder doesn't exists!</h3><p>Create Folder?</p>")
-        visible: viewLoader.item.count === 0
+        visible: viewLoader.item.count === 0 && !inx.fileExists(currentPath)
 
         onActionTriggered: console.log("nana")
 
@@ -133,7 +134,7 @@ Maui.Page
                     Layout.fillHeight: true
                 }
 
-                SelectionBar
+                Maui.SelectionBar
                 {
                     id: selectionBar
                     y: -20
@@ -142,6 +143,9 @@ Maui.Page
                     Layout.leftMargin: contentMargins*2
                     Layout.rightMargin: contentMargins*2
                     Layout.bottomMargin: contentMargins*2
+
+                    onIconClicked: itemMenu.showMultiple()
+                    onExitClicked: clearSelection()
                 }
             }
 
