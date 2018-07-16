@@ -9,7 +9,7 @@ GridView
 
     property int itemSize : iconSizes.large
     property int itemSpacing: itemSize * 0.5 + (isMobile ? space.big :
-                                                           space.large)
+                                                           space.huge)
 
     signal itemClicked(int index)
     signal itemDoubleClicked(int index)
@@ -49,8 +49,6 @@ GridView
             onClicked:
             {
                 folderGridRoot.currentIndex = index
-                console.log(index,   folderGridRoot.currentIndex)
-
                 folderGridRoot.itemClicked(index)
             }
 

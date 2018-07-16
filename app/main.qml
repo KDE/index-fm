@@ -30,7 +30,7 @@ Maui.ApplicationWindow
     //    altColor: "#43455a"
     //    altColorText: "#ffffff"
     altToolBars: false
-
+    floatingBar : false
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
@@ -81,13 +81,13 @@ Maui.ApplicationWindow
     }
 
     footBar.rightContent:  [
-        Maui.ToolButton
-        {
-            iconName: "documentinfo"
-            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
-            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
-                                                       browser.detailsDrawer.show(browser.currentPath)
-        },
+//        Maui.ToolButton
+//        {
+//            iconName: "documentinfo"
+//            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
+//            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
+//                                                       browser.detailsDrawer.show(browser.currentPath)
+//        },
         Maui.ToolButton
         {
             iconName: "overflow-menu"
@@ -168,7 +168,8 @@ Maui.ApplicationWindow
             }else  browser.remove([path])
         }
 
-        onShareClicked: shareDialog.show(path)
+        onShareClicked:   isAndroid ? Maui.Android.shareDialog(path) :
+                                      shareDialog.show(path)
     }
 
     Maui.NewDialog

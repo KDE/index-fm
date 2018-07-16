@@ -38,7 +38,6 @@ Maui.Page
                           })
 
     property int currentView : views.icon
-
     leftPadding: detailsView ? 0 : contentMargins
     rightPadding: leftPadding
     topPadding: leftPadding
@@ -105,6 +104,8 @@ Maui.Page
         onActionTriggered: console.log("nana")
 
     }
+
+    Keys.onSpacePressed: detailsDrawer.show(viewLoader.item.model.get(viewLoader.item.currentIndex).path)
 
     ColumnLayout
     {
@@ -199,9 +200,7 @@ Maui.Page
 
     function openItem(index)
     {
-        console.log("exde",index)
         var item = viewLoader.item.model.get(index)
-
 
         if(selectionMode && !inx.isDir(item.path))
             addToSelection(item, true)
