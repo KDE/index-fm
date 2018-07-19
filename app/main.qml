@@ -17,8 +17,7 @@ import "Index.js" as INX
 Maui.ApplicationWindow
 {
     id: root
-    title: qsTr("Index")
-
+    title: browser.currentPath
     property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
                                                            Kirigami.Units.gridUnit * (isMobile ? 14 : 11)
 
@@ -26,11 +25,12 @@ Maui.ApplicationWindow
     pageStack.initialPage: [placesSidebar, browser]
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
-    //    highlightColor: "#8682dd"
-    //    altColor: "#43455a"
-    //    altColorText: "#ffffff"
+    accentColor: "#314962"
+    highlightColor: "#8682dd"
+    altColor: "#43455a"
+        altColorText: "#ffffff"
     altToolBars: false
-    floatingBar : false
+    floatingBar : true
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
@@ -53,6 +53,8 @@ Maui.ApplicationWindow
     footBar.leftContent: Maui.ToolButton
     {
         id: viewBtn
+        iconColor: altColorText
+
         iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
         onClicked: browser.switchView()
     }
@@ -64,33 +66,37 @@ Maui.ApplicationWindow
         Maui.ToolButton
         {
             iconName: "go-previous"
+            iconColor: altColorText
             onClicked: browser.goBack()
         }
 
         Maui.ToolButton
         {
             iconName: "go-up"
+            iconColor: altColorText
             onClicked: browser.goUp()
         }
 
         Maui.ToolButton
         {
             iconName: "go-next"
+            iconColor: altColorText
             onClicked: browser.goNext()
         }
     }
 
     footBar.rightContent:  [
-//        Maui.ToolButton
-//        {
-//            iconName: "documentinfo"
-//            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
-//            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
-//                                                       browser.detailsDrawer.show(browser.currentPath)
-//        },
+        //        Maui.ToolButton
+        //        {
+        //            iconName: "documentinfo"
+        //            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
+        //            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
+        //                                                       browser.detailsDrawer.show(browser.currentPath)
+        //        },
         Maui.ToolButton
         {
             iconName: "overflow-menu"
+            iconColor: altColorText
             onClicked:  browser.browserMenu.show()
         }
     ]
