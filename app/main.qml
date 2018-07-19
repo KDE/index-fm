@@ -25,10 +25,10 @@ Maui.ApplicationWindow
     pageStack.initialPage: [placesSidebar, browser]
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
-    accentColor: "#314962"
+    accentColor: altColor
     highlightColor: "#8682dd"
     altColor: "#43455a"
-        altColorText: "#ffffff"
+    altColorText: "#ffffff"
     altToolBars: false
     floatingBar : true
     headBar.middleContent: Maui.PathBar

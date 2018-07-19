@@ -21,6 +21,7 @@ Maui.Page
     property bool detailsView: inx.loadSettings("BROWSER_VIEW", "BROWSER", false) === "false" ? false: true
     property bool previews: inx.loadSettings("SHOW_PREVIEWS", "BROWSER", false) === "false" ? false: true
 
+    property bool pathExists : inx.fileExists(currentPath)
     property alias terminal : terminalLoader.item
     property alias selectionBar : selectionBar
 
@@ -97,11 +98,14 @@ Maui.Page
     Maui.Holder
     {
         id: holder
-        message: inx.fileExists(currentPath) ? qsTr("<h3>Folder is empty!</h3><p>You can add new files to it</p>"):
-                                               qsTr("<h3>Folder doesn't exists!</h3><p>Create Folder?</p>")
-        visible: viewLoader.item.count === 0 && !inx.fileExists(currentPath)
+        visible: viewLoader.item.count === 0 || !inx.fileExists(currentPath)
 
-        onActionTriggered: console.log("nana")
+        emoji: pathExists ? "qrc:/assets/MoonSki.png" : "qrc:/assets/ElectricPlug.png"
+        isMask: false
+        title : pathExists ?  "Folder is empty!" : "Folder doesn't exists!"
+        body: pathExists ? "You can add new files to it" : "Create Folder?"
+        emojiSize: iconSizes.huge
+
 
     }
 
