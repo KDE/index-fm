@@ -30,7 +30,7 @@ Maui.ApplicationWindow
     altColor: "#43455a"
     altColorText: "#ffffff"
     altToolBars: false
-    floatingBar : true
+
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
@@ -53,7 +53,7 @@ Maui.ApplicationWindow
     footBar.leftContent: Maui.ToolButton
     {
         id: viewBtn
-        iconColor: altColorText
+        iconColor: floatingBar ? altColorText : textColor
 
         iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
         onClicked: browser.switchView()
@@ -66,21 +66,21 @@ Maui.ApplicationWindow
         Maui.ToolButton
         {
             iconName: "go-previous"
-            iconColor: altColorText
+            iconColor: floatingBar ? altColorText : textColor
             onClicked: browser.goBack()
         }
 
         Maui.ToolButton
         {
             iconName: "go-up"
-            iconColor: altColorText
+            iconColor: floatingBar ? altColorText : textColor
             onClicked: browser.goUp()
         }
 
         Maui.ToolButton
         {
             iconName: "go-next"
-            iconColor: altColorText
+            iconColor: floatingBar ? altColorText : textColor
             onClicked: browser.goNext()
         }
     }
@@ -96,7 +96,7 @@ Maui.ApplicationWindow
         Maui.ToolButton
         {
             iconName: "overflow-menu"
-            iconColor: altColorText
+            iconColor: floatingBar ? altColorText : textColor
             onClicked:  browser.browserMenu.show()
         }
     ]
