@@ -119,7 +119,7 @@ Maui.Page
             id: browserContainer
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.margins: detailsView ? 0 : contentMargins * 2
+            Layout.margins: detailsView ? unit : contentMargins * 2
 
             ColumnLayout
             {
@@ -130,7 +130,7 @@ Maui.Page
                     id: viewLoader
                     sourceComponent: detailsView ? listViewBrowser : gridViewBrowser
 
-                    Layout.topMargin: detailsView ? 0 : contentMargins * 2
+                    Layout.margins: detailsView ? unit : contentMargins * 2
 
                     Layout.fillWidth: true
                     Layout.fillHeight: true

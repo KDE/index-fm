@@ -20,6 +20,7 @@ ListView
 
     clip: true
     focus: true
+    boundsBehavior: !isMobile? Flickable.StopAtBounds : Flickable.OvershootBounds
 
     model: ListModel { id: listModel }
     delegate: Maui.IconDelegate
