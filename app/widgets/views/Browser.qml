@@ -39,10 +39,7 @@ Maui.Page
                           })
 
     property int currentView : views.icon
-    leftPadding: detailsView ? 0 : contentMargins
-    rightPadding: leftPadding
-    topPadding: leftPadding
-    bottomPadding: leftPadding
+    margins: 0
 
     Connections
     {
@@ -122,7 +119,7 @@ Maui.Page
             id: browserContainer
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.margins: detailsView ? 0 : contentMargins
+            Layout.margins: detailsView ? 0 : contentMargins * 2
 
             ColumnLayout
             {

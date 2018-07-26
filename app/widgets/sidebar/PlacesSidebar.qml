@@ -12,7 +12,7 @@ Maui.SideBar
     focus: true
     clip: true
 
-    section.property :  !placesList.isCollapsed ? "type" : ""
+    section.property: !placesList.isCollapsed ? "type" : ""
     section.criteria: ViewSection.FullString
     section.delegate: Maui.LabelDelegate
     {

@@ -19,7 +19,7 @@ Maui.ApplicationWindow
     id: root
     title: browser.currentPath
     property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
-                                                           unit * (isMobile ? 14 : 11)
+                                                           Kirigami.Units.gridUnit * (isMobile ? 14 : 11)
 
     pageStack.defaultColumnWidth: sidebarWidth
     pageStack.initialPage: [placesSidebar, browser]
@@ -30,8 +30,8 @@ Maui.ApplicationWindow
     altColor: "#43455a"
     altColorText: "#ffffff"
     altToolBars: false
-    floatingBar: isMobile
-//    footBarOverlap: true
+    floatingBar: true
+    footBarOverlap: true
 
     headBar.middleContent: Maui.PathBar
     {
