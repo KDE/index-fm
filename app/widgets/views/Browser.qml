@@ -61,7 +61,7 @@ Maui.Page
     Component
     {
         id: listViewBrowser
-        IndexList
+        Maui.ListBrowser
         {}
     }
 
@@ -69,7 +69,7 @@ Maui.Page
     {
         id: gridViewBrowser
 
-        IndexGrid
+        Maui.GridBrowser
         { }
     }
 
@@ -87,6 +87,20 @@ Maui.Page
             else
                 browser.openFile(item.path)
         }
+
+        onItemRightClicked: itemMenu.show(viewLoader.item.model.get(index).path)
+
+        onEmblemClicked:  browser.addToSelection(item, true)
+
+        onAreaClicked:
+        {
+            if(!isMobile && mouse.button === Qt.RightButton)
+                browserMenu.show()
+            else
+                clearSelection()
+        }
+
+        onAreaRightClicked: browserMenu.show()
     }
 
     focus: true
