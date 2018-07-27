@@ -443,8 +443,12 @@ Maui.Page
             break
         case iconSizes.enormous: thumbnailsSize = iconSizes.enormous
             break
+        default:
+             thumbnailsSize = iconSizes.large
 
         }
+
+        grid.adaptGrid()
     }
 
     function zoomOut()
@@ -465,7 +469,13 @@ Maui.Page
             break
         case iconSizes.enormous: thumbnailsSize = iconSizes.huge
             break
+        default:
+             thumbnailsSize = iconSizes.large
+
         }
+
+        grid.adaptGrid()
+
     }
 
 }
