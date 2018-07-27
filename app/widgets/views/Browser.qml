@@ -32,13 +32,15 @@ Maui.Page
     property var previousPath: []
     property var nextPath: []
     property bool terminalVisible : inx.loadSettings("TERMINAL_VISIBLE", "BROWSER", false) === "true" ? true : false
-    property var views : ({
-                              icon : 0,
-                              details : 1,
-                              tree : 2
-                          })
+    property var pathType : ({
+                                 directory : 0,
+                                 tags : 1,
+                                 applications : 2,
+                                 none: 3
 
-    property int currentView : views.icon
+                             })
+
+    property int currentPathType : views.none
     property int thumbnailsSize : iconSizes.large
     margins: 0
 
@@ -112,7 +114,7 @@ Maui.Page
     Maui.Holder
     {
         id: holder
-        visible: viewLoader.item.count === 0 || !inx.fileExists(currentPath)
+        visible: viewLoader.item.count === 0 /*|| !inx.fileExists(currentPath)*/
 
         emoji: pathExists ? "qrc:/assets/MoonSki.png" : "qrc:/assets/ElectricPlug.png"
         isMask: false
@@ -269,6 +271,8 @@ Maui.Page
 
     function openCustomPath(path)
     {
+        setPath(path, pathType.applications)
+
         var items = inx.getCustomPathContent(path)
         if(items.length > 0)
             for(var i in items)
@@ -277,13 +281,10 @@ Maui.Page
         for(i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
                 placesSidebar.currentIndex = i
-
-        pathBar.append(currentPath)
     }
 
     function populate(path)
     {
-        currentPath = path
         clear()
 
         if(path.indexOf("#") === 0)
@@ -292,6 +293,8 @@ Maui.Page
             return;
         }
 
+        setPath(path, pathType.directory)
+
         /* should it really return the paths or just use the signal? */
         var items = inx.getPathContent(path)
 
@@ -299,7 +302,6 @@ Maui.Page
             if(currentPath === placesSidebar.model.get(i).path)
                 placesSidebar.currentIndex = i
 
-        pathBar.append(currentPath)
         inx.watchPath(currentPath)
     }
 
@@ -418,10 +420,15 @@ Maui.Page
 
     function populateTags(myTag)
     {
-        console.log("GETTIN TAGS CONTENT")
-        currentPath = myTag
         clear()
         var data = inx.getTagContent(myTag)
+        setPath(myTag, pathType.tags)
+    }
+
+    function setPath(path, type)
+    {
+        currentPathType = type
+        currentPath = path
         pathBar.append(currentPath)
     }
 
@@ -444,7 +451,7 @@ Maui.Page
         case iconSizes.enormous: thumbnailsSize = iconSizes.enormous
             break
         default:
-             thumbnailsSize = iconSizes.large
+            thumbnailsSize = iconSizes.large
 
         }
 
@@ -470,7 +477,7 @@ Maui.Page
         case iconSizes.enormous: thumbnailsSize = iconSizes.huge
             break
         default:
-             thumbnailsSize = iconSizes.large
+            thumbnailsSize = iconSizes.large
 
         }
 

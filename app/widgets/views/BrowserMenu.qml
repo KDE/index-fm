@@ -108,7 +108,8 @@ Menu
 
     function show()
     {
-        if(inx.isDir(browser.currentPath))
+        if(browser.currentPathType === browser.pathType.directory
+                || browser.currentPathType ===  browser.pathType.tags)
         {
             if(browser.isCopy)
                 pasteFiles = copyPaths.length
