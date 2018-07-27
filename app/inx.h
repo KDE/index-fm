@@ -223,7 +223,7 @@ const QString description = "File manager";
 
 inline void saveSettings(const QString &key, const QVariant &value, const QString &group)
 {
-    QSettings setting("Babe","babe");
+    QSettings setting(INX::app,INX::app);
     setting.beginGroup(group);
     setting.setValue(key,value);
     setting.endGroup();
@@ -232,7 +232,7 @@ inline void saveSettings(const QString &key, const QVariant &value, const QStrin
 inline QVariant loadSettings(const QString &key, const QString &group, const QVariant &defaultValue)
 {
     QVariant variant;
-    QSettings setting("Babe","babe");
+    QSettings setting(INX::app,INX::app);
     setting.beginGroup(group);
     variant = setting.value(key,defaultValue);
     setting.endGroup();
