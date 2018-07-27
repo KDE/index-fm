@@ -41,7 +41,8 @@ Maui.Page
                              })
 
     property int currentPathType : views.none
-    property int thumbnailsSize : iconSizes.large
+    property int thumbnailsSize : inx.loadSettings("THUMBNAILSIZE", "BROWSER", iconSizes.large)
+
     margins: 0
 
     Connections
@@ -269,7 +270,7 @@ Maui.Page
         //            clearSelection()
     }
 
-    function openCustomPath(path)
+    function openAppsPath(path)
     {
         setPath(path, pathType.applications)
 
@@ -287,9 +288,9 @@ Maui.Page
     {
         clear()
 
-        if(path.indexOf("#") === 0)
+        if(path.indexOf("#apps") === 0)
         {
-            browser.openCustomPath(path)
+            browser.openAppsPath(path)
             return;
         }
 
@@ -455,6 +456,7 @@ Maui.Page
 
         }
 
+        inx.saveSettings("THUMBNAILSIZE", thumbnailsSize, "BROWSER")
         grid.adaptGrid()
     }
 
@@ -480,7 +482,7 @@ Maui.Page
             thumbnailsSize = iconSizes.large
 
         }
-
+        inx.saveSettings("THUMBNAILSIZE", thumbnailsSize, "BROWSER")
         grid.adaptGrid()
 
     }
