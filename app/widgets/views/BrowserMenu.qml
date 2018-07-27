@@ -23,8 +23,7 @@ Menu
         onTriggered: browser.selectionMode = !browser.selectionMode
     }
 
-    Kirigami.Separator{ width: parent.width; height: 1}
-
+    MenuSeparator { }
     MenuItem
     {
         visible: !isMobile
@@ -54,8 +53,7 @@ Menu
         }
     }
 
-    Kirigami.Separator{ width: parent.width; height: 1}
-
+    MenuSeparator { }
     MenuItem
     {
         text: qsTr("New folder")
@@ -74,13 +72,38 @@ Menu
         onTriggered: browser.bookmarkFolder(browser.currentPath)
     }
 
-    Kirigami.Separator{ width: parent.width; height: 1}
-
+    MenuSeparator { }
     MenuItem
     {
         text: qsTr("Paste ")+"["+pasteFiles+"]"
         enabled: pasteFiles > 0
         onTriggered: browser.paste()
+    }
+    MenuSeparator { }
+    MenuItem
+    {
+        Rectangle
+        {
+            anchors.fill: parent
+            color: viewBackgroundColor
+        }
+
+        Row
+        {
+            anchors.centerIn: parent
+            Maui.ToolButton
+            {
+                iconName: "list-add"
+                onClicked: zoomIn()
+            }
+
+            Maui.ToolButton
+            {
+                iconName: "list-remove"
+                onClicked: zoomOut()
+            }
+        }
+
     }
 
     function show()

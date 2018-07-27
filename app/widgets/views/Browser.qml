@@ -39,6 +39,7 @@ Maui.Page
                           })
 
     property int currentView : views.icon
+    property int thumbnailsSize : iconSizes.large
     margins: 0
 
     Connections
@@ -70,7 +71,9 @@ Maui.Page
         id: gridViewBrowser
 
         Maui.GridBrowser
-        { }
+        {
+            itemSize : thumbnailsSize
+        }
     }
 
     Connections
@@ -420,6 +423,49 @@ Maui.Page
         clear()
         var data = inx.getTagContent(myTag)
         pathBar.append(currentPath)
+    }
+
+    function zoomIn()
+    {
+        switch(thumbnailsSize)
+        {
+        case iconSizes.tiny: thumbnailsSize = iconSizes.small
+            break
+        case iconSizes.small: thumbnailsSize = iconSizes.medium
+            break
+        case iconSizes.medium: thumbnailsSize = iconSizes.big
+            break
+        case iconSizes.big: thumbnailsSize = iconSizes.large
+            break
+        case iconSizes.large: thumbnailsSize = iconSizes.huge
+            break
+        case iconSizes.huge: thumbnailsSize = iconSizes.enormous
+            break
+        case iconSizes.enormous: thumbnailsSize = iconSizes.enormous
+            break
+
+        }
+    }
+
+    function zoomOut()
+    {
+        switch(thumbnailsSize)
+        {
+        case iconSizes.tiny: thumbnailsSize = iconSizes.tiny
+            break
+        case iconSizes.small: thumbnailsSize = iconSizes.tiny
+            break
+        case iconSizes.medium: thumbnailsSize = iconSizes.small
+            break
+        case iconSizes.big: thumbnailsSize = iconSizes.medium
+            break
+        case iconSizes.large: thumbnailsSize = iconSizes.big
+            break
+        case iconSizes.huge: thumbnailsSize = iconSizes.large
+            break
+        case iconSizes.enormous: thumbnailsSize = iconSizes.huge
+            break
+        }
     }
 
 }
