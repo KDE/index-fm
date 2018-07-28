@@ -29,6 +29,7 @@ Maui.ApplicationWindow
     highlightColor: "#8682dd"
     altColor: "#43455a"
     altColorText: "#ffffff"
+    altToolBars: false
 
     headBar.middleContent: Maui.PathBar
     {
