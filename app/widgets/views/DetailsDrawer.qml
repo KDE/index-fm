@@ -10,8 +10,7 @@ Maui.Drawer
 {
     id: detailsDrawerRoot
     edge: Qt.RightEdge
-//    height: parent.height - root.headBar.height -root.footBar.height
-    //    visible: opened ? pageStack.currentIndex = 1 && pageStack.wideMode : false
+
     property string currentUrl: ""
     property var iteminfo : ({})
     property bool isDir : false
