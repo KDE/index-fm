@@ -128,6 +128,62 @@ Maui.Page
 
     Keys.onSpacePressed: detailsDrawer.show(viewLoader.item.model.get(viewLoader.item.currentIndex).path)
 
+    footBar.visible: pageStack.currentIndex !== 0 || pageStack.wideMode
+    floatingBar: true
+    footBarOverlap: true
+
+    footBar.leftContent: Maui.ToolButton
+    {
+        id: viewBtn
+        iconColor: floatingBar ? altColorText : textColor
+
+        iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
+        onClicked: browser.switchView()
+    }
+
+    footBar.middleContent: Row
+    {
+
+        spacing: space.medium
+        Maui.ToolButton
+        {
+            iconName: "go-previous"
+            iconColor: floatingBar ? altColorText : textColor
+            onClicked: browser.goBack()
+        }
+
+        Maui.ToolButton
+        {
+            iconName: "go-up"
+            iconColor: floatingBar ? altColorText : textColor
+            onClicked: browser.goUp()
+        }
+
+        Maui.ToolButton
+        {
+            iconName: "go-next"
+            iconColor: floatingBar ? altColorText : textColor
+            onClicked: browser.goNext()
+        }
+    }
+
+    footBar.rightContent:  [
+        //        Maui.ToolButton
+        //        {
+        //            iconName: "documentinfo"
+        //            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
+        //            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
+        //                                                       browser.detailsDrawer.show(browser.currentPath)
+        //        },
+        Maui.ToolButton
+        {
+            iconName: "overflow-menu"
+            iconColor: floatingBar ? altColorText : textColor
+            onClicked:  browser.browserMenu.show()
+        }
+    ]
+
+
     ColumnLayout
     {
         spacing: 0
