@@ -12,18 +12,16 @@ Menu
     margins: 1
     padding: 2
 
-    property string path : ""
+    property var paths : []
     property bool isDir : false
 
-    property bool multiple : false
-
-    signal bookmarkClicked(string path)
-    signal removeClicked(string path)
-    signal shareClicked(string path)
-    signal copyClicked(string path)
-    signal cutClicked(string path)
-    signal tagsClicked(string path)
-    signal saveToClicked(string path)
+    signal bookmarkClicked(var paths)
+    signal removeClicked(var paths)
+    signal shareClicked(var paths)
+    signal copyClicked(var paths)
+    signal cutClicked(var paths)
+    signal tagsClicked(var paths)
+    signal saveToClicked(var paths)
 
     MenuItem
     {
@@ -31,7 +29,7 @@ Menu
         enabled: isDir
         onTriggered:
         {
-            bookmarkClicked(path)
+            bookmarkClicked(paths)
             close()
         }
     }
@@ -41,7 +39,7 @@ Menu
         text: qsTr("Tags...")
         onTriggered:
         {
-            tagsClicked(path)
+            tagsClicked(paths)
             close()
         }
     }
@@ -50,10 +48,9 @@ Menu
     MenuItem
     {
         text: qsTr("Share...")
-        enabled: !isDir
         onTriggered:
         {
-            shareClicked(path)
+            shareClicked(paths)
             close()
         }
     }
@@ -63,7 +60,7 @@ Menu
         text: qsTr("Copy...")
         onTriggered:
         {
-            copyClicked(path)
+            copyClicked(paths)
             close()
         }
     }
@@ -73,7 +70,7 @@ Menu
         text: qsTr("Cut...")
         onTriggered:
         {
-            cutClicked(path)
+            cutClicked(paths)
             close()
         }
     }
@@ -83,7 +80,7 @@ Menu
         text: qsTr("Save to...")
         onTriggered:
         {
-            saveToClicked(path)
+            saveToClicked(paths)
             close()
         }
     }
@@ -93,7 +90,7 @@ Menu
         text: qsTr("Remove...")
         onTriggered:
         {
-            removeClicked(path)
+            removeClicked(paths)
             close()
         }
     }
@@ -103,7 +100,7 @@ Menu
         text: qsTr("Info...")
         onTriggered:
         {
-            browser.detailsDrawer.show(path)
+            browser.detailsDrawer.show(paths)
             close()
         }
     }
@@ -116,22 +113,21 @@ Menu
         onTriggered: browser.selectionBar.append(browser.grid.model.get(browser.grid.currentIndex))
     }
 
-    function show(url)
+    function show(urls)
     {
-        if(!inx.isCustom(browser.currentPath))
-        {
-            path = url
-            multiple = false
-            isDir = inx.isDir(path)
-            if(isMobile) open()
-            else popup()
-        }
+        if(urls.length > 0 )
+            if(!inx.isCustom(browser.currentPath))
+            {
+                paths = urls
+                isDir = inx.isDir(paths[0])
+                if(isMobile) open()
+                else popup()
+            }
     }
 
-    function showMultiple()
+    function showMultiple(urls)
     {
-        multiple = true
-        path = ""
+        paths = urls
 
         if(isMobile) open()
         else popup()

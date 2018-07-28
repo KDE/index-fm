@@ -9,7 +9,6 @@ import org.kde.maui 1.0 as Maui
 Maui.Page
 {
     property string currentPath: inx.homePath()
-    property var selectedPaths : []
     property var copyPaths : []
     property var cutPaths : []
 
@@ -76,6 +75,7 @@ Maui.Page
         Maui.GridBrowser
         {
             itemSize : thumbnailsSize
+            showEmblem: currentPathType !== pathType.applications
         }
     }
 
@@ -215,14 +215,13 @@ Maui.Page
                 Maui.SelectionBar
                 {
                     id: selectionBar
-                    y: -20
-                    visible: selectionList.count > 0
+                    //                    y: -20
                     Layout.fillWidth: true
                     Layout.leftMargin: contentMargins*2
                     Layout.rightMargin: contentMargins*2
                     Layout.bottomMargin: contentMargins*2
 
-                    onIconClicked: itemMenu.showMultiple()
+                    onIconClicked: itemMenu.showMultiple(selectedPaths)
                     onExitClicked: clearSelection()
                 }
             }
@@ -391,25 +390,7 @@ Maui.Page
 
     function addToSelection(item, append)
     {
-
-        var index = selectedPaths.indexOf(item.path)
-        if(index<0)
-        {
-            selectedPaths.push(item.path)
-            selectionBar.append(item)
-        }
-        //        else
-        //        {
-        //            if (index !== -1)
-        //                selectedPaths.splice(index, 1)
-        //        }
-    }
-
-    function handleSelection()
-    {
-        if(selectedPaths.length > 0)
-            selectionBar.visible = true
-
+        selectionBar.append(item)
     }
 
     function clearSelection()
@@ -420,11 +401,10 @@ Maui.Page
 
     function clean()
     {
-        selectedPaths = []
         copyPaths = []
         cutPaths = []
         browserMenu.pasteFiles = 0
-        selectionBar.selectionList.model.clear()
+        selectionBar.clear()
     }
 
     function copy(paths)
@@ -478,7 +458,7 @@ Maui.Page
     function populateTags(myTag)
     {
         clear()
-        var data = inx.getTagContent(myTag)
+        inx.getTagContent(myTag)
         setPath(myTag, pathType.tags)
     }
 

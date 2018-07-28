@@ -1,0 +1,4 @@
+function bookmarkFolders(urls)
+{
+
+}

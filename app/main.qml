@@ -79,51 +79,50 @@ Maui.ApplicationWindow
     ItemMenu
     {
         id: itemMenu
-        onBookmarkClicked: INX.bookmarkFolder(path)
+        onBookmarkClicked: INX.bookmarkFolders(paths)
         onCopyClicked:
         {
-            if(multiple)
-            {
-                browser.copy(browser.selectedPaths)
+            if(paths.length > 0)
                 browser.selectionBar.animate("#6fff80")
-            }else browser.copy([path])
+
+            browser.copy(paths)
 
         }
         onCutClicked:
         {
-            if(multiple)
-            {
-                browser.cut(browser.selectedPaths)
+            if(paths.length > 0)
                 browser.selectionBar.animate("#fff44f")
-            }else browser.cut([path])
+
+            browser.cut(paths)
         }
 
-        onSaveToClicked:
-        {
-            fmDialog.saveDialog = false
-            fmDialog.multipleSelection = true
-            fmDialog.onlyDirs= true
+        //        onSaveToClicked:
+        //        {
+        //            fmDialog.saveDialog = false
+        //            fmDialog.multipleSelection = true
+        //            fmDialog.onlyDirs= true
 
-            var myPath = path
+        //            var myPath = path
 
-            fmDialog.show(function(selectedPaths)
-            {
-                inx.copy(myPath, selectedPaths)
-            })
-        }
+        //            var paths = browser.selectionBar.selectedPaths
+        //            fmDialog.show(function(paths)
+        //            {
+        //                inx.copy(myPath, paths)
+        //            })
+        //        }
 
         onRemoveClicked:
         {
-            if(multiple)
+            if(paths.length > 0)
             {
-                clearSelection()
-                browser.remove(browser.selectedPaths)
+                browser.selectionBar.clear()
                 browser.selectionBar.animate("red")
-            }else  browser.remove([path])
+            }
+            browser.remove(paths)
         }
 
-        onShareClicked:   isAndroid ? Maui.Android.shareDialog(path) :
-                                      shareDialog.show(path)
+        onShareClicked: isAndroid ? Maui.Android.shareDialog(paths) :
+                                    shareDialog.show(paths)
     }
 
     Maui.NewDialog
