@@ -115,20 +115,17 @@ Maui.Page
     Maui.Holder
     {
         id: holder
-        visible: viewLoader.item.count === 0 /*|| !inx.fileExists(currentPath)*/
-
+        visible: false/*|| !inx.fileExists(currentPath)*/
+        z: -1
         emoji: pathExists ? "qrc:/assets/MoonSki.png" : "qrc:/assets/ElectricPlug.png"
         isMask: false
         title : pathExists ?  "Folder is empty!" : "Folder doesn't exists!"
         body: pathExists ? "You can add new files to it" : "Create Folder?"
         emojiSize: iconSizes.huge
-
-
     }
 
     Keys.onSpacePressed: detailsDrawer.show(viewLoader.item.model.get(viewLoader.item.currentIndex).path)
 
-    footBar.visible: pageStack.currentIndex !== 0 || pageStack.wideMode
     floatingBar: true
     footBarOverlap: true
 
@@ -189,6 +186,7 @@ Maui.Page
         spacing: 0
         anchors.fill: parent
         visible: !holder.visible
+        z: holder.z + 1
 
         Item
         {
@@ -196,6 +194,7 @@ Maui.Page
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.margins: detailsView ? unit : contentMargins * 2
+            z: holder.z + 1
 
             ColumnLayout
             {
@@ -204,6 +203,7 @@ Maui.Page
                 Loader
                 {
                     id: viewLoader
+                    z: holder.z + 1
                     sourceComponent: detailsView ? listViewBrowser : gridViewBrowser
 
                     Layout.margins: detailsView ? unit : contentMargins * 2
@@ -215,12 +215,11 @@ Maui.Page
                 Maui.SelectionBar
                 {
                     id: selectionBar
-                    //                    y: -20
                     Layout.fillWidth: true
                     Layout.leftMargin: contentMargins*2
                     Layout.rightMargin: contentMargins*2
                     Layout.bottomMargin: contentMargins*2
-
+                    z: holder.z +1
                     onIconClicked: itemMenu.showMultiple(selectedPaths)
                     onExitClicked: clearSelection()
                 }
