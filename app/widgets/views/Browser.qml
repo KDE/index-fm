@@ -103,7 +103,7 @@ Maui.Page
             if(!isMobile && mouse.button === Qt.RightButton)
                 browserMenu.show()
             else
-                clearSelection()
+                return
         }
 
         onAreaRightClicked: browserMenu.show()
