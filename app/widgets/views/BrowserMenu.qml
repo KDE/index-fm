@@ -53,6 +53,19 @@ Menu
         }
     }
 
+    MenuItem
+    {
+        text: qsTr("Show hidden files")
+        onTriggered:
+        {
+            var state = Maui.KDE.dirConf(browser.currentPath+"/.directory").hidden
+            console.log(state)
+            Maui.KDE.setDirConf(browser.currentPath+"/.directory", "Settings", "HiddenFilesShown", !state)
+            browser.refresh()
+            close()
+        }
+    }
+
     MenuSeparator { }
     MenuItem
     {
@@ -88,17 +101,21 @@ Menu
             color: viewBackgroundColor
         }
 
-        Row
+        RowLayout
         {
             anchors.centerIn: parent
             Maui.ToolButton
             {
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 iconName: "list-add"
                 onClicked: zoomIn()
             }
 
             Maui.ToolButton
             {
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 iconName: "list-remove"
                 onClicked: zoomOut()
             }

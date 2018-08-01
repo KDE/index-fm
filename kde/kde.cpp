@@ -29,6 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KService>
 #include <KServiceGroup>
 #include <QDebug>
+
 #include "../app/inx.h"
 
 KDE::KDE(QObject *parent) : QObject(parent) {}
