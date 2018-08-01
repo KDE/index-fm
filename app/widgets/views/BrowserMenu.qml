@@ -82,7 +82,7 @@ Menu
     MenuItem
     {
         text: qsTr("Bookmark")
-        onTriggered: browser.bookmarkFolder(browser.currentPath)
+        onTriggered: browser.bookmarkFolder([browser.currentPath])
     }
 
     MenuSeparator { }
@@ -95,15 +95,11 @@ Menu
     MenuSeparator { }
     MenuItem
     {
-        Rectangle
-        {
-            anchors.fill: parent
-            color: viewBackgroundColor
-        }
+        width: parent.width
 
         RowLayout
         {
-            anchors.centerIn: parent
+            anchors.fill: parent
             Maui.ToolButton
             {
                 Layout.fillHeight: true
@@ -120,7 +116,6 @@ Menu
                 onClicked: zoomOut()
             }
         }
-
     }
 
     function show()

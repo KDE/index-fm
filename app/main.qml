@@ -79,7 +79,7 @@ Maui.ApplicationWindow
     ItemMenu
     {
         id: itemMenu
-        onBookmarkClicked: INX.bookmarkFolders(paths)
+        onBookmarkClicked: browser.bookmarkFolder(paths)
         onCopyClicked:
         {
             if(paths.length > 0)

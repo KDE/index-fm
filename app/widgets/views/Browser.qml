@@ -17,8 +17,9 @@ Maui.Page
 
     property bool selectionMode : false
 
-    property bool detailsView: inx.loadSettings("BROWSER_VIEW", "BROWSER", false) === "false" ? false: true
-    property bool previews: inx.loadSettings("SHOW_PREVIEWS", "BROWSER", false) === "false" ? false: true
+    property bool detailsView: false
+
+    property bool previews: false
 
     property bool pathExists : inx.fileExists(currentPath)
     property alias terminal : terminalLoader.item
@@ -30,7 +31,7 @@ Maui.Page
 
     property var previousPath: []
     property var nextPath: []
-    property bool terminalVisible : inx.loadSettings("TERMINAL_VISIBLE", "BROWSER", false) === "true" ? true : false
+    property bool terminalVisible : false
     property var pathType : ({
                                  directory : 0,
                                  tags : 1,
@@ -94,7 +95,7 @@ Maui.Page
                 browser.openFile(item.path)
         }
 
-        onItemRightClicked: itemMenu.show(viewLoader.item.model.get(index).path)
+        onItemRightClicked: itemMenu.show([viewLoader.item.model.get(index).path])
 
         onEmblemClicked:  browser.addToSelection(item, true)
 
@@ -220,7 +221,7 @@ Maui.Page
                     Layout.rightMargin: contentMargins*2
                     Layout.bottomMargin: contentMargins*2
                     z: holder.z +1
-                    onIconClicked: itemMenu.showMultiple(selectedPaths)
+                    onIconClicked: itemMenu.show(selectedPaths)
                     onExitClicked: clearSelection()
                 }
             }
@@ -351,8 +352,14 @@ Maui.Page
         setPath(path, pathType.directory)
 
         /* should it really return the paths or just use the signal? */
-        var items = inx.getPathContent(path)
+        var iconsize = Maui.FM.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
+        thumbnailsSize = parseInt(iconsize)
+        detailsView = Maui.FM.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
 
+        if(!detailsView)
+            grid.adaptGrid()
+
+        var items = inx.getPathContent(path)
         for(var i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
                 placesSidebar.currentIndex = i
@@ -384,7 +391,10 @@ Maui.Page
 
     function refresh()
     {
+        var pos = browser.grid.contentY
         populate(currentPath)
+
+        browser.grid.contentY = pos
     }
 
     function addToSelection(item, append)
@@ -411,7 +421,6 @@ Maui.Page
         copyPaths = paths
         isCut = false
         isCopy = true
-        console.log("Paths to copy", copyPaths)
     }
 
     function cut(paths)
@@ -423,7 +432,6 @@ Maui.Page
 
     function paste()
     {
-        console.log("paste to", currentPath, copyPaths)
         if(isCopy)
             inx.copy(copyPaths, currentPath)
         else if(isCut)
@@ -442,16 +450,22 @@ Maui.Page
     function switchView()
     {
         detailsView = !detailsView
-        inx.saveSettings("BROWSER_VIEW", detailsView, "BROWSER")
+
+        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "DetailView", detailsView)
         populate(currentPath)
     }
 
-    function bookmarkFolder(path)
+    function bookmarkFolder(paths)
     {
-        if(inx.isDefaultPath(path)) return
-
-        inx.bookmark(path)
-        placesSidebar.populate()
+        if(paths.length > 0)
+        {
+            for(var i in paths)
+            {
+                if(inx.isDefaultPath(paths[i])) continue
+                inx.bookmark(paths[i])
+            }
+            placesSidebar.populate()
+        }
     }
 
     function populateTags(myTag)
@@ -492,6 +506,7 @@ Maui.Page
         }
 
         inx.saveSettings("THUMBNAILSIZE", thumbnailsSize, "BROWSER")
+        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
         grid.adaptGrid()
     }
 
@@ -518,6 +533,7 @@ Maui.Page
 
         }
         inx.saveSettings("THUMBNAILSIZE", thumbnailsSize, "BROWSER")
+        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
         grid.adaptGrid()
 
     }

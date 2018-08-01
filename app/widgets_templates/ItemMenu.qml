@@ -1,8 +1,10 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.3
+import org.kde.maui 1.0 as Maui
 
 Menu
 {
+    id: control
     x: parent.width / 2 - width / 2
     y: parent.height / 2 - height / 2
     modal: true
@@ -113,23 +115,39 @@ Menu
         onTriggered: browser.selectionBar.append(browser.grid.model.get(browser.grid.currentIndex))
     }
 
+    MenuSeparator {}
+
+    MenuItem
+    {
+        width: parent.width
+        height: iconSize
+
+        ColorsBar
+        {
+            height: parent.height
+            width: parent.width
+            size:  iconSize
+            onColorPicked:
+            {
+                for(var i in control.paths)
+                    Maui.FM.setDirConf(control.paths[i]+"/.directory", "Desktop Entry", "Icon", color)
+
+                browser.refresh()
+
+            }
+        }
+    }
+
     function show(urls)
     {
         if(urls.length > 0 )
-            if(!inx.isCustom(browser.currentPath))
-            {
-                paths = urls
-                isDir = inx.isDir(paths[0])
-                if(isMobile) open()
-                else popup()
-            }
+        {
+            paths = urls
+            isDir = inx.isDir(paths[0])
+            if(isMobile) open()
+            else popup()
+        }
+
     }
 
-    function showMultiple(urls)
-    {
-        paths = urls
-
-        if(isMobile) open()
-        else popup()
-    }
 }
