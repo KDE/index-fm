@@ -130,7 +130,7 @@ Maui.Drawer
                         iconName: "document-open"
                         onClicked:
                         {
-                            if(previewLoader.item.player)
+                            if(typeof(previewLoader.item.player) !== "undefined")
                             previewLoader.item.player.stop()
 
                             browser.openFile(currentUrl)

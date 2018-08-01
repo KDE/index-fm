@@ -58,9 +58,9 @@ Menu
         text: qsTr("Show hidden files")
         onTriggered:
         {
-            var state = Maui.KDE.dirConf(browser.currentPath+"/.directory").hidden
+            var state = Maui.FM.dirConf(browser.currentPath+"/.directory").hidden
             console.log(state)
-            Maui.KDE.setDirConf(browser.currentPath+"/.directory", "Settings", "HiddenFilesShown", !state)
+            Maui.FM.setDirConf(browser.currentPath+"/.directory", "Settings", "HiddenFilesShown", !state)
             browser.refresh()
             close()
         }
