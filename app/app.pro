@@ -5,8 +5,6 @@ QT += sql
 CONFIG += c++11
 
 TARGET = index
-DESTDIR = $$OUT_PWD/../
-
 
 linux:unix:!android {
 
@@ -59,3 +57,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     index.h \
     inx.h
+
+include($$PWD/../install.pri)
+
+DISTFILES += \
+    ../org.kde.index.desktop

@@ -9,6 +9,3 @@ linux:unix:!android {
     SUBDIRS += kde/qmltermwidget
 }
 
-include(install.pri)
-target.path = /usr/local/bin/
-INSTALLS += target
