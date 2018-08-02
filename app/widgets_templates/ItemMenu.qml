@@ -109,9 +109,7 @@ Menu
 
     MenuItem
     {
-        visible: browser.selectionMode
         text: qsTr("Select")
-        enabled: isDir
         onTriggered: browser.selectionBar.append(browser.grid.model.get(browser.grid.currentIndex))
     }
 
