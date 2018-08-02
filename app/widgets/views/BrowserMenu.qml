@@ -31,7 +31,7 @@ Menu
         onTriggered:
         {
             terminalVisible = !terminalVisible
-            inx.saveSettings("TERMINAL_VISIBLE", terminalVisible, "BROWSER")
+            Maui.FM.setDirConf(browser.currentPath+"/.directory", "MAUIFM", "ShowTerminal", browser.terminalVisible)
             close()
         }
     }
@@ -48,7 +48,7 @@ Menu
         onTriggered:
         {
             browser.previews = !browser.previews
-            inx.saveSettings("SHOW_PREVIEWS", browser.previews, "BROWSER")
+            Maui.FM.setDirConf(browser.currentPath+"/.directory", "MAUIFM", "ShowThumbnail", browser.previews)
             close()
         }
     }

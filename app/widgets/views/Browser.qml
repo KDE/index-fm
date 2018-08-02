@@ -18,8 +18,8 @@ Maui.Page
     property bool selectionMode : false
 
     property bool detailsView: false
-
     property bool previews: false
+    property bool terminalVisible : false
 
     property bool pathExists : inx.fileExists(currentPath)
     property alias terminal : terminalLoader.item
@@ -31,7 +31,6 @@ Maui.Page
 
     property var previousPath: []
     property var nextPath: []
-    property bool terminalVisible : false
     property var pathType : ({
                                  directory : 0,
                                  tags : 1,
@@ -41,7 +40,7 @@ Maui.Page
                              })
 
     property int currentPathType : views.none
-    property int thumbnailsSize : inx.loadSettings("THUMBNAILSIZE", "BROWSER", iconSizes.large)
+    property int thumbnailsSize : iconSizes.large
 
     margins: 0
 
@@ -66,7 +65,10 @@ Maui.Page
     {
         id: listViewBrowser
         Maui.ListBrowser
-        {}
+        {
+            showPreviewThumbnails: previews
+            showEmblem: currentPathType !== pathType.applications
+        }
     }
 
     Component
@@ -77,6 +79,7 @@ Maui.Page
         {
             itemSize : thumbnailsSize
             showEmblem: currentPathType !== pathType.applications
+            showPreviewThumbnails: previews
         }
     }
 
@@ -351,14 +354,18 @@ Maui.Page
 
         setPath(path, pathType.directory)
 
-        /* should it really return the paths or just use the signal? */
+        /* Get directory configs */
         var iconsize = Maui.FM.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
         thumbnailsSize = parseInt(iconsize)
         detailsView = Maui.FM.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
+        if(!isAndroid)
+            terminalVisible = Maui.FM.dirConf(path+"/.directory")["showterminal"] === "true" ? true : false
+        previews = Maui.FM.dirConf(path+"/.directory")["showthumbnail"] === "true" ? true : false
 
         if(!detailsView)
             grid.adaptGrid()
 
+        /* should it really return the paths or just use the signal? */
         var items = inx.getPathContent(path)
         for(var i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
@@ -504,8 +511,6 @@ Maui.Page
             thumbnailsSize = iconSizes.large
 
         }
-
-        inx.saveSettings("THUMBNAILSIZE", thumbnailsSize, "BROWSER")
         Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
         grid.adaptGrid()
     }
@@ -532,7 +537,6 @@ Maui.Page
             thumbnailsSize = iconSizes.large
 
         }
-        inx.saveSettings("THUMBNAILSIZE", thumbnailsSize, "BROWSER")
         Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
         grid.adaptGrid()
 
