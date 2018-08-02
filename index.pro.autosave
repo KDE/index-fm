@@ -10,5 +10,3 @@ linux:unix:!android {
 }
 
 include(install.pri)
-target.path = /usr/local/bin/
-INSTALLS += target
