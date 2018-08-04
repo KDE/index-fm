@@ -68,6 +68,9 @@ Maui.Page
         {
             showPreviewThumbnails: previews
             showEmblem: currentPathType !== pathType.applications
+            rightEmblem: "document-share"
+            leftEmblem: "emblem-added"
+
         }
     }
 
@@ -80,6 +83,9 @@ Maui.Page
             itemSize : thumbnailsSize
             showEmblem: currentPathType !== pathType.applications
             showPreviewThumbnails: previews
+            rightEmblem: "document-share"
+            leftEmblem: "emblem-added"
+
         }
     }
 
@@ -100,8 +106,10 @@ Maui.Page
 
         onItemRightClicked: itemMenu.show([viewLoader.item.model.get(index).path])
 
-        onEmblemClicked:  browser.addToSelection(item, true)
+        onLeftEmblemClicked:  browser.addToSelection(item, true)
 
+        onRightEmblemClicked: isAndroid ? Maui.Android.shareDialog([item.path]) :
+                                          shareDialog.show([item.path])
         onAreaClicked:
         {
             if(!isMobile && mouse.button === Qt.RightButton)
