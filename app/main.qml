@@ -28,14 +28,14 @@ Maui.ApplicationWindow
     accentColor: altColor
     highlightColor: "#8682dd"
     altColor: "#43455a"
-    altColorText: "#ffffff"
     altToolBars: false
+    altColorText: "#ffffff"
 
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
         height: iconSizes.big
-        width: headBar.width * (isMobile ? 0.6 : 0.8)
+        width: headBar.middleLayout.width * 0.9
         onPathChanged: browser.openFolder(path)
         onHomeClicked:
         {
