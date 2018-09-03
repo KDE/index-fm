@@ -16,15 +16,13 @@ linux:unix:!android {
     message(Building helpers for Android)
     include($$PWD/../android/android.pri)
     include($$PWD/../3rdparty/kirigami/kirigami.pri)
+    include($$PWD/../mauikit/mauikit.pri)
 
     DEFINES += STATIC_KIRIGAMI
 
 } else {
     message("Unknown configuration")
 }
-
-
-include($$PWD/../mauikit/mauikit.pri)
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings

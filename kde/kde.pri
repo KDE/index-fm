@@ -16,3 +16,5 @@ HEADERS += \
 SOURCES += \
     $$PWD/kde.cpp \
     $$PWD/notify.cpp
+
+unix:!macx: LIBS += -lMauiKit

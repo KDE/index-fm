@@ -5,7 +5,7 @@
 #include <QVariantList>
 #include <QStringList>
 #include <QFileSystemWatcher>
-#include "fm.h"
+#include "MauiKit/fm.h"
 
 class Index : public FM
 {

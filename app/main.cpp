@@ -18,10 +18,11 @@
 
 #ifdef STATIC_KIRIGAMI
 #include "../3rdparty/kirigami/src/kirigamiplugin.h"
+#include "../mauikit/src/mauikit.h"
 #endif
 
-#include "../mauikit/src/mauikit.h"
-#include "../mauikit/src/utils/tagging/tagging.h"
+#include "MauiKit/tagging.h"
+#include "MauiKit/fm.h"
 
 int main(int argc, char *argv[])
 {
@@ -56,6 +57,7 @@ int main(int argc, char *argv[])
 
 #ifdef STATIC_KIRIGAMI
     KirigamiPlugin::getInstance().registerTypes();
+    MauiKit::getInstance().registerTypes();
 #endif
 
 #ifdef Q_OS_ANDROID
@@ -65,10 +67,6 @@ int main(int argc, char *argv[])
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/kde/qmltermwidget");
     engine.setImportPathList(importPathList);
 //    QQuickStyle::setStyle("material");
-#endif
-
-#ifdef MAUI_APP
-    MauiKit::getInstance().registerTypes();
 #endif
 
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
