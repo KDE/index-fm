@@ -47,8 +47,7 @@ Menu
         text: qsTr("Show previews")
         onTriggered:
         {
-            browser.previews = !browser.previews
-            Maui.FM.setDirConf(browser.currentPath+"/.directory", "MAUIFM", "ShowThumbnail", browser.previews)
+            INX.showPreviews()
             close()
         }
     }
@@ -58,10 +57,7 @@ Menu
         text: qsTr("Show hidden files")
         onTriggered:
         {
-            var state = Maui.FM.dirConf(browser.currentPath+"/.directory").hidden
-            console.log(state)
-            Maui.FM.setDirConf(browser.currentPath+"/.directory", "Settings", "HiddenFilesShown", !state)
-            browser.refresh()
+            INX.showHiddenFiles()
             close()
         }
     }
@@ -70,19 +66,19 @@ Menu
     MenuItem
     {
         text: qsTr("New folder")
-        onTriggered: newFolderDialog.open()
+        onTriggered: INX.createFolder()
     }
 
     MenuItem
     {
         text: qsTr("New file")
-        onTriggered: newFileDialog.open()
+        onTriggered: INX.createFile()
     }
 
     MenuItem
     {
         text: qsTr("Bookmark")
-        onTriggered: browser.bookmarkFolder([browser.currentPath])
+        onTriggered: INX.bookmarkFolder()
     }
 
     MenuSeparator { }

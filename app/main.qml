@@ -30,10 +30,13 @@ Maui.ApplicationWindow
     altColor: "#43455a"
     altToolBars: false
     altColorText: "#ffffff"
+    property color headBarColor: "#bdc8e5"
+//    headBarBG.color: headBarColor
 
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
+//        pathBarBG.color:Qt.lighter(headBarColor, 1.1)
         height: iconSizes.big
         width: headBar.middleLayout.width * 0.9
         onPathChanged: browser.openFolder(path)
@@ -72,6 +75,7 @@ Maui.ApplicationWindow
         Component.onCompleted:
         {
             browser.openFolder(inx.homePath())
+
         }
     }
 
@@ -151,4 +155,14 @@ Maui.ApplicationWindow
     {
         id:fmDialog
     }
+
+    Component.onCompleted:
+    {
+//        if(!isAndroid)
+//            Maui.KDE.setColorScheme("index", headBarColor, textColor)
+
+        //        if(isAndroid)
+        //            switchColorScheme(colorScheme.Dark)
+    }
+
 }

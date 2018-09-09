@@ -3,8 +3,8 @@ QT += quick
 QT += sql
 
 CONFIG += c++11
-
 TARGET = index
+DESTDIR = $$OUT_PWD/../
 
 linux:unix:!android {
 

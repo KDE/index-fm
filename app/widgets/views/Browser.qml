@@ -5,6 +5,7 @@ import "../../widgets_templates"
 import "../terminal"
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
+import "../../Index.js" as INX
 
 Maui.Page
 {
@@ -122,7 +123,6 @@ Maui.Page
     }
 
     focus: true
-    headBarVisible: false
 
     Maui.Holder
     {
@@ -140,6 +140,41 @@ Maui.Page
 
     floatingBar: true
     footBarOverlap: true
+    headBarExit: false
+
+    headBar.rightContent: [
+
+        Maui.ToolButton
+        {
+            iconName: "visibility"
+            onClicked: INX.showHiddenFiles()
+        },
+
+        Maui.ToolButton
+        {
+            iconName: "view-preview"
+            onClicked: INX.showPreviews()
+        },
+
+        Maui.ToolButton
+        {
+            iconName: "bookmark-new"
+            onClicked: INX.bookmarkFolder()
+        }
+    ]
+
+    headBar.leftContent: [
+        Maui.ToolButton
+        {
+            iconName: "folder-add"
+            onClicked: INX.createFolder()
+        },
+
+        Maui.ToolButton
+        {
+            iconName: "sort-name"
+        }
+    ]
 
     footBar.leftContent: Maui.ToolButton
     {
@@ -276,6 +311,7 @@ Maui.Page
             visible: terminalVisible
             focus: true
             Layout.fillWidth: true
+            Layout.fillHeight: true
             Layout.alignment: Qt.AlignBottom
             Layout.minimumHeight: 100
             Layout.maximumHeight: parent.height *0.5
