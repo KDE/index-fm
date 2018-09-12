@@ -142,6 +142,7 @@ Maui.Page
     floatingBar: true
     footBarOverlap: true
     headBarExit: false
+    altToolBars: isMobile
 
     headBar.rightContent: [
 
