@@ -15,8 +15,8 @@ linux:unix:!android {
 
     message(Building helpers for Android)
     include($$PWD/../android/android.pri)
-    include($$PWD/../3rdparty/kirigami/kirigami.pri)
     include($$PWD/../mauikit/mauikit.pri)
+    include($$PWD/../3rdparty/kirigami/kirigami.pri)
 
     DEFINES += STATIC_KIRIGAMI
 

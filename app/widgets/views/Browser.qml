@@ -20,6 +20,7 @@ Maui.Page
 
     property bool detailsView: false
     property bool previews: false
+    property bool hidden : true
     property bool terminalVisible : false
 
     property bool pathExists : inx.fileExists(currentPath)
@@ -148,42 +149,65 @@ Maui.Page
         {
             iconName: "visibility"
             onClicked: INX.showHiddenFiles()
+            tooltipText: qsTr("Hidden files...")
+            iconColor: hidden ? highlightColor : textColor
         },
 
         Maui.ToolButton
         {
             iconName: "view-preview"
             onClicked: INX.showPreviews()
+            tooltipText: qsTr("Previews...")
+            iconColor: previews ? highlightColor : textColor
         },
 
         Maui.ToolButton
         {
             iconName: "bookmark-new"
             onClicked: INX.bookmarkFolder()
+            tooltipText: qsTr("Bookmark...")
+        },
+
+        Maui.ToolButton
+        {
+            iconName: "overflow-menu"
+            onClicked: browserMenu.show()
+            tooltipText: qsTr("Menu...")
         }
     ]
 
     headBar.leftContent: [
+
+        Maui.ToolButton
+        {
+            id: viewBtn
+//            iconColor: floatingBar ? altColorText : textColor
+            iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
+            onClicked: browser.switchView()
+        },
+
         Maui.ToolButton
         {
             iconName: "folder-add"
             onClicked: INX.createFolder()
+            tooltipText: qsTr("New folder...")
         },
 
         Maui.ToolButton
         {
             iconName: "sort-name"
+            tooltipText: qsTr("Sort by...")
         }
     ]
 
-    footBar.leftContent: Maui.ToolButton
-    {
-        id: viewBtn
-        iconColor: floatingBar ? altColorText : textColor
+    //    footBar.leftContent: Maui.ToolButton
+    //    {
+    //        id: viewBtn
+    //        iconColor: floatingBar ? altColorText : textColor
 
-        iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
-        onClicked: browser.switchView()
-    }
+    //        iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
+    //        onClicked: browser.switchView()
+    //    }
 
     footBar.middleContent: Row
     {
@@ -211,21 +235,21 @@ Maui.Page
         }
     }
 
-    footBar.rightContent:  [
-        //        Maui.ToolButton
-        //        {
-        //            iconName: "documentinfo"
-        //            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
-        //            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
-        //                                                       browser.detailsDrawer.show(browser.currentPath)
-        //        },
-        Maui.ToolButton
-        {
-            iconName: "overflow-menu"
-            iconColor: floatingBar ? altColorText : textColor
-            onClicked:  browser.browserMenu.show()
-        }
-    ]
+    //    footBar.rightContent:  [
+    //        //        Maui.ToolButton
+    //        //        {
+    //        //            iconName: "documentinfo"
+    //        //            iconColor: browser.detailsDrawer.visible ? highlightColor : textColor
+    //        //            onClicked: browser.detailsDrawer.visible ? browser.detailsDrawer.close() :
+    //        //                                                       browser.detailsDrawer.show(browser.currentPath)
+    //        //        },
+    //        Maui.ToolButton
+    //        {
+    //            iconName: "overflow-menu"
+    //            iconColor: floatingBar ? altColorText : textColor
+    //            onClicked:  browser.browserMenu.show()
+    //        }
+    //    ]
 
 
     ColumnLayout
@@ -402,9 +426,11 @@ Maui.Page
         var iconsize = Maui.FM.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
         thumbnailsSize = parseInt(iconsize)
         detailsView = Maui.FM.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
+
         if(!isAndroid)
             terminalVisible = Maui.FM.dirConf(path+"/.directory")["showterminal"] === "true" ? true : false
         previews = Maui.FM.dirConf(path+"/.directory")["showthumbnail"] === "true" ? true : false
+        //        hidden = Maui.FM.dirConf(path+"/.directory")["hidden"]
 
         if(!detailsView)
             grid.adaptGrid()

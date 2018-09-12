@@ -17,12 +17,17 @@
 #endif
 
 #ifdef STATIC_KIRIGAMI
-#include "../3rdparty/kirigami/src/kirigamiplugin.h"
-#include "../mauikit/src/mauikit.h"
+#include "./../3rdparty/kirigami/src/kirigamiplugin.h"
 #endif
 
+#ifdef STATIC_KIRIGAMI
+#include "./../mauikit/src/mauikit.h"
+#include "tagging.h"
+#include "fm.h"
+#else
 #include "MauiKit/tagging.h"
 #include "MauiKit/fm.h"
+#endif
 
 int main(int argc, char *argv[])
 {
@@ -57,6 +62,9 @@ int main(int argc, char *argv[])
 
 #ifdef STATIC_KIRIGAMI
     KirigamiPlugin::getInstance().registerTypes();
+#endif
+
+#ifdef STATIC_MAUIKIT
     MauiKit::getInstance().registerTypes();
 #endif
 

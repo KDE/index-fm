@@ -5,7 +5,12 @@
 #include <QVariantList>
 #include <QStringList>
 #include <QFileSystemWatcher>
+
+#ifdef STATIC_KIRIGAMI
+#include "fm.h"
+#else
 #include "MauiKit/fm.h"
+#endif
 
 class Index : public FM
 {
