@@ -38,7 +38,6 @@ Maui.Page
                                  tags : 1,
                                  applications : 2,
                                  none: 3
-
                              })
 
     property int currentPathType : views.none
@@ -142,6 +141,7 @@ Maui.Page
     floatingBar: true
     footBarOverlap: true
     headBarExit: false
+    headBarVisible: currentPathType === pathType.directory
     altToolBars: isMobile
 
     headBar.rightContent: [
@@ -424,14 +424,15 @@ Maui.Page
         setPath(path, pathType.directory)
 
         /* Get directory configs */
+//        hidden = Maui.FM.dirConf(path+"/.directory")["hidden"]
         var iconsize = Maui.FM.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
         thumbnailsSize = parseInt(iconsize)
         detailsView = Maui.FM.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
+        previews = Maui.FM.dirConf(path+"/.directory")["showthumbnail"] === "true" ? true : false
 
         if(!isAndroid)
             terminalVisible = Maui.FM.dirConf(path+"/.directory")["showterminal"] === "true" ? true : false
-        previews = Maui.FM.dirConf(path+"/.directory")["showthumbnail"] === "true" ? true : false
-        //        hidden = Maui.FM.dirConf(path+"/.directory")["hidden"]
+
 
         if(!detailsView)
             grid.adaptGrid()

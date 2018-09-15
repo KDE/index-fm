@@ -163,7 +163,7 @@ Maui.Drawer
         iteminfo = inx.getFileInfo(path)
         var mimetype = iteminfo.mime.slice(0, iteminfo.mime.indexOf("/"))
         isDir = false
-
+        console.log("MIME TYPE FOR PREVEIWER", mimetype)
         switch(mimetype)
         {
         case "audio" :
