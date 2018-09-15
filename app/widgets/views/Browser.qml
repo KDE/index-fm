@@ -69,7 +69,7 @@ Maui.Page
         {
             showPreviewThumbnails: previews
             showEmblem: currentPathType !== pathType.applications
-            rightEmblem: "document-share"
+            rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
 
         }
@@ -84,7 +84,7 @@ Maui.Page
             itemSize : thumbnailsSize
             showEmblem: currentPathType !== pathType.applications
             showPreviewThumbnails: previews
-            rightEmblem: "document-share"
+            rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
 
         }
