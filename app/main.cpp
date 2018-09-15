@@ -20,7 +20,7 @@
 #include "./../3rdparty/kirigami/src/kirigamiplugin.h"
 #endif
 
-#ifdef STATIC_KIRIGAMI
+#ifdef STATIC_MAUIKIT
 #include "./../mauikit/src/mauikit.h"
 #include "tagging.h"
 #include "fm.h"
@@ -50,10 +50,21 @@ int main(int argc, char *argv[])
     parser.addOption(versionOption);
     parser.process(app);
 
+    const QStringList args = parser.positionalArguments();
+    QStringList paths;
+
+    if(!args.isEmpty())
+        paths = args;
+
     Index index;
     auto tag = Tagging::getInstance(INX::app, INX::version, "org.kde.index");
 
     QQmlApplicationEngine engine;
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, [&]()
+    {
+        if(!paths.isEmpty())
+            index.openPaths(paths);
+    });
 
     auto context = engine.rootContext();
 

@@ -22,6 +22,7 @@ public:
     Q_INVOKABLE static bool isCustom(const QString &path);
     Q_INVOKABLE static bool isApp(const QString &path);
     Q_INVOKABLE static bool openFile(const QString &path);
+    Q_INVOKABLE void openPaths(const QStringList &paths);
     Q_INVOKABLE static QVariantList getCustomPaths();
     Q_INVOKABLE static void saveSettings(const QString &key, const QVariant &value, const QString &group);
     Q_INVOKABLE static QVariant loadSettings(const QString &key, const QString &group, const QVariant &defaultValue);
@@ -31,7 +32,7 @@ public:
        /*KDE*/
     Q_INVOKABLE static void runApplication(const QString &exec, const QString &url);
 signals:
-
+    void openPath(QStringList paths);
 public slots:
 };
 

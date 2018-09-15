@@ -46,6 +46,11 @@ bool Index::openFile(const QString &path)
     return QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
+void Index::openPaths(const QStringList &paths)
+{
+    emit this->openPath(paths);
+}
+
 QVariantList Index::getCustomPaths()
 {
 #ifdef Q_OS_ANDROID

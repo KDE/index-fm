@@ -86,7 +86,6 @@ Maui.Page
             showPreviewThumbnails: previews
             rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
-
         }
     }
 

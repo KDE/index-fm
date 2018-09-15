@@ -75,7 +75,6 @@ Maui.ApplicationWindow
         Component.onCompleted:
         {
             browser.openFolder(inx.homePath())
-
         }
     }
 
@@ -156,13 +155,11 @@ Maui.ApplicationWindow
         id:fmDialog
     }
 
-    Component.onCompleted:
+    Connections
     {
-//        if(!isAndroid)
-//            Maui.KDE.setColorScheme("index", headBarColor, textColor)
-
-        //        if(isAndroid)
-        //            switchColorScheme(colorScheme.Dark)
+        target: inx
+        onOpenPath: browser.openFolder(paths[0])
     }
+
 
 }
