@@ -48,7 +48,17 @@ bool Index::openFile(const QString &path)
 
 void Index::openPaths(const QStringList &paths)
 {
-    emit this->openPath(paths);
+    QStringList urls;
+    for(auto path : paths)
+    {
+        QFileInfo file(path);
+        if(file.isDir())
+            urls << path;
+        else
+            urls << file.dir().absolutePath();
+    }
+
+    emit this->openPath(urls);
 }
 
 QVariantList Index::getCustomPaths()
