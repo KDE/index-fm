@@ -26,7 +26,6 @@ QVariantList Index::getCustomPathContent(const QString &path)
         return KDE::getApps(QString(path).replace(INX::CUSTOMPATH_PATH[INX::CUSTOMPATH::APPS]+"/",""));
     else
         return KDE::getApps();
-
 #endif
     return res;
 }

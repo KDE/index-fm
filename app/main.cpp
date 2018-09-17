@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
     app.setApplicationName(INX::app);
     app.setApplicationVersion(INX::version);
     app.setApplicationDisplayName(INX::app);
+    app.setOrganizationName("org.maui.index");
     app.setWindowIcon(QIcon(":/index.png"));
 
     QCommandLineParser parser;

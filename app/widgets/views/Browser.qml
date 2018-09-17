@@ -140,7 +140,7 @@ Maui.Page
     floatingBar: true
     footBarOverlap: true
     headBarExit: false
-    headBarVisible: currentPathType === pathType.directory
+    headBarVisible: currentPathType !== pathType.applications
     altToolBars: isMobile
 
     headBar.rightContent: [
