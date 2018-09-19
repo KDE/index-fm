@@ -19,7 +19,7 @@ Maui.ApplicationWindow
     id: root
     title: browser.currentPath
     property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
-                                                           Kirigami.Units.gridUnit * (isMobile ? 14 : 11)
+                                                          Kirigami.Units.gridUnit * 11 > Screen.width  * 0.3 ? Screen.width : Kirigami.Units.gridUnit * 11
 
     pageStack.defaultColumnWidth: sidebarWidth
     pageStack.initialPage: [placesSidebar, browser]

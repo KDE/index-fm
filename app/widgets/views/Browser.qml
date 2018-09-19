@@ -167,7 +167,13 @@ Maui.Page
             onClicked: INX.bookmarkFolder()
             tooltipText: qsTr("Bookmark...")
         },
-
+        Maui.ToolButton
+        {
+            iconName: "edit-select"
+            tooltipText: qsTr("Selection...")
+            onClicked: selectionMode = !selectionMode
+            iconColor: selectionMode ? highlightColor: textColor
+        },
         Maui.ToolButton
         {
             iconName: "overflow-menu"
@@ -195,9 +201,10 @@ Maui.Page
 
         Maui.ToolButton
         {
-            iconName: "sort-name"
+            iconName: "view-sort"
             tooltipText: qsTr("Sort by...")
         }
+
     ]
 
     //    footBar.leftContent: Maui.ToolButton
@@ -582,8 +589,6 @@ Maui.Page
             thumbnailsSize = iconSizes.large
 
         }
-        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
-        grid.adaptGrid()
     }
 
     function zoomOut()
@@ -608,9 +613,15 @@ Maui.Page
             thumbnailsSize = iconSizes.large
 
         }
-        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
-        grid.adaptGrid()
+
 
     }
+
+    onThumbnailsSizeChanged:
+    {
+        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
+        grid.adaptGrid()
+    }
+
 
 }
