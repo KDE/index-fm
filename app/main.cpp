@@ -80,9 +80,7 @@ int main(int argc, char *argv[])
     MauiKit::getInstance().registerTypes();
 #endif
 
-#ifdef Q_OS_ANDROID
-    QIcon::setThemeName("Luv");
-#else
+#ifndef Q_OS_ANDROID
     QStringList importPathList = engine.importPathList();
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/kde/qmltermwidget");
     engine.setImportPathList(importPathList);
