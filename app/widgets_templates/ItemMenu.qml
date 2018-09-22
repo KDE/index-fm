@@ -22,6 +22,7 @@ Menu
     signal shareClicked(var paths)
     signal copyClicked(var paths)
     signal cutClicked(var paths)
+    signal renameClicked(var paths)
     signal tagsClicked(var paths)
     signal saveToClicked(var paths)
 
@@ -73,6 +74,16 @@ Menu
         onTriggered:
         {
             cutClicked(paths)
+            close()
+        }
+    }
+
+    MenuItem
+    {
+        text: qsTr("Rename...")
+        onTriggered:
+        {
+            renameClicked(paths)
             close()
         }
     }

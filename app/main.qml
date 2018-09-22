@@ -21,6 +21,8 @@ Maui.ApplicationWindow
     property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
                                                           Kirigami.Units.gridUnit * 11 > Screen.width  * 0.3 ? Screen.width : Kirigami.Units.gridUnit * 11
 
+    about.appDescription: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
+    about.appIcon: "qrc:/assets/index.svg"
     pageStack.defaultColumnWidth: sidebarWidth
     pageStack.initialPage: [placesSidebar, browser]
     pageStack.interactive: isMobile
@@ -37,7 +39,7 @@ Maui.ApplicationWindow
     {
         id: pathBar
 //        pathBarBG.color:Qt.lighter(headBarColor, 1.1)
-        height: iconSizes.big
+//        height: iconSizes.big
         width: headBar.middleLayout.width * 0.9
         onPathChanged: browser.openFolder(path)
         onHomeClicked:
@@ -99,6 +101,13 @@ Maui.ApplicationWindow
             browser.cut(paths)
         }
 
+        onRenameClicked:
+        {
+            if(paths.length === 1)
+                renameDialog.open()
+
+        }
+
         //        onSaveToClicked:
         //        {
         //            fmDialog.saveDialog = false
@@ -131,7 +140,7 @@ Maui.ApplicationWindow
     Maui.NewDialog
     {
         id: newFolderDialog
-        title: "New folder..."
+        title: "Create new folder"
         onFinished: inx.createDir(browser.currentPath, text)
 
     }
@@ -139,8 +148,19 @@ Maui.ApplicationWindow
     Maui.NewDialog
     {
         id: newFileDialog
-        title: "New file..."
+        title: "Create new file"
         onFinished: inx.createFile(browser.currentPath, text)
+    }
+
+    Maui.NewDialog
+    {
+        id: renameDialog
+        title: qsTr("Rename file")
+        textEntry.placeholderText: qsTr("New name...")
+        onFinished: inx.rename(itemMenu.paths[0], textEntry.text)
+
+        acceptText: qsTr("Rename")
+        rejectText: qsTr("Cancel")
     }
 
     Maui.ShareDialog
