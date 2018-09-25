@@ -187,7 +187,7 @@ Maui.Page
         Maui.ToolButton
         {
             id: viewBtn
-//            iconColor: floatingBar ? altColorText : textColor
+            //            iconColor: floatingBar ? altColorText : textColor
             iconName:  browser.detailsView ? "view-list-icons" : "view-list-details"
             onClicked: browser.switchView()
         },
@@ -430,7 +430,7 @@ Maui.Page
         setPath(path, pathType.directory)
 
         /* Get directory configs */
-//        hidden = Maui.FM.dirConf(path+"/.directory")["hidden"]
+        //        hidden = Maui.FM.dirConf(path+"/.directory")["hidden"]
         var iconsize = Maui.FM.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
         thumbnailsSize = parseInt(iconsize)
         detailsView = Maui.FM.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
@@ -620,7 +620,9 @@ Maui.Page
     onThumbnailsSizeChanged:
     {
         Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
-        grid.adaptGrid()
+
+        if(grid === gridViewBrowser)
+            grid.adaptGrid()
     }
 
 

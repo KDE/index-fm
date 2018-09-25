@@ -28,18 +28,20 @@ Maui.ApplicationWindow
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
     accentColor: altColor
-    highlightColor: "#8682dd"
+    highlightColor: headBarBGColor
     altColor: "#43455a"
     altToolBars: false
     altColorText: "#ffffff"
-    property color headBarColor: "#bdc8e5"
+    headBarBGColor: "#64B5F6"
+    headBarFGColor: altColorText
 //    headBarBG.color: headBarColor
 
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
-//        pathBarBG.color:Qt.lighter(headBarColor, 1.1)
-//        height: iconSizes.big
+        bgColor: "#fff"
+        borderColor: Qt.darker(headBarBGColor, 1.4)
+        height: iconSizes.big
         width: headBar.middleLayout.width * 0.9
         onPathChanged: browser.openFolder(path)
         onHomeClicked:
