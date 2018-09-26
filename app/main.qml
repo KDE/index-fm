@@ -36,11 +36,13 @@ Maui.ApplicationWindow
     headBarFGColor: altColorText
 //    headBarBG.color: headBarColor
 
+    headBar.colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
-        bgColor: "#fff"
-        borderColor: Qt.darker(headBarBGColor, 1.4)
+        colorScheme.backgroundColor: "#fff"
+        colorScheme.textColor: "#333"
+        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
         height: iconSizes.big
         width: headBar.middleLayout.width * 0.9
         onPathChanged: browser.openFolder(path)

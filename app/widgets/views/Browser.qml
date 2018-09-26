@@ -27,6 +27,7 @@ Maui.Page
     property alias terminal : terminalLoader.item
     property alias selectionBar : selectionBar
 
+    property alias model : folderModel
     property alias grid : viewLoader.item
     property alias detailsDrawer: detailsDrawer
     property alias browserMenu: browserMenu
@@ -62,6 +63,11 @@ Maui.Page
         id: detailsDrawer
     }
 
+    ListModel
+    {
+        id: folderModel
+    }
+
     Component
     {
         id: listViewBrowser
@@ -71,6 +77,17 @@ Maui.Page
             showEmblem: currentPathType !== pathType.applications
             rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
+    model: folderModel
+            section.delegate: Maui.LabelDelegate
+            {
+                id: delegate
+                label: section
+                labelTxt.font.pointSize: fontSizes.big
+
+                isSection: true
+                boldLabel: true
+                height: toolBarHeightAlt
+            }
 
         }
     }
@@ -86,6 +103,7 @@ Maui.Page
             showPreviewThumbnails: previews
             rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
+            model: folderModel
         }
     }
 
@@ -96,7 +114,7 @@ Maui.Page
 
         onItemDoubleClicked:
         {
-            var item = viewLoader.item.model.get(index)
+            var item = folderModel.get(index)
 
             if(inx.isDir(item.path))
                 browser.openFolder(item.path)
@@ -104,7 +122,7 @@ Maui.Page
                 browser.openFile(item.path)
         }
 
-        onItemRightClicked: itemMenu.show([viewLoader.item.model.get(index).path])
+        onItemRightClicked: itemMenu.show([folderModel.get(index).path])
 
         onLeftEmblemClicked:  browser.addToSelection(item, true)
 
@@ -135,7 +153,7 @@ Maui.Page
         emojiSize: iconSizes.huge
     }
 
-    Keys.onSpacePressed: detailsDrawer.show(viewLoader.item.model.get(viewLoader.item.currentIndex).path)
+    Keys.onSpacePressed: detailsDrawer.show(folderModel.get(viewLoader.item.currentIndex).path)
 
     floatingBar: true
     footBarOverlap: true
@@ -203,6 +221,39 @@ Maui.Page
         {
             iconName: "view-sort"
             tooltipText: qsTr("Sort by...")
+            onClicked: sortMenu.open()
+            Menu
+            {
+                id: sortMenu
+
+                MenuItem
+                {
+                    text: qsTr("Don't sort")
+                    onTriggered: sortBy()
+                }
+                MenuItem
+                {
+                    text: qsTr("Mimetype")
+                    onTriggered: sortBy("mime")
+                }
+
+                MenuItem
+                {
+                    text: qsTr("Date")
+                    onTriggered: sortBy("date")
+                }
+
+                MenuItem
+                {
+                    text: qsTr("Size")
+                    onTriggered: sortBy("size")
+                }
+                MenuItem
+                {
+                    text: qsTr("Name")
+                    onTriggered: sortBy("label", ViewSection.FirstCharacter)
+                }
+            }
         }
 
     ]
@@ -216,6 +267,8 @@ Maui.Page
     //        onClicked: browser.switchView()
     //    }
 
+    footBar.colorScheme.backgroundColor: accentColor
+    footBar.colorScheme.textColor: altColorText
     footBar.middleContent: Row
     {
 
@@ -354,7 +407,7 @@ Maui.Page
 
     function openItem(index)
     {
-        var item = viewLoader.item.model.get(index)
+        var item = folderModel.get(index)
 
         if(selectionMode && !inx.isDir(item.path))
             addToSelection(item, true)
@@ -379,7 +432,7 @@ Maui.Page
 
     function clear()
     {
-        viewLoader.item.model.clear()
+        folderModel.clear()
     }
 
     function launchApp(path)
@@ -410,7 +463,7 @@ Maui.Page
         var items = inx.getCustomPathContent(path)
         if(items.length > 0)
             for(var i in items)
-                viewLoader.item.model.append(items[i])
+                folderModel.append(items[i])
 
         for(i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
@@ -454,7 +507,7 @@ Maui.Page
 
     function append(item)
     {
-        viewLoader.item.model.append(item)
+        folderModel.append(item)
     }
 
     function goBack()
@@ -532,12 +585,10 @@ Maui.Page
     }
 
 
-    function switchView()
+    function switchView(state)
     {
-        detailsView = !detailsView
-
+        detailsView = state ? state : !detailsView
         Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "DetailView", detailsView)
-        populate(currentPath)
     }
 
     function bookmarkFolder(paths)
@@ -613,8 +664,6 @@ Maui.Page
             thumbnailsSize = iconSizes.large
 
         }
-
-
     }
 
     onThumbnailsSizeChanged:
@@ -623,6 +672,23 @@ Maui.Page
 
         if(grid === gridViewBrowser)
             grid.adaptGrid()
+    }
+
+    function sortBy(prop, criteria)
+    {
+        if(!prop)
+        {
+             grid.section.property = ""
+            return
+        }
+
+        switchView(true)
+
+
+            console.log("SORTING BY", prop, criteria)
+            grid.section.property = prop
+            grid.section.criteria = criteria ? criteria : ViewSection.FullString
+
     }
 
 

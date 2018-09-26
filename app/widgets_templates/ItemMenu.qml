@@ -121,7 +121,7 @@ Menu
     MenuItem
     {
         text: qsTr("Select")
-        onTriggered: browser.selectionBar.append(browser.grid.model.get(browser.grid.currentIndex))
+        onTriggered: browser.selectionBar.append(browser.model.get(browser.grid.currentIndex))
     }
 
     MenuSeparator {}
