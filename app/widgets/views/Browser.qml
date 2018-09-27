@@ -77,7 +77,7 @@ Maui.Page
             showEmblem: currentPathType !== pathType.applications
             rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
-    model: folderModel
+            model: folderModel
             section.delegate: Maui.LabelDelegate
             {
                 id: delegate
@@ -676,20 +676,35 @@ Maui.Page
 
     function sortBy(prop, criteria)
     {
-        if(!prop)
+
+        console.log("SORTING BY", prop, criteria)
+        if(detailsView)
         {
-             grid.section.property = ""
-            return
-        }
-
-        switchView(true)
-
-
-            console.log("SORTING BY", prop, criteria)
+            if(!prop)
+            {
+                grid.section.property = ""
+                return
+            }
             grid.section.property = prop
             grid.section.criteria = criteria ? criteria : ViewSection.FullString
+        }
+
+        sortModel(prop)
 
     }
 
-
+    function sortModel(prop)
+    {
+        var n;
+        var i;
+        for (n=0; n < folderModel.count; n++)
+            for (i=n+1; i < folderModel.count; i++)
+            {
+                if (folderModel.get(n)[prop] > folderModel.get(i)[prop])
+                {
+                    folderModel.move(i, n, 1);
+                    n=0;
+                }
+            }
+    }
 }
