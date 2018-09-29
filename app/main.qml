@@ -3,7 +3,6 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
-import Liri.Files.FolderListModel 1.0
 
 import QtQuick.Window 2.0
 import QtQuick.Controls.Material 2.1
