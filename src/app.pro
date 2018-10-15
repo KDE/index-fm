@@ -4,18 +4,18 @@ QT += sql
 
 CONFIG += c++11
 TARGET = index
-#DESTDIR = $$OUT_PWD/../
+DESTDIR = $$OUT_PWD/../
 
 linux:unix:!android {
 
     message(Building for Linux KDE)
-    include($$PWD/src/kde/kde.pri)
+    include($$PWD/../kde/kde.pri)
 
 } else:android {
 
     message(Building helpers for Android)
-    include($$PWD/mauikit/mauikit.pri)
-    include($$PWD/3rdparty/kirigami/kirigami.pri)
+    include($$PWD/../mauikit/mauikit.pri)
+    include($$PWD/../3rdparty/kirigami/kirigami.pri)
 
     DEFINES += STATIC_KIRIGAMI
 
@@ -34,13 +34,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += \
-    $$PWD/src/main.cpp \
-    $$PWD/src/index.cpp
+SOURCES += main.cpp \
+    index.cpp
 
-RESOURCES += \
-    $$PWD/src/qml.qrc \
-    $$PWD/src/assets.qrc \
+RESOURCES += qml.qrc \
+    assets.qrc \
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -54,10 +52,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    $$PWD/src/index.h \
-    $$PWD/src/inx.h
+    index.h \
+    inx.h
 
-include($$PWD/install.pri)
+include($$PWD/../install.pri)
 
 DISTFILES += \
-    $$PWD/org.kde.index.desktop
+    ../org.kde.index.desktop
