@@ -403,7 +403,16 @@ Maui.Page
             Layout.maximumHeight: parent.height *0.5
             anchors.bottom: parent.bottom
             anchors.top: handle.bottom
-            source: !isMobile ? "../terminal/Terminal.qml" : ""
+            sourceComponent: !isMobile ? terminalComponent : undefined
+        }
+
+        Component
+        {
+            id: terminalComponent
+            Maui.Terminal
+            {
+                id: terminal
+            }
         }
     }
 

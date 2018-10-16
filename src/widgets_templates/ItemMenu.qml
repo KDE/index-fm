@@ -18,6 +18,8 @@ Maui.Menu
     signal tagsClicked(var paths)
     signal saveToClicked(var paths)
 
+    implicitWidth: 200 * unit
+
     Maui.MenuItem
     {
         text: qsTr("Bookmark")
@@ -133,7 +135,6 @@ Maui.Menu
                     Maui.FM.setDirConf(control.paths[i]+"/.directory", "Desktop Entry", "Icon", color)
 
                 browser.refresh()
-
             }
         }
     }
@@ -147,6 +148,5 @@ Maui.Menu
             if(isMobile) open()
             else popup()
         }
-
     }
 }

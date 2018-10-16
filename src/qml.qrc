@@ -5,7 +5,6 @@
         <file>widgets/views/Browser.qml</file>
         <file>widgets_templates/ItemMenu.qml</file>
         <file>Index.js</file>
-        <file>widgets/terminal/Terminal.qml</file>
         <file>widgets/views/BrowserMenu.qml</file>
         <file>widgets/views/DetailsDrawer.qml</file>
         <file>widgets/views/Previewer/AudioPreview.qml</file>
