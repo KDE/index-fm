@@ -2,30 +2,22 @@ import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
-GridLayout
+Row
 {
     signal colorPicked(string color)
     anchors.verticalCenter: parent.verticalCenter
-    rowSpacing: space.medium
+    spacing: space.medium
     property string currentColor
     property int size : iconSizes.medium
-    columns: 5
-    rows: 1
-    Item
-    {
 
-        Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.row: 1
-        Layout.column: 1
 
         Rectangle
         {
             color:"#f21b51"
-            anchors.centerIn: parent
+            anchors.verticalCenter: parent.verticalCenter
             height: size
             width: height
-            radius: unit*4
+            radius: radiusV
             border.color: Qt.darker(color, 1.7)
 
             MouseArea
@@ -38,22 +30,15 @@ GridLayout
                 }
             }
         }
-    }
 
-    Item
-    {
-        Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.row: 1
-        Layout.column: 2
 
         Rectangle
         {
             color:"#f9a32b"
-            anchors.centerIn: parent
+            anchors.verticalCenter: parent.verticalCenter
             height: size
             width: height
-            radius: unit*4
+            radius: radiusV
             border.color: Qt.darker(color, 1.7)
 
             MouseArea
@@ -65,23 +50,16 @@ GridLayout
                     colorPicked("folder-orange")
                 }
             }
-        }
-    }
+ }
 
-    Item
-    {
-        Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.row: 1
-        Layout.column: 3
 
         Rectangle
         {
             color:"#3eb881"
-            anchors.centerIn: parent
+            anchors.verticalCenter: parent.verticalCenter
             height: size
             width: height
-            radius: unit*4
+            radius: radiusV
             border.color: Qt.darker(color, 1.7)
 
             MouseArea
@@ -94,23 +72,15 @@ GridLayout
                 }
             }
         }
-    }
 
-
-    Item
-    {
-        Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.row: 1
-        Layout.column: 4
 
         Rectangle
         {
             color:"#b2b9bd"
-            anchors.centerIn: parent
+            anchors.verticalCenter: parent.verticalCenter
             height: size
             width: height
-            radius: unit*4
+            radius: radiusV
             border.color: Qt.darker(color, 1.7)
 
             MouseArea
@@ -122,24 +92,18 @@ GridLayout
                     colorPicked("folder-grey")
                 }
             }
-        }
+
     }
 
 
-    Item
-    {
-        Layout.fillHeight: true
-        Layout.fillWidth: true
-        Layout.row: 1
-        Layout.column: 5
 
         Rectangle
         {
             color:"#474747"
-            anchors.centerIn: parent
+            anchors.verticalCenter: parent.verticalCenter
             height: size
             width: height
-            radius: unit*4
+            radius: radiusV
             border.color: Qt.darker(color, 1.7)
 
             MouseArea
@@ -152,7 +116,7 @@ GridLayout
                 }
             }
         }
-    }
+
 
 
 //    Item
@@ -168,7 +132,7 @@ GridLayout
 //            anchors.centerIn: parent
 //            height: size
 //            width: height
-//            radius: unit*4
+//            radius: radiusV
 //            border.color: Qt.darker(color, 1.7)
 
 //            MouseArea
@@ -196,7 +160,7 @@ GridLayout
 //            anchors.centerIn: parent
 //            height: size
 //            width: height
-//            radius: unit*4
+//            radius: radiusV
 //            border.color: Qt.darker(color, 1.7)
 
 //            MouseArea
@@ -224,7 +188,7 @@ GridLayout
 //            anchors.centerIn: parent
 //            height: size
 //            width: height
-//            radius: unit*4
+//            radius: radiusV
 //            border.color: Qt.darker(color, 1.7)
 
 //            MouseArea

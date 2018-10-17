@@ -5,6 +5,7 @@ import org.kde.mauikit 1.0 as Maui
 Maui.Menu
 {
     id: control
+    implicitWidth: colorBar.implicitWidth + space.big
 
     property var paths : []
     property bool isDir : false
@@ -17,8 +18,6 @@ Maui.Menu
     signal renameClicked(var paths)
     signal tagsClicked(var paths)
     signal saveToClicked(var paths)
-
-    implicitWidth: 200 * unit
 
     Maui.MenuItem
     {
@@ -121,13 +120,12 @@ Maui.Menu
     Maui.MenuItem
     {
         width: parent.width
-        height: iconSize + space.medium
-        padding: space.medium
+
 
         ColorsBar
         {
-            height: parent.height
-            width: parent.width
+            anchors.centerIn: parent
+id: colorBar
             size:  iconSize
             onColorPicked:
             {
