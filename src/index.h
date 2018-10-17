@@ -21,14 +21,8 @@ public:
     Q_INVOKABLE static QVariantList getCustomPathContent(const QString &path);
     Q_INVOKABLE static bool isCustom(const QString &path);
     Q_INVOKABLE static bool isApp(const QString &path);
-    Q_INVOKABLE static bool openFile(const QString &path);
     Q_INVOKABLE void openPaths(const QStringList &paths);
     Q_INVOKABLE static QVariantList getCustomPaths();
-    Q_INVOKABLE static void saveSettings(const QString &key, const QVariant &value, const QString &group);
-    Q_INVOKABLE static QVariant loadSettings(const QString &key, const QString &group, const QVariant &defaultValue);
-    Q_INVOKABLE static QVariantMap getDirInfo(const QString &path, const QString &type);
-    Q_INVOKABLE static QVariantMap getFileInfo(const QString &path);
-
        /*KDE*/
     Q_INVOKABLE static void runApplication(const QString &exec, const QString &url);
 signals:

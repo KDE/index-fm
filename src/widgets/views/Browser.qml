@@ -22,8 +22,6 @@ Maui.Page
     property bool selectionMode : false
 
     property bool detailsView: false
-    property bool previews: false
-    property bool hidden : true
     property bool terminalVisible : false
 
     property bool pathExists : inx.fileExists(currentPath)
@@ -89,7 +87,7 @@ Maui.Page
 
         Maui.ListBrowser
         {
-            showPreviewThumbnails: previews
+            showPreviewThumbnails: modelList.preview
             showEmblem: currentPathType !== pathType.applications
             rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
@@ -115,7 +113,7 @@ Maui.Page
         {
             itemSize : thumbnailsSize
             showEmblem: currentPathType !== pathType.applications
-            showPreviewThumbnails: previews
+            showPreviewThumbnails: modelList.preview
             rightEmblem: isMobile ? "document-share" : ""
             leftEmblem: "emblem-added"
             model: folderModel
@@ -181,17 +179,17 @@ Maui.Page
         Maui.ToolButton
         {
             iconName: "visibility"
-            onClicked: INX.showHiddenFiles()
+            onClicked: modelList.hidden = !modelList.hidden
             tooltipText: qsTr("Hidden files...")
-            iconColor: hidden ? highlightColor : textColor
+            iconColor: modelList.hidden ? highlightColor : textColor
         },
 
         Maui.ToolButton
         {
             iconName: "view-preview"
-            onClicked: INX.showPreviews()
+            onClicked: modelList.preview = !modelList.preview
             tooltipText: qsTr("Previews...")
-            iconColor: previews ? highlightColor : textColor
+            iconColor: modelList.preview ? highlightColor : textColor
         },
 
         Maui.ToolButton
@@ -447,11 +445,6 @@ Maui.Page
         }
     }
 
-    function clear()
-    {
-       // folderModel.clear()
-    }
-
     function launchApp(path)
     {
         inx.runApplication(path, "")
@@ -469,8 +462,6 @@ Maui.Page
 
         if(!isMobile)
             terminal.session.sendText("cd " + currentPath + "\n")
-        //        if(selectedPaths.length > 0)
-        //            clearSelection()
     }
 
     function openAppsPath(path)
@@ -496,8 +487,6 @@ Maui.Page
 
     function populate(path)
     {
-        clear()
-
         if(path.indexOf("#apps") === 0)
         {
             browser.openAppsPath(path)
@@ -506,24 +495,21 @@ Maui.Page
 
         setPath(path, pathType.directory)
 
-        /* Get directory configs */
-        //        hidden = Maui.FM.dirConf(path+"/.directory")["hidden"]
-        var iconsize = Maui.FM.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
+        /* Get directory configs */     
+        var iconsize = inx.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
         thumbnailsSize = parseInt(iconsize)
 
-        detailsView = Maui.FM.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
-        previews = Maui.FM.dirConf(path+"/.directory")["showthumbnail"] === "true" ? true : false
+        detailsView = inx.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
+
+        if(!detailsView)
+            grid.adaptGrid()
 
         if(!isAndroid)
-            terminalVisible = Maui.FM.dirConf(path+"/.directory")["showterminal"] === "true" ? true : false
+            terminalVisible = inx.dirConf(path+"/.directory")["showterminal"] === "true" ? true : false
 
-
-        /* should it really return the paths or just use the signal? */
         for(var i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
                 placesSidebar.currentIndex = i
-
-//        inx.watchPath(currentPath)
     }
 
 //    function append(item)
@@ -609,7 +595,7 @@ Maui.Page
     function switchView(state)
     {
         detailsView = state ? state : !detailsView
-        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "DetailView", detailsView)
+        inx.setDirConf(currentPath+"/.directory", "MAUIFM", "DetailView", detailsView)
     }
 
     function bookmarkFolder(paths)
@@ -627,7 +613,6 @@ Maui.Page
 
     function populateTags(myTag)
     {
-        clear()
         inx.getTagContent(myTag)
         setPath(myTag, pathType.tags)
     }
@@ -682,10 +667,8 @@ Maui.Page
 
     onThumbnailsSizeChanged:
     {
-        Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
-
-        if(grid === gridViewBrowser)
-            grid.adaptGrid()
+        inx.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
+         grid.adaptGrid()
     }
 
     function sortBy(prop, criteria)

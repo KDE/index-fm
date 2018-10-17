@@ -40,11 +40,6 @@ bool Index::isApp(const QString &path)
     return /*QFileInfo(path).isExecutable() ||*/ path.endsWith(".desktop");
 }
 
-bool Index::openFile(const QString &path)
-{
-    return QDesktopServices::openUrl(QUrl::fromLocalFile(path));
-}
-
 void Index::openPaths(const QStringList &paths)
 {
     QStringList urls;
@@ -77,57 +72,9 @@ QVariantList Index::getCustomPaths()
     };
 }
 
-QVariantMap Index::getDirInfo(const QString &path, const QString &type)
-{
-    QFileInfo file (path);
-    QVariantMap data =
-    {
-        {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(path)},
-        {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], file.baseName()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::PATH], path},
-        {INX::MODEL_NAME[INX::MODEL_KEY::TYPE], type}
-    };
-
-    return data;
-}
-
-QVariantMap Index::getFileInfo(const QString &path)
-{
-    QFileInfo file(path);
-    if(!file.exists()) return QVariantMap();
-    auto mime = FMH::getMime(path);
-
-    QVariantMap res =
-    {
-        {INX::MODEL_NAME[INX::MODEL_KEY::GROUP], file.group()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::OWNER], file.owner()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::SUFFIX], file.completeSuffix()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::LABEL], file.completeBaseName()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::NAME], file.fileName()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::DATE], file.birthTime().toString()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::MODIFIED], file.lastModified().toString()},
-        {INX::MODEL_NAME[INX::MODEL_KEY::MIME], mime },
-        {INX::MODEL_NAME[INX::MODEL_KEY::ICON], INX::getIconName(path)}
-    };
-
-    return res;
-}
-
 void Index::runApplication(const QString &exec, const QString &url)
 {
 #if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
     return  KDE::launchApp(exec);
 #endif
 }
-
-void Index::saveSettings(const QString &key, const QVariant &value, const QString &group)
-{
-    INX::saveSettings(key, value, group);
-
-}
-
-QVariant Index::loadSettings(const QString &key, const QString &group, const QVariant &defaultValue)
-{
-    return INX::loadSettings(key, group, defaultValue);
-}
-

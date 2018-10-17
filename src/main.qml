@@ -160,6 +160,7 @@ Maui.ApplicationWindow
     {
         id: renameDialog
         title: qsTr("Rename file")
+        textEntry.text: inx.getFileInfo(itemMenu.paths[0])["name"]
         textEntry.placeholderText: qsTr("New name...")
         onFinished: inx.rename(itemMenu.paths[0], textEntry.text)
 
