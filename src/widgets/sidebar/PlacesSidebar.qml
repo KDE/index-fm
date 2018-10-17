@@ -12,7 +12,7 @@ Maui.SideBar
     focus: true
     clip: true
 
-downloadBadget: "3"
+    downloadBadget: "3"
     section.property: !placesList.isCollapsed ? "type" : ""
     section.criteria: ViewSection.FullString
     section.delegate: Maui.LabelDelegate

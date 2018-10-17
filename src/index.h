@@ -33,6 +33,7 @@ public:
     Q_INVOKABLE static void runApplication(const QString &exec, const QString &url);
 signals:
     void openPath(QStringList paths);
+
 public slots:
 };
 

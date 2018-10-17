@@ -13,5 +13,6 @@
         <file>widgets/views/Previewer/VideoPreview.qml</file>
         <file>widgets/views/Previewer/DefaultPreview.qml</file>
         <file>widgets_templates/ColorsBar.qml</file>
+        <file>widgets/views/Terminal.qml</file>
     </qresource>
 </RCC>

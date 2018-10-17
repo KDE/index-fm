@@ -1,11 +1,14 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+
 import "../../widgets_templates"
-import "../terminal"
+import "../../Index.js" as INX
+
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
-import "../../Index.js" as INX
+import FMModel 1.0
+import FMList 1.0
 
 Maui.Page
 {
@@ -46,12 +49,12 @@ Maui.Page
 
     margins: 0
 
-    Connections
-    {
-        target: inx
-        onPathModified: browser.refresh()
-        onItemReady: browser.append(item)
-    }
+//    Connections
+//    {
+//        target: inx
+//        onPathModified: browser.refresh()
+//        onItemReady: browser.append(item)
+//    }
 
     BrowserMenu
     {
@@ -63,14 +66,27 @@ Maui.Page
         id: detailsDrawer
     }
 
-    ListModel
+//    ListModel
+//    {
+//        id: folderModel
+//    }
+
+    FMModel
     {
         id: folderModel
+        list: modelList
+    }
+
+    FMList
+    {
+        id: modelList
+        path: currentPath
     }
 
     Component
     {
         id: listViewBrowser
+
         Maui.ListBrowser
         {
             showPreviewThumbnails: previews
@@ -88,7 +104,6 @@ Maui.Page
                 boldLabel: true
                 height: toolBarHeightAlt
             }
-
         }
     }
 
@@ -114,7 +129,7 @@ Maui.Page
 
         onItemDoubleClicked:
         {
-            var item = folderModel.get(index)
+            var item = modelList.get(index)
 
             if(inx.isDir(item.path))
                 browser.openFolder(item.path)
@@ -122,7 +137,7 @@ Maui.Page
                 browser.openFile(item.path)
         }
 
-        onItemRightClicked: itemMenu.show([folderModel.get(index).path])
+        onItemRightClicked: itemMenu.show([modelList.get(index).path])
 
         onLeftEmblemClicked:  browser.addToSelection(item, true)
 
@@ -153,7 +168,7 @@ Maui.Page
         emojiSize: iconSizes.huge
     }
 
-    Keys.onSpacePressed: detailsDrawer.show(folderModel.get(viewLoader.item.currentIndex).path)
+    Keys.onSpacePressed: detailsDrawer.show(modelList.get(viewLoader.item.currentIndex).path)
 
     floatingBar: true
     footBarOverlap: true
@@ -403,22 +418,13 @@ Maui.Page
             Layout.maximumHeight: parent.height *0.5
             anchors.bottom: parent.bottom
             anchors.top: handle.bottom
-            sourceComponent: !isMobile ? terminalComponent : undefined
-        }
-
-        Component
-        {
-            id: terminalComponent
-            Maui.Terminal
-            {
-                id: terminal
-            }
+            source: !isMobile ? "Terminal.qml" : undefined
         }
     }
 
     function openItem(index)
     {
-        var item = folderModel.get(index)
+        var item = modelList.get(index)
 
         if(selectionMode && !inx.isDir(item.path))
             addToSelection(item, true)
@@ -443,7 +449,7 @@ Maui.Page
 
     function clear()
     {
-        folderModel.clear()
+       // folderModel.clear()
     }
 
     function launchApp(path)
@@ -481,6 +487,13 @@ Maui.Page
                 placesSidebar.currentIndex = i
     }
 
+    function setPath(path, type)
+    {
+        currentPathType = type
+        currentPath = path
+        pathBar.append(currentPath)
+    }
+
     function populate(path)
     {
         clear()
@@ -497,6 +510,7 @@ Maui.Page
         //        hidden = Maui.FM.dirConf(path+"/.directory")["hidden"]
         var iconsize = Maui.FM.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
         thumbnailsSize = parseInt(iconsize)
+
         detailsView = Maui.FM.dirConf(path+"/.directory")["detailview"] === "true" ? true : false
         previews = Maui.FM.dirConf(path+"/.directory")["showthumbnail"] === "true" ? true : false
 
@@ -504,22 +518,18 @@ Maui.Page
             terminalVisible = Maui.FM.dirConf(path+"/.directory")["showterminal"] === "true" ? true : false
 
 
-        if(!detailsView)
-            grid.adaptGrid()
-
         /* should it really return the paths or just use the signal? */
-        var items = inx.getPathContent(path)
         for(var i=0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.model.get(i).path)
                 placesSidebar.currentIndex = i
 
-        inx.watchPath(currentPath)
+//        inx.watchPath(currentPath)
     }
 
-    function append(item)
-    {
-        folderModel.append(item)
-    }
+//    function append(item)
+//    {
+//        folderModel.append(item)
+//    }
 
     function goBack()
     {
@@ -622,13 +632,6 @@ Maui.Page
         setPath(myTag, pathType.tags)
     }
 
-    function setPath(path, type)
-    {
-        currentPathType = type
-        currentPath = path
-        pathBar.append(currentPath)
-    }
-
     function zoomIn()
     {
         switch(thumbnailsSize)
@@ -711,7 +714,7 @@ Maui.Page
         for (n=0; n < folderModel.count; n++)
             for (i=n+1; i < folderModel.count; i++)
             {
-                if (folderModel.get(n)[prop] > folderModel.get(i)[prop])
+                if (modelList.get(n)[prop] > modelList.get(i)[prop])
                 {
                     folderModel.move(i, n, 1);
                     n=0;

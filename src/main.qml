@@ -186,16 +186,15 @@ Maui.ApplicationWindow
     }
 
     mainMenu: [
-        MenuItem
+        Maui.MenuItem
         {
             text: qsTr("Settings")
         },
 
-        MenuItem
+        Maui.MenuItem
         {
             text: qsTr("Syncing")
 
         }
     ]
-
 }
