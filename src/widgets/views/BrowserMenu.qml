@@ -118,8 +118,7 @@ Maui.Menu
             else if(browser.isCut)
                 pasteFiles = cutPaths.length
 
-            if(isMobile) open()
-            else popup()
+            popup()
         }
     }
 }

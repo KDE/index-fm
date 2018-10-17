@@ -241,32 +241,41 @@ Maui.Page
                 id: sortMenu
                 parent: parent
 
-                MenuItem
+                Maui.MenuItem
                 {
                     text: qsTr("Don't sort")
                     onTriggered: sortBy()
                 }
-                MenuItem
+                Maui.MenuItem
                 {
                     text: qsTr("Mimetype")
                     onTriggered: sortBy("mime")
                 }
 
-                MenuItem
+                Maui.MenuItem
                 {
                     text: qsTr("Date")
                     onTriggered: sortBy("date")
                 }
 
-                MenuItem
+                Maui.MenuItem
                 {
                     text: qsTr("Size")
                     onTriggered: sortBy("size")
                 }
-                MenuItem
+
+                Maui.MenuItem
                 {
                     text: qsTr("Name")
                     onTriggered: sortBy("label", ViewSection.FirstCharacter)
+                }
+
+                MenuSeparator {}
+
+                Maui.MenuItem
+                {
+                    text: qsTr("Group")
+                    checkable: true
                 }
             }
         }
@@ -452,7 +461,7 @@ Maui.Page
 
     function openFile(path)
     {
-        inx.openFile(path)
+        inx.openUrl(path)
     }
 
     function openFolder(path)

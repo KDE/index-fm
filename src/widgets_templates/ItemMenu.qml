@@ -145,8 +145,7 @@ Maui.Menu
         {
             paths = urls
             isDir = inx.isDir(paths[0])
-            if(isMobile) open()
-            else popup()
+            popup()
         }
     }
 }
