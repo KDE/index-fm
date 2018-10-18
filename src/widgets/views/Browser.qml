@@ -9,9 +9,12 @@ import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 import FMModel 1.0
 import FMList 1.0
+import FMH 1.0
 
 Maui.Page
 {
+    id: control
+
     property string currentPath: inx.homePath()
     property var copyPaths : []
     property var cutPaths : []
@@ -20,7 +23,7 @@ Maui.Page
     property bool isCut : false
 
     property bool selectionMode : false
-
+    property bool group: false
     property bool detailsView: false
     property bool terminalVisible : false
 
@@ -47,27 +50,27 @@ Maui.Page
 
     margins: 0
 
-//    Connections
-//    {
-//        target: inx
-//        onPathModified: browser.refresh()
-//        onItemReady: browser.append(item)
-//    }
+    //    Connections
+    //    {
+    //        target: inx
+    //        onPathModified: browser.refresh()
+    //        onItemReady: browser.append(item)
+    //    }
 
     BrowserMenu
     {
         id: browserMenu
     }
 
-    DetailsDrawer
+    Previewer
     {
         id: detailsDrawer
     }
 
-//    ListModel
-//    {
-//        id: folderModel
-//    }
+    //    ListModel
+    //    {
+    //        id: folderModel
+    //    }
 
     FMModel
     {
@@ -79,6 +82,7 @@ Maui.Page
     {
         id: modelList
         path: currentPath
+        onSortByChanged: if(group) groupBy()
     }
 
     Component
@@ -137,10 +141,10 @@ Maui.Page
 
         onItemRightClicked: itemMenu.show([modelList.get(index).path])
 
-        onLeftEmblemClicked:  browser.addToSelection(item, true)
+        onLeftEmblemClicked:  browser.addToSelection(modelList.get(index), true)
 
-        onRightEmblemClicked: isAndroid ? Maui.Android.shareDialog([item.path]) :
-                                          shareDialog.show([item.path])
+        onRightEmblemClicked: isAndroid ? Maui.Android.shareDialog([modelList.get(index).path]) :
+                                          shareDialog.show([modelList.get(index).path])
         onAreaClicked:
         {
             if(!isMobile && mouse.button === Qt.RightButton)
@@ -243,39 +247,46 @@ Maui.Page
 
                 Maui.MenuItem
                 {
-                    text: qsTr("Don't sort")
-                    onTriggered: sortBy()
-                }
-                Maui.MenuItem
-                {
-                    text: qsTr("Mimetype")
-                    onTriggered: sortBy("mime")
+                    text: qsTr("Type")
+                    onTriggered: modelList.sortBy = KEY.MIME
                 }
 
                 Maui.MenuItem
                 {
                     text: qsTr("Date")
-                    onTriggered: sortBy("date")
+                    onTriggered: modelList.sortBy = KEY.DATE
+                }
+
+                Maui.MenuItem
+                {
+                    text: qsTr("Modified")
+                    onTriggered: modelList.sortBy = KEY.MODIFIED
                 }
 
                 Maui.MenuItem
                 {
                     text: qsTr("Size")
-                    onTriggered: sortBy("size")
+                    onTriggered: modelList.sortBy = KEY.SIZE
                 }
 
                 Maui.MenuItem
                 {
                     text: qsTr("Name")
-                    onTriggered: sortBy("label", ViewSection.FirstCharacter)
+                    onTriggered: modelList.sortBy = KEY.LABEL
                 }
 
                 MenuSeparator {}
 
                 Maui.MenuItem
                 {
+                    id: groupAction
                     text: qsTr("Group")
                     checkable: true
+                    onTriggered:
+                    {
+                        group = checked
+                        group ? groupBy() : undefined
+                    }
                 }
             }
         }
@@ -504,7 +515,7 @@ Maui.Page
 
         setPath(path, pathType.directory)
 
-        /* Get directory configs */     
+        /* Get directory configs */
         var iconsize = inx.dirConf(path+"/.directory")["iconsize"] ||  iconSizes.large
         thumbnailsSize = parseInt(iconsize)
 
@@ -521,10 +532,10 @@ Maui.Page
                 placesSidebar.currentIndex = i
     }
 
-//    function append(item)
-//    {
-//        folderModel.append(item)
-//    }
+    //    function append(item)
+    //    {
+    //        folderModel.append(item)
+    //    }
 
     function goBack()
     {
@@ -677,40 +688,38 @@ Maui.Page
     onThumbnailsSizeChanged:
     {
         inx.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
-         grid.adaptGrid()
+        grid.adaptGrid()
     }
 
-    function sortBy(prop, criteria)
+    function groupBy()
     {
+        var prop = ""
+        var criteria = ViewSection.FullString
 
-        console.log("SORTING BY", prop, criteria)
-        if(detailsView)
+        switch(modelList.sortBy)
         {
-            if(!prop)
-            {
-                grid.section.property = ""
-                return
-            }
-            grid.section.property = prop
-            grid.section.criteria = criteria ? criteria : ViewSection.FullString
+        case KEY.LABEL: prop = "label"
+            criteria = ViewSection.FirstCharacter
+            break;
+        case KEY.MIME: prop = "mime"
+            break;
+        case KEY.SIZE: prop = "size"
+            break;
+        case KEY.DATE: prop = "date"
+            break;
+        case KEY.MODIFIED: prop = "modified"
+            break;
         }
 
-        sortModel(prop)
+        detailsView = true
 
-    }
+        if(!prop)
+        {
+            grid.section.property = ""
+            return
+        }
+        grid.section.property = prop
+        grid.section.criteria = criteria
 
-    function sortModel(prop)
-    {
-        var n;
-        var i;
-        for (n=0; n < folderModel.count; n++)
-            for (i=n+1; i < folderModel.count; i++)
-            {
-                if (modelList.get(n)[prop] > modelList.get(i)[prop])
-                {
-                    folderModel.move(i, n, 1);
-                    n=0;
-                }
-            }
     }
 }

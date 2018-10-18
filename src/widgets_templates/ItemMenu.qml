@@ -105,7 +105,7 @@ Maui.Menu
         text: qsTr("Info...")
         onTriggered:
         {
-            browser.detailsDrawer.show(paths)
+            browser.detailsDrawer.show(paths[0])
             close()
         }
     }
@@ -116,16 +116,14 @@ Maui.Menu
         onTriggered: browser.selectionBar.append(browser.model.get(browser.grid.currentIndex))
     }
 
-
     Maui.MenuItem
     {
         width: parent.width
 
-
         ColorsBar
         {
             anchors.centerIn: parent
-id: colorBar
+            id: colorBar
             size:  iconSize
             onColorPicked:
             {

@@ -3,12 +3,11 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
-
 import "Previewer"
 
 Maui.Dialog
 {
-    id: detailsDrawerRoot
+    id: control
 
     property string currentUrl: ""
     property var iteminfo : ({})
@@ -16,8 +15,8 @@ Maui.Dialog
     property string mimetype : ""
     maxHeight: unit * 800
     maxWidth: unit * 500
-
     defaultButtons: false
+    parent: parent
 
     footBar.leftContent: Maui.ToolButton
     {
@@ -43,9 +42,8 @@ Maui.Dialog
             iconName: "document-open"
             onClicked:
             {
-//                if(typeof(previewLoader.item.player) !== "undefined")
-//                previewLoader.item.player.stop()
-
+                if(typeof(previewLoader.item.player) !== "undefined")
+                previewLoader.item.player.stop()
                 browser.openFile(currentUrl)
             }
         }
@@ -60,7 +58,6 @@ Maui.Dialog
             browser.remove([currentUrl])
         }
     }
-
 
     Component
     {
@@ -99,40 +96,40 @@ Maui.Dialog
         }
     }
 
-//    ScrollView
-//    {
-//        id: scrollView
-//        anchors.fill:parent
-//        contentWidth: previewLoader.width
-//        contentHeight: previewLoader.height
+    ScrollView
+    {
+        id: scrollView
+        anchors.fill:parent
+        contentHeight: previewLoader.item.height
 
-//        clip: true
+        clip: true
 
-//        Loader
-//        {
-//            id: previewLoader
-//            sourceComponent: switch(mimetype)
-//            {
-//            case "audio" :
-//                audioPreview
-//                break
-//            case "video" :
-//               videoPreview
-//                break
-//            case "text" :
-//                defaultPreview
-//                break
-//            case "image" :
-//               imagePreview
-//                break
-//            case "inode" :
-//            default:
-//                defaultPreview
-//            }
-////                    height : previewContent.height * 1.5
-////                    width: previewContent.width
-//        }
-//    }
+        Loader
+        {
+            id: previewLoader
+            height : control.height
+            width: control.width
+            sourceComponent: switch(mimetype)
+                             {
+                             case "audio" :
+                                 audioPreview
+                                 break
+                             case "video" :
+                                 videoPreview
+                                 break
+                             case "text" :
+                                 defaultPreview
+                                 break
+                             case "image" :
+                                 imagePreview
+                                 break
+                             case "inode" :
+                             default:
+                                 defaultPreview
+                             }
+
+        }
+    }
 
     onClosed:
     {
@@ -142,10 +139,10 @@ Maui.Dialog
 
     function show(path)
     {
-        currentUrl = path
-        iteminfo = inx.getFileInfo(path)
-        mimetype = iteminfo.mime.slice(0, iteminfo.mime.indexOf("/"))
-        isDir = false
+        control.currentUrl = path
+        control.iteminfo = inx.getFileInfo(path)
+        control.mimetype = iteminfo.mime.slice(0, iteminfo.mime.indexOf("/"))
+        control.isDir = mimetype === "inode"
         console.log("MIME TYPE FOR PREVEIWER", mimetype)
         open()
     }
