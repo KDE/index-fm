@@ -127,7 +127,6 @@ Maui.Dialog
                              default:
                                  defaultPreview
                              }
-
         }
     }
 
@@ -143,7 +142,7 @@ Maui.Dialog
         control.iteminfo = inx.getFileInfo(path)
         control.mimetype = iteminfo.mime.slice(0, iteminfo.mime.indexOf("/"))
         control.isDir = mimetype === "inode"
-        console.log("MIME TYPE FOR PREVEIWER", mimetype)
+        console.log("MIME TYPE FOR PREVEIWER", mimetype, iteminfo.icon)
         open()
     }
 }
