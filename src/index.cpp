@@ -40,6 +40,7 @@ bool Index::isApp(const QString &path)
     return /*QFileInfo(path).isExecutable() ||*/ path.endsWith(".desktop");
 }
 
+/* to be called to launch index with opening different paths */
 void Index::openPaths(const QStringList &paths)
 {
     QStringList urls;

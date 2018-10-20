@@ -32,12 +32,12 @@ Maui.Page
     property alias selectionBar : selectionBar
 
     property alias model : folderModel
+    property alias list : modelList
     property alias grid : viewLoader.item
+
     property alias detailsDrawer: detailsDrawer
     property alias browserMenu: browserMenu
 
-    property var previousPath: []
-    property var nextPath: []
     property var pathType : ({
                                  directory : 0,
                                  tags : 1,
@@ -49,13 +49,6 @@ Maui.Page
     property int thumbnailsSize : iconSizes.large
 
     margins: 0
-
-    //    Connections
-    //    {
-    //        target: inx
-    //        onPathModified: browser.refresh()
-    //        onItemReady: browser.append(item)
-    //    }
 
     BrowserMenu
     {
@@ -243,7 +236,6 @@ Maui.Page
             Maui.Menu
             {
                 id: sortMenu
-                parent: parent
 
                 Maui.MenuItem
                 {
@@ -477,7 +469,6 @@ Maui.Page
 
     function openFolder(path)
     {
-        previousPath.push(currentPath)
         populate(path)
 
         if(!isMobile)
@@ -539,19 +530,17 @@ Maui.Page
 
     function goBack()
     {
-        nextPath.push(currentPath)
-        populate(previousPath.pop())
+        populate(modelList.previousPath)
     }
 
     function goNext()
     {
-        openFolder(nextPath.pop())
-
+        openFolder(modelList.posteriorPath)
     }
 
     function goUp()
     {
-        openFolder(inx.parentDir(currentPath))
+        openFolder(modelList.parentPath)
     }
 
     function refresh()

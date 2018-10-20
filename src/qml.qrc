@@ -6,7 +6,6 @@
         <file>widgets_templates/ItemMenu.qml</file>
         <file>Index.js</file>
         <file>widgets/views/BrowserMenu.qml</file>
-        <file>widgets/views/DetailsDrawer.qml</file>
         <file>widgets/views/Previewer/AudioPreview.qml</file>
         <file>widgets/views/Previewer/ImagePreview.qml</file>
         <file>widgets/views/Previewer/TextPreview.qml</file>
