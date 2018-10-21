@@ -9,7 +9,7 @@ import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 import FMModel 1.0
 import FMList 1.0
-import FMH 1.0
+//import FMH 1.0
 
 Maui.Page
 {
@@ -242,31 +242,31 @@ Maui.Page
                 Maui.MenuItem
                 {
                     text: qsTr("Type")
-                    onTriggered: modelList.sortBy = KEY.MIME
+                    onTriggered: modelList.sortBy = FMList.MIME
                 }
 
                 Maui.MenuItem
                 {
                     text: qsTr("Date")
-                    onTriggered: modelList.sortBy = KEY.DATE
+                    onTriggered: modelList.sortBy = FMList.DATE
                 }
 
                 Maui.MenuItem
                 {
                     text: qsTr("Modified")
-                    onTriggered: modelList.sortBy = KEY.MODIFIED
+                    onTriggered: modelList.sortBy = FMList.MODIFIED
                 }
 
                 Maui.MenuItem
                 {
                     text: qsTr("Size")
-                    onTriggered: modelList.sortBy = KEY.SIZE
+                    onTriggered: modelList.sortBy = FMList.SIZE
                 }
 
                 Maui.MenuItem
                 {
                     text: qsTr("Name")
-                    onTriggered: modelList.sortBy = KEY.LABEL
+                    onTriggered: modelList.sortBy = FMList.LABEL
                 }
 
                 MenuSeparator {}
