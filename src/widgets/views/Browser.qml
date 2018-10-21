@@ -108,7 +108,7 @@ Maui.Page
 
         Maui.GridBrowser
         {
-            itemSize : thumbnailsSize
+            itemSize : thumbnailsSize + fontSizes.default
             showEmblem: currentPathType !== pathType.applications
             showPreviewThumbnails: modelList.preview
             rightEmblem: isMobile ? "document-share" : ""

@@ -14,6 +14,7 @@ ColumnLayout
         Layout.margins: contentMargins
         Layout.maximumHeight: unit * 400
         Layout.preferredHeight: unit * 200
+        Layout.minimumHeight: unit * 200
 
         Image
         {
