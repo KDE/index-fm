@@ -47,6 +47,7 @@ Maui.ApplicationWindow
         height: iconSizes.big
         width: headBar.middleLayout.width * 0.9
         onPathChanged: browser.openFolder(path)
+        url: browser.currentPath
         onHomeClicked:
         {
             if(pageStack.currentIndex !== 0 && !pageStack.wideMode)

@@ -16,6 +16,7 @@ Maui.Page
     id: control
 
     property string currentPath: inx.homePath()
+
     property var copyPaths : []
     property var cutPaths : []
 
@@ -23,11 +24,10 @@ Maui.Page
     property bool isCut : false
 
     property bool selectionMode : false
-    property bool group: false
-    property bool detailsView: false
+    property bool group : false
+    property bool detailsView : false
     property bool terminalVisible : false
 
-    property bool pathExists : inx.fileExists(currentPath)
     property alias terminal : terminalLoader.item
     property alias selectionBar : selectionBar
 
@@ -35,8 +35,8 @@ Maui.Page
     property alias list : modelList
     property alias grid : viewLoader.item
 
-    property alias detailsDrawer: detailsDrawer
-    property alias browserMenu: browserMenu
+    property alias detailsDrawer : detailsDrawer
+    property alias browserMenu : browserMenu
 
     property var pathType : ({
                                  directory : 0,
@@ -154,13 +154,15 @@ Maui.Page
     Maui.Holder
     {
         id: holder
-        visible: false/*|| !inx.fileExists(currentPath)*/
+        visible: !modelList.pathExists || modelList.pathEmpty
         z: -1
-        emoji: pathExists ? "qrc:/assets/MoonSki.png" : "qrc:/assets/ElectricPlug.png"
+        emoji: modelList.pathExists ? "qrc:/assets/MoonSki.png" : "qrc:/assets/ElectricPlug.png"
         isMask: false
-        title : pathExists ?  "Folder is empty!" : "Folder doesn't exists!"
-        body: pathExists ? "You can add new files to it" : "Create Folder?"
+        title : modelList.pathExists && modelList.pathEmpty ?  "Folder is empty!" : "Folder doesn't exists!"
+        body: modelList.pathExists && modelList.pathEmpty? "You can add new files to it" : "Create Folder?"
         emojiSize: iconSizes.huge
+
+        onActionTriggered: inx.createDir(browser.currentPath.slice(0, browser.currentPath.lastIndexOf("/")), browser.currentPath.split("/").pop())
     }
 
     Keys.onSpacePressed: detailsDrawer.show(modelList.get(viewLoader.item.currentIndex).path)
@@ -493,7 +495,6 @@ Maui.Page
     {
         currentPathType = type
         currentPath = path
-        pathBar.append(currentPath)
     }
 
     function populate(path)
