@@ -284,7 +284,6 @@ Maui.Page
                 }
             }
         }
-
     ]
 
     //    footBar.leftContent: Maui.ToolButton
