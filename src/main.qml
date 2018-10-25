@@ -18,6 +18,8 @@ Maui.ApplicationWindow
 {
     id: root
     title: browser.currentPath
+    property alias browser: browserView.browser
+
     property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
                                                            Kirigami.Units.gridUnit * 11 > Screen.width  * 0.3 ? Screen.width : Kirigami.Units.gridUnit * 11
 
@@ -25,7 +27,7 @@ Maui.ApplicationWindow
     about.appIcon: "qrc:/assets/index.svg"
 
     pageStack.defaultColumnWidth: sidebarWidth
-    pageStack.initialPage: [placesSidebar, browser]
+    pageStack.initialPage: [placesSidebar, browserView]
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
 
@@ -74,108 +76,19 @@ Maui.ApplicationWindow
         height: parent.height
     }
 
+
     Browser
     {
-        id: browser
+        id: browserView
         anchors.fill: parent
-
         Component.onCompleted:
         {
             browser.openFolder(inx.homePath())
         }
     }
 
-
-    ItemMenu
-    {
-        id: itemMenu
-        onBookmarkClicked: browser.bookmarkFolder(paths)
-        onCopyClicked:
-        {
-            if(paths.length > 0)
-                browser.selectionBar.animate("#6fff80")
-
-            browser.copy(paths)
-
-        }
-        onCutClicked:
-        {
-            if(paths.length > 0)
-                browser.selectionBar.animate("#fff44f")
-
-            browser.cut(paths)
-        }
-
-        onRenameClicked:
-        {
-            if(paths.length === 1)
-                renameDialog.open()
-
-        }
-
-        //        onSaveToClicked:
-        //        {
-        //            fmDialog.saveDialog = false
-        //            fmDialog.multipleSelection = true
-        //            fmDialog.onlyDirs= true
-
-        //            var myPath = path
-
-        //            var paths = browser.selectionBar.selectedPaths
-        //            fmDialog.show(function(paths)
-        //            {
-        //                inx.copy(myPath, paths)
-        //            })
-        //        }
-
-        onRemoveClicked:
-        {
-            if(paths.length > 0)
-            {
-                browser.selectionBar.clear()
-                browser.selectionBar.animate("red")
-            }
-            browser.remove(paths)
-        }
-
-        onShareClicked: isAndroid ? Maui.Android.shareDialog(paths) :
-                                    shareDialog.show(paths)
-    }
-
-    Maui.NewDialog
-    {
-        id: newFolderDialog
-        title: "Create new folder"
-        onFinished: inx.createDir(browser.currentPath, text)
-
-    }
-
-    Maui.NewDialog
-    {
-        id: newFileDialog
-        title: "Create new file"
-        onFinished: inx.createFile(browser.currentPath, text)
-    }
-
-    Maui.NewDialog
-    {
-        id: renameDialog
-        title: qsTr("Rename file")
-        textEntry.text: inx.getFileInfo(itemMenu.paths[0])["name"]
-        textEntry.placeholderText: qsTr("New name...")
-        onFinished: inx.rename(itemMenu.paths[0], textEntry.text)
-
-        acceptText: qsTr("Rename")
-        rejectText: qsTr("Cancel")
-    }
-
-    Maui.ShareDialog
-    {
-        id: shareDialog
-        //        parent: browser
-    }
-
     onSearchButtonClicked: fmDialog.show()
+
     Maui.FileDialog
     {
         id:fmDialog
