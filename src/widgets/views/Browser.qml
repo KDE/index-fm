@@ -48,6 +48,18 @@ ColumnLayout
         }
         anchors.top: parent.top
         anchors.bottom: terminalVisible ? handle.top : parent.bottom
+
+        onItemClicked: openItem(index)
+
+        onItemDoubleClicked:
+        {
+            var item = list.get(index)
+
+            if(Maui.FM.isDir(item.path))
+                browser.openFolder(item.path)
+            else
+                browser.openFile(item.path)
+        }
     }
 
     Rectangle
