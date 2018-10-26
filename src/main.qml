@@ -64,7 +64,7 @@ Maui.ApplicationWindow
         onPlaceClicked:
         {
             if(item.type === "Tags")
-                browser.populateTags(item.path)
+                browser.openFolder("Tags/"+item.path)
             else
                 browser.openFolder(item.path)
         }
@@ -72,7 +72,6 @@ Maui.ApplicationWindow
         width: isCollapsed ? iconSize*2 : parent.width
         height: parent.height
     }
-
 
     Browser
     {

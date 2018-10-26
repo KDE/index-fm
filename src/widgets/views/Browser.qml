@@ -49,7 +49,11 @@ ColumnLayout
         {
             if(!isAndroid)
                 terminalVisible = Maui.FM.dirConf(currentPath+"/.directory")["showterminal"] === "true" ? true : false
+
+            if(terminalVisible && !isMobile)
+                terminal.session.sendText("cd " + currentPath + "\n")
         }
+
         anchors.top: parent.top
         anchors.bottom: terminalVisible ? handle.top : parent.bottom
 
@@ -104,7 +108,7 @@ ColumnLayout
         Layout.fillHeight: true
         Layout.alignment: Qt.AlignBottom
         Layout.minimumHeight: 100
-        Layout.maximumHeight: 400
+        Layout.maximumHeight: control.height * 0.3
         anchors.bottom: parent.bottom
         anchors.top: handle.bottom
         source: !isMobile ? "Terminal.qml" : undefined
