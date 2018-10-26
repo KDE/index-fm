@@ -2,7 +2,6 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.mauikit 1.0 as Maui
-import "../../widgets_templates"
 
 Maui.SideBar
 {
@@ -39,11 +38,11 @@ Maui.SideBar
     function populate()
     {
         clear()
-        var places = inx.getDefaultPaths()
-        places.push(inx.getCustomPaths())
-        places.push(inx.getBookmarks())
-        places.push(inx.getDevices())
-        places.push(inx.getTags())
+        var places = Maui.FM.getDefaultPaths()
+        places.push(Maui.FM.getCustomPaths())
+        places.push(Maui.FM.getBookmarks())
+        places.push(Maui.FM.getDevices())
+        places.push(Maui.FM.getTags())
 
         if(places.length > 0)
             for(var i in places)

@@ -14,7 +14,6 @@ HEADERS += \
     $$PWD/notify.h
 
 SOURCES += \
-    $$PWD/kde.cpp \
     $$PWD/notify.cpp
 
 LIBS += -lMauiKit

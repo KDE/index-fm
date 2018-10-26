@@ -21,7 +21,6 @@ add_executable(index
     src/main.cpp
     src/index.cpp
     src/qml.qrc
-    src/kde/kde.cpp
     src/kde/notify.cpp
     )
     

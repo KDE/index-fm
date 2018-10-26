@@ -5,14 +5,10 @@ import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 
 import QtQuick.Window 2.0
-import QtQuick.Controls.Material 2.1
 
 import "widgets"
 import "widgets/views"
 import "widgets/sidebar"
-import "widgets_templates"
-
-import "Index.js" as INX
 
 Maui.ApplicationWindow
 {
