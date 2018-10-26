@@ -34,6 +34,14 @@ ColumnLayout
                     terminalVisible = !terminalVisible
                     Maui.FM.setDirConf(browser.currentPath+"/.directory", "MAUIFM", "ShowTerminal", terminalVisible)
                 }
+            },
+
+            Maui.MenuItem
+            {
+                checkable: true
+                checked: placesSidebar.isCollapsed
+                text: qsTr("Compact mode")
+                onTriggered: placesSidebar.isCollapsed = !placesSidebar.isCollapsed
             }
         ]
 
@@ -96,7 +104,7 @@ ColumnLayout
         Layout.fillHeight: true
         Layout.alignment: Qt.AlignBottom
         Layout.minimumHeight: 100
-        Layout.maximumHeight: parent.height *0.5
+        Layout.maximumHeight: 400
         anchors.bottom: parent.bottom
         anchors.top: handle.bottom
         source: !isMobile ? "Terminal.qml" : undefined

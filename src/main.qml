@@ -5,6 +5,7 @@ import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 
 import QtQuick.Window 2.0
+import FMList 1.0
 
 import "widgets"
 import "widgets/views"
@@ -88,6 +89,10 @@ Maui.ApplicationWindow
     Maui.FileDialog
     {
         id:fmDialog
+        onlyDirs: false
+        filterType: FMList.AUDIO
+        sortBy: FMList.MODIFIED
+        mode: modes.OPEN
     }
 
     Connections
