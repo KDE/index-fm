@@ -54,7 +54,7 @@ ColumnLayout
                 terminal.session.sendText("cd " + currentPath + "\n")
 
             for(var i=0; i < placesSidebar.count; i++)
-                if(currentPath === placesSidebar.model.get(i).path)
+                if(currentPath === placesSidebar.list.get(i).path)
                     placesSidebar.currentIndex = i
         }
 
