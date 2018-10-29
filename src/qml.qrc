@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>widgets/sidebar/PlacesSidebar.qml</file>
         <file>widgets/views/Browser.qml</file>
         <file>widgets/views/Terminal.qml</file>
     </qresource>

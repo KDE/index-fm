@@ -52,6 +52,10 @@ ColumnLayout
 
             if(terminalVisible && !isMobile)
                 terminal.session.sendText("cd " + currentPath + "\n")
+
+            for(var i=0; i < placesSidebar.count; i++)
+                if(currentPath === placesSidebar.model.get(i).path)
+                    placesSidebar.currentIndex = i
         }
 
         anchors.top: parent.top

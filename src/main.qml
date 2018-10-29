@@ -9,7 +9,6 @@ import FMList 1.0
 
 import "widgets"
 import "widgets/views"
-import "widgets/sidebar"
 
 Maui.ApplicationWindow
 {
@@ -58,17 +57,10 @@ Maui.ApplicationWindow
         onPlaceClicked: browser.openFolder(path)
     }
 
-    PlacesSidebar
+    Maui.PlacesSidebar
     {
         id: placesSidebar
-        onPlaceClicked:
-        {
-            if(item.type === "Tags")
-                browser.openFolder("Tags/"+item.path)
-            else
-                browser.openFolder(item.path)
-        }
-
+        onPlaceClicked: browser.openFolder(path)
         width: isCollapsed ? iconSize*2 : parent.width
         height: parent.height
     }
@@ -77,10 +69,6 @@ Maui.ApplicationWindow
     {
         id: browserView
         anchors.fill: parent
-        Component.onCompleted:
-        {
-            browser.openFolder(inx.homePath())
-        }
     }
 
     onSearchButtonClicked: fmDialog.show()
