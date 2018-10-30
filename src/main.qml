@@ -27,21 +27,41 @@ Maui.ApplicationWindow
     pageStack.interactive: isMobile
     pageStack.separatorVisible: pageStack.wideMode
 
+    property alias dialog : dialogLoader.item
+
+    property bool searchBar: false
+
     accentColor: altColor
-//    highlightColor: "#64B5F6"
+    //    highlightColor: "#64B5F6"
     altColor: "#43455a"
     altToolBars: false
     altColorText: "#ffffff"
-//    headBarBGColor: "#64B5F6"
-//    headBarFGColor: altColorText
-//    headBar.colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
+    //    headBarBGColor: "#64B5F6"
+    //    headBarFGColor: altColorText
+    //    headBar.colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
+    searchButton.iconColor: searchBar ? searchButton.colorScheme.highlightColor : searchButton.colorScheme.textColor
+    onSearchButtonClicked:
+    {
+        searchBar = !searchBar
+    }
 
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
-//        colorScheme.backgroundColor: "#fff"
-//        colorScheme.textColor: "#333"
-//        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
+        Maui.TextField
+        {
+            anchors.fill: parent
+            visible: searchBar
+            z: pathBar.z+1
+            focus: true
+            placeholderText: qsTr("Search... ")
+            onAccepted: browser.openFolder("Search/"+text)
+            onCleared: browser.goBack()
+        }
+
+        //        colorScheme.backgroundColor: "#fff"
+        //        colorScheme.textColor: "#333"
+        //        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
         height: iconSizes.big
         width: headBar.middleLayout.width * 0.9
         onPathChanged: browser.openFolder(path)
@@ -51,16 +71,23 @@ Maui.ApplicationWindow
             if(pageStack.currentIndex !== 0 && !pageStack.wideMode)
                 pageStack.currentIndex = 0
 
-            browser.openFolder(inx.homePath())
+            browser.openFolder(Maui.FM.homePath())
         }
 
         onPlaceClicked: browser.openFolder(path)
+
+    }
+
+    Loader
+    {
+        id: dialogLoader
     }
 
     Maui.PlacesSidebar
     {
         id: placesSidebar
         onPlaceClicked: browser.openFolder(path)
+
         width: isCollapsed ? iconSize*2 : parent.width
         height: parent.height
     }
@@ -68,18 +95,20 @@ Maui.ApplicationWindow
     Browser
     {
         id: browserView
-        anchors.fill: parent
     }
 
-    onSearchButtonClicked: fmDialog.show()
 
-    Maui.FileDialog
+    Component
     {
-        id:fmDialog
-        onlyDirs: false
-        filterType: FMList.AUDIO
-        sortBy: FMList.MODIFIED
-        mode: modes.OPEN
+        id:fmDialogComponent
+
+        Maui.FileDialog
+        {
+            onlyDirs: false
+            filterType: FMList.AUDIO
+            sortBy: FMList.MODIFIED
+            mode: modes.OPEN
+        }
     }
 
     Connections
