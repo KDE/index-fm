@@ -36,7 +36,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     $$PWD/src/main.cpp \
-    $$PWD/src/index.cpp
+    $$PWD/src/index.cpp \
 
 RESOURCES += \
     $$PWD/src/qml.qrc \
@@ -55,7 +55,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     $$PWD/src/index.h \
-    $$PWD/src/inx.h
+    $$PWD/src/inx.h \
 
 include($$PWD/install.pri)
 

@@ -33,7 +33,7 @@ Maui.ApplicationWindow
 
     accentColor: altColor
     //    highlightColor: "#64B5F6"
-    altColor: "#43455a"
+    altColor: "#303952"
     altToolBars: false
     altColorText: "#ffffff"
     //    headBarBGColor: "#64B5F6"
@@ -97,7 +97,6 @@ Maui.ApplicationWindow
         id: browserView
     }
 
-
     Component
     {
         id:fmDialogComponent
@@ -129,4 +128,10 @@ Maui.ApplicationWindow
 
         }
     ]
+
+    Component.onCompleted:
+    {
+        if(isAndroid)
+            Maui.Android.statusbarColor(backgroundColor, true)
+    }
 }

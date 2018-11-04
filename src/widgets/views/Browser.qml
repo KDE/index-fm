@@ -16,12 +16,16 @@ ColumnLayout
     property bool terminalVisible : false
     property alias terminal : terminalLoader.item
 
+
+
     Maui.FileBrowser
     {
         id: browser
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 0
+        footBarOverlap: true
+        altToolBars: isMobile
 
         menu:[
             Maui.MenuItem
