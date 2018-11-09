@@ -15,5 +15,6 @@
         <file>assets/Submarine.png</file>
         <file>assets/SunSki.png</file>
         <file>assets/tent.png</file>
+        <file>assets/application-x-zerosize.svg</file>
     </qresource>
 </RCC>

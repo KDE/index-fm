@@ -16,8 +16,6 @@ ColumnLayout
     property bool terminalVisible : false
     property alias terminal : terminalLoader.item
 
-
-
     Maui.FileBrowser
     {
         id: browser
@@ -25,8 +23,9 @@ ColumnLayout
         Layout.fillHeight: true
         Layout.margins: 0
         footBarOverlap: true
-        altToolBars: isMobile
-
+        altToolBars: false
+        floatingBar: true
+        headBar.visible: true
         menu:[
             Maui.MenuItem
             {
@@ -71,8 +70,8 @@ ColumnLayout
         onItemDoubleClicked:
         {
             var item = list.get(index)
-
-            if(Maui.FM.isDir(item.path))
+                console.log(item.mime)
+            if(Maui.FM.isDir(item.path) || item.mime === "inode/directory")
                 browser.openFolder(item.path)
             else
                 browser.openFile(item.path)

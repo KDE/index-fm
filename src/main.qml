@@ -43,6 +43,17 @@ Maui.ApplicationWindow
     onSearchButtonClicked:
     {
         searchBar = !searchBar
+        pageStack.currentIndex = 1
+    }
+
+    onGoBackTriggered:
+    {
+        console.log(browser.currentPathType, FMList.SEARCH_PATH)
+        if(browser.currentPath ===  Maui.FM.homePath())
+        {
+            if (pageStack.currentIndex >= 1)
+                pageStack.flickBack();
+        }else browser.goBack()
     }
 
     headBar.middleContent: Maui.PathBar
@@ -50,13 +61,20 @@ Maui.ApplicationWindow
         id: pathBar
         Maui.TextField
         {
+            id: searchField
             anchors.fill: parent
             visible: searchBar
+            focus: visible
             z: pathBar.z+1
-            focus: true
             placeholderText: qsTr("Search... ")
             onAccepted: browser.openFolder("Search/"+text)
             onCleared: browser.goBack()
+            onGoBackTriggered:
+            {
+                searchBar = false
+                searchField.clear()
+                browser.goBack()
+            }
         }
 
         //        colorScheme.backgroundColor: "#fff"
@@ -75,7 +93,6 @@ Maui.ApplicationWindow
         }
 
         onPlaceClicked: browser.openFolder(path)
-
     }
 
     Loader
@@ -87,7 +104,7 @@ Maui.ApplicationWindow
     {
         id: placesSidebar
         onPlaceClicked: browser.openFolder(path)
-
+        list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.BOOKMARKS_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
         width: isCollapsed ? iconSize*2 : parent.width
         height: parent.height
     }
@@ -110,6 +127,15 @@ Maui.ApplicationWindow
         }
     }
 
+    Component
+    {
+        id: syncingDialogComponent
+        Maui.SyncDialog
+        {
+            textEntry.text: "https://cloud.opendesktop.cc/remote.php/webdav/"
+        }
+    }
+
     Connections
     {
         target: inx
@@ -124,8 +150,12 @@ Maui.ApplicationWindow
 
         Maui.MenuItem
         {
-            text: qsTr("Syncing")
-
+            text: qsTr("Accounts")
+            onTriggered:
+            {
+                dialogLoader.sourceComponent= syncingDialogComponent
+                dialog.open()
+            }
         }
     ]
 
