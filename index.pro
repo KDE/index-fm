@@ -40,7 +40,7 @@ SOURCES += \
 
 RESOURCES += \
     $$PWD/src/qml.qrc \
-    $$PWD/src/assets.qrc \
+#    $$PWD/src/assets.qrc \
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

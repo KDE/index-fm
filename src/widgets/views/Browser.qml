@@ -23,7 +23,7 @@ ColumnLayout
         Layout.fillHeight: true
         Layout.margins: 0
         footBarOverlap: true
-        altToolBars: false
+        altToolBars: isMobile
         floatingBar: true
         headBar.visible: true
         menu:[
