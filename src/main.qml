@@ -127,15 +127,6 @@ Maui.ApplicationWindow
         }
     }
 
-    Component
-    {
-        id: syncingDialogComponent
-        Maui.SyncDialog
-        {
-            textEntry.text: "https://cloud.opendesktop.cc/remote.php/webdav/"
-        }
-    }
-
     Connections
     {
         target: inx
@@ -146,16 +137,6 @@ Maui.ApplicationWindow
         Maui.MenuItem
         {
             text: qsTr("Settings")
-        },
-
-        Maui.MenuItem
-        {
-            text: qsTr("Accounts")
-            onTriggered:
-            {
-                dialogLoader.sourceComponent= syncingDialogComponent
-                dialog.open()
-            }
         }
     ]
 
