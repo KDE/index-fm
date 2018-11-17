@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
         paths = args;
 
     Index index;
-    auto tag = Tagging::getInstance(INX::app, INX::version, "org.kde.index");
 
     QQmlApplicationEngine engine;
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, [&]()
@@ -70,7 +69,6 @@ int main(int argc, char *argv[])
     auto context = engine.rootContext();
 
     context->setContextProperty("inx", &index);
-    context->setContextProperty("tag", tag);
 
 #ifdef STATIC_KIRIGAMI
     KirigamiPlugin::getInstance().registerTypes();
