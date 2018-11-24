@@ -7,10 +7,7 @@
 #include "kde/notify.h"
 #endif
 
-
-Index::Index(QObject *parent) : QObject(parent)
-{
-}
+Index::Index(QObject *parent) : QObject(parent) {}
 
 /* to be called to launch index with opening different paths */
 void Index::openPaths(const QStringList &paths)
