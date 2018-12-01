@@ -1,0 +1,15 @@
+Source: index
+Section: unknown
+Priority: optional
+Maintainer: Bruno Queiros <bqueiros@gmail.com>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: <insert the upstream URL, if relevant>
+Vcs-Git: https://github.com/mauikit/index.git
+#Vcs-Browser: https://github.com/mauikit/index.git
+
+Package: index
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
