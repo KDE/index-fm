@@ -29,6 +29,7 @@ ColumnLayout
         menu:[
             Maui.MenuItem
             {
+                visible: !isMobile
                 text: qsTr("Show terminal")
                 checkable: true
                 checked: terminalVisible
