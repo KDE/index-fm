@@ -1,15 +1,32 @@
 Source: index
-Section: unknown
+Section: utils
 Priority: optional
-Maintainer: Bruno Queiros <bqueiros@gmail.com>
-Build-Depends: debhelper (>= 10)
-Standards-Version: 4.1.2
-Homepage: <insert the upstream URL, if relevant>
-Vcs-Git: https://github.com/mauikit/index.git
-#Vcs-Browser: https://github.com/mauikit/index.git
+Maintainer: Jonah Brüchert <jbb@kaidan.im>
+Build-Depends: cmake,
+               debhelper (>= 11),
+               extra-cmake-modules,
+               libkf5config-dev (>= 5.24.0~),
+               libkf5coreaddons-dev (>= 5.24.0~),
+               libkf5i18n-dev (>= 5.24.0~),
+               libkf5kio-dev,
+               libkf5notifications-dev (>= 5.24.0~),
+               libkf5service-dev (>= 5.24.0~),
+               libqt5svg5-dev,
+               mauikit-dev,
+               qtbase5-dev (>= 5.5.0~),
+               qtdeclarative5-dev,
+               qtquickcontrols2-5-dev,
+               qtwebengine5-dev
+Standards-Version: 4.2.1
+Homepage: https://github.com/maui-project/index
+Vcs-Browser: https://gitlab.com/debian-pm/apps/index
+Vcs-Git: https://gitlab.com/debian-pm/apps/index.git
 
 Package: index
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: qml-module-org-kde-mauikit, ${misc:Depends}, ${shlibs:Depends}
+Description: Maui File manager
+ Index is a file manager that works on desktops, Android and Plasma Mobile.
+ Index lets you browse your system files and applications and preview
+ your music, text, image and video files and share them with external applications
+ .
