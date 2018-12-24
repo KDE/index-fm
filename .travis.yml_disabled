@@ -1,0 +1,36 @@
+sudo: required
+services:
+- docker
+addons:
+  apt:
+    packages:
+    - realpath
+install:
+- docker pull ubuntu:bionic
+- wget https://raw.githubusercontent.com/nomad-desktop/nxos-repository-util/master/nxos-repository-util.sh
+  -O nxos-repository-util.sh
+- chmod +x nxos-repository-util.sh
+script:
+- docker run --rm -v $(pwd)/:/build/ -w /build/ ubuntu:bionic /bin/bash travis-build.sh
+branches:
+  only:
+  - master
+  - development
+deploy:
+- provider: script
+  script: "./source/nxos-repository-util.sh upload testing *.deb"
+  skip_cleanup: true
+  on:
+    branch: master
+- provider: script
+  script: "./source/nxos-repository-util.sh upload development *.deb"
+  skip_cleanup: true
+  on:
+    branch: development
+notifications:
+  email: false
+  slack: nitrux:LgpKKPnWky7IWShmzXsyVDWu
+env:
+  global:
+  - secure: X851cagOqK3vxSgI+WiK86PQ7x5comdCp3wJjHsO6kIKMITRHwJhpxBIx2gUN4Y/KOPO34I/n9B/s/kZv/gColAvCkwJXKyoTt+counQZzFz2QVAFmfs95hfJY87FGSZe3rP/8/rw0wRONvGcjjaeFMLRsrP02mG9BBYdFzS27fvEQl1HKIpn3WI59aHvhwBhFPUWm8DnJhphtcJCxFACoQZs3BHPWCQ7EvEvKZZEPGctMD7NHz45KtrzJFYfuBQ6cy5lsfDRZZ+8SiWgtJorz+/S4Ed7JHKHlSfwtMuKjCK3MWgrhQgwXOfVCM9Oxmba1puPR7mGIleZ58s+2DmwbsCGIyxV5JOZd7PPjTgqFe2QLqPTzQIUFyYm3hp2+LFg8uoKTmutfPSca6uUWd9I7+R+uB2dSPhII70+dqXfAtROjJngrV1Y+qxC1smgykFy704kfxkKbl4mG6RJMp+tly2a2lY+Fv1ICE9klCGpM/iwSZlYd1xYm+653cOQh4ZgS2y3v1yJmufG9N2ElM9JB3qCCBg73zCl5jtmcGgEzhYjI6twhSqctBAxrTdXGhmeFQUVPux/Ucnq4VubyB9Rz2Y2h60OJzEmErhmRNT3b2TFTef8Yrx4SZEQWqQVnAdY0uIydmzcNo5dx18DQJrZt5yI30b8qHkoHmdBiAKUnQ=
+  - secure: cPw/mGqmpsHuzXpI7FqlKC1FUE8EZKBNdEj63UlEwyzTLZDgH5XImcouxzh0hgYV6q3nIZfrNcs0A53oyC4Xh+0Jsa1ICr3INl/rErTpsHHeETeXvLNkDW2Maw2LewOH70Vmanx4IHcOT08e7+EFQ0U7umoZcD2uvUvQ3iyIhJ/FYbza9lKw5nH7LyMYDxVBfS6MZtaYbERbudQYqcaByZXTRCDDEJ/3YbXQhOJLBlys41bgCOILEdw1N1iBpszifj6WuiOiBrM+2RfS0uGHb+cAwPJLS0aFa+7aOF66lEicnoblTG5oP7aziKGUrCc5CuBtmJw3+J5D3B2I76MXTzGXyCWqT1nd7I2JEJXAcv2/FB8hsPOWVjmzydPGXAknJgD65zr4ITZRi43PtOvPlrA6fW5mVO+OiXzl5p+hRaL/pp1HCArtMMXWnsiXAV5MoGbX1xURVvo1eNTNibX1CUkTlKNMFkn8sXSyl7uE1Jfurwp78uBwmJHk+X60VfGZT2a0gZg2PttUEb43bN0uxDhEAYE6Ifh4+m+BEFvhI574A+VP+BhdpZelHw2CeNwInGhGNsKTD3xdTVdxVnJG33CRen0h+DncK7wc3rQitsnE9PharmKqN9IeWv28YWZeBIpRBucRh3U4419R8XFxnhgF0wuViLP6i3iu0A8NWe8=
