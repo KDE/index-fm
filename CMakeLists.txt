@@ -30,10 +30,10 @@ if (ANDROID)
     target_link_libraries(vvave Qt5::AndroidExtras)
     kde_source_files_enable_exceptions(index src/index.cpp)
 else() 
-    find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service)
+    find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica)
     find_package(Qt5 REQUIRED COMPONENTS WebEngine)
 
-    target_link_libraries(index KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::I18n KF5::Service)
+    target_link_libraries(index KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::I18n KF5::Service KF5::Attica)
 endif()
 
 if (TARGET create-apk-index)

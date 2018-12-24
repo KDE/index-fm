@@ -14,7 +14,7 @@ ColumnLayout
     spacing: 0
     property alias browser : browser
     property bool terminalVisible : false
-    property alias terminal : terminalLoader.item
+//    property alias terminal : terminalLoader.item
 
     Maui.FileBrowser
     {
@@ -54,8 +54,8 @@ ColumnLayout
             if(!isAndroid)
                 terminalVisible = Maui.FM.dirConf(currentPath+"/.directory")["showterminal"] === "true" ? true : false
 
-            if(terminalVisible && !isMobile)
-                terminal.session.sendText("cd " + currentPath + "\n")
+//            if(terminalVisible && !isMobile)
+//                terminal.session.sendText("cd " + currentPath + "\n")
 
             for(var i = 0; i < placesSidebar.count; i++)
                 if(currentPath === placesSidebar.list.get(i).path)
@@ -81,7 +81,7 @@ ColumnLayout
     Rectangle
     {
         id: handle
-        visible: terminalVisible
+        visible: true
 
         Layout.fillWidth: true
         height: 5
@@ -89,6 +89,8 @@ ColumnLayout
 
         Kirigami.Separator
         {
+            visible: terminalLoader.visible
+
             anchors
             {
                 bottom: parent.bottom
@@ -99,6 +101,8 @@ ColumnLayout
 
         MouseArea
         {
+            visible: terminalLoader.visible
+
             anchors.fill: parent
             drag.target: parent
             drag.axis: Drag.YAxis
@@ -110,7 +114,7 @@ ColumnLayout
     Loader
     {
         id: terminalLoader
-        visible: terminalVisible
+        visible: false
         focus: true
         Layout.fillWidth: true
         Layout.fillHeight: true
@@ -119,6 +123,15 @@ ColumnLayout
         Layout.maximumHeight: control.height * 0.3
         anchors.bottom: parent.bottom
         anchors.top: handle.bottom
-        source: !isMobile ? "Terminal.qml" : undefined
+        sourceComponent: !isMobile && visible ? terminalComponent : undefined
+    }
+
+    Component
+    {
+        id: terminalComponent
+        Maui.Terminal
+        {
+//            kterminal.colorScheme: "DarkPastels"
+        }
     }
 }
