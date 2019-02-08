@@ -1,7 +1,6 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-//#include <QQuickStyle>
 #include <QIcon>
 #include <QCommandLineParser>
 #include <QFileInfo>
@@ -84,6 +83,8 @@ int main(int argc, char *argv[])
 //    engine.setImportPathList(importPathList);
 //    QQuickStyle::setStyle("material");
 #endif
+
+//        QQuickStyle::setStyle("Material");
 
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
