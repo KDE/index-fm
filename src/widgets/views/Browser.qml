@@ -129,7 +129,7 @@ ColumnLayout
     Component
     {
         id: terminalComponent
-        Maui.Terminal
+        Maui.ToolButton
         {
 //            kterminal.colorScheme: "DarkPastels"
         }
