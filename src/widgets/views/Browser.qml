@@ -14,7 +14,7 @@ ColumnLayout
     spacing: 0
     property alias browser : browser
     property bool terminalVisible : false
-//    property alias terminal : terminalLoader.item
+    //    property alias terminal : terminalLoader.item
 
     Maui.FileBrowser
     {
@@ -38,7 +38,7 @@ ColumnLayout
                     terminalVisible = !terminalVisible
                     Maui.FM.setDirConf(browser.currentPath+"/.directory", "MAUIFM", "ShowTerminal", terminalVisible)
                 }
-            },
+            }/*,
 
             Maui.MenuItem
             {
@@ -46,7 +46,7 @@ ColumnLayout
                 checked: placesSidebar.isCollapsed
                 text: qsTr("Compact mode")
                 onTriggered: placesSidebar.isCollapsed = !placesSidebar.isCollapsed
-            }
+            }*/
         ]
 
         onCurrentPathChanged:
@@ -54,8 +54,8 @@ ColumnLayout
             if(!isAndroid)
                 terminalVisible = Maui.FM.dirConf(currentPath+"/.directory")["showterminal"] === "true" ? true : false
 
-//            if(terminalVisible && !isMobile)
-//                terminal.session.sendText("cd " + currentPath + "\n")
+            //            if(terminalVisible && !isMobile)
+            //                terminal.session.sendText("cd " + currentPath + "\n")
 
             for(var i = 0; i < placesSidebar.count; i++)
                 if(currentPath === placesSidebar.list.get(i).path)
@@ -70,7 +70,7 @@ ColumnLayout
         onItemDoubleClicked:
         {
             var item = list.get(index)
-                console.log(item.mime)
+            console.log(item.mime)
             if(Maui.FM.isDir(item.path) || item.mime === "inode/directory")
                 browser.openFolder(item.path)
             else
@@ -123,15 +123,7 @@ ColumnLayout
         Layout.maximumHeight: control.height * 0.3
         anchors.bottom: parent.bottom
         anchors.top: handle.bottom
-        sourceComponent: !isMobile && visible ? terminalComponent : undefined
+//        source: !isMobile ? "Terminal.qml" : undefined
     }
 
-    Component
-    {
-        id: terminalComponent
-        Maui.ToolButton
-        {
-//            kterminal.colorScheme: "DarkPastels"
-        }
-    }
 }
