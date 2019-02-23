@@ -123,7 +123,7 @@ ColumnLayout
         Layout.maximumHeight: control.height * 0.3
         anchors.bottom: parent.bottom
         anchors.top: handle.bottom
-//        source: !isMobile ? "Terminal.qml" : undefined
+        source: !isMobile ? "Terminal.qml" : undefined
     }
 
 }
