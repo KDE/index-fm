@@ -4,6 +4,7 @@ mauikit/
 .directory
 
 *.*~
+*.travis*
 #~*.*
 #~.*
 
