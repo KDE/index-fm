@@ -23,9 +23,10 @@ ColumnLayout
         Layout.fillHeight: true
         Layout.margins: 0
         footBarOverlap: true
-        altToolBars: isMobile
+        altToolBars: true
         floatingBar: true
         headBar.visible: true
+        headBar.drawBorder: false
         menu:[
             Maui.MenuItem
             {
@@ -123,7 +124,7 @@ ColumnLayout
         Layout.maximumHeight: control.height * 0.3
         anchors.bottom: parent.bottom
         anchors.top: handle.bottom
-        source: !isMobile ? "Terminal.qml" : undefined
+//        source: !isMobile ? "Terminal.qml" : undefined
     }
 
 }

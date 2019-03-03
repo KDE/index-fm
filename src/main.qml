@@ -22,18 +22,18 @@ Maui.ApplicationWindow
     about.appDescription: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     about.appIcon: "qrc:/assets/index.svg"
 
-    pageStack.defaultColumnWidth: sidebarWidth
-    pageStack.initialPage: [placesSidebar, browserView]
-    pageStack.interactive: isMobile
-    pageStack.separatorVisible: pageStack.wideMode
+    // pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
+    //    pageStack.defaultColumnWidth: sidebarWidth
+    //    pageStack.initialPage: [browserView]
+    //    pageStack.interactive: isMobile
+    //    pageStack.separatorVisible: false
 
     property alias dialog : dialogLoader.item
 
     property bool searchBar: false
 
-    accentColor: altColor
+    accentColor: "#303952"
     //    highlightColor: "#64B5F6"
-    altColor: "#303952"
     altToolBars: false
     altColorText: "#ffffff"
     //    headBarBGColor: "#64B5F6"
@@ -56,6 +56,8 @@ Maui.ApplicationWindow
         }else browser.goBack()
     }
 
+//    headBarBGColor: viewBackgroundColor
+//    headBar.drawBorder: false
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
@@ -100,18 +102,34 @@ Maui.ApplicationWindow
         id: dialogLoader
     }
 
-    Maui.PlacesSidebar
+    globalDrawer: Maui.GlobalDrawer
     {
-        id: placesSidebar
-        onPlaceClicked: browser.openFolder(path)
-        list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.BOOKMARKS_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
-        width: isCollapsed ? iconSize*2 : parent.width
-        height: parent.height
+        id: _drawer
+        width: Kirigami.Units.gridUnit * 14
+
+        modal: !root.isWide
+        handleVisible: modal
+
+        Maui.PlacesSidebar
+        {
+            id: placesSidebar
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            onPlaceClicked: browser.openFolder(path)
+            list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.BOOKMARKS_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
+            //             width: isCollapsed ? iconSize*2 : parent.width
+            //             height: parent.height
+
+
+        }
     }
 
-    Browser
+
+
+    content: Browser
     {
         id: browserView
+        anchors.fill: parent
     }
 
     Component
