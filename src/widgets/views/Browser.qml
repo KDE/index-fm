@@ -76,7 +76,7 @@ ColumnLayout
                 browser.openFolder(item.path)
             else
                 browser.openFile(item.path)
-        }
+        }        
     }
 
     Rectangle

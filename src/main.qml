@@ -18,7 +18,7 @@ Maui.ApplicationWindow
 
     property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
                                                            Kirigami.Units.gridUnit * 11 > Screen.width  * 0.3 ? Screen.width : Kirigami.Units.gridUnit * 11
-
+    showAccounts: false
     about.appDescription: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     about.appIcon: "qrc:/assets/index.svg"
 
@@ -46,6 +46,7 @@ Maui.ApplicationWindow
         pageStack.currentIndex = 1
     }
 
+
     onGoBackTriggered:
     {
         console.log(browser.currentPathType, FMList.SEARCH_PATH)
@@ -56,8 +57,19 @@ Maui.ApplicationWindow
         }else browser.goBack()
     }
 
-//    headBarBGColor: viewBackgroundColor
-//    headBar.drawBorder: false
+    //    headBarBGColor: viewBackgroundColor
+    //    headBar.drawBorder: false
+    //    footBar.visible: false
+
+    headBar.leftContent:  Maui.ToolButton
+    {
+        visible: _drawer.modal
+        iconName: "view-right-new"
+        onClicked: _drawer.visible = !_drawer.visible
+        checkable: true
+        checked: _drawer.visible
+    }
+
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
@@ -106,16 +118,19 @@ Maui.ApplicationWindow
     {
         id: _drawer
         width: Kirigami.Units.gridUnit * 14
-
         modal: !root.isWide
-        handleVisible: modal
-
-        Maui.PlacesSidebar
+        handleVisible: false
+        contentItem: Maui.PlacesSidebar
         {
             id: placesSidebar
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            onPlaceClicked: browser.openFolder(path)
+
+            onPlaceClicked:
+            {
+                if(_drawer.modal)
+                    _drawer.close()
+                browser.openFolder(path)
+            }
+
             list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.BOOKMARKS_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
             //             width: isCollapsed ? iconSize*2 : parent.width
             //             height: parent.height
@@ -132,6 +147,22 @@ Maui.ApplicationWindow
         anchors.fill: parent
     }
 
+//    Rectangle
+//    {
+//        color: "pink"
+//        width: iconSizes.big
+//        height: width * 1.5
+
+//        anchors.left: parent.left
+//        anchors.bottom:  parent.bottom
+
+//        anchors.bottomMargin: toolBarHeight
+
+//        Maui.ToolButton
+//        {
+
+//        }
+//    }
     Component
     {
         id:fmDialogComponent
@@ -150,13 +181,6 @@ Maui.ApplicationWindow
         target: inx
         onOpenPath: browser.openFolder(paths[0])
     }
-
-    mainMenu: [
-        Maui.MenuItem
-        {
-            text: qsTr("Settings")
-        }
-    ]
 
     Component.onCompleted:
     {
