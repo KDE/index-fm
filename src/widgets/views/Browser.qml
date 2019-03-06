@@ -50,6 +50,7 @@ ColumnLayout
             }*/
         ]
 
+        onNewBookmark: placesSidebar.list.refresh()
         onCurrentPathChanged:
         {
             if(!isAndroid)
