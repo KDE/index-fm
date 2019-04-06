@@ -70,6 +70,11 @@ Maui.ApplicationWindow
         checked: _drawer.visible
     }
 
+leftIcon.visible: false
+//    leftIcon.onClicked: _drawer.visible = !_drawer.visible
+//    leftIcon.checkable: true
+//    leftIcon.checked: _drawer.visible
+
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
