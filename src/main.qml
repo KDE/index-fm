@@ -43,18 +43,16 @@ Maui.ApplicationWindow
     onSearchButtonClicked:
     {
         searchBar = !searchBar
-        pageStack.currentIndex = 1
+
+        if(searchField.visible)
+            searchField.forceActiveFocus()
     }
 
 
     onGoBackTriggered:
     {
         console.log(browser.currentPathType, FMList.SEARCH_PATH)
-        if(browser.currentPath ===  Maui.FM.homePath())
-        {
-            if (pageStack.currentIndex >= 1)
-                pageStack.flickBack();
-        }else browser.goBack()
+        browser.goBack()
     }
 
     //    headBarBGColor: viewBackgroundColor
@@ -70,10 +68,10 @@ Maui.ApplicationWindow
         checked: _drawer.visible
     }
 
-leftIcon.visible: false
-//    leftIcon.onClicked: _drawer.visible = !_drawer.visible
-//    leftIcon.checkable: true
-//    leftIcon.checked: _drawer.visible
+    leftIcon.visible: false
+    //    leftIcon.onClicked: _drawer.visible = !_drawer.visible
+    //    leftIcon.checkable: true
+    //    leftIcon.checked: _drawer.visible
 
     headBar.middleContent: Maui.PathBar
     {
@@ -100,17 +98,10 @@ leftIcon.visible: false
         //        colorScheme.textColor: "#333"
         //        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
         height: iconSizes.big
-        width: headBar.middleLayout.width * 0.9
+        width: headBar.middleLayout.width * 0.98
         onPathChanged: browser.openFolder(path)
         url: browser.currentPath
-        onHomeClicked:
-        {
-            if(pageStack.currentIndex !== 0 && !pageStack.wideMode)
-                pageStack.currentIndex = 0
-
-            browser.openFolder(Maui.FM.homePath())
-        }
-
+        onHomeClicked: browser.openFolder(Maui.FM.homePath())
         onPlaceClicked: browser.openFolder(path)
     }
 
@@ -152,22 +143,22 @@ leftIcon.visible: false
         anchors.fill: parent
     }
 
-//    Rectangle
-//    {
-//        color: "pink"
-//        width: iconSizes.big
-//        height: width * 1.5
+    //    Rectangle
+    //    {
+    //        color: "pink"
+    //        width: iconSizes.big
+    //        height: width * 1.5
 
-//        anchors.left: parent.left
-//        anchors.bottom:  parent.bottom
+    //        anchors.left: parent.left
+    //        anchors.bottom:  parent.bottom
 
-//        anchors.bottomMargin: toolBarHeight
+    //        anchors.bottomMargin: toolBarHeight
 
-//        Maui.ToolButton
-//        {
+    //        Maui.ToolButton
+    //        {
 
-//        }
-//    }
+    //        }
+    //    }
     Component
     {
         id:fmDialogComponent
