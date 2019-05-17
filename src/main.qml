@@ -59,32 +59,21 @@ Maui.ApplicationWindow
     //    headBar.drawBorder: false
     //    footBar.visible: false
 
-    headBar.leftContent:  [
+    headBar.leftContent:  Maui.ToolButton
+    {
+        visible: _drawer.modal
+        iconName: "view-right-new"
+        onClicked: _drawer.visible = !_drawer.visible
+        checkable: true
+        checked: _drawer.visible
+    }
 
-        Maui.ToolButton
-            {
-                visible: _drawer.modal
-                iconName: "view-right-new"
-                onClicked: _drawer.visible = !_drawer.visible
-                checkable: true
-                checked: _drawer.visible
-            },
-        Maui.ToolButton
-            {
-                visible: _drawer.modal
-                iconName: "view-right-new"
-                onClicked: _drawer.visible = !_drawer.visible
-                checkable: true
-                checked: _drawer.visible
-            }
-
-
-    ]
     leftIcon.visible: false
     //    leftIcon.onClicked: _drawer.visible = !_drawer.visible
     //    leftIcon.checkable: true
     //    leftIcon.checked: _drawer.visible
 
+//    headBar.strech: false
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
