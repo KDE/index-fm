@@ -59,15 +59,27 @@ Maui.ApplicationWindow
     //    headBar.drawBorder: false
     //    footBar.visible: false
 
-    headBar.leftContent:  Maui.ToolButton
-    {
-        visible: _drawer.modal
-        iconName: "view-right-new"
-        onClicked: _drawer.visible = !_drawer.visible
-        checkable: true
-        checked: _drawer.visible
-    }
+    headBar.leftContent:  [
 
+        Maui.ToolButton
+            {
+                visible: _drawer.modal
+                iconName: "view-right-new"
+                onClicked: _drawer.visible = !_drawer.visible
+                checkable: true
+                checked: _drawer.visible
+            },
+        Maui.ToolButton
+            {
+                visible: _drawer.modal
+                iconName: "view-right-new"
+                onClicked: _drawer.visible = !_drawer.visible
+                checkable: true
+                checked: _drawer.visible
+            }
+
+
+    ]
     leftIcon.visible: false
     //    leftIcon.onClicked: _drawer.visible = !_drawer.visible
     //    leftIcon.checkable: true
@@ -76,6 +88,7 @@ Maui.ApplicationWindow
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
+        Layout.fillWidth: true
         Maui.TextField
         {
             id: searchField
@@ -85,12 +98,12 @@ Maui.ApplicationWindow
             z: pathBar.z+1
             placeholderText: qsTr("Search... ")
             onAccepted: browser.openFolder("Search/"+text)
-            onCleared: browser.goBack()
+//            onCleared: browser.goBack()
             onGoBackTriggered:
             {
                 searchBar = false
                 searchField.clear()
-                browser.goBack()
+//                browser.goBack()
             }
         }
 
@@ -98,7 +111,7 @@ Maui.ApplicationWindow
         //        colorScheme.textColor: "#333"
         //        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
         height: iconSizes.big
-        width: headBar.middleLayout.width * 0.98
+        width: headBar.middleLayout.width * 0.95
         onPathChanged: browser.openFolder(path)
         url: browser.currentPath
         onHomeClicked: browser.openFolder(Maui.FM.homePath())
@@ -125,6 +138,9 @@ Maui.ApplicationWindow
                 if(_drawer.modal)
                     _drawer.close()
                 browser.openFolder(path)
+
+                if(searchBar)
+                    searchBar = false
             }
 
             list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.BOOKMARKS_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
@@ -142,6 +158,7 @@ Maui.ApplicationWindow
         id: browserView
         anchors.fill: parent
     }
+
 
     //    Rectangle
     //    {
