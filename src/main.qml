@@ -78,6 +78,7 @@ Maui.ApplicationWindow
     {
         id: pathBar
         Layout.fillWidth: true
+        Layout.margins: space.medium
         Maui.TextField
         {
             id: searchField
@@ -121,6 +122,7 @@ Maui.ApplicationWindow
         contentItem: Maui.PlacesSidebar
         {
             id: placesSidebar
+//            height: _drawer.height
 
             onPlaceClicked:
             {
