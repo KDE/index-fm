@@ -22,11 +22,8 @@ ColumnLayout
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: 0
-        footBarOverlap: true
-        altToolBars: true
-        floatingBar: true
         headBar.visible: true
-        headBar.drawBorder: false
+        headBar.drawBorder: true
         headBar.plegable: false
         menu:[
             Maui.MenuItem
@@ -42,13 +39,13 @@ ColumnLayout
                 }
             }/*,
 
-            Maui.MenuItem
-            {
-                checkable: true
-                checked: placesSidebar.isCollapsed
-                text: qsTr("Compact mode")
-                onTriggered: placesSidebar.isCollapsed = !placesSidebar.isCollapsed
-            }*/
+//            Maui.MenuItem
+//            {
+//                checkable: true
+//                checked: placesSidebar.isCollapsed
+//                text: qsTr("Compact mode")
+//                onTriggered: placesSidebar.isCollapsed = !placesSidebar.isCollapsed
+//            }*/
         ]
 
         onNewBookmark: placesSidebar.list.refresh()
@@ -80,7 +77,7 @@ ColumnLayout
                 browser.openFolder(item.path)
             else
                 browser.openFile(item.path)
-        }        
+        }
     }
 
     Rectangle
@@ -128,7 +125,7 @@ ColumnLayout
         Layout.maximumHeight: control.height * 0.3
         anchors.bottom: parent.bottom
         anchors.top: handle.bottom
-//        source: !isMobile ? "Terminal.qml" : undefined
+        //        source: !isMobile ? "Terminal.qml" : undefined
     }
 
 }

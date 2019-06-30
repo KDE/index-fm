@@ -15,18 +15,9 @@ Maui.ApplicationWindow
     id: root
     title: browser.currentPath
     property alias browser: browserView.browser
-
-    property int sidebarWidth: placesSidebar.isCollapsed ? placesSidebar.iconSize * 2:
-                                                           Kirigami.Units.gridUnit * 11 > Screen.width  * 0.3 ? Screen.width : Kirigami.Units.gridUnit * 11
     showAccounts: false
     about.appDescription: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     about.appIcon: "qrc:/assets/index.svg"
-
-    // pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
-    //    pageStack.defaultColumnWidth: sidebarWidth
-    //    pageStack.initialPage: [browserView]
-    //    pageStack.interactive: isMobile
-    //    pageStack.separatorVisible: false
 
     property alias dialog : dialogLoader.item
 
@@ -73,7 +64,7 @@ Maui.ApplicationWindow
     //    leftIcon.checkable: true
     //    leftIcon.checked: _drawer.visible
 
-//    headBar.strech: false
+    //    headBar.strech: false
     headBar.middleContent: Maui.PathBar
     {
         id: pathBar
@@ -88,12 +79,12 @@ Maui.ApplicationWindow
             z: pathBar.z+1
             placeholderText: qsTr("Search... ")
             onAccepted: browser.openFolder("Search/"+text)
-//            onCleared: browser.goBack()
+            //            onCleared: browser.goBack()
             onGoBackTriggered:
             {
                 searchBar = false
                 searchField.clear()
-//                browser.goBack()
+                //                browser.goBack()
             }
         }
 
@@ -116,13 +107,13 @@ Maui.ApplicationWindow
     globalDrawer: Maui.GlobalDrawer
     {
         id: _drawer
-        width: Kirigami.Units.gridUnit * 14
+        width: Kirigami.Units.gridUnit * 11
         modal: !root.isWide
         handleVisible: false
         contentItem: Maui.PlacesSidebar
         {
             id: placesSidebar
-//            height: _drawer.height
+            //            height: _drawer.height
 
             onPlaceClicked:
             {
