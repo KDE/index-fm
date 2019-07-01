@@ -60,8 +60,6 @@ ColumnLayout
             for(var i = 0; i < placesSidebar.count; i++)
                 if(currentPath === placesSidebar.list.get(i).path)
                     placesSidebar.currentIndex = i
-
-            searchField
         }
 
         anchors.top: parent.top

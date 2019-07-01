@@ -34,17 +34,12 @@ Maui.ApplicationWindow
     onSearchButtonClicked:
     {
         searchBar = !searchBar
-
-        if(searchField.visible)
-            searchField.forceActiveFocus()
+        if(searchBar)
+            _pathBarLoader.item.forceActiveFocus()
     }
 
+    onGoBackTriggered: browser.goBack()
 
-    onGoBackTriggered:
-    {
-        console.log(browser.currentPathType, FMList.SEARCH_PATH)
-        browser.goBack()
-    }
 
     //    headBarBGColor: viewBackgroundColor
     //    headBar.drawBorder: false
@@ -65,38 +60,61 @@ Maui.ApplicationWindow
     //    leftIcon.checked: _drawer.visible
 
     //    headBar.strech: false
-    headBar.middleContent: Maui.PathBar
+
+    Component
     {
-        id: pathBar
-        Layout.fillWidth: true
-        Layout.margins: space.medium
+        id: _pathBarComponent
+
+        Maui.PathBar
+        {
+            anchors.fill: parent
+            //        colorScheme.backgroundColor: "#fff"
+            //        colorScheme.textColor: "#333"
+            //        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
+            onPathChanged: browser.openFolder(path)
+            url: browser.currentPath
+            onHomeClicked: browser.openFolder(Maui.FM.homePath())
+            onPlaceClicked: browser.openFolder(path)
+        }
+    }
+
+    Component
+    {
+        id: _searchFieldComponent
+
         Maui.TextField
         {
-            id: searchField
             anchors.fill: parent
-            visible: searchBar
-            focus: visible
-            z: pathBar.z+1
-            placeholderText: qsTr("Search... ")
+            placeholderText: qsTr("Search for files... ")
             onAccepted: browser.openFolder("Search/"+text)
             //            onCleared: browser.goBack()
             onGoBackTriggered:
             {
                 searchBar = false
-                searchField.clear()
+                clear()
                 //                browser.goBack()
             }
-        }
 
-        //        colorScheme.backgroundColor: "#fff"
-        //        colorScheme.textColor: "#333"
-        //        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
+            background: Rectangle
+            {
+                border.color: borderColor
+                radius: radiusV
+            }
+        }
+    }
+
+    headBar.middleContent: Item
+    {
+        id: _pathBarLoader
+        Layout.fillWidth: true
+        Layout.margins: space.medium
         height: iconSizes.big
-        width: headBar.middleLayout.width * 0.95
-        onPathChanged: browser.openFolder(path)
-        url: browser.currentPath
-        onHomeClicked: browser.openFolder(Maui.FM.homePath())
-        onPlaceClicked: browser.openFolder(path)
+        Loader
+        {
+            anchors.fill: parent
+            sourceComponent: searchBar ? _searchFieldComponent : _pathBarComponent
+
+        }
     }
 
     Loader
