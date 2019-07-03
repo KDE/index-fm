@@ -143,7 +143,7 @@ Maui.ApplicationWindow
                     searchBar = false
             }
 
-            list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.BOOKMARKS_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
+            list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.REMOTE_PATH, FMList.REMOVABLE_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
             //             width: isCollapsed ? iconSize*2 : parent.width
             //             height: parent.height
 
