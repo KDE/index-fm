@@ -5,8 +5,6 @@ import org.kde.kirigami 2.6 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 
 import QtQuick.Window 2.0
-import FMList 1.0
-
 import "widgets"
 import "widgets/views"
 
@@ -143,7 +141,14 @@ Maui.ApplicationWindow
                     searchBar = false
             }
 
-            list.groups: [FMList.PLACES_PATH, FMList.APPS_PATH, FMList.CLOUD_PATH, FMList.REMOTE_PATH, FMList.REMOVABLE_PATH, FMList.DRIVES_PATH, FMList.TAGS_PATH]
+            list.groups: [
+                Maui.FMList.PLACES_PATH,
+                Maui.FMList.APPS_PATH,
+                Maui.FMList.CLOUD_PATH,
+                Maui.FMList.REMOTE_PATH,
+                Maui.FMList.REMOVABLE_PATH,
+                Maui.FMList.DRIVES_PATH,
+                Maui.FMList.TAGS_PATH]
             //             width: isCollapsed ? iconSize*2 : parent.width
             //             height: parent.height
 

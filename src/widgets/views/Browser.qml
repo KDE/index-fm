@@ -3,8 +3,6 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
-import FMModel 1.0
-import FMList 1.0
 //import FMH 1.0
 
 
@@ -48,7 +46,12 @@ ColumnLayout
 //            }*/
         ]
 
-        onNewBookmark: placesSidebar.list.refresh()
+        onNewBookmark:
+        {
+            for(var index in paths)
+                placesSidebar.list.addPlace(paths[index])
+        }
+
         onCurrentPathChanged:
         {
             if(!isAndroid)
