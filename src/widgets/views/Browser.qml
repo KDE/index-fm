@@ -24,7 +24,7 @@ ColumnLayout
         headBar.drawBorder: true
         headBar.plegable: false
         menu:[
-            Maui.MenuItem
+            MenuItem
             {
                 visible: !isMobile
                 text: qsTr("Show terminal")
