@@ -28,7 +28,7 @@ Maui.ApplicationWindow
     //    headBarBGColor: "#64B5F6"
     //    headBarFGColor: altColorText
     //    headBar.colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
-    searchButton.iconColor: searchBar ? searchButton.colorScheme.highlightColor : searchButton.colorScheme.textColor
+    searchButton.checked: searchBar
     onSearchButtonClicked:
     {
         searchBar = !searchBar
@@ -43,10 +43,10 @@ Maui.ApplicationWindow
     //    headBar.drawBorder: false
     //    footBar.visible: false
 
-    headBar.leftContent:  Maui.ToolButton
+    headBar.leftContent:  ToolButton
     {
         visible: _drawer.modal
-        iconName: "view-right-new"
+        icon.name: "view-right-new"
         onClicked: _drawer.visible = !_drawer.visible
         checkable: true
         checked: _drawer.visible
