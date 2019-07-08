@@ -101,18 +101,19 @@ Maui.ApplicationWindow
         }
     }
 
-    headBar.middleContent: Item
+    headBar.middleContent:  Loader
     {
         id: _pathBarLoader
+
         Layout.fillWidth: true
         Layout.margins: space.medium
-        height: iconSizes.big
-        Loader
-        {
-            anchors.fill: parent
-            sourceComponent: searchBar ? _searchFieldComponent : _pathBarComponent
-
-        }
+        Layout.preferredHeight: iconSizes.big
+        sourceComponent: searchBar ? _searchFieldComponent : _pathBarComponent
+//        onLoaded:
+//        {
+//            if(sourceComponent === _pathBarComponent)
+//                item.url =browser.currentPath
+//        }
     }
 
     Loader
@@ -130,7 +131,7 @@ Maui.ApplicationWindow
         {
             id: placesSidebar
             //            height: _drawer.height
-
+            anchors.fill: parent
             onPlaceClicked:
             {
                 if(_drawer.modal)
@@ -188,8 +189,8 @@ Maui.ApplicationWindow
         Maui.FileDialog
         {
             onlyDirs: false
-            filterType: FMList.AUDIO
-            sortBy: FMList.MODIFIED
+            filterType: Maui.FMList.AUDIO
+            sortBy: Maui.FMList.MODIFIED
             mode: modes.OPEN
         }
     }
