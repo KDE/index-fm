@@ -19,15 +19,6 @@
 #include "./../3rdparty/kirigami/src/kirigamiplugin.h"
 #endif
 
-#ifdef STATIC_MAUIKIT
-#include "./../mauikit/src/mauikit.h"
-#include "tagging.h"
-#include "fm.h"
-#else
-#include "MauiKit/tagging.h"
-#include "MauiKit/fm.h"
-#endif
-
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);

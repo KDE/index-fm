@@ -12,15 +12,14 @@ Index::Index(QObject *parent) : QObject(parent) {}
 /* to be called to launch index with opening different paths */
 void Index::openPaths(const QStringList &paths)
 {
-    QStringList urls;
-    for(auto path : paths)
+    emit this->openPath(std::accumulate(paths.constBegin(), paths.constEnd(), QStringList(), [](QStringList &list, const QString &path) -> QStringList
     {
-        QFileInfo file(path);
+        const QFileInfo file(path);
         if(file.isDir())
-            urls << path;
+            list << path;
         else
-            urls << file.dir().absolutePath();
-    }
+            list << file.dir().absolutePath();
 
-    emit this->openPath(urls);
+        return list;
+    }));
 }
