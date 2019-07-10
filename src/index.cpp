@@ -3,10 +3,6 @@
 #include <QDir>
 #include <QDebug>
 
-#if (defined (Q_OS_LINUX) && !defined (Q_OS_ANDROID))
-#include "kde/notify.h"
-#endif
-
 Index::Index(QObject *parent) : QObject(parent) {}
 
 /* to be called to launch index with opening different paths */
