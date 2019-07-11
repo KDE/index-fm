@@ -122,9 +122,9 @@ ColumnLayout
         focus: true
         Layout.fillWidth: true
 //        Layout.fillHeight: true
-        Layout.minimumHeight: 100
-        Layout.maximumHeight: 500
-        Layout.preferredHeight : 200
+        Layout.minimumHeight: visible && terminal ? 100 : 0
+        Layout.maximumHeight: visible && terminal ? 500 : 0
+        Layout.preferredHeight : visible && terminal ? 200 : 0
         source: !isMobile ? "Terminal.qml" : undefined
     }
 
