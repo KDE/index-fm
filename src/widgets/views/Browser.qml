@@ -39,6 +39,7 @@ ColumnLayout
 
         headBar.rightContent: ToolButton
         {
+            visible: control.terminal
             icon.name: "akonadiconsole"
             onClicked: control.terminalVisible = !control.terminalVisible
             checked : control.terminalVisible
