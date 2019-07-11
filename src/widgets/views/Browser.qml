@@ -119,7 +119,7 @@ ColumnLayout
     Loader
     {
         id: terminalLoader
-        visible: terminalVisible
+        visible: terminalVisible && terminal
         focus: true
         Layout.fillWidth: true
 //        Layout.fillHeight: true
