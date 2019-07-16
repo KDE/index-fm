@@ -1,15 +1,15 @@
 import QtQuick 2.9
-import QtQuick.Controls 2.13
+import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 //import FMH 1.0
 
 
-SplitView
+ColumnLayout
 {
     id: control
-    orientation: Qt.Vertical
+//    orientation: Qt.Vertical
     property alias browser : browser
     property bool terminalVisible : true
     property alias terminal : terminalLoader.item
@@ -17,8 +17,8 @@ SplitView
     Maui.FileBrowser
     {
         id: browser
-        SplitView.fillWidth: true
-        SplitView.fillHeight: true
+        Layout.fillWidth: true
+        Layout.fillHeight: true
         headBar.visible: true
         headBar.drawBorder: true
         headBar.plegable: false
@@ -39,6 +39,7 @@ SplitView
 
         headBar.rightContent: ToolButton
         {
+            visible: control.terminal
             icon.name: "akonadiconsole"
             onClicked: control.terminalVisible = !control.terminalVisible
             checked : control.terminalVisible
@@ -118,13 +119,13 @@ SplitView
     Loader
     {
         id: terminalLoader
-        visible: terminalVisible
+        visible: terminalVisible && terminal
         focus: true
-        SplitView.fillWidth: true
-        SplitView.fillHeight: true
-        SplitView.minimumHeight: 100
-        SplitView.maximumHeight: 500
-        SplitView.preferredHeight : 200
+        Layout.fillWidth: true
+//        Layout.fillHeight: true
+        Layout.minimumHeight: visible && terminal ? 100 : 0
+        Layout.maximumHeight: visible && terminal ? 500 : 0
+        Layout.preferredHeight : visible && terminal ? 200 : 0
         source: !isMobile ? "Terminal.qml" : undefined
     }
 
