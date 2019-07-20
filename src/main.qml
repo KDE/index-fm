@@ -23,7 +23,6 @@ Maui.ApplicationWindow
 
     accentColor: "#303952"
     //    highlightColor: "#64B5F6"
-    altToolBars: false
     altColorText: "#ffffff"
     //    headBarBGColor: "#64B5F6"
     //    headBarFGColor: altColorText
