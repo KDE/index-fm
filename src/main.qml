@@ -123,7 +123,7 @@ Maui.ApplicationWindow
     globalDrawer: Maui.GlobalDrawer
     {
         id: _drawer
-        width: Kirigami.Units.gridUnit * 11
+        width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
         modal: !root.isWide
         handleVisible: false
         contentItem: Maui.PlacesSidebar
