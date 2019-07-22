@@ -1,7 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.6 as Kirigami
+import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 
 import QtQuick.Window 2.0
@@ -125,6 +125,9 @@ Maui.ApplicationWindow
     {
         id: _drawer
         width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
+//        height: 200 /*- root.header.height - browser.header.height*/
+//        y: 0
+        height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer ? browser.footer.height : 0)
         modal: !root.isWide
         handleVisible: modal
         contentItem: Maui.PlacesSidebar
