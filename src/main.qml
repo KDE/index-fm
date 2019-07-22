@@ -100,6 +100,7 @@ Maui.ApplicationWindow
         }
     }
 
+    headBar.implicitHeight: toolBarHeight * 1.2
     headBar.middleContent:  Loader
     {
         id: _pathBarLoader
@@ -125,7 +126,7 @@ Maui.ApplicationWindow
         id: _drawer
         width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
         modal: !root.isWide
-        handleVisible: false
+        handleVisible: modal
         contentItem: Maui.PlacesSidebar
         {
             id: placesSidebar
@@ -158,7 +159,7 @@ Maui.ApplicationWindow
 
 
 
-    content: Browser
+    Browser
     {
         id: browserView
         anchors.fill: parent
