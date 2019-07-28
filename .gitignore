@@ -3,6 +3,7 @@ mauikit/
 3rdparty/breeze-icons
 .directory
 
+*.kdev4
 *.*~
 *.travis*
 #~*.*
