@@ -21,9 +21,9 @@ Maui.ApplicationWindow
 
     property bool searchBar: false
 
-    accentColor: "#303952"
+//    accentColor: "#303952"
     //    highlightColor: "#64B5F6"
-    altColorText: "#ffffff"
+//    altColorText: "#ffffff"
     //    headBarBGColor: "#64B5F6"
     //    headBarFGColor: altColorText
     //    headBar.colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
@@ -127,7 +127,7 @@ Maui.ApplicationWindow
         width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
 //        height: 200 /*- root.header.height - browser.header.height*/
 //        y: 0
-        height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer ? browser.footer.height : 0)
+        height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.footer.height : 0)
         modal: !root.isWide
         handleVisible: modal
         contentItem: Maui.PlacesSidebar
