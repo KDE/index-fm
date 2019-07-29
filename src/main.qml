@@ -94,8 +94,9 @@ Maui.ApplicationWindow
 
             background: Rectangle
             {
-                border.color: borderColor
+                border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
                 radius: radiusV
+                color: Kirigami.Theme.backgroundColor
             }
         }
     }
