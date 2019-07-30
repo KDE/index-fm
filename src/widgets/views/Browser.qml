@@ -23,18 +23,18 @@ ColumnLayout
         headBar.drawBorder: true
         headBar.plegable: false
         menu:[
-//            MenuItem
-//            {
-//                visible: !isMobile
-//                text: qsTr("Show terminal")
-//                checkable: true
-//                checked: terminalVisible
-//                onTriggered:
-//                {
-//                    terminalVisible = !terminalVisible
-//                    Maui.FM.setDirConf(browser.currentPath+"/.directory", "MAUIFM", "ShowTerminal", terminalVisible)
-//                }
-//            }
+            MenuItem
+            {
+                visible: !isMobile
+                text: qsTr("Show terminal")
+                checkable: true
+                checked: terminalVisible
+                onTriggered:
+                {
+                    terminalVisible = !terminalVisible
+                    Maui.FM.setDirConf(browser.currentPath+"/.directory", "MAUIFM", "ShowTerminal", terminalVisible)
+                }
+            }
         ]
 
         headBar.rightContent: ToolButton
