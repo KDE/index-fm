@@ -1,4 +1,6 @@
 image: kdeneon/plasma
+script: 
+- apt-get install sshpass -y
 
 before_script:
   - sudo chmod +x gitlab-build.sh
