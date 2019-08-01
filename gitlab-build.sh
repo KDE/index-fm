@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get update; sudo apt-get install linux-modules-$(uname -r) -y
+sudo apt-get update; sudo apt-get install sshpass linux-modules-$(uname -r) -y
 sudo apt-get install fuse -y ; sudo modprobe fuse 
 
 wget https://raw.githubusercontent.com/Nitrux/nitrux-repository-util/master/build-index-fm.sh
