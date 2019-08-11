@@ -208,6 +208,6 @@ Maui.ApplicationWindow
     Component.onCompleted:
     {
         if(isAndroid)
-            Maui.Android.statusbarColor(backgroundColor, true)
+            Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, true)
     }
 }
