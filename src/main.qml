@@ -42,16 +42,16 @@ Maui.ApplicationWindow
     //    headBar.drawBorder: false
     //    footBar.visible: false
 
-    headBar.leftContent:  ToolButton
-    {
-        visible: _drawer.modal
-        icon.name: "view-right-new"
-        onClicked: _drawer.visible = !_drawer.visible
-        checkable: true
-        checked: _drawer.visible
-    }
+//    headBar.leftContent:  ToolButton
+//    {
+//        visible: _drawer.modal
+//        icon.name: "view-right-new"
+//        onClicked: _drawer.visible = !_drawer.visible
+//        checkable: true
+//        checked: _drawer.visible
+//    }
 
-    leftIcon.visible: false
+//    leftIcon.visible: false
     //    leftIcon.onClicked: _drawer.visible = !_drawer.visible
     //    leftIcon.checkable: true
     //    leftIcon.checked: _drawer.visible
@@ -83,7 +83,7 @@ Maui.ApplicationWindow
         {
             anchors.fill: parent
             placeholderText: qsTr("Search for files... ")
-            onAccepted: browser.openFolder("Search/"+text)
+            onAccepted: browser.openFolder("search://"+text)
             //            onCleared: browser.goBack()
             onGoBackTriggered:
             {
