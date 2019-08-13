@@ -2,6 +2,7 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QDebug>
+#include <QUrl>
 
 Index::Index(QObject *parent) : QObject(parent) {}
 
@@ -10,12 +11,14 @@ void Index::openPaths(const QStringList &paths)
 {
     emit this->openPath(std::accumulate(paths.constBegin(), paths.constEnd(), QStringList(), [](QStringList &list, const QString &path) -> QStringList
     {
-        const QFileInfo file(path);
-        if(file.isDir())
-            list << path;
-        else
-            list << file.dir().absolutePath();
+                            const auto url = QUrl::fromLocalFile(path);
 
-        return list;
-    }));
+                            const QFileInfo file(url.toLocalFile());
+                            if(file.isDir())
+                            list << url.toString();
+                            else
+                            list << QUrl::fromLocalFile(file.dir().absolutePath()).toString();
+
+                            return list;
+                        }));
 }
