@@ -126,6 +126,8 @@ Maui.ApplicationWindow
     {
         id: _drawer
         width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
+        handleClosedIcon.source: "view-right-new"
+        handleOpenIcon.source: "view-right-new"
 //        height: 200 /*- root.header.height - browser.header.height*/
 //        y: 0
         height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.footer.height : 0)
