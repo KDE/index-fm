@@ -10,6 +10,9 @@ ColumnLayout
 {
     id: control
 //    orientation: Qt.Vertical
+
+    height: _browserList.height
+    width: _browserList.width
     property alias browser : browser
     property bool terminalVisible : true
     property alias terminal : terminalLoader.item
@@ -22,7 +25,16 @@ ColumnLayout
         headBar.visible: true
         headBar.drawBorder: true
         headBar.plegable: false
-        menu:[
+        itemMenu.contentData: [
+            MenuItem
+            {
+                visible: browser.itemMenu.isDir
+                text: qsTr("Open in tab")
+                onTriggered: openTab(browser.itemMenu.item.path)
+            }
+        ]
+
+        menu: [
             MenuItem
             {
                 visible: !isMobile
