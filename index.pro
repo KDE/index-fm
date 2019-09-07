@@ -2,20 +2,17 @@ QT += qml
 QT += quick
 QT += sql
 
-CONFIG += c++11
-TARGET = index
+CONFIG += c++17
+QMAKE_LINK += -nostdlib++
+
 #DESTDIR = $$OUT_PWD/../
 
 linux:unix:!android {
-
-    message(Building for Linux KDE)
-    include($$PWD/src/kde/kde.pri)
-
 } else:android {
 
     message(Building helpers for Android)
-    include($$PWD/mauikit/mauikit.pri)
     include($$PWD/3rdparty/kirigami/kirigami.pri)
+    include($$PWD/3rdparty/mauikit/mauikit.pri)
 
     DEFINES += STATIC_KIRIGAMI
 
@@ -38,9 +35,12 @@ SOURCES += \
     $$PWD/src/main.cpp \
     $$PWD/src/index.cpp \
 
+HEADERS += \
+    $$PWD/src/index.h \
+    $$PWD/src/inx.h \
+
 RESOURCES += \
     $$PWD/src/qml.qrc \
-#    $$PWD/src/assets.qrc \
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -53,11 +53,19 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-HEADERS += \
-    $$PWD/src/index.h \
-    $$PWD/src/inx.h \
-
 include($$PWD/install.pri)
 
 DISTFILES += \
-    $$PWD/org.kde.index.desktop
+    $$PWD/org.kde.index.desktop \
+    3rdparty/mauikit/src/android/AndroidManifest.xml \
+    3rdparty/mauikit/src/android/build.gradle \
+    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
+    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
+    3rdparty/mauikit/src/android/gradlew \
+    3rdparty/mauikit/src/android/gradlew.bat \
+    3rdparty/mauikit/src/android/res/values/libs.xml
+
+contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+    ANDROID_PACKAGE_SOURCE_DIR = \
+        $$PWD/3rdparty/mauikit/src/android
+}

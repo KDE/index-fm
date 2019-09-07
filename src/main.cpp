@@ -1,9 +1,7 @@
-#include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
 #include <QCommandLineParser>
-#include <QFileInfo>
 #include <QDebug>
 #include "index.h"
 #include "inx.h"
@@ -16,7 +14,11 @@
 #endif
 
 #ifdef STATIC_KIRIGAMI
-#include "./../3rdparty/kirigami/src/kirigamiplugin.h"
+#include "3rdparty/kirigami/src/kirigamiplugin.h"
+#endif
+
+#ifdef STATIC_MAUIKIT
+#include "3rdparty/mauikit/src/mauikit.h"
 #endif
 
 int main(int argc, char *argv[])
@@ -47,19 +49,6 @@ int main(int argc, char *argv[])
     if(!args.isEmpty())
         paths = args;
 
-    Index index;
-
-    QQmlApplicationEngine engine;
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, [&]()
-    {
-        if(!paths.isEmpty())
-            index.openPaths(paths);
-    });
-
-    auto context = engine.rootContext();
-
-    context->setContextProperty("inx", &index);
-
 #ifdef STATIC_KIRIGAMI
     KirigamiPlugin::getInstance().registerTypes();
 #endif
@@ -68,18 +57,22 @@ int main(int argc, char *argv[])
     MauiKit::getInstance().registerTypes();
 #endif
 
-#ifndef Q_OS_ANDROID
-//    QStringList importPathList = engine.importPathList();
-//    importPathList.prepend(QCoreApplication::applicationDirPath() + "/kde/qmltermwidget");
-//    engine.setImportPathList(importPathList);
-//    QQuickStyle::setStyle("material");
-#endif
+    Index index;
+    QQmlApplicationEngine engine;
+    const QUrl url(QStringLiteral("qrc:/main.qml"));
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                     &app, [url, paths, &index](QObject *obj, const QUrl &objUrl)
+    {
+        if (!obj && url == objUrl)
+            QCoreApplication::exit(-1);
 
-//        QQuickStyle::setStyle("Material");
+        if(!paths.isEmpty())
+            index.openPaths(paths);
 
-    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
-    if (engine.rootObjects().isEmpty())
-        return -1;
+    }, Qt::QueuedConnection);
 
+    auto context = engine.rootContext();
+    context->setContextProperty("inx", &index);
+    engine.load(url);
     return app.exec();
 }

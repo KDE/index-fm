@@ -13,7 +13,7 @@ Maui.ApplicationWindow
 {
     id: root
     title: browser.browser.currentPath
-//    property alias browser: browserView.browser
+    //    property alias browser: browserView.browser
     property alias browser: _browserList.currentItem
     showAccounts: false
     about.appDescription: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
@@ -23,9 +23,9 @@ Maui.ApplicationWindow
 
     property bool searchBar: false
 
-//    accentColor: "#303952"
+    //    accentColor: "#303952"
     //    highlightColor: "#64B5F6"
-//    altColorText: "#ffffff"
+    //    altColorText: "#ffffff"
     //    headBarBGColor: "#64B5F6"
     //    headBarFGColor: altColorText
     //    headBar.colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
@@ -44,16 +44,16 @@ Maui.ApplicationWindow
     //    headBar.drawBorder: false
     //    footBar.visible: false
 
-    headBar.leftContent:  ToolButton
-    {
-        visible: _drawer.modal
-        icon.name: "view-right-new"
-        onClicked: _drawer.visible = !_drawer.visible
-        checkable: true
-        checked: _drawer.visible
-    }
+    //    headBar.leftContent:  ToolButton
+    //    {
+    //        visible: _drawer.modal
+    //        icon.name: "view-right-new"
+    //        onClicked: _drawer.visible = !_drawer.visible
+    //        checkable: true
+    //        checked: _drawer.visible
+    //    }
 
-    leftIcon.visible: false
+    //    leftIcon.visible: false
     //    leftIcon.onClicked: _drawer.visible = !_drawer.visible
     //    leftIcon.checkable: true
     //    leftIcon.checked: _drawer.visible
@@ -85,7 +85,7 @@ Maui.ApplicationWindow
         {
             anchors.fill: parent
             placeholderText: qsTr("Search for files... ")
-            onAccepted: browser.browser.openFolder("Search/"+text)
+            onAccepted: browser.openFolder("search://"+text)
             //            onCleared: browser.goBack()
             onGoBackTriggered:
             {
@@ -112,11 +112,11 @@ Maui.ApplicationWindow
         Layout.margins: space.medium
         Layout.preferredHeight: iconSizes.big
         sourceComponent: searchBar ? _searchFieldComponent : _pathBarComponent
-//        onLoaded:
-//        {
-//            if(sourceComponent === _pathBarComponent)
-//                item.url =browser.currentPath
-//        }
+        //        onLoaded:
+        //        {
+        //            if(sourceComponent === _pathBarComponent)
+        //                item.url =browser.currentPath
+        //        }
     }
 
     Loader
@@ -128,8 +128,10 @@ Maui.ApplicationWindow
     {
         id: _drawer
         width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
-//        height: 200 /*- root.header.height - browser.header.height*/
-//        y: 0
+        handleClosedIcon.source: "view-right-new"
+        handleOpenIcon.source: "view-right-new"
+        //        height: 200 /*- root.header.height - browser.header.height*/
+        //        y: 0
         height: root.height - root.header.height - (browser.browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.browser.footer.height : 0)
         modal: !root.isWide
         handleVisible: modal
@@ -182,8 +184,8 @@ Maui.ApplicationWindow
             TabBar
             {
                 id: tabsBar
-               anchors.fill: parent
-//                    currentIndex : _editorList.currentIndex
+                anchors.fill: parent
+                //                    currentIndex : _editorList.currentIndex
                 clip: true
 
                 ListModel { id: tabsListModel }
@@ -331,8 +333,7 @@ Maui.ApplicationWindow
     Component.onCompleted:
     {
         if(isAndroid)
-            Maui.Android.statusbarColor(backgroundColor, true)
-
+            Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, true)
         openTab(Maui.FM.homePath())
     }
 
@@ -359,7 +360,8 @@ Maui.ApplicationWindow
         }
     }
 
-    function setTabMetadata(filepath) {
+    function setTabMetadata(filepath)
+    {
         tabsListModel.setProperty(tabsBar.currentIndex, "path", filepath)
     }
 }
