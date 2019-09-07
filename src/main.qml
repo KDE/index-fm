@@ -12,15 +12,16 @@ import "widgets/views"
 Maui.ApplicationWindow
 {
     id: root
-    title: browser.browser.currentPath
-    //    property alias browser: browserView.browser
-    property alias browser: _browserList.currentItem
+    title: browser.currentPath
     showAccounts: false
     about.appDescription: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     about.appIcon: "qrc:/assets/index.svg"
 
-    property alias dialog : dialogLoader.item
 
+    property bool terminalVisible : true
+    property alias terminal : terminalLoader.item
+    property alias browser: _browserList.currentItem
+    property alias dialog : dialogLoader.item
     property bool searchBar: false
 
     //    accentColor: "#303952"
@@ -37,7 +38,7 @@ Maui.ApplicationWindow
             _pathBarLoader.item.forceActiveFocus()
     }
 
-    onGoBackTriggered: browser.browser.goBack()
+    onGoBackTriggered: browser.goBack()
 
 
     //    headBarBGColor: viewBackgroundColor
@@ -53,12 +54,7 @@ Maui.ApplicationWindow
     //        checked: _drawer.visible
     //    }
 
-    //    leftIcon.visible: false
-    //    leftIcon.onClicked: _drawer.visible = !_drawer.visible
-    //    leftIcon.checkable: true
-    //    leftIcon.checked: _drawer.visible
 
-    //    headBar.strech: false
 
     Component
     {
@@ -67,13 +63,10 @@ Maui.ApplicationWindow
         Maui.PathBar
         {
             anchors.fill: parent
-            //        colorScheme.backgroundColor: "#fff"
-            //        colorScheme.textColor: "#333"
-            //        colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
-            onPathChanged: browser.browser.openFolder(path)
-            url: browser.browser.currentPath
-            onHomeClicked: browser.browser.openFolder(Maui.FM.homePath())
-            onPlaceClicked: browser.browser.openFolder(path)
+            onPathChanged: browser.openFolder(path)
+            url: browser.currentPath
+            onHomeClicked: browser.openFolder(Maui.FM.homePath())
+            onPlaceClicked: browser.openFolder(path)
         }
     }
 
@@ -86,12 +79,10 @@ Maui.ApplicationWindow
             anchors.fill: parent
             placeholderText: qsTr("Search for files... ")
             onAccepted: browser.openFolder("search://"+text)
-            //            onCleared: browser.goBack()
             onGoBackTriggered:
             {
                 searchBar = false
                 clear()
-                //                browser.goBack()
             }
 
             background: Rectangle
@@ -107,16 +98,10 @@ Maui.ApplicationWindow
     headBar.middleContent:  Loader
     {
         id: _pathBarLoader
-
         Layout.fillWidth: true
         Layout.margins: space.medium
         Layout.preferredHeight: iconSizes.big
         sourceComponent: searchBar ? _searchFieldComponent : _pathBarComponent
-        //        onLoaded:
-        //        {
-        //            if(sourceComponent === _pathBarComponent)
-        //                item.url =browser.currentPath
-        //        }
     }
 
     Loader
@@ -130,9 +115,7 @@ Maui.ApplicationWindow
         width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
         handleClosedIcon.source: "view-right-new"
         handleOpenIcon.source: "view-right-new"
-        //        height: 200 /*- root.header.height - browser.header.height*/
-        //        y: 0
-        height: root.height - root.header.height - (browser.browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.browser.footer.height : 0)
+        height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.footer.height : 0)
         modal: !root.isWide
         handleVisible: modal
         contentItem: Maui.PlacesSidebar
@@ -144,7 +127,7 @@ Maui.ApplicationWindow
             {
                 if(_drawer.modal)
                     _drawer.close()
-                browser.browser.openFolder(path)
+                browser.openFolder(path)
 
                 if(searchBar)
                     searchBar = false
@@ -158,10 +141,6 @@ Maui.ApplicationWindow
                 Maui.FMList.REMOVABLE_PATH,
                 Maui.FMList.DRIVES_PATH,
                 Maui.FMList.TAGS_PATH]
-            //             width: isCollapsed ? iconSize*2 : parent.width
-            //             height: parent.height
-
-
         }
     }
 
@@ -174,6 +153,7 @@ Maui.ApplicationWindow
 
         Rectangle
         {
+            id: _tabBar
             Layout.fillWidth: true
             visible: _browserList.count > 1
             Layout.preferredHeight: visible ? toolBarHeight : 0
@@ -185,7 +165,7 @@ Maui.ApplicationWindow
             {
                 id: tabsBar
                 anchors.fill: parent
-                //                    currentIndex : _editorList.currentIndex
+                currentIndex : _browserList.currentIndex
                 clip: true
 
                 ListModel { id: tabsListModel }
@@ -201,11 +181,17 @@ Maui.ApplicationWindow
 
                     TabButton
                     {
-                        width: 150 * unit
+                        readonly property int tabWidth: 150 * unit
+                        width: Math.min(Math.min(tabWidth, root.width), tabWidth * 2)
                         checked: index === _browserList.currentIndex
                         implicitHeight: toolBarHeight
 
-                        onClicked: _browserList.currentIndex = index
+                        onClicked:
+                        {
+                            _browserList.currentIndex = index
+                            if(terminal && terminalVisible && !isMobile)
+                                terminal.session.sendText("cd '" + path.replace("file://", "") + "'\n")
+                        }
 
                         background: Rectangle
                         {
@@ -235,7 +221,7 @@ Maui.ApplicationWindow
 
                             Label
                             {
-                                text: tabsObjectModel.get(index).browser.currentFMList.pathName
+                                text: tabsObjectModel.get(index).list.pathName
                                 //                             verticalAlignment: Qt.AlignVCenter
                                 font.pointSize: fontSizes.default
                                 Layout.fillWidth: true
@@ -271,6 +257,7 @@ Maui.ApplicationWindow
 
         Kirigami.Separator
         {
+            visible: _tabBar.visible
             color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
             Layout.fillWidth: true
             Layout.preferredHeight: 1
@@ -288,29 +275,24 @@ Maui.ApplicationWindow
             interactive: isMobile
             highlightFollowsCurrentItem: true
             highlightMoveDuration: 0
+            onMovementEnded: _browserList.currentIndex = indexAt(contentX, contentY)
         }
+
+
+        Loader
+        {
+            id: terminalLoader
+            visible: terminalVisible && terminal
+            focus: true
+            Layout.fillWidth: true
+            Layout.minimumHeight: visible && terminal ? 100 : 0
+            Layout.maximumHeight: visible && terminal ? 500 : 0
+            Layout.preferredHeight : visible && terminal ? 200 : 0
+            source: !isMobile ? "widgets/views/Terminal.qml" : undefined
+        }
+
     }
 
-
-
-
-
-    //    Rectangle
-    //    {
-    //        color: "pink"
-    //        width: iconSizes.big
-    //        height: width * 1.5
-
-    //        anchors.left: parent.left
-    //        anchors.bottom:  parent.bottom
-
-    //        anchors.bottomMargin: toolBarHeight
-
-    //        Maui.ToolButton
-    //        {
-
-    //        }
-    //    }
     Component
     {
         id:fmDialogComponent
@@ -327,7 +309,7 @@ Maui.ApplicationWindow
     Connections
     {
         target: inx
-        onOpenPath: browser.browser.openFolder(paths[0])
+        onOpenPath: browser.openFolder(paths[0])
     }
 
     Component.onCompleted:
@@ -356,7 +338,7 @@ Maui.ApplicationWindow
         if(path && Maui.FM.fileExists(path))
         {
             setTabMetadata(path)
-            tabsObjectModel.get(tabsObjectModel.count - 1).browser.openFolder(path)
+            tabsObjectModel.get(tabsObjectModel.count - 1).openFolder(path)
         }
     }
 
