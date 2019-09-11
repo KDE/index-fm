@@ -38,8 +38,6 @@ Maui.ApplicationWindow
             _pathBarLoader.item.forceActiveFocus()
     }
 
-    onGoBackTriggered: browser.goBack()
-
 
     //    headBarBGColor: viewBackgroundColor
     //    headBar.drawBorder: false
