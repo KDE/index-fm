@@ -39,7 +39,7 @@ Maui.FileBrowser
     headBar.rightContent: ToolButton
     {
         visible: terminal
-        icon.name: "akonadiconsole"
+        icon.name: "utilities-terminal"
         onClicked: terminalVisible = !terminalVisible
         checked : terminalVisible
         checkable: false

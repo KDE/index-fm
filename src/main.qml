@@ -14,8 +14,8 @@ Maui.ApplicationWindow
     id: root
     title: browser.currentPath
     showAccounts: false
-    about.appDescription: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
-    about.appIcon: "qrc:/assets/index.svg"
+    Maui.App.description: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
+    Maui.App.iconName: "qrc:/assets/index.svg"
 
 
     property bool terminalVisible : true
