@@ -110,15 +110,22 @@ Maui.ApplicationWindow
     globalDrawer: Maui.GlobalDrawer
     {
         id: _drawer
-        width: Math.min(Kirigami.Units.gridUnit * 11, root.width)
-        handleClosedIcon.source: "view-right-new"
-        handleOpenIcon.source: "view-right-new"
+        property bool collapsed : !root.isWide
+
+        width: collapsed ? placesSidebar.iconSize * 2.5 : Math.min(Kirigami.Units.gridUnit * 11, root.width)
+        //        handleClosedIcon.source: "view-right-new"
+        //        handleOpenIcon.source: "view-right-new"
         height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.footer.height : 0)
-        modal: !root.isWide
-        handleVisible: modal
+        modal: false
+        handleVisible: false
         contentItem: Maui.PlacesSidebar
         {
             id: placesSidebar
+            property bool collapsed : !root.isWide
+            showLabels: !collapsed
+            section.property: collapsed ? "" : "type"
+            ScrollBar.vertical.policy: collapsed ? ScrollBar.AlwaysOff : ScrollBar.AlwaysOn
+
             //            height: _drawer.height
             anchors.fill: parent
             onPlaceClicked:
