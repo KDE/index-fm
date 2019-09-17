@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 
     }, Qt::QueuedConnection);
 
-    auto context = engine.rootContext();
+    const auto context = engine.rootContext();
     context->setContextProperty("inx", &index);
     engine.load(url);
     return app.exec();
