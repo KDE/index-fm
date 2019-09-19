@@ -3,7 +3,6 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.0 as Maui
-import QtQml.Models 2.3
 
 import QtQuick.Window 2.0
 import "widgets"
@@ -20,7 +19,6 @@ Maui.ApplicationWindow
 
     property bool terminalVisible : true
     property alias terminal : terminalLoader.item
-    property alias browser: _browserList.currentItem
     property alias dialog : dialogLoader.item
     property bool searchBar: false
 
@@ -37,22 +35,6 @@ Maui.ApplicationWindow
         if(searchBar)
             _pathBarLoader.item.forceActiveFocus()
     }
-
-
-    //    headBarBGColor: viewBackgroundColor
-    //    headBar.drawBorder: false
-    //    footBar.visible: false
-
-    //    headBar.leftContent:  ToolButton
-    //    {
-    //        visible: _drawer.modal
-    //        icon.name: "view-right-new"
-    //        onClicked: _drawer.visible = !_drawer.visible
-    //        checkable: true
-    //        checked: _drawer.visible
-    //    }
-
-
 
     Component
     {
@@ -149,136 +131,18 @@ Maui.ApplicationWindow
         }
     }
 
-    ObjectModel { id: tabsObjectModel }
 
     ColumnLayout
     {
         anchors.fill: parent
         spacing: 0
 
-        TabBar
-        {
-            id: tabsBar
-            visible: _browserList.count > 1
-            Layout.fillWidth: true
-            Layout.preferredHeight: visible ? Maui.Style.rowHeight : 0
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            Kirigami.Theme.inherit: false
-
-            currentIndex : _browserList.currentIndex
-            clip: true
-
-            ListModel { id: tabsListModel }
-
-            background: Rectangle
-            {
-                color: "transparent"
-            }
-
-            Repeater
-            {
-                model: tabsListModel
-
-                TabButton
-                {
-                    id: _tabButton
-                    readonly property int tabWidth: 150 * unit
-                    implicitWidth: Math.min(tabWidth, root.width)
-                    implicitHeight: Maui.Style.rowHeight
-                    checked: index === _browserList.currentIndex
-
-                    onClicked:
-                    {
-                        _browserList.currentIndex = index
-                        if(terminal && terminalVisible && !isMobile)
-                            terminal.session.sendText("cd '" + path.replace("file://", "") + "'\n")
-                    }
-
-                    background: Rectangle
-                    {
-                        color: checked ? Kirigami.Theme.focusColor : Kirigami.Theme.backgroundColor
-                        opacity: checked ? 0.4 : 1
-
-                        Kirigami.Separator
-                        {
-                            color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
-                            z: tabsBar.z + 1
-                            width : 1
-                            //                                    visible: tabsListModel.count > 1
-                            anchors
-                            {
-                                bottom: parent.bottom
-                                top: parent.top
-                                right: parent.right
-                            }
-                        }
-                    }
-
-                    contentItem: RowLayout
-                    {
-                        spacing: 0
-
-                        Label
-                        {
-                            text: tabsObjectModel.get(index).list.pathName
-                            font.pointSize: fontSizes.default
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            Layout.margins: space.small
-                            Layout.alignment: Qt.AlignCenter
-                            verticalAlignment: Qt.AlignVCenter
-                            horizontalAlignment: Qt.AlignHCenter
-                            color: Kirigami.Theme.textColor
-                            wrapMode: Text.NoWrap
-                            elide: Text.ElideRight
-                        }
-
-                        ToolButton
-                        {
-                            Layout.preferredHeight: iconSizes.medium
-                            Layout.preferredWidth: iconSizes.medium
-                            icon.height: iconSizes.medium
-                            icon.width: iconSizes.width
-                            Layout.margins: space.medium
-                            Layout.alignment: Qt.AlignRight
-
-                            icon.name: "dialog-close"
-
-                            onClicked:
-                            {
-                                var removedIndex = index
-                                tabsObjectModel.remove(removedIndex)
-                                tabsListModel.remove(removedIndex)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-
-        Kirigami.Separator
-        {
-            visible: tabsBar.visible
-            color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
-            Layout.fillWidth: true
-            Layout.preferredHeight: 1
-        }
-
-        ListView
-        {
-            id: _browserList
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            orientation: ListView.Horizontal
-            model: tabsObjectModel
-            snapMode: ListView.SnapOneItem
-            spacing: 0
-            interactive: isMobile && tabsObjectModel.count > 1
-            highlightFollowsCurrentItem: true
-            highlightMoveDuration: 0
-            onMovementEnded: _browserList.currentIndex = indexAt(contentX, contentY)
-        }
+      Browser
+      {
+          id: browser
+          Layout.fillHeight: true
+          Layout.fillWidth: true
+      }
 
         Loader
         {
@@ -316,34 +180,5 @@ Maui.ApplicationWindow
     {
         if(isAndroid)
             Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, true)
-        openTab(Maui.FM.homePath())
-    }
-
-    function openTab(path)
-    {
-        var component = Qt.createComponent("widgets/views/Browser.qml");
-        if (component.status === Component.Ready)
-        {
-            var object = component.createObject(tabsObjectModel);
-            tabsObjectModel.append(object);
-        }
-
-        tabsListModel.append({
-                                 title: qsTr("Untitled"),
-                                 path: path,
-                             })
-
-        _browserList.currentIndex = tabsObjectModel.count - 1
-
-        if(path && Maui.FM.fileExists(path))
-        {
-            setTabMetadata(path)
-            tabsObjectModel.get(tabsObjectModel.count - 1).openFolder(path)
-        }
-    }
-
-    function setTabMetadata(filepath)
-    {
-        tabsListModel.setProperty(tabsBar.currentIndex, "path", filepath)
     }
 }
