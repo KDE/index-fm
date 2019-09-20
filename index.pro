@@ -60,14 +60,20 @@ DISTFILES += \
     3rdparty/mauikit/src/android/AndroidManifest.xml \
     3rdparty/mauikit/src/android/build.gradle \
     3rdparty/mauikit/src/android/build.gradle \
+    3rdparty/mauikit/src/android/build.gradle \
+    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
     3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
     3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
     3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
     3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
+    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
+    3rdparty/mauikit/src/android/gradlew \
     3rdparty/mauikit/src/android/gradlew \
     3rdparty/mauikit/src/android/gradlew \
     3rdparty/mauikit/src/android/gradlew.bat \
     3rdparty/mauikit/src/android/gradlew.bat \
+    3rdparty/mauikit/src/android/gradlew.bat \
+    3rdparty/mauikit/src/android/res/values/libs.xml \
     3rdparty/mauikit/src/android/res/values/libs.xml \
     3rdparty/mauikit/src/android/res/values/libs.xml
 
