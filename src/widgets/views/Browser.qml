@@ -42,7 +42,7 @@ Maui.FileBrowser
     onCurrentPathChanged:
     {
         if(terminalVisible && !isMobile)
-            terminal.session.sendText("cd '" + currentPath.replace("file://", "") + "'\n")
+            terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
 
         for(var i = 0; i < placesSidebar.count; i++)
             if(currentPath === placesSidebar.list.get(i).path)
@@ -61,4 +61,3 @@ Maui.FileBrowser
             control.openFile(item.path)
     }
 }
-

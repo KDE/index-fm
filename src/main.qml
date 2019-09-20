@@ -95,8 +95,6 @@ Maui.ApplicationWindow
         property bool collapsed : !root.isWide
 
         width: collapsed ? placesSidebar.iconSize * 2.5 : Math.min(Kirigami.Units.gridUnit * 11, root.width)
-        //        handleClosedIcon.source: "view-right-new"
-        //        handleOpenIcon.source: "view-right-new"
         height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.footer.height : 0)
         modal: false
         handleVisible: false
@@ -107,8 +105,6 @@ Maui.ApplicationWindow
             showLabels: !collapsed
             section.property: collapsed ? "" : "type"
             ScrollBar.vertical.policy: collapsed ? ScrollBar.AlwaysOff : ScrollBar.AlwaysOn
-
-            //            height: _drawer.height
             anchors.fill: parent
             onPlaceClicked:
             {
@@ -128,6 +124,12 @@ Maui.ApplicationWindow
                 Maui.FMList.REMOVABLE_PATH,
                 Maui.FMList.DRIVES_PATH,
                 Maui.FMList.TAGS_PATH]
+
+            itemMenu.contentData: [MenuItem
+            {
+                text: qsTr("Open in tab")
+                onTriggered: browser.openTab(placesSidebar.list.get(placesSidebar.currentIndex).path)
+            }]
         }
     }
 
@@ -137,12 +139,12 @@ Maui.ApplicationWindow
         anchors.fill: parent
         spacing: 0
 
-      Browser
-      {
-          id: browser
-          Layout.fillHeight: true
-          Layout.fillWidth: true
-      }
+        Browser
+        {
+            id: browser
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+        }
 
         Loader
         {
