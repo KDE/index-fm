@@ -55,28 +55,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 include($$PWD/install.pri)
 
-DISTFILES += \
-    $$PWD/org.kde.index.desktop \
-    3rdparty/mauikit/src/android/AndroidManifest.xml \
-    3rdparty/mauikit/src/android/build.gradle \
-    3rdparty/mauikit/src/android/build.gradle \
-    3rdparty/mauikit/src/android/build.gradle \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
-    3rdparty/mauikit/src/android/gradlew \
-    3rdparty/mauikit/src/android/gradlew \
-    3rdparty/mauikit/src/android/gradlew \
-    3rdparty/mauikit/src/android/gradlew.bat \
-    3rdparty/mauikit/src/android/gradlew.bat \
-    3rdparty/mauikit/src/android/gradlew.bat \
-    3rdparty/mauikit/src/android/res/values/libs.xml \
-    3rdparty/mauikit/src/android/res/values/libs.xml \
-    3rdparty/mauikit/src/android/res/values/libs.xml
-
 contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
     ANDROID_PACKAGE_SOURCE_DIR = \
         $$PWD/3rdparty/mauikit/src/android

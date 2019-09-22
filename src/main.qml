@@ -155,20 +155,7 @@ Maui.ApplicationWindow
             Layout.minimumHeight: visible && terminal ? 100 : 0
             Layout.maximumHeight: visible && terminal ? 500 : 0
             Layout.preferredHeight : visible && terminal ? 200 : 0
-            source: !isMobile ? "widgets/views/Terminal.qml" : undefined
-        }
-    }
-
-    Component
-    {
-        id:fmDialogComponent
-
-        Maui.FileDialog
-        {
-            onlyDirs: false
-            filterType: Maui.FMList.AUDIO
-            sortBy: Maui.FMList.MODIFIED
-            mode: modes.OPEN
+            source: !Kirigami.Settings.isMobile ? "widgets/views/Terminal.qml" : undefined
         }
     }
 
