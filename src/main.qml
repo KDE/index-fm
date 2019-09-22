@@ -17,7 +17,8 @@ Maui.ApplicationWindow
     Maui.App.iconName: "qrc:/assets/index.svg"
 
 
-    property bool terminalVisible : true
+    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
+
     property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
     property bool searchBar: false
@@ -68,7 +69,7 @@ Maui.ApplicationWindow
             background: Rectangle
             {
                 border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
-                radius: radiusV
+                radius: Maui.Style.radiusV
                 color: Kirigami.Theme.backgroundColor
             }
         }
@@ -79,8 +80,8 @@ Maui.ApplicationWindow
     {
         id: _pathBarLoader
         Layout.fillWidth: true
-        Layout.margins: space.medium
-        Layout.preferredHeight: iconSizes.big
+        Layout.margins: Maui.Style.space.medium
+        Layout.preferredHeight: Maui.Style.iconSizes.big
         sourceComponent: searchBar ? _searchFieldComponent : _pathBarComponent
     }
 

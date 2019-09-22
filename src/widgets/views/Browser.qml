@@ -7,28 +7,15 @@ import org.kde.mauikit 1.0 as Maui
 Maui.FileBrowser
 {
     id: control
-    headBar.visible: true
-
-    menu: [
-        MenuItem
-        {
-            visible: !isMobile
-            text: qsTr("Show terminal")
-            checkable: true
-            checked: terminalVisible
-            onTriggered:
-            {
-                terminalVisible = !terminalVisible
-                Maui.FM.setDirConf(control.currentPath+"/.directory", "MAUIFM", "ShowTerminal", terminalVisible)
-            }
-        }
-    ]
-
     headBar.rightContent: ToolButton
     {
         visible: terminal
         icon.name: "utilities-terminal"
-        onClicked: terminalVisible = !terminalVisible
+        onClicked:
+        {
+            terminalVisible = !terminalVisible
+            Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
+        }
         checked : terminalVisible
         checkable: false
     }
@@ -41,7 +28,7 @@ Maui.FileBrowser
 
     onCurrentPathChanged:
     {
-        if(terminalVisible && !isMobile)
+        if(terminalVisible && !Kirigami.Settings.isMobile)
             terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
 
         for(var i = 0; i < placesSidebar.count; i++)
