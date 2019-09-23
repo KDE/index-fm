@@ -163,7 +163,12 @@ Maui.ApplicationWindow
     Connections
     {
         target: inx
-        onOpenPath: browser.openFolder(paths[0])
+        onOpenPath:
+        {
+            console.log("trying to open paths:", paths)
+            for(var index in paths)
+             browser.openTab(paths[index])
+        }
     }
 
     Component.onCompleted:

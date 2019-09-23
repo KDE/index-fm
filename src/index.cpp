@@ -20,7 +20,7 @@ void Index::openPaths(const QStringList &paths)
                                 else
                                 list << QUrl::fromLocalFile(file.dir().absolutePath()).toString();
                             }else
-                                list << url.toString();
+                            list << url.toString();
 
                             return list;
                         }));
