@@ -105,7 +105,6 @@ Maui.ApplicationWindow
             property bool collapsed : !root.isWide
             showLabels: !collapsed
             section.property: collapsed ? "" : "type"
-            ScrollBar.vertical.policy: collapsed ? ScrollBar.AlwaysOff : ScrollBar.AlwaysOn
             anchors.fill: parent
             onPlaceClicked:
             {
