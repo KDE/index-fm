@@ -7,6 +7,10 @@ import org.kde.mauikit 1.0 as Maui
 Maui.FileBrowser
 {
     id: control
+
+    viewType: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
+    onViewTypeChanged: Maui.FM.saveSettings("VIEW_TYPE", viewType, "BROWSER")
+
     headBar.rightContent: ToolButton
     {
         visible: terminal
