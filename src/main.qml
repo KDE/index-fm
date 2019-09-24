@@ -75,7 +75,7 @@ Maui.ApplicationWindow
         }
     }
 
-    headBar.implicitHeight: toolBarHeight * 1.2
+    headBar.implicitHeight: Maui.Style.toolBarHeight * 1.2
     headBar.middleContent:  Loader
     {
         id: _pathBarLoader
@@ -93,19 +93,17 @@ Maui.ApplicationWindow
     globalDrawer: Maui.GlobalDrawer
     {
         id: _drawer
-        property bool collapsed : !root.isWide
 
-        width: collapsed ? placesSidebar.iconSize * 2.5 : Math.min(Kirigami.Units.gridUnit * 11, root.width)
-        height: root.height - root.header.height - (browser.headBar.position === ToolBar.Footer && _drawer.modal ? browser.footer.height : 0)
+        width: placesSidebar.collapsed ? placesSidebar.iconSize * 2.5 : Math.min(Kirigami.Units.gridUnit * 11, root.width)
+        height: root.height - root.header.height - browser.footer.height
         modal: false
         handleVisible: false
         contentItem: Maui.PlacesSidebar
         {
             id: placesSidebar
-            property bool collapsed : !root.isWide
-            showLabels: !collapsed
+            collapsed : !root.isWide
             section.property: collapsed ? "" : "type"
-            anchors.fill: parent
+
             onPlaceClicked:
             {
                 if(_drawer.modal)
