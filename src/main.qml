@@ -172,7 +172,5 @@ Maui.ApplicationWindow
     {
         if(isAndroid)
             Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, true)
-
-//        Maui.Android.checkAndroidStoragePermissions()
     }
 }
