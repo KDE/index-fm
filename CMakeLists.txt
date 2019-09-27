@@ -20,7 +20,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(index
-    src/assets.qrc
+    src/index_assets.qrc
     src/main.cpp
     src/index.cpp
     src/qml.qrc
