@@ -36,8 +36,10 @@ Maui.FileBrowser
             terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
 
         for(var i = 0; i < placesSidebar.count; i++)
-            if(currentPath === placesSidebar.list.get(i).path)
+            if(String(currentPath) === placesSidebar.list.get(i).path)
+            {
                 placesSidebar.currentIndex = i
+            }
     }
 
     onItemClicked: openItem(index)
