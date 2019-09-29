@@ -62,10 +62,11 @@ int main(int argc, char *argv[])
             return -1;
 #endif
 
-    app.setApplicationName(INX::app);
+    app.setApplicationName(INX::appName);
     app.setApplicationVersion(INX::version);
-    app.setApplicationDisplayName(INX::app);
-    app.setOrganizationName("org.maui.index");
+    app.setApplicationDisplayName(INX::displayName);
+    app.setOrganizationName(INX::orgName);
+    app.setOrganizationDomain(INX::orgDomain);
     app.setWindowIcon(QIcon(":/index.png"));
 
     QCommandLineParser parser;

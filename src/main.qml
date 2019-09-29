@@ -90,47 +90,41 @@ Maui.ApplicationWindow
         id: dialogLoader
     }
 
-    globalDrawer: Maui.GlobalDrawer
+    sideBar:  Maui.PlacesSidebar
     {
-        id: _drawer
+        id: placesSidebar
+        collapsed : !root.isWide
+        collapsible: true
+        section.property: !showLabels ? "" : "type"
+        preferredWidth: Math.min(Kirigami.Units.gridUnit * 11, root.width)
+        height: root.height - root.header.height
+        iconSize: Maui.Style.iconSizes.medium
 
-        width: placesSidebar.collapsed ? placesSidebar.iconSize * 2.5 : Math.min(Kirigami.Units.gridUnit * 11, root.width)
-        height: root.height - root.header.height - browser.footer.height
-        modal: false
-        handleVisible: false
-        contentItem: Maui.PlacesSidebar
+        onPlaceClicked:
         {
-            id: placesSidebar
-            collapsed : !root.isWide
-            section.property: collapsed ? "" : "type"
+            browser.openFolder(path)
 
-            onPlaceClicked:
-            {
-                if(_drawer.modal)
-                    _drawer.close()
-                browser.openFolder(path)
+            if(searchBar)
+                searchBar = false
+            if(placesSidebar.modal)
+                placesSidebar.collapse()
+        }
 
-                if(searchBar)
-                    searchBar = false
-            }
+        list.groups: [
+            Maui.FMList.PLACES_PATH,
+            Maui.FMList.APPS_PATH,
+            Maui.FMList.CLOUD_PATH,
+            Maui.FMList.REMOTE_PATH,
+            Maui.FMList.REMOVABLE_PATH,
+            Maui.FMList.DRIVES_PATH,
+            Maui.FMList.TAGS_PATH]
 
-            list.groups: [
-                Maui.FMList.PLACES_PATH,
-                Maui.FMList.APPS_PATH,
-                Maui.FMList.CLOUD_PATH,
-                Maui.FMList.REMOTE_PATH,
-                Maui.FMList.REMOVABLE_PATH,
-                Maui.FMList.DRIVES_PATH,
-                Maui.FMList.TAGS_PATH]
-
-            itemMenu.contentData: [MenuItem
+        itemMenu.contentData: [MenuItem
             {
                 text: qsTr("Open in tab")
                 onTriggered: browser.openTab(placesSidebar.list.get(placesSidebar.currentIndex).path)
             }]
-        }
     }
-
 
     ColumnLayout
     {
@@ -164,7 +158,7 @@ Maui.ApplicationWindow
         {
             console.log("trying to open paths:", paths)
             for(var index in paths)
-             browser.openTab(paths[index])
+                browser.openTab(paths[index])
         }
     }
 
