@@ -39,6 +39,7 @@ Maui.FileBrowser
             if(String(currentPath) === placesSidebar.list.get(i).path)
             {
                 placesSidebar.currentIndex = i
+                return;
             }
     }
 
