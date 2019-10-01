@@ -144,10 +144,19 @@ Maui.ApplicationWindow
             visible: terminalVisible && terminal
             focus: true
             Layout.fillWidth: true
-            Layout.minimumHeight: visible && terminal ? 100 : 0
-            Layout.maximumHeight: visible && terminal ? 500 : 0
+//            Layout.minimumHeight: visible && terminal ? 100 : 0
+//            Layout.maximumHeight: visible && terminal ? 500 : 0
             Layout.preferredHeight : visible && terminal ? 200 : 0
             source: !Kirigami.Settings.isMobile ? "widgets/views/Terminal.qml" : undefined
+
+            Behavior on Layout.preferredHeight
+                {
+                    NumberAnimation
+                    {
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InQuad
+                    }
+                }
         }
     }
 
