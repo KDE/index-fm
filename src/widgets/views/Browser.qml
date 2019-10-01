@@ -35,6 +35,7 @@ Maui.FileBrowser
         if(terminalVisible && !Kirigami.Settings.isMobile)
             terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
 
+        placesSidebar.currentIndex = -1
         for(var i = 0; i < placesSidebar.count; i++)
             if(String(currentPath) === placesSidebar.list.get(i).path)
             {
