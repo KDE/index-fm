@@ -30,6 +30,8 @@ Maui.FileBrowser
             placesSidebar.list.addPlace(paths[index])
     }
 
+    onNewTag: placesSidebar.list.refresh()
+
     onCurrentPathChanged:
     {
         if(terminalVisible && !Kirigami.Settings.isMobile)
