@@ -15,6 +15,7 @@ public:
 signals:
     void openPath(QStringList paths);
 
+
 public slots:
 };
 

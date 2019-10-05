@@ -36,14 +36,15 @@ else()
 #    find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica)
     find_package(Qt5 REQUIRED COMPONENTS WebEngine)
 
-#    target_link_libraries(index KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::I18n KF5::Service KF5::Attica)
+#    target_link_libraries(index  KF5::KIOWidgets KF5::KIOFileWidgets KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::KIOWidgets KF5::I18n KF5::Service KF5::Attica)
 endif()
 
 if (TARGET create-apk-index)
     set_target_properties(create-apk-index PROPERTIES ANDROID_APK_DIR "${MAUIKIT_ANDROID_DIR}")
 endif()
 
-target_link_libraries(index Qt5::Sql Qt5::Qml Qt5::Widgets Qt5::Svg)
+#target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::Svg)
+target_link_libraries(index Qt5::Sql Qt5::Quick Qt5::QuickControls2 Qt5::Qml Qt5::Widgets Qt5::Svg)
 
 install(TARGETS index ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.index.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
