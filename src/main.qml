@@ -16,19 +16,12 @@ Maui.ApplicationWindow
     Maui.App.description: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     Maui.App.iconName: "qrc:/assets/index.svg"
 
-
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
 
     property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
     property bool searchBar: false
 
-    //    accentColor: "#303952"
-    //    highlightColor: "#64B5F6"
-    //    altColorText: "#ffffff"
-    //    headBarBGColor: "#64B5F6"
-    //    headBarFGColor: altColorText
-    //    headBar.colorScheme.borderColor: Qt.darker(headBarBGColor, 1.4)
     searchButton.checked: searchBar
     onSearchButtonClicked:
     {
@@ -59,14 +52,14 @@ Maui.ApplicationWindow
         {
             anchors.fill: parent
             placeholderText: qsTr("Search for files... ")
-            onAccepted: browser.openFolder("search://"+text)
+            onAccepted: browser.openFolder("search:///"+text)
             onGoBackTriggered:
             {
-                searchBar = false
+                root.searchBar = false
                 clear()
             }
 
-            background: Rectangle
+            background: Rectangle //emulate pathbar style
             {
                 border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
                 radius: Maui.Style.radiusV
@@ -81,8 +74,7 @@ Maui.ApplicationWindow
         id: _pathBarLoader
         Layout.fillWidth: true
         Layout.margins: Maui.Style.space.medium
-        Layout.preferredHeight: Maui.Style.iconSizes.big
-        sourceComponent: searchBar ? _searchFieldComponent : _pathBarComponent
+        sourceComponent: root.searchBar ? _searchFieldComponent : _pathBarComponent
     }
 
     Loader
@@ -90,7 +82,7 @@ Maui.ApplicationWindow
         id: dialogLoader
     }
 
-    sideBar:  Maui.PlacesSidebar
+    sideBar: Maui.PlacesSidebar
     {
         id: placesSidebar
         collapsed : !root.isWide
@@ -104,13 +96,12 @@ Maui.ApplicationWindow
         {
             browser.openFolder(path)
 
-            if(searchBar)
-                searchBar = false
             if(placesSidebar.modal)
                 placesSidebar.collapse()
         }
 
         list.groups: [
+            Maui.FMList.QUICK_PATH,
             Maui.FMList.PLACES_PATH,
             Maui.FMList.APPS_PATH,
             Maui.FMList.CLOUD_PATH,
@@ -119,11 +110,13 @@ Maui.ApplicationWindow
             Maui.FMList.DRIVES_PATH,
             Maui.FMList.TAGS_PATH]
 
-        itemMenu.contentData: [MenuItem
+        itemMenu.contentData: [
+            MenuItem
             {
                 text: qsTr("Open in tab")
                 onTriggered: browser.openTab(placesSidebar.list.get(placesSidebar.currentIndex).path)
-            }]
+            }
+        ]
     }
 
     ColumnLayout
@@ -144,19 +137,17 @@ Maui.ApplicationWindow
             visible: terminalVisible && terminal
             focus: true
             Layout.fillWidth: true
-//            Layout.minimumHeight: visible && terminal ? 100 : 0
-//            Layout.maximumHeight: visible && terminal ? 500 : 0
             Layout.preferredHeight : visible && terminal ? 200 : 0
             source: !Kirigami.Settings.isMobile ? "widgets/views/Terminal.qml" : undefined
 
             Behavior on Layout.preferredHeight
+            {
+                NumberAnimation
                 {
-                    NumberAnimation
-                    {
-                        duration: Kirigami.Units.longDuration
-                        easing.type: Easing.InQuad
-                    }
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InQuad
                 }
+            }
         }
     }
 
@@ -165,7 +156,6 @@ Maui.ApplicationWindow
         target: inx
         onOpenPath:
         {
-            console.log("trying to open paths:", paths)
             for(var index in paths)
                 browser.openTab(paths[index])
         }
@@ -174,6 +164,9 @@ Maui.ApplicationWindow
     Component.onCompleted:
     {
         if(isAndroid)
+        {
             Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, true)
+            Maui.Android.navBarColor(Kirigami.Theme.backgroundColor, true)
+        }
     }
 }

@@ -34,10 +34,14 @@ Maui.FileBrowser
 
     onCurrentPathChanged:
     {
-        if(terminalVisible && !Kirigami.Settings.isMobile)
-            terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
+        if(root.terminalVisible && !Kirigami.Settings.isMobile)
+            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
+
+        if(root.searchBar)
+            root.searchBar = false
 
         placesSidebar.currentIndex = -1
+
         for(var i = 0; i < placesSidebar.count; i++)
             if(String(currentPath) === placesSidebar.list.get(i).path)
             {
@@ -50,9 +54,8 @@ Maui.FileBrowser
 
     onItemDoubleClicked:
     {
-        var item = currentFMList.get(index)
-        console.log(item.mime)
-        if(Maui.FM.isDir(item.path) || item.mime === "inode/directory")
+        const item = currentFMList.get(index)
+        if(item.mime === "inode/directory")
             control.openFolder(item.path)
         else
             control.openFile(item.path)
