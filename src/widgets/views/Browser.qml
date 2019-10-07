@@ -53,7 +53,10 @@ Maui.FileBrowser
     onItemClicked: openItem(index)
 
     onItemDoubleClicked:
-    {
+    {        
+        if(Kirigami.Settings.isMobile)
+            return
+
         const item = currentFMList.get(index)
         if(item.mime === "inode/directory")
             control.openFolder(item.path)
