@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.0)
 
 find_package(ECM 1.7.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
+option(IS_APPIMAGE_PACKAGE "If set to true then the icons and styled is packaged as well")
 
-#find_package(MauiKit REQUIRED)
 find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Sql Svg QuickControls2 Widgets)
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
@@ -13,7 +13,6 @@ include(ECMInstallIcons)
 include(FeatureSummary)
 include(ECMAddAppIcon)
 
-option(IS_APPIMAGE_PACKAGE "If set to true then the icons and styled is packaged as well")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -38,10 +37,15 @@ if (ANDROID)
     target_link_libraries(index Qt5::AndroidExtras)
     kde_source_files_enable_exceptions(index src/index.cpp)
 else()
-#    find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica)
+
     find_package(Qt5 REQUIRED COMPONENTS WebEngine)
 
-#    target_link_libraries(index  KF5::KIOWidgets KF5::KIOFileWidgets KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::KIOWidgets KF5::I18n KF5::Service KF5::Attica)
+    if(IS_APPIMAGE_PACKAGE)
+        find_package(MauiKit REQUIRED)
+        find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica)
+        target_link_libraries(index KF5::KIOWidgets KF5::KIOFileWidgets KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::KIOWidgets KF5::I18n KF5::Service KF5::Attica)
+    endif()
+
 endif()
 
 if (TARGET create-apk-index)
