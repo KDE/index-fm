@@ -13,6 +13,8 @@ include(ECMInstallIcons)
 include(FeatureSummary)
 include(ECMAddAppIcon)
 
+option(IS_APPIMAGE_PACKAGE "If set to true then the icons and styled is packaged as well")
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -25,6 +27,10 @@ add_executable(index
     src/index.cpp
     src/qml.qrc
     )
+
+if(IS_APPIMAGE_PACKAGE)
+    target_compile_definitions(index PUBLIC APPIMAGE_PACKAGE)
+endif()
 
 if (ANDROID)
     find_package(Qt5 REQUIRED COMPONENTS AndroidExtras)
