@@ -24,7 +24,6 @@ add_executable(index
     src/main.cpp
     src/index.cpp
     src/qml.qrc
-#    src/kde/notify.cpp
     )
 
 if (ANDROID)
@@ -43,8 +42,11 @@ if (TARGET create-apk-index)
     set_target_properties(create-apk-index PROPERTIES ANDROID_APK_DIR "${MAUIKIT_ANDROID_DIR}")
 endif()
 
-#target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::Svg)
-target_link_libraries(index Qt5::Sql Qt5::Quick Qt5::QuickControls2 Qt5::Qml Qt5::Widgets Qt5::Svg)
+if(IS_APPIMAGE_PACKAGE)
+    target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::Svg)
+else()
+    target_link_libraries(index Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::Svg)
+endif()
 
 install(TARGETS index ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.index.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
