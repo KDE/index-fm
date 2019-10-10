@@ -42,8 +42,8 @@ else()
 
     if(IS_APPIMAGE_PACKAGE)
         find_package(MauiKit REQUIRED)
-        find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica)
-        target_link_libraries(index KF5::KIOWidgets KF5::KIOFileWidgets KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::KIOWidgets KF5::I18n KF5::Service KF5::Attica)
+        find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica SyntaxHighlighting)
+        target_link_libraries(index KF5::KIOWidgets KF5::KIOFileWidgets KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::KIOWidgets KF5::I18n KF5::Service KF5::Attica KF5::SyntaxHighlighting)
     endif()
 
 endif()

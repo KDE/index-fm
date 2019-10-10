@@ -6,6 +6,10 @@
 #include "index.h"
 #include "inx.h"
 
+#ifdef APPIMAGE_PACKAGE
+#include <MauiKit/mauikit.h>
+#endif
+
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
 #include <QIcon>
@@ -32,6 +36,10 @@ int main(int argc, char *argv[])
             return -1;
 #else
     QApplication app(argc, argv);
+#endif
+
+#ifdef APPIMAGE_PACKAGE
+    MauiKit::getInstance().initResources();
 #endif
 
     app.setApplicationName(INX::appName);
