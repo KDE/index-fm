@@ -15,6 +15,9 @@ Maui.ApplicationWindow
     showAccounts: false
     Maui.App.description: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     Maui.App.iconName: "qrc:/assets/index.svg"
+    Maui.App.webPage: "https://mauikit.org"
+    Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
+    Maui.App.reportPage: "https://github.com/Nitrux/maui"
 
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
 

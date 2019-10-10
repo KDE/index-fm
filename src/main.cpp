@@ -61,7 +61,6 @@ int main(int argc, char *argv[])
     MauiKit::getInstance().registerTypes();
 #endif
 
-
     Index index;
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
