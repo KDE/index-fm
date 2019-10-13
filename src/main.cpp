@@ -26,7 +26,7 @@
 #include "3rdparty/mauikit/src/mauikit.h"
 #endif
 
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 

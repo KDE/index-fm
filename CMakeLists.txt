@@ -13,6 +13,7 @@ include(ECMInstallIcons)
 include(FeatureSummary)
 include(ECMAddAppIcon)
 
+find_package(MauiKit REQUIRED)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -30,9 +31,10 @@ add_executable(index
 if(IS_APPIMAGE_PACKAGE)
     target_compile_definitions(index PUBLIC APPIMAGE_PACKAGE)
 endif()
+    find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica SyntaxHighlighting)
 
 if (ANDROID)
-    find_package(Qt5 REQUIRED COMPONENTS AndroidExtras)
+    find_package(Qt5 REQUIRED COMPONENTS AndroidExtras WebView)
 
     target_link_libraries(index Qt5::AndroidExtras)
     kde_source_files_enable_exceptions(index src/index.cpp)
@@ -41,22 +43,12 @@ else()
     find_package(Qt5 REQUIRED COMPONENTS WebEngine)
 
     if(IS_APPIMAGE_PACKAGE)
-        find_package(MauiKit REQUIRED)
-        find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica SyntaxHighlighting)
         target_link_libraries(index KF5::KIOWidgets KF5::KIOFileWidgets KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::KIOWidgets KF5::I18n KF5::Service KF5::Attica KF5::SyntaxHighlighting)
     endif()
 
 endif()
 
-if (TARGET create-apk-index)
-    set_target_properties(create-apk-index PROPERTIES ANDROID_APK_DIR "${MAUIKIT_ANDROID_DIR}")
-endif()
-
-if(IS_APPIMAGE_PACKAGE)
-    target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::Svg)
-else()
-    target_link_libraries(index Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::Svg)
-endif()
+target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::Svg)
 
 install(TARGETS index ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.index.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
