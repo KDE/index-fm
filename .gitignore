@@ -1,4 +1,3 @@
-mauikit/
 3rdparty/kirigami
 3rdparty/breeze-icons
 3rdparty/mauikit
@@ -56,4 +55,3 @@ CMakeLists.txt.user*
 
 # build folders and output
 build/
-vvave
