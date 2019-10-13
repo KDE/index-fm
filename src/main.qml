@@ -43,6 +43,23 @@ Maui.ApplicationWindow
             url: browser.currentPath
             onHomeClicked: browser.openFolder(Maui.FM.homePath())
             onPlaceClicked: browser.openFolder(path)
+            onPlaceRightClicked:
+            {
+                _pathBarmenu.path = path
+                _pathBarmenu.popup()
+            }
+
+            Menu
+            {
+                id: _pathBarmenu
+                property url path
+
+                MenuItem
+                {
+                    text: qsTr("Open in tab")
+                    onTriggered: browser.openTab(_pathBarmenu.path)
+                }
+            }
         }
     }
 
