@@ -5,16 +5,25 @@ QT += sql
 CONFIG += c++17
 QMAKE_LINK += -nostdlib++
 
-#DESTDIR = $$OUT_PWD/../
-
 linux:unix:!android {
 } else:android {
 
     message(Building helpers for Android)
+    DEFINES += STATIC_KIRIGAMI
+
+#DEFAULT COMPONENTS DEFINITIONS
+    DEFINES *= \
+        COMPONENT_EDITOR \
+        COMPONENT_FM \
+        COMPONENT_TERMINAL \
+        COMPONENT_TAGGING \
+        COMPONENT_SYNCING
+
+    DEFINES -= COMPONENT_STORE
+
     include($$PWD/3rdparty/kirigami/kirigami.pri)
     include($$PWD/3rdparty/mauikit/mauikit.pri)
 
-    DEFINES += STATIC_KIRIGAMI
 
 } else {
     message("Unknown configuration")
@@ -55,17 +64,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 include($$PWD/install.pri)
-
-contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
-    ANDROID_PACKAGE_SOURCE_DIR = \
-        $$PWD/3rdparty/mauikit/src/android
-}
-
-DISTFILES += \
-    3rdparty/mauikit/src/android/AndroidManifest.xml \
-    3rdparty/mauikit/src/android/build.gradle \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.jar \
-    3rdparty/mauikit/src/android/gradle/wrapper/gradle-wrapper.properties \
-    3rdparty/mauikit/src/android/gradlew \
-    3rdparty/mauikit/src/android/gradlew.bat \
-    3rdparty/mauikit/src/android/res/values/libs.xml
