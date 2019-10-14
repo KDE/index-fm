@@ -64,3 +64,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 include($$PWD/install.pri)
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
