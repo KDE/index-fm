@@ -24,6 +24,13 @@ Maui.ApplicationWindow
     property alias dialog : dialogLoader.item
     property bool searchBar: false
 
+     mainMenu: MenuItem
+     {
+         text: qsTr("Settings")
+         icon.name: "configure"
+         onTriggered: browser.openConfigDialog()
+     }
+
     searchButton.checked: searchBar
     onSearchButtonClicked:
     {
