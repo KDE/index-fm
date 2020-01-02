@@ -1,5 +1,6 @@
-project(index)
 cmake_minimum_required(VERSION 3.0)
+set(INDEX_VERSION 1.0.0)
+project(index VERSION ${INDEX_VERSION})
 
 set(REQUIRED_QT_VERSION 5.10.0)
 set(REQUIRED_KF5_VERSION 5.60)
@@ -21,8 +22,14 @@ include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMInstallIcons)
-include(FeatureSummary)
+include(ECMSetupVersion)
 include(ECMAddAppIcon)
+include(FeatureSummary)
+
+ecm_setup_version(${INDEX_VERSION}
+    VARIABLE_PREFIX INDEX
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/index_version.h"
+    )
 
 add_subdirectory(src)
 
