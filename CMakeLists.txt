@@ -3,7 +3,9 @@ cmake_minimum_required(VERSION 3.0)
 
 find_package(ECM 1.7.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
-option(IS_APPIMAGE_PACKAGE "If set to true then the icons and styled is packaged as well")
+option(MAUIKIT_STYLE "If set to true then the icons and styled is packaged as well")
+
+option(IS_APPIMAGE_PACKAGE "If set to true then the KF5 libraries are linked")
 
 find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Sql Svg QuickControls2 Widgets)
 include(KDEInstallDirs)
@@ -28,8 +30,8 @@ add_executable(index
     src/qml.qrc
     )
 
-if(IS_APPIMAGE_PACKAGE)
-    target_compile_definitions(index PUBLIC APPIMAGE_PACKAGE)
+if(MAUIKIT_STYLE)
+    target_compile_definitions(index PUBLIC MAUIKIT_STYLE)
 endif()
     find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Service Attica SyntaxHighlighting)
 

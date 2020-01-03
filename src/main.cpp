@@ -6,7 +6,7 @@
 #include "index.h"
 #include "inx.h"
 
-#ifdef APPIMAGE_PACKAGE
+#if defined APPIMAGE_PACKAGE || defined MAUIKIT_STYLE
 #include <MauiKit/mauikit.h>
 #endif
 
@@ -28,63 +28,63 @@
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
 #ifdef Q_OS_ANDROID
-    QGuiApplication app(argc, argv);
-    if (!MAUIAndroid::checkRunTimePermissions())
-            return -1;
+	QGuiApplication app(argc, argv);
+	if (!MAUIAndroid::checkRunTimePermissions())
+			return -1;
 #else
-    QApplication app(argc, argv);
+	QApplication app(argc, argv);
 #endif
 
-#ifdef APPIMAGE_PACKAGE
-    MauiKit::getInstance().initResources();
+#ifdef MAUIKIT_STYLE
+	MauiKit::getInstance().initResources();
 #endif
 
-    app.setApplicationName(INX::appName);
-    app.setApplicationVersion(INX::version);
-    app.setApplicationDisplayName(INX::displayName);
-    app.setOrganizationName(INX::orgName);
-    app.setOrganizationDomain(INX::orgDomain);
-    app.setWindowIcon(QIcon(":/index.png"));
+	app.setApplicationName(INX::appName);
+	app.setApplicationVersion(INX::version);
+	app.setApplicationDisplayName(INX::displayName);
+	app.setOrganizationName(INX::orgName);
+	app.setOrganizationDomain(INX::orgDomain);
+	app.setWindowIcon(QIcon(":/index.png"));
 
-    QCommandLineParser parser;
-    parser.setApplicationDescription(INX::description);
-    const QCommandLineOption versionOption = parser.addVersionOption();
-    parser.addOption(versionOption);
-    parser.process(app);
+	QCommandLineParser parser;
+	parser.setApplicationDescription(INX::description);
+	const QCommandLineOption versionOption = parser.addVersionOption();
+	parser.addOption(versionOption);
+	parser.process(app);
 
-    const QStringList args = parser.positionalArguments();
-    QStringList paths;
+	const QStringList args = parser.positionalArguments();
+	QStringList paths;
 
-    if(!args.isEmpty())
-        paths = args;
+	if(!args.isEmpty())
+		paths = args;
 
 #ifdef STATIC_KIRIGAMI
-    KirigamiPlugin::getInstance().registerTypes();
+	KirigamiPlugin::getInstance().registerTypes();
 #endif
 
 #ifdef STATIC_MAUIKIT
-    MauiKit::getInstance().registerTypes();
+	MauiKit::getInstance().registerTypes();
 #endif
 
-    Index index;
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url, paths, &index](QObject *obj, const QUrl &objUrl)
-    {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
+	Index index;
+	QQmlApplicationEngine engine;
+	const QUrl url(QStringLiteral("qrc:/main.qml"));
+	QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+					 &app, [url, paths, &index](QObject *obj, const QUrl &objUrl)
+	{
+		if (!obj && url == objUrl)
+			QCoreApplication::exit(-1);
 
-        if(!paths.isEmpty())
-            index.openPaths(paths);
+		if(!paths.isEmpty())
+			index.openPaths(paths);
 
-    }, Qt::QueuedConnection);
+	}, Qt::QueuedConnection);
 
-    const auto context = engine.rootContext();
-    context->setContextProperty("inx", &index);
-    engine.load(url);
-    return app.exec();
+	const auto context = engine.rootContext();
+	context->setContextProperty("inx", &index);
+	engine.load(url);
+	return app.exec();
 }
