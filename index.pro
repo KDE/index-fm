@@ -15,15 +15,15 @@ linux:unix:!android {
     DEFINES *= \
         COMPONENT_EDITOR \
         COMPONENT_FM \
-        COMPONENT_TERMINAL \
         COMPONENT_TAGGING \
-        COMPONENT_SYNCING
+        COMPONENT_SYNCING \
+        MAUIKIT_STYLE
 
     DEFINES -= COMPONENT_STORE
+    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
 
     include($$PWD/3rdparty/kirigami/kirigami.pri)
     include($$PWD/3rdparty/mauikit/mauikit.pri)
-
 
 } else {
     message("Unknown configuration")
@@ -65,4 +65,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 include($$PWD/install.pri)
 
-ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files

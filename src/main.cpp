@@ -6,7 +6,7 @@
 #include "index.h"
 #include "inx.h"
 
-#if defined APPIMAGE_PACKAGE || defined MAUIKIT_STYLE
+#if defined APPIMAGE_PACKAGE && defined MAUIKIT_STYLE
 #include <MauiKit/mauikit.h>
 #endif
 
