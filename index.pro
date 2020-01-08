@@ -5,6 +5,14 @@ QT += sql
 CONFIG += c++17
 QMAKE_LINK += -nostdlib++
 
+VERSION_MAJOR = 1
+VERSION_MINOR = 0
+VERSION_BUILD = 0
+
+VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
+
+DEFINES += INDEX_VERSION_STRING=\\\"$$VERSION\\\"
+
 linux:unix:!android {
 } else:android {
 
