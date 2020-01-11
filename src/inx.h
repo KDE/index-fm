@@ -5,7 +5,9 @@
 #include <QDebug>
 #include <QStandardPaths>
 
+#ifndef STATIC_MAUIKIT
 #include "../index_version.h"
+#endif
 
 namespace INX
 {
