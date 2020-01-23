@@ -31,9 +31,9 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
 #ifdef Q_OS_ANDROID
-	QGuiApplication app(argc, argv);
-	if (!MAUIAndroid::checkRunTimePermissions())
-			return -1;
+    QGuiApplication app(argc, argv);
+    if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE"}))
+        return -1;
 #else
 	QApplication app(argc, argv);
 #endif
