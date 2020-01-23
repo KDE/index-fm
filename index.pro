@@ -30,6 +30,9 @@ linux:unix:!android {
     DEFINES -= COMPONENT_STORE
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
 
+   DISTFILES += \
+$$PWD/android_files/AndroidManifest.xml
+
     include($$PWD/3rdparty/kirigami/kirigami.pri)
     include($$PWD/3rdparty/mauikit/mauikit.pri)
 

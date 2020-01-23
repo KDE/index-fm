@@ -29,15 +29,7 @@ Maui.ApplicationWindow
          text: qsTr("Settings")
          icon.name: "configure"
          onTriggered: browser.openConfigDialog()
-     }
-
-    searchButton.checked: searchBar
-    onSearchButtonClicked:
-    {
-        searchBar = !searchBar
-        if(searchBar)
-            _pathBarLoader.item.forceActiveFocus()
-    }
+     }    
 
     Component
     {
@@ -101,6 +93,18 @@ Maui.ApplicationWindow
         Layout.fillWidth: true
         Layout.margins: Maui.Style.space.medium
         sourceComponent: root.searchBar ? _searchFieldComponent : _pathBarComponent
+    }
+
+    headBar.rightContent: ToolButton
+    {
+        icon.name: "edit-find"
+        checked: root.searchBar
+        onClicked:
+        {
+            searchBar = !searchBar
+            if(searchBar)
+                _pathBarLoader.item.forceActiveFocus()
+        }
     }
 
     Loader
