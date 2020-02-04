@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Index
 Name[ca]=Índex
+Name[ca@valencia]=Índex
 Name[es]=Índice
 Name[et]=Index
 Name[it]=Index
@@ -14,6 +15,7 @@ Name[x-test]=xxIndexxx
 Name[zh_TW]=索引
 Comment=File manager
 Comment[ca]=Gestor de fitxers
+Comment[ca@valencia]=Gestor de fitxers
 Comment[es]=Gestor de archivos
 Comment[et]=Failihaldur
 Comment[it]=Gestore dei file
@@ -32,6 +34,7 @@ Type=Application
 Categories=Qt;KDE;System;FileTools;FileManager;
 GenericName=File Manager
 GenericName[ca]=Gestor de fitxers
+GenericName[ca@valencia]=Gestor de fitxers
 GenericName[es]=Gestor de archivos
 GenericName[et]=Failihaldur
 GenericName[it]=Gestore dei file
