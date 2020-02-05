@@ -29,7 +29,7 @@ Maui.ApplicationWindow
          text: qsTr("Settings")
          icon.name: "configure"
          onTriggered: browser.openConfigDialog()
-     }    
+     }
 
     Component
     {

@@ -48,10 +48,20 @@ Maui.FileBrowser
             }
     }
 
-    onItemClicked: openItem(index)
+    onItemClicked:
+    {
+        if(Maui.Handy.singleClick)
+             openItem(index)
+    }
 
     onItemDoubleClicked:
-    {        
+    {
+        if(!Maui.Handy.singleClick)
+        {
+             openItem(index)
+            return;
+        }
+
         if(Kirigami.Settings.isMobile)
             return
 
