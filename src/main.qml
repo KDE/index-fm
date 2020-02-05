@@ -24,6 +24,8 @@ Maui.ApplicationWindow
     property alias dialog : dialogLoader.item
     property bool searchBar: false
 
+    flickable: browser.flickable
+
      mainMenu: MenuItem
      {
          text: qsTr("Settings")
