@@ -14,19 +14,34 @@ QT += qml, quick, sql
 QT += KService KNotifications KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
 
 #### Submodules
+
 ##### MauiKit:
-https://github.com/maui-project/mauikit.git
+
+https://invent.kde.org/kde/mauikit/
 
 ##### qmltermwidget:
+
 https://github.com/Swordfish90/qmltermwidget
 
 ### Compilation
+
 After all the dependencies are met you can throw the following command lines to build Index and test it
 
-git clone https://github.com/maui-project/index --recursive
-cd index && mkdir build && cd build
-qmake .. 
+``` bash
+git clone https://invent.kde.org/kde/index-fm.git --recursive
+
+cd index-fm && mkdir build && cd build
+
+cmake .. -DCMAKE_INSTALL_INSTALL_PREFIX=/usr
+
 make
+
+# you can now run index like this:
+./bin/index
+
+# or install it on your system:
+sudo make install
+```
 
 A binary should be created and be ready to use.
 
