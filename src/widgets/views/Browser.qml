@@ -32,8 +32,8 @@ Maui.FileBrowser
 
     onCurrentPathChanged:
     {
-//        if(root.terminalVisible && !Kirigami.Settings.isMobile)
-//            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
+        //        if(root.terminalVisible && !Kirigami.Settings.isMobile)
+        //            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
 
         if(root.searchBar)
             root.searchBar = false
@@ -51,14 +51,14 @@ Maui.FileBrowser
     onItemClicked:
     {
         if(Maui.Handy.singleClick)
-             openItem(index)
+            openItem(index)
     }
 
     onItemDoubleClicked:
     {
         if(!Maui.Handy.singleClick)
         {
-             openItem(index)
+            openItem(index)
             return;
         }
 
@@ -71,4 +71,73 @@ Maui.FileBrowser
         else
             control.openFile(item.path)
     }
+
+    selectionBar.actions:[
+        Action
+        {
+            text: qsTr("Open")
+            icon.name: "document-open"
+            onTriggered:
+            {
+
+                for(var i in selectionBar.uris)
+                    control.openFile(selectionBar.uris[i])
+
+            }
+        },
+
+        Action
+        {
+            text: qsTr("Copy")
+            icon.name: "edit-copy"
+            onTriggered:
+            {
+                control.selectionBar.animate()
+                control.copy(selectionBar.uris)
+            }
+        },
+
+        Action
+        {
+            text: qsTr("Cut")
+            icon.name: "edit-cut"
+            onTriggered:
+            {
+                control.selectionBar.animate()
+                control.cut(selectionBar.uris)
+            }
+        },
+
+        Action
+        {
+            text: qsTr("Tags")
+            icon.name: "tag"
+            onTriggered:
+            {
+                control.tagFiles(selectionBar.uris)
+            }
+        },
+
+        Action
+        {
+            text: qsTr("Share")
+            icon.name: "document-share"
+            onTriggered:
+            {
+                control.shareFiles(selectionBar.uris)
+            }
+        },
+
+
+        Action
+        {
+            text: qsTr("Remove")
+            icon.name: "edit-delete"
+
+            onTriggered:
+            {
+                control.remove(selectionBar.uris)
+            }
+        }
+    ]
 }
