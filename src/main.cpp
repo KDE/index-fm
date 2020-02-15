@@ -32,6 +32,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
+    qputenv("QML_USE_GLYPHCACHE_WORKAROUND", QByteArray("1"));
     if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE"}))
         return -1;
 #else
