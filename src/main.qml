@@ -170,7 +170,7 @@ Maui.ApplicationWindow
             focus: true
             Layout.fillWidth: true
             Layout.preferredHeight : visible && terminal ? 200 : 0
-            source: Maui.Handy.isLinux ? "widgets/views/Terminal.qml" : ""
+            source: Maui.Handy.isLinux && !Kirigami.Settings.IsMobile ? "widgets/views/Terminal.qml" : ""
             
             Behavior on Layout.preferredHeight
             {

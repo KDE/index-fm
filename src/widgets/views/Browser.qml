@@ -32,8 +32,10 @@ Maui.FileBrowser
 
     onCurrentPathChanged:
     {
-               if(root.terminal && root.terminalVisible)
-                   root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
+        if(root.terminal && root.terminalVisible)
+            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
+
+        root.title = Maui.FM.getFileInfo(browser.currentPath).label
 
         if(root.searchBar)
             root.searchBar = false
