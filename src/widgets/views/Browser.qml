@@ -32,8 +32,8 @@ Maui.FileBrowser
 
     onCurrentPathChanged:
     {
-        //        if(root.terminalVisible && !Kirigami.Settings.isMobile)
-        //            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
+               if(root.terminal && root.terminalVisible)
+                   root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
 
         if(root.searchBar)
             root.searchBar = false

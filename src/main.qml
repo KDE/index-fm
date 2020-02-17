@@ -170,8 +170,8 @@ Maui.ApplicationWindow
             focus: true
             Layout.fillWidth: true
             Layout.preferredHeight : visible && terminal ? 200 : 0
-//            source: !Kirigami.Settings.isMobile ? "widgets/views/Terminal.qml" : undefined
-
+            source: Maui.Handy.isLinux ? "widgets/views/Terminal.qml" : ""
+            
             Behavior on Layout.preferredHeight
             {
                 NumberAnimation
