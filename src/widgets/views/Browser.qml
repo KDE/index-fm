@@ -15,28 +15,23 @@ Maui.FileBrowser
     {
         visible: terminal
         icon.name: "utilities-terminal"
-        onClicked:
-        {
-            terminalVisible = !terminalVisible
-            Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
-        }
+        onClicked: toogleTerminal()
         checked : terminalVisible
         checkable: false
     }
 
-    onNewBookmark:
+    onKeyPress:
     {
-        for(var index in paths)
-            placesSidebar.list.addPlace(paths[index])
+        if(event.key === Qt.Key_F4)
+        {
+            toogleTerminal()
+        }
     }
 
     onCurrentPathChanged:
-    {
-        if(root.terminal && root.terminalVisible)
-            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
-
+    {        
         root.title = Maui.FM.getFileInfo(browser.currentPath).label
-
+        syncTerminal()
         if(root.searchBar)
             root.searchBar = false
 
@@ -142,4 +137,17 @@ Maui.FileBrowser
             }
         }
     ]
+
+    function syncTerminal()
+    {
+        if(root.terminal && root.terminalVisible)
+            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
+
+    }
+
+    function toogleTerminal()
+    {
+        terminalVisible = !terminalVisible
+        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
+    }
 }

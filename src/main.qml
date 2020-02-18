@@ -19,6 +19,7 @@ Maui.ApplicationWindow
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
 
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
+    onTerminalVisibleChanged: if(terminalVisible) browser.syncTerminal()
 
     property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
