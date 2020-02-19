@@ -29,7 +29,7 @@ Maui.FileBrowser
     }
 
     onCurrentPathChanged:
-    {        
+    {
         root.title = Maui.FM.getFileInfo(browser.currentPath).label
         syncTerminal()
         if(root.searchBar)
