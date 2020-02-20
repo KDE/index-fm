@@ -167,12 +167,13 @@ Maui.ApplicationWindow
         Loader
         {
             id: terminalLoader
+            active: inx.supportsEmbededTerminal() && Maui.Handy.isLinux && !Kirigami.Settings.IsMobile
             visible: terminalVisible && terminal
             focus: true
             Layout.fillWidth: true
             Layout.preferredHeight : visible && terminal ? 200 : 0
-            source: Maui.Handy.isLinux && !Kirigami.Settings.IsMobile ? "widgets/views/Terminal.qml" : ""
-            
+            source: "widgets/views/Terminal.qml"
+
             Behavior on Layout.preferredHeight
             {
                 NumberAnimation

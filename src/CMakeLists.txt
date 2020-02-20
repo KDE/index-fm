@@ -5,6 +5,10 @@ add_executable(index
     qml.qrc
 )
 
+if(EMBEDDED_TERMINAL)
+    target_compile_definitions(index PUBLIC EMBEDDED_TERMINAL)
+endif()
+
 if(IS_APPIMAGE_PACKAGE)
     target_compile_definitions(index PUBLIC APPIMAGE_PACKAGE)
 endif()
