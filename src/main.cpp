@@ -14,6 +14,7 @@
 #include <QGuiApplication>
 #include <QIcon>
 #include "mauiandroid.h"
+#include <QPalette>
 #else
 #include <QApplication>
 #endif
@@ -29,6 +30,8 @@
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
 	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
+
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
@@ -62,7 +65,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 		paths = args;
 
 #ifdef STATIC_KIRIGAMI
-	KirigamiPlugin::getInstance().registerTypes();
+    KirigamiPlugin::getInstance().registerTypes();
 #endif
 
 #ifdef STATIC_MAUIKIT

@@ -11,7 +11,7 @@ option(MAUIKIT_STYLE "If set to true then the icons and styled is packaged as we
 option(EMBEDDED_TERMINAL "If set to true then tries to load the QmlTermWidget. v 0.1 is needed later version might not work" OFF)
 option(IS_APPIMAGE_PACKAGE "If set to true then the KF5 libraries are linked")
 
-find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Sql Svg QuickControls2 Widgets)
+find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Sql Svg QuickControls2)
 find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n Notifications KIO Attica)
 
 if(ANDROID)
