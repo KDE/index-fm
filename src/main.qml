@@ -164,6 +164,12 @@ Maui.ApplicationWindow
             Layout.fillWidth: true
         }
 
+        Kirigami.Separator
+        {
+            visible: terminalLoader.active && terminalLoader.visible
+            Layout.fillWidth: true
+        }
+
         Loader
         {
             id: terminalLoader
