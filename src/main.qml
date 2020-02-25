@@ -177,10 +177,11 @@ Maui.ApplicationWindow
         {
             id: terminalLoader
             active: inx.supportsEmbededTerminal() && Maui.Handy.isLinux && !Kirigami.Settings.IsMobile
-            visible: terminalVisible && terminal
-            focus: true
+            visible: active && terminalVisible && terminal
             SplitView.fillWidth: true
-            SplitView.minimumHeight : visible && terminal ? 200 : 0
+            SplitView.preferredHeight: 200
+            SplitView.maximumHeight: parent.height * 0.5
+            SplitView.minimumHeight : 100
             source: "widgets/views/Terminal.qml"
 
 
