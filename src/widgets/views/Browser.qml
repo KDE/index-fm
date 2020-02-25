@@ -7,9 +7,15 @@ import org.kde.mauikit 1.0 as Maui
 Maui.FileBrowser
 {
     id: control
-
+    settings.singleClick:  Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick)
     viewType: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
     onViewTypeChanged: Maui.FM.saveSettings("VIEW_TYPE", viewType, "BROWSER")
+
+    Connections
+    {
+        target: control.settings
+        onSingleClickChanged: Maui.FM.saveSettings("SINGLE_CLICK",  settings.singleClick, "BROWSER")
+    }
 
     headBar.rightContent: ToolButton
     {
@@ -55,13 +61,13 @@ Maui.FileBrowser
 
     onItemClicked:
     {
-        if(Maui.Handy.singleClick)
+        if(browser.settings.singleClick)
             openItem(index)
     }
 
     onItemDoubleClicked:
     {
-        if(!Maui.Handy.singleClick)
+        if(!browser.settings.singleClick)
         {
             openItem(index)
             return;
