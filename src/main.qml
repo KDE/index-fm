@@ -1,5 +1,5 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
+import QtQuick 2.9
+import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.0 as Maui
@@ -24,6 +24,8 @@ Maui.ApplicationWindow
     property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
     property bool searchBar: false
+
+
 
     flickable: browser.flickable
 
@@ -152,23 +154,24 @@ Maui.ApplicationWindow
         ]
     }
 
-    ColumnLayout
+    SplitView
     {
         anchors.fill: parent
         spacing: 0
+        orientation: Qt.Vertical
 
         Browser
         {
             id: browser
-            Layout.fillHeight: true
-            Layout.fillWidth: true
+            SplitView.fillHeight: true
+            SplitView.fillWidth: true
         }
 
-        Kirigami.Separator
-        {
-            visible: terminalLoader.active && terminalLoader.visible
-            Layout.fillWidth: true
-        }
+//        Kirigami.Separator
+//        {
+//            visible: terminalLoader.active && terminalLoader.visible
+//            Layout.fillWidth: true
+//        }
 
         Loader
         {
@@ -176,8 +179,8 @@ Maui.ApplicationWindow
             active: inx.supportsEmbededTerminal() && Maui.Handy.isLinux && !Kirigami.Settings.IsMobile
             visible: terminalVisible && terminal
             focus: true
-            Layout.fillWidth: true
-            Layout.preferredHeight : visible && terminal ? 200 : 0
+            SplitView.fillWidth: true
+            SplitView.minimumHeight : visible && terminal ? 200 : 0
             source: "widgets/views/Terminal.qml"
 
 
