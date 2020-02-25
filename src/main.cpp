@@ -25,13 +25,14 @@
 
 #ifdef STATIC_MAUIKIT
 #include "3rdparty/mauikit/src/mauikit.h"
+#include "mauiapp.h"
+#else
+#include <MauiKit/mauiapp.h>
 #endif
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
 	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
-
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
@@ -51,6 +52,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	app.setOrganizationName(INX::orgName);
 	app.setOrganizationDomain(INX::orgDomain);
 	app.setWindowIcon(QIcon(":/index.png"));
+    MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
 
 	QCommandLineParser parser;
 	parser.setApplicationDescription(INX::description);
