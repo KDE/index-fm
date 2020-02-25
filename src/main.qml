@@ -180,6 +180,7 @@ Maui.ApplicationWindow
             Layout.preferredHeight : visible && terminal ? 200 : 0
             source: "widgets/views/Terminal.qml"
 
+
             Behavior on Layout.preferredHeight
             {
                 NumberAnimation
