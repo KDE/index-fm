@@ -93,6 +93,26 @@ Maui.FileBrowser
 
         Action
         {
+            text: qsTr("Tags")
+            icon.name: "tag"
+            onTriggered:
+            {
+                control.tagFiles(selectionBar.uris)
+            }
+        },
+
+        Action
+        {
+            text: qsTr("Share")
+            icon.name: "document-share"
+            onTriggered:
+            {
+                control.shareFiles(selectionBar.uris)
+            }
+        },
+
+        Action
+        {
             text: qsTr("Copy")
             icon.name: "edit-copy"
             onTriggered:
@@ -112,27 +132,6 @@ Maui.FileBrowser
                 control.cut(selectionBar.uris)
             }
         },
-
-        Action
-        {
-            text: qsTr("Tags")
-            icon.name: "tag"
-            onTriggered:
-            {
-                control.tagFiles(selectionBar.uris)
-            }
-        },
-
-        Action
-        {
-            text: qsTr("Share")
-            icon.name: "document-share"
-            onTriggered:
-            {
-                control.shareFiles(selectionBar.uris)
-            }
-        },
-
 
         Action
         {
