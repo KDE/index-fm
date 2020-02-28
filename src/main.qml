@@ -117,7 +117,7 @@ Maui.ApplicationWindow
         id: dialogLoader
     }
 
-    sideBar: Maui.PlacesSidebar
+    sideBar: PlacesSideBar
     {
         id: placesSidebar
         collapsed : !root.isWide

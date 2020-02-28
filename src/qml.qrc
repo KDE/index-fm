@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>widgets/views/Browser.qml</file>
         <file>widgets/views/Terminal.qml</file>
+        <file>widgets/views/PlacesSideBar.qml</file>
     </qresource>
 </RCC>
