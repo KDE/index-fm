@@ -7,7 +7,7 @@ import org.kde.mauikit 1.0 as Maui
 Maui.FileBrowser
 {
     id: control
-    settings.singleClick:  Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick)
+    settings.singleClick:  Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick) == "true"
     viewType: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
     onViewTypeChanged: Maui.FM.saveSettings("VIEW_TYPE", viewType, "BROWSER")
 
