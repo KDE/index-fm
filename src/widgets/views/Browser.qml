@@ -1,5 +1,5 @@
 import QtQuick 2.9
-import QtQuick.Controls 2.3
+import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
@@ -7,21 +7,49 @@ import org.kde.mauikit 1.0 as Maui
 Maui.FileBrowser
 {
     id: control
-    settings.singleClick:  Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick) == "true"
-    viewType: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
-    onViewTypeChanged: Maui.FM.saveSettings("VIEW_TYPE", viewType, "BROWSER")
 
-    headBar.rightContent: ToolButton
+    property int index
+
+    SplitView.fillHeight: true
+    SplitView.fillWidth: true
+    SplitView.preferredHeight: _splitView.orientation === Qt.Vertical ? _splitView.height / (_splitView.count) :  _splitView.height
+    SplitView.minimumHeight: _splitView.orientation === Qt.Vertical ?  200 : 0
+    SplitView.preferredWidth: _splitView.orientation === Qt.Horizontal ? _splitView.width / (_splitView.count) : _splitView.width
+    SplitView.minimumWidth: _splitView.orientation === Qt.Horizontal ? 300 :  0
+
+    selectionBar: root.selectionBar
+    previewer: root.previewer
+    selectionMode: root.selectionMode
+    settings.showHiddenFiles: root.showHiddenFiles
+showStatusBar: root.showStatusBar
+
+    MouseArea
     {
-        visible: terminal
-        icon.name: "utilities-terminal"
-        onClicked: toogleTerminal()
-        checked : terminalVisible
-        checkable: false
+        anchors.fill: parent
+        propagateComposedEvents: true
+//        hoverEnabled: true
+//        onEntered: _splitView.currentIndex = control.index
+        onPressed:
+        {
+            _splitView.currentIndex = control.index
+            mouse.accepted = false
+        }
     }
 
     onKeyPress:
     {
+        if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+        {
+            openTab(control.currentPath)
+        }
+
+        // Shortcut for closing tab
+        if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
+        {
+            if(tabsBar.count > 1)
+                closeTab(tabsBar.currentIndex)
+        }
+
         if(event.key === Qt.Key_F4)
         {
             toogleTerminal()
@@ -38,8 +66,7 @@ Maui.FileBrowser
 
     onCurrentPathChanged:
     {
-        root.title = Maui.FM.getFileInfo(browser.currentPath).label
-        syncTerminal()
+        syncTerminal(control.currentPath)
         if(root.searchBar)
             root.searchBar = false
 
@@ -55,13 +82,13 @@ Maui.FileBrowser
 
     onItemClicked:
     {
-        if(browser.settings.singleClick)
+        if(control.singleClick)
             openItem(index)
     }
 
     onItemDoubleClicked:
     {
-        if(!browser.settings.singleClick)
+        if(!control.singleClick)
         {
             openItem(index)
             return;
@@ -77,84 +104,6 @@ Maui.FileBrowser
             control.openFile(item.path)
     }
 
-    selectionBar.actions:[
-        Action
-        {
-            text: qsTr("Open")
-            icon.name: "document-open"
-            onTriggered:
-            {
 
-                for(var i in selectionBar.uris)
-                    control.openFile(selectionBar.uris[i])
 
-            }
-        },
-
-        Action
-        {
-            text: qsTr("Tags")
-            icon.name: "tag"
-            onTriggered:
-            {
-                control.tagFiles(selectionBar.uris)
-            }
-        },
-
-        Action
-        {
-            text: qsTr("Share")
-            icon.name: "document-share"
-            onTriggered:
-            {
-                control.shareFiles(selectionBar.uris)
-            }
-        },
-
-        Action
-        {
-            text: qsTr("Copy")
-            icon.name: "edit-copy"
-            onTriggered:
-            {
-                control.selectionBar.animate()
-                control.copy(selectionBar.uris)
-            }
-        },
-
-        Action
-        {
-            text: qsTr("Cut")
-            icon.name: "edit-cut"
-            onTriggered:
-            {
-                control.selectionBar.animate()
-                control.cut(selectionBar.uris)
-            }
-        },
-
-        Action
-        {
-            text: qsTr("Remove")
-            icon.name: "edit-delete"
-
-            onTriggered:
-            {
-                control.remove(selectionBar.uris)
-            }
-        }
-    ]
-
-    function syncTerminal()
-    {
-        if(root.terminal && root.terminalVisible)
-            root.terminal.session.sendText("cd '" + String(currentPath).replace("file://", "") + "'\n")
-
-    }
-
-    function toogleTerminal()
-    {
-        terminalVisible = !terminalVisible
-        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
-    }
 }
