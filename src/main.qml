@@ -25,15 +25,13 @@ Maui.ApplicationWindow
     property alias dialog : dialogLoader.item
     property bool searchBar: false
 
-
-
     flickable: browser.flickable
 
      mainMenu: MenuItem
      {
          text: qsTr("Settings")
          icon.name: "configure"
-         onTriggered: browser.openConfigDialog()
+         onTriggered: openConfigDialog()
      }
 
     Component
@@ -88,6 +86,77 @@ Maui.ApplicationWindow
                 radius: Maui.Style.radiusV
                 color: Kirigami.Theme.backgroundColor
             }
+        }
+    }
+
+
+    Component
+    {
+        id: _configDialogComponent
+
+        Maui.Dialog
+        {
+            maxHeight: _configLayout.implicitHeight * 1.5
+            maxWidth: 300
+            defaultButtons: false
+
+                Kirigami.FormLayout
+                {
+                    id: _configLayout
+                    width: parent.width
+                    anchors.centerIn: parent
+
+                    Item
+                    {
+                        Kirigami.FormData.label: qsTr("Navigation")
+                        Kirigami.FormData.isSection: true
+                    }
+
+                    Switch
+                    {
+                        icon.name: "image-preview"
+                        checkable: true
+                        checked: browser.settings.showThumbnails
+                        Kirigami.FormData.label: qsTr("Show Thumbnails")
+                        onToggled:  browser.settings.showThumbnails = ! browser.settings.showThumbnails
+                    }
+
+                    Switch
+                    {
+                        Kirigami.FormData.label: qsTr("Show Hidden Files")
+                        checkable: true
+                        checked:  browser.currentFMList.hidden
+                        onToggled:  browser.currentFMList.hidden = ! browser.currentFMList.hidden
+                    }
+
+                    Switch
+                    {
+                        Kirigami.FormData.label: qsTr("Single Click")
+                        checkable: true
+                        checked:  browser.settings.singleClick
+                        onToggled:
+                        {
+                            browser.settings.singleClick = ! browser.settings.singleClick
+                            Maui.FM.saveSettings("SINGLE_CLICK",  settings.singleClick, "BROWSER")
+
+                        }
+                    }
+
+                    Item
+                    {
+                        Kirigami.FormData.label: qsTr("Interface")
+                        Kirigami.FormData.isSection: true
+                    }
+
+                    Switch
+                    {
+                        Kirigami.FormData.label: qsTr("Show Status Bar")
+                        checkable: true
+                        checked:  browser.footBar.visible
+                        onToggled:  browser.toggleStatusBar()
+
+                    }
+                }
         }
     }
 
@@ -204,6 +273,12 @@ Maui.ApplicationWindow
             for(var index in paths)
                 browser.openTab(paths[index])
         }
+    }
+
+    function openConfigDialog()
+    {
+        dialogLoader.sourceComponent = _configDialogComponent
+        dialog.open()
     }
 
     Component.onCompleted:

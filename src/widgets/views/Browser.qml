@@ -11,12 +11,6 @@ Maui.FileBrowser
     viewType: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
     onViewTypeChanged: Maui.FM.saveSettings("VIEW_TYPE", viewType, "BROWSER")
 
-    Connections
-    {
-        target: control.settings
-        onSingleClickChanged: Maui.FM.saveSettings("SINGLE_CLICK",  settings.singleClick, "BROWSER")
-    }
-
     headBar.rightContent: ToolButton
     {
         visible: terminal
