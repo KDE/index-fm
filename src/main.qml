@@ -20,7 +20,7 @@ Maui.ApplicationWindow
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
 
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
-    onTerminalVisibleChanged: if(terminalVisible) browser.syncTerminal(currentBrowser.currentPath)
+    onTerminalVisibleChanged: if(terminalVisible) syncTerminal(currentBrowser.currentPath)
 
     property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
@@ -239,7 +239,7 @@ Maui.ApplicationWindow
             MenuItem
             {
                 text: qsTr("Open in tab")
-                onTriggered: currentTab.browser.openTab(placesSidebar.list.get(placesSidebar.currentIndex).path)
+                onTriggered: openTab(placesSidebar.list.get(placesSidebar.currentIndex).path)
             }
         ]
     }
