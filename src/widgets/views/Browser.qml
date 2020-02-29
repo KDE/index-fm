@@ -12,23 +12,21 @@ Maui.FileBrowser
 
     SplitView.fillHeight: true
     SplitView.fillWidth: true
-    SplitView.preferredHeight: _splitView.orientation === Qt.Vertical ? _splitView.height / (_splitView.count) :  _splitView.height
-    SplitView.minimumHeight: _splitView.orientation === Qt.Vertical ?  200 : 0
-    SplitView.preferredWidth: _splitView.orientation === Qt.Horizontal ? _splitView.width / (_splitView.count) : _splitView.width
-    SplitView.minimumWidth: _splitView.orientation === Qt.Horizontal ? 300 :  0
+    SplitView.preferredWidth: _splitView.width / (_splitView.count)
+    SplitView.minimumWidth: 300
 
     selectionBar: root.selectionBar
     previewer: root.previewer
     selectionMode: root.selectionMode
     settings.showHiddenFiles: root.showHiddenFiles
-showStatusBar: root.showStatusBar
+    showStatusBar: root.showStatusBar
 
     MouseArea
     {
         anchors.fill: parent
         propagateComposedEvents: true
-//        hoverEnabled: true
-//        onEntered: _splitView.currentIndex = control.index
+        //        hoverEnabled: true
+        //        onEntered: _splitView.currentIndex = control.index
         onPressed:
         {
             _splitView.currentIndex = control.index
@@ -53,6 +51,11 @@ showStatusBar: root.showStatusBar
         if(event.key === Qt.Key_F4)
         {
             toogleTerminal()
+        }
+
+        if(event.key === Qt.Key_F3)
+        {
+            toogleSplitView()
         }
 
         if((event.key === Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
@@ -104,6 +107,9 @@ showStatusBar: root.showStatusBar
             control.openFile(item.path)
     }
 
-
+onUrlsDropped:
+{
+    console.log(urls)
+}
 
 }

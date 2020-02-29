@@ -22,25 +22,13 @@ Item
         id: _splitView
 
         anchors.fill: parent
-
         orientation: Qt.Horizontal
-
-
-    //    property alias path : currentItem.currentPath
 
         focus: true
 
         Repeater
         {
             model: splitObjectModel
-        }
-
-        onOrientationChanged:
-        {
-            _splitView.width = _splitView.width +1
-            _splitView.width = _splitView.width -1
-    //        _splitView.height = _splitView.height +1
-    //        _splitView.height = _splitView.height
         }
 
         onCurrentItemChanged:
@@ -70,7 +58,13 @@ Item
 
     function pop()
     {
+        if(_splitView.count === 1)
+        {
+            return //can not pop all the browsers, leave at leats 1
+        }
+
         splitObjectModel.remove(_splitView.currentIndex === 1 ? 0 : 1)
+        _splitView.currentIndex = 0
     }
 }
 
