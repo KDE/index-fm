@@ -31,7 +31,6 @@ Maui.FileBrowser
 
         MenuItem
         {
-            parent: itemMenu
             visible: itemMenu.isDir
             text: qsTr("Open in new tab")
             icon.name: "tab-new"
@@ -40,7 +39,6 @@ Maui.FileBrowser
 
         MenuItem
         {
-            parent: itemMenu
             visible: itemMenu.isDir && root.currentTab.count === 1
             text: qsTr("Open in new split")
             icon.name: "view-split-left-right"
