@@ -58,7 +58,12 @@ Maui.ApplicationWindow
     }
 
     Maui.FilePreviewer {id: _previewer}
-    Maui.TagsDialog {id: _tagsDialog}
+    Maui.TagsDialog
+    {
+        id: _tagsDialog
+        taglist.strict: false
+    }
+
     MauiLab.ShareDialog {id: _shareDialog}
     Maui.OpenWithDialog {id: _openWithDialog}
 
