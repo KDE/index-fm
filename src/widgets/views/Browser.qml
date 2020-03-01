@@ -25,7 +25,30 @@ Maui.FileBrowser
     settings.showHiddenFiles: root.showHiddenFiles
     settings.showThumbnails: root.showThumbnails
 
-    property int _index : ObjectModel.index
+    itemMenu.contentData : [
+
+        MenuSeparator {visible: itemMenu.isDir},
+
+        MenuItem
+        {
+            parent: itemMenu
+            visible: itemMenu.isDir
+            text: qsTr("Open in new tab")
+            icon.name: "tab-new"
+            onTriggered: root.openTab(itemMenu.item.path)
+        },
+
+        MenuItem
+        {
+            parent: itemMenu
+            visible: itemMenu.isDir && root.currentTab.count === 1
+            text: qsTr("Open in new split")
+            icon.name: "view-split-left-right"
+            onTriggered: root.currentTab.split(itemMenu.item.path, Qt.Horizontal)
+        }
+    ]
+
+    readonly property int _index : ObjectModel.index
 
     MouseArea
     {

@@ -757,7 +757,7 @@ Maui.ApplicationWindow
         if(currentTab.count == 2)
             currentTab.pop()
         else
-            currentTab.split(Qt.Horizontal)
+            currentTab.split(currentBrowser.currentPath, Qt.Horizontal)
     }
 
     function openConfigDialog()

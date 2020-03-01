@@ -36,10 +36,10 @@ Item
             currentItem.forceActiveFocus()
         }
 
-        Component.onCompleted: split(Qt.Vertical)
+        Component.onCompleted: split(control.path, Qt.Vertical)
     }
 
-    function split(orientation)
+    function split(path, orientation)
     {
         _splitView.orientation = orientation
 
@@ -50,7 +50,7 @@ Item
 
         if (component.status === Component.Ready)
         {
-            const object = component.createObject(splitObjectModel, {'currentPath': control.path});
+            const object = component.createObject(splitObjectModel, {'currentPath': path});
             splitObjectModel.append(object)
             _splitView.currentIndex = splitObjectModel.count - 1
         }
