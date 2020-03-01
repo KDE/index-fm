@@ -3,12 +3,11 @@ import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.mauikit 1.0 as Maui
+import QtQml.Models 2.3
 
 Maui.FileBrowser
 {
     id: control
-
-    property int index
 
     SplitView.fillHeight: true
     SplitView.fillWidth: true
@@ -21,6 +20,8 @@ Maui.FileBrowser
     settings.showHiddenFiles: root.showHiddenFiles
     showStatusBar: root.showStatusBar
 
+    property int _index : ObjectModel.index
+
     MouseArea
     {
         anchors.fill: parent
@@ -29,7 +30,7 @@ Maui.FileBrowser
         //        onEntered: _splitView.currentIndex = control.index
         onPressed:
         {
-            _splitView.currentIndex = control.index
+            _splitView.currentIndex = control._index
             mouse.accepted = false
         }
     }

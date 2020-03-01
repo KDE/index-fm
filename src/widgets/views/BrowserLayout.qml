@@ -28,6 +28,7 @@ Item
 
         Repeater
         {
+            property int _index : index
             model: splitObjectModel
         }
 
@@ -50,7 +51,7 @@ Item
 
         if (component.status === Component.Ready)
         {
-            const object = component.createObject(splitObjectModel, {'index': _splitView.count, 'currentPath': control.path});
+            const object = component.createObject(splitObjectModel, {'currentPath': control.path});
             splitObjectModel.append(object)
             _splitView.currentIndex = splitObjectModel.count - 1
         }
