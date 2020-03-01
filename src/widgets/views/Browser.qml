@@ -86,13 +86,13 @@ Maui.FileBrowser
 
     onItemClicked:
     {
-        if(control.singleClick)
+        if(root.singleClick)
             openItem(index)
     }
 
     onItemDoubleClicked:
     {
-        if(!control.singleClick)
+        if(!root.singleClick)
         {
             openItem(index)
             return;

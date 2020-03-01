@@ -408,7 +408,7 @@ Maui.ApplicationWindow
 
             ToolButton
             {
-                visible: !Kirigami.Settings.isMobile
+                visible: !Kirigami.Settings.isMobile && _browserList.width > 600
                 icon.name: "view-split-left-right"
                 checked: currentTab.count == 2
                 autoExclusive: true
