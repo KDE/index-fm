@@ -20,13 +20,16 @@ Maui.ApplicationWindow
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
 
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
-    onTerminalVisibleChanged: if(terminalVisible) syncTerminal(currentBrowser.currentPath)
+    onTerminalVisibleChanged: if(terminalVisible && currentBrowser) syncTerminal(currentBrowser.currentPath)
 
     property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
 
     property alias previewer : _previewer
     property alias selectionBar : _selectionBar
+    property alias shareDialog : _shareDialog
+    property alias openWithDialog : _openWithDialog
+    property alias tagsDialog : _tagsDialog
 
     property alias currentTab : _browserList.currentItem
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
@@ -55,6 +58,9 @@ Maui.ApplicationWindow
     }
 
     Maui.FilePreviewer {id: _previewer}
+    Maui.TagsDialog {id: _tagsDialog}
+    MauiLab.ShareDialog {id: _shareDialog}
+    Maui.OpenWithDialog {id: _openWithDialog}
 
     Component
     {
@@ -345,7 +351,7 @@ Maui.ApplicationWindow
             {
                 id: _optionsButton
                 icon.name: "overflow-menu"
-                enabled: currentFMList.pathType !== Maui.FMList.TAGS_PATH && currentFMList.pathType !== Maui.FMList.TRASH_PATH && currentFMList.pathType !== Maui.FMList.APPS_PATH
+                enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.APPS_PATH
                 onClicked:
                 {
                     if(currentTab.browser.browserMenu.visible)

@@ -28,7 +28,6 @@ Item
 
         Repeater
         {
-            property int _index : index
             model: splitObjectModel
         }
 

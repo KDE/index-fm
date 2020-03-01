@@ -16,9 +16,14 @@ Maui.FileBrowser
 
     selectionBar: root.selectionBar
     previewer: root.previewer
+    shareDialog: root.shareDialog
+    openWithDialog: root.openWithDialog
+    tagsDialog: root.tagsDialog
+
     selectionMode: root.selectionMode
-    settings.showHiddenFiles: root.showHiddenFiles
     showStatusBar: root.showStatusBar
+    settings.showHiddenFiles: root.showHiddenFiles
+    settings.showThumbnails: root.showThumbnails
 
     property int _index : ObjectModel.index
 
