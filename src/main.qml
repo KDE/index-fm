@@ -12,7 +12,7 @@ import "widgets/views"
 Maui.ApplicationWindow
 {
     id: root
-    title:  currentTab && currentBrowser ? currentBrowser.currentFMList.pathName : ""
+    title:  currentTab && currentBrowser ? currentBrowser.title : ""
     Maui.App.description: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     Maui.App.iconName: "qrc:/assets/index.svg"
     Maui.App.webPage: "https://mauikit.org"
@@ -105,7 +105,7 @@ Maui.ApplicationWindow
         {
             anchors.fill: parent
             placeholderText: qsTr("Search for files... ")
-            onAccepted: currentTab.browser.openFolder("search:///"+text)
+            onAccepted: currentBrowser.search(text)
             onGoBackTriggered:
             {
                 root.searchBar = false
@@ -476,7 +476,7 @@ Maui.ApplicationWindow
                             implicitWidth: Math.max(_layout.width / _repeater.count, 120)
                             checked: index === _browserList.currentIndex
 
-                            text: tabsObjectModel.get(index).browser.currentFMList.pathName
+                            text: tabsObjectModel.get(index).browser.title
 
                             onClicked:
                             {
