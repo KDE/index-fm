@@ -99,30 +99,6 @@ Maui.ApplicationWindow
 
     Component
     {
-        id: _searchFieldComponent
-
-        Maui.TextField
-        {
-            anchors.fill: parent
-            placeholderText: qsTr("Search for files... ")
-            onAccepted: currentBrowser.search(text)
-            onGoBackTriggered:
-            {
-                root.searchBar = false
-                clear()
-            }
-
-            background: Rectangle //emulate pathbar style
-            {
-                border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
-                radius: Maui.Style.radiusV
-                color: Kirigami.Theme.backgroundColor
-            }
-        }
-    }
-
-    Component
-    {
         id: _configDialogComponent
 
         Maui.Dialog
@@ -194,25 +170,14 @@ Maui.ApplicationWindow
         }
     }
 
+    headBar.rightSretch: false
     headBar.implicitHeight: Maui.Style.toolBarHeight
     headBar.middleContent:  Loader
     {
         id: _pathBarLoader
         Layout.fillWidth: true
         Layout.margins: Maui.Style.space.medium
-        sourceComponent: root.searchBar ? _searchFieldComponent : _pathBarComponent
-    }
-
-    headBar.rightContent: ToolButton
-    {
-        icon.name: "edit-find"
-        checked: root.searchBar
-        onClicked:
-        {
-            searchBar = !searchBar
-            if(searchBar)
-                _pathBarLoader.item.forceActiveFocus()
-        }
+        sourceComponent: _pathBarComponent
     }
 
     Loader
@@ -349,6 +314,16 @@ Maui.ApplicationWindow
                 onClicked: toogleTerminal()
                 checked : terminalVisible
                 checkable: false
+            },
+
+            ToolButton
+            {
+                icon.name: "edit-find"
+                checked: currentBrowser.headBar.visible
+                onClicked:
+                {
+                    currentBrowser.headBar.visible = !currentBrowser.headBar.visible
+                }
             },
 
             ToolButton

@@ -8,6 +8,7 @@ import QtQml.Models 2.3
 Maui.FileBrowser
 {
     id: control
+    readonly property int _index : ObjectModel.index
 
     SplitView.fillHeight: true
     SplitView.fillWidth: true
@@ -24,6 +25,17 @@ Maui.FileBrowser
     showStatusBar: root.showStatusBar
     settings.showHiddenFiles: root.showHiddenFiles
     settings.showThumbnails: root.showThumbnails
+
+    Rectangle
+    {
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: 2
+        opacity: 1
+        color: Kirigami.Theme.highlightColor
+        visible: _splitView.currentIndex === _index && _splitView.count === 2
+    }
 
     itemMenu.contentData : [
 
@@ -46,7 +58,6 @@ Maui.FileBrowser
         }
     ]
 
-    readonly property int _index : ObjectModel.index
 
     MouseArea
     {

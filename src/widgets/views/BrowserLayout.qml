@@ -50,7 +50,7 @@ Item
 
         if (component.status === Component.Ready)
         {
-            const object = component.createObject(splitObjectModel, {'currentPath': path});
+            const object = component.createObject(splitObjectModel, {'currentPath': path, 'settings.viewType': _viewTypeGroup.currentIndex});
             splitObjectModel.append(object)
             _splitView.currentIndex = splitObjectModel.count - 1
         }
