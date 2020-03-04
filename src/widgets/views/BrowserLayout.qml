@@ -14,6 +14,7 @@ Item
     property alias count : _splitView.count
     property alias browser : _splitView.currentItem
     property url path
+    property alias model : splitObjectModel
 
     ObjectModel { id: splitObjectModel }
 

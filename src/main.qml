@@ -40,11 +40,35 @@ Maui.ApplicationWindow
     property bool showThumbnails: true
     property bool showStatusBar: false
     property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick) == "true"
+    property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
 
     onCurrentBrowserChanged:
     {
         _viewTypeGroup.currentIndex = currentBrowser.settings.viewType
         syncTerminal(currentBrowser.currentPath)
+    }
+
+    onClosing:
+    {
+        close.accepted = false
+        var paths = []
+
+        for(var i = 0; i <tabsObjectModel.count; i ++)
+        {
+            const tab = tabsObjectModel.get(i)
+            var tabPaths = []
+
+            for(var j = 0; j < tab.model.count; j++)
+            {
+                const browser = tab.model.get(j)
+                tabPaths.push(browser.currentPath)
+            }
+
+            paths.push(tabPaths)
+        }
+
+        Maui.FM.saveSettings("LAST_SESSION", paths, "BROWSER")
+        close.accepted = true
     }
 
     flickable: currentTab && currentTab.browser ? currentTab.browser.flickable : null
@@ -116,6 +140,18 @@ Maui.ApplicationWindow
                         {
                             root.singleClick = !root.singleClick
                             Maui.FM.saveSettings("SINGLE_CLICK",  root.singleClick, "BROWSER")
+                        }
+                    }
+
+                    Switch
+                    {
+                        Kirigami.FormData.label: qsTr("Restore Session")
+                        checkable: true
+                        checked:  root.restoreSession
+                        onToggled:
+                        {
+                            root.restoreSession = !root.restoreSession
+                            Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
                         }
                     }
 
@@ -689,7 +725,22 @@ Maui.ApplicationWindow
             Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, true)
             Maui.Android.navBarColor(Kirigami.Theme.backgroundColor, true)
         }
-        root.openTab(Maui.FM.homePath())
+
+        if(root.restoreSession)
+        {
+                var session = Maui.FM.loadSettings("LAST_SESSION", "BROWSER", [[Maui.FM.homePath()]])
+
+            console.log("LAST SESSIONW AS", session)
+            for(var i in session)
+            {
+                const tab = session[i];
+                if(tab.length === 2)
+                {
+                    root.openTab(tab[0])
+                    currentTab.split(tab[1], Qt.Horizontal)
+                }else root.openTab(tab[0])
+            }
+        }else root.openTab(Maui.FM.homePath())
     }
 
     //     onThumbnailsSizeChanged:
