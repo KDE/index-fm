@@ -68,37 +68,6 @@ Maui.ApplicationWindow
 
     Component
     {
-        id: _pathBarComponent
-
-        Maui.PathBar
-        {
-            anchors.fill: parent
-            onPathChanged: currentTab.browser.openFolder(path)
-            url: currentTab && currentTab.browser ? currentTab.browser.currentPath : ""
-            onHomeClicked: currentTab.browser.openFolder(Maui.FM.homePath())
-            onPlaceClicked: currentTab.browser.openFolder(path)
-            onPlaceRightClicked:
-            {
-                _pathBarmenu.path = path
-                _pathBarmenu.popup()
-            }
-
-            Menu
-            {
-                id: _pathBarmenu
-                property url path
-
-                MenuItem
-                {
-                    text: qsTr("Open in tab")
-                    onTriggered: openTab(_pathBarmenu.path)
-                }
-            }
-        }
-    }
-
-    Component
-    {
         id: _configDialogComponent
 
         Maui.Dialog
@@ -172,12 +141,32 @@ Maui.ApplicationWindow
 
     headBar.rightSretch: false
     headBar.implicitHeight: Maui.Style.toolBarHeight
-    headBar.middleContent:  Loader
+    headBar.middleContent:   Maui.PathBar
     {
-        id: _pathBarLoader
         Layout.fillWidth: true
-        Layout.margins: Maui.Style.space.medium
-        sourceComponent: _pathBarComponent
+//        Layout.margins: Maui.Style.space.medium
+
+        onPathChanged: currentTab.browser.openFolder(path)
+        url: currentTab && currentTab.browser ? currentTab.browser.currentPath : ""
+        onHomeClicked: currentTab.browser.openFolder(Maui.FM.homePath())
+        onPlaceClicked: currentTab.browser.openFolder(path)
+        onPlaceRightClicked:
+        {
+            _pathBarmenu.path = path
+            _pathBarmenu.popup()
+        }
+
+        Menu
+        {
+            id: _pathBarmenu
+            property url path
+
+            MenuItem
+            {
+                text: qsTr("Open in tab")
+                onTriggered: openTab(_pathBarmenu.path)
+            }
+        }
     }
 
     Loader
@@ -359,7 +348,7 @@ Maui.ApplicationWindow
             Maui.ToolActions
             {
                 id: _viewTypeGroup
-
+                expanded: headBar.width > Kirigami.Units.gridUnit * 32
                 currentIndex: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
                 onCurrentIndexChanged:
                 {

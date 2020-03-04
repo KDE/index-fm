@@ -26,6 +26,23 @@ Item
 
         focus: true
 
+        handle: Rectangle
+        {
+            implicitWidth: 4
+            implicitHeight: 4
+            color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
+                                       : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+
+            Kirigami.Separator
+            {
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+
+            }
+
+        }
+
         Repeater
         {
             model: splitObjectModel
