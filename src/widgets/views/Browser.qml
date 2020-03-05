@@ -98,10 +98,7 @@ Maui.FileBrowser
 
         if((event.key === Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
         {
-            if(_pathBarLoader.sourceComponent !== _pathBarComponent)
-                root.searchBar= false
-
-            _pathBarLoader.item.showEntryBar()
+            _pathBar.showEntryBar()
         }
     }
 
