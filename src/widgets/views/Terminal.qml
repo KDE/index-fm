@@ -3,6 +3,7 @@ import org.kde.mauikit 1.0 as Maui
 
 Maui.Terminal
 {
+    id: control
     kterminal.colorScheme: "DarkPastels"
     onKeyPressed:
     {
@@ -20,5 +21,17 @@ Maui.Terminal
         {
             footBar.visible = !footBar.visible
         }
+    }
+
+    onTitleChanged:
+    {
+//        var path = "file://"+control.title.slice(control.title.indexOf(":")+1).trim();
+//        console.log("yea", path)
+//        root.currentBrowser.currentPath = path;
+
+//        if(Maui.FM.fileExists(path))
+//        {
+//            root.currentBrowser.currentPath = path;
+//        }
     }
 }

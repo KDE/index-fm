@@ -194,13 +194,13 @@ Maui.ApplicationWindow
         }
     }
 
-    headBar.rightSretch: false
-    headBar.implicitHeight: Maui.Style.toolBarHeight
+//    headBar.rightSretch: false
+//    headBar.implicitHeight: Maui.Style.toolBarHeight
     headBar.middleContent:   Maui.PathBar
     {
         id: _pathBar
         Layout.fillWidth: true
-//        Layout.margins: Maui.Style.space.medium
+        Layout.margins: Maui.Style.space.medium
 
         onPathChanged: currentTab.browser.openFolder(path.trim())
         url: root.currentPath
