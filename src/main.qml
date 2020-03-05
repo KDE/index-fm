@@ -20,7 +20,7 @@ Maui.ApplicationWindow
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
 
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
-    onTerminalVisibleChanged: if(terminalVisible && currentBrowser) syncTerminal(currentBrowser.currentPath)
+    onTerminalVisibleChanged: if(terminalVisible && currentBrowser) syncTerminal(root.currentPath)
 
     property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
@@ -42,10 +42,17 @@ Maui.ApplicationWindow
     property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick) == "true"
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
 
+    readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
+
+    onCurrentPathChanged:
+    {
+        syncTerminal(currentBrowser.currentPath)
+        syncSidebar(currentBrowser.currentPath)
+    }
+
     onCurrentBrowserChanged:
     {
         _viewTypeGroup.currentIndex = currentBrowser.settings.viewType
-        syncTerminal(currentBrowser.currentPath)
     }
 
     onClosing:
@@ -195,7 +202,7 @@ Maui.ApplicationWindow
 //        Layout.margins: Maui.Style.space.medium
 
         onPathChanged: currentTab.browser.openFolder(path.trim())
-        url: currentTab && currentTab.browser ? currentTab.browser.currentPath : ""
+        url: root.currentPath
         onHomeClicked: currentTab.browser.openFolder(Maui.FM.homePath())
         onPlaceClicked: currentTab.browser.openFolder(path)
         onPlaceRightClicked:
@@ -772,6 +779,21 @@ Maui.ApplicationWindow
     //                     browserView.currentView.adaptGrid()
     //     }
 
+    function syncSidebar(path)
+    {
+        if(root.searchBar)
+            root.searchBar = false
+
+        placesSidebar.currentIndex = -1
+
+        for(var i = 0; i < placesSidebar.count; i++)
+            if(String(path) === placesSidebar.list.get(i).path)
+            {
+                placesSidebar.currentIndex = i
+                return;
+            }
+    }
+
     function syncTerminal(path)
     {
         if(root.terminal && root.terminalVisible)
@@ -789,7 +811,7 @@ Maui.ApplicationWindow
         if(currentTab.count == 2)
             currentTab.pop()
         else
-            currentTab.split(currentBrowser.currentPath, Qt.Horizontal)
+            currentTab.split(root.currentPath, Qt.Horizontal)
     }
 
     function openConfigDialog()
