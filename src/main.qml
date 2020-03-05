@@ -73,12 +73,24 @@ Maui.ApplicationWindow
 
     flickable: currentTab && currentTab.browser ? currentTab.browser.flickable : null
 
-    mainMenu: MenuItem
+    mainMenu: [MenuItem
     {
         text: qsTr("Settings")
         icon.name: "configure"
         onTriggered: openConfigDialog()
-    }
+    },
+
+    MenuSeparator {},
+
+    MenuItem
+    {
+        visible: terminal
+        text: qsTr("Show Terminal")
+        icon.name: "utilities-terminal"
+        onTriggered: toogleTerminal()
+        checked : terminalVisible
+        checkable: true
+    }]
 
     Maui.FilePreviewer {id: _previewer}
     Maui.TagsDialog
@@ -182,7 +194,7 @@ Maui.ApplicationWindow
         Layout.fillWidth: true
 //        Layout.margins: Maui.Style.space.medium
 
-        onPathChanged: currentTab.browser.openFolder(path)
+        onPathChanged: currentTab.browser.openFolder(path.trim())
         url: currentTab && currentTab.browser ? currentTab.browser.currentPath : ""
         onHomeClicked: currentTab.browser.openFolder(Maui.FM.homePath())
         onPlaceClicked: currentTab.browser.openFolder(path)
@@ -330,16 +342,7 @@ Maui.ApplicationWindow
                         currentTab.browser.settings.group = !currentTab.browser.settings.group
                     }
                 }
-            },
-
-            ToolButton
-            {
-                visible: terminal
-                icon.name: "utilities-terminal"
-                onClicked: toogleTerminal()
-                checked : terminalVisible
-                checkable: false
-            },
+            },            
 
             ToolButton
             {
