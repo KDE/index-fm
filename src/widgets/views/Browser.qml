@@ -13,7 +13,7 @@ Maui.FileBrowser
     SplitView.fillHeight: true
     SplitView.fillWidth: true
     SplitView.preferredWidth: _splitView.width / (_splitView.count)
-    SplitView.minimumWidth: 300
+    SplitView.minimumWidth: _splitView.count > 1 ? 300 : 0
 
     selectionBar: root.selectionBar
     previewer: root.previewer
