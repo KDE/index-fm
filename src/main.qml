@@ -436,6 +436,21 @@ Maui.ApplicationWindow
             spacing: 0
             orientation: Qt.Vertical
 
+            handle: Rectangle
+            {
+                implicitWidth: 10
+                implicitHeight: 10
+                color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
+                                           : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+
+                Kirigami.Separator
+                {
+                    anchors.bottom: parent.bottom
+                    anchors.right: parent.right
+                    anchors.left: parent.left
+                }
+            }
+
             ColumnLayout
             {
                 id: _layout
