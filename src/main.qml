@@ -41,7 +41,7 @@ Maui.ApplicationWindow
     property bool showStatusBar: false
     property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick) == "true"
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
-
+    property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
 
     onCurrentPathChanged:
@@ -194,8 +194,7 @@ Maui.ApplicationWindow
         }
     }
 
-//    headBar.rightSretch: false
-//    headBar.implicitHeight: Maui.Style.toolBarHeight
+    headBar.rightSretch: Maui.App.enableCSD
     headBar.middleContent:   Maui.PathBar
     {
         id: _pathBar
@@ -268,6 +267,7 @@ Maui.ApplicationWindow
     Maui.Page
     {
         anchors.fill: parent
+        headBar.position: Kirigami.Settings.isMobile ? ToolBar.Footer : ToolBar.Header
         headBar.rightContent:[
             ToolButton
             {
@@ -350,7 +350,7 @@ Maui.ApplicationWindow
                         currentTab.browser.settings.group = !currentTab.browser.settings.group
                     }
                 }
-            },            
+            },
 
             ToolButton
             {
@@ -429,13 +429,12 @@ Maui.ApplicationWindow
 
             ToolButton
             {
-                visible: !Kirigami.Settings.isMobile && _browserList.width > 600
+                visible: root.supportSplit
                 icon.name: "view-split-left-right"
                 checked: currentTab.count == 2
                 autoExclusive: true
                 onClicked: toogleSplitView()
             }
-
         ]
 
         SplitView
@@ -830,7 +829,7 @@ Maui.ApplicationWindow
     {
         if(path)
         {
-            const component = Qt.createComponent("widgets/views/BrowserLayout.qml");
+            const component = Qt.createComponent("qrc:/widgets/views/BrowserLayout.qml");
 
             if (component.status === Component.Ready)
             {

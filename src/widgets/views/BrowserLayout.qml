@@ -42,11 +42,6 @@ Item
             }
         }
 
-        Repeater
-        {
-            model: splitObjectModel
-        }
-
         onCurrentItemChanged:
         {
             currentItem.forceActiveFocus()
@@ -59,15 +54,23 @@ Item
     {
         _splitView.orientation = orientation
 
-        if(_splitView.count === 2)
-            return;
+        if(_splitView.count === 1 && !root.supportSplit)
+        {
+            return
+        }
 
-        const component = Qt.createComponent("Browser.qml");
+        if(_splitView.count === 2)
+        {
+            return
+        }
+
+        const component = Qt.createComponent("qrc:/widgets/views/Browser.qml");
 
         if (component.status === Component.Ready)
         {
             const object = component.createObject(splitObjectModel, {'currentPath': path, 'settings.viewType': _viewTypeGroup.currentIndex});
             splitObjectModel.append(object)
+            _splitView.insertItem(splitObjectModel.count, object) // duplicating object insertion due to bug on android not picking the repeater
             _splitView.currentIndex = splitObjectModel.count - 1
         }
     }
@@ -78,8 +81,9 @@ Item
         {
             return //can not pop all the browsers, leave at leats 1
         }
-
-        splitObjectModel.remove(_splitView.currentIndex === 1 ? 0 : 1)
+const index = _splitView.currentIndex === 1 ? 0 : 1
+        splitObjectModel.remove(index)
+        _splitView.takeItem(index)
         _splitView.currentIndex = 0
     }
 }

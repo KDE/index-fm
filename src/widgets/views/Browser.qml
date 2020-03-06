@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.8 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 import QtQml.Models 2.3
 
@@ -51,13 +51,12 @@ Maui.FileBrowser
 
         MenuItem
         {
-            visible: itemMenu.isDir && root.currentTab.count === 1
+            visible: itemMenu.isDir && root.currentTab.count === 1 && root.supportSplit
             text: qsTr("Open in new split")
             icon.name: "view-split-left-right"
             onTriggered: root.currentTab.split(itemMenu.item.path, Qt.Horizontal)
         }
     ]
-
 
     MouseArea
     {
@@ -126,9 +125,8 @@ Maui.FileBrowser
             control.openFile(item.path)
     }
 
-onUrlsDropped:
-{
-    console.log(urls)
-}
-
+    onUrlsDropped:
+    {
+        console.log(urls)
+    }
 }
