@@ -56,8 +56,8 @@ Maui.ApplicationWindow
     }
 
     onClosing:
-    {
-        close.accepted = false
+    {        
+        close.accepted = !root.restoreSession
         var paths = []
 
         for(var i = 0; i <tabsObjectModel.count; i ++)

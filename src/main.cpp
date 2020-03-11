@@ -72,6 +72,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 #ifdef STATIC_MAUIKIT
 	MauiKit::getInstance().registerTypes();
+#else
+    MauiApp::instance()->setEnableCSD(true); //for now index can not handle cloud accounts
 #endif
 
 	Index index;
