@@ -194,7 +194,8 @@ Maui.ApplicationWindow
         }
     }
 
-    headBar.rightSretch: Maui.App.enableCSD
+//    headBar.rightSretch: Maui.App.enableCSD
+    headBar.rightSretch: false
     headBar.middleContent:   Maui.PathBar
     {
         id: _pathBar
