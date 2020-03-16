@@ -12,7 +12,7 @@ import "widgets/views"
 Maui.ApplicationWindow
 {
     id: root
-    title:  currentTab && currentBrowser ? currentBrowser.title : ""
+    title:  currentTab ? currentTab.title : ""
     Maui.App.description: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
     Maui.App.iconName: "qrc:/assets/index.svg"
     Maui.App.webPage: "https://mauikit.org"
@@ -33,7 +33,6 @@ Maui.ApplicationWindow
 
     property alias currentTab : _browserList.currentItem
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
-
     property bool searchBar: false
     property bool selectionMode: false
     property bool showHiddenFiles: false
