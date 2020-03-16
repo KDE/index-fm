@@ -11,6 +11,7 @@ Item
     height: _browserList.height
     width: _browserList.width
 
+    property alias currentIndex : _splitView.currentIndex
     property alias count : _splitView.count
     property alias browser : _splitView.currentItem
     property url path
