@@ -502,7 +502,7 @@ Maui.ApplicationWindow
                             implicitWidth: Math.max(_layout.width / _repeater.count, 120)
                             checked: index === _browserList.currentIndex
 
-                            text: tabsObjectModel.get(index).browser.title
+                            text: tabsObjectModel.get(index).title
 
                             onClicked:
                             {
