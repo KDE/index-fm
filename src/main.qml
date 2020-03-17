@@ -611,12 +611,10 @@ Maui.ApplicationWindow
                         label2.text: model.path
                         label3.text: ""
                         label4.text: ""
-                        showEmblem: true
-                        keepEmblemOverlay: true
-                        showThumbnails: true
-                        leftEmblem: "list-remove"
+                        checkable: true
+                        checked: true
                         folderSize: Maui.Style.iconSizes.big
-                        onLeftEmblemClicked: _selectionBar.removeAtIndex(index)
+                        onToggled: _selectionBar.removeAtIndex(index)
                         background: Item {}
                         onClicked:
                         {
