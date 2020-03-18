@@ -82,11 +82,11 @@ Maui.ApplicationWindow
     mainMenu: [MenuItem
     {
         text: qsTr("Settings")
-        icon.name: "configure"
+        icon.name: "settings-configure"
         onTriggered: openConfigDialog()
     },
 
-    MenuSeparator {},
+    MenuSeparator {visible: terminal},
 
     MenuItem
     {
@@ -199,7 +199,8 @@ Maui.ApplicationWindow
     {
         id: _pathBar
         Layout.fillWidth: true
-        Layout.margins: Maui.Style.space.medium
+        Layout.leftMargin: Maui.Style.space.medium
+        Layout.rightMargin: Maui.Style.space.medium
 
         onPathChanged: currentTab.browser.openFolder(path.trim())
         url: root.currentPath
