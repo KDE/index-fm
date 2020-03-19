@@ -27,13 +27,17 @@ linux:unix:!android {
 
     DEFINES -= COMPONENT_STORE
 
-    macos {
+    macos|ios {
         DEFINES -= COMPONENT_EDITOR
     }
 
     include($$PWD/3rdparty/kirigami/kirigami.pri)
     include($$PWD/3rdparty/mauikit/mauikit.pri)
 
+}
+
+ios {
+    QMAKE_INFO_PLIST = $$PWD/ios_files/Info.plist
 }
 
 android {
