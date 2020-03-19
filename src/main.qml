@@ -606,6 +606,7 @@ Maui.ApplicationWindow
                     listDelegate: Maui.ListBrowserDelegate
                     {
                         Kirigami.Theme.inherit: true
+                        showThumbnails: true
                         width: parent.width
                         height: Maui.Style.iconSizes.big + Maui.Style.space.big
                         label1.text: model.label
