@@ -55,7 +55,7 @@ Maui.ApplicationWindow
     }
 
     onClosing:
-    {        
+    {
         close.accepted = !root.restoreSession
         var paths = []
 

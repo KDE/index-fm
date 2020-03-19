@@ -43,7 +43,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #endif
 
 #ifdef MAUIKIT_STYLE
-	MauiKit::getInstance().initResources();
+    MauiKit::getInstance().initResources();
 #endif
 
 	app.setApplicationName(INX::appName);
@@ -71,25 +71,25 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #endif
 
 #ifdef STATIC_MAUIKIT
-	MauiKit::getInstance().registerTypes();
+    MauiKit::getInstance().registerTypes();
 #endif
 
-	Index index;
-	QQmlApplicationEngine engine;
+    Index index;
+    QQmlApplicationEngine engine;
 	const QUrl url(QStringLiteral("qrc:/main.qml"));
 	QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-					 &app, [url, paths, &index](QObject *obj, const QUrl &objUrl)
+                     &app, [url, paths, &index](QObject *obj, const QUrl &objUrl)
 	{
 		if (!obj && url == objUrl)
 			QCoreApplication::exit(-1);
 
-		if(!paths.isEmpty())
-			index.openPaths(paths);
+        if(!paths.isEmpty())
+            index.openPaths(paths);
 
 	}, Qt::QueuedConnection);
 
-	const auto context = engine.rootContext();
-	context->setContextProperty("inx", &index);
+    const auto context = engine.rootContext();
+    context->setContextProperty("inx", &index);
 	engine.load(url);
 	return app.exec();
 }
