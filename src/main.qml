@@ -713,7 +713,7 @@ Maui.ApplicationWindow
             Loader
             {
                 id: terminalLoader
-                active: inx.supportsEmbededTerminal() && Maui.Handy.isLinux && !Kirigami.Settings.IsMobile
+                active: inx.supportsEmbededTerminal()
                 visible: active && terminalVisible && terminal
                 SplitView.fillWidth: true
                 SplitView.preferredHeight: 200

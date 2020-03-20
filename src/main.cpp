@@ -19,6 +19,10 @@
 #include <QApplication>
 #endif
 
+#ifdef Q_OS_MACOS
+#include <QtMacExtras/QtMac>
+#endif
+
 #ifdef STATIC_KIRIGAMI
 #include "3rdparty/kirigami/src/kirigamiplugin.h"
 #endif

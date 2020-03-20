@@ -33,23 +33,24 @@ linux:unix:!android {
 
     include($$PWD/3rdparty/kirigami/kirigami.pri)
     include($$PWD/3rdparty/mauikit/mauikit.pri)
-
 }
 
 ios {
     QMAKE_INFO_PLIST = $$PWD/ios_files/Info.plist
 }
 
+macos {
+    DEFINES += EMBEDDED_TERMINAL
+    QML2_IMPORT_PATH += $$PWD/3rdparty/QMLTermWidget
+}
+
 android {
     message(Building helpers for Android)
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
-QMAKE_LINK += -nostdlib++
+    QMAKE_LINK += -nostdlib++
 
     DISTFILES += $$PWD/android_files/AndroidManifest.xml
-} else:macos|ios {
-    message(Building helpers for Mac)
-
 }
 
 # The following define makes your compiler emit warnings if you use
