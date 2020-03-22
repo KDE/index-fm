@@ -3,7 +3,6 @@ QT += quick
 QT += sql
 
 CONFIG += c++17
-QMAKE_LINK += -nostdlib++
 
 VERSION_MAJOR = 1
 VERSION_MINOR = 0
@@ -14,30 +13,44 @@ VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
 DEFINES += INDEX_VERSION_STRING=\\\"$$VERSION\\\"
 
 linux:unix:!android {
-} else:android {
-
-    message(Building helpers for Android)
+} else {
+    message(Building helpers for Android Windows or Mac)
     DEFINES += STATIC_KIRIGAMI
 
 #DEFAULT COMPONENTS DEFINITIONS
     DEFINES *= \
-        COMPONENT_EDITOR \
         COMPONENT_FM \
+        COMPONENT_EDITOR \
         COMPONENT_TAGGING \
         COMPONENT_SYNCING \
         MAUIKIT_STYLE
 
     DEFINES -= COMPONENT_STORE
-    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
 
-   DISTFILES += \
-$$PWD/android_files/AndroidManifest.xml
+    macos|ios {
+        DEFINES -= COMPONENT_EDITOR
+    }
 
     include($$PWD/3rdparty/kirigami/kirigami.pri)
     include($$PWD/3rdparty/mauikit/mauikit.pri)
+}
 
-} else {
-    message("Unknown configuration")
+ios {
+    QMAKE_INFO_PLIST = $$PWD/ios_files/Info.plist
+}
+
+macos {
+    DEFINES += EMBEDDED_TERMINAL
+    QML2_IMPORT_PATH += $$PWD/3rdparty/QMLTermWidget
+}
+
+android {
+    message(Building helpers for Android)
+
+    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
+    QMAKE_LINK += -nostdlib++
+
+    DISTFILES += $$PWD/android_files/AndroidManifest.xml
 }
 
 # The following define makes your compiler emit warnings if you use

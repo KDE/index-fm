@@ -1,4 +1,4 @@
-import QtQuick 2.9
+import QtQuick 2.13
 import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
@@ -608,6 +608,7 @@ Maui.ApplicationWindow
                     listDelegate: Maui.ListBrowserDelegate
                     {
                         Kirigami.Theme.inherit: true
+                        showThumbnails: true
                         width: parent.width
                         height: Maui.Style.iconSizes.big + Maui.Style.space.big
                         label1.text: model.label
@@ -714,7 +715,7 @@ Maui.ApplicationWindow
             Loader
             {
                 id: terminalLoader
-                active: inx.supportsEmbededTerminal() && Maui.Handy.isLinux && !Kirigami.Settings.IsMobile
+                active: inx.supportsEmbededTerminal()
                 visible: active && terminalVisible && terminal
                 SplitView.fillWidth: true
                 SplitView.preferredHeight: 200
