@@ -55,9 +55,9 @@ Maui.ApplicationWindow
     }
 
     onClosing:
-    {        
+    {
         close.accepted = !root.restoreSession
-        var paths = []
+        var tabs = []
 
         for(var i = 0; i <tabsObjectModel.count; i ++)
         {
@@ -67,17 +67,19 @@ Maui.ApplicationWindow
             for(var j = 0; j < tab.model.count; j++)
             {
                 const browser = tab.model.get(j)
-                tabPaths.push(browser.currentPath)
+                const tabMap = {'path': browser.currentPath, 'viewType': browser.settings.viewType}
+                tabPaths.push(tabMap)
             }
 
-            paths.push(tabPaths)
+            tabs.push(tabPaths)
         }
 
-        Maui.FM.saveSettings("LAST_SESSION", paths, "BROWSER")
+        Maui.FM.saveSettings("LAST_SESSION", tabs, "BROWSER")
+        Maui.FM.saveSettings("LAST_TAB_INDEX", _browserList.currentIndex, "BROWSER")
         close.accepted = true
     }
 
-    flickable: currentTab && currentTab.browser ? currentTab.browser.flickable : null
+    flickable: currentTab && currentBrowser ? currentBrowser.flickable : null
 
     mainMenu: [MenuItem
     {
@@ -202,10 +204,10 @@ Maui.ApplicationWindow
         Layout.leftMargin: Maui.Style.space.medium
         Layout.rightMargin: Maui.Style.space.medium
 
-        onPathChanged: currentTab.browser.openFolder(path.trim())
+        onPathChanged: currentBrowser.openFolder(path.trim())
         url: root.currentPath
-        onHomeClicked: currentTab.browser.openFolder(Maui.FM.homePath())
-        onPlaceClicked: currentTab.browser.openFolder(path)
+        onHomeClicked: currentBrowser.openFolder(Maui.FM.homePath())
+        onPlaceClicked: currentBrowser.openFolder(path)
         onPlaceRightClicked:
         {
             _pathBarmenu.path = path
@@ -242,7 +244,7 @@ Maui.ApplicationWindow
 
         onPlaceClicked:
         {
-            currentTab.browser.openFolder(path)
+            currentBrowser.openFolder(path)
             if(placesSidebar.modal)
                 placesSidebar.collapse()
         }
@@ -276,7 +278,7 @@ Maui.ApplicationWindow
                 checkable: true
                 checked: root.selectionMode
                 onClicked: root.selectionMode = !root.selectionMode
-                onPressAndHold: currentTab.browser.selectAll()
+                onPressAndHold: currentBrowser.selectAll()
             },
 
             Maui.ToolButtonMenu
@@ -286,9 +288,9 @@ Maui.ApplicationWindow
                 MenuItem
                 {
                     text: qsTr("Show Folders First")
-                    checked: currentTab.browser.currentFMList.foldersFirst
+                    checked: currentBrowser.currentFMList.foldersFirst
                     checkable: true
-                    onTriggered: currentTab.browser.currentFMList.foldersFirst = !currentTab.browser.currentFMList.foldersFirst
+                    onTriggered: currentBrowser.currentFMList.foldersFirst = !currentBrowser.currentFMList.foldersFirst
                 }
 
                 MenuSeparator {}
@@ -296,18 +298,18 @@ Maui.ApplicationWindow
                 MenuItem
                 {
                     text: qsTr("Type")
-                    checked: currentTab.browser.currentFMList.sortBy === Maui.FMList.MIME
+                    checked:currentBrowser.currentFMList.sortBy === Maui.FMList.MIME
                     checkable: true
-                    onTriggered: currentTab.browser.currentFMList.sortBy = Maui.FMList.MIME
+                    onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.MIME
                     autoExclusive: true
                 }
 
                 MenuItem
                 {
                     text: qsTr("Date")
-                    checked: currentTab.browser.currentFMList.sortBy === Maui.FMList.DATE
+                    checked:currentBrowser.currentFMList.sortBy === Maui.FMList.DATE
                     checkable: true
-                    onTriggered: currentTab.browser.currentFMList.sortBy = Maui.FMList.DATE
+                    onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.DATE
                     autoExclusive: true
                 }
 
@@ -315,8 +317,8 @@ Maui.ApplicationWindow
                 {
                     text: qsTr("Modified")
                     checkable: true
-                    checked: currentTab.browser.currentFMList.sortBy === Maui.FMList.MODIFIED
-                    onTriggered: currentTab.browser.currentFMList.sortBy = Maui.FMList.MODIFIED
+                    checked: currentBrowser.currentFMList.sortBy === Maui.FMList.MODIFIED
+                    onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.MODIFIED
                     autoExclusive: true
                 }
 
@@ -324,8 +326,8 @@ Maui.ApplicationWindow
                 {
                     text: qsTr("Size")
                     checkable: true
-                    checked: currentTab.browser.currentFMList.sortBy === Maui.FMList.SIZE
-                    onTriggered: currentTab.browser.currentFMList.sortBy = Maui.FMList.SIZE
+                    checked: currentBrowser.currentFMList.sortBy === Maui.FMList.SIZE
+                    onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.SIZE
                     autoExclusive: true
                 }
 
@@ -333,8 +335,8 @@ Maui.ApplicationWindow
                 {
                     text: qsTr("Name")
                     checkable: true
-                    checked: currentTab.browser.currentFMList.sortBy === Maui.FMList.LABEL
-                    onTriggered: currentTab.browser.currentFMList.sortBy = Maui.FMList.LABEL
+                    checked: currentBrowser.currentFMList.sortBy === Maui.FMList.LABEL
+                    onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.LABEL
                     autoExclusive: true
                 }
 
@@ -345,10 +347,10 @@ Maui.ApplicationWindow
                     id: groupAction
                     text: qsTr("Group")
                     checkable: true
-                    checked: currentTab.browser.settings.group
+                    checked: currentBrowser.settings.group
                     onTriggered:
                     {
-                        currentTab.browser.settings.group = !currentTab.browser.settings.group
+                        currentBrowser.settings.group = !currentBrowser.settings.group
                     }
                 }
             },
@@ -370,12 +372,12 @@ Maui.ApplicationWindow
                 enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.APPS_PATH
                 onClicked:
                 {
-                    if(currentTab.browser.browserMenu.visible)
-                        currentTab.browser.browserMenu.close()
+                    if(currentBrowser.browserMenu.visible)
+                       currentBrowser.browserMenu.close()
                     else
-                        currentTab.browser.browserMenu.show(_optionsButton, 0, height)
+                       currentBrowser.browserMenu.show(_optionsButton, 0, height)
                 }
-                checked: currentTab.browser.browserMenu.visible
+                checked: currentBrowser.browserMenu.visible
                 checkable: false
             }
         ]
@@ -400,8 +402,8 @@ Maui.ApplicationWindow
                 currentIndex: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
                 onCurrentIndexChanged:
                 {
-                    if(currentTab.browser)
-                    currentTab.browser.settings.viewType = currentIndex
+                    if(currentTab && currentBrowser)
+                    currentBrowser.settings.viewType = currentIndex
 
                     Maui.FM.saveSettings("VIEW_TYPE", currentIndex, "BROWSER")
                 }
@@ -486,7 +488,7 @@ Maui.ApplicationWindow
 
                         if(event.key == Qt.Key_Down)
                         {
-                            currentTab.browser.currentView.forceActiveFocus()
+                            currentBrowser.currentView.forceActiveFocus()
                         }
                     }
 
@@ -546,7 +548,7 @@ Maui.ApplicationWindow
 
                         onCurrentItemChanged:
                         {
-                            currentTab.browser.currentView.forceActiveFocus()
+                          currentBrowser.currentView.forceActiveFocus()
                         }
 
                         DropArea
@@ -584,7 +586,7 @@ Maui.ApplicationWindow
                     {
                         if(_selectionBar.count < 1)
                         {
-                            currentTab.browser.clearSelection()
+                           currentBrowser.clearSelection()
                             root.selectionMode = false
                         }
                     }
@@ -601,7 +603,7 @@ Maui.ApplicationWindow
                         }
                     }
 
-                    onExitClicked: currentTab.browser.clearSelection()
+                    onExitClicked: currentBrowser.clearSelection()
 
                     listDelegate: Maui.ListBrowserDelegate
                     {
@@ -634,7 +636,7 @@ Maui.ApplicationWindow
                         {
 
                             for(var i in selectionBar.uris)
-                                currentTab.browser.openFile(_selectionBar.uris[i])
+                                currentBrowser.openFile(_selectionBar.uris[i])
 
                         }
                     }
@@ -645,7 +647,7 @@ Maui.ApplicationWindow
                         icon.name: "tag"
                         onTriggered:
                         {
-                            currentTab.browser.tagFiles(_selectionBar.uris)
+                            currentBrowser.tagFiles(_selectionBar.uris)
                         }
                     }
 
@@ -655,7 +657,7 @@ Maui.ApplicationWindow
                         icon.name: "document-share"
                         onTriggered:
                         {
-                            currentTab.browser.shareFiles(_selectionBar.uris)
+                            currentBrowser.shareFiles(_selectionBar.uris)
                         }
                     }
 
@@ -666,7 +668,7 @@ Maui.ApplicationWindow
                         onTriggered:
                         {
                             _selectionBar.animate()
-                            currentTab.browser.copy(_selectionBar.uris)
+                           currentBrowser.copy(_selectionBar.uris)
                         }
                     }
 
@@ -677,7 +679,7 @@ Maui.ApplicationWindow
                         onTriggered:
                         {
                             _selectionBar.animate()
-                            currentTab.browser.cut(_selectionBar.uris)
+                            currentBrowser.cut(_selectionBar.uris)
                         }
                     }
 
@@ -688,7 +690,7 @@ Maui.ApplicationWindow
 
                         onTriggered:
                         {
-                            currentTab.browser.remove(_selectionBar.uris)
+                           currentBrowser.remove(_selectionBar.uris)
                         }
                     }
                 }
@@ -752,18 +754,27 @@ Maui.ApplicationWindow
 
         if(root.restoreSession)
         {
-                var session = Maui.FM.loadSettings("LAST_SESSION", "BROWSER", [[Maui.FM.homePath()]])
+            var session = Maui.FM.loadSettings("LAST_SESSION", "BROWSER", [[{path: Maui.FM.homePath(), viewType: 1}]])
 
-            console.log("LAST SESSIONW AS", session)
             for(var i in session)
             {
                 const tab = session[i];
                 if(tab.length === 2)
                 {
-                    root.openTab(tab[0])
-                    currentTab.split(tab[1], Qt.Horizontal)
-                }else root.openTab(tab[0])
+                    root.openTab(tab[0].path)
+                    currentBrowser.settings.viewType = tab[0].viewType
+                    currentTab.split(tab[1].path, Qt.Horizontal)
+                    currentBrowser.settings.viewType = tab[1].viewType
+                }else
+                {
+                     root.openTab(tab[0].path)
+                    currentBrowser.settings.viewType = tab[0].viewType
+                }
             }
+
+            const lastTabIndex = Maui.FM.loadSettings("LAST_TAB_INDEX", "BROWSER", _browserList.currentIndex)
+            _browserList.currentIndex = lastTabIndex
+
         }else root.openTab(Maui.FM.homePath())
     }
 
