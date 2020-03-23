@@ -52,7 +52,7 @@ Maui.SideBar
     {
         var item = list.get(index)
         var path = item.path
-
+        console.log(path)
         placesList.clearBadgeCount(index)
 
         placeClicked(path)

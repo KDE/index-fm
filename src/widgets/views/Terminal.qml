@@ -34,4 +34,10 @@ Maui.Terminal
 //            root.currentBrowser.currentPath = path;
 //        }
     }
+
+    onUrlsDropped:
+    {
+        for(var i in urls)
+        control.session.sendText(urls[i].replace("file://", "")+ " ")
+    }
 }
