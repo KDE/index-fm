@@ -16,7 +16,7 @@ Item
     property alias browser : _splitView.currentItem
     property url path
     property alias model : splitObjectModel
-readonly property string title : count === 2 ?  model.get(0).title + "  -  " + model.get(1).title : browser.title
+    readonly property string title : count === 2 ?  model.get(0).title + "  -  " + model.get(1).title : browser.title
     ObjectModel { id: splitObjectModel }
 
     SplitView

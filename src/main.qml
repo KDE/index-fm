@@ -548,7 +548,10 @@ Maui.ApplicationWindow
 
                         onCurrentItemChanged:
                         {
-                          currentBrowser.currentView.forceActiveFocus()
+                            if(currentBrowser)
+                            {
+                                currentBrowser.currentView.forceActiveFocus()
+                            }
                         }
 
                         DropArea
