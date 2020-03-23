@@ -38,7 +38,7 @@ Maui.ApplicationWindow
     property bool showHiddenFiles: false
     property bool showThumbnails: true
     property bool showStatusBar: false
-    property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Maui.Handy.singleClick) == "true"
+    property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
