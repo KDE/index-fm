@@ -37,7 +37,10 @@ Maui.Terminal
 
     onUrlsDropped:
     {
+        var str = ""
         for(var i in urls)
-        control.session.sendText(urls[i].replace("file://", "")+ " ")
+            str = str + urls[i].replace("file://", "")+ " "
+
+        control.session.sendText(str)
     }
 }
