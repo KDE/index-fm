@@ -37,7 +37,7 @@ Maui.FileBrowser
         visible: _splitView.currentIndex === _index && _splitView.count === 2
     }
 
-    opacity: _splitView.currentIndex === _index ? 1 : 0.5
+    opacity: _splitView.currentIndex === _index ? 1 : 0.7
 
     itemMenu.contentData : [
 
