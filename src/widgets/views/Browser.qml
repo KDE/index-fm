@@ -126,9 +126,4 @@ Maui.FileBrowser
         else
             control.openFile(item.path)
     }
-
-    onUrlsDropped:
-    {
-        console.log(urls)
-    }
 }

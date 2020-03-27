@@ -94,5 +94,9 @@ Maui.SideBar
     Maui.PlacesList
     {
         id: placesList
+        onBookmarksChanged:
+        {
+            syncSidebar(currentPath)
+        }
     }
 }
