@@ -122,12 +122,14 @@ Maui.ApplicationWindow
 
             ColumnLayout
             {
-                anchors.fill: parent
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+
                 Kirigami.FormLayout
                 {
                     id: _configLayout
-                   Layout.fillHeight: true
-                   Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
                     Item
                     {
                         Kirigami.FormData.label: qsTr("Navigation")
