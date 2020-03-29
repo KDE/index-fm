@@ -18,6 +18,7 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
+//    Maui.App.enableCSD: true
 
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
     onTerminalVisibleChanged: if(terminalVisible && currentBrowser) syncTerminal(root.currentPath)
@@ -190,8 +191,6 @@ Maui.ApplicationWindow
                         checked:  root.showStatusBar
                         onToggled:  root.showStatusBar = !root.showStatusBar
                     }
-
-
                 }
             }
         }
@@ -627,7 +626,7 @@ Maui.ApplicationWindow
                         onClicked:
                         {
                             _selectionBar.selectionList.currentIndex = index
-                            //                        control.previewer.show(_selectionBar.selectionList.model, _selectionBar.selectionList.currentIndex )
+                            _previewer.show(_selectionBar.selectionList.model, _selectionBar.selectionList.currentIndex )
                         }
 
                         onPressAndHold: removeAtIndex(index)
@@ -709,12 +708,6 @@ Maui.ApplicationWindow
                     visible: value > 0
                 }
             }
-
-            //        Kirigami.Separator
-            //        {
-            //            visible: terminalLoader.active && terminalLoader.visible
-            //            Layout.fillWidth: true
-            //        }
 
             Loader
             {
