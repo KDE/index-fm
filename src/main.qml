@@ -488,7 +488,7 @@ Maui.ApplicationWindow
                     Layout.preferredHeight: tabsBar.implicitHeight
                     position: TabBar.Header
                     currentIndex : _browserList.currentIndex
-
+                    onNewTabClicked: root.openTab(currentPath)
                     Keys.onPressed:
                     {
                         if(event.key == Qt.Key_Return)
@@ -511,7 +511,7 @@ Maui.ApplicationWindow
                         {
                             id: _tabButton
                             implicitHeight: tabsBar.implicitHeight
-                            implicitWidth: Math.max(_layout.width / _repeater.count, 120)
+                            implicitWidth: Math.max(parent.width / _repeater.count, 120)
                             checked: index === _browserList.currentIndex
 
                             text: tabsObjectModel.get(index).title
