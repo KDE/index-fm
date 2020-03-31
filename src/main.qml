@@ -241,7 +241,16 @@ Maui.ApplicationWindow
         section.property: !showLabels ? "" : "type"
         preferredWidth: Math.min(Kirigami.Units.gridUnit * 11, root.width)
         height: root.height - root.header.height
-        iconSize: Maui.Style.iconSizes.medium
+        iconSize: collapsed ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
+
+        Behavior on iconSize
+        {
+            NumberAnimation
+                   {
+                       duration: Kirigami.Units.longDuration
+                       easing.type: Easing.InOutQuad
+                   }
+        }
 
         onPlaceClicked:
         {
