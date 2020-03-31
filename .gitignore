@@ -1,6 +1,7 @@
 3rdparty/kirigami
 3rdparty/breeze-icons
 3rdparty/mauikit
+3rdparty/QMLTermWidget
 .directory
 
 *.kdev4

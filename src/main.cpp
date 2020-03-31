@@ -39,15 +39,15 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
 #ifdef Q_OS_ANDROID
-    QGuiApplication app(argc, argv);
-    if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE"}))
-        return -1;
+	QGuiApplication app(argc, argv);
+	if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE"}))
+		return -1;
 #else
 	QApplication app(argc, argv);
 #endif
 
 #ifdef MAUIKIT_STYLE
-    MauiKit::getInstance().initResources();
+	MauiKit::getInstance().initResources();
 #endif
 
 	app.setApplicationName(INX::appName);
@@ -56,7 +56,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	app.setOrganizationName(INX::orgName);
 	app.setOrganizationDomain(INX::orgDomain);
 	app.setWindowIcon(QIcon(":/index.png"));
-    MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
+	MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
+	MauiApp::instance()->setCredits ({QVariantMap({{"name", "Camilo Higuita"}, {"email", "milo.h@aol.com"}, {"year", "2019-2020"}})});
 
 	QCommandLineParser parser;
 	parser.setApplicationDescription(INX::description);
@@ -71,29 +72,29 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 		paths = args;
 
 #ifdef STATIC_KIRIGAMI
-    KirigamiPlugin::getInstance().registerTypes();
+	KirigamiPlugin::getInstance().registerTypes();
 #endif
 
 #ifdef STATIC_MAUIKIT
-    MauiKit::getInstance().registerTypes();
+	MauiKit::getInstance().registerTypes();
 #endif
 
-    Index index;
-    QQmlApplicationEngine engine;
+	Index index;
+	QQmlApplicationEngine engine;
 	const QUrl url(QStringLiteral("qrc:/main.qml"));
 	QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url, paths, &index](QObject *obj, const QUrl &objUrl)
+					 &app, [url, paths, &index](QObject *obj, const QUrl &objUrl)
 	{
 		if (!obj && url == objUrl)
 			QCoreApplication::exit(-1);
 
-        if(!paths.isEmpty())
-            index.openPaths(paths);
+		if(!paths.isEmpty())
+			index.openPaths(paths);
 
 	}, Qt::QueuedConnection);
 
-    const auto context = engine.rootContext();
-    context->setContextProperty("inx", &index);
+	const auto context = engine.rootContext();
+	context->setContextProperty("inx", &index);
 	engine.load(url);
 	return app.exec();
 }
