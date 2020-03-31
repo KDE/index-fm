@@ -27,10 +27,6 @@ linux:unix:!android {
 
     DEFINES -= COMPONENT_STORE
 
-    macos|ios {
-        DEFINES -= COMPONENT_EDITOR
-    }
-
     include($$PWD/3rdparty/kirigami/kirigami.pri)
     include($$PWD/3rdparty/mauikit/mauikit.pri)
 }
