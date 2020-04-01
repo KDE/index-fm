@@ -398,6 +398,7 @@ Maui.ApplicationWindow
             {
                 expanded: true
                 autoExclusive: false
+                checkable: false
 
                 Action
                 {
