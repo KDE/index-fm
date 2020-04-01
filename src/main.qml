@@ -31,7 +31,7 @@ Maui.ApplicationWindow
     property alias shareDialog : _shareDialog
     property alias openWithDialog : _openWithDialog
     property alias tagsDialog : _tagsDialog
-
+    property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
     property bool searchBar: false
