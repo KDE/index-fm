@@ -197,7 +197,15 @@ Maui.ApplicationWindow
     }
 
 //    headBar.rightSretch: Maui.App.enableCSD
-    headBar.rightSretch: false
+    headBar.rightContent: ToolButton
+    {
+        icon.name: "item-select"
+        checkable: true
+        checked: root.selectionMode
+        onClicked: root.selectionMode = !root.selectionMode
+        onPressAndHold: currentBrowser.selectAll()
+    }
+
     headBar.middleContent:   Maui.PathBar
     {
         id: _pathBar
@@ -282,14 +290,6 @@ Maui.ApplicationWindow
         anchors.fill: parent
         headBar.position: Kirigami.Settings.isMobile ? ToolBar.Footer : ToolBar.Header
         headBar.rightContent:[
-            ToolButton
-            {
-                icon.name: "item-select"
-                checkable: true
-                checked: root.selectionMode
-                onClicked: root.selectionMode = !root.selectionMode
-                onPressAndHold: currentBrowser.selectAll()
-            },
 
             Maui.ToolButtonMenu
             {
@@ -393,16 +393,23 @@ Maui.ApplicationWindow
         ]
 
         headBar.leftContent: [
-            ToolButton
-            {
-                icon.name: "go-previous"
-                onClicked: currentBrowser.goBack()
-            },
 
-            ToolButton
+         Maui.ToolActions
             {
-                icon.name: "go-next"
-                onClicked: currentBrowser.goNext()
+                expanded: true
+                autoExclusive: false
+
+                Action
+                {
+                    icon.name: "go-previous"
+                    onTriggered : currentBrowser.goBack()
+                }
+
+                Action
+                {
+                    icon.name: "go-next"
+                    onTriggered: currentBrowser.goNext()
+                }
             },
 
             Maui.ToolActions
