@@ -199,6 +199,7 @@ Maui.ApplicationWindow
 //    headBar.rightSretch: Maui.App.enableCSD
     headBar.rightContent: ToolButton
     {
+        visible: Maui.Handy.isTouch
         icon.name: "item-select"
         checkable: true
         checked: root.selectionMode
