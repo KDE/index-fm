@@ -628,6 +628,7 @@ Maui.ApplicationWindow
 
                     listDelegate: Maui.ListBrowserDelegate
                     {
+                        isCurrentItem: false
                         Kirigami.Theme.inherit: true
                         showThumbnails: true
                         width: parent.width
@@ -638,7 +639,7 @@ Maui.ApplicationWindow
                         label4.text: ""
                         checkable: true
                         checked: true
-                        folderSize: Maui.Style.iconSizes.big
+                        iconSizeHint: Maui.Style.iconSizes.big
                         onToggled: _selectionBar.removeAtIndex(index)
                         background: Item {}
                         onClicked:
