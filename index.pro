@@ -37,7 +37,6 @@ ios {
 
 macos {
     DEFINES += EMBEDDED_TERMINAL
-    QML2_IMPORT_PATH += $$PWD/3rdparty/QMLTermWidget
 }
 
 android {
