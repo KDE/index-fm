@@ -2,7 +2,10 @@ QT += qml
 QT += quick
 QT += sql
 
+CONFIG += ordered
 CONFIG += c++17
+TARGET = index
+TEMPLATE = app
 
 VERSION_MAJOR = 1
 VERSION_MINOR = 0

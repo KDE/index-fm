@@ -31,7 +31,7 @@ Maui.ApplicationWindow
     property alias shareDialog : _shareDialog
     property alias openWithDialog : _openWithDialog
     property alias tagsDialog : _tagsDialog
-
+    property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
     property bool searchBar: false
@@ -199,6 +199,7 @@ Maui.ApplicationWindow
 //    headBar.rightSretch: Maui.App.enableCSD
     headBar.rightContent: ToolButton
     {
+        visible: Maui.Handy.isTouch
         icon.name: "item-select"
         checkable: true
         checked: root.selectionMode
@@ -627,6 +628,7 @@ Maui.ApplicationWindow
 
                     listDelegate: Maui.ListBrowserDelegate
                     {
+                        isCurrentItem: false
                         Kirigami.Theme.inherit: true
                         showThumbnails: true
                         width: parent.width
@@ -637,7 +639,7 @@ Maui.ApplicationWindow
                         label4.text: ""
                         checkable: true
                         checked: true
-                        folderSize: Maui.Style.iconSizes.big
+                        iconSizeHint: Maui.Style.iconSizes.big
                         onToggled: _selectionBar.removeAtIndex(index)
                         background: Item {}
                         onClicked:
