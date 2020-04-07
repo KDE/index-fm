@@ -18,7 +18,7 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
-    Maui.App.enableCSD: true
+//    Maui.App.enableCSD: true
 
     property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
     onTerminalVisibleChanged: if(terminalVisible && currentBrowser) syncTerminal(root.currentPath)
