@@ -13,7 +13,7 @@ Maui.ApplicationWindow
 {
     id: root
     title:  currentTab ? currentTab.title : ""
-    Maui.App.description: qsTr("Index is a file manager that works on desktops, Android and Plasma Mobile. Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.")
+    Maui.App.description: qsTr("Index allows you to navigate your computer and preview multimedia files.")
     Maui.App.iconName: "qrc:/assets/index.svg"
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"

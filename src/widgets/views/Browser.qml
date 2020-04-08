@@ -54,7 +54,7 @@ Maui.FileBrowser
         MenuItem
         {
             visible: itemMenu.isDir && root.currentTab.count === 1 && root.supportSplit
-            text: qsTr("Open in new split")
+            text: qsTr("Open in split view")
             icon.name: "view-split-left-right"
             onTriggered: root.currentTab.split(itemMenu.item.path, Qt.Horizontal)
         }
