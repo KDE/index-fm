@@ -18,12 +18,9 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
-//    Maui.App.enableCSD: true
+//        Maui.App.enableCSD: true
 
-    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
-    onTerminalVisibleChanged: if(terminalVisible && currentBrowser) syncTerminal(root.currentPath)
-
-    property alias terminal : terminalLoader.item
+//    property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
 
     property alias previewer : _previewer
@@ -46,7 +43,6 @@ Maui.ApplicationWindow
 
     onCurrentPathChanged:
     {
-        syncTerminal(currentBrowser.currentPath)
         syncSidebar(currentBrowser.currentPath)
     }
 
@@ -81,25 +77,12 @@ Maui.ApplicationWindow
     }
 
     flickable: currentTab && currentBrowser ? currentBrowser.flickable : null
-
     mainMenu: [MenuItem
-    {
-        text: qsTr("Settings")
-        icon.name: "settings-configure"
-        onTriggered: openConfigDialog()
-    },
-
-    MenuSeparator {visible: terminal},
-
-    MenuItem
-    {
-        visible: terminal
-        text: qsTr("Show Terminal")
-        icon.name: "utilities-terminal"
-        onTriggered: toogleTerminal()
-        checked : terminalVisible
-        checkable: true
-    }]
+        {
+            text: qsTr("Settings")
+            icon.name: "settings-configure"
+            onTriggered: openConfigDialog()
+        }]
 
     Maui.FilePreviewer {id: _previewer}
     Maui.TagsDialog
@@ -196,7 +179,7 @@ Maui.ApplicationWindow
         }
     }
 
-//    headBar.rightSretch: Maui.App.enableCSD
+    //    headBar.rightSretch: Maui.App.enableCSD
     headBar.rightContent: ToolButton
     {
         visible: Maui.Handy.isTouch
@@ -255,10 +238,10 @@ Maui.ApplicationWindow
         Behavior on iconSize
         {
             NumberAnimation
-                   {
-                       duration: Kirigami.Units.longDuration
-                       easing.type: Easing.InOutQuad
-                   }
+            {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
         }
 
         onPlaceClicked:
@@ -291,6 +274,16 @@ Maui.ApplicationWindow
         anchors.fill: parent
         headBar.position: Kirigami.Settings.isMobile ? ToolBar.Footer : ToolBar.Header
         headBar.rightContent:[
+
+            ToolButton
+            {
+                visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+//                text: qsTr("Show Terminal")
+                icon.name: "utilities-terminal"
+                onClicked: currentTab.currentItem.toogleTerminal()
+                checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+                checkable: true
+            },
 
             Maui.ToolButtonMenu
             {
@@ -384,9 +377,9 @@ Maui.ApplicationWindow
                 onClicked:
                 {
                     if(currentBrowser.browserMenu.visible)
-                       currentBrowser.browserMenu.close()
+                        currentBrowser.browserMenu.close()
                     else
-                       currentBrowser.browserMenu.show(_optionsButton, 0, height)
+                        currentBrowser.browserMenu.show(_optionsButton, 0, height)
                 }
                 checked: currentBrowser.browserMenu.visible
                 checkable: false
@@ -395,7 +388,7 @@ Maui.ApplicationWindow
 
         headBar.leftContent: [
 
-         Maui.ToolActions
+            Maui.ToolActions
             {
                 expanded: true
                 autoExclusive: false
@@ -417,6 +410,7 @@ Maui.ApplicationWindow
             Maui.ToolActions
             {
                 id: _viewTypeGroup
+                autoExclusive: true
                 expanded: headBar.width > Kirigami.Units.gridUnit * 32
                 currentIndex: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
                 onCurrentIndexChanged:
@@ -459,296 +453,253 @@ Maui.ApplicationWindow
             }
         ]
 
-        SplitView
+        ColumnLayout
         {
+            id: _layout
+
             anchors.fill: parent
+
             spacing: 0
-            orientation: Qt.Vertical
 
-            handle: Rectangle
+            Maui.TabBar
             {
-                implicitWidth: 10
-                implicitHeight: 10
-                color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
-                                           : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
-
-                Kirigami.Separator
+                id: tabsBar
+                visible: _browserList.count > 1
+                Layout.fillWidth: true
+                Layout.preferredHeight: tabsBar.implicitHeight
+                position: TabBar.Header
+                currentIndex : _browserList.currentIndex
+                onNewTabClicked: root.openTab(currentPath)
+                Keys.onPressed:
                 {
-                    anchors.bottom: parent.bottom
-                    anchors.right: parent.right
-                    anchors.left: parent.left
+                    if(event.key == Qt.Key_Return)
+                    {
+                        _browserList.currentIndex = currentIndex
+                    }
+
+                    if(event.key == Qt.Key_Down)
+                    {
+                        currentBrowser.currentView.forceActiveFocus()
+                    }
+                }
+
+                Repeater
+                {
+                    id: _repeater
+                    model: tabsObjectModel.count
+
+                    Maui.TabButton
+                    {
+                        id: _tabButton
+                        implicitHeight: tabsBar.implicitHeight
+                        implicitWidth: Math.max(parent.width / _repeater.count, 120)
+                        checked: index === _browserList.currentIndex
+
+                        text: tabsObjectModel.get(index).title
+
+                        onClicked:
+                        {
+                            _browserList.currentIndex = index
+                        }
+
+                        onCloseClicked: closeTab(index)
+                    }
                 }
             }
 
-            ColumnLayout
+            Flickable
             {
-                id: _layout
+                Layout.margins: 0
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-                SplitView.fillHeight: true
-                SplitView.fillWidth: true
-
-                spacing: 0
-
-                Maui.TabBar
+                ListView
                 {
-                    id: tabsBar
-                    visible: _browserList.count > 1
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: tabsBar.implicitHeight
-                    position: TabBar.Header
-                    currentIndex : _browserList.currentIndex
-                    onNewTabClicked: root.openTab(currentPath)
-                    Keys.onPressed:
-                    {
-                        if(event.key == Qt.Key_Return)
-                        {
-                            _browserList.currentIndex = currentIndex
-                        }
+                    id: _browserList
+                    anchors.fill: parent
+                    clip: true
+                    focus: true
+                    orientation: ListView.Horizontal
+                    model: tabsObjectModel
+                    snapMode: ListView.SnapOneItem
+                    spacing: 0
+                    interactive: Kirigami.Settings.hasTransientTouchInput && tabsObjectModel.count > 1
+                    highlightFollowsCurrentItem: true
+                    highlightMoveDuration: 0
+                    highlightResizeDuration: 0
+                    highlightRangeMode: ListView.StrictlyEnforceRange
+                    preferredHighlightBegin: 0
+                    preferredHighlightEnd: width
+                    highlight: Item {}
+                    highlightMoveVelocity: -1
+                    highlightResizeVelocity: -1
 
-                        if(event.key == Qt.Key_Down)
+                    onMovementEnded: _browserList.currentIndex = indexAt(contentX, contentY)
+                    boundsBehavior: Flickable.StopAtBounds
+
+                    onCurrentItemChanged:
+                    {
+                        if(currentBrowser)
                         {
                             currentBrowser.currentView.forceActiveFocus()
                         }
                     }
 
-                    Repeater
+                    DropArea
                     {
-                        id: _repeater
-                        model: tabsObjectModel.count
-
-                        Maui.TabButton
-                        {
-                            id: _tabButton
-                            implicitHeight: tabsBar.implicitHeight
-                            implicitWidth: Math.max(parent.width / _repeater.count, 120)
-                            checked: index === _browserList.currentIndex
-
-                            text: tabsObjectModel.get(index).title
-
-                            onClicked:
-                            {
-                                _browserList.currentIndex = index
-                            }
-
-                            onCloseClicked: closeTab(index)
-                        }
-                    }
-                }
-
-                Flickable
-                {
-                    Layout.margins: 0
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-
-                    ListView
-                    {
-                        id: _browserList
+                        id: _dropArea
                         anchors.fill: parent
-                        clip: true
-                        focus: true
-                        orientation: ListView.Horizontal
-                        model: tabsObjectModel
-                        snapMode: ListView.SnapOneItem
-                        spacing: 0
-                        interactive: Kirigami.Settings.hasTransientTouchInput && tabsObjectModel.count > 1
-                        highlightFollowsCurrentItem: true
-                        highlightMoveDuration: 0
-                        highlightResizeDuration: 0
-                        highlightRangeMode: ListView.StrictlyEnforceRange
-                        preferredHighlightBegin: 0
-                        preferredHighlightEnd: width
-                        highlight: Item {}
-                        highlightMoveVelocity: -1
-                        highlightResizeVelocity: -1
-
-                        onMovementEnded: _browserList.currentIndex = indexAt(contentX, contentY)
-                        boundsBehavior: Flickable.StopAtBounds
-
-                        onCurrentItemChanged:
+                        z: parent.z -2
+                        onDropped:
                         {
-                            if(currentBrowser)
+                            const urls = drop.urls
+                            for(var i in urls)
                             {
-                                currentBrowser.currentView.forceActiveFocus()
-                            }
-                        }
-
-                        DropArea
-                        {
-                            id: _dropArea
-                            anchors.fill: parent
-                            z: parent.z -2
-                            onDropped:
-                            {
-                                const urls = drop.urls
-                                for(var i in urls)
+                                const item = Maui.FM.getFileInfo(urls[i])
+                                if(item.isdir == "true")
                                 {
-                                    const item = Maui.FM.getFileInfo(urls[i])
-                                    if(item.isdir == "true")
-                                    {
-                                        control.openTab(urls[i])
-                                    }
+                                    control.openTab(urls[i])
                                 }
                             }
                         }
                     }
                 }
+            }
 
-                MauiLab.SelectionBar
+            MauiLab.SelectionBar
+            {
+                id: _selectionBar
+
+                Layout.alignment: Qt.AlignHCenter
+                Layout.margins: Maui.Style.space.medium
+                Layout.preferredWidth: Math.min(parent.width-(Maui.Style.space.medium*2), implicitWidth)
+                maxListHeight: _browserList.height - (Maui.Style.contentMargins*2)
+
+                onCountChanged:
                 {
-                    id: _selectionBar
-
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.margins: Maui.Style.space.medium
-                    Layout.preferredWidth: Math.min(parent.width-(Maui.Style.space.medium*2), implicitWidth)
-                    maxListHeight: _browserList.height - (Maui.Style.contentMargins*2)
-
-                    onCountChanged:
+                    if(_selectionBar.count < 1)
                     {
-                        if(_selectionBar.count < 1)
-                        {
-                           currentBrowser.clearSelection()
-                            root.selectionMode = false
-                        }
-                    }
-
-                    onUrisDropped:
-                    {
-                        for(var i in uris)
-                        {
-                            if(!Maui.FM.fileExists(uris[i]))
-                                continue;
-
-                            const item = Maui.FM.getFileInfo(uris[i])
-                            _selectionBar.append(item.path, item)
-                        }
-                    }
-
-                    onExitClicked: currentBrowser.clearSelection()
-
-                    listDelegate: Maui.ListBrowserDelegate
-                    {
-                        isCurrentItem: false
-                        Kirigami.Theme.inherit: true
-                        showThumbnails: true
-                        width: parent.width
-                        height: Maui.Style.iconSizes.big + Maui.Style.space.big
-                        label1.text: model.label
-                        label2.text: model.path
-                        label3.text: ""
-                        label4.text: ""
-                        checkable: true
-                        checked: true
-                        iconSizeHint: Maui.Style.iconSizes.big
-                        onToggled: _selectionBar.removeAtIndex(index)
-                        background: Item {}
-                        onClicked:
-                        {
-                            _selectionBar.selectionList.currentIndex = index
-                            _previewer.show(_selectionBar.selectionList.model, _selectionBar.selectionList.currentIndex )
-                        }
-
-                        onPressAndHold: removeAtIndex(index)
-                    }
-
-                    Action
-                    {
-                        text: qsTr("Open")
-                        icon.name: "document-open"
-                        onTriggered:
-                        {
-
-                            for(var i in selectionBar.uris)
-                                currentBrowser.openFile(_selectionBar.uris[i])
-
-                        }
-                    }
-
-                    Action
-                    {
-                        text: qsTr("Tags")
-                        icon.name: "tag"
-                        onTriggered:
-                        {
-                            currentBrowser.tagFiles(_selectionBar.uris)
-                        }
-                    }
-
-                    Action
-                    {
-                        text: qsTr("Share")
-                        icon.name: "document-share"
-                        onTriggered:
-                        {
-                            currentBrowser.shareFiles(_selectionBar.uris)
-                        }
-                    }
-
-                    Action
-                    {
-                        text: qsTr("Copy")
-                        icon.name: "edit-copy"
-                        onTriggered:
-                        {
-                            _selectionBar.animate()
-                           currentBrowser.copy(_selectionBar.uris)
-                        }
-                    }
-
-                    Action
-                    {
-                        text: qsTr("Cut")
-                        icon.name: "edit-cut"
-                        onTriggered:
-                        {
-                            _selectionBar.animate()
-                            currentBrowser.cut(_selectionBar.uris)
-                        }
-                    }
-
-                    Action
-                    {
-                        text: qsTr("Remove")
-                        icon.name: "edit-delete"
-
-                        onTriggered:
-                        {
-                           currentBrowser.remove(_selectionBar.uris)
-                        }
+                        currentBrowser.clearSelection()
+                        root.selectionMode = false
                     }
                 }
 
-                ProgressBar
+                onUrisDropped:
                 {
-                    id: _progressBar
-                    Layout.fillWidth: true
-                    Layout.alignment: Qt.AlignBottom
-                    Layout.preferredHeight: visible ? Maui.Style.iconSizes.medium : 0
-                    visible: value > 0
+                    for(var i in uris)
+                    {
+                        if(!Maui.FM.fileExists(uris[i]))
+                            continue;
+
+                        const item = Maui.FM.getFileInfo(uris[i])
+                        _selectionBar.append(item.path, item)
+                    }
+                }
+
+                onExitClicked: currentBrowser.clearSelection()
+
+                listDelegate: Maui.ListBrowserDelegate
+                {
+                    isCurrentItem: false
+                    Kirigami.Theme.inherit: true
+                    showThumbnails: true
+                    width: parent.width
+                    height: Maui.Style.iconSizes.big + Maui.Style.space.big
+                    label1.text: model.label
+                    label2.text: model.path
+                    label3.text: ""
+                    label4.text: ""
+                    checkable: true
+                    checked: true
+                    iconSizeHint: Maui.Style.iconSizes.big
+                    onToggled: _selectionBar.removeAtIndex(index)
+                    background: Item {}
+                    onClicked:
+                    {
+                        _selectionBar.selectionList.currentIndex = index
+                        _previewer.show(_selectionBar.selectionList.model, _selectionBar.selectionList.currentIndex )
+                    }
+
+                    onPressAndHold: removeAtIndex(index)
+                }
+
+                Action
+                {
+                    text: qsTr("Open")
+                    icon.name: "document-open"
+                    onTriggered:
+                    {
+
+                        for(var i in selectionBar.uris)
+                            currentBrowser.openFile(_selectionBar.uris[i])
+
+                    }
+                }
+
+                Action
+                {
+                    text: qsTr("Tags")
+                    icon.name: "tag"
+                    onTriggered:
+                    {
+                        currentBrowser.tagFiles(_selectionBar.uris)
+                    }
+                }
+
+                Action
+                {
+                    text: qsTr("Share")
+                    icon.name: "document-share"
+                    onTriggered:
+                    {
+                        currentBrowser.shareFiles(_selectionBar.uris)
+                    }
+                }
+
+                Action
+                {
+                    text: qsTr("Copy")
+                    icon.name: "edit-copy"
+                    onTriggered:
+                    {
+                        _selectionBar.animate()
+                        currentBrowser.copy(_selectionBar.uris)
+                    }
+                }
+
+                Action
+                {
+                    text: qsTr("Cut")
+                    icon.name: "edit-cut"
+                    onTriggered:
+                    {
+                        _selectionBar.animate()
+                        currentBrowser.cut(_selectionBar.uris)
+                    }
+                }
+
+                Action
+                {
+                    text: qsTr("Remove")
+                    icon.name: "edit-delete"
+
+                    onTriggered:
+                    {
+                        currentBrowser.remove(_selectionBar.uris)
+                    }
                 }
             }
 
-            Loader
+            ProgressBar
             {
-                id: terminalLoader
-                active: inx.supportsEmbededTerminal()
-                visible: active && terminalVisible && terminal
-                SplitView.fillWidth: true
-                SplitView.preferredHeight: 200
-                SplitView.maximumHeight: parent.height * 0.5
-                SplitView.minimumHeight : 100
-                source: "widgets/views/Terminal.qml"
-
-                Behavior on Layout.preferredHeight
-                {
-                    NumberAnimation
-                    {
-                        duration: Kirigami.Units.longDuration
-                        easing.type: Easing.InQuad
-                    }
-                }
+                id: _progressBar
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignBottom
+                Layout.preferredHeight: visible ? Maui.Style.iconSizes.medium : 0
+                visible: value > 0
             }
         }
+
     }
 
     Connections
@@ -784,7 +735,7 @@ Maui.ApplicationWindow
                     currentBrowser.settings.viewType = tab[1].viewType
                 }else
                 {
-                     root.openTab(tab[0].path)
+                    root.openTab(tab[0].path)
                     currentBrowser.settings.viewType = tab[0].viewType
                 }
             }
@@ -819,18 +770,6 @@ Maui.ApplicationWindow
                 placesSidebar.currentIndex = i
                 return;
             }
-    }
-
-    function syncTerminal(path)
-    {
-        if(root.terminal && root.terminalVisible)
-            root.terminal.session.sendText("cd '" + String(path).replace("file://", "") + "'\n")
-    }
-
-    function toogleTerminal()
-    {
-        terminalVisible = !terminalVisible
-        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
     }
 
     function toogleSplitView()

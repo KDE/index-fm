@@ -5,125 +5,202 @@ import org.kde.kirigami 2.8 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 import QtQml.Models 2.3
 
-Maui.FileBrowser
+
+SplitView
 {
     id: control
+
     readonly property int _index : ObjectModel.index
+    property alias browser : _browser
+    property alias currentPath: _browser.currentPath
+    property alias settings : _browser.settings
+    property alias title : _browser.title
+
+//    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
+    property bool terminalVisible : false
+    readonly property bool supportsTerminal : terminalLoader.item
+
+    spacing: 0
+    orientation: Qt.Vertical
 
     SplitView.fillHeight: true
     SplitView.fillWidth: true
     SplitView.preferredWidth: _splitView.width / (_splitView.count)
     SplitView.minimumWidth: _splitView.count > 1 ? 300 : 0
 
-    selectionBar: root.selectionBar
-    previewer: root.previewer
-    shareDialog: root.shareDialog
-    openWithDialog: root.openWithDialog
-    tagsDialog: root.tagsDialog
-
-    selectionMode: root.selectionMode
-    showStatusBar: root.showStatusBar
-    settings.showHiddenFiles: root.showHiddenFiles
-    settings.showThumbnails: root.showThumbnails
-
-    Rectangle
-    {
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        height: 2
-        opacity: 1
-        color: Kirigami.Theme.highlightColor
-        visible: _splitView.currentIndex === _index && _splitView.count === 2
-    }
-
     opacity: _splitView.currentIndex === _index ? 1 : 0.7
 
-    itemMenu.contentData : [
-
-        MenuSeparator {visible: itemMenu.isDir},
-
-        MenuItem
-        {
-            visible: itemMenu.isDir
-            text: qsTr("Open in new tab")
-            icon.name: "tab-new"
-            onTriggered: root.openTab(itemMenu.item.path)
-        },
-
-        MenuItem
-        {
-            visible: itemMenu.isDir && root.currentTab.count === 1 && root.supportSplit
-            text: qsTr("Open in split view")
-            icon.name: "view-split-left-right"
-            onTriggered: root.currentTab.split(itemMenu.item.path, Qt.Horizontal)
-        }
-    ]
-
-    MouseArea
+    onCurrentPathChanged:
     {
-        anchors.fill: parent
-        propagateComposedEvents: true
-        //        hoverEnabled: true
-        //        onEntered: _splitView.currentIndex = control.index
-        onPressed:
+        syncTerminal(currentBrowser.currentPath)
+    }
+
+    handle: Rectangle
+    {
+        implicitWidth: 10
+        implicitHeight: 10
+        color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
+                                   : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+
+        Kirigami.Separator
         {
-            _splitView.currentIndex = control._index
-            mouse.accepted = false
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            anchors.left: parent.left
         }
     }
 
-    onKeyPress:
+    Maui.FileBrowser
     {
-        if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+        id: _browser
+        SplitView.fillWidth: true
+        SplitView.fillHeight: true
+
+        selectionBar: root.selectionBar
+        previewer: root.previewer
+        shareDialog: root.shareDialog
+        openWithDialog: root.openWithDialog
+        tagsDialog: root.tagsDialog
+
+        selectionMode: root.selectionMode
+        showStatusBar: root.showStatusBar
+        settings.showHiddenFiles: root.showHiddenFiles
+        settings.showThumbnails: root.showThumbnails
+
+        Rectangle
         {
-            openTab(control.currentPath)
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: 2
+            opacity: 1
+            color: Kirigami.Theme.highlightColor
+            visible: _splitView.currentIndex === _index && _splitView.count === 2
         }
 
-        // Shortcut for closing tab
-        if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
+        itemMenu.contentData : [
+
+            MenuSeparator {visible: _browser.itemMenu.isDir},
+
+            MenuItem
+            {
+                visible: _browser.itemMenu.isDir
+                text: qsTr("Open in new tab")
+                icon.name: "tab-new"
+                onTriggered: root.openTab(itemMenu.item.path)
+            },
+
+            MenuItem
+            {
+                visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && root.supportSplit
+                text: qsTr("Open in split view")
+                icon.name: "view-split-left-right"
+                onTriggered: root.currentTab.split(itemMenu.item.path, Qt.Horizontal)
+            }
+        ]
+
+        MouseArea
         {
-            if(tabsBar.count > 1)
-                closeTab(tabsBar.currentIndex)
+            anchors.fill: parent
+            propagateComposedEvents: true
+            //        hoverEnabled: true
+            //        onEntered: _splitView.currentIndex = control.index
+            onPressed:
+            {
+                _splitView.currentIndex = control._index
+                mouse.accepted = false
+            }
         }
 
-        if(event.key === Qt.Key_F4)
+        onKeyPress:
         {
-            toogleTerminal()
+            if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+            {
+                openTab(control.currentPath)
+            }
+
+            // Shortcut for closing tab
+            if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
+            {
+                if(tabsBar.count > 1)
+                    closeTab(tabsBar.currentIndex)
+            }
+
+            if(event.key === Qt.Key_F4)
+            {
+                toogleTerminal()
+            }
+
+            if(event.key === Qt.Key_F3)
+            {
+                toogleSplitView()
+            }
+
+            if((event.key === Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+            {
+                _pathBar.showEntryBar()
+            }
         }
 
-        if(event.key === Qt.Key_F3)
+        onItemClicked:
         {
-            toogleSplitView()
+            if(root.singleClick)
+                openItem(index)
         }
 
-        if((event.key === Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+        onItemDoubleClicked:
         {
-            _pathBar.showEntryBar()
+            if(!root.singleClick)
+            {
+                openItem(index)
+                return;
+            }
+
+            if(Kirigami.Settings.isMobile)
+                return
+
+            const item = currentFMList.get(index)
+            if(item.mime === "inode/directory")
+                control.openFolder(item.path)
+            else
+                control.openFile(item.path)
         }
     }
 
-    onItemClicked:
+    Loader
     {
-        if(root.singleClick)
-            openItem(index)
-    }
+        id: terminalLoader
+        active: inx.supportsEmbededTerminal()
+        visible: active && terminalVisible
+        SplitView.fillWidth: true
+        SplitView.preferredHeight: 200
+        SplitView.maximumHeight: parent.height * 0.5
+        SplitView.minimumHeight : 100
+        source: "Terminal.qml"
 
-    onItemDoubleClicked:
-    {
-        if(!root.singleClick)
+        Behavior on Layout.preferredHeight
         {
-            openItem(index)
-            return;
+            NumberAnimation
+            {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InQuad
+            }
         }
 
-        if(Kirigami.Settings.isMobile)
-            return
+        onVisibleChanged: syncTerminal(control.currentPath)
+    }
 
-        const item = currentFMList.get(index)
-        if(item.mime === "inode/directory")
-            control.openFolder(item.path)
-        else
-            control.openFile(item.path)
+    Component.onCompleted: syncTerminal(control.currentPath)
+
+    function syncTerminal(path)
+    {
+        if(terminalLoader.item && terminalVisible)
+            terminalLoader.item.session.sendText("cd '" + String(path).replace("file://", "") + "'\n")
+    }
+
+    function toogleTerminal()
+    {
+        terminalVisible = !terminalVisible
+//        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
     }
 }

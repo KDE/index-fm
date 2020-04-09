@@ -11,12 +11,16 @@ Item
     height: _browserList.height
     width: _browserList.width
 
+    property url path
+
     property alias currentIndex : _splitView.currentIndex
     property alias count : _splitView.count
-    property alias browser : _splitView.currentItem
-    property url path
-    property alias model : splitObjectModel
-    readonly property string title : count === 2 ?  model.get(0).title + "  -  " + model.get(1).title : browser.title
+    readonly property alias currentItem : _splitView.currentItem
+    readonly property alias model : splitObjectModel
+    readonly property string title : count === 2 ?  model.get(0).browser.title + "  -  " + model.get(1).browser.title : browser.title
+
+    readonly property Maui.FileBrowser browser : currentItem.browser
+
     ObjectModel { id: splitObjectModel }
 
     SplitView
@@ -69,7 +73,7 @@ Item
 
         if (component.status === Component.Ready)
         {
-            const object = component.createObject(splitObjectModel, {'currentPath': path, 'settings.viewType': _viewTypeGroup.currentIndex});
+            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': _viewTypeGroup.currentIndex});
             splitObjectModel.append(object)
             _splitView.insertItem(splitObjectModel.count, object) // duplicating object insertion due to bug on android not picking the repeater
             _splitView.currentIndex = splitObjectModel.count - 1
