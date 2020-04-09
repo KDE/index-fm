@@ -207,7 +207,7 @@ Maui.ApplicationWindow
         onPressAndHold: currentBrowser.selectAll()
     }
 
-    headBar.middleContent:  Maui.PathBar
+    headBar.middleContent: Maui.PathBar
     {
         id: _pathBar
         Layout.fillWidth: true

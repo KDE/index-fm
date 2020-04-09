@@ -20,7 +20,7 @@
 #endif
 
 #ifdef Q_OS_MACOS
-#include <QtMacExtras/QtMac>
+#include "mauimacos.h"
 #endif
 
 #ifdef STATIC_KIRIGAMI
@@ -36,7 +36,7 @@
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+//	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
 #ifdef Q_OS_ANDROID
 	QGuiApplication app(argc, argv);
@@ -95,6 +95,12 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 	const auto context = engine.rootContext();
 	context->setContextProperty("inx", &index);
-	engine.load(url);
+    engine.load(url);
+
+#ifdef Q_OS_MACOS
+//    MAUIMacOS::removeTitlebarFromWindow();
+//    MauiApp::instance()->setEnableCSD(true); //for now index can not handle cloud accounts
+
+#endif
 	return app.exec();
 }
