@@ -412,6 +412,7 @@ Maui.ApplicationWindow
             Maui.ToolActions
             {
                 id: _viewTypeGroup
+                autoExclusive: true
                 expanded: headBar.width > Kirigami.Units.gridUnit * 32
                 currentIndex: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
                 onCurrentIndexChanged:
