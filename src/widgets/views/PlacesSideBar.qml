@@ -98,4 +98,10 @@ Maui.SideBar
             syncSidebar(currentPath)
         }
     }
+
+    background: Rectangle
+    {
+        color: Kirigami.Theme.backgroundColor
+        opacity: 0.8
+    }
 }

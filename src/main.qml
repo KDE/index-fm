@@ -19,7 +19,7 @@ Maui.ApplicationWindow
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
 //        Maui.App.enableCSD: true
-
+//    color: "transparent"
 //    property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
 
@@ -179,9 +179,12 @@ Maui.ApplicationWindow
         }
     }
 
-    //    headBar.rightSretch: Maui.App.enableCSD
+//    background: Item {}
+
+    headBar.rightSretch: _selectButton.visible
     headBar.rightContent: ToolButton
     {
+        id: _selectButton
         visible: Maui.Handy.isTouch
         icon.name: "item-select"
         checkable: true
