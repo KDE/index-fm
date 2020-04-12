@@ -102,6 +102,6 @@ Maui.SideBar
     background: Rectangle
     {
         color: Kirigami.Theme.backgroundColor
-        opacity: translucency ? 0.2 : 1
+        opacity: translucency ? 0.5 : 1
     }
 }

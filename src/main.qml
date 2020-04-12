@@ -112,13 +112,13 @@ Maui.ApplicationWindow
                     icon.name: "image-preview"
                     checkable: true
                     checked:  root.showThumbnails
-                    text: qsTr("Show Thumbnails")
+                    Kirigami.FormData.label: qsTr("Show Thumbnails")
                     onToggled:  root.showThumbnails = ! root.showThumbnails
                 }
 
                 Switch
                 {
-                    text: qsTr("Show Hidden Files")
+                    Kirigami.FormData.label: qsTr("Show Hidden Files")
                     checkable: true
                     checked:  root.showHiddenFiles
                     onToggled:  root.showHiddenFiles = !root.showHiddenFiles
@@ -126,7 +126,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    text: qsTr("Single Click")
+                    Kirigami.FormData.label: qsTr("Single Click")
                     checkable: true
                     checked:  root.singleClick
                     onToggled:
@@ -138,7 +138,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    text: qsTr("Restore Session")
+                    Kirigami.FormData.label: qsTr("Restore Session")
                     checkable: true
                     checked:  root.restoreSession
                     onToggled:
@@ -156,10 +156,24 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    text: qsTr("Show Status Bar")
+                    Kirigami.FormData.label: qsTr("Show Status Bar")
                     checkable: true
                     checked:  root.showStatusBar
                     onToggled:  root.showStatusBar = !root.showStatusBar
+                }
+
+                Switch
+                {
+                    Kirigami.FormData.label: qsTr("Translucent Sidebar")
+                    checkable: true
+                    checked:  root.translucency
+                    onToggled:  root.translucency = !root.translucency
+                }
+
+                Switch
+                {
+                    Kirigami.FormData.label: qsTr("Dark Mode")
+                    checkable: true
                 }
             }
         }
@@ -168,7 +182,7 @@ Maui.ApplicationWindow
     background: Rectangle
     {
         color: Kirigami.Theme.backgroundColor
-        opacity: translucency ? 0.5 : 1
+        opacity: translucency ? 0.7 : 1
     }
 
     headBar.rightSretch: _selectButton.visible
