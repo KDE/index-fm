@@ -138,7 +138,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    Kirigami.FormData.label: qsTr("Restore Session")
+                    Kirigami.FormData.label: qsTr("Save and Restore Session")
                     checkable: true
                     checked:  root.restoreSession
                     onToggled:
@@ -159,7 +159,11 @@ Maui.ApplicationWindow
                     Kirigami.FormData.label: qsTr("Stick SideBar")
                     checkable: true
                     checked: placesSidebar.stick
-                    onToggled: placesSidebar.stick = ! placesSidebar.stick
+                    onToggled:
+                    {
+                        placesSidebar.stick = ! placesSidebar.stick
+                        Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
+                    }
                 }
 
                 Switch
@@ -250,10 +254,9 @@ Maui.ApplicationWindow
         id: placesSidebar
         collapsed : !root.isWide
         collapsible: true
-        stick: true
+        stick: Maui.FM.loadSettings("STICK_SIDEBAR", "UI", true) == "true"
         section.property: !showLabels ? "" : "type"
         preferredWidth: Math.min(Kirigami.Units.gridUnit * 11, root.width)
-        height: root.height - root.header.height
         iconSize: privateProperties.isCollapsed && stick ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
 
         Behavior on iconSize
