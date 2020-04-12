@@ -41,7 +41,7 @@ Maui.ApplicationWindow
     property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
-    property bool translucency : Maui.Handy.isLinux
+    property bool translucency : Maui.FM.loadSettings("TRANSLUCENCY", "UI", Maui.Handy.isLinux) == "true"
 
     onCurrentPathChanged:
     {
@@ -156,6 +156,14 @@ Maui.ApplicationWindow
 
                 Switch
                 {
+                    Kirigami.FormData.label: qsTr("Stick SideBar")
+                    checkable: true
+                    checked: placesSidebar.stick
+                    onToggled: placesSidebar.stick = ! placesSidebar.stick
+                }
+
+                Switch
+                {
                     Kirigami.FormData.label: qsTr("Show Status Bar")
                     checkable: true
                     checked:  root.showStatusBar
@@ -167,7 +175,12 @@ Maui.ApplicationWindow
                     Kirigami.FormData.label: qsTr("Translucent Sidebar")
                     checkable: true
                     checked:  root.translucency
-                    onToggled:  root.translucency = !root.translucency
+                    enabled: Maui.Handy.isLinux
+                    onToggled:
+                    {
+                        root.translucency = !root.translucency
+                        Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
+                    }
                 }
 
                 Switch
@@ -237,10 +250,11 @@ Maui.ApplicationWindow
         id: placesSidebar
         collapsed : !root.isWide
         collapsible: true
+        stick: true
         section.property: !showLabels ? "" : "type"
         preferredWidth: Math.min(Kirigami.Units.gridUnit * 11, root.width)
         height: root.height - root.header.height
-        iconSize: collapsed ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
+        iconSize: privateProperties.isCollapsed && stick ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
 
         Behavior on iconSize
         {

@@ -28,7 +28,7 @@ Maui.SideBar
     id: control
     property alias list : placesList
     property alias itemMenu : _menu
-    collapsedSize: Maui.Style.iconSizes.medium + (Maui.Style.space.medium*4) - Maui.Style.space.tiny
+    collapsedSize:stick ?  Maui.Style.iconSizes.medium + (Maui.Style.space.medium*4) - Maui.Style.space.tiny : 0
     signal placeClicked (string path)
     focus: true
     model: placesModel
