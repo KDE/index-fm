@@ -18,9 +18,9 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
-//        Maui.App.enableCSD: true
-//    color: "transparent"
-//    property alias terminal : terminalLoader.item
+    //        Maui.App.enableCSD: true
+    //    color: "transparent"
+    //    property alias terminal : terminalLoader.item
     property alias dialog : dialogLoader.item
 
     property alias previewer : _previewer
@@ -98,88 +98,72 @@ Maui.ApplicationWindow
     {
         id: _configDialogComponent
 
-        Maui.Dialog
+        MauiLab.SettingsDialog
         {
-            maxHeight: _configLayout.implicitHeight * 1.5
-            maxWidth: 300
-            defaultButtons: false
-
-            ColumnLayout
+            MauiLab.SettingsSection
             {
-                Layout.fillHeight: true
-                Layout.fillWidth: true
+                title: qsTr("Navigation")
+                description: qsTr("Configure the app plugins and behavior.")
 
-                Kirigami.FormLayout
+                Switch
                 {
-                    id: _configLayout
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-                    Item
-                    {
-                        Kirigami.FormData.label: qsTr("Navigation")
-                        Kirigami.FormData.isSection: true
-                    }
+                    icon.name: "image-preview"
+                    checkable: true
+                    checked:  root.showThumbnails
+                    text: qsTr("Show Thumbnails")
+                    onToggled:  root.showThumbnails = ! root.showThumbnails
+                }
 
-                    Switch
-                    {
-                        icon.name: "image-preview"
-                        checkable: true
-                        checked:  root.showThumbnails
-                        Kirigami.FormData.label: qsTr("Show Thumbnails")
-                        onToggled:  root.showThumbnails = ! root.showThumbnails
-                    }
+                Switch
+                {
+                    text: qsTr("Show Hidden Files")
+                    checkable: true
+                    checked:  root.showHiddenFiles
+                    onToggled:  root.showHiddenFiles = !root.showHiddenFiles
+                }
 
-                    Switch
+                Switch
+                {
+                    text: qsTr("Single Click")
+                    checkable: true
+                    checked:  root.singleClick
+                    onToggled:
                     {
-                        Kirigami.FormData.label: qsTr("Show Hidden Files")
-                        checkable: true
-                        checked:  root.showHiddenFiles
-                        onToggled:  root.showHiddenFiles = !root.showHiddenFiles
+                        root.singleClick = !root.singleClick
+                        Maui.FM.saveSettings("SINGLE_CLICK",  root.singleClick, "BROWSER")
                     }
+                }
 
-                    Switch
+                Switch
+                {
+                    text: qsTr("Restore Session")
+                    checkable: true
+                    checked:  root.restoreSession
+                    onToggled:
                     {
-                        Kirigami.FormData.label: qsTr("Single Click")
-                        checkable: true
-                        checked:  root.singleClick
-                        onToggled:
-                        {
-                            root.singleClick = !root.singleClick
-                            Maui.FM.saveSettings("SINGLE_CLICK",  root.singleClick, "BROWSER")
-                        }
+                        root.restoreSession = !root.restoreSession
+                        Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
                     }
+                }
+            }
 
-                    Switch
-                    {
-                        Kirigami.FormData.label: qsTr("Restore Session")
-                        checkable: true
-                        checked:  root.restoreSession
-                        onToggled:
-                        {
-                            root.restoreSession = !root.restoreSession
-                            Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
-                        }
-                    }
+            MauiLab.SettingsSection
+            {
+                title: qsTr("Interface")
+                description: qsTr("Configure the app UI.")
 
-                    Item
-                    {
-                        Kirigami.FormData.label: qsTr("Interface")
-                        Kirigami.FormData.isSection: true
-                    }
-
-                    Switch
-                    {
-                        Kirigami.FormData.label: qsTr("Show Status Bar")
-                        checkable: true
-                        checked:  root.showStatusBar
-                        onToggled:  root.showStatusBar = !root.showStatusBar
-                    }
+                Switch
+                {
+                    text: qsTr("Show Status Bar")
+                    checkable: true
+                    checked:  root.showStatusBar
+                    onToggled:  root.showStatusBar = !root.showStatusBar
                 }
             }
         }
     }
 
-//    background: Item {}
+    //    background: Item {}
 
     headBar.rightSretch: _selectButton.visible
     headBar.rightContent: ToolButton
@@ -281,7 +265,7 @@ Maui.ApplicationWindow
             ToolButton
             {
                 visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-//                text: qsTr("Show Terminal")
+                //                text: qsTr("Show Terminal")
                 icon.name: "utilities-terminal"
                 onClicked: currentTab.currentItem.toogleTerminal()
                 checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
