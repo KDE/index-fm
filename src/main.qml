@@ -19,10 +19,12 @@ Maui.ApplicationWindow
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
     //        Maui.App.enableCSD: true
-    //    color: "transparent"
-    //    property alias terminal : terminalLoader.item
-    property alias dialog : dialogLoader.item
+    color: translucency ? "transparent" : Kirigami.Theme.backgroundColor
 
+    readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
+    readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
+
+    property alias dialog : dialogLoader.item
     property alias previewer : _previewer
     property alias selectionBar : _selectionBar
     property alias shareDialog : _shareDialog
@@ -30,7 +32,7 @@ Maui.ApplicationWindow
     property alias tagsDialog : _tagsDialog
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
-    readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
+
     property bool searchBar: false
     property bool selectionMode: false
     property bool showHiddenFiles: false
@@ -39,7 +41,7 @@ Maui.ApplicationWindow
     property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
-    readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
+    property bool translucency : Maui.Handy.isLinux
 
     onCurrentPathChanged:
     {
@@ -163,7 +165,11 @@ Maui.ApplicationWindow
         }
     }
 
-    //    background: Item {}
+    background: Rectangle
+    {
+        color: Kirigami.Theme.backgroundColor
+        opacity: translucency ? 0.5 : 1
+    }
 
     headBar.rightSretch: _selectButton.visible
     headBar.rightContent: ToolButton
