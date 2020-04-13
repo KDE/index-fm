@@ -5,7 +5,6 @@ import org.kde.kirigami 2.8 as Kirigami
 import org.kde.mauikit 1.0 as Maui
 import QtQml.Models 2.3
 
-
 SplitView
 {
     id: control
@@ -61,7 +60,7 @@ SplitView
         shareDialog: root.shareDialog
         openWithDialog: root.openWithDialog
         tagsDialog: root.tagsDialog
-
+        thumbnailsSize: root.iconSize * 1.7
         selectionMode: root.selectionMode
         showStatusBar: root.showStatusBar
         settings.showHiddenFiles: root.showHiddenFiles

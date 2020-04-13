@@ -42,6 +42,7 @@ Maui.ApplicationWindow
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
     property bool translucency : Maui.FM.loadSettings("TRANSLUCENCY", "UI", Maui.Handy.isLinux) == "true"
+    property int iconSize : Maui.FM.loadSettings("ICONSIZE", "UI", Maui.Style.iconSizes.large)
 
     onCurrentPathChanged:
     {
@@ -113,12 +114,14 @@ Maui.ApplicationWindow
                     checkable: true
                     checked:  root.showThumbnails
                     Kirigami.FormData.label: qsTr("Show Thumbnails")
+                    Layout.fillWidth: true
                     onToggled:  root.showThumbnails = ! root.showThumbnails
                 }
 
                 Switch
                 {
                     Kirigami.FormData.label: qsTr("Show Hidden Files")
+                    Layout.fillWidth: true
                     checkable: true
                     checked:  root.showHiddenFiles
                     onToggled:  root.showHiddenFiles = !root.showHiddenFiles
@@ -127,6 +130,7 @@ Maui.ApplicationWindow
                 Switch
                 {
                     Kirigami.FormData.label: qsTr("Single Click")
+                    Layout.fillWidth: true
                     checkable: true
                     checked:  root.singleClick
                     onToggled:
@@ -139,6 +143,7 @@ Maui.ApplicationWindow
                 Switch
                 {
                     Kirigami.FormData.label: qsTr("Save and Restore Session")
+                    Layout.fillWidth: true
                     checkable: true
                     checked:  root.restoreSession
                     onToggled:
@@ -156,6 +161,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
+                    Layout.fillWidth: true
                     Kirigami.FormData.label: qsTr("Stick SideBar")
                     checkable: true
                     checked: placesSidebar.stick
@@ -169,6 +175,7 @@ Maui.ApplicationWindow
                 Switch
                 {
                     Kirigami.FormData.label: qsTr("Show Status Bar")
+                    Layout.fillWidth: true
                     checkable: true
                     checked:  root.showStatusBar
                     onToggled:  root.showStatusBar = !root.showStatusBar
@@ -190,7 +197,39 @@ Maui.ApplicationWindow
                 Switch
                 {
                     Kirigami.FormData.label: qsTr("Dark Mode")
+                    Layout.fillWidth: true
                     checkable: true
+                    enabled: false
+                }
+
+                Maui.ToolActions
+                {
+                    id: _gridIconSizesGroup
+                    Kirigami.FormData.label: qsTr("Grid Icon Size")
+                    Layout.fillWidth: true
+                    expanded: true
+                    autoExclusive: true
+                    display: ToolButton.TextOnly
+
+
+                    Action
+                    {
+                        text: qsTr("S")
+                        onTriggered: setIconSize(32)
+                    }
+
+                    Action
+                    {
+                        text: qsTr("M")
+                        onTriggered: setIconSize(48)
+                    }
+
+                    Action
+                    {
+                        text: qsTr("B")
+                        onTriggered: setIconSize(64)
+                    }
+
                 }
             }
         }
@@ -254,7 +293,7 @@ Maui.ApplicationWindow
         id: placesSidebar
         collapsed : !root.isWide
         collapsible: true
-        stick: Maui.FM.loadSettings("STICK_SIDEBAR", "UI", true) == "true"
+        stick: Maui.FM.loadSettings("STICK_SIDEBAR", "UI", true)
         section.property: !showLabels ? "" : "type"
         preferredWidth: Math.min(Kirigami.Units.gridUnit * 11, root.width)
         iconSize: privateProperties.isCollapsed && stick ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
@@ -420,12 +459,14 @@ Maui.ApplicationWindow
 
                 Action
                 {
+                    text: qsTr("Previous")
                     icon.name: "go-previous"
                     onTriggered : currentBrowser.goBack()
                 }
 
                 Action
                 {
+                    text: qsTr("Next")
                     icon.name: "go-next"
                     onTriggered: currentBrowser.goNext()
                 }
@@ -437,6 +478,7 @@ Maui.ApplicationWindow
                 autoExclusive: true
                 expanded: headBar.width > Kirigami.Units.gridUnit * 32
                 currentIndex: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
+                display: ToolButton.TextBesideIcon
                 onCurrentIndexChanged:
                 {
                     if(currentTab && currentBrowser)
@@ -828,5 +870,11 @@ Maui.ApplicationWindow
                 _browserList.currentIndex = tabsObjectModel.count - 1
             }
         }
+    }
+
+    function setIconSize(size)
+    {
+        root.iconSize = size
+        Maui.FM.saveSettings("ICONSIZE",  root.iconSize, "UI")
     }
 }
