@@ -226,10 +226,15 @@ Maui.ApplicationWindow
 
                     Action
                     {
-                        text: qsTr("B")
+                        text: qsTr("X")
                         onTriggered: setIconSize(64)
                     }
 
+                    Action
+                    {
+                        text: qsTr("XL")
+                        onTriggered: setIconSize(96)
+                    }
                 }
             }
         }
