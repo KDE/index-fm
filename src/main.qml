@@ -785,12 +785,6 @@ Maui.ApplicationWindow
 
     Component.onCompleted:
     {
-        if(isAndroid)
-        {
-            Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, true)
-            Maui.Android.navBarColor(Kirigami.Theme.backgroundColor, true)
-        }
-
         if(root.restoreSession)
         {
             var session = Maui.FM.loadSettings("LAST_SESSION", "BROWSER", [[{path: Maui.FM.homePath(), viewType: 1}]])
