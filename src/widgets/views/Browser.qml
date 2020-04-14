@@ -62,6 +62,12 @@ SplitView
         tagsDialog: root.tagsDialog
         thumbnailsSize: root.iconSize * 1.7
         selectionMode: root.selectionMode
+        onSelectionModeChanged:
+        {
+            root.selectionMode = selectionMode
+            selectionMode = Qt.binding(function() { return root.selectionMode })
+        } // rebind this property in case filebrowser breaks it
+
         showStatusBar: root.showStatusBar
         settings.showHiddenFiles: root.showHiddenFiles
         settings.showThumbnails: root.showThumbnails
