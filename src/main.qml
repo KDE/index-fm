@@ -340,7 +340,7 @@ Maui.ApplicationWindow
     Maui.Page
     {
         anchors.fill: parent
-        headBar.position: Kirigami.Settings.isMobile ? ToolBar.Footer : ToolBar.Header
+        altHeader: Kirigami.Settings.isMobile
         headBar.rightContent:[
 
             ToolButton
