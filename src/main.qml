@@ -79,6 +79,7 @@ Maui.ApplicationWindow
         close.accepted = true
     }
 
+    floatingHeader: false
     flickable: currentTab && currentBrowser ? currentBrowser.flickable : null
     mainMenu: [MenuItem
         {
@@ -341,6 +342,7 @@ Maui.ApplicationWindow
     {
         anchors.fill: parent
         altHeader: Kirigami.Settings.isMobile
+        floatingHeader: false
         headBar.rightContent:[
 
             ToolButton
