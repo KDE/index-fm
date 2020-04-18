@@ -18,8 +18,9 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
+    background.opacity: translucency ? 0.5 : 1
+
     //        Maui.App.enableCSD: true
-    color: translucency ? "transparent" : Kirigami.Theme.backgroundColor
 
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
@@ -239,12 +240,6 @@ Maui.ApplicationWindow
                 }
             }
         }
-    }
-
-    background: Rectangle
-    {
-        color: Kirigami.Theme.backgroundColor
-        opacity: translucency ? 0.7 : 1
     }
 
     headBar.rightSretch: _selectButton.visible
