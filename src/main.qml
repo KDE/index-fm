@@ -18,9 +18,9 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
-    background.opacity: translucency ? 0.5 : 1
+    Maui.App.enableCSD: true
 
-    //        Maui.App.enableCSD: true
+    background.opacity: translucency ? 0.5 : 1
 
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
@@ -242,7 +242,6 @@ Maui.ApplicationWindow
         }
     }
 
-    headBar.rightSretch: _selectButton.visible
     headBar.rightContent: ToolButton
     {
         id: _selectButton
@@ -258,8 +257,10 @@ Maui.ApplicationWindow
     {
         id: _pathBar
         Layout.fillWidth: true
-        Layout.leftMargin: Maui.Style.space.medium
-        Layout.rightMargin: Maui.Style.space.medium
+        Layout.minimumWidth: 100
+        Layout.maximumWidth: 500
+        //        Layout.leftMargin: Maui.Style.space.medium
+        //        Layout.rightMargin: Maui.Style.space.medium
 
         onPathChanged: currentBrowser.openFolder(path.trim())
         url: root.currentPath
