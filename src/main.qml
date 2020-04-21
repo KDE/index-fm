@@ -18,7 +18,7 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
-    Maui.App.enableCSD: true
+    Maui.App.enableCSD: Maui.Handy.isLinux
 
     background.opacity: translucency ? 0.5 : 1
 
@@ -338,7 +338,9 @@ Maui.ApplicationWindow
     {
         anchors.fill: parent
         altHeader: Kirigami.Settings.isMobile
-        floatingHeader: false
+//        floatingHeader: false
+        flickable: root.flickable
+
         headBar.rightContent:[
 
             ToolButton
