@@ -92,7 +92,7 @@ SplitView
                 visible: _browser.itemMenu.isDir
                 text: qsTr("Open in new tab")
                 icon.name: "tab-new"
-                onTriggered: root.openTab(itemMenu.item.path)
+                onTriggered: root.openTab(_browser.itemMenu.item.path)
             },
 
             MenuItem
@@ -100,7 +100,7 @@ SplitView
                 visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && root.supportSplit
                 text: qsTr("Open in split view")
                 icon.name: "view-split-left-right"
-                onTriggered: root.currentTab.split(itemMenu.item.path, Qt.Horizontal)
+                onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
             }
         ]
 

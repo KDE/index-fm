@@ -29,7 +29,7 @@ Item
 
         anchors.fill: parent
         orientation: Qt.Horizontal
-
+        clip: true
         focus: true
 
         handle: Rectangle
