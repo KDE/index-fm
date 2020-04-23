@@ -18,7 +18,6 @@ Maui.ApplicationWindow
     Maui.App.webPage: "https://mauikit.org"
     Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
     Maui.App.reportPage: "https://github.com/Nitrux/maui"
-    Maui.App.enableCSD: Maui.Handy.isLinux
 
     background.opacity: translucency ? 0.5 : 1
 
