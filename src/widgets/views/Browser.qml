@@ -36,14 +36,30 @@ SplitView
 
     handle: Rectangle
     {
-        implicitWidth: 10
-        implicitHeight: 10
+        implicitWidth: 6
+        implicitHeight: 6
         color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
                                    : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
 
+        Rectangle
+        {
+            anchors.centerIn: parent
+            width: 48
+            height: parent.height
+            color: _splitSeparator.color
+        }
+
         Kirigami.Separator
         {
+            id: _splitSeparator
             anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            anchors.left: parent.left
+        }
+
+        Kirigami.Separator
+        {
+            anchors.top: parent.top
             anchors.right: parent.right
             anchors.left: parent.left
         }

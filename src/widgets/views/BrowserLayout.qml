@@ -34,16 +34,32 @@ Item
 
         handle: Rectangle
         {
-            implicitWidth: 4
-            implicitHeight: 4
+            implicitWidth: 6
+            implicitHeight: 6
             color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
                                        : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+
+            Rectangle
+            {
+                anchors.centerIn: parent
+                height: 48
+                width: parent.width
+                color: _splitSeparator.color
+            }
+
+            Kirigami.Separator
+            {
+                id: _splitSeparator
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+            }
 
             Kirigami.Separator
             {
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
-                anchors.left: parent.left
+                anchors.right: parent.right
             }
         }
 
