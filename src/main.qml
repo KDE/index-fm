@@ -296,7 +296,7 @@ Maui.ApplicationWindow
         collapsible: true
         stick: Maui.FM.loadSettings("STICK_SIDEBAR", "UI", true)
         section.property: !showLabels ? "" : "type"
-        preferredWidth: Math.min(Kirigami.Units.gridUnit * 11, root.width)
+        preferredWidth: Math.min(Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 11), root.width)
         iconSize: privateProperties.isCollapsed && stick ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
 
         Behavior on iconSize
