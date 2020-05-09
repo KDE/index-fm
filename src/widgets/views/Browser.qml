@@ -21,7 +21,6 @@ SplitView
 
     spacing: 0
     orientation: Qt.Vertical
-
     SplitView.fillHeight: true
     SplitView.fillWidth: true
     SplitView.preferredWidth: _splitView.width / (_splitView.count)
