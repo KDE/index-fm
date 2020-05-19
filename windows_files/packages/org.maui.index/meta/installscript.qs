@@ -43,7 +43,7 @@ Component.prototype.createOperations = function()
     component.createOperations();
 
     if (systemInfo.productType === "windows") {
-        component.addOperation("CreateShortcut", "@TargetDir@/vvave.exe", "@StartMenuDir@/vvave.lnk",
+        component.addOperation("CreateShortcut", "@TargetDir@/index.exe", "@StartMenuDir@/index.lnk",
             "workingDirectory=@TargetDir@", "iconPath=%SystemRoot%/system32/SHELL32.dll",
             "iconId=2");
     }

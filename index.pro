@@ -8,8 +8,8 @@ TARGET = index
 TEMPLATE = app
 
 VERSION_MAJOR = 1
-VERSION_MINOR = 0
-VERSION_BUILD = 0
+VERSION_MINOR = 1
+VERSION_BUILD = 1
 
 VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
 
@@ -41,6 +41,10 @@ ios {
 macos {
     DEFINES += EMBEDDED_TERMINAL
     ICON = $$PWD/macos_files/index.icns
+}
+
+win32 {
+    RC_ICONS = $$PWD/windows_files/index.ico
 }
 
 android {
