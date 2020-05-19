@@ -56,8 +56,12 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	app.setOrganizationName(INX::orgName);
 	app.setOrganizationDomain(INX::orgDomain);
 	app.setWindowIcon(QIcon(":/index.png"));
-	MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
-	MauiApp::instance()->setCredits ({QVariantMap({{"name", "Camilo Higuita"}, {"email", "milo.h@aol.com"}, {"year", "2019-2020"}})});
+    MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
+    MauiApp::instance()->setCredits ({QVariantMap({{"name", "Camilo Higuita"}, {"email", "milo.h@aol.com"}, {"year", "2019-2020"}})});
+    MauiApp::instance()->setReportPage("https://invent.kde.org/maui/index-fm/-/issues");
+    MauiApp::instance()->setDescription("Index allows you to navigate your computer and preview multimedia files.");
+    MauiApp::instance()->setIconName("qrc:/assets/index.svg");
+    MauiApp::instance()->setWebPage("https://mauikit.org");
 
 	QCommandLineParser parser;
 	parser.setApplicationDescription(INX::description);

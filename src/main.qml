@@ -13,11 +13,6 @@ Maui.ApplicationWindow
 {
     id: root
     title:  currentTab ? currentTab.title : ""
-    Maui.App.description: qsTr("Index allows you to navigate your computer and preview multimedia files.")
-    Maui.App.iconName: "qrc:/assets/index.svg"
-    Maui.App.webPage: "https://mauikit.org"
-    Maui.App.donationPage: "https://invent.kde.org/kde/index-fm"
-    Maui.App.reportPage: "https://github.com/Nitrux/maui"
 
     background.opacity: translucency ? 0.5 : 1
 
