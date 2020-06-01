@@ -156,9 +156,14 @@ SplitView
                 toogleSplitView()
             }
 
-            if((event.key === Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+            if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
             {
-                _pathBar.showEntryBar()
+                newFolder()
+            }
+
+            if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
+            {
+                newFile()
             }
         }
 
