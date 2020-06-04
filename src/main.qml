@@ -78,7 +78,7 @@ Maui.ApplicationWindow
     flickable: currentTab && currentBrowser ? currentBrowser.flickable : null
     mainMenu: [MenuItem
         {
-            text: qsTr("Settings")
+            text: i18n("Settings")
             icon.name: "settings-configure"
             onTriggered: openConfigDialog()
         }]
@@ -101,22 +101,22 @@ Maui.ApplicationWindow
         {
             MauiLab.SettingsSection
             {
-                title: qsTr("Navigation")
-                description: qsTr("Configure the app plugins and behavior.")
+                title: i18n("Navigation")
+                description: i18n("Configure the app plugins and behavior.")
 
                 Switch
                 {
                     icon.name: "image-preview"
                     checkable: true
                     checked:  root.showThumbnails
-                    Kirigami.FormData.label: qsTr("Show Thumbnails")
+                    Kirigami.FormData.label: i18n("Show Thumbnails")
                     Layout.fillWidth: true
                     onToggled:  root.showThumbnails = ! root.showThumbnails
                 }
 
                 Switch
                 {
-                    Kirigami.FormData.label: qsTr("Show Hidden Files")
+                    Kirigami.FormData.label: i18n("Show Hidden Files")
                     Layout.fillWidth: true
                     checkable: true
                     checked:  root.showHiddenFiles
@@ -125,7 +125,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    Kirigami.FormData.label: qsTr("Single Click")
+                    Kirigami.FormData.label: i18n("Single Click")
                     Layout.fillWidth: true
                     checkable: true
                     checked:  root.singleClick
@@ -138,7 +138,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    Kirigami.FormData.label: qsTr("Save and Restore Session")
+                    Kirigami.FormData.label: i18n("Save and Restore Session")
                     Layout.fillWidth: true
                     checkable: true
                     checked:  root.restoreSession
@@ -152,13 +152,13 @@ Maui.ApplicationWindow
 
             MauiLab.SettingsSection
             {
-                title: qsTr("Interface")
-                description: qsTr("Configure the app UI.")
+                title: i18n("Interface")
+                description: i18n("Configure the app UI.")
 
                 Switch
                 {
                     Layout.fillWidth: true
-                    Kirigami.FormData.label: qsTr("Stick SideBar")
+                    Kirigami.FormData.label: i18n("Stick SideBar")
                     checkable: true
                     checked: placesSidebar.stick
                     onToggled:
@@ -170,7 +170,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    Kirigami.FormData.label: qsTr("Show Status Bar")
+                    Kirigami.FormData.label: i18n("Show Status Bar")
                     Layout.fillWidth: true
                     checkable: true
                     checked:  root.showStatusBar
@@ -179,7 +179,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    Kirigami.FormData.label: qsTr("Translucent Sidebar")
+                    Kirigami.FormData.label: i18n("Translucent Sidebar")
                     checkable: true
                     checked:  root.translucency
                     enabled: Maui.Handy.isLinux
@@ -192,7 +192,7 @@ Maui.ApplicationWindow
 
                 Switch
                 {
-                    Kirigami.FormData.label: qsTr("Dark Mode")
+                    Kirigami.FormData.label: i18n("Dark Mode")
                     Layout.fillWidth: true
                     checkable: true
                     enabled: false
@@ -201,7 +201,7 @@ Maui.ApplicationWindow
                 Maui.ToolActions
                 {
                     id: _gridIconSizesGroup
-                    Kirigami.FormData.label: qsTr("Grid Icon Size")
+                    Kirigami.FormData.label: i18n("Grid Icon Size")
                     Layout.fillWidth: true
                     expanded: true
                     autoExclusive: true
@@ -210,25 +210,25 @@ Maui.ApplicationWindow
 
                     Action
                     {
-                        text: qsTr("S")
+                        text: i18n("S")
                         onTriggered: setIconSize(32)
                     }
 
                     Action
                     {
-                        text: qsTr("M")
+                        text: i18n("M")
                         onTriggered: setIconSize(48)
                     }
 
                     Action
                     {
-                        text: qsTr("X")
+                        text: i18n("X")
                         onTriggered: setIconSize(64)
                     }
 
                     Action
                     {
-                        text: qsTr("XL")
+                        text: i18n("XL")
                         onTriggered: setIconSize(96)
                     }
                 }
@@ -273,7 +273,7 @@ Maui.ApplicationWindow
 
             MenuItem
             {
-                text: qsTr("Open in tab")
+                text: i18n("Open in tab")
                 onTriggered: openTab(_pathBarmenu.path)
             }
         }
@@ -321,7 +321,7 @@ Maui.ApplicationWindow
         itemMenu.contentData: [
             MenuItem
             {
-                text: qsTr("Open in tab")
+                text: i18n("Open in tab")
                 onTriggered: openTab(placesSidebar.list.get(placesSidebar.currentIndex).path)
             }
         ]
@@ -392,7 +392,7 @@ Maui.ApplicationWindow
             ToolButton
             {
                 visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                //                text: qsTr("Show Terminal")
+                //                text: i18n("Show Terminal")
                 icon.name: "utilities-terminal"
                 onClicked: currentTab.currentItem.toogleTerminal()
                 checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
@@ -405,7 +405,7 @@ Maui.ApplicationWindow
 
                 MenuItem
                 {
-                    text: qsTr("Show Folders First")
+                    text: i18n("Show Folders First")
                     checked: currentBrowser.currentFMList.foldersFirst
                     checkable: true
                     onTriggered: currentBrowser.currentFMList.foldersFirst = !currentBrowser.currentFMList.foldersFirst
@@ -415,7 +415,7 @@ Maui.ApplicationWindow
 
                 MenuItem
                 {
-                    text: qsTr("Type")
+                    text: i18n("Type")
                     checked:currentBrowser.currentFMList.sortBy === Maui.FMList.MIME
                     checkable: true
                     onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.MIME
@@ -424,7 +424,7 @@ Maui.ApplicationWindow
 
                 MenuItem
                 {
-                    text: qsTr("Date")
+                    text: i18n("Date")
                     checked:currentBrowser.currentFMList.sortBy === Maui.FMList.DATE
                     checkable: true
                     onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.DATE
@@ -433,7 +433,7 @@ Maui.ApplicationWindow
 
                 MenuItem
                 {
-                    text: qsTr("Modified")
+                    text: i18n("Modified")
                     checkable: true
                     checked: currentBrowser.currentFMList.sortBy === Maui.FMList.MODIFIED
                     onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.MODIFIED
@@ -442,7 +442,7 @@ Maui.ApplicationWindow
 
                 MenuItem
                 {
-                    text: qsTr("Size")
+                    text: i18n("Size")
                     checkable: true
                     checked: currentBrowser.currentFMList.sortBy === Maui.FMList.SIZE
                     onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.SIZE
@@ -451,7 +451,7 @@ Maui.ApplicationWindow
 
                 MenuItem
                 {
-                    text: qsTr("Name")
+                    text: i18n("Name")
                     checkable: true
                     checked: currentBrowser.currentFMList.sortBy === Maui.FMList.LABEL
                     onTriggered: currentBrowser.currentFMList.sortBy = Maui.FMList.LABEL
@@ -463,7 +463,7 @@ Maui.ApplicationWindow
                 MenuItem
                 {
                     id: groupAction
-                    text: qsTr("Group")
+                    text: i18n("Group")
                     checkable: true
                     checked: currentBrowser.settings.group
                     onTriggered:
@@ -510,14 +510,14 @@ Maui.ApplicationWindow
 
                 Action
                 {
-                    text: qsTr("Previous")
+                    text: i18n("Previous")
                     icon.name: "go-previous"
                     onTriggered : currentBrowser.goBack()
                 }
 
                 Action
                 {
-                    text: qsTr("Next")
+                    text: i18n("Next")
                     icon.name: "go-next"
                     onTriggered: currentBrowser.goNext()
                 }
@@ -541,21 +541,21 @@ Maui.ApplicationWindow
                 Action
                 {
                     icon.name: "view-list-icons"
-                    text: qsTr("Grid")
+                    text: i18n("Grid")
                     shortcut: "Ctrl+G"
                 }
 
                 Action
                 {
                     icon.name: "view-list-details"
-                    text: qsTr("List")
+                    text: i18n("List")
                     shortcut: "Ctrl+L"
                 }
 
                 Action
                 {
                     icon.name: "view-file-columns"
-                    text: qsTr("Columns")
+                    text: i18n("Columns")
                     shortcut: "Ctrl+M"
                 }
             },
@@ -628,7 +628,7 @@ Maui.ApplicationWindow
 
             Action
             {
-                text: qsTr("Open")
+                text: i18n("Open")
                 icon.name: "document-open"
                 onTriggered:
                 {
@@ -641,7 +641,7 @@ Maui.ApplicationWindow
 
             Action
             {
-                text: qsTr("Tags")
+                text: i18n("Tags")
                 icon.name: "tag"
                 onTriggered:
                 {
@@ -651,7 +651,7 @@ Maui.ApplicationWindow
 
             Action
             {
-                text: qsTr("Share")
+                text: i18n("Share")
                 icon.name: "document-share"
                 onTriggered:
                 {
@@ -661,7 +661,7 @@ Maui.ApplicationWindow
 
             Action
             {
-                text: qsTr("Copy")
+                text: i18n("Copy")
                 icon.name: "edit-copy"
                 onTriggered:
                 {
@@ -672,7 +672,7 @@ Maui.ApplicationWindow
 
             Action
             {
-                text: qsTr("Cut")
+                text: i18n("Cut")
                 icon.name: "edit-cut"
                 onTriggered:
                 {
@@ -683,7 +683,7 @@ Maui.ApplicationWindow
 
             Action
             {
-                text: qsTr("Remove")
+                text: i18n("Remove")
                 icon.name: "edit-delete"
 
                 onTriggered:
