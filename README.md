@@ -11,7 +11,7 @@ Index lets you browse your system files and applications and preview your music,
 QT += qml, quick, sql
 
 #### KF5 deps:
-QT += KService KNotifications KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
+QT += KService KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
 
 #### Submodules
 

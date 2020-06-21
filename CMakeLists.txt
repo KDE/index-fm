@@ -1,3 +1,9 @@
+# Copyright 2018-2020 Camilo Higuita <milo.h@aol.com>
+# Copyright 2018-2020 Nitrux Latinoamericana S.C.
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+
 cmake_minimum_required(VERSION 3.0)
 
 set(INDEX_VERSION 1.1.1)
