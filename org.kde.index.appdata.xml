@@ -6,29 +6,35 @@
   <name>Index</name>
   <name xml:lang="ca">Índex</name>
   <name xml:lang="cs">Index</name>
+  <name xml:lang="fr">Index</name>
   <name xml:lang="ko">Index</name>
   <name xml:lang="nl">Index</name>
   <name xml:lang="pt">Índice</name>
   <name xml:lang="sk">Index</name>
+  <name xml:lang="sl">Indeks</name>
   <name xml:lang="sv">Index</name>
   <name xml:lang="uk">Index</name>
   <name xml:lang="x-test">xxIndexxx</name>
   <summary>Manage your files</summary>
   <summary xml:lang="ca">Gestioneu els fitxers</summary>
+  <summary xml:lang="fr">Gérer vos fichiers</summary>
   <summary xml:lang="ko">내 파일 관리</summary>
   <summary xml:lang="nl">Uw bestanden beheren</summary>
   <summary xml:lang="pt">Faça a gestão dos seus ficheiros</summary>
   <summary xml:lang="sk">Spravovať vaše súbory</summary>
+  <summary xml:lang="sl">Upravljanje vaših datotek</summary>
   <summary xml:lang="sv">Hantera dina filer</summary>
   <summary xml:lang="uk">Керування вашими файлами</summary>
   <summary xml:lang="x-test">xxManage your filesxx</summary>
   <description>
     <p>Index allows you to navigate your computer and preview multimedia files.</p>
     <p xml:lang="ca">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
+    <p xml:lang="fr">Index vous permet de naviguer dans les fichiers de votre ordinateurs et d'avoir un aperçu des fichiers multimédia.</p>
     <p xml:lang="ko">Index 파일 관리자로 컴퓨터를 탐색하고 멀티미디어 파일을 미리 볼 수 있습니다.</p>
     <p xml:lang="nl">Index biedt u het navigeren in uw computer en multimediabestanden te bekijken.</p>
     <p xml:lang="pt">O Índice permite-lhe navegar pelo seu computador e antever os ficheiros multimédia.</p>
     <p xml:lang="sk">Index vám umožní prechádzať váš počítač a prehliadať multimediálne súbory.</p>
+    <p xml:lang="sl">Kazalo omogoča krmarjenje po računalniku in predogled večpredstavnostnih datotek.</p>
     <p xml:lang="sv">Index låter dig navigera på datorn och förhandsgranska multimediafiler.</p>
     <p xml:lang="uk">За допомогою Index ви зможете здійснювати навігацію файловою системою вашого комп'ютера і попереднього переглядати файли мультимедійних даних.</p>
     <p xml:lang="x-test">xxIndex allows you to navigate your computer and preview multimedia files.xx</p>
@@ -42,10 +48,12 @@
       <caption>Index file manager</caption>
       <caption xml:lang="ca">Gestor de fitxers Índex</caption>
       <caption xml:lang="cs">Správce souborů indexů</caption>
+      <caption xml:lang="fr">Gestionnaire de fichiers Index</caption>
       <caption xml:lang="ko">Index 파일 관리자</caption>
       <caption xml:lang="nl">Indexbestandsbeheerder</caption>
       <caption xml:lang="pt">Gestor de ficheiros Índice</caption>
       <caption xml:lang="sk">Správca súborov Index</caption>
+      <caption xml:lang="sl">Upravljalnik indeksa datotek</caption>
       <caption xml:lang="sv">Index filhanterare</caption>
       <caption xml:lang="uk">Програма для керування файлами Index</caption>
       <caption xml:lang="x-test">xxIndex file managerxx</caption>
