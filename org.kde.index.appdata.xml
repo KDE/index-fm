@@ -5,6 +5,7 @@
   <project_license>LGPL-3.0</project_license>
   <name>Index</name>
   <name xml:lang="ca">Índex</name>
+  <name xml:lang="ca-valencia">Índex</name>
   <name xml:lang="cs">Index</name>
   <name xml:lang="es">Index</name>
   <name xml:lang="fr">Index</name>
@@ -19,6 +20,7 @@
   <name xml:lang="x-test">xxIndexxx</name>
   <summary>Manage your files</summary>
   <summary xml:lang="ca">Gestioneu els fitxers</summary>
+  <summary xml:lang="ca-valencia">Gestioneu els fitxers</summary>
   <summary xml:lang="es">Administre sus archivos</summary>
   <summary xml:lang="fr">Gérer vos fichiers</summary>
   <summary xml:lang="it">Gestisci i tuoi file</summary>
@@ -33,6 +35,7 @@
   <description>
     <p>Index allows you to navigate your computer and preview multimedia files.</p>
     <p xml:lang="ca">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
+    <p xml:lang="ca-valencia">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
     <p xml:lang="es">Index le permite navegar por su equipo y previsualizar archivos multimedia.</p>
     <p xml:lang="fr">Index vous permet de naviguer dans les fichiers de votre ordinateurs et d'avoir un aperçu des fichiers multimédia.</p>
     <p xml:lang="it">Index ti consente di navigare il tuo computer e offre un'anteprima dei file multimediali.</p>
@@ -53,6 +56,7 @@
     <screenshot type="default">
       <caption>Index file manager</caption>
       <caption xml:lang="ca">Gestor de fitxers Índex</caption>
+      <caption xml:lang="ca-valencia">Gestor de fitxers Índex</caption>
       <caption xml:lang="cs">Správce souborů indexů</caption>
       <caption xml:lang="es">Administrador de archivos Index</caption>
       <caption xml:lang="fr">Gestionnaire de fichiers Index</caption>
