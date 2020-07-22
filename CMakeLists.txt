@@ -6,7 +6,7 @@
 
 cmake_minimum_required(VERSION 3.0)
 
-set(INDEX_VERSION 1.1.1)
+set(INDEX_VERSION 1.2.0)
 set(CMAKE_CXX_STANDARD 17)
 
 project(index VERSION ${INDEX_VERSION})

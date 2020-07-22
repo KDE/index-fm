@@ -3,7 +3,6 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-
 QT += qml
 QT += quick
 QT += sql
@@ -14,8 +13,8 @@ TARGET = index
 TEMPLATE = app
 
 VERSION_MAJOR = 1
-VERSION_MINOR = 1
-VERSION_BUILD = 1
+VERSION_MINOR = 2
+VERSION_BUILD = 0
 
 VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
 

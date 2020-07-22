@@ -1,11 +1,3 @@
-<!--
- Copyright 2018-2020 Camilo Higuita <milo.h@aol.com>
- Copyright 2018-2020 Nitrux Latinoamericana S.C.
-
- SPDX-License-Identifier: GPL-3.0-or-later
--->
-
-
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
@@ -13,5 +5,6 @@
         <file>widgets/views/Terminal.qml</file>
         <file>widgets/views/PlacesSideBar.qml</file>
         <file>widgets/views/BrowserLayout.qml</file>
+        <file>widgets/views/SettingsDialog.qml</file>
     </qresource>
 </RCC>
