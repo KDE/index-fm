@@ -7,7 +7,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.0 as Maui
+import org.kde.mauikit 1.2 as Maui
 import org.kde.kirigami 2.6 as Kirigami
 
 Maui.SideBar
@@ -15,10 +15,22 @@ Maui.SideBar
     id: control
     property alias list : placesList
     property alias itemMenu : _menu
-    collapsedSize:stick ?  Maui.Style.iconSizes.medium + (Maui.Style.space.medium*4) - Maui.Style.space.tiny : 0
+    collapsedSize: stick ?  Maui.Style.iconSizes.medium + (Maui.Style.space.medium*4) - Maui.Style.space.tiny : 0
     signal placeClicked (string path)
     focus: true
-    model: placesModel
+
+    model: Maui.BaseModel
+    {
+        list:  Maui.PlacesList
+        {
+            id: placesList
+            onBookmarksChanged:
+            {
+                syncSidebar(currentPath)
+            }
+        }
+    }
+
     section.property: "type"
     section.criteria: ViewSection.FullString
     section.delegate: Maui.LabelDelegate
@@ -30,10 +42,12 @@ Maui.SideBar
         isSection: true
         height: Maui.Style.toolBarHeightAlt
     }
+
     onContentDropped:
     {
         placesList.addPlace(drop.text)
     }
+
     onItemClicked:
     {
         var item = list.get(index)
@@ -51,38 +65,12 @@ Maui.SideBar
     Menu
     {
         id: _menu
-        property int index
-
-        MenuItem
-        {
-            text: i18n("Edit...")
-        }
-
-        MenuItem
-        {
-            text: i18n("Hide")
-        }
 
         MenuItem
         {
             text: i18n("Remove")
             Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
             onTriggered: list.removePlace(control.currentIndex)
-        }
-    }
-
-    Maui.BaseModel
-    {
-        id: placesModel
-        list: placesList
-    }
-
-    Maui.PlacesList
-    {
-        id: placesList
-        onBookmarksChanged:
-        {
-            syncSidebar(currentPath)
         }
     }
 

@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
+import QtQml 2.14
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
@@ -53,7 +53,7 @@ Maui.ApplicationWindow
 
     onCurrentBrowserChanged:
     {
-        _viewTypeGroup.currentIndex = currentBrowser.settings.viewType
+        console.log("current browser changed" ,  currentBrowser.settings.viewType)
     }
 
     onClosing:
@@ -398,7 +398,14 @@ Maui.ApplicationWindow
                 id: _viewTypeGroup
                 autoExclusive: true
                 expanded: headBar.width > Kirigami.Units.gridUnit * 32
-                currentIndex: Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
+
+                Binding on currentIndex
+                {
+                    value: currentBrowser ? currentBrowser.settings.viewType : -1
+//                    restoreMode: Binding.RestoreBinding
+                    delayed: true
+                }
+
                 display: ToolButton.TextBesideIcon
                 onCurrentIndexChanged:
                 {
@@ -634,7 +641,6 @@ Maui.ApplicationWindow
         visible: value > 0
     }
 
-
     }
 
     Connections
@@ -672,7 +678,11 @@ Maui.ApplicationWindow
             const lastTabIndex = Maui.FM.loadSettings("LAST_TAB_INDEX", "BROWSER", _browserList.currentIndex)
             _browserList.currentIndex = lastTabIndex
 
-        }else root.openTab(Maui.FM.homePath())
+        }else
+        {
+            root.openTab(Maui.FM.homePath())
+            currentBrowser.settings.viewType = Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
+        }
     }
 
     //     onThumbnailsSizeChanged:
