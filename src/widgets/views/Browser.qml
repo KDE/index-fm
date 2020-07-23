@@ -21,7 +21,7 @@ SplitView
     property alias settings : _browser.settings
     property alias title : _browser.title
 
-//    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
+    //    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
@@ -232,6 +232,6 @@ SplitView
     function toogleTerminal()
     {
         terminalVisible = !terminalVisible
-//        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
+        //        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
     }
 }

@@ -727,7 +727,9 @@ Maui.ApplicationWindow
 
     function closeTab(index)
     {
+        var item = tabsObjectModel.get(index)
         tabsObjectModel.remove(index)
+        item.destroy()
     }
 
     function openTab(path)
