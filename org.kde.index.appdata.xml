@@ -51,7 +51,6 @@
   <url type="homepage">https://mauikit.org/</url>
   <url type="bugtracker">https://invent.kde.org/maui/index-fm/-/issues</url>
   <url type="donation">https://www.kde.org/community/donations</url>
-  <url type="help">https://docs.kde.org/trunk5/en/extragear-multimedia/vvave/</url>
   <screenshots>
     <screenshot type="default">
       <caption>Index file manager</caption>
@@ -79,6 +78,6 @@
   </provides>
   <project_group>KDE</project_group>
   <releases>
-    <release version="0.1.0" date="2018-09-06"/>
+    <release version="1.1.1" date="2020-05-17"/>
   </releases>
 </component>
