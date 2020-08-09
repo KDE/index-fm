@@ -110,7 +110,8 @@ Item
         }
         const index = _splitView.currentIndex === 1 ? 0 : 1
         splitObjectModel.remove(index)
-        _splitView.takeItem(index).destroy()
+        var item = _splitView.takeItem(index)
+        item.destroy()
         _splitView.currentIndex = 0
     }
 }

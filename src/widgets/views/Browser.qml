@@ -222,6 +222,7 @@ SplitView
     }
 
     Component.onCompleted: syncTerminal(control.currentPath)
+    Component.onDestruction: console.log("Destroyed browsers!!!!!!!!")
 
     function syncTerminal(path)
     {
