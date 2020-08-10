@@ -13,48 +13,63 @@ Maui.SettingsDialog
         title: i18n("Navigation")
         description: i18n("Configure the app plugins and behavior.")
 
-        Switch
+        Maui.SettingTemplate
         {
-            icon.name: "image-preview"
-            checkable: true
-            checked:  root.showThumbnails
-            Kirigami.FormData.label: i18n("Show Thumbnails")
-            Layout.fillWidth: true
-            onToggled:  root.showThumbnails = ! root.showThumbnails
-        }
+            label1.text: i18n("Thumbnails")
+            label2.text: i18n("Show previews of images, videos and PDF files")
 
-        Switch
-        {
-            Kirigami.FormData.label: i18n("Show Hidden Files")
-            Layout.fillWidth: true
-            checkable: true
-            checked:  root.showHiddenFiles
-            onToggled:  root.showHiddenFiles = !root.showHiddenFiles
-        }
-
-        Switch
-        {
-            Kirigami.FormData.label: i18n("Single Click")
-            Layout.fillWidth: true
-            checkable: true
-            checked:  root.singleClick
-            onToggled:
+            Switch
             {
-                root.singleClick = !root.singleClick
-                Maui.FM.saveSettings("SINGLE_CLICK",  root.singleClick, "BROWSER")
+                checkable: true
+                checked:  root.showThumbnails
+                onToggled:  root.showThumbnails = ! root.showThumbnails
             }
         }
 
-        Switch
+        Maui.SettingTemplate
         {
-            Kirigami.FormData.label: i18n("Save and Restore Session")
-            Layout.fillWidth: true
-            checkable: true
-            checked:  root.restoreSession
-            onToggled:
+            label1.text: i18n("Hidden Files")
+            label2.text: i18n("List hidden files")
+
+            Switch
             {
-                root.restoreSession = !root.restoreSession
-                Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
+                checkable: true
+                checked:  root.showHiddenFiles
+                onToggled:  root.showHiddenFiles = !root.showHiddenFiles
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Single Click")
+            label2.text: i18n("Open files with a single or double click")
+
+            Switch
+            {
+                checkable: true
+                checked:  root.singleClick
+                onToggled:
+                {
+                    root.singleClick = !root.singleClick
+                    Maui.FM.saveSettings("SINGLE_CLICK",  root.singleClick, "BROWSER")
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Save Session")
+            label2.text: i18n("Save and restore tabs")
+
+            Switch
+            {
+                checkable: true
+                checked:  root.restoreSession
+                onToggled:
+                {
+                    root.restoreSession = !root.restoreSession
+                    Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
+                }
             }
         }
     }
@@ -64,93 +79,112 @@ Maui.SettingsDialog
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
 
-        Switch
+        Maui.SettingTemplate
         {
-            Layout.fillWidth: true
-            Kirigami.FormData.label: i18n("Stick SideBar")
-            checkable: true
-            checked: placesSidebar.stick
-            onToggled:
+            label1.text:  i18n("SideBar")
+            label2.text: i18n("Keep sidebar on constrained spaces")
+
+            Switch
             {
-                placesSidebar.stick = ! placesSidebar.stick
-                Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
+                checkable: true
+                checked: placesSidebar.stick
+                onToggled:
+                {
+                    placesSidebar.stick = ! placesSidebar.stick
+                    Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
+                }
             }
         }
 
-        Switch
+        Maui.SettingTemplate
         {
-            Kirigami.FormData.label: i18n("Show Status Bar")
-            Layout.fillWidth: true
-            checkable: true
-            checked:  root.showStatusBar
-            onToggled:  root.showStatusBar = !root.showStatusBar
-        }
+            label1.text: i18n("Show Status Bar")
+            label2.text: i18n("For filtering and other quick actions")
 
-        Switch
-        {
-            Kirigami.FormData.label: i18n("Translucent Sidebar")
-            checkable: true
-            checked:  root.translucency
-            enabled: Maui.Handy.isLinux
-            onToggled:
+            Switch
             {
-                root.translucency = !root.translucency
-                Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
+                checkable: true
+                checked:  root.showStatusBar
+                onToggled:  root.showStatusBar = !root.showStatusBar
             }
         }
 
-        Switch
+        Maui.SettingTemplate
         {
-            Kirigami.FormData.label: i18n("Dark Mode")
-            Layout.fillWidth: true
-            checkable: true
+            label1.text: i18n("Translucent Sidebar")
+
+            Switch
+            {
+                checkable: true
+                checked:  root.translucency
+                enabled: Maui.Handy.isLinux
+                onToggled:
+                {
+                    root.translucency = !root.translucency
+                    Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Dark Mode")
             enabled: false
+
+            Switch
+            {
+
+            }
         }
 
-        Maui.ToolActions
+        Maui.SettingTemplate
         {
-            id: _gridIconSizesGroup
-            Kirigami.FormData.label: i18n("Grid Icon Size")
-            Layout.fillWidth: true
-            expanded: true
-            autoExclusive: true
-            display: ToolButton.TextOnly
+            label1.text: i18n("Grid Size")
+            label2.text: i18n("Thumbnails size in the grid view")
 
-            Binding on currentIndex
+            Maui.ToolActions
             {
-                value:  switch(iconSize)
-                        {
-                        case 32: return 0;
-                        case 48: return 1;
-                        case 64: return 2;
-                        case 96: return 3;
-                        default: return -1;
-                        }
-                restoreMode: Binding.RestoreValue
-            }
+                id: _gridIconSizesGroup
+                expanded: true
+                autoExclusive: true
+                display: ToolButton.TextOnly
 
-            Action
-            {
-                text: i18n("S")
-                onTriggered: setIconSize(32)
-            }
+                Binding on currentIndex
+                {
+                    value:  switch(iconSize)
+                            {
+                            case 32: return 0;
+                            case 48: return 1;
+                            case 64: return 2;
+                            case 96: return 3;
+                            default: return -1;
+                            }
+                    restoreMode: Binding.RestoreValue
+                }
 
-            Action
-            {
-                text: i18n("M")
-                onTriggered: setIconSize(48)
-            }
+                Action
+                {
+                    text: i18n("S")
+                    onTriggered: setIconSize(32)
+                }
 
-            Action
-            {
-                text: i18n("X")
-                onTriggered: setIconSize(64)
-            }
+                Action
+                {
+                    text: i18n("M")
+                    onTriggered: setIconSize(48)
+                }
 
-            Action
-            {
-                text: i18n("XL")
-                onTriggered: setIconSize(96)
+                Action
+                {
+                    text: i18n("X")
+                    onTriggered: setIconSize(64)
+                }
+
+                Action
+                {
+                    text: i18n("XL")
+                    onTriggered: setIconSize(96)
+                }
             }
         }
     }

@@ -185,8 +185,7 @@ Maui.ApplicationWindow
             Maui.FMList.PLACES_PATH,
             Maui.FMList.REMOTE_PATH,
             Maui.FMList.REMOVABLE_PATH,
-            Maui.FMList.DRIVES_PATH,
-            Maui.FMList.TAGS_PATH]
+            Maui.FMList.DRIVES_PATH]
 
         itemMenu.contentData: [
             MenuItem
