@@ -8,8 +8,10 @@ Index lets you browse your system files and applications and preview your music,
 ### Ubuntu
 
 **GCC and Build Essentials**
-sudo apt install build-essential
+sudo apt-get update
+sudo apt install build-essential libgl1-mesa-dev
 sudo apt install cmake
+
 
 **Install extra-cmake-module >5.60**
 ```
@@ -28,8 +30,14 @@ https://www.qt.io/cs/c/?cta_guid=074ddad0-fdef-4e53-8aa8-5e8a876d6ab4&placement_
 Download and install KF5 Attica
 ```
 Requeriment: Ubuntu 20.04 LTS (Focal)
+sudo apt install gettext
+sudo apt install libkf5attica-dev=5.68.0-0ubuntu1 && libkf5kio-dev=5.68.0-0ubuntu1 && libkf5notifications-dev=5.68.0-0ubuntu1  && libkf5coreaddons-dev=5.68.0-0ubuntu1 && libkf5activities-dev=5.68.0-0ubuntu2 && libkf5i18n-dev=5.68.0-0ubuntu1
+```
+**Download MAUI Kit**
 
-sudo apt install libkf5attica-dev=5.68.0
+```
+git clone https://invent.kde.org/maui/mauikit.git
+
 ```
 
 ## Build
@@ -39,7 +47,7 @@ sudo apt install libkf5attica-dev=5.68.0
 QT += qml, quick, sql
 
 #### KF5 deps:
-QT += KService KNotifications KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
+QT += KService KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
 
 #### Submodules
 
@@ -60,7 +68,7 @@ git clone https://invent.kde.org/kde/index-fm.git --recursive
 
 cd index-fm && mkdir build && cd build
 
-cmake .. -DCMAKE_INSTALL_INSTALL_PREFIX=/usr -DQt5_DIR="/home/<username>/Qt/<Qt_Version>/gcc_64/lib/cmake/Qt5/"
+cmake .. -DCMAKE_INSTALL_INSTALL_PREFIX=/usr -DQt5_DIR="/home/<username>/Qt/<Qt_Version>/gcc_64/lib/cmake/Qt5/" -DMauiKit_DIR="/home/gabridc/Repositorio/KDE/mauikit/"
 
 make
 
