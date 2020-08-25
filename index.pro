@@ -3,12 +3,11 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-QT += qml
-QT += quick
-QT += sql
+QT *= qml quick svg
 
 CONFIG += ordered
 CONFIG += c++17
+
 TARGET = index
 TEMPLATE = app
 
@@ -30,7 +29,6 @@ linux:unix:!android {
         COMPONENT_FM \
         COMPONENT_EDITOR \
         COMPONENT_TAGGING \
-        COMPONENT_SYNCING \
         MAUIKIT_STYLE
 
     DEFINES -= COMPONENT_STORE
