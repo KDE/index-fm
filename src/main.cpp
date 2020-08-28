@@ -40,6 +40,12 @@
 #include <MauiKit/mauiapp.h>
 #endif
 
+#if defined Q_OS_MACOS || defined Q_OS_WIN
+#include <KF5/KI18n/KLocalizedContext>
+#else
+#include <KI18n/KLocalizedContext>
+#endif
+
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -50,10 +56,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 		return -1;
 #else
 	QApplication app(argc, argv);
-#endif
-
-#ifdef MAUIKIT_STYLE
-	MauiKit::getInstance().initResources();
 #endif
 
 	app.setApplicationName(INX::appName);
@@ -81,14 +83,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	if(!args.isEmpty())
 		paths = args;
 
-#ifdef STATIC_KIRIGAMI
-	KirigamiPlugin::getInstance().registerTypes();
-#endif
-
-#ifdef STATIC_MAUIKIT
-	MauiKit::getInstance().registerTypes();
-#endif
-
 	Index index;
 	QQmlApplicationEngine engine;
 	const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -103,8 +97,16 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 	}, Qt::QueuedConnection);
 
-	const auto context = engine.rootContext();
-	context->setContextProperty("inx", &index);
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    engine.rootContext()->setContextProperty("inx", &index);
+
+#ifdef STATIC_KIRIGAMI
+    KirigamiPlugin::getInstance().registerTypes();
+#endif
+
+#ifdef STATIC_MAUIKIT
+    MauiKit::getInstance().registerTypes();
+#endif
     engine.load(url);
 
 #ifdef Q_OS_MACOS
