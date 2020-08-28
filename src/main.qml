@@ -83,7 +83,7 @@ Maui.ApplicationWindow
 
     floatingHeader: false
     flickable: currentTab && currentBrowser ? currentBrowser.flickable : null
-    mainMenu: [MenuItem
+    mainMenu: [Action
         {
             text: i18n("Settings")
             icon.name: "settings-configure"

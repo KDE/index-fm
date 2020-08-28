@@ -74,9 +74,9 @@ Maui.SideBar
         }
     }
 
-    background: Rectangle
-    {
-        color: Kirigami.Theme.backgroundColor
-        opacity: translucency ? 0.5 : 1
-    }
+//    background: Rectangle
+//    {
+//        color: Kirigami.Theme.backgroundColor
+//        opacity: translucency ? 0.5 : 1
+//    }
 }
