@@ -29,6 +29,12 @@
 #include "mauimacos.h"
 #endif
 
+#ifdef Q_OS_MACOS
+#include <KF5/KI18n/KLocalizedContext>
+#else
+#include <KI18n/KLocalizedContext>
+#endif
+
 #ifdef STATIC_KIRIGAMI
 #include "3rdparty/kirigami/src/kirigamiplugin.h"
 #endif
@@ -107,6 +113,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #ifdef STATIC_MAUIKIT
     MauiKit::getInstance().registerTypes();
 #endif
+
     engine.load(url);
 
 #ifdef Q_OS_MACOS
