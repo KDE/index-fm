@@ -11,6 +11,7 @@ Index lets you browse your system files and applications and preview your music,
 sudo apt-get update
 sudo apt install build-essential libgl1-mesa-dev
 sudo apt install cmake
+sudo apt install libkdecorations2-dev
 
 
 **Install extra-cmake-module >5.60**
@@ -37,7 +38,7 @@ Download and install KF5 Attica
 ```
 Requeriment: Ubuntu 20.04 LTS (Focal)
 sudo apt install gettext
-sudo apt install libkf5attica-dev=5.68.0-0ubuntu1 && libkf5kio-dev=5.68.0-0ubuntu1 && libkf5notifications-dev=5.68.0-0ubuntu1  && libkf5coreaddons-dev=5.68.0-0ubuntu1 && libkf5activities-dev=5.68.0-0ubuntu2 && libkf5i18n-dev=5.68.0-0ubuntu1
+sudo apt install libkf5attica-dev=5.68.0-0ubuntu1 && libkf5kio-dev=5.68.0-0ubuntu1 && libkf5notifications-dev=5.68.0-0ubuntu1  && libkf5coreaddons-dev=5.68.0-0ubuntu1 && libkf5activities-dev=5.68.0-0ubuntu2 && libkf5i18n-dev=5.68.0-0ubuntu1 && libkf5declarative-dev=5.68.0-0ubuntu2 && libkf5plasma-dev=5.68.0-0ubuntu1 && libkf5syntaxhighlighting-dev=5.68.0-0ubuntu1
 ```
 **Download MAUI Kit**
 
@@ -61,6 +62,11 @@ QT += KService KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
 
 https://invent.kde.org/kde/mauikit/
 
+``` bash
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DQt5Qml_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5Qml/" \
+-DQt5Quick_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5Quick" \
+-DQt5Svg_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5Svg" -DQt5QuickControls2_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5QuickControls2"
+```
 ##### qmltermwidget:
 
 https://github.com/Swordfish90/qmltermwidget
