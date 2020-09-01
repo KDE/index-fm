@@ -54,8 +54,6 @@ android {
     message(Building helpers for Android)
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
-    QMAKE_LINK += -nostdlib++
-
     DISTFILES += $$PWD/android_files/AndroidManifest.xml
 }
 
