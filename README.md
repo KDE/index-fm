@@ -26,6 +26,12 @@ Download and install QT binaries from Qt Open Source
 https://www.qt.io/cs/c/?cta_guid=074ddad0-fdef-4e53-8aa8-5e8a876d6ab4&placement_guid=99d9dd4f-5681-48d2-b096-470725510d34&portal_id=149513&canon=https%3A%2F%2Fwww.qt.io%2Fdownload-open-source&redirect_url=APefjpHQjssyGwlBYE-rW_TcMDvQTTSN3igs_sES0bNmU4j3dNgz_g7U1gRD5rU9XP6QCagDltYNZe1mC_6yuR-J9-W2YmcKATNxGjM6fTT48JNue9VuRi4DK7LXluTHxwtZRv8NK3hLkSNlk4AKqcxomUJZqosxV3GK0cryzQm5xtWguoQg5Sg-E3LLyWQcat5flnqFkP-N5WbMKOQiHXZCCFTtzz-R5-48fCOn5EOIYCa4ePXGI-SHM-vf3KokrwZ_5LPenmO7pMJaXlm5vEoa1VyWrurg3A&click=f8615a00-0c1d-4cfe-8af2-2090813f25fa&hsutk=f0a10f80ae5765dd6d56a9d6725ee662&signature=AAH58kGBEuTlcag57Ka07aFLDeEt5qyytQ&pageId=12602948080&__hstc=152220518.f0a10f80ae5765dd6d56a9d6725ee662.1595615134675.1595615134675.1595615134675.1&__hssc=152220518.12.1595615134675&__hsfp=256125709&contentType=standard-page
 ```
 
+Download and install QT binaries from Qt Open Source
+```
+TODO GABRIDC
+```
+
+
 **Install KF5 Libraries**
 Download and install KF5 Attica
 ```
