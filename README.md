@@ -31,19 +31,25 @@ Download and install QT binaries from Qt Open Source
 ```
 TODO GABRIDC
 ```
+sudo apt install libqt5svg5-dev && qtquickcontols2-5-dev && qt5-default
 
+**Upgrade Qt libraries to 5.13**
+
+add source deb http://cz.archive.ubuntu.com/ubuntu groovy main universe
+sudo apt get update && upgrade
 
 **Install KF5 Libraries**
 Download and install KF5 Attica
 ```
 Requeriment: Ubuntu 20.04 LTS (Focal)
 sudo apt install gettext
-sudo apt install libkf5attica-dev=5.68.0-0ubuntu1 && libkf5kio-dev=5.68.0-0ubuntu1 && libkf5notifications-dev=5.68.0-0ubuntu1  && libkf5coreaddons-dev=5.68.0-0ubuntu1 && libkf5activities-dev=5.68.0-0ubuntu2 && libkf5i18n-dev=5.68.0-0ubuntu1 && libkf5declarative-dev=5.68.0-0ubuntu2 && libkf5plasma-dev=5.68.0-0ubuntu1 && libkf5syntaxhighlighting-dev=5.68.0-0ubuntu1
+sudo apt install libkf5attica-dev=5.68.0-0ubuntu1 && libkf5kio-dev=5.68.0-0ubuntu1 && libkf5notifications-dev=5.68.0-0ubuntu1  && libkf5coreaddons-dev=5.68.0-0ubuntu1 && libkf5activities-dev=5.68.0-0ubuntu2 && libkf5i18n-dev=5.68.0-0ubuntu1 && libkf5declarative-dev=5.68.0-0ubuntu2 && libkf5plasma-dev=5.68.0-0ubuntu1 && libkf5syntaxhighlighting-dev=5.68.0-0ubuntu1 
 ```
 **Download MAUI Kit**
 
 ```
 git clone https://invent.kde.org/maui/mauikit.git
+
 
 ```
 
@@ -63,13 +69,15 @@ QT += KService KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
 https://invent.kde.org/kde/mauikit/
 
 ``` bash
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DQt5Qml_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5Qml/" \
--DQt5Quick_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5Quick" \
--DQt5Svg_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5Svg" -DQt5QuickControls2_DIR="/home/gabridc/Qt/5.15.0/gcc_64/lib/cmake/Qt5QuickControls2"
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+make
+sudo make install
 ```
 ##### qmltermwidget:
 
 https://github.com/Swordfish90/qmltermwidget
+
+
 
 ### Compilation
 
@@ -80,7 +88,8 @@ git clone https://invent.kde.org/kde/index-fm.git --recursive
 
 cd index-fm && mkdir build && cd build
 
-cmake .. -DCMAKE_INSTALL_INSTALL_PREFIX=/usr -DQt5_DIR="/home/<username>/Qt/<Qt_Version>/gcc_64/lib/cmake/Qt5/" -DMauiKit_DIR="/home/gabridc/Repositorio/KDE/mauikit/"
+cmake .. -DCMAKE_INSTALL_INSTALL_PREFIX=/usr 
+#-DQt5_DIR="/home/<username>/Qt/<Qt_Version>/gcc_64/lib/cmake/Qt5/" -DMauiKit_DIR="/home/gabridc/Repositorio/KDE/mauikit/"
 
 make
 
