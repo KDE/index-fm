@@ -219,7 +219,7 @@ Maui.ApplicationWindow
         Layout.fillWidth: true
         altHeader: Kirigami.Settings.isMobile
         flickable: root.flickable
-
+        floatingHeader: false
         headBar.rightContent:[
 
             ToolButton
