@@ -9,9 +9,9 @@ Index lets you browse your system files and applications and preview your music,
 
 **GCC and Build Essentials**
 sudo apt-get update
-sudo apt install build-essential libgl1-mesa-dev
+sudo apt install build-essential libgl1-mesa-dev qtdeclarative5-dev libqt5svg5-dev \ qtquickcontols2-5-dev qt5-default
 sudo apt install cmake
-sudo apt install libkdecorations2-dev
+sudo apt install libkdecorations2-dev qml-module-qtquick-shapes
 
 
 **Install extra-cmake-module >5.60**
@@ -41,9 +41,9 @@ sudo apt get update && upgrade
 **Install KF5 Libraries**
 Download and install KF5 Attica
 ```
-Requeriment: Ubuntu 20.04 LTS (Focal)
+Requeriment: KDE Neon 5.19
 sudo apt install gettext
-sudo apt install libkf5attica-dev=5.68.0-0ubuntu1 && libkf5kio-dev=5.68.0-0ubuntu1 && libkf5notifications-dev=5.68.0-0ubuntu1  && libkf5coreaddons-dev=5.68.0-0ubuntu1 && libkf5activities-dev=5.68.0-0ubuntu2 && libkf5i18n-dev=5.68.0-0ubuntu1 && libkf5declarative-dev=5.68.0-0ubuntu2 && libkf5plasma-dev=5.68.0-0ubuntu1 && libkf5syntaxhighlighting-dev=5.68.0-0ubuntu1 
+sudo apt install libkf5attica-dev libkf5kio-dev libkf5notifications-dev libkf5coreaddons-dev libkf5activities-dev libkf5i18n-dev libkf5declarative-dev libkf5plasma-dev libkf5syntaxhighlighting-dev
 ```
 **Download MAUI Kit**
 
