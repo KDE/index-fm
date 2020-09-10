@@ -3,7 +3,12 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-QT *= qml quick svg
+QT *= core \
+    quick \
+    multimedia \
+    sql \
+    qml \
+    quickcontrols2
 
 CONFIG += ordered
 CONFIG += c++17
@@ -92,3 +97,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 include($$PWD/install.pri)
 
+ANDROID_ABIS = armeabi-v7a

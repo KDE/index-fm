@@ -156,44 +156,7 @@ Maui.ApplicationWindow
 
     sideBar: PlacesSideBar
     {
-        id: placesSidebar
-        collapsed : !root.isWide
-        collapsible: true
-        stick: Maui.FM.loadSettings("STICK_SIDEBAR", "UI", true)
-        section.property: !showLabels ? "" : "type"
-        preferredWidth: Math.min(Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 11), root.width)
-        iconSize: privateProperties.isCollapsed && stick ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
-
-        Behavior on iconSize
-        {
-            NumberAnimation
-            {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-
-        onPlaceClicked:
-        {
-            currentBrowser.openFolder(path)
-            if(placesSidebar.modal)
-                placesSidebar.collapse()
-        }
-
-        list.groups: [
-            Maui.FMList.QUICK_PATH,
-            Maui.FMList.PLACES_PATH,
-            Maui.FMList.REMOTE_PATH,
-            Maui.FMList.REMOVABLE_PATH,
-            Maui.FMList.DRIVES_PATH]
-
-        itemMenu.contentData: [
-            MenuItem
-            {
-                text: i18n("Open in tab")
-                onTriggered: openTab(placesSidebar.list.get(placesSidebar.currentIndex).path)
-            }
-        ]
+        id: placesSidebar      
     }
 
     ObjectModel { id: tabsObjectModel }
@@ -235,7 +198,8 @@ Maui.ApplicationWindow
                     implicitHeight: tabsBar.implicitHeight
                     implicitWidth: Math.max(parent.width / _repeater.count, 120)
                     checked: index === _browserList.currentIndex
-
+                    template.iconSource: "folder"
+                    template.iconSizeHint: 16
                     text: tabsObjectModel.get(index).title
 
                     onClicked:
@@ -255,7 +219,7 @@ Maui.ApplicationWindow
         Layout.fillWidth: true
         altHeader: Kirigami.Settings.isMobile
         flickable: root.flickable
-
+        floatingHeader: false
         headBar.rightContent:[
 
             ToolButton

@@ -78,6 +78,7 @@ Maui.SettingsDialog
     {
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
+        lastOne: true
 
         Maui.SettingTemplate
         {
