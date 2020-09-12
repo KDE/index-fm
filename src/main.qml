@@ -156,7 +156,7 @@ Maui.ApplicationWindow
 
     sideBar: PlacesSideBar
     {
-        id: placesSidebar      
+        id: placesSidebar
     }
 
     ObjectModel { id: tabsObjectModel }
@@ -445,9 +445,9 @@ Maui.ApplicationWindow
             {
                 isCurrentItem: false
                 Kirigami.Theme.inherit: true
-                showThumbnails: true
                 width: parent.width
                 height: Maui.Style.iconSizes.big + Maui.Style.space.big
+                imageSource: root.showThumbnails ? model.thumbnail : ""
                 label1.text: model.label
                 label2.text: model.path
                 label3.text: ""
@@ -472,10 +472,8 @@ Maui.ApplicationWindow
                 icon.name: "document-open"
                 onTriggered:
                 {
-
                     for(var i in selectionBar.uris)
                         currentBrowser.openFile(_selectionBar.uris[i])
-
                 }
             }
 
@@ -609,7 +607,7 @@ Maui.ApplicationWindow
     Connections
     {
         target: inx
-        onOpenPath:
+        function onOpenPath(paths)
         {
             for(var index in paths)
                 root.openTab(paths[index])
@@ -692,7 +690,7 @@ Maui.ApplicationWindow
     {
         var item = tabsObjectModel.get(index)
         item.destroy()
-        tabsObjectModel.remove(index)        
+        tabsObjectModel.remove(index)
     }
 
     function openTab(path)
