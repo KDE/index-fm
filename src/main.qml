@@ -208,6 +208,13 @@ Maui.ApplicationWindow
                     }
 
                     onCloseClicked: closeTab(index)
+
+                    DropArea
+                    {
+                        id: _dropArea
+                        anchors.fill: parent
+                        onEntered: _browserList.currentIndex = index
+                    }
                 }
             }
         }

@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import QtQuick 2.9
+import QtQuick 2.14
 import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.8 as Kirigami
@@ -38,6 +38,8 @@ SplitView
     {
         syncTerminal(currentBrowser.currentPath)
     }
+
+
 
     handle: Rectangle
     {
@@ -124,6 +126,16 @@ SplitView
                 onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
             }
         ]
+
+        Connections
+        {
+            target: _browser.dropArea
+            ignoreUnknownSignals: true
+            function onEntered()
+            {
+                _splitView.currentIndex = control._index
+            }
+        }
 
         MouseArea
         {
