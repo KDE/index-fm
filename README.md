@@ -22,12 +22,13 @@ Index-FM use Qt version 5.14.2 so we need this version or higer installed on owe
 
 ```
 sudo apt-get update
-sudo apt install cmake
+sudo apt install cmake git
 sudo apt install build-essential libgl1-mesa-dev qtdeclarative5-dev libqt5svg5-dev qtquickcontrols2-5-dev qt5-default libkdecorations2-dev qml-module-qtquick-shapes
 ```
 
 **Install extra-cmake-module >5.60**
 ```
+cd <path to download extra-cmake-modules>
 git clone https://anongit.kde.org/extra-cmake-modules
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr .. && make
@@ -45,6 +46,7 @@ sudo apt install libkf5attica-dev libkf5kio-dev libkf5notifications-dev libkf5co
 ```
 cd <path to download Maui>
 git clone https://invent.kde.org/maui/mauikit.git
+git checkout origin/development
 cd mauikit && mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr .. && make
 sudo make install
@@ -77,24 +79,40 @@ https://github.com/Swordfish90/qmltermwidget
 
 ### **Build and run**
 
+Before continue preparing your developer environment it is necesary preapare your Gitlab account for developer in your fork and update latest commits.
+
+1. Register in https://identity.kde.org/index.php?r=registration/index 
+2. Log-In in https://invent.kde.org/ and look for Index-Fm
+3. Press Fork Button
+4. Go to you forked project and get URL (Press Button clone)
+
+
+```bash
+cd <path to download Maui>
+git clone https://invent.kde.org/<username>/index-fm.git
+cd index-fm
+git config --global user.name "Your Invent KDE name"
+git config --global user.email "Your Invent KDE email"
+git remote add upstream https://invent.kde.org/maui/index-fm
+git pull upstream
+git checkout origin/development
+git pull --rebase upstream development
+```
+
+
 ### KDE Neon >=5.19.4
 
 After all the dependencies are met you can throw the following command lines to build Index and test it
 
 ``` bash
-git clone https://invent.kde.org/kde/index-fm.git --recursive
+mkdir build && cd build
 
-cd index-fm && mkdir build && cd build
-
-cmake -DCMAKE_INSTALL_INSTALL_PREFIX=/usr ..
-#-DQt5_DIR="/home/<username>/Qt/<Qt_Version>/gcc_64/lib/cmake/Qt5/" -DMauiKit_DIR="/home/gabridc/Repositorio/KDE/mauikit/"
+cmake -DCMAKE_INSTALL_PREFIX=/usr .. && make
 ```
 ### Other Host OS
 
 ``` bash
-git clone https://invent.kde.org/kde/index-fm.git --recursive
-
-cd index-fm && mkdir build && cd build
+mkdir build && cd build
 
 cmake -DCMAKE_INSTALL_INSTALL_PREFIX=/usr -DQt5_DIR="/home/<username>/Qt/<Qt_Version>/gcc_64/lib/cmake/Qt5/" -DMauiKit_DIR="/home/gabridc/Repositorio/KDE/mauikit/" ..
 
