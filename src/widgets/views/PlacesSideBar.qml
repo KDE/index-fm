@@ -57,7 +57,7 @@ Maui.SideBar
             onBookmarksChanged:
             {
                 syncSidebar(currentPath)
-            }            
+            }
         }
     }
 
@@ -77,12 +77,9 @@ Maui.SideBar
         onClicked:
         {
             control.currentIndex = index
-            var item = list.get(index)
-            var path = item.path
-            console.log(path)
             placesList.clearBadgeCount(index)
 
-            placeClicked(path)
+            placeClicked(model.path)
             if(control.collapsed)
                 control.collapse()
         }
