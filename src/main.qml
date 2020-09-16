@@ -143,8 +143,17 @@ Maui.ApplicationWindow
 
             MenuItem
             {
-                text: i18n("Open in tab")
+                text: i18n("Open in new tab")
+                icon.name: "tab-new"
                 onTriggered: openTab(_pathBarmenu.path)
+            }
+
+            MenuItem
+            {
+                visible: root.currentTab.count === 1 && root.supportSplit
+                text: i18n("Open in split view")
+                icon.name: "view-split-left-right"
+                onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
             }
         }
     }
