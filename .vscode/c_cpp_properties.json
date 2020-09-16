@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/gabridc/Repositorio/KDE/mauikit/src/**"
+                "/home/gabridc/Repositorio/KDE/mauikit/src/**",
+                "/home/gabridc/Qt/5.15.0/gcc_64/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
