@@ -40,8 +40,8 @@ Item
 
         handle: Rectangle
         {
-            implicitWidth: 6
-            implicitHeight: 6
+            implicitWidth: Maui.Handy.isTouch ? 10 : 6
+            implicitHeight: implicitWidth
             color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
                                        : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
 
