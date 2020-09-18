@@ -461,7 +461,7 @@ Maui.ApplicationWindow
             {
                 isCurrentItem: false
                 Kirigami.Theme.inherit: true
-                width: parent.width
+                width: ListView.view.width
                 height: Maui.Style.iconSizes.big + Maui.Style.space.big
                 imageSource: root.showThumbnails ? model.thumbnail : ""
                 label1.text: model.label

@@ -64,6 +64,7 @@ Maui.SideBar
     delegate: Maui.ListDelegate
     {
         id: itemDelegate
+        width: ListView.view.width
         iconSize: control.iconSize
         labelVisible: control.showLabels
         label: model.label
