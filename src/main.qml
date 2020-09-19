@@ -35,7 +35,6 @@ Maui.ApplicationWindow
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
 
-    property bool searchBar: false
     property bool selectionMode: false
     property bool showHiddenFiles: false
     property bool showThumbnails: true
@@ -433,7 +432,6 @@ Maui.ApplicationWindow
                 {
                     if(_selectionBar.count < 1)
                     {
-                        currentBrowser.clearSelection()
                         root.selectionMode = false
                     }
                 }
@@ -450,7 +448,7 @@ Maui.ApplicationWindow
                     }
                 }
 
-                onExitClicked: currentBrowser.clearSelection()
+                onExitClicked: clear()
 
                 listDelegate: Maui.ListBrowserDelegate
                 {
@@ -665,9 +663,6 @@ Maui.ApplicationWindow
 
     function syncSidebar(path)
     {
-        if(root.searchBar)
-            root.searchBar = false
-
         placesSidebar.currentIndex = -1
 
         for(var i = 0; i < placesSidebar.count; i++)

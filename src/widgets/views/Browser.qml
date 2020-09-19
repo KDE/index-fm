@@ -39,8 +39,6 @@ SplitView
         syncTerminal(currentBrowser.currentPath)
     }
 
-
-
     handle: Rectangle
     {
         implicitWidth: 6
