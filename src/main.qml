@@ -228,6 +228,7 @@ Maui.ApplicationWindow
             Layout.fillWidth: true
             altHeader: Kirigami.Settings.isMobile
             flickable: root.flickable
+            floatingFooter: true
             floatingHeader: false
             headBar.rightContent:[
 
@@ -592,8 +593,6 @@ Maui.ApplicationWindow
                     }
                 }
             }
-
-
         }
 
 
