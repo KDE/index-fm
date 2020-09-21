@@ -15,6 +15,7 @@ Maui.SideBar
     id: control
 
     property alias list : placesList
+
     signal placeClicked (string path)
 
     collapsible: true
@@ -56,7 +57,42 @@ Maui.SideBar
             onBookmarksChanged:
             {
                 syncSidebar(currentPath)
-            }            
+            }
+        }
+    }
+
+    delegate: Maui.ListDelegate
+    {
+        id: itemDelegate
+        width: ListView.view.width
+        iconSize: control.iconSize
+        labelVisible: control.showLabels
+        label: model.label
+        count: model.count > 0 ? model.count : ""
+        iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
+        iconVisible: true       
+        template.leftMargin: privateProperties.isCollapsed && stick ? 0 : Maui.Style.space.medium
+
+        onClicked:
+        {
+            control.currentIndex = index
+            placesList.clearBadgeCount(index)
+
+            placeClicked(model.path)
+            if(control.collapsed)
+                control.collapse()
+        }
+
+        onRightClicked:
+        {
+            control.currentIndex = index
+            _menu.popup()
+        }
+
+        onPressAndHold:
+        {
+            control.currentIndex = index
+            _menu.popup()
         }
     }
 
@@ -70,26 +106,17 @@ Maui.SideBar
         labelTxt.font.pointSize: Maui.Style.fontSizes.big
         isSection: true
         height: Maui.Style.toolBarHeightAlt
+
+        onClicked:
+        {
+            placesList.toggleSection(Maui.FMList.QUICK_PATH)
+        }
     }
 
     onContentDropped:
     {
         placesList.addPlace(drop.text)
     }
-
-    onItemClicked:
-    {
-        var item = list.get(index)
-        var path = item.path
-        console.log(path)
-        placesList.clearBadgeCount(index)
-
-        placeClicked(path)
-        if(control.collapsed)
-            control.collapse()
-    }
-
-    onItemRightClicked: _menu.popup()
 
     Menu
     {
