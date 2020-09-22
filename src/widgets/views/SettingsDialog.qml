@@ -21,6 +21,7 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.showThumbnails
                 onToggled:  root.showThumbnails = ! root.showThumbnails
@@ -35,6 +36,7 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.showHiddenFiles
                 onToggled:  root.showHiddenFiles = !root.showHiddenFiles
@@ -49,6 +51,7 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.singleClick
                 onToggled:
@@ -67,6 +70,7 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.restoreSession
                 onToggled:
@@ -92,6 +96,7 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked: placesSidebar.stick
                 onToggled:
@@ -109,6 +114,7 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.showStatusBar
                 onToggled:  root.showStatusBar = !root.showStatusBar
@@ -121,6 +127,7 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.translucency
                 enabled: Maui.Handy.isLinux
@@ -140,7 +147,7 @@ Maui.SettingsDialog
 
             Switch
             {
-
+                Layout.fillHeight: true
             }
         }
 
