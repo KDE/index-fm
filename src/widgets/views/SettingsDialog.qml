@@ -153,7 +153,7 @@ Maui.SettingsDialog
                 checked: placesSidebar.stick
                 onToggled:
                 {
-                    placesSidebar.stick = ! placesSidebar.stick
+                    placesSidebar.stick = !placesSidebar.stick
                     Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
                 }
             }

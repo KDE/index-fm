@@ -342,6 +342,14 @@ Maui.ApplicationWindow
                 }
             ]
 
+            headBar.farLeftContent: ToolButton
+            {
+                icon.name: "bookmarks"
+                checked: placesSidebar.visible
+                visible: !placesSidebar.stick
+                onClicked: placesSidebar.visible = checked
+            }
+
             headBar.leftContent: [
 
                 Maui.ToolActions
@@ -457,6 +465,7 @@ Maui.ApplicationWindow
                     width: ListView.view.width
                     height: Maui.Style.iconSizes.big + Maui.Style.space.big
                     imageSource: root.showThumbnails ? model.thumbnail : ""
+                    iconSource: model.icon
                     label1.text: model.label
                     label2.text: model.path
                     label3.text: ""
