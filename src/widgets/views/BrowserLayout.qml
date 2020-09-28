@@ -106,7 +106,7 @@ Item
     {
         if(_splitView.count === 1)
         {
-            return //can not pop all the browsers, leave at leats 1
+            return //can not pop all the browsers, leave at least 1
         }
 const index = _splitView.currentIndex === 1 ? 0 : 1
         splitObjectModel.remove(index)
