@@ -38,7 +38,6 @@ Maui.ApplicationWindow
     property bool selectionMode: false
     property bool showHiddenFiles: false
     property bool showThumbnails: true
-    property bool showStatusBar: false
     property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
@@ -402,12 +401,12 @@ Maui.ApplicationWindow
                         shortcut: "Ctrl+L"
                     }
 
-                    Action
-                    {
-                        icon.name: "view-file-columns"
-                        text: i18n("Columns")
-                        shortcut: "Ctrl+M"
-                    }
+//                    Action
+//                    {
+//                        icon.name: "view-file-columns"
+//                        text: i18n("Columns")
+//                        shortcut: "Ctrl+M"
+//                    }
                 },
 
                 ToolButton

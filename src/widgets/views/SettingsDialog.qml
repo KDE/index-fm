@@ -90,69 +90,6 @@ Maui.SettingsDialog
 
         Maui.SettingTemplate
         {
-            label1.text:  i18n("Sidebar always visible")
-            label2.text: i18n("Keep sidebar on constrained spaces")
-            iconSource: "view-split-left-right"
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked: placesSidebar.stick
-                onToggled:
-                {
-                    placesSidebar.stick = ! placesSidebar.stick
-                    Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
-                }
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Show Status Bar")
-            label2.text: i18n("For filtering and other quick actions")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  root.showStatusBar
-                onToggled:  root.showStatusBar = !root.showStatusBar
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Translucent Sidebar")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  root.translucency
-                enabled: Maui.Handy.isLinux
-                onToggled:
-                {
-                    root.translucency = !root.translucency
-                    Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
-                }
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Dark Mode")
-            enabled: false
-            iconSource: "contrast"
-
-            Switch
-            {
-                Layout.fillHeight: true
-            }
-        }
-
-        Maui.SettingTemplate
-        {
             label1.text: i18n("Grid Size")
             label2.text: i18n("Thumbnails size in the grid view")
             iconSource: "view-list-icons"
@@ -200,6 +137,55 @@ Maui.SettingsDialog
                     text: i18n("XL")
                     onTriggered: setIconSize(96)
                 }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Sidebar always visible")
+            label2.text: i18n("Keep sidebar on constrained spaces")
+            iconSource: "view-split-left-right"
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked: placesSidebar.stick
+                onToggled:
+                {
+                    placesSidebar.stick = ! placesSidebar.stick
+                    Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
+                }
+            }
+        }
+
+//        Maui.SettingTemplate
+//        {
+//            label1.text: i18n("Translucent Sidebar")
+
+//            Switch
+//            {
+//                Layout.fillHeight: true
+//                checkable: true
+//                checked:  root.translucency
+//                enabled: Maui.Handy.isLinux
+//                onToggled:
+//                {
+//                    root.translucency = !root.translucency
+//                    Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
+//                }
+//            }
+//        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Dark Mode")
+            enabled: false
+            iconSource: "contrast"
+
+            Switch
+            {
+                Layout.fillHeight: true
             }
         }
     }

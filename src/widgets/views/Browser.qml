@@ -89,7 +89,6 @@ SplitView
             selectionMode = Qt.binding(function() { return root.selectionMode })
         } // rebind this property in case filebrowser breaks it
 
-        showStatusBar: root.showStatusBar
         settings.showHiddenFiles: root.showHiddenFiles
         settings.showThumbnails: root.showThumbnails
 
