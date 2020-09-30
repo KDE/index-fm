@@ -2,21 +2,15 @@
 // Copyright 2018-2020 Nitrux Latinoamericana S.C.
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
-
-
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
 #include <QCommandLineParser>
-#include <QDebug>
 #include "index.h"
-#include "inx.h"
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
-#include <QIcon>
 #include "mauiandroid.h"
-#include <QPalette>
 #else
 #include <QApplication>
 #endif
@@ -46,11 +40,21 @@
 #include <KF5/KI18n/KLocalizedContext>
 #else
 #include <KI18n/KLocalizedContext>
+#include <KI18n/KLocalizedString>
 #endif
+
+#ifndef STATIC_MAUIKIT
+#include "../index_version.h"
+#endif
+
+#define INDEX_URI "org.maui.index"
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QCoreApplication::setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
+	QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+	QCoreApplication::setAttribute(Qt::AA_DisableSessionManager, true);
 
 #ifdef Q_OS_ANDROID
 	QGuiApplication app(argc, argv);
@@ -60,24 +64,28 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	QApplication app(argc, argv);
 #endif
 
-	app.setApplicationName(INX::appName);
-	app.setApplicationVersion(INX::version);
-	app.setApplicationDisplayName(INX::displayName);
-	app.setOrganizationName(INX::orgName);
-	app.setOrganizationDomain(INX::orgDomain);
+	app.setOrganizationName(QStringLiteral("Maui"));
 	app.setWindowIcon(QIcon(":/index.png"));
-    MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
-    MauiApp::instance()->setCredits ({QVariantMap({{"name", "Camilo Higuita"}, {"email", "milo.h@aol.com"}, {"year", "2019-2020"}})});
-    MauiApp::instance()->setReportPage("https://invent.kde.org/maui/index-fm/-/issues");
-    MauiApp::instance()->setDescription("Index allows you to navigate your computer and preview multimedia files.");
-    MauiApp::instance()->setIconName("qrc:/assets/index.svg");
-    MauiApp::instance()->setWebPage("https://mauikit.org");
+	MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
+	MauiApp::instance()->setIconName("qrc:/assets/index.svg");
+
+	KLocalizedString::setApplicationDomain("index");
+	KAboutData about(QStringLiteral("index"), i18n("Index"), INDEX_VERSION_STRING, i18n("Index allows you to navigate your computer and preview multimedia files."),
+					 KAboutLicense::LGPL_V3, i18n("© 2019-2020 Nitrux Development Team"));
+	about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
+	about.setHomepage("https://mauikit.org");
+	about.setProductName("maui/index");
+	about.setBugAddress("https://invent.kde.org/maui/index-fm/-/issues");
+	about.setOrganizationDomain(INDEX_URI);
+	about.setProgramLogo(app.windowIcon());
+
+	KAboutData::setApplicationData(about);
 
 	QCommandLineParser parser;
-	parser.setApplicationDescription(INX::description);
-	const QCommandLineOption versionOption = parser.addVersionOption();
-	parser.addOption(versionOption);
 	parser.process(app);
+
+	about.setupCommandLine(&parser);
+	about.processCommandLine(&parser);
 
 	const QStringList args = parser.positionalArguments();
 	QStringList paths;
@@ -99,22 +107,26 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 	}, Qt::QueuedConnection);
 
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    engine.rootContext()->setContextProperty("inx", &index);
+	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+	engine.rootContext()->setContextProperty("inx", &index);
 
 #ifdef STATIC_KIRIGAMI
-    KirigamiPlugin::getInstance().registerTypes();
+	KirigamiPlugin::getInstance().registerTypes();
 #endif
 
 #ifdef STATIC_MAUIKIT
-    MauiKit::getInstance().registerTypes();
+	MauiKit::getInstance().registerTypes();
 #endif
+<<<<<<< HEAD
 
     engine.load(url);
+=======
+	engine.load(url);
+>>>>>>> 007b434951b0660e1140aec85a25b6401651cd66
 
 #ifdef Q_OS_MACOS
-//    MAUIMacOS::removeTitlebarFromWindow();
-//    MauiApp::instance()->setEnableCSD(true); //for now index can not handle cloud accounts
+	//    MAUIMacOS::removeTitlebarFromWindow();
+	//    MauiApp::instance()->setEnableCSD(true); //for now index can not handle cloud accounts
 
 #endif
 	return app.exec();

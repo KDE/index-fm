@@ -29,8 +29,12 @@ SplitView
     orientation: Qt.Vertical
     SplitView.fillHeight: true
     SplitView.fillWidth: true
-    SplitView.preferredWidth: _splitView.width / (_splitView.count)
-    SplitView.minimumWidth: _splitView.count > 1 ? 300 : 0
+
+    SplitView.preferredHeight: _splitView.orientation === Qt.Vertical ? _splitView.height / (_splitView.count) :  _splitView.height
+    SplitView.minimumHeight: _splitView.orientation === Qt.Vertical ?  200 : 0
+
+    SplitView.preferredWidth: _splitView.orientation === Qt.Horizontal ? _splitView.width / (_splitView.count) : _splitView.width
+    SplitView.minimumWidth: _splitView.orientation === Qt.Horizontal ? 300 :  0
 
     opacity: _splitView.currentIndex === _index ? 1 : 0.7
 
@@ -89,7 +93,6 @@ SplitView
             selectionMode = Qt.binding(function() { return root.selectionMode })
         } // rebind this property in case filebrowser breaks it
 
-        showStatusBar: root.showStatusBar
         settings.showHiddenFiles: root.showHiddenFiles
         settings.showThumbnails: root.showThumbnails
 

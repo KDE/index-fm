@@ -38,7 +38,6 @@ Maui.ApplicationWindow
     property bool selectionMode: false
     property bool showHiddenFiles: false
     property bool showThumbnails: true
-    property bool showStatusBar: false
     property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
     property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
@@ -343,6 +342,14 @@ Maui.ApplicationWindow
                 }
             ]
 
+            headBar.farLeftContent: ToolButton
+            {
+                icon.name: "bookmarks"
+                checked: placesSidebar.visible
+                visible: !placesSidebar.stick
+                onClicked: placesSidebar.visible = checked
+            }
+
             headBar.leftContent: [
 
                 Maui.ToolActions
@@ -402,12 +409,12 @@ Maui.ApplicationWindow
                         shortcut: "Ctrl+L"
                     }
 
-                    Action
-                    {
-                        icon.name: "view-file-columns"
-                        text: i18n("Columns")
-                        shortcut: "Ctrl+M"
-                    }
+//                    Action
+//                    {
+//                        icon.name: "view-file-columns"
+//                        text: i18n("Columns")
+//                        shortcut: "Ctrl+M"
+//                    }
                 },
 
                 ToolButton
@@ -458,6 +465,7 @@ Maui.ApplicationWindow
                     width: ListView.view.width
                     height: Maui.Style.iconSizes.big + Maui.Style.space.big
                     imageSource: root.showThumbnails ? model.thumbnail : ""
+                    iconSource: model.icon
                     label1.text: model.label
                     label2.text: model.path
                     label3.text: ""

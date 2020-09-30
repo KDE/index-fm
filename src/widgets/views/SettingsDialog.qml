@@ -17,9 +17,11 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Thumbnails")
             label2.text: i18n("Show previews of images, videos and PDF files")
+            iconSource: "fileview-preview"
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.showThumbnails
                 onToggled:  root.showThumbnails = ! root.showThumbnails
@@ -30,9 +32,11 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Hidden Files")
             label2.text: i18n("List hidden files")
+            iconSource: "view-hidden"
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.showHiddenFiles
                 onToggled:  root.showHiddenFiles = !root.showHiddenFiles
@@ -43,9 +47,11 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Single Click")
             label2.text: i18n("Open files with a single or double click")
+            iconSource: "hand"
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.singleClick
                 onToggled:
@@ -60,9 +66,11 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Save Session")
             label2.text: i18n("Save and restore tabs")
+            iconSource: "system-save-session"
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
                 checked:  root.restoreSession
                 onToggled:
@@ -82,66 +90,9 @@ Maui.SettingsDialog
 
         Maui.SettingTemplate
         {
-            label1.text:  i18n("SideBar")
-            label2.text: i18n("Keep sidebar on constrained spaces")
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.stick
-                onToggled:
-                {
-                    placesSidebar.stick = ! placesSidebar.stick
-                    Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
-                }
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Show Status Bar")
-            label2.text: i18n("For filtering and other quick actions")
-
-            Switch
-            {
-                checkable: true
-                checked:  root.showStatusBar
-                onToggled:  root.showStatusBar = !root.showStatusBar
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Translucent Sidebar")
-
-            Switch
-            {
-                checkable: true
-                checked:  root.translucency
-                enabled: Maui.Handy.isLinux
-                onToggled:
-                {
-                    root.translucency = !root.translucency
-                    Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
-                }
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Dark Mode")
-            enabled: false
-
-            Switch
-            {
-
-            }
-        }
-
-        Maui.SettingTemplate
-        {
             label1.text: i18n("Grid Size")
             label2.text: i18n("Thumbnails size in the grid view")
+            iconSource: "view-list-icons"
 
             Maui.ToolActions
             {
@@ -186,6 +137,55 @@ Maui.SettingsDialog
                     text: i18n("XL")
                     onTriggered: setIconSize(96)
                 }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Sidebar always visible")
+            label2.text: i18n("Keep sidebar on constrained spaces")
+            iconSource: "view-split-left-right"
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked: placesSidebar.stick
+                onToggled:
+                {
+                    placesSidebar.stick = !placesSidebar.stick
+                    Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
+                }
+            }
+        }
+
+//        Maui.SettingTemplate
+//        {
+//            label1.text: i18n("Translucent Sidebar")
+
+//            Switch
+//            {
+//                Layout.fillHeight: true
+//                checkable: true
+//                checked:  root.translucency
+//                enabled: Maui.Handy.isLinux
+//                onToggled:
+//                {
+//                    root.translucency = !root.translucency
+//                    Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
+//                }
+//            }
+//        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Dark Mode")
+            enabled: false
+            iconSource: "contrast"
+
+            Switch
+            {
+                Layout.fillHeight: true
             }
         }
     }

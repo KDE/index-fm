@@ -75,11 +75,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     $$PWD/src/main.cpp \
-    $$PWD/src/index.cpp \
+    $$PWD/src/index.cpp
 
 HEADERS += \
-    $$PWD/src/index.h \
-    $$PWD/src/inx.h \
+    $$PWD/src/index.h
 
 RESOURCES += \
     $$PWD/src/qml.qrc \
