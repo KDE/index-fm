@@ -38,6 +38,7 @@
 
 #if defined Q_OS_MACOS || defined Q_OS_WIN
 #include <KF5/KI18n/KLocalizedContext>
+#include <KF5/KI18n/KLocalizedString>
 #else
 #include <KI18n/KLocalizedContext>
 #include <KI18n/KLocalizedString>
@@ -117,12 +118,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #ifdef STATIC_MAUIKIT
 	MauiKit::getInstance().registerTypes();
 #endif
-<<<<<<< HEAD
-
     engine.load(url);
-=======
-	engine.load(url);
->>>>>>> 007b434951b0660e1140aec85a25b6401651cd66
 
 #ifdef Q_OS_MACOS
 	//    MAUIMacOS::removeTitlebarFromWindow();
