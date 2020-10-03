@@ -17,7 +17,7 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Thumbnails")
             label2.text: i18n("Show previews of images, videos and PDF files")
-            iconSource: "fileview-preview"
+//            iconSource: "fileview-preview"
 
             Switch
             {
@@ -32,7 +32,7 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Hidden Files")
             label2.text: i18n("List hidden files")
-            iconSource: "view-hidden"
+//            iconSource: "view-hidden"
 
             Switch
             {
@@ -47,7 +47,7 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Single Click")
             label2.text: i18n("Open files with a single or double click")
-            iconSource: "hand"
+//            iconSource: "hand"
 
             Switch
             {
@@ -66,7 +66,7 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Save Session")
             label2.text: i18n("Save and restore tabs")
-            iconSource: "system-save-session"
+//            iconSource: "system-save-session"
 
             Switch
             {
@@ -92,7 +92,7 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Grid Size")
             label2.text: i18n("Thumbnails size in the grid view")
-            iconSource: "view-list-icons"
+//            iconSource: "view-list-icons"
 
             Maui.ToolActions
             {
@@ -144,7 +144,7 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Sidebar always visible")
             label2.text: i18n("Keep sidebar on constrained spaces")
-            iconSource: "view-split-left-right"
+//            iconSource: "view-split-left-right"
 
             Switch
             {
@@ -181,7 +181,7 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Dark Mode")
             enabled: false
-            iconSource: "contrast"
+//            iconSource: "contrast"
 
             Switch
             {
