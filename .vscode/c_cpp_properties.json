@@ -5,6 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/home/gabridc/Repositorio/KDE/mauikit/src/**",
+                "/home/gabridc/Repositorio/KDE/mauikit/src/controls/**",
+                "/home/gabridc/Repositorio/KDE/mauikit/src/controls/private/**",
+                "/home/gabridc/Repositorio/KDE/karchive/src/**",
                 "/home/gabridc/Qt/5.15.0/gcc_64/include/**"
             ],
             "defines": [],
