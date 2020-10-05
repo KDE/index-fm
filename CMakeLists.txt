@@ -21,7 +21,7 @@ option(EMBEDDED_TERMINAL "If set to true then tries to load the QmlTermWidget. v
 option(IS_APPIMAGE_PACKAGE "If set to true then the KF5 libraries are linked")
 
 find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Sql Svg QuickControls2)
-find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n Notifications KIO Attica)
+find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n Notifications KIO Attica Archive)
 
 if(ANDROID)
     find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
