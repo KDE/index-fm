@@ -29,8 +29,12 @@ SplitView
     orientation: Qt.Vertical
     SplitView.fillHeight: true
     SplitView.fillWidth: true
-    SplitView.preferredWidth: _splitView.width / (_splitView.count)
-    SplitView.minimumWidth: _splitView.count > 1 ? 300 : 0
+
+    SplitView.preferredHeight: _splitView.orientation === Qt.Vertical ? _splitView.height / (_splitView.count) :  _splitView.height
+    SplitView.minimumHeight: _splitView.orientation === Qt.Vertical ?  200 : 0
+
+    SplitView.preferredWidth: _splitView.orientation === Qt.Horizontal ? _splitView.width / (_splitView.count) : _splitView.width
+    SplitView.minimumWidth: _splitView.orientation === Qt.Horizontal ? 300 :  0
 
     opacity: _splitView.currentIndex === _index ? 1 : 0.7
 
@@ -38,8 +42,6 @@ SplitView
     {
         syncTerminal(currentBrowser.currentPath)
     }
-
-
 
     handle: Rectangle
     {
@@ -79,7 +81,7 @@ SplitView
         SplitView.fillHeight: true
 
         selectionBar: root.selectionBar
-        previewer: root.previewer
+
         shareDialog: root.shareDialog
         openWithDialog: root.openWithDialog
         tagsDialog: root.tagsDialog
@@ -91,7 +93,6 @@ SplitView
             selectionMode = Qt.binding(function() { return root.selectionMode })
         } // rebind this property in case filebrowser breaks it
 
-        showStatusBar: root.showStatusBar
         settings.showHiddenFiles: root.showHiddenFiles
         settings.showThumbnails: root.showThumbnails
 
@@ -124,6 +125,33 @@ SplitView
                 text: i18n("Open in split view")
                 icon.name: "view-split-left-right"
                 onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
+            },
+
+            MenuSeparator {},
+
+            MenuItem
+            {
+                visible: !_browser.itemMenu.isExec
+                text: i18n("Preview")
+                icon.name: "view-preview"
+                onTriggered:
+                {
+                    previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                }
+            },
+
+            MenuSeparator {},
+
+            MenuItem
+            {
+                visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                text: i18n("Extract")
+                icon.name: "archive-extract"
+                onTriggered:
+                {
+                    console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + item.path)
+//                    extractArk(item);
+                }
             }
         ]
 
@@ -182,6 +210,11 @@ SplitView
             if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
             {
                 newFile()
+            }
+
+            if(event.key === Qt.Key_Space)
+            {
+                previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
             }
         }
 

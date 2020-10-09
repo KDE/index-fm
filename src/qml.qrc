@@ -6,5 +6,13 @@
         <file>widgets/views/PlacesSideBar.qml</file>
         <file>widgets/views/BrowserLayout.qml</file>
         <file>widgets/views/SettingsDialog.qml</file>
+        <file>widgets/previewer/DefaultPreview.qml</file>
+        <file>widgets/previewer/DocumentPreview.qml</file>
+        <file>widgets/previewer/FilePreviewer.qml</file>
+        <file>widgets/previewer/ImagePreview.qml</file>
+        <file>widgets/previewer/TextPreview.qml</file>
+        <file>widgets/previewer/VideoPreview.qml</file>
+        <file>widgets/previewer/AudioPreview.qml</file>
+        <file>widgets/previewer/CompressedPreview.qml</file>
     </qresource>
 </RCC>

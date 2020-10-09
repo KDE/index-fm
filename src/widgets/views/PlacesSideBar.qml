@@ -64,15 +64,14 @@ Maui.SideBar
     delegate: Maui.ListDelegate
     {
         id: itemDelegate
+        width: ListView.view.width
         iconSize: control.iconSize
         labelVisible: control.showLabels
         label: model.label
         count: model.count > 0 ? model.count : ""
         iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
         iconVisible: true
-        leftPadding:  Maui.Style.space.tiny
-        rightPadding:  Maui.Style.space.tiny
-        template.leftMargin: privateProperties.isCollapsed && stick ? 0 : Maui.Style.space.medium
+//        template.leftMargin: privateProperties.isCollapsed && stick ? 0 : Maui.Style.space.medium
 
         onClicked:
         {
