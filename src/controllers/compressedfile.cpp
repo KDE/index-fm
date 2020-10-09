@@ -57,7 +57,7 @@ void CompressedFileModel::setUrl(const QUrl & url)
 			if(kArch->isOpen())
 			{
 				bool recursive = true;
-				kArch->directory()->copyTo(where.toString (), recursive);
+				kArch->directory()->copyTo(where.toLocalFile (), recursive);
 			}
 		}
 
