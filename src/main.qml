@@ -101,7 +101,10 @@ Maui.ApplicationWindow
         SettingsDialog {}
     }
 
-
+    Index.CompressedFile
+    {
+        id: _compressedFile
+    }
 
     headBar.rightContent: ToolButton
     {

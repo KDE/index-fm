@@ -43,18 +43,21 @@ void CompressedFileModel::setUrl(const QUrl & url)
 					  emit this->postListChanged ();
 		}
 
-		void CompressedFile::extractFile(const QUrl &url)
+		void CompressedFile::extract(const QUrl &where)
 		{
-			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << url.toString();
+			if(!m_url.isLocalFile ())
+				return;
 
-			KArchive *kArch = CompressedFile::getKArchiveObject(url);
+			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << where.toString();
+
+			KArchive *kArch = CompressedFile::getKArchiveObject(m_url);
 			kArch->open(QIODevice::ReadOnly);
 			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " <<  kArch->directory()->entries();
 			assert(kArch->isOpen() == true);
 			if(kArch->isOpen())
 			{
 				bool recursive = true;
-				kArch->directory()->copyTo("/home/gabridc/Descargas/test", recursive);
+				kArch->directory()->copyTo(where.toString (), recursive);
 			}
 		}
 
