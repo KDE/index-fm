@@ -13,5 +13,6 @@
         <file>widgets/previewer/TextPreview.qml</file>
         <file>widgets/previewer/VideoPreview.qml</file>
         <file>widgets/previewer/AudioPreview.qml</file>
+        <file>widgets/previewer/CompressedPreview.qml</file>
     </qresource>
 </RCC>

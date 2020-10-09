@@ -57,7 +57,7 @@ Maui.Dialog
             visible: !isDir
             icon.name: "document-share"
             onClicked:
-            {                
+            {
                 currentBrowser.shareFiles([control.currentUrl])
 
                 control.close()
@@ -234,6 +234,11 @@ Maui.Dialog
                     if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime) && !Maui.Handy.isAndroid)
                     {
                         source = "DocumentPreview.qml"
+                    }
+
+                    if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime) && !Maui.Handy.isAndroid)
+                    {
+                        source = "CompressedPreview.qml"
                     }
 
                     console.log("previe mime", iteminfo.mime)

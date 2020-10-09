@@ -22,7 +22,7 @@ if (ANDROID)
     kde_source_files_enable_exceptions(index index.cpp)
 endif()
 
-target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Svg)
+target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Svg KF5::Archive)
 
 install(TARGETS index ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.index.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

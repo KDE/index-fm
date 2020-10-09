@@ -7,10 +7,10 @@ import QtQml 2.14
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import QtQuick.Controls.Material 2.12
 
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.2 as Maui
+import org.maui.index 1.0 as Index
 
 import QtQml.Models 2.3
 
@@ -45,10 +45,6 @@ Maui.ApplicationWindow
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
     property bool translucency : Maui.FM.loadSettings("TRANSLUCENCY", "UI", Maui.Handy.isLinux) == "true"
     property int iconSize : Maui.FM.loadSettings("ICONSIZE", "UI", Maui.Style.iconSizes.large)
-
-    Material.theme: Material.Dark
-    Material.accent: Material.Purple
-
 
     onCurrentPathChanged:
     {
@@ -104,6 +100,8 @@ Maui.ApplicationWindow
         id: _configDialogComponent
         SettingsDialog {}
     }
+
+
 
     headBar.rightContent: ToolButton
     {
@@ -415,12 +413,12 @@ Maui.ApplicationWindow
                         shortcut: "Ctrl+L"
                     }
 
-//                    Action
-//                    {
-//                        icon.name: "view-file-columns"
-//                        text: i18n("Columns")
-//                        shortcut: "Ctrl+M"
-//                    }
+                    //                    Action
+                    //                    {
+                    //                        icon.name: "view-file-columns"
+                    //                        text: i18n("Columns")
+                    //                        shortcut: "Ctrl+M"
+                    //                    }
                 },
 
                 ToolButton

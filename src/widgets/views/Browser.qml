@@ -138,6 +138,20 @@ SplitView
                 {
                     previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
                 }
+            },
+
+            MenuSeparator {},
+
+            MenuItem
+            {
+                visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                text: i18n("Extract")
+                icon.name: "archive-extract"
+                onTriggered:
+                {
+                    console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + item.path)
+//                    extractArk(item);
+                }
             }
         ]
 
