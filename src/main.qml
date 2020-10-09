@@ -16,6 +16,7 @@ import QtQml.Models 2.3
 
 import "widgets"
 import "widgets/views"
+import "widgets/previewer"
 
 Maui.ApplicationWindow
 {
@@ -88,7 +89,7 @@ Maui.ApplicationWindow
             onTriggered: openConfigDialog()
         }]
 
-    Maui.FilePreviewer {id: _previewer}
+    FilePreviewer {id: _previewer}
     Maui.TagsDialog
     {
         id: _tagsDialog

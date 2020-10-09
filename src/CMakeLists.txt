@@ -8,6 +8,8 @@ add_executable(index
     index_assets.qrc
     main.cpp
     index.cpp
+    controllers/filepreviewer.cpp
+    controllers/compressedfile.cpp
     qml.qrc
 )
 

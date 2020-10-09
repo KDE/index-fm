@@ -81,7 +81,7 @@ SplitView
         SplitView.fillHeight: true
 
         selectionBar: root.selectionBar
-        previewer: root.previewer
+
         shareDialog: root.shareDialog
         openWithDialog: root.openWithDialog
         tagsDialog: root.tagsDialog
@@ -125,6 +125,19 @@ SplitView
                 text: i18n("Open in split view")
                 icon.name: "view-split-left-right"
                 onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
+            },
+
+            MenuSeparator {},
+
+            MenuItem
+            {
+                visible: !_browser.itemMenu.isExec
+                text: i18n("Preview")
+                icon.name: "view-preview"
+                onTriggered:
+                {
+                    previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                }
             }
         ]
 
@@ -183,6 +196,11 @@ SplitView
             if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
             {
                 newFile()
+            }
+
+            if(event.key === Qt.Key_Space)
+            {
+                previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
             }
         }
 

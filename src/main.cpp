@@ -48,6 +48,9 @@
 #include "../index_version.h"
 #endif
 
+#include "controllers/compressedfile.h"
+#include "controllers/filepreviewer.h"
+
 #define INDEX_URI "org.maui.index"
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
@@ -110,6 +113,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 	engine.rootContext()->setContextProperty("inx", &index);
+    qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
+    qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
 
 #ifdef STATIC_KIRIGAMI
 	KirigamiPlugin::getInstance().registerTypes();
