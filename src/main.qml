@@ -31,7 +31,6 @@ Maui.ApplicationWindow
     property alias dialog : dialogLoader.item
     property alias previewer : _previewer
     property alias selectionBar : _selectionBar
-    property alias shareDialog : _shareDialog
     property alias openWithDialog : _openWithDialog
     property alias tagsDialog : _tagsDialog
     property alias currentTabIndex : _browserList.currentIndex
@@ -92,7 +91,6 @@ Maui.ApplicationWindow
         taglist.strict: false
     }
 
-    Maui.ShareDialog {id: _shareDialog}
     Maui.OpenWithDialog {id: _openWithDialog}
 
     Component
@@ -101,7 +99,10 @@ Maui.ApplicationWindow
         SettingsDialog {}
     }
 
-
+    Index.CompressedFile
+    {
+        id: _compressedFile
+    }
 
     headBar.rightContent: ToolButton
     {
@@ -515,7 +516,7 @@ Maui.ApplicationWindow
                     icon.name: "document-share"
                     onTriggered:
                     {
-                        currentBrowser.shareFiles(_selectionBar.uris)
+                        Maui.Platform.shareFiles(_selectionBar.uris)
                     }
                 }
 

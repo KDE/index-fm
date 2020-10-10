@@ -9,6 +9,8 @@ import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.8 as Kirigami
 import org.kde.mauikit 1.0 as Maui
+import org.maui.index 1.0 as Index
+
 import QtQml.Models 2.3
 
 SplitView
@@ -81,8 +83,6 @@ SplitView
         SplitView.fillHeight: true
 
         selectionBar: root.selectionBar
-
-        shareDialog: root.shareDialog
         openWithDialog: root.openWithDialog
         tagsDialog: root.tagsDialog
         thumbnailsSize: root.iconSize * 1.7
@@ -149,8 +149,11 @@ SplitView
                 icon.name: "archive-extract"
                 onTriggered:
                 {
-                    console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + item.path)
+                    console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
 //                    extractArk(item);
+                    _compressedFile.url = _browser.itemMenu.item.path
+                    _compressedFile.extract(currentPath)
+
                 }
             }
         ]

@@ -43,27 +43,23 @@ void CompressedFileModel::setUrl(const QUrl & url)
 					  emit this->postListChanged ();
 		}
 
-		void CompressedFile::extractFile(const QUrl &url)
-        {
-            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << url.toString();
+		void CompressedFile::extract(const QUrl &where)
+		{
+			if(!m_url.isLocalFile ())
+				return;
 
-            QString filename = url.fileName(); //Filename without file extension
-            QString basepath = url.toString().remove("file://").remove(filename);
+			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << where.toString();
 
-            //qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  Regex: " << basepath + "/" + filename.section(".",0,0);
-
-            KArchive *kArch = getKArchiveObject(url);
-            kArch->open(QIODevice::ReadOnly);
-            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " <<  kArch->directory()->entries();
-            assert(kArch->isOpen() == true);
-            if(kArch->isOpen())
-            {
-                bool recursive = true;
-
-                // Extract contents in the same directory creating a folder with the name of the compressed file
-                kArch->directory()->copyTo(basepath + filename.section(".",0,0), recursive);
-            }
-        }
+			KArchive *kArch = CompressedFile::getKArchiveObject(m_url);
+			kArch->open(QIODevice::ReadOnly);
+			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " <<  kArch->directory()->entries();
+			assert(kArch->isOpen() == true);
+			if(kArch->isOpen())
+			{
+				bool recursive = true;
+				kArch->directory()->copyTo(where.toLocalFile (), recursive);
+			}
+		}
 
 		KArchive* CompressedFile::getKArchiveObject(const QUrl &url)
 		{

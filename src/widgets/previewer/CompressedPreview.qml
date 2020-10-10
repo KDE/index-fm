@@ -13,22 +13,12 @@ Maui.Page
     footBar.rightContent: Button
     {
         text: i18n("Extract")
-        onClicked:
-        {
-            console.log("@gadominguez File: CompressedPreview.qml Item: " + _compressedFile.url)
-            _compressedFile.extractFile(_compressedFile.url)
-
-        }
-    }
-
-    footBar.leftContent: Button
-    {
-        text: i18n("Add")
+        onClicked: _compressedFilePreviewer.extract(browser.currentPath)
     }
 
     Index.CompressedFile
     {
-        id: _compressedFile
+        id: _compressedFilePreviewer
         url: currentUrl
     }
 
@@ -38,7 +28,7 @@ Maui.Page
         anchors.fill: parent
         model: Maui.BaseModel
         {
-            list: _compressedFile.model
+            list: _compressedFilePreviewer.model
         }
 
         margins: Maui.Style.space.medium

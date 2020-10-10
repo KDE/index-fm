@@ -44,7 +44,7 @@ class CompressedFile : public QObject
 		CompressedFileModel *m_model;
 
 	public slots:
-		static void extractFile(const QUrl &url);
+		void extract(const QUrl &where);
 
 	signals:
 		void urlChanged();
