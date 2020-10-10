@@ -58,7 +58,7 @@ Maui.Dialog
             icon.name: "document-share"
             onClicked:
             {
-                currentBrowser.shareFiles([control.currentUrl])
+                Maui.Platform.shareFiles([control.currentUrl])
 
                 control.close()
             }

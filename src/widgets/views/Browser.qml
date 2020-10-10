@@ -83,8 +83,6 @@ SplitView
         SplitView.fillHeight: true
 
         selectionBar: root.selectionBar
-
-        shareDialog: root.shareDialog
         openWithDialog: root.openWithDialog
         tagsDialog: root.tagsDialog
         thumbnailsSize: root.iconSize * 1.7
