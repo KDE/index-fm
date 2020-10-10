@@ -44,19 +44,26 @@ void CompressedFileModel::setUrl(const QUrl & url)
 		}
 
 		void CompressedFile::extractFile(const QUrl &url)
-		{
-			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << url.toString();
+        {
+            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << url.toString();
 
-			KArchive *kArch = CompressedFile::getKArchiveObject(url);
-			kArch->open(QIODevice::ReadOnly);
-			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " <<  kArch->directory()->entries();
-			assert(kArch->isOpen() == true);
-			if(kArch->isOpen())
-			{
-				bool recursive = true;
-				kArch->directory()->copyTo("/home/gabridc/Descargas/test", recursive);
-			}
-		}
+            QString filename = url.fileName(); //Filename without file extension
+            QString basepath = url.toString().remove("file://").remove(filename);
+
+            //qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  Regex: " << basepath + "/" + filename.section(".",0,0);
+
+            KArchive *kArch = getKArchiveObject(url);
+            kArch->open(QIODevice::ReadOnly);
+            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " <<  kArch->directory()->entries();
+            assert(kArch->isOpen() == true);
+            if(kArch->isOpen())
+            {
+                bool recursive = true;
+
+                // Extract contents in the same directory creating a folder with the name of the compressed file
+                kArch->directory()->copyTo(basepath + filename.section(".",0,0), recursive);
+            }
+        }
 
 		KArchive* CompressedFile::getKArchiveObject(const QUrl &url)
 		{
@@ -74,7 +81,8 @@ void CompressedFileModel::setUrl(const QUrl & url)
 					FMH::getMime(url).contains("application/x-tar") ||
 					FMH::getMime(url).contains("application/x-bzip") ||
 					FMH::getMime(url).contains("application/x-xz") ||
-					FMH::getMime(url).contains("application/x-gzip"))
+                    FMH::getMime(url).contains("application/x-gzip") ||
+                    FMH::getMime(url).contains("application/gzip"))
 			{
 				kArch = new KTar(url.toString().split(QString("file://"))[1]);
 			}

@@ -13,6 +13,12 @@ Maui.Page
     footBar.rightContent: Button
     {
         text: i18n("Extract")
+        onClicked:
+        {
+            console.log("@gadominguez File: CompressedPreview.qml Item: " + _compressedFile.url)
+            _compressedFile.extractFile(_compressedFile.url)
+
+        }
     }
 
     footBar.leftContent: Button
