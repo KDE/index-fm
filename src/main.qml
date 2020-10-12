@@ -39,7 +39,7 @@ Maui.ApplicationWindow
     property bool selectionMode: false
     property bool showHiddenFiles: false
     property bool showThumbnails: true
-    property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
+    property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
 
     property bool previewFiles : Maui.FM.loadSettings("PREVIEW_FILES", "BROWSER", Kirigami.Settings.isMobile ) == "true"
 
