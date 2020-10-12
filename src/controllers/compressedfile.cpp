@@ -1,7 +1,7 @@
 #include "compressedfile.h"
 #include <KArchive/KZip>
-#include "KArchive/KTar"
-#include "KArchive/K7Zip"
+#include <KArchive/KTar>
+#include <KArchive/KZip>
 
 CompressedFile::CompressedFile(QObject *parent) : QObject(parent)
   ,m_model(new CompressedFileModel(this))

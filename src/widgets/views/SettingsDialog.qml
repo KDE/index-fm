@@ -66,7 +66,6 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Save Session")
             label2.text: i18n("Save and restore tabs")
-//            iconSource: "system-save-session"
 
             Switch
             {
@@ -77,6 +76,24 @@ Maui.SettingsDialog
                 {
                     root.restoreSession = !root.restoreSession
                     Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Preview Files")
+            label2.text: i18n("Opens a quick preview with information of the file instead of opening it with an external application.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  root.previewFiles
+                onToggled:
+                {
+                    root.previewFiles = !root.previewFiles
+                    Maui.FM.saveSettings("PREVIEW_FILES",  root.previewFiles, "BROWSER")
                 }
             }
         }

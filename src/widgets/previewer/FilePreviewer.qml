@@ -231,12 +231,12 @@ Maui.Dialog
                         source = "ImagePreview.qml"
                     }
 
-                    if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime) && !Maui.Handy.isAndroid)
+                    if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime))
                     {
                         source = "DocumentPreview.qml"
                     }
 
-                    if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime) && !Maui.Handy.isAndroid)
+                    if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime))
                     {
                         source = "CompressedPreview.qml"
                     }
@@ -285,27 +285,24 @@ Maui.Dialog
 
             onAddClicked:
             {
-
-                    tagsDialog.composerList.urls = [ previewer.currentUrl]
-                    tagsDialog.open()
-
+                tagsDialog.composerList.urls = [ previewer.currentUrl]
+                tagsDialog.open()
             }
         }
     ]
 
     Connections
-     {
-         target: tagsDialog
-         enabled: tagsDialog
-         ignoreUnknownSignals: true
+    {
+        target: tagsDialog
+        enabled: tagsDialog
+        ignoreUnknownSignals: true
 
-         function onTagsReady(tags)
-         {
-             tagsDialog.composerList.updateToUrls(tags)
-             tagBar.list.refresh()
-         }
-     }
-
+        function onTagsReady(tags)
+        {
+            tagsDialog.composerList.updateToUrls(tags)
+            tagBar.list.refresh()
+        }
+    }
 
     function show(model, index)
     {

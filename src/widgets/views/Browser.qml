@@ -223,26 +223,32 @@ SplitView
 
         onItemClicked:
         {
+            const item = currentFMList.get(index)
+            if(root.previewFiles && item.isdir != "true")
+            {
+                root.previewer.show(_browser.currentFMModel, index)
+                return
+            }
+
             if(root.singleClick)
+            {
                 openItem(index)
+            }
         }
 
         onItemDoubleClicked:
         {
+            const item = currentFMList.get(index)
+            if(root.previewFiles && item.isdir != "true")
+            {
+                root.previewer.show(_browser.currentFMModel, index)
+                return
+            }
+
             if(!root.singleClick)
             {
                 openItem(index)
-                return;
             }
-
-            if(Kirigami.Settings.isMobile)
-                return
-
-            const item = currentFMList.get(index)
-            if(item.mime === "inode/directory")
-                control.openFolder(item.path)
-            else
-                control.openFile(item.path)
         }
     }
 
