@@ -8,18 +8,21 @@ import org.maui.index 1.0 as Index
 Maui.Page
 {
     id: control
-    anchors.fill: parent
     footBar.visible: true
     footBar.rightContent: Button
     {
         text: i18n("Extract")
-        onClicked: _compressedFilePreviewer.extract(browser.currentPath)
+        onClicked:
+        {
+            dialogLoader.sourceComponent= _extractDialogComponent
+            dialog.open()
+//            _compressedFile.extract(browser.currentPath)
+        }
     }
 
-    Index.CompressedFile
+    Component.onCompleted:
     {
-        id: _compressedFilePreviewer
-        url: currentUrl
+        _compressedFile.url = currentUrl
     }
 
     Maui.ListBrowser
@@ -28,7 +31,7 @@ Maui.Page
         anchors.fill: parent
         model: Maui.BaseModel
         {
-            list: _compressedFilePreviewer.model
+            list: _compressedFile.model
         }
 
         margins: Maui.Style.space.medium

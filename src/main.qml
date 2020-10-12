@@ -99,6 +99,25 @@ Maui.ApplicationWindow
         SettingsDialog {}
     }
 
+    Component
+    {
+        id: _extractDialogComponent
+        Maui.Dialog
+        {
+            id: _extractDialog
+            title: i18n("Extract")
+            message: i18n("Extract the content of the compressed file into a  new or existing subdirectory or inside the current directory.")
+            entryField: true
+            page.margins: Maui.Style.space.big
+
+            onAccepted:
+            {
+                _compressedFile.extract(currentPath, textEntry.text)
+                _extractDialog.close()
+            }
+        }
+    }
+
     Index.CompressedFile
     {
         id: _compressedFile

@@ -241,6 +241,11 @@ Maui.Dialog
                         source = "CompressedPreview.qml"
                     }
 
+                    if(Maui.FM.checkFileType(Maui.FMList.FONT, iteminfo.mime))
+                    {
+                        source = "FontPreviewer.qml"
+                    }
+
                     console.log("previe mime", iteminfo.mime)
                     previewLoader.source = source
                     control.showInfo = source === "DefaultPreview.qml"

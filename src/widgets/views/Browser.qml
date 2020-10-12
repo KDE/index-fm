@@ -152,8 +152,8 @@ SplitView
                     console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
 //                    extractArk(item);
                     _compressedFile.url = _browser.itemMenu.item.path
-                    _compressedFile.extract(currentPath)
-
+                    dialogLoader.sourceComponent= _extractDialogComponent
+                    dialog.open()
                 }
             }
         ]
