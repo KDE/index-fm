@@ -17,14 +17,16 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Thumbnails")
             label2.text: i18n("Show previews of images, videos and PDF files")
-//            iconSource: "fileview-preview"
 
             Switch
             {
                 Layout.fillHeight: true
                 checkable: true
-                checked:  root.showThumbnails
-                onToggled:  root.showThumbnails = ! root.showThumbnails
+                checked:  settings.showThumbnails
+                onToggled:
+                {
+                    settings.showThumbnails = ! settings.showThumbnails
+                }
             }
         }
 
@@ -32,14 +34,16 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Hidden Files")
             label2.text: i18n("List hidden files")
-//            iconSource: "view-hidden"
 
             Switch
             {
                 Layout.fillHeight: true
                 checkable: true
-                checked:  root.showHiddenFiles
-                onToggled:  root.showHiddenFiles = !root.showHiddenFiles
+                checked:  settings.showHiddenFiles
+                onToggled:
+                {
+                     settings.showHiddenFiles = !settings.showHiddenFiles
+                }
             }
         }
 
@@ -47,17 +51,15 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Single Click")
             label2.text: i18n("Open files with a single or double click")
-//            iconSource: "hand"
 
             Switch
             {
                 Layout.fillHeight: true
                 checkable: true
-                checked:  root.singleClick
+                checked:  settings.singleClick
                 onToggled:
                 {
-                    root.singleClick = !root.singleClick
-                    Maui.FM.saveSettings("SINGLE_CLICK",  root.singleClick, "BROWSER")
+                    settings.singleClick = !settings.singleClick
                 }
             }
         }
@@ -71,11 +73,10 @@ Maui.SettingsDialog
             {
                 Layout.fillHeight: true
                 checkable: true
-                checked:  root.restoreSession
+                checked:  settings.restoreSession
                 onToggled:
                 {
-                    root.restoreSession = !root.restoreSession
-                    Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
+                    settings.restoreSession = !settings.restoreSession
                 }
             }
         }
@@ -89,11 +90,10 @@ Maui.SettingsDialog
             {
                 Layout.fillHeight: true
                 checkable: true
-                checked:  root.previewFiles
+                checked:  settings.previewFiles
                 onToggled:
                 {
-                    root.previewFiles = !root.previewFiles
-                    Maui.FM.saveSettings("PREVIEW_FILES",  root.previewFiles, "BROWSER")
+                    settings.previewFiles = !settings.previewFiles
                 }
             }
         }
@@ -109,7 +109,6 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Grid Size")
             label2.text: i18n("Thumbnails size in the grid view")
-//            iconSource: "view-list-icons"
 
             Maui.ToolActions
             {
@@ -161,7 +160,6 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Sidebar always visible")
             label2.text: i18n("Keep sidebar on constrained spaces")
-//            iconSource: "view-split-left-right"
 
             Switch
             {
@@ -176,29 +174,10 @@ Maui.SettingsDialog
             }
         }
 
-//        Maui.SettingTemplate
-//        {
-//            label1.text: i18n("Translucent Sidebar")
-
-//            Switch
-//            {
-//                Layout.fillHeight: true
-//                checkable: true
-//                checked:  root.translucency
-//                enabled: Maui.Handy.isLinux
-//                onToggled:
-//                {
-//                    root.translucency = !root.translucency
-//                    Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
-//                }
-//            }
-//        }
-
         Maui.SettingTemplate
         {
             label1.text: i18n("Dark Mode")
             enabled: false
-//            iconSource: "contrast"
 
             Switch
             {

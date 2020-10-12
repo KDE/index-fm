@@ -93,8 +93,8 @@ SplitView
             selectionMode = Qt.binding(function() { return root.selectionMode })
         } // rebind this property in case filebrowser breaks it
 
-        settings.showHiddenFiles: root.showHiddenFiles
-        settings.showThumbnails: root.showThumbnails
+        settings.showHiddenFiles: appSettings.showHiddenFiles
+        settings.showThumbnails: appSettings.showThumbnails
 
         Rectangle
         {
@@ -224,13 +224,13 @@ SplitView
         onItemClicked:
         {
             const item = currentFMList.get(index)
-            if(root.previewFiles && item.isdir != "true")
+            if(appSettings.previewFiles && item.isdir != "true")
             {
                 root.previewer.show(_browser.currentFMModel, index)
                 return
             }
 
-            if(root.singleClick)
+            if(appSettings.singleClick)
             {
                 openItem(index)
             }
@@ -239,13 +239,13 @@ SplitView
         onItemDoubleClicked:
         {
             const item = currentFMList.get(index)
-            if(root.previewFiles && item.isdir != "true")
+            if(appSettings.previewFiles && item.isdir != "true")
             {
                 root.previewer.show(_browser.currentFMModel, index)
                 return
             }
 
-            if(!root.singleClick)
+            if(!appSettings.singleClick)
             {
                 openItem(index)
             }

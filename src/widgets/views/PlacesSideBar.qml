@@ -21,7 +21,7 @@ Maui.SideBar
     collapsible: true
     collapsedSize: stick ?  Maui.Style.iconSizes.medium + (Maui.Style.space.medium*4) - Maui.Style.space.tiny : 0
     collapsed : !root.isWide
-    stick: Maui.FM.loadSettings("STICK_SIDEBAR", "UI", !Kirigami.Settings.isMobile)
+    stick: Maui.FM.loadSettings("STICK_SIDEBAR", "UI", !Kirigami.Settings.isMobile) == "true"
     preferredWidth: Math.min(Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 11), root.width)
     iconSize: privateProperties.isCollapsed && stick ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
 

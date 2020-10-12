@@ -11,6 +11,7 @@ import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.2 as Maui
 import org.maui.index 1.0 as Index
+import Qt.labs.settings 1.0
 
 import QtQml.Models 2.3
 
@@ -23,8 +24,6 @@ Maui.ApplicationWindow
     id: root
     title:  currentTab ? currentTab.title : ""
 
-    background.opacity: translucency ? 0.5 : 1
-
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
 
@@ -35,18 +34,22 @@ Maui.ApplicationWindow
     property alias tagsDialog : _tagsDialog
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
+    property alias appSettings : settings
 
     property bool selectionMode: false
-    property bool showHiddenFiles: false
-    property bool showThumbnails: true
-    property bool singleClick : Maui.FM.loadSettings("SINGLE_CLICK", "BROWSER", Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick) == "true"
-
-    property bool previewFiles : Maui.FM.loadSettings("PREVIEW_FILES", "BROWSER", Kirigami.Settings.isMobile ) == "true"
-
-    property bool restoreSession: Maui.FM.loadSettings("RESTORE_SESSION", "BROWSER", false) == "true"
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
-    property bool translucency : Maui.FM.loadSettings("TRANSLUCENCY", "UI", Maui.Handy.isLinux) == "true"
     property int iconSize : Maui.FM.loadSettings("ICONSIZE", "UI", Maui.Style.iconSizes.large)
+
+    Settings
+    {
+           id: settings
+           category: "Browser"
+           property bool showHiddenFiles: false
+           property bool showThumbnails: true
+           property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick
+           property bool previewFiles : Kirigami.Settings.isMobile
+           property bool restoreSession:  false
+       }
 
     onCurrentPathChanged:
     {
@@ -88,6 +91,7 @@ Maui.ApplicationWindow
         }]
 
     FilePreviewer {id: _previewer}
+
     Maui.TagsDialog
     {
         id: _tagsDialog
@@ -372,7 +376,7 @@ Maui.ApplicationWindow
             headBar.farLeftContent: ToolButton
             {
                 icon.name: "bookmarks"
-                checked: placesSidebar.visible
+                checked: placesSidebar.position == 1
                 visible: !placesSidebar.stick
                 onClicked: placesSidebar.visible = checked
             }
