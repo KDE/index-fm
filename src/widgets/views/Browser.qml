@@ -93,8 +93,8 @@ SplitView
             selectionMode = Qt.binding(function() { return root.selectionMode })
         } // rebind this property in case filebrowser breaks it
 
-        settings.showHiddenFiles: root.showHiddenFiles
-        settings.showThumbnails: root.showThumbnails
+        settings.showHiddenFiles: appSettings.showHiddenFiles
+        settings.showThumbnails: appSettings.showThumbnails
 
         Rectangle
         {
@@ -152,8 +152,8 @@ SplitView
                     console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
 //                    extractArk(item);
                     _compressedFile.url = _browser.itemMenu.item.path
-                    _compressedFile.extract(currentPath)
-
+                    dialogLoader.sourceComponent= _extractDialogComponent
+                    dialog.open()
                 }
             }
         ]
@@ -191,8 +191,13 @@ SplitView
             // Shortcut for closing tab
             if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
             {
-                if(tabsBar.count > 1)
-                    closeTab(tabsBar.currentIndex)
+                if(tabsObjectModel.count > 1)
+                    root.closeTab(tabsBar.currentIndex)
+            }
+
+            if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+            {
+                _pathBar.showEntryBar()
             }
 
             if(event.key === Qt.Key_F4)
@@ -223,26 +228,32 @@ SplitView
 
         onItemClicked:
         {
-            if(root.singleClick)
+            const item = currentFMList.get(index)
+            if(appSettings.previewFiles && item.isdir != "true")
+            {
+                root.previewer.show(_browser.currentFMModel, index)
+                return
+            }
+
+            if(appSettings.singleClick)
+            {
                 openItem(index)
+            }
         }
 
         onItemDoubleClicked:
         {
-            if(!root.singleClick)
+            const item = currentFMList.get(index)
+            if(appSettings.previewFiles && item.isdir != "true")
             {
-                openItem(index)
-                return;
+                root.previewer.show(_browser.currentFMModel, index)
+                return
             }
 
-            if(Kirigami.Settings.isMobile)
-                return
-
-            const item = currentFMList.get(index)
-            if(item.mime === "inode/directory")
-                control.openFolder(item.path)
-            else
-                control.openFile(item.path)
+            if(!appSettings.singleClick)
+            {
+                openItem(index)
+            }
         }
     }
 

@@ -8,6 +8,7 @@ QT *= core \
     multimedia \
     sql \
     qml \
+    widgets \
     quickcontrols2
 
 CONFIG += ordered
@@ -49,6 +50,12 @@ ios {
 macos {
     DEFINES += EMBEDDED_TERMINAL
     ICON = $$PWD/macos_files/index.icns
+
+    LIBS += -L$$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/lib/ -lKF5Archive.5.74.0
+
+    INCLUDEPATH += $$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/include/KF5
+    DEPENDPATH += $$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/include/KF5
+
 }
 
 win32 {
@@ -57,9 +64,25 @@ win32 {
 
 android {
     message(Building helpers for Android)
+    KARCHIVE_ANDROID_REPO = https://github.com/mauikit/KArchive-android
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android_files
     DISTFILES += $$PWD/android_files/AndroidManifest.xml
+    exists($$PWD/3rdparty/KArchive) {
+        message("Using KArchive for Android")
+
+    }else {
+        warning("Getting KArchive for Android")
+        system(git clone $$KARCHIVE_ANDROID_REPO $$PWD/3rdparty/KArchive)
+    }
+
+    ANDROID_EXTRA_LIBS += $$PWD/3rdparty/KArchive/libKF5Archive_armeabi-v7a.so \
+
+    LIBS += -L$$PWD/3rdparty/KArchive/ -lKF5Archive_armeabi-v7a
+
+    INCLUDEPATH += $$PWD/3rdparty/KArchive
+    DEPENDPATH += $$PWD/3rdparty/KArchive
+
 }
 
 # The following define makes your compiler emit warnings if you use
@@ -75,10 +98,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     $$PWD/src/main.cpp \
-    $$PWD/src/index.cpp
+    $$PWD/src/index.cpp \
+    $$PWD/src/controllers/compressedfile.cpp \
+    $$PWD/src/controllers/filepreviewer.cpp
 
 HEADERS += \
-    $$PWD/src/index.h
+    $$PWD/src/index.h \
+    $$PWD/src/controllers/compressedfile.h \
+    $$PWD/src/controllers/filepreviewer.h
 
 RESOURCES += \
     $$PWD/src/qml.qrc \
