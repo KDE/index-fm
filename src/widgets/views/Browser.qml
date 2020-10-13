@@ -191,8 +191,8 @@ SplitView
             // Shortcut for closing tab
             if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
             {
-                if(tabsBar.count > 1)
-                    closeTab(tabsBar.currentIndex)
+                if(tabsObjectModel.count > 1)
+                    root.closeTab(tabsBar.currentIndex)
             }
 
             if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
