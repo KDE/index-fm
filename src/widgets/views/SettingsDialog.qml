@@ -23,10 +23,7 @@ Maui.SettingsDialog
                 Layout.fillHeight: true
                 checkable: true
                 checked:  settings.showThumbnails
-                onToggled:
-                {
-                    settings.showThumbnails = ! settings.showThumbnails
-                }
+                onToggled: settings.showThumbnails = ! settings.showThumbnails
             }
         }
 
@@ -40,10 +37,7 @@ Maui.SettingsDialog
                 Layout.fillHeight: true
                 checkable: true
                 checked:  settings.showHiddenFiles
-                onToggled:
-                {
-                     settings.showHiddenFiles = !settings.showHiddenFiles
-                }
+                onToggled: settings.showHiddenFiles = !settings.showHiddenFiles
             }
         }
 
@@ -57,10 +51,7 @@ Maui.SettingsDialog
                 Layout.fillHeight: true
                 checkable: true
                 checked:  settings.singleClick
-                onToggled:
-                {
-                    settings.singleClick = !settings.singleClick
-                }
+                onToggled: settings.singleClick = !settings.singleClick
             }
         }
 
@@ -74,10 +65,7 @@ Maui.SettingsDialog
                 Layout.fillHeight: true
                 checkable: true
                 checked:  settings.restoreSession
-                onToggled:
-                {
-                    settings.restoreSession = !settings.restoreSession
-                }
+                onToggled: settings.restoreSession = !settings.restoreSession
             }
         }
 
@@ -91,10 +79,7 @@ Maui.SettingsDialog
                 Layout.fillHeight: true
                 checkable: true
                 checked:  settings.previewFiles
-                onToggled:
-                {
-                    settings.previewFiles = !settings.previewFiles
-                }
+                onToggled: settings.previewFiles = !settings.previewFiles
             }
         }
     }
@@ -165,12 +150,9 @@ Maui.SettingsDialog
             {
                 Layout.fillHeight: true
                 checkable: true
-                checked: placesSidebar.stick
-                onToggled:
-                {
-                    placesSidebar.stick = !placesSidebar.stick
-                    Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
-                }
+                checked: appSettings.stickSidebar
+                onToggled: appSettings.stickSidebar = !appSettings.stickSidebar
+
             }
         }
 

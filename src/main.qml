@@ -49,6 +49,7 @@ Maui.ApplicationWindow
         property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
+        property bool stickSidebar :  !Kirigami.Settings.isMobile
     }
 
     onCurrentPathChanged:
