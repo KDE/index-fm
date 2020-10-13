@@ -42,14 +42,14 @@ Maui.ApplicationWindow
 
     Settings
     {
-           id: settings
-           category: "Browser"
-           property bool showHiddenFiles: false
-           property bool showThumbnails: true
-           property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick
-           property bool previewFiles : Kirigami.Settings.isMobile
-           property bool restoreSession:  false
-       }
+        id: settings
+        category: "Browser"
+        property bool showHiddenFiles: false
+        property bool showThumbnails: true
+        property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick
+        property bool previewFiles : Kirigami.Settings.isMobile
+        property bool restoreSession:  false
+    }
 
     onCurrentPathChanged:
     {
