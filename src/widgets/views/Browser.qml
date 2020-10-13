@@ -195,6 +195,11 @@ SplitView
                     root.closeTab(tabsBar.currentIndex)
             }
 
+            if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+            {
+                _pathBar.showEntryBar()
+            }
+
             if(event.key === Qt.Key_F4)
             {
                 toogleTerminal()

@@ -8,6 +8,7 @@ QT *= core \
     multimedia \
     sql \
     qml \
+    widgets \
     quickcontrols2
 
 CONFIG += ordered
@@ -49,6 +50,12 @@ ios {
 macos {
     DEFINES += EMBEDDED_TERMINAL
     ICON = $$PWD/macos_files/index.icns
+
+    LIBS += -L$$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/lib/ -lKF5Archive.5.74.0
+
+    INCLUDEPATH += $$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/include/KF5
+    DEPENDPATH += $$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/include/KF5
+
 }
 
 win32 {
