@@ -232,14 +232,15 @@ SplitView
         onItemClicked:
         {
             const item = currentFMList.get(index)
-            if(appSettings.previewFiles && item.isdir != "true")
-            {
-                root.previewer.show(_browser.currentFMModel, index)
-                return
-            }
 
             if(appSettings.singleClick)
             {
+                if(appSettings.previewFiles && item.isdir != "true")
+                {
+                    root.previewer.show(_browser.currentFMModel, index)
+                    return
+                }
+
                 openItem(index)
             }
         }
@@ -247,14 +248,15 @@ SplitView
         onItemDoubleClicked:
         {
             const item = currentFMList.get(index)
-            if(appSettings.previewFiles && item.isdir != "true")
-            {
-                root.previewer.show(_browser.currentFMModel, index)
-                return
-            }
 
             if(!appSettings.singleClick)
             {
+                if(appSettings.previewFiles && item.isdir != "true")
+                {
+                    root.previewer.show(_browser.currentFMModel, index)
+                    return
+                }
+
                 openItem(index)
             }
         }
