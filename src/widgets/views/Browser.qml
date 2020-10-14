@@ -149,11 +149,23 @@ SplitView
                 icon.name: "archive-extract"
                 onTriggered:
                 {
-                    console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
-//                    extractArk(item);
                     _compressedFile.url = _browser.itemMenu.item.path
                     dialogLoader.sourceComponent= _extractDialogComponent
                     dialog.open()
+                }
+            },
+
+            MenuItem
+            {
+                visible: true
+                text: i18n("Compress")
+                icon.name: "archive-compress"
+                onTriggered:
+                {
+                    console.log("@gadominguez File: Browser.qml MenuItem Compress " + _selectionBar.selectionList.model.count)
+                    dialogLoader.sourceComponent= _compressDialogComponent
+                    dialog.open()
+
                 }
             }
         ]

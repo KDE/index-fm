@@ -126,6 +126,26 @@ Maui.ApplicationWindow
         }
     }
 
+    Component
+    {
+        id: _compressDialogComponent
+        Maui.Dialog
+        {
+            id: _compressDialog
+            title: i18n("Compress")
+            message: i18n("Compress selected files into a  new file.")
+            entryField: true
+            page.margins: Maui.Style.space.big
+
+            onAccepted:
+            {
+                console.log("@gadominguez File:main.qml On Aceep Dialog Extract")
+                _compressedFile.compress(_selectionBar.selectionList.model, textEntry.text)
+                _compressDialog.close()
+            }
+        }
+    }
+
     Index.CompressedFile
     {
         id: _compressedFile
