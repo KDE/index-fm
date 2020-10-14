@@ -95,6 +95,9 @@ SplitView
 
         settings.showHiddenFiles: appSettings.showHiddenFiles
         settings.showThumbnails: appSettings.showThumbnails
+        settings.foldersFirst: sortSettings.globalSorting ? sortSettings.foldersFirst : undefined
+        settings.sortBy: sortSettings.globalSorting ? sortSettings.sortBy : undefined
+        settings.group: sortSettings.globalSorting ? sortSettings.group : undefined
 
         Rectangle
         {

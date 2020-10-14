@@ -52,6 +52,17 @@ Maui.ApplicationWindow
         property bool stickSidebar :  !Kirigami.Settings.isMobile
     }
 
+    Settings
+    {
+        id: sortSettings
+        category: "Sorting"
+        property bool foldersFirst: true
+        property int sortBy:  Maui.FMList.MODIFIED
+        property int sortOrder : Qt.AscendingOrder
+        property bool group : false
+        property bool globalSorting: Kirigami.Settings.isMobile
+    }
+
     onCurrentPathChanged:
     {
         syncSidebar(currentBrowser.currentPath)
@@ -275,6 +286,7 @@ Maui.ApplicationWindow
 
                 Maui.ToolButtonMenu
                 {
+                    visible: !sortSettings.globalSorting
                     icon.name: "view-sort"
 
                     MenuItem
@@ -409,6 +421,7 @@ Maui.ApplicationWindow
                 {
                     id: _viewTypeGroup
                     autoExclusive: true
+                    cyclic: true
                     expanded: headBar.width > Kirigami.Units.gridUnit * 32
 
                     Binding on currentIndex
