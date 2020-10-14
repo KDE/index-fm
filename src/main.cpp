@@ -5,7 +5,9 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
+#include <QtPlugin>
 #include <QCommandLineParser>
+
 #include "index.h"
 
 #ifdef Q_OS_ANDROID
@@ -25,10 +27,6 @@
 #include <KI18n/KLocalizedContext>
 #endif
 
-#ifdef STATIC_KIRIGAMI
-#include "3rdparty/kirigami/src/kirigamiplugin.h"
-#endif
-
 #ifdef STATIC_MAUIKIT
 #include "3rdparty/mauikit/src/mauikit.h"
 #include "mauiapp.h"
@@ -46,6 +44,11 @@
 
 #ifndef STATIC_MAUIKIT
 #include "../index_version.h"
+#endif
+
+#ifdef STATIC_KIRIGAMI
+#include "./3rdparty/kirigami/src/kirigamiplugin.h"
+//Q_IMPORT_PLUGIN(KirigamiPlugin)
 #endif
 
 #include "controllers/compressedfile.h"
@@ -117,7 +120,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
 
 #ifdef STATIC_KIRIGAMI
-	KirigamiPlugin::getInstance().registerTypes();
+//    KirigamiPlugin::getInstance().registerTypes(&engine);
+    KirigamiPlugin::getInstance().registerTypes();
 #endif
 
 #ifdef STATIC_MAUIKIT
