@@ -129,7 +129,7 @@ Item
     {
 //        _splitView.orientaion = orientation
 
-        if(_splitView.count === 1 && !root.supportSplit)
+        if(_splitView.count === 1 && !settings.supportSplit)
         {
             return
         }

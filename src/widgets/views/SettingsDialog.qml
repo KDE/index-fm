@@ -82,6 +82,20 @@ Maui.SettingsDialog
                 onToggled: settings.previewFiles = !settings.previewFiles
             }
         }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Split Views")
+            label2.text: i18n("Support split views horizontally or vertically depending on the avaliable space.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  settings.supportSplit
+                onToggled: settings.supportSplit = !settings.supportSplit
+            }
+        }
     }
 
     Maui.SettingsSection

@@ -129,7 +129,7 @@ Item
 
                 MenuItem
                 {
-                    visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && root.supportSplit
+                    visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && appSettings.supportSplit
                     text: i18n("Open in split view")
                     icon.name: "view-split-left-right"
                     onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
