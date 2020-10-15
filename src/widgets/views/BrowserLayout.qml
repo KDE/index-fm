@@ -35,7 +35,7 @@ Item
         id: _splitView
 
         anchors.fill: parent
-        orientation: isWide ? Qt.Horizontal :  Qt.Vertical
+        orientation: width > 600 ? Qt.Horizontal :  Qt.Vertical
 
         clip: true
         focus: true
