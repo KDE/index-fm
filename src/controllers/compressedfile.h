@@ -45,7 +45,7 @@ class CompressedFile : public QObject
 
 	public slots:
 		void extract(const QUrl &where, const QString &directory = QString());
-        void compress(const QUrl &where, const QString & directory);
+        void compress(const QVariantList &files, const QUrl &where, const QString & directory);
 
 	signals:
 		void urlChanged();

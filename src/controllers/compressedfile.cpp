@@ -48,11 +48,11 @@ void CompressedFileModel::setUrl(const QUrl & url)
 			if(!m_url.isLocalFile ())
 				return;
 
-            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << where.toString() << " " << directory;
+            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << "URL: " << m_url <<  "WHERE: " <<  where.toString() << " DIR: " << directory;
 
             QString where_ = where.toLocalFile () + "/" + directory;
 
-			KArchive *kArch = CompressedFile::getKArchiveObject(m_url);
+            auto kArch = CompressedFile::getKArchiveObject(m_url);
 			kArch->open(QIODevice::ReadOnly);
 			qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " <<  kArch->directory()->entries();
 			assert(kArch->isOpen() == true);
@@ -63,24 +63,37 @@ void CompressedFileModel::setUrl(const QUrl & url)
 			}
 		}
 
-        void CompressedFile::compress(const QUrl &where, const QString & directory)
+        void CompressedFile::compress(const QVariantList &files, const QUrl &where, const QString & directory)
         {
-            if(!m_url.isLocalFile ())
-                return;
 
-            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << where.toString() << " " << directory;
-
-            QString where_ = where.toString();
-
-            KArchive *kArch = CompressedFile::getKArchiveObject(m_url);
-            kArch->open(QIODevice::ReadOnly);
-            qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " <<  kArch->directory()->entries();
-            assert(kArch->isOpen() == true);
-            if(kArch->isOpen())
+            for(auto uri : files)
             {
-                bool recursive = true;
-                kArch->directory()->copyTo(where_, recursive);
+                qDebug() << "@gadominguez File:fm.cpp Funcion: compress  " << QUrl(uri.toString()).toLocalFile() << " " << directory;
+
+                if(!QFileInfo(QUrl(uri.toString()).toLocalFile()).isDir())
+                {
+                    auto kzip = new KZip(QUrl(where.toString() + "/" + directory).toLocalFile());
+                    kzip->open(QIODevice::ReadWrite);
+                    assert(kzip->isOpen() == true);
+
+                    auto file = QFile(QUrl(uri.toString()).toLocalFile());
+                    file.open(QIODevice::ReadWrite);
+                    assert(file.isOpen() == true);
+
+
+                    kzip->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                    file.readAll(), 0100775, QFileInfo(file).owner(),QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                    kzip->close();
+
+                }
+
             }
+
+
+            //kzip->prepareWriting("Hello00000.txt", "gabridc", "gabridc", 1024, 0100777, QDateTime(), QDateTime(), QDateTime());
+            //kzip->writeData("Hello", sizeof("Hello"));
+            //kzip->finishingWriting();
+
         }
 
 		KArchive* CompressedFile::getKArchiveObject(const QUrl &url)

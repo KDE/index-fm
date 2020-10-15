@@ -140,7 +140,7 @@ Maui.ApplicationWindow
             onAccepted:
             {
                 console.log("@gadominguez File:main.qml On Aceep Dialog Extract")
-                _compressedFile.compress(_selectionBar.selectionList.model, textEntry.text)
+                _compressedFile.compress(_selectionBar.uris, currentPath, textEntry.text)
                 _compressDialog.close()
             }
         }
