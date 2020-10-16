@@ -135,12 +135,13 @@ Maui.ApplicationWindow
             title: i18n("Compress")
             message: i18n("Compress selected files into a  new file.")
             entryField: true
+            compressVisible: true
             page.margins: Maui.Style.space.big
 
             onAccepted:
             {
-                console.log("@gadominguez File:main.qml On Aceep Dialog Extract")
-                _compressedFile.compress(_selectionBar.uris, currentPath, textEntry.text)
+                console.log("@gadominguez File:main.qml On Aceep Dialog Extract Type: " , compressTypeSelected)
+                _compressedFile.compress(currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path), currentPath, textEntry.text, compressTypeSelected)
                 _compressDialog.close()
             }
         }
