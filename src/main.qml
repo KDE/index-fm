@@ -277,7 +277,6 @@ Maui.ApplicationWindow
                 ToolButton
                 {
                     visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                    //                text: i18n("Show Terminal")
                     icon.name: "utilities-terminal"
                     onClicked: currentTab.currentItem.toogleTerminal()
                     checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
@@ -357,6 +356,15 @@ Maui.ApplicationWindow
                             currentBrowser.settings.group = !currentBrowser.settings.group
                         }
                     }
+                },
+
+                ToolButton
+                {
+                    visible: settings.supportSplit
+                    icon.name: "view-split-left-right"
+                    checked: currentTab.count == 2
+                    autoExclusive: true
+                    onClicked: toogleSplitView()
                 },
 
                 ToolButton
@@ -460,15 +468,6 @@ Maui.ApplicationWindow
                     //                        text: i18n("Columns")
                     //                        shortcut: "Ctrl+M"
                     //                    }
-                },
-
-                ToolButton
-                {
-                    visible: settings.supportSplit
-                    icon.name: "view-split-left-right"
-                    checked: currentTab.count == 2
-                    autoExclusive: true
-                    onClicked: toogleSplitView()
                 }
             ]
 
@@ -647,7 +646,6 @@ Maui.ApplicationWindow
                 }
             }
         }
-
 
         ProgressBar
         {
