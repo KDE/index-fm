@@ -69,9 +69,9 @@ void CompressedFileModel::setUrl(const QUrl & url)
          *  CompressTypeSelected is an integer and has to be acorrding with order in Dialog.qml
          *
          */
-        void CompressedFile::compress(const QVariantList &files, const QUrl &where, const QString & fileName, const int &compressTypeSelected)
+        bool CompressedFile::compress(const QVariantList &files, const QUrl &where, const QString & fileName, const int &compressTypeSelected)
         {
-
+            bool error = true;
             assert(compressTypeSelected >= 0 && compressTypeSelected <= 8);
             for(auto uri : files)
             {
@@ -83,37 +83,43 @@ void CompressedFileModel::setUrl(const QUrl & url)
 
                     auto file = QFile(QUrl(uri.toString()).toLocalFile());
                     file.open(QIODevice::ReadWrite);
-                    assert(file.isOpen() == true);
-
-                    switch(compressTypeSelected)
+                    if(file.isOpen() == true)
                     {
-                    case 0: //.ZIP
+                        switch(compressTypeSelected)
+                        {
+                        case 0: //.ZIP
+                        {
+                            auto kzip = new KZip(QUrl(where.toString() + "/" + fileName + ".zip").toLocalFile());
+                            kzip->open(QIODevice::ReadWrite);
+                            assert(kzip->isOpen() == true);
+
+                            kzip->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                            file.readAll(), 0100775, QFileInfo(file).owner(),QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                            kzip->close();
+                            error = false;
+                            break;
+                        }
+                        case 1: // .TAR
+                        {
+                            auto ktar = new KTar(QUrl(where.toString() + "/" + fileName + ".tar").toLocalFile());
+                            ktar->open(QIODevice::ReadWrite);
+                            assert(ktar->isOpen() == true);
+                            ktar->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                            file.readAll(), 0100775, QFileInfo(file).owner(),QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                            ktar->close();
+                            error = false;
+                            break;
+                        }
+                        default:
+                                qDebug() << "ERROR. COMPRESSED TYPE SELECTED NOT COMPATIBLE";
+                            break;
+                        }
+                    }
+                    else
                     {
-                        auto kzip = new KZip(QUrl(where.toString() + "/" + fileName + ".zip").toLocalFile());
-                        kzip->open(QIODevice::ReadWrite);
-                        assert(kzip->isOpen() == true);
-
-                        kzip->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
-                                        file.readAll(), 0100775, QFileInfo(file).owner(),QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
-                        kzip->close();
-                        break;
+                        qDebug() << "ERROR. CURRENT USER DOES NOT HAVE PEMRISSION FOR WRITE IN THE CURRENT DIRECTORY.";
+                         error = true;
                     }
-                    case 1: // .TAR
-                    {
-                        auto ktar = new KTar(QUrl(where.toString() + "/" + fileName + ".tar").toLocalFile());
-                        ktar->open(QIODevice::ReadWrite);
-                        assert(ktar->isOpen() == true);
-                        ktar->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
-                                        file.readAll(), 0100775, QFileInfo(file).owner(),QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
-                        ktar->close();
-                        break;
-                    }
-                    default:
-                            qDebug() << "ERROR. COMPRESSED TYPE SELECTED NOT COMPATIBLE";
-                        break;
-                    }
-
-
                 }
 
             }
@@ -123,6 +129,7 @@ void CompressedFileModel::setUrl(const QUrl & url)
             //kzip->writeData("Hello", sizeof("Hello"));
             //kzip->finishingWriting();
 
+            return error;
         }
 
 		KArchive* CompressedFile::getKArchiveObject(const QUrl &url)

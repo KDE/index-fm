@@ -142,8 +142,33 @@ Maui.ApplicationWindow
             onAccepted:
             {
                 console.log("@gadominguez File:main.qml On Aceep Dialog Extract Type: " , compressTypeSelected)
-                _compressedFile.compress(_selectedUris, currentPath, textEntry.text, compressTypeSelected)
+                var error = _compressedFile.compress(_selectedUris, currentPath, textEntry.text, compressTypeSelected)
                 _compressDialog.close()
+                if(error)
+                {
+                    dialogLoader.sourceComponent= _errorDialogComponent
+                    dialog.open()
+                }
+
+            }
+        }
+    }
+
+    Component
+    {
+        id: _errorDialogComponent
+        Maui.Dialog
+        {
+            id: _errorDialog
+            title: i18n("Compress Error")
+            message: i18n("Current user does not have permission for writing in this directory.")
+            entryField: true
+            compressVisible: false
+            page.margins: Maui.Style.space.big
+
+            onAccepted:
+            {
+                _errorDialog.close()
             }
         }
     }
