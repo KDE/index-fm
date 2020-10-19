@@ -69,13 +69,13 @@ void CompressedFileModel::setUrl(const QUrl & url)
          *  CompressTypeSelected is an integer and has to be acorrding with order in Dialog.qml
          *
          */
-        void CompressedFile::compress(const QVariantList &files, const QUrl &where, const QString & directory, const int &compressTypeSelected)
+        void CompressedFile::compress(const QVariantList &files, const QUrl &where, const QString & fileName, const int &compressTypeSelected)
         {
 
             assert(compressTypeSelected >= 0 && compressTypeSelected <= 8);
             for(auto uri : files)
             {
-                qDebug() << "@gadominguez File:fm.cpp Funcion: compress  " << QUrl(uri.toString()).toLocalFile() << " " << directory;
+                qDebug() << "@gadominguez File:fm.cpp Funcion: compress  " << QUrl(uri.toString()).toLocalFile() << " " << fileName;
 
                 if(!QFileInfo(QUrl(uri.toString()).toLocalFile()).isDir())
                 {
@@ -89,7 +89,7 @@ void CompressedFileModel::setUrl(const QUrl & url)
                     {
                     case 0: //.ZIP
                     {
-                        auto kzip = new KZip(QUrl(where.toString() + "/" + directory + ".zip").toLocalFile());
+                        auto kzip = new KZip(QUrl(where.toString() + "/" + fileName + ".zip").toLocalFile());
                         kzip->open(QIODevice::ReadWrite);
                         assert(kzip->isOpen() == true);
 
@@ -100,7 +100,7 @@ void CompressedFileModel::setUrl(const QUrl & url)
                     }
                     case 1: // .TAR
                     {
-                        auto ktar = new KTar(QUrl(where.toString() + "/" + directory + ".tar").toLocalFile());
+                        auto ktar = new KTar(QUrl(where.toString() + "/" + fileName + ".tar").toLocalFile());
                         ktar->open(QIODevice::ReadWrite);
                         assert(ktar->isOpen() == true);
                         ktar->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory

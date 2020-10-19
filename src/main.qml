@@ -39,6 +39,7 @@ Maui.ApplicationWindow
     property bool selectionMode: false
     property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
     property int iconSize : Maui.FM.loadSettings("ICONSIZE", "UI", Maui.Style.iconSizes.large)
+    property var _selectedUris : []
 
     Settings
     {
@@ -141,7 +142,7 @@ Maui.ApplicationWindow
             onAccepted:
             {
                 console.log("@gadominguez File:main.qml On Aceep Dialog Extract Type: " , compressTypeSelected)
-                _compressedFile.compress(currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path), currentPath, textEntry.text, compressTypeSelected)
+                _compressedFile.compress(_selectedUris, currentPath, textEntry.text, compressTypeSelected)
                 _compressDialog.close()
             }
         }
@@ -545,6 +546,18 @@ Maui.ApplicationWindow
                     {
                         for(var i in selectionBar.uris)
                             currentBrowser.openFile(_selectionBar.uris[i])
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Compress")
+                    icon.name: "document-open"
+                    onTriggered:
+                    {
+                        _selectedUris = selectionBar.uris
+                        dialogLoader.sourceComponent= _compressDialogComponent
+                        dialog.open()
                     }
                 }
 

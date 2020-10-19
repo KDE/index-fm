@@ -163,6 +163,7 @@ SplitView
                 onTriggered:
                 {
                     console.log("@gadominguez File: Browser.qml MenuItem Compress " + _selectionBar.selectionList.model.count)
+                    _selectedUris = currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path)
                     dialogLoader.sourceComponent= _compressDialogComponent
                     dialog.open()
 
