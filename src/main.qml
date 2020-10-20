@@ -157,13 +157,11 @@ Maui.ApplicationWindow
     Component
     {
         id: _errorDialogComponent
-        Maui.Dialog
+        Maui.ErrorDialog
         {
             id: _errorDialog
             title: i18n("Compress Error")
             message: i18n("Current user does not have permission for writing in this directory.")
-            entryField: true
-            compressVisible: false
             page.margins: Maui.Style.space.big
 
             onAccepted:
