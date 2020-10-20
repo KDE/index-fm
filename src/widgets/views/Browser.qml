@@ -13,7 +13,7 @@ import org.maui.index 1.0 as Index
 
 import QtQml.Models 2.3
 
-SplitView
+Item
 {
     id: control
 
@@ -27,8 +27,6 @@ SplitView
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
-    spacing: 0
-    orientation: Qt.Vertical
     SplitView.fillHeight: true
     SplitView.fillWidth: true
 
@@ -45,113 +43,136 @@ SplitView
         syncTerminal(currentBrowser.currentPath)
     }
 
-    handle: Rectangle
+    SplitView
     {
-        implicitWidth: 6
-        implicitHeight: 6
-        color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
-                                   : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+        anchors.fill: parent
+        anchors.bottomMargin: _selectionBar.visible && terminalVisible ? _selectionBar.height : 0
+        spacing: 0
+        orientation: Qt.Vertical
 
-        Rectangle
+        handle: Rectangle
         {
-            anchors.centerIn: parent
-            width: 48
-            height: parent.height
-            color: _splitSeparator.color
-        }
+            implicitWidth: 6
+            implicitHeight: 6
+            color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
+                                       : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
 
-        Kirigami.Separator
-        {
-            id: _splitSeparator
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
-            anchors.left: parent.left
-        }
-
-        Kirigami.Separator
-        {
-            anchors.top: parent.top
-            anchors.right: parent.right
-            anchors.left: parent.left
-        }
-    }
-
-    Maui.FileBrowser
-    {
-        id: _browser
-        SplitView.fillWidth: true
-        SplitView.fillHeight: true
-
-        selectionBar: root.selectionBar
-        openWithDialog: root.openWithDialog
-        tagsDialog: root.tagsDialog
-        thumbnailsSize: root.iconSize * 1.7
-        selectionMode: root.selectionMode
-        onSelectionModeChanged:
-        {
-            root.selectionMode = selectionMode
-            selectionMode = Qt.binding(function() { return root.selectionMode })
-        } // rebind this property in case filebrowser breaks it
-
-        settings.showHiddenFiles: appSettings.showHiddenFiles
-        settings.showThumbnails: appSettings.showThumbnails
-
-        Rectangle
-        {
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: 2
-            opacity: 1
-            color: Kirigami.Theme.highlightColor
-            visible: _splitView.currentIndex === _index && _splitView.count === 2
-        }
-
-        itemMenu.contentData : [
-
-            MenuSeparator {visible: _browser.itemMenu.isDir},
-
-            MenuItem
+            Rectangle
             {
-                visible: _browser.itemMenu.isDir
-                text: i18n("Open in new tab")
-                icon.name: "tab-new"
-                onTriggered: root.openTab(_browser.itemMenu.item.path)
-            },
+                anchors.centerIn: parent
+                width: 48
+                height: parent.height
+                color: _splitSeparator.color
+            }
 
-            MenuItem
+            Kirigami.Separator
             {
-                visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && root.supportSplit
-                text: i18n("Open in split view")
-                icon.name: "view-split-left-right"
-                onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
-            },
+                id: _splitSeparator
+                anchors.bottom: parent.bottom
+                anchors.right: parent.right
+                anchors.left: parent.left
+            }
 
-            MenuSeparator {},
-
-            MenuItem
+            Kirigami.Separator
             {
-                visible: !_browser.itemMenu.isExec
-                text: i18n("Preview")
-                icon.name: "view-preview"
-                onTriggered:
+                anchors.top: parent.top
+                anchors.right: parent.right
+                anchors.left: parent.left
+            }
+        }
+
+        Maui.FileBrowser
+        {
+            id: _browser
+            SplitView.fillWidth: true
+            SplitView.fillHeight: true
+
+            selectionBar: root.selectionBar
+            openWithDialog: root.openWithDialog
+            tagsDialog: root.tagsDialog
+            thumbnailsSize: root.iconSize * 1.7
+            selectionMode: root.selectionMode
+            onSelectionModeChanged:
+            {
+                root.selectionMode = selectionMode
+                selectionMode = Qt.binding(function() { return root.selectionMode })
+            } // rebind this property in case filebrowser breaks it
+
+            settings.showHiddenFiles: appSettings.showHiddenFiles
+            settings.showThumbnails: appSettings.showThumbnails
+            settings.foldersFirst: sortSettings.globalSorting ? sortSettings.foldersFirst : undefined
+            settings.sortBy: sortSettings.globalSorting ? sortSettings.sortBy : undefined
+            settings.group: sortSettings.globalSorting ? sortSettings.group : undefined
+
+            Rectangle
+            {
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: 2
+                opacity: 1
+                color: Kirigami.Theme.highlightColor
+                visible: _splitView.currentIndex === _index && _splitView.count === 2
+            }
+
+            itemMenu.contentData : [
+
+                MenuSeparator {visible: _browser.itemMenu.isDir},
+
+                MenuItem
                 {
-                    previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                    visible: _browser.itemMenu.isDir
+                    text: i18n("Open in new tab")
+                    icon.name: "tab-new"
+                    onTriggered: root.openTab(_browser.itemMenu.item.path)
+                },
+
+                MenuItem
+                {
+                    visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && appSettings.supportSplit
+                    text: i18n("Open in split view")
+                    icon.name: "view-split-left-right"
+                    onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
+                },
+
+                MenuSeparator {},
+
+                MenuItem
+                {
+                    visible: !_browser.itemMenu.isExec
+                    text: i18n("Preview")
+                    icon.name: "view-preview"
+                    onTriggered:
+                    {
+                        previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                    }
+                },
+
+                MenuSeparator {},
+
+                MenuItem
+                {
+                    visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                    text: i18n("Extract")
+                    icon.name: "archive-extract"
+                    onTriggered:
+                    {
+                        console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
+                        //                    extractArk(item);
+                        _compressedFile.url = _browser.itemMenu.item.path
+                        dialogLoader.sourceComponent= _extractDialogComponent
+                        dialog.open()
+                    }
                 }
-            },
+            ]
 
-            MenuSeparator {},
-
-            MenuItem
+            Connections
             {
-                visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
-                text: i18n("Extract")
-                icon.name: "archive-extract"
-                onTriggered:
+                target: _browser.dropArea
+                ignoreUnknownSignals: true
+                function onEntered()
                 {
-                    _compressedFile.url = _browser.itemMenu.item.path
-                    dialogLoader.sourceComponent= _extractDialogComponent
-                    dialog.open()
+                    _splitView.currentIndex = control._index
                 }
             },
 
@@ -169,128 +190,129 @@ SplitView
 
                 }
             }
-        ]
 
-        Connections
-        {
-            target: _browser.dropArea
-            ignoreUnknownSignals: true
-            function onEntered()
+            MouseArea
             {
-                _splitView.currentIndex = control._index
+                anchors.fill: parent
+                propagateComposedEvents: true
+                //        hoverEnabled: true
+                //        onEntered: _splitView.currentIndex = control.index
+                onPressed:
+                {
+                    _splitView.currentIndex = control._index
+                    mouse.accepted = false
+                }
+            }
+
+            onKeyPress:
+            {
+                if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+                {
+                    openTab(control.currentPath)
+                }
+
+                // Shortcut for closing tab
+                if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
+                {
+                    if(tabsObjectModel.count > 1)
+                        root.closeTab(tabsBar.currentIndex)
+                }
+
+                if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+                {
+                    _pathBar.showEntryBar()
+                }
+
+                if(event.key === Qt.Key_F4)
+                {
+                    toogleTerminal()
+                }
+
+                if(event.key === Qt.Key_F3)
+                {
+                    toogleSplitView()
+                }
+
+                if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
+                {
+                    newFolder()
+                }
+
+                if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
+                {
+                    newFile()
+                }
+
+                if(event.key === Qt.Key_Space)
+                {
+                    previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                }
+            }
+
+            onItemClicked:
+            {
+                const item = currentFMList.get(index)
+
+                if(appSettings.singleClick)
+                {
+                    if(appSettings.previewFiles && item.isdir != "true")
+                    {
+                        root.previewer.show(_browser.currentFMModel, index)
+                        return
+                    }
+
+                    openItem(index)
+                }
+            }
+
+            onItemDoubleClicked:
+            {
+                const item = currentFMList.get(index)
+
+                if(!appSettings.singleClick)
+                {
+                    if(appSettings.previewFiles && item.isdir != "true")
+                    {
+                        root.previewer.show(_browser.currentFMModel, index)
+                        return
+                    }
+
+                    openItem(index)
+                }
             }
         }
 
-        MouseArea
+        Loader
         {
-            anchors.fill: parent
-            propagateComposedEvents: true
-            //        hoverEnabled: true
-            //        onEntered: _splitView.currentIndex = control.index
-            onPressed:
-            {
-                _splitView.currentIndex = control._index
-                mouse.accepted = false
-            }
-        }
+            id: terminalLoader
+            active: inx.supportsEmbededTerminal()
+            visible: active && terminalVisible
+            SplitView.fillWidth: true
+            SplitView.preferredHeight: 200
+            SplitView.maximumHeight: parent.height * 0.5
+            SplitView.minimumHeight : 100
+            source: "Terminal.qml"
 
-        onKeyPress:
-        {
-            if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+            Behavior on Layout.preferredHeight
             {
-                openTab(control.currentPath)
-            }
-
-            // Shortcut for closing tab
-            if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
-            {
-                if(tabsObjectModel.count > 1)
-                    root.closeTab(tabsBar.currentIndex)
+                NumberAnimation
+                {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InQuad
+                }
             }
 
-            if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
-            {
-                _pathBar.showEntryBar()
-            }
-
-            if(event.key === Qt.Key_F4)
-            {
-                toogleTerminal()
-            }
-
-            if(event.key === Qt.Key_F3)
-            {
-                toogleSplitView()
-            }
-
-            if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
-            {
-                newFolder()
-            }
-
-            if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
-            {
-                newFile()
-            }
-
-            if(event.key === Qt.Key_Space)
-            {
-                previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
-            }
-        }
-
-        onItemClicked:
-        {
-            const item = currentFMList.get(index)
-            if(appSettings.previewFiles && item.isdir != "true")
-            {
-                root.previewer.show(_browser.currentFMModel, index)
-                return
-            }
-
-            if(appSettings.singleClick)
-            {
-                openItem(index)
-            }
-        }
-
-        onItemDoubleClicked:
-        {
-            const item = currentFMList.get(index)
-            if(appSettings.previewFiles && item.isdir != "true")
-            {
-                root.previewer.show(_browser.currentFMModel, index)
-                return
-            }
-
-            if(!appSettings.singleClick)
-            {
-                openItem(index)
-            }
+            onVisibleChanged: syncTerminal(control.currentPath)
         }
     }
 
-    Loader
+    MouseArea
     {
-        id: terminalLoader
-        active: inx.supportsEmbededTerminal()
-        visible: active && terminalVisible
-        SplitView.fillWidth: true
-        SplitView.preferredHeight: 200
-        SplitView.maximumHeight: parent.height * 0.5
-        SplitView.minimumHeight : 100
-        source: "Terminal.qml"
-
-        Behavior on Layout.preferredHeight
-        {
-            NumberAnimation
-            {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InQuad
-            }
-        }
-
-        onVisibleChanged: syncTerminal(control.currentPath)
+        anchors.fill: parent
+        enabled: _splitView.currentIndex !== _index
+        propagateComposedEvents: false
+        preventStealing: true
+        onClicked: _splitView.currentIndex = _index
     }
 
     Component.onCompleted: syncTerminal(control.currentPath)

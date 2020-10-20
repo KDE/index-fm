@@ -37,7 +37,6 @@ Maui.ApplicationWindow
     property alias appSettings : settings
 
     property bool selectionMode: false
-    property bool supportSplit :!Kirigami.Settings.isMobile && root.width > 600
     property int iconSize : Maui.FM.loadSettings("ICONSIZE", "UI", Maui.Style.iconSizes.large)
     property var _selectedUris : []
 
@@ -51,6 +50,18 @@ Maui.ApplicationWindow
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool stickSidebar :  !Kirigami.Settings.isMobile
+        property bool supportSplit : !Kirigami.Settings.isMobile
+    }
+
+    Settings
+    {
+        id: sortSettings
+        category: "Sorting"
+        property bool foldersFirst: true
+        property int sortBy:  Maui.FMList.MODIFIED
+        property int sortOrder : Qt.AscendingOrder
+        property bool group : false
+        property bool globalSorting: Kirigami.Settings.isMobile
     }
 
     onCurrentPathChanged:
@@ -220,7 +231,7 @@ Maui.ApplicationWindow
 
             MenuItem
             {
-                visible: root.currentTab.count === 1 && root.supportSplit
+                visible: root.currentTab.count === 1 && settings.supportSplit
                 text: i18n("Open in split view")
                 icon.name: "view-split-left-right"
                 onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
@@ -311,7 +322,6 @@ Maui.ApplicationWindow
                 ToolButton
                 {
                     visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                    //                text: i18n("Show Terminal")
                     icon.name: "utilities-terminal"
                     onClicked: currentTab.currentItem.toogleTerminal()
                     checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
@@ -320,6 +330,7 @@ Maui.ApplicationWindow
 
                 Maui.ToolButtonMenu
                 {
+                    visible: !sortSettings.globalSorting
                     icon.name: "view-sort"
 
                     MenuItem
@@ -394,6 +405,15 @@ Maui.ApplicationWindow
 
                 ToolButton
                 {
+                    visible: settings.supportSplit
+                    icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                    checked: currentTab.count == 2
+                    autoExclusive: true
+                    onClicked: toogleSplitView()
+                },
+
+                ToolButton
+                {
                     icon.name: "edit-find"
                     checked: currentBrowser.headBar.visible
                     onClicked:
@@ -454,6 +474,7 @@ Maui.ApplicationWindow
                 {
                     id: _viewTypeGroup
                     autoExclusive: true
+                    cyclic: true
                     expanded: headBar.width > Kirigami.Units.gridUnit * 32
 
                     Binding on currentIndex
@@ -492,15 +513,6 @@ Maui.ApplicationWindow
                     //                        text: i18n("Columns")
                     //                        shortcut: "Ctrl+M"
                     //                    }
-                },
-
-                ToolButton
-                {
-                    visible: root.supportSplit
-                    icon.name: "view-split-left-right"
-                    checked: currentTab.count == 2
-                    autoExclusive: true
-                    onClicked: toogleSplitView()
                 }
             ]
 
@@ -691,7 +703,6 @@ Maui.ApplicationWindow
                 }
             }
         }
-
 
         ProgressBar
         {
