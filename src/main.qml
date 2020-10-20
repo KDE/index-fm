@@ -361,7 +361,7 @@ Maui.ApplicationWindow
                 ToolButton
                 {
                     visible: settings.supportSplit
-                    icon.name: "view-split-left-right"
+                    icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
                     checked: currentTab.count == 2
                     autoExclusive: true
                     onClicked: toogleSplitView()

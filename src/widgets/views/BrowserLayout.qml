@@ -20,6 +20,7 @@ Item
 
     property url path
 
+    property alias orientation : _splitView.orientation
     property alias currentIndex : _splitView.currentIndex
     property alias count : _splitView.count
     readonly property alias currentItem : _splitView.currentItem
