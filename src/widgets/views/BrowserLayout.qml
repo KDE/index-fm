@@ -20,6 +20,7 @@ Item
 
     property url path
 
+    property alias orientation : _splitView.orientation
     property alias currentIndex : _splitView.currentIndex
     property alias count : _splitView.count
     readonly property alias currentItem : _splitView.currentItem
@@ -35,7 +36,7 @@ Item
         id: _splitView
 
         anchors.fill: parent
-        orientation: isWide ? Qt.Horizontal :  Qt.Vertical
+        orientation: width > 600 ? Qt.Horizontal :  Qt.Vertical
 
         clip: true
         focus: true
@@ -129,7 +130,7 @@ Item
     {
 //        _splitView.orientaion = orientation
 
-        if(_splitView.count === 1 && !root.supportSplit)
+        if(_splitView.count === 1 && !settings.supportSplit)
         {
             return
         }

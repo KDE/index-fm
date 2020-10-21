@@ -106,11 +106,6 @@ Maui.SideBar
         labelTxt.font.pointSize: Maui.Style.fontSizes.big
         isSection: true
         height: Maui.Style.toolBarHeightAlt
-
-        onClicked:
-        {
-            placesList.toggleSection(Maui.FMList.QUICK_PATH)
-        }
     }
 
     onContentDropped:
@@ -131,7 +126,7 @@ Maui.SideBar
 
         MenuItem
         {
-            visible: root.currentTab.count === 1 && root.supportSplit
+            visible: root.currentTab.count === 1 && settings.supportSplit
             text: i18n("Open in split view")
             icon.name: "view-split-left-right"
             onTriggered: currentTab.split(control.model.get(placesSidebar.currentIndex).path, Qt.Horizontal)

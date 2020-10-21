@@ -6,23 +6,23 @@ import org.kde.kirigami 2.7 as Kirigami
 
 Maui.Editor
 {
-	id: control
-	anchors.fill: parent	
-	footBar.visible: false
-	body.readOnly: true
-	document.enableSyntaxHighlighting: true
-	Kirigami.Theme.backgroundColor: "transparent"
-	
-	Component.onCompleted: document.load(currentUrl) 
-	
-	Connections
-	{
-		target: control.document
-		
-		onLoaded:
-		{
-			infoModel.insert(0, {key:"Length", value: control.body.length.toString()})
-			infoModel.insert(0, {key:"Line Count", value: control.body.lineCount.toString()})
-		}
-	}
+    id: control
+    anchors.fill: parent
+    footBar.visible: false
+    body.readOnly: true
+    document.enableSyntaxHighlighting: true
+    Kirigami.Theme.backgroundColor: "transparent"
+
+//    Component.onCompleted: document.load(currentUrl)
+fileUrl: currentUrl
+    Connections
+    {
+        target: control.document
+
+        onLoaded:
+        {
+            infoModel.insert(0, {key:"Length", value: control.body.length.toString()})
+            infoModel.insert(0, {key:"Line Count", value: control.body.lineCount.toString()})
+        }
+    }
 }
