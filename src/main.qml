@@ -71,7 +71,7 @@ Maui.ApplicationWindow
 
     onClosing:
     {
-        close.accepted = !root.restoreSession
+        close.accepted = !settings.restoreSession
         var tabs = []
 
         for(var i = 0; i <tabsObjectModel.count; i ++)
@@ -727,7 +727,7 @@ Maui.ApplicationWindow
 
     Component.onCompleted:
     {
-        if(root.restoreSession)
+        if(settings.restoreSession)
         {
             var session = Maui.FM.loadSettings("LAST_SESSION", "BROWSER", [[{path: Maui.FM.homePath(), viewType: 1}]])
 
