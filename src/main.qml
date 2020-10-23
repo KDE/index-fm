@@ -147,16 +147,17 @@ Maui.ApplicationWindow
             title: i18n("Compress")
             message: i18n("Compress selected files into a  new file.")
             entryField: true
-//             compressVisible: true
+            compressVisible: true
             page.margins: Maui.Style.space.big
 
             onAccepted:
             {
                 console.log("@gadominguez File:main.qml On Aceep Dialog Extract Type: " , compressTypeSelected)
                 var error = _compressedFile.compress(_selectedUris, currentPath, textEntry.text, compressTypeSelected)
+
                 if(error)
                 {
-                    root.notify("Compress Error", "Current user does not have permission for writing in this directory.")
+                    root.notify("","Compress Error", "Current user does not have permission for writing in this directory.")
                 }
 
             }

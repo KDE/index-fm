@@ -118,7 +118,7 @@ void CompressedFileModel::setUrl(const QUrl & url)
                     else
                     {
                         qDebug() << "ERROR. CURRENT USER DOES NOT HAVE PEMRISSION FOR WRITE IN THE CURRENT DIRECTORY.";
-                         error = true;
+                        error = true;
                     }
                 }
 
