@@ -55,7 +55,7 @@ Item
             implicitWidth: 6
             implicitHeight: 6
             color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
-                                       : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+                                    : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
 
             Rectangle
             {
@@ -157,11 +157,24 @@ Item
                     icon.name: "archive-extract"
                     onTriggered:
                     {
-                        console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
-                        //                    extractArk(item);
                         _compressedFile.url = _browser.itemMenu.item.path
                         dialogLoader.sourceComponent= _extractDialogComponent
                         dialog.open()
+                    }
+                },
+
+                MenuItem
+                {
+                    visible: true
+                    text: i18n("Compress")
+                    icon.name: "archive-compress"
+                    onTriggered:
+                    {
+                        console.log("@gadominguez File: Browser.qml MenuItem Compress " + _selectionBar.selectionList.model.count)
+                        _selectedUris = currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path)
+                        dialogLoader.sourceComponent= _compressDialogComponent
+                        dialog.open()
+
                     }
                 }
             ]
@@ -173,21 +186,6 @@ Item
                 function onEntered()
                 {
                     _splitView.currentIndex = control._index
-                }
-            },
-
-            MenuItem
-            {
-                visible: true
-                text: i18n("Compress")
-                icon.name: "archive-compress"
-                onTriggered:
-                {
-                    console.log("@gadominguez File: Browser.qml MenuItem Compress " + _selectionBar.selectionList.model.count)
-                    _selectedUris = currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path)
-                    dialogLoader.sourceComponent= _compressDialogComponent
-                    dialog.open()
-
                 }
             }
 
