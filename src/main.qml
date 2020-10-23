@@ -159,6 +159,10 @@ Maui.ApplicationWindow
                 {
                     root.notify("","Compress Error", "Current user does not have permission for writing in this directory.")
                 }
+                else
+                {
+                    _compressDialog.close()
+                }
 
             }
         }
