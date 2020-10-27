@@ -38,7 +38,6 @@ Maui.ApplicationWindow
 
     property bool selectionMode: false
     property int iconSize : Maui.FM.loadSettings("ICONSIZE", "UI", Maui.Style.iconSizes.large)
-    property var _selectedUris : []
 
     Settings
     {
@@ -144,16 +143,44 @@ Maui.ApplicationWindow
         Maui.Dialog
         {
             id: _compressDialog
+            
+            property var urls : []
+            
             title: i18n("Compress")
             message: i18n("Compress selected files into a  new file.")
             entryField: true
-            compressVisible: true
-            page.margins: Maui.Style.space.big
+            spacing: Maui.Style.space.medium
+            page.margins: Maui.Style.space.big                      
+            
+            Maui.ToolActions
+            {
+                id: compressType
+                Layout.alignment: Qt.AlignHCenter
+                autoExclusive: true
+                expanded: true
+                
+                Action
+                {
+                    text: ".ZIP"
+                }
+                
+                Action
+                {
+                    text: ".TAR"
+                }
+                
+                Action
+                {
+                    text: ".GZIP"
+                }
+            }     
+            
+            onRejected: close()
 
             onAccepted:
             {
-                console.log("@gadominguez File:main.qml On Aceep Dialog Extract Type: " , compressTypeSelected)
-                var error = _compressedFile.compress(_selectedUris, currentPath, textEntry.text, compressTypeSelected)
+                console.log("@gadominguez File:main.qml On Aceep Dialog Extract Type: " , compressType.currentIndex)
+                var error = _compressedFile.compress(urls, currentPath, textEntry.text, compressType.currentIndex)
 
                 if(error)
                 {
@@ -577,8 +604,8 @@ Maui.ApplicationWindow
                     icon.name: "document-open"
                     onTriggered:
                     {
-                        _selectedUris = selectionBar.uris
                         dialogLoader.sourceComponent= _compressDialogComponent
+                        dialog.urls = selectionBar.uris
                         dialog.open()
                     }
                 }
