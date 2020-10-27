@@ -55,11 +55,14 @@ macos {
 
     INCLUDEPATH += $$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/include/KF5
     DEPENDPATH += $$PWD/../../../usr/local/Cellar/kde-karchive/5.74.0/include/KF5
-
 }
 
 win32 {
     RC_ICONS = $$PWD/windows_files/index.ico
+    LIBS += -L$$PWD/../../../../CraftRoot/lib/ -lKF5Archive
+
+    INCLUDEPATH += $$PWD/../../../../CraftRoot/include/KF5
+    DEPENDPATH += $$PWD/../../../../CraftRoot/include/KF5
 }
 
 android {
@@ -83,6 +86,7 @@ android {
     INCLUDEPATH += $$PWD/3rdparty/KArchive
     DEPENDPATH += $$PWD/3rdparty/KArchive
 
+    ANDROID_ABIS = armeabi-v7a
 }
 
 # The following define makes your compiler emit warnings if you use
@@ -123,4 +127,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 include($$PWD/install.pri)
 
-ANDROID_ABIS = armeabi-v7a
