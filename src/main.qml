@@ -601,7 +601,7 @@ Maui.ApplicationWindow
                 Action
                 {
                     text: i18n("Compress")
-                    icon.name: "document-open"
+                    icon.name: "application-zip"
                     onTriggered:
                     {
                         dialogLoader.sourceComponent= _compressDialogComponent

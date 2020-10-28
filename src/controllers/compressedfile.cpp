@@ -2,6 +2,7 @@
 #include <KArchive/KZip>
 #include <KArchive/KTar>
 #include <KArchive/KZip>
+#include <qdiriterator.h>
 
 CompressedFile::CompressedFile(QObject *parent) : QObject(parent)
   ,m_model(new CompressedFileModel(this))
@@ -79,8 +80,6 @@ void CompressedFileModel::setUrl(const QUrl & url)
 
                 if(!QFileInfo(QUrl(uri.toString()).toLocalFile()).isDir())
                 {
-
-
                     auto file = QFile(QUrl(uri.toString()).toLocalFile());
                     file.open(QIODevice::ReadWrite);
                     if(file.isOpen() == true)
@@ -110,6 +109,12 @@ void CompressedFileModel::setUrl(const QUrl & url)
                             error = false;
                             break;
                         }
+                        case 2: //.GZIP
+                        {
+                            //TODO: KArchive no permite comprimir ficheros del mismo modo que con TAR o ZIP. Hay que hacerlo de otra forma y requiere disponer de una libreria actualizada de KArchive.
+                            error = false;
+                            break;
+                        }
                         default:
                                 qDebug() << "ERROR. COMPRESSED TYPE SELECTED NOT COMPATIBLE";
                             break;
@@ -120,6 +125,31 @@ void CompressedFileModel::setUrl(const QUrl & url)
                         qDebug() << "ERROR. CURRENT USER DOES NOT HAVE PEMRISSION FOR WRITE IN THE CURRENT DIRECTORY.";
                         error = true;
                     }
+                }
+                else
+                {
+                    qDebug() << "Dir: "  << QUrl(uri.toString()).toLocalFile();
+                    auto dir =  QDirIterator(QUrl(uri.toString()).toLocalFile(), QDirIterator::Subdirectories);
+                    auto file = QFile(QUrl(uri.toString()).toLocalFile());
+                    file.open(QIODevice::ReadWrite);
+                    auto kzip = new KZip(QUrl(where.toString() + "/" + fileName + ".zip").toLocalFile());
+                    kzip->open(QIODevice::ReadWrite);
+                    assert(kzip->isOpen() == true);
+
+                    while (dir.hasNext())
+                    {
+                        auto entrie = dir.next();
+                        qDebug() << entrie << " " << where.toString() << QFileInfo(entrie).isFile() ;
+                        if(QFileInfo(entrie).isFile() == true)
+                        {
+                            qDebug() << entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
+                            kzip->writeFile(entrie.remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                            file.readAll(), 0100775, QFileInfo(file).owner(),QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+
+                        }
+                    }
+
+                    kzip->close();
                 }
 
             }

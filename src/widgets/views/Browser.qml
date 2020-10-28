@@ -167,7 +167,7 @@ Item
                 {
                     visible: true
                     text: i18n("Compress")
-                    icon.name: "archive-compress"
+                    icon.name: "application-zip"
                     onTriggered:
                     {
                         console.log("@gadominguez File: Browser.qml MenuItem Compress " + _selectionBar.selectionList.model.count)
