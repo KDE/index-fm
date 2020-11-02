@@ -2,6 +2,8 @@
 #include <KArchive/KZip>
 #include <KArchive/KTar>
 #include <KArchive/KZip>
+#include <KArchive/kcompressiondevice.h>
+#include <KArchive/kfilterdev.h>
 #include <qdiriterator.h>
 
 CompressedFile::CompressedFile(QObject *parent) : QObject(parent)
@@ -112,6 +114,15 @@ void CompressedFileModel::setUrl(const QUrl & url)
                         case 2: //.GZIP
                         {
                             //TODO: KArchive no permite comprimir ficheros del mismo modo que con TAR o ZIP. Hay que hacerlo de otra forma y requiere disponer de una libreria actualizada de KArchive.
+                            auto kgzip = KCompressionDevice(QUrl(where.toString() + "/" + fileName + ".gz").toLocalFile(), KCompressionDevice::GZip);
+
+                            qDebug() << "@gadominguez File: compressedFile.cpp Path: " << QUrl(where.toString() + "/" + fileName).toLocalFile();
+                            qDebug() << "@gadominguez File: compressedFile.cpp Open result GZIP File: " << kgzip.open(QIODevice::ReadWrite);
+                            qDebug() << "@gadominguez File: compressedFile.cpp Open result Error: " << kgzip.errorString();
+                            assert(kgzip.isOpen() == true);
+
+                            kgzip.write(QString("hello World").toUtf8());
+                            kgzip.close();
                             error = false;
                             break;
                         }
