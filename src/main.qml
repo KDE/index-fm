@@ -543,7 +543,6 @@ Maui.ApplicationWindow
                         onClicked:
                         {
                             _selectionBar.selectionList.currentIndex = index
-                            _previewer.show(_selectionBar.selectionList.model, _selectionBar.selectionList.currentIndex )
                         }
 
                         onPressAndHold: removeAtIndex(index)
