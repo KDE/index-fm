@@ -144,7 +144,8 @@ Item
                     icon.name: "view-preview"
                     onTriggered:
                     {
-                        previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+//                        previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                        _stackView.push(_previewerComponent)
                     }
                 },
 
@@ -230,7 +231,7 @@ Item
 
                 if(event.key === Qt.Key_Space)
                 {
-                    previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                    _stackView.push(_previewerComponent)
                 }
             }
 
@@ -242,7 +243,8 @@ Item
                 {
                     if(appSettings.previewFiles && item.isdir != "true")
                     {
-                        root.previewer.show(_browser.currentFMModel, index)
+//                        root.previewer.show(_browser.currentFMModel, index)
+                        _stackView.push(_previewerComponent)
                         return
                     }
 
@@ -258,7 +260,8 @@ Item
                 {
                     if(appSettings.previewFiles && item.isdir != "true")
                     {
-                        root.previewer.show(_browser.currentFMModel, index)
+//                        root.previewer.show(_browser.currentFMModel, index)
+                        _stackView.push(_previewerComponent)
                         return
                     }
 

@@ -1,56 +1,76 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.15
+import QtQml 2.15
+import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.2 as Maui
 
-Maui.Dialog
+Maui.Page
 {
     id: control
 
     property url currentUrl: ""
 
     property alias model : _listView.model
+    property alias currentIndex: _listView.currentIndex
+
     property bool isFav : false
     property bool isDir : false
     property bool showInfo: true
 
     property alias tagBar : _tagsBar
 
-    maxHeight: Maui.Style.unit * 800
-    maxWidth: Maui.Style.unit * 500
+    title: _listView.currentItem.title
 
-    defaultButtons: false
-
-    page.padding: 0
-    spacing: 0
-
-    page.title: _listView.currentItem.title
-
-    headBar.leftContent: ToolButton
-    {
-        icon.name: "go-previous"
-        onClicked: _listView.decrementCurrentIndex()
-    }
-
-    headBar.rightContent: ToolButton
-    {
-        icon.name: "go-next"
-        onClicked: _listView.incrementCurrentIndex()
-    }
 
     footBar.visible: true
-    footBar.leftContent: ToolButton
+    footBar.leftContent: Maui.ToolActions
     {
-        icon.name: "document-open"
-        onClicked:
+        expanded: true
+        autoExclusive: false
+        checkable: false
+
+        Action
         {
-            currentBrowser.openFile(control.currentUrl)
-            control.close()
+            text: i18n("Previous")
+            icon.name: "go-previous"
+            onTriggered :  _listView.decrementCurrentIndex()
+        }
+
+        Action
+        {
+            text: i18n("Next")
+            icon.name: "go-next"
+            onTriggered: _listView.incrementCurrentIndex()
         }
     }
 
     footBar.middleContent: [
+        ToolButton
+            {
+                icon.name: "document-open"
+                onClicked:
+                {
+                    currentBrowser.openFile(control.currentUrl)
+                    control.close()
+                }
+            },
+
+            ToolButton
+            {
+                icon.name: "love"
+                checkable: true
+                checked: control.isFav
+                onClicked:
+                {
+                    if(control.isFav)
+                        _tagsBar.list.removeFromUrls("fav")
+                    else
+                        _tagsBar.list.insertToUrls("fav")
+
+                    control.isFav = !control.isFav
+                }
+            },
 
         ToolButton
         {
@@ -61,22 +81,6 @@ Maui.Dialog
                 Maui.Platform.shareFiles([control.currentUrl])
 
                 control.close()
-            }
-        },
-
-        ToolButton
-        {
-            icon.name: "love"
-            checkable: true
-            checked: control.isFav
-            onClicked:
-            {
-                if(control.isFav)
-                    _tagsBar.list.removeFromUrls("fav")
-                else
-                    _tagsBar.list.insertToUrls("fav")
-
-                control.isFav = !control.isFav
             }
         }
     ]
@@ -89,12 +93,11 @@ Maui.Dialog
         onClicked: control.showInfo = !control.showInfo
     }
 
-    stack: [ListView
+    ListView
         {
             id: _listView
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-
+            anchors.fill: parent
+            model: root.currentBrowser.currentFMModel
             orientation: ListView.Horizontal
             clip: true
             focus: true
@@ -267,14 +270,13 @@ Maui.Dialog
                     infoModel.append({key: "Icon Name", value: iteminfo.icon})
                 }
             }
-        },
+        }
 
-        Maui.TagsBar
+        footerColumn: Maui.TagsBar
         {
             id: _tagsBar
             position: ToolBar.Footer
-            Layout.fillWidth: true
-            Layout.margins: 0
+           width: parent.width
             list.urls: [control.currentUrl]
             list.strict: false
             allowEditMode: true
@@ -289,7 +291,7 @@ Maui.Dialog
                 tagsDialog.open()
             }
         }
-    ]
+
 
     Connections
     {
@@ -304,12 +306,12 @@ Maui.Dialog
         }
     }
 
-    function show(model, index)
+    Component.onCompleted:
     {
-        control.model = model
-        _listView.currentIndex = index
-        _listView.positionViewAtIndex(index,ListView.Center )
-        open()
+
+//        _listView.positionViewAtIndex(_listView.currentIndex, ListView.Center)
         _listView.forceActiveFocus()
+        _listView.currentIndex = root.currentBrowser.currentView.currentIndex
+
     }
 }
