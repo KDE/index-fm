@@ -22,7 +22,7 @@ Maui.Page
 
     title: _listView.currentItem.title
 
-
+    headerBackground.color: "transparent"
     footBar.visible: true
     footBar.leftContent: Maui.ToolActions
     {
