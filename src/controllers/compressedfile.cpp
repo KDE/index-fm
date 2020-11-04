@@ -187,20 +187,21 @@ KArchive *CompressedFile::getKArchiveObject(const QUrl &url)
                         */
     qDebug() << "@gadominguez File: fmstatic.cpp Func: getKArchiveObject MimeType: " << FMH::getMime(url);
 
-    if (FMH::getMime(url).contains("application/x-xz-compressed-tar") ||
-        FMH::getMime(url).contains("application/x-compressed-tar") ||
-        FMH::getMime(url).contains("application/x-compressed-tar") ||
-        FMH::getMime(url).contains("application/x-gtar") ||
-        FMH::getMime(url).contains("application/x-tar") ||
-        FMH::getMime(url).contains("application/x-bzip") ||
-        FMH::getMime(url).contains("application/x-xz") ||
-        FMH::getMime(url).contains("application/x-gzip"))
+    if (FMH::getMime(url).contains("application/x-tar"))
     {
         kArch = new KTar(url.toString().split(QString("file://"))[1]);
     }
     else if (FMH::getMime(url).contains("application/zip"))
     {
         kArch = new KZip(url.toString().split(QString("file://"))[1]);
+    }
+    else if (FMH::getMime(url).contains("application/x-archive"))
+    {
+        kArch = new KAr(url.toString().split(QString("file://"))[1]);
+    }
+    else if (FMH::getMime(url).contains("application/x-7z-compressed"))
+    {
+        kArch = new K7Zip(url.toString().split(QString("file://"))[1]);
     }
     else
     {
