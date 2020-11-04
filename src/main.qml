@@ -171,7 +171,11 @@ Maui.ApplicationWindow
                 
                 Action
                 {
-                    text: ".GZIP"
+                    text: ".7ZIP"
+                }
+                Action
+                {
+                    text: ".AR"
                 }
             }     
             
