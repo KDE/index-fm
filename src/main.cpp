@@ -21,12 +21,6 @@
 #include "mauimacos.h"
 #endif
 
-#if defined Q_OS_MACOS || defined Q_OS_WIN
-#include <KF5/KI18n/KLocalizedContext>
-#else
-#include <KI18n/KLocalizedContext>
-#endif
-
 #ifdef STATIC_MAUIKIT
 #include "3rdparty/mauikit/src/mauikit.h"
 #include "mauiapp.h"
@@ -35,10 +29,8 @@
 #endif
 
 #if defined Q_OS_MACOS || defined Q_OS_WIN
-#include <KF5/KI18n/KLocalizedContext>
 #include <KF5/KI18n/KLocalizedString>
 #else
-#include <KI18n/KLocalizedContext>
 #include <KI18n/KLocalizedString>
 #endif
 
@@ -114,7 +106,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 	}, Qt::QueuedConnection);
 
-	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 	engine.rootContext()->setContextProperty("inx", &index);
     qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
