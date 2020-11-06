@@ -277,9 +277,8 @@ Item
 
                     if(appSettings.singleClick)
                     {
-                        if(appSettings.previewFiles && item.isdir != "true")
+                        if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                         {
-                            //                        root.previewer.show(_browser.currentFMModel, index)
                             _stackView.push(_previewerComponent, StackView.Immediate)
                             return
                         }
@@ -294,9 +293,8 @@ Item
 
                     if(!appSettings.singleClick)
                     {
-                        if(appSettings.previewFiles && item.isdir != "true")
+                        if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                         {
-                            //                        root.previewer.show(_browser.currentFMModel, index)
                             _stackView.push(_previewerComponent)
                             return
                         }
@@ -306,6 +304,7 @@ Item
                 }
             }
         }
+
         Loader
         {
             id: terminalLoader
