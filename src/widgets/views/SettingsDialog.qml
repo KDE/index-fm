@@ -236,9 +236,7 @@ Maui.SettingsDialog
                 }
             }
         }
-
     }
-
 
     Maui.SettingsSection
     {
@@ -260,7 +258,7 @@ Maui.SettingsDialog
 
                 Binding on currentIndex
                 {
-                    value:  switch(iconSize)
+                    value:  switch(appSettings.iconSize)
                             {
                             case 32: return 0;
                             case 48: return 1;
@@ -308,7 +306,6 @@ Maui.SettingsDialog
                 checkable: true
                 checked: appSettings.stickSidebar
                 onToggled: appSettings.stickSidebar = !appSettings.stickSidebar
-
             }
         }
 

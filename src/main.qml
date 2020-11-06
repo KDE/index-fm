@@ -36,7 +36,6 @@ Maui.ApplicationWindow
     property alias appSettings : settings
 
     property bool selectionMode: false
-    property int iconSize : Maui.FM.loadSettings("ICONSIZE", "UI", Maui.Style.iconSizes.large)
 
     Settings
     {
@@ -49,6 +48,12 @@ Maui.ApplicationWindow
         property bool restoreSession:  false
         property bool stickSidebar :  !Kirigami.Settings.isMobile
         property bool supportSplit : !Kirigami.Settings.isMobile
+
+        property int viewType : Maui.FMList.LIST_VIEW
+        property int iconSize : Maui.Style.iconSizes.large
+
+        property var lastSession : [[({'path': Maui.FM.homePath(), 'viewType': 1})]]
+        property int lastTabIndex : 0
     }
 
     Settings
@@ -82,13 +87,19 @@ Maui.ApplicationWindow
                 const browser = tab.model.get(j)
                 const tabMap = {'path': browser.currentPath, 'viewType': browser.settings.viewType}
                 tabPaths.push(tabMap)
+
+                console.log("saving tabs", browser.currentPath, browser.settings.viewType)
+
             }
 
             tabs.push(tabPaths)
         }
 
-        Maui.FM.saveSettings("LAST_SESSION", tabs, "BROWSER")
-        Maui.FM.saveSettings("LAST_TAB_INDEX", _browserList.currentIndex, "BROWSER")
+        console.log("saving tabs", tabs.length)
+
+        settings.lastSession = tabs
+        settings.lastTabIndex = _browserList.currentIndex
+
         close.accepted = true
     }
 
@@ -100,24 +111,6 @@ Maui.ApplicationWindow
             icon.name: "settings-configure"
             onTriggered: openConfigDialog()
         }]
-
-
-    Component
-    {
-        id: _previewerComponent
-
-        FilePreviewer
-        {
-            headBar.farLeftContent: ToolButton
-            {
-                icon.name: "go-previous"
-                onClicked:
-                {
-                    _stackView.pop()
-                }
-            }
-        }
-    }
 
     Maui.TagsDialog
     {
@@ -221,14 +214,10 @@ Maui.ApplicationWindow
 
     ObjectModel { id: tabsObjectModel }
 
-    StackView
-    {
-        id: _stackView
-        anchors.fill: parent
-
-        initialItem: ColumnLayout
+  ColumnLayout
         {
             spacing: 0
+            anchors.fill: parent
 
             Maui.TabBar
             {
@@ -464,9 +453,8 @@ Maui.ApplicationWindow
                         onCurrentIndexChanged:
                         {
                             if(currentTab && currentBrowser)
-                            currentBrowser.settings.viewType = currentIndex
-
-                            Maui.FM.saveSettings("VIEW_TYPE", currentIndex, "BROWSER")
+                            currentBrowser.settings.viewType = currentIndex    
+                            settings.viewType = currentIndex
                         }
 
                         Action
@@ -678,9 +666,6 @@ Maui.ApplicationWindow
 
         }
 
-    }
-
-
     Connections
     {
         target: inx
@@ -693,34 +678,34 @@ Maui.ApplicationWindow
 
     Component.onCompleted:
     {
-        if(settings.restoreSession)
-        {
-            var session = Maui.FM.loadSettings("LAST_SESSION", "BROWSER", [[{path: Maui.FM.homePath(), viewType: 1}]])
+          const tabs = settings.lastSession
 
-            for(var i in session)
+        if(settings.restoreSession && tabs.length)
+        {
+            console.log("restore", tabs.length)
+
+            for(var i = 0; i < tabs.length; i++ )
             {
-                const tab = session[i];
+                const tab = tabs[i]
+
+                root.openTab(tab[0].path)
+                currentBrowser.settings.viewType = tab[0].viewType
+
                 if(tab.length === 2)
                 {
-                    root.openTab(tab[0].path)
-                    currentBrowser.settings.viewType = tab[0].viewType
                     currentTab.split(tab[1].path, Qt.Horizontal)
                     currentBrowser.settings.viewType = tab[1].viewType
-                }else
-                {
-                    root.openTab(tab[0].path)
-                    currentBrowser.settings.viewType = tab[0].viewType
                 }
             }
 
-            const lastTabIndex = Maui.FM.loadSettings("LAST_TAB_INDEX", "BROWSER", _browserList.currentIndex)
-            _browserList.currentIndex = lastTabIndex
+            _browserList.currentIndex = settings.lastTabIndex
 
         }else
         {
             root.openTab(Maui.FM.homePath())
-            currentBrowser.settings.viewType = Maui.FM.loadSettings("VIEW_TYPE", "BROWSER", Maui.FMList.LIST_VIEW)
+            currentBrowser.settings.viewType = settings.viewType
         }
+
     }
 
     //     onThumbnailsSizeChanged:
@@ -784,7 +769,6 @@ Maui.ApplicationWindow
 
     function setIconSize(size)
     {
-        root.iconSize = size
-        Maui.FM.saveSettings("ICONSIZE",  root.iconSize, "UI")
+        settings.iconSize = size
     }
 }

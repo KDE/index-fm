@@ -11,6 +11,7 @@ Maui.Page
 
     property url currentUrl: ""
 
+    property alias listView : _listView
     property alias model : _listView.model
     property alias currentIndex: _listView.currentIndex
 
@@ -97,7 +98,6 @@ Maui.Page
         {
             id: _listView
             anchors.fill: parent
-            model: root.currentBrowser.currentFMModel
             orientation: ListView.Horizontal
             clip: true
             focus: true
@@ -304,14 +304,5 @@ Maui.Page
             tagsDialog.composerList.updateToUrls(tags)
             tagBar.list.refresh()
         }
-    }
-
-    Component.onCompleted:
-    {
-
-//        _listView.positionViewAtIndex(_listView.currentIndex, ListView.Center)
-        _listView.forceActiveFocus()
-        _listView.currentIndex = root.currentBrowser.currentView.currentIndex
-
-    }
+    }    
 }
