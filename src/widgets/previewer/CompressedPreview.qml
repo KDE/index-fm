@@ -9,6 +9,7 @@ Maui.Page
 {
     id: control
     footBar.visible: true
+    footerBackground.color: "transparent"
     footBar.rightContent: Button
     {
         text: i18n("Extract")

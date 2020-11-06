@@ -24,69 +24,7 @@ Maui.Page
     title: _listView.currentItem.title
 
     headerBackground.color: "transparent"
-    footBar.visible: true
-    footBar.leftContent: Maui.ToolActions
-    {
-        expanded: true
-        autoExclusive: false
-        checkable: false
-
-        Action
-        {
-            text: i18n("Previous")
-            icon.name: "go-previous"
-            onTriggered :  _listView.decrementCurrentIndex()
-        }
-
-        Action
-        {
-            text: i18n("Next")
-            icon.name: "go-next"
-            onTriggered: _listView.incrementCurrentIndex()
-        }
-    }
-
-    footBar.middleContent: [
-        ToolButton
-            {
-                icon.name: "document-open"
-                onClicked:
-                {
-                    currentBrowser.openFile(control.currentUrl)
-                    control.close()
-                }
-            },
-
-            ToolButton
-            {
-                icon.name: "love"
-                checkable: true
-                checked: control.isFav
-                onClicked:
-                {
-                    if(control.isFav)
-                        _tagsBar.list.removeFromUrls("fav")
-                    else
-                        _tagsBar.list.insertToUrls("fav")
-
-                    control.isFav = !control.isFav
-                }
-            },
-
-        ToolButton
-        {
-            visible: !isDir
-            icon.name: "document-share"
-            onClicked:
-            {
-                Maui.Platform.shareFiles([control.currentUrl])
-
-                control.close()
-            }
-        }
-    ]
-
-    footBar.rightContent: ToolButton
+    headBar.rightContent: ToolButton
     {
         icon.name: "documentinfo"
         checkable: true
@@ -95,188 +33,257 @@ Maui.Page
     }
 
     ListView
+    {
+        id: _listView
+        anchors.fill: parent
+        orientation: ListView.Horizontal
+        clip: true
+        focus: true
+        spacing: 0
+        interactive: true
+        highlightFollowsCurrentItem: true
+        highlightMoveDuration: 0
+        highlightResizeDuration : 0
+        snapMode: ListView.SnapOneItem
+        cacheBuffer: 0
+        keyNavigationEnabled : true
+        keyNavigationWraps : true
+        onMovementEnded: currentIndex = indexAt(contentX, contentY)
+
+        delegate: Item
         {
-            id: _listView
-            anchors.fill: parent
-            orientation: ListView.Horizontal
-            clip: true
-            focus: true
-            spacing: 0
-            interactive: true
-            highlightFollowsCurrentItem: true
-            highlightMoveDuration: 0
-            highlightResizeDuration : 0
-            snapMode: ListView.SnapOneItem
-            cacheBuffer: 0
-            keyNavigationEnabled : true
-            keyNavigationWraps : true
-            onMovementEnded: currentIndex = indexAt(contentX, contentY)
+            id: _delegate
+            property bool isCurrentItem : ListView.isCurrentItem
+            property url currentUrl: model.path
+            property var iteminfo : model
+            property alias infoModel : _infoModel
+            readonly property string title: model.label
 
-            delegate: Item
+            height: _listView.height
+            width: _listView.width
+
+            Loader
             {
-                id: _delegate
-                property bool isCurrentItem : ListView.isCurrentItem
-                property url currentUrl: model.path
-                property var iteminfo : model
-                property alias infoModel : _infoModel
-                readonly property string title: model.label
+                id: previewLoader
+                active: _delegate.isCurrentItem && control.visible
+                visible: !control.showInfo
+                anchors.fill: parent
+                clip: false
+                onActiveChanged: if(active) show(currentUrl)
+            }
 
-                height: _listView.height
-                width: _listView.width
+            Kirigami.ScrollablePage
+            {
+                id: _infoContent
+                anchors.fill: parent
+                visible: control.showInfo
 
-                Loader
+                Kirigami.Theme.backgroundColor: "transparent"
+                padding:  0
+                leftPadding: padding
+                rightPadding: padding
+                topPadding: padding
+                bottomPadding: padding
+
+                ColumnLayout
                 {
-                    id: previewLoader
-                    active: _delegate.isCurrentItem && control.visible
-                    visible: !control.showInfo
-                    anchors.fill: parent
-                    clip: false
-                    onActiveChanged: if(active) show(currentUrl)
-                }
+                    width: parent.width
+                    spacing: 0
 
-                Kirigami.ScrollablePage
-                {
-                    id: _infoContent
-                    anchors.fill: parent
-                    visible: control.showInfo
-
-                    Kirigami.Theme.backgroundColor: "transparent"
-                    padding:  0
-                    leftPadding: padding
-                    rightPadding: padding
-                    topPadding: padding
-                    bottomPadding: padding
-
-                    ColumnLayout
+                    Item
                     {
-                        width: parent.width
-                        spacing: 0
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 100
 
-                        Item
+                        Kirigami.Icon
                         {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 100
-
-                            Kirigami.Icon
-                            {
-                                height: Maui.Style.iconSizes.large
-                                width: height
-                                anchors.centerIn: parent
-                                source: iteminfo.icon
-                            }
+                            height: Maui.Style.iconSizes.large
+                            width: height
+                            anchors.centerIn: parent
+                            source: iteminfo.icon
                         }
+                    }
 
-                        Maui.Separator
+                    Maui.Separator
+                    {
+                        position: Qt.Horizontal
+                        Layout.fillWidth: true
+                    }
+
+                    Repeater
+                    {
+                        model: ListModel { id: _infoModel }
+                        delegate: Maui.AlternateListItem
                         {
-                            position: Qt.Horizontal
+                            visible: model.value
+                            Layout.preferredHeight: visible ? _delegateColumnInfo.label1.implicitHeight + _delegateColumnInfo.label2.implicitHeight + Maui.Style.space.large : 0
                             Layout.fillWidth: true
-                        }
+                            lastOne: index === _infoModel.count-1
 
-                        Repeater
-                        {
-                            model: ListModel { id: _infoModel }
-                            delegate: Maui.AlternateListItem
+                            Maui.ListItemTemplate
                             {
-                                visible: model.value
-                                Layout.preferredHeight: visible ? _delegateColumnInfo.label1.implicitHeight + _delegateColumnInfo.label2.implicitHeight + Maui.Style.space.large : 0
-                                Layout.fillWidth: true
-                                lastOne: index === _infoModel.count-1
+                                id: _delegateColumnInfo
 
-                                Maui.ListItemTemplate
-                                {
-                                    id: _delegateColumnInfo
+                                iconSource: "documentinfo"
+                                iconSizeHint: Maui.Style.iconSizes.medium
 
-                                    iconSource: "documentinfo"
-                                    iconSizeHint: Maui.Style.iconSizes.medium
+                                anchors.fill: parent
+                                anchors.margins: Maui.Style.space.medium
 
-                                    anchors.fill: parent
-                                    anchors.margins: Maui.Style.space.medium
-
-                                    label1.text: model.key
-                                    label1.font.weight: Font.Bold
-                                    label1.font.bold: true
-                                    label2.text: model.value
-                                    label2.elide: Qt.ElideMiddle
-                                    label2.wrapMode: Text.Wrap
-                                    label2.font.weight: Font.Light
-                                }
+                                label1.text: model.key
+                                label1.font.weight: Font.Bold
+                                label1.font.bold: true
+                                label2.text: model.value
+                                label2.elide: Qt.ElideMiddle
+                                label2.wrapMode: Text.Wrap
+                                label2.font.weight: Font.Light
                             }
                         }
                     }
-                }
-
-                function show(path)
-                {
-                    initModel()
-
-                    control.isDir = model.isdir == "true"
-                    control.currentUrl = path
-                    control.isFav =  _tagsBar.list.contains("fav")
-
-                    var source = "DefaultPreview.qml"
-                    if(Maui.FM.checkFileType(Maui.FMList.AUDIO, iteminfo.mime))
-                    {
-                        source = "AudioPreview.qml"
-                    }
-
-                    if(Maui.FM.checkFileType(Maui.FMList.VIDEO, iteminfo.mime))
-                    {
-                        source = "VideoPreview.qml"
-                    }
-
-                    if(Maui.FM.checkFileType(Maui.FMList.TEXT, iteminfo.mime))
-                    {
-                        source = "TextPreview.qml"
-                    }
-
-                    if(Maui.FM.checkFileType(Maui.FMList.IMAGE, iteminfo.mime))
-                    {
-                        source = "ImagePreview.qml"
-                    }
-
-                    if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime))
-                    {
-                        source = "DocumentPreview.qml"
-                    }
-
-                    if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime))
-                    {
-                        source = "CompressedPreview.qml"
-                    }
-
-                    if(Maui.FM.checkFileType(Maui.FMList.FONT, iteminfo.mime))
-                    {
-                        source = "FontPreviewer.qml"
-                    }
-
-                    console.log("previe mime", iteminfo.mime)
-                    previewLoader.source = source
-                    control.showInfo = source === "DefaultPreview.qml"
-                }
-
-                function initModel()
-                {
-                    infoModel.clear()
-                    infoModel.append({key: "Type", value: iteminfo.mime})
-                    infoModel.append({key: "Date", value: Qt.formatDateTime(new Date(model.date), "d MMM yyyy")})
-                    infoModel.append({key: "Modified", value: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")})
-                    infoModel.append({key: "Last Read", value: Qt.formatDateTime(new Date(model.lastread), "d MMM yyyy")})
-                    infoModel.append({key: "Owner", value: iteminfo.owner})
-                    infoModel.append({key: "Group", value: iteminfo.group})
-                    infoModel.append({key: "Size", value: Maui.FM.formatSize(iteminfo.size)})
-                    infoModel.append({key: "Symbolic Link", value: iteminfo.symlink})
-                    infoModel.append({key: "Path", value: iteminfo.path})
-                    infoModel.append({key: "Thumbnail", value: iteminfo.thumbnail})
-                    infoModel.append({key: "Icon Name", value: iteminfo.icon})
                 }
             }
-        }
 
-        footerColumn: Maui.TagsBar
+            function show(path)
+            {
+                initModel()
+
+                control.isDir = model.isdir == "true"
+                control.currentUrl = path
+                control.isFav =  _tagsBar.list.contains("fav")
+
+                var source = "DefaultPreview.qml"
+                if(Maui.FM.checkFileType(Maui.FMList.AUDIO, iteminfo.mime))
+                {
+                    source = "AudioPreview.qml"
+                }
+
+                if(Maui.FM.checkFileType(Maui.FMList.VIDEO, iteminfo.mime))
+                {
+                    source = "VideoPreview.qml"
+                }
+
+                if(Maui.FM.checkFileType(Maui.FMList.TEXT, iteminfo.mime))
+                {
+                    source = "TextPreview.qml"
+                }
+
+                if(Maui.FM.checkFileType(Maui.FMList.IMAGE, iteminfo.mime))
+                {
+                    source = "ImagePreview.qml"
+                }
+
+                if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime))
+                {
+                    source = "DocumentPreview.qml"
+                }
+
+                if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime))
+                {
+                    source = "CompressedPreview.qml"
+                }
+
+                if(Maui.FM.checkFileType(Maui.FMList.FONT, iteminfo.mime))
+                {
+                    source = "FontPreviewer.qml"
+                }
+
+                console.log("previe mime", iteminfo.mime)
+                previewLoader.source = source
+                control.showInfo = source === "DefaultPreview.qml"
+            }
+
+            function initModel()
+            {
+                infoModel.clear()
+                infoModel.append({key: "Type", value: iteminfo.mime})
+                infoModel.append({key: "Date", value: Qt.formatDateTime(new Date(model.date), "d MMM yyyy")})
+                infoModel.append({key: "Modified", value: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")})
+                infoModel.append({key: "Last Read", value: Qt.formatDateTime(new Date(model.lastread), "d MMM yyyy")})
+                infoModel.append({key: "Owner", value: iteminfo.owner})
+                infoModel.append({key: "Group", value: iteminfo.group})
+                infoModel.append({key: "Size", value: Maui.FM.formatSize(iteminfo.size)})
+                infoModel.append({key: "Symbolic Link", value: iteminfo.symlink})
+                infoModel.append({key: "Path", value: iteminfo.path})
+                infoModel.append({key: "Thumbnail", value: iteminfo.thumbnail})
+                infoModel.append({key: "Icon Name", value: iteminfo.icon})
+            }
+        }
+    }
+
+    footerColumn: [
+
+        Maui.ToolBar
+        {
+            width: parent.width
+            position: ToolBar.Bottom
+            background: null
+            leftContent: Maui.ToolActions
+            {
+                expanded: true
+                autoExclusive: false
+                checkable: false
+
+                Action
+                {
+                    text: i18n("Previous")
+                    icon.name: "go-previous"
+                    onTriggered :  _listView.decrementCurrentIndex()
+                }
+
+                Action
+                {
+                    text: i18n("Next")
+                    icon.name: "go-next"
+                    onTriggered: _listView.incrementCurrentIndex()
+                }
+            }
+
+           rightContent: [
+                ToolButton
+                {
+                    icon.name: "document-open"
+                    onClicked:
+                    {
+                        currentBrowser.openFile(control.currentUrl)
+                        control.close()
+                    }
+                },
+
+                ToolButton
+                {
+                    icon.name: "love"
+                    checkable: true
+                    checked: control.isFav
+                    onClicked:
+                    {
+                        if(control.isFav)
+                            _tagsBar.list.removeFromUrls("fav")
+                        else
+                            _tagsBar.list.insertToUrls("fav")
+
+                        control.isFav = !control.isFav
+                    }
+                },
+
+                ToolButton
+                {
+                    visible: !isDir
+                    icon.name: "document-share"
+                    onClicked:
+                    {
+                        Maui.Platform.shareFiles([control.currentUrl])
+
+                        control.close()
+                    }
+                }
+            ]
+        },
+
+        Maui.TagsBar
         {
             id: _tagsBar
             position: ToolBar.Footer
-           width: parent.width
+            width: parent.width
             list.urls: [control.currentUrl]
             list.strict: false
             allowEditMode: true
@@ -290,7 +297,7 @@ Maui.Page
                 tagsDialog.composerList.urls = [ previewer.currentUrl]
                 tagsDialog.open()
             }
-        }
+        }]
 
 
     Connections
@@ -304,5 +311,5 @@ Maui.Page
             tagsDialog.composerList.updateToUrls(tags)
             tagBar.list.refresh()
         }
-    }    
+    }
 }
