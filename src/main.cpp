@@ -90,7 +90,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	QStringList paths;
 
 	if(!args.isEmpty())
-		paths = args;
+        paths = args;
 
 	Index index;
 	QQmlApplicationEngine engine;
@@ -116,8 +116,9 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #endif
 
 #ifdef STATIC_MAUIKIT
-	MauiKit::getInstance().registerTypes();
+    MauiKit::getInstance().registerTypes(&engine);
 #endif
+
     engine.load(url);
 
 #ifdef Q_OS_MACOS
