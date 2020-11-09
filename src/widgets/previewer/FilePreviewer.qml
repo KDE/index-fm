@@ -245,7 +245,6 @@ Maui.Page
                     onClicked:
                     {
                         currentBrowser.openFile(control.currentUrl)
-                        control.close()
                     }
                 },
 
@@ -272,8 +271,6 @@ Maui.Page
                     onClicked:
                     {
                         Maui.Platform.shareFiles([control.currentUrl])
-
-                        control.close()
                     }
                 }
             ]

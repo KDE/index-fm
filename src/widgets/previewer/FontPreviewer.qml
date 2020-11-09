@@ -91,7 +91,5 @@ Maui.Page
                 font.pointSize: 15
             }
         }
-
     }
-
 }

@@ -77,29 +77,28 @@ Maui.Page
             }
         }
     }
-    
+
     footBar.visible: true
     footBar.leftContent: ToolButton
     {
-		icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
-		onClicked: player.playbackState === MediaPlayer.PlayingState ? player.pause() : player.play()
-	}
-	
-	footBar.rightContent: Label
-	{
-		text: Maui.FM.formatTime((player.duration - player.position)/1000)
-	}
-	
-	footBar.middleContent : Slider
-	{
-		id: _slider
-		Layout.fillWidth: true
-		orientation: Qt.Horizontal
-		from: 0
-		to: 1000
-		value: (1000 * player.position) / player.duration
-		
-		onMoved: player.seek((_slider.value / 1000) * player.duration)
-	}
-	
+        icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
+        onClicked: player.playbackState === MediaPlayer.PlayingState ? player.pause() : player.play()
+    }
+
+    footBar.rightContent: Label
+    {
+        text: Maui.FM.formatTime((player.duration - player.position)/1000)
+    }
+
+    footBar.middleContent : Slider
+    {
+        id: _slider
+        Layout.fillWidth: true
+        orientation: Qt.Horizontal
+        from: 0
+        to: 1000
+        value: (1000 * player.position) / player.duration
+
+        onMoved: player.seek((_slider.value / 1000) * player.duration)
+    }
 }
