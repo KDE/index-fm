@@ -7,23 +7,28 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.8 as Kirigami
-import org.kde.mauikit 1.0 as Maui
-import org.maui.index 1.0 as Index
-import "../previewer"
-
 import QtQml.Models 2.3
+import QtQml 2.14
+
+import org.kde.kirigami 2.8 as Kirigami
+import org.kde.mauikit 1.2 as Maui
+import org.maui.index 1.0 as Index
+
+import "../previewer"
+import ".."
 
 Item
 {
     id: control
 
     readonly property int _index : ObjectModel.index
+
     property alias browser : _browser
     property alias currentPath: _browser.currentPath
     property alias settings : _browser.settings
     property alias title : _browser.title
 
+    readonly property bool previewerVisible : _stackView.depth === 2
     //    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
@@ -44,7 +49,6 @@ Item
         syncTerminal(currentBrowser.currentPath)
     }
 
-
     Component
     {
         id: _previewerComponent
@@ -52,7 +56,7 @@ Item
         FilePreviewer
         {
             model: _browser.currentFMModel
-//            currentIndex: _browser.currentIndex
+            //            currentIndex: _browser.currentIndex
             headBar.farLeftContent: ToolButton
             {
                 icon.name: "go-previous"
@@ -64,11 +68,8 @@ Item
 
             Component.onCompleted:
             {
-
-        //        _listView.positionViewAtIndex(_listView.currentIndex, ListView.Center)
                 listView.forceActiveFocus()
                 listView.currentIndex = Qt.binding(function() { return _browser.currentIndex })
-
             }
         }
     }
@@ -113,7 +114,7 @@ Item
 
         StackView
         {
-             id: _stackView
+            id: _stackView
 
             SplitView.fillWidth: true
             SplitView.fillHeight: true
@@ -122,10 +123,7 @@ Item
             {
                 id: _browser
 
-
                 selectionBar: root.selectionBar
-                openWithDialog: root.openWithDialog
-                tagsDialog: root.tagsDialog
                 thumbnailsSize: appSettings.iconSize * 1.7
                 selectionMode: root.selectionMode
                 onSelectionModeChanged:
@@ -137,8 +135,26 @@ Item
                 settings.showHiddenFiles: appSettings.showHiddenFiles
                 settings.showThumbnails: appSettings.showThumbnails
                 settings.foldersFirst: sortSettings.globalSorting ? sortSettings.foldersFirst : true
-                settings.sortBy: sortSettings.globalSorting ? sortSettings.sortBy : ""
-                settings.group: sortSettings.globalSorting ? sortSettings.group : ""
+                settings.sortBy: sortSettings.sortBy
+                settings.group: sortSettings.group
+
+                Binding
+                {
+                    target: _browser.settings
+                    property: "sortBy"
+                    when: sortSettings.globalSorting
+                    value: sortSettings.sortBy
+                    restoreMode: Binding.RestoreBindingOrValue
+                }
+
+                Binding
+                {
+                    target: _browser.settings
+                    property: "group"
+                    when: sortSettings.globalSorting
+                    value: sortSettings.group
+                    restoreMode: Binding.RestoreBindingOrValue
+                }
 
                 Rectangle
                 {
@@ -152,6 +168,57 @@ Item
                 }
 
                 itemMenu.contentData : [
+
+                    MenuSeparator {},
+
+                    MenuItem
+                    {
+                        visible: !control.isExec && openWithDialog
+                        text: i18n("Open with")
+                        icon.name: "document-open"
+                        onTriggered:
+                        {
+                            openWith([_browser.itemMenu.item.path])
+                        }
+                    },
+
+                    MenuItem
+                    {
+                        visible: !control.isExec
+                        text: i18n("Share")
+                        icon.name: "document-share"
+                        onTriggered:
+                        {
+                            shareFiles([_browser.itemMenu.item.path])
+                        }
+                    },
+
+                    MenuItem
+                    {
+                        visible: !control.isExec && tagsDialog
+                        text: i18n("Tags")
+                        icon.name: "tag"
+                        onTriggered:
+                        {
+                            tagsDialog.composerList.urls = [_browser.itemMenu.item.path]
+                            tagsDialog.open()
+                        }
+                    },
+
+                    MenuItem
+                    {
+                        visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                        text: i18n("Extract")
+                        icon.name: "archive-extract"
+                        onTriggered:
+                        {
+                            console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
+                            //                    extractArk(item);
+                            _compressedFile.url = _browser.itemMenu.item.path
+                            dialogLoader.sourceComponent= _extractDialogComponent
+                            dialog.open()
+                        }
+                    },
 
                     MenuSeparator {visible: _browser.itemMenu.isDir},
 
@@ -185,20 +252,18 @@ Item
                         }
                     },
 
-                    MenuSeparator {},
+                    MenuSeparator{ visible: colorBar.visible },
 
                     MenuItem
                     {
-                        visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
-                        text: i18n("Extract")
-                        icon.name: "archive-extract"
-                        onTriggered:
+                        height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
+                        visible: _browser.itemMenu.isDir
+                        ColorsBar
                         {
-                            console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
-                            //                    extractArk(item);
-                            _compressedFile.url = _browser.itemMenu.item.path
-                            dialogLoader.sourceComponent= _extractDialogComponent
-                            dialog.open()
+                            id: colorBar
+                            anchors.centerIn: parent
+                            size: Maui.Style.iconSizes.medium
+                            onColorPicked: _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
                         }
                     }
                 ]
@@ -352,4 +417,5 @@ Item
         terminalVisible = !terminalVisible
         //        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
     }
+
 }

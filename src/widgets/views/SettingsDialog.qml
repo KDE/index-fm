@@ -10,6 +10,7 @@ Maui.SettingsDialog
 {
     Maui.SettingsSection
     {
+//        alt: true
         title: i18n("Navigation")
         description: i18n("Configure the app plugins and behavior.")
 
@@ -100,6 +101,7 @@ Maui.SettingsDialog
 
     Maui.SettingsSection
     {
+//        alt: false
         title: i18n("Sorting")
         description: i18n("Sorting order and behavior.")
 
@@ -240,6 +242,7 @@ Maui.SettingsDialog
 
     Maui.SettingsSection
     {
+//        alt: true
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
         lastOne: true

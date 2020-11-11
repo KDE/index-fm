@@ -15,5 +15,6 @@
         <file>widgets/previewer/AudioPreview.qml</file>
         <file>widgets/previewer/CompressedPreview.qml</file>
         <file>widgets/previewer/FontPreviewer.qml</file>
+        <file>widgets/ColorsBar.qml</file>
     </qresource>
 </RCC>
