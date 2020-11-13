@@ -7,6 +7,7 @@
 #include <QIcon>
 #include <QtPlugin>
 #include <QCommandLineParser>
+#include <KAboutData>
 
 #include "index.h"
 
