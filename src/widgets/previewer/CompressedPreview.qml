@@ -17,7 +17,7 @@ Maui.Page
         {
             dialogLoader.sourceComponent= _extractDialogComponent
             dialog.open()
-//            _compressedFile.extract(browser.currentPath)
+            _compressedFile.extract(browser.currentPath, dialogLoader.textEntry.text)
         }
     }
 

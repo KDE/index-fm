@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/gabridc/Repositorio/KDE/mauikit/src/**",
+                "/home/gabridc/Repositorio/KDE/mauikit/src/controls/**",
+                "/home/gabridc/Repositorio/KDE/mauikit/src/controls/private/**",
+                "/home/gabridc/Repositorio/KDE/karchive/src/**",
+                "/home/gabridc/Qt/5.15.0/gcc_64/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu18",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

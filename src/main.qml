@@ -150,6 +150,115 @@ Maui.ApplicationWindow
         }
     }
 
+    Component
+    {
+        id: _compressDialogComponent
+
+        Maui.Dialog
+        {
+            id: _compressDialog
+            
+            property var urls : []
+            
+            title: i18n("Compress %1 files", urls.length)
+
+            message: i18n("Compress selected files into a  new file.")
+            textEntry.placeholderText: i18n("Archive name...")
+            entryField: true
+            spacing: Maui.Style.space.medium
+            page.margins: Maui.Style.space.big                      
+            
+            function clear()
+            {
+                textEntry.clear()
+                compressType.currentIndex = 0
+                urls = []
+                _showCompressedFiles.checked = false
+            }
+
+            Maui.ToolActions
+            {
+                id: compressType
+                autoExclusive: true
+                expanded: true
+                currentIndex: 0
+                
+                Action
+                {
+                    text: ".ZIP"
+                }
+                
+                Action
+                {
+                    text: ".TAR"
+                }
+                
+                Action
+                {
+                    text: ".7ZIP"
+                }
+                Action
+                {
+                    text: ".AR"
+                }
+            }
+
+            Maui.Separator
+            {
+                Layout.fillWidth: true
+                radius: height
+                Layout.margins: Maui.Style.space.medium
+            }
+
+            CheckBox
+            {
+                id: _showCompressedFiles
+                Layout.fillWidth: true
+                text: i18n("Show files to be compressed")
+            }
+
+            Item {Layout.fillWidth: true}
+
+            Repeater
+            {
+                model: _compressDialog.urls
+                Maui.ListItemTemplate
+                {
+                    Layout.fillWidth: true
+                    visible: _showCompressedFiles.checked
+                    property var item : Maui.FM.getFileInfo(modelData)
+                    label1.text: item.label
+                    label2.text: item.url
+                    iconVisible: true
+                    iconSource: item.icon
+                    iconSizeHint: Maui.Style.iconSizes.medium
+                }
+            }
+            
+            onRejected:
+            {
+                _compressDialog.clear()
+                close()
+            }
+
+            onAccepted:
+            {
+                var error = _compressedFile.compress(urls, currentPath, textEntry.text, compressType.currentIndex)
+
+                if(error)
+                {
+                    root.notify("","Compress Error", "Current user does not have permission for writing in this directory.")
+                }
+                else
+                {
+                    _compressDialog.close()
+                }
+
+            }
+        }
+    }
+
+
     Index.CompressedFile
     {
         id: _compressedFile
@@ -540,6 +649,18 @@ Maui.ApplicationWindow
                     {
                         for(var i in selectionBar.uris)
                             currentBrowser.openFile(_selectionBar.uris[i])
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Compress")
+                    icon.name: "archive-insert"
+                    onTriggered:
+                    {
+                        dialogLoader.sourceComponent= _compressDialogComponent
+                        dialog.urls = selectionBar.uris
+                        dialog.open()
                     }
                 }
 

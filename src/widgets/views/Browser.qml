@@ -86,7 +86,7 @@ Item
             implicitWidth: 6
             implicitHeight: 6
             color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
-                                       : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+                                    : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
 
             Rectangle
             {
@@ -206,21 +206,6 @@ Item
                         }
                     },
 
-                    MenuItem
-                    {
-                        visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
-                        text: i18n("Extract")
-                        icon.name: "archive-extract"
-                        onTriggered:
-                        {
-                            console.log("@gadominguez File: FileMenu.qml Extract with ARK Item: " + _browser.itemMenu.item.path)
-                            //                    extractArk(item);
-                            _compressedFile.url = _browser.itemMenu.item.path
-                            dialogLoader.sourceComponent= _extractDialogComponent
-                            dialog.open()
-                        }
-                    },
-
                     MenuSeparator {visible: _browser.itemMenu.isDir},
 
                     MenuItem
@@ -250,6 +235,35 @@ Item
                         {
                             //                        previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
                             _stackView.push(_previewerComponent, StackView.Immediate)
+                        }
+                    },
+
+                    MenuSeparator {},
+
+                    MenuItem
+                    {
+                        visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                        text: i18n("Extract")
+                        icon.name: "archive-extract"
+                        onTriggered:
+                        {
+                            _compressedFile.url = _browser.itemMenu.item.path
+                            dialogLoader.sourceComponent= _extractDialogComponent
+                            dialog.open()
+                        }
+                    },
+
+                    MenuItem
+                    {
+                        visible: true
+                        text: i18n("Compress")
+
+                        icon.name: "archive-insert"
+                        onTriggered:
+                        {
+                            dialogLoader.sourceComponent= _compressDialogComponent
+                            dialog.urls = currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path)
+                            dialog.open()
                         }
                     },
 
