@@ -72,6 +72,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     KAboutData about(QStringLiteral("index"), i18n("Index"), INDEX_VERSION_STRING, i18n("Index allows you to navigate your computer and preview multimedia files."),
                      KAboutLicense::LGPL_V3, i18n("© 2019-2020 Nitrux Development Team"));
     about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
+    about.addAuthor(i18n("Gabriel Dominguez"), i18n("Developer"), QStringLiteral("gabriel@gabrieldominguez.es"));
     about.setHomepage("https://mauikit.org");
     about.setProductName("maui/index");
     about.setBugAddress("https://invent.kde.org/maui/index-fm/-/issues");
