@@ -452,7 +452,7 @@ Maui.ApplicationWindow
                         delayed: true
                     }
 
-                    display: ToolButton.TextBesideIcon
+//                    display: ToolButton.TextBesideIcon
                     onCurrentIndexChanged:
                     {
                         if(currentTab && currentBrowser)
