@@ -6,7 +6,7 @@ Index lets you browse your system files and applications and preview your music,
 
 # Developer Environment
 
-We recommmend use KDE Neon for developing because KDE Neon has by default the latest version of Qt version supported in KDE Plasma. 
+We recommmend use KDE Neon for developing because KDE Neon has by default the latest version of Qt version supported in KDE Plasma.
 
 Index-FM use Qt version 5.14.2 so we need this version or higer installed on ower host.
 
@@ -16,7 +16,7 @@ Index-FM use Qt version 5.14.2 so we need this version or higer installed on owe
 
 1. Update the latest version of default OS libraries: **Open Discover and install all updates**
 2. Check KDE Framework and Qt version installed: **Open System Preferenca > System Information**
- 
+
 
 **GCC and Build Essentials**
 
@@ -81,7 +81,7 @@ https://github.com/Swordfish90/qmltermwidget
 
 Before continue preparing your developer environment it is necesary preapare your Gitlab account for developer in your fork and update latest commits.
 
-1. Register in https://identity.kde.org/index.php?r=registration/index 
+1. Register in https://identity.kde.org/index.php?r=registration/index
 2. Log-In in https://invent.kde.org/ and look for Index-Fm
 3. Press Fork Button
 4. Go to you forked project and get URL (Press Button clone)
@@ -141,10 +141,10 @@ chiguitar@unal.edu.co
 
 ## Screenshots
 
-![Preview](https://i.imgur.com/mqKgyNu.png)
+![Preview](https://invent.kde.org/maui/index-fm/-/raw/v1.2/screenshots/Screenshot_1.png)
 
-![Preview](https://i.imgur.com/BrOiUCj.png)
+![Preview](https://invent.kde.org/maui/index-fm/-/raw/v1.2/screenshots/Screenshot_2.png)
 
-![Preview](https://i.imgur.com/lphJtNs.png)
+![Preview](https://invent.kde.org/maui/index-fm/-/raw/v1.2/screenshots/Screenshot_3.png)
 
-![Preview](https://i.imgur.com/a3R2rDo.png)
+![Preview](https://invent.kde.org/maui/index-fm/-/raw/v1.2/screenshots/Screenshot_4.png)
