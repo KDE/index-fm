@@ -337,12 +337,7 @@ Item
 
                     if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
                     {
-                        newFolder()
-                    }
-
-                    if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
-                    {
-                        newFile()
+                        newItem()
                     }
 
                     if(event.key === Qt.Key_Space)
