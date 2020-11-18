@@ -122,6 +122,7 @@ Item
             initialItem: Maui.FileBrowser
             {
                 id: _browser
+                headerBackground.color: "transparent"
 
                 selectionBar: root.selectionBar
                 thumbnailsSize: appSettings.iconSize * 1.7

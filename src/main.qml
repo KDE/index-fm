@@ -283,6 +283,7 @@ Maui.ApplicationWindow
             flickable: root.flickable
             floatingFooter: true
             floatingHeader: false
+            headerBackground.color: "transparent"
             headBar.visible: !currentTab.currentItem.previewerVisible
             headBar.rightContent:[
 
