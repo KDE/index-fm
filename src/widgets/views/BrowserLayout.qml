@@ -139,8 +139,10 @@ Item
         {
             return
         }
+        console.log("ERROR")
 
         const component = Qt.createComponent("qrc:/widgets/views/Browser.qml");
+        console.log("ERROR", component.errorString())
 
         if (component.status === Component.Ready)
         {

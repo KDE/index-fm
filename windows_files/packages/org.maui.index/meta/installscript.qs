@@ -43,8 +43,8 @@ Component.prototype.createOperations = function()
     component.createOperations();
 
     if (systemInfo.productType === "windows") {
-        component.addOperation("CreateShortcut", "@TargetDir@/index.exe", "@StartMenuDir@/index.lnk",
-            "workingDirectory=@TargetDir@", "iconPath=%SystemRoot%/system32/SHELL32.dll",
+        component.addOperation("CreateShortcut", "@TargetDir@/index.exe", "@StartMenuDir@/Index.lnk",
+            "workingDirectory=@TargetDir@", "iconPath=@TargetDir@/index.png",
             "iconId=2");
     }
 }
