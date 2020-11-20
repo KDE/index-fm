@@ -19,7 +19,7 @@ TEMPLATE = app
 
 VERSION_MAJOR = 1
 VERSION_MINOR = 2
-VERSION_BUILD = 0
+VERSION_BUILD = 1
 
 VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
 
@@ -59,10 +59,10 @@ macos {
 
 win32 {
     RC_ICONS = $$PWD/windows_files/index.ico
-    LIBS += -L$$PWD/../../../../CraftRoot/lib/ -lKF5Archive
+    LIBS += -LC:/CraftRoot/lib/ -lKF5Archive
 
-    INCLUDEPATH += $$PWD/../../../../CraftRoot/include/KF5
-    DEPENDPATH += $$PWD/../../../../CraftRoot/include/KF5
+    INCLUDEPATH += C:/CraftRoot/include/KF5
+    DEPENDPATH += C:/CraftRoot/include/KF5
 }
 
 android {

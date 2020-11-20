@@ -211,6 +211,25 @@ Maui.Page
     }
 
     footerColumn: [
+        Maui.TagsBar
+        {
+            id: _tagsBar
+            position: ToolBar.Footer
+            width: parent.width
+            list.urls: [control.currentUrl]
+            list.strict: false
+            allowEditMode: true
+            onTagRemovedClicked: list.removeFromUrls(index)
+            onTagsEdited: list.updateToUrls(tags)
+            Kirigami.Theme.textColor: control.Kirigami.Theme.textColor
+            Kirigami.Theme.backgroundColor: control.Kirigami.Theme.backgroundColor
+
+            onAddClicked:
+            {
+                tagsDialog.composerList.urls = [ previewer.currentUrl]
+                tagsDialog.open()
+            }
+        },
 
         Maui.ToolBar
         {
@@ -274,27 +293,9 @@ Maui.Page
                     }
                 }
             ]
-        },
+        }
 
-        Maui.TagsBar
-        {
-            id: _tagsBar
-            position: ToolBar.Footer
-            width: parent.width
-            list.urls: [control.currentUrl]
-            list.strict: false
-            allowEditMode: true
-            onTagRemovedClicked: list.removeFromUrls(index)
-            onTagsEdited: list.updateToUrls(tags)
-            Kirigami.Theme.textColor: control.Kirigami.Theme.textColor
-            Kirigami.Theme.backgroundColor: control.Kirigami.Theme.backgroundColor
-
-            onAddClicked:
-            {
-                tagsDialog.composerList.urls = [ previewer.currentUrl]
-                tagsDialog.open()
-            }
-        }]
+       ]
 
 
     Connections
