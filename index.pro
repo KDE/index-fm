@@ -127,3 +127,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 include($$PWD/install.pri)
 
+ANDROID_ABIS = armeabi-v7a
+

@@ -9,6 +9,7 @@ import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
 import QtQml.Models 2.3
 import QtQml 2.14
+import QtGraphicalEffects 1.0
 
 import org.kde.kirigami 2.8 as Kirigami
 import org.kde.mauikit 1.2 as Maui
@@ -81,34 +82,26 @@ Item
         spacing: 0
         orientation: Qt.Vertical
 
-        handle: Rectangle
+        handle: Item
         {
-            implicitWidth: 6
-            implicitHeight: 6
-            color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
-                                    : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
+            implicitWidth: Maui.Handy.isTouch ? 10 : 6
+            implicitHeight: Maui.Handy.isTouch ? 10 : 6
 
             Rectangle
             {
-                anchors.centerIn: parent
-                width: 48
+                width: 200
                 height: parent.height
-                color: _splitSeparator.color
-            }
+                anchors.centerIn: parent
+                radius: Maui.Style.radiusV
+                color: SplitHandle.pressed ? Kirigami.Theme.highlightColor : Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
 
-            Kirigami.Separator
-            {
-                id: _splitSeparator
-                anchors.bottom: parent.bottom
-                anchors.right: parent.right
-                anchors.left: parent.left
-            }
-
-            Kirigami.Separator
-            {
-                anchors.top: parent.top
-                anchors.right: parent.right
-                anchors.left: parent.left
+                Rectangle
+                {
+                    anchors.centerIn: parent
+                    height:parent.height - 2
+                    width: 48
+                    color: SplitHandle.pressed || SplitHandle.hovered ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
+                }
             }
         }
 
@@ -380,28 +373,58 @@ Item
             }
         }
 
-        Loader
+        Item
         {
-            id: terminalLoader
-            active: inx.supportsEmbededTerminal()
-            visible: active && terminalVisible
+
             SplitView.fillWidth: true
             SplitView.preferredHeight: 200
             SplitView.maximumHeight: parent.height * 0.5
             SplitView.minimumHeight : 100
-            source: "Terminal.qml"
+            visible: terminalLoader.active && terminalVisible
 
-            Behavior on Layout.preferredHeight
+            Item
             {
-                NumberAnimation
+                id: _terminalContainer
+                anchors.fill: parent
+                anchors.margins: Maui.Style.space.medium
+
+                Loader
                 {
-                    duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InQuad
+                    id: terminalLoader
+                    anchors.fill: parent
+
+                    active: inx.supportsEmbededTerminal()
+
+                    source: "Terminal.qml"
+
+                    onVisibleChanged: syncTerminal(control.currentPath)
+
                 }
+
+                layer.enabled: true
+                layer.effect: OpacityMask
+                {
+                    maskSource: Item
+                    {
+                        width: _terminalContainer.width
+                        height: _terminalContainer.height
+
+                        Rectangle
+                        {
+                            anchors.fill: parent
+                            radius: Maui.Style.radiusV
+                        }
+                    }
+                }
+
+
             }
 
-            onVisibleChanged: syncTerminal(control.currentPath)
+
+
         }
+
+
     }
 
     MouseArea

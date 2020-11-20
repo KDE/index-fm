@@ -43,13 +43,14 @@ Item
 
         handle: Item
         {
-            implicitWidth: Maui.Handy.isTouch ? 14 : 10
-            implicitHeight: Maui.Handy.isTouch ? 14 : 10
+            implicitWidth: 20
+            implicitHeight: 20
 
             Rectangle
             {
-                anchors.fill: parent
-                anchors.margins: 2
+                width : _splitView.orientation == Qt.Horizontal ? 6 : 200
+                height : _splitView.orientation == Qt.Horizontal ? 200 : 6
+                anchors.centerIn: parent
                 radius: Maui.Style.radiusV
                 color: SplitHandle.pressed ? Kirigami.Theme.highlightColor : Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
 
