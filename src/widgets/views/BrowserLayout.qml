@@ -41,26 +41,77 @@ Item
         clip: true
         focus: true
 
-        handle: Item
+        handle: Rectangle
         {
-            implicitWidth: 20
-            implicitHeight: 20
+            implicitWidth: Maui.Handy.isTouch ? 10 : 6
+            implicitHeight: Maui.Handy.isTouch ? 10 : 6
+
+            color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
+                                       : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
 
             Rectangle
             {
-                width : _splitView.orientation == Qt.Horizontal ? 6 : 200
-                height : _splitView.orientation == Qt.Horizontal ? 200 : 6
                 anchors.centerIn: parent
-                radius: Maui.Style.radiusV
-                color: SplitHandle.pressed ? Kirigami.Theme.highlightColor : Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
+                height: _splitView.orientation == Qt.Horizontal ? 48 : parent.height
+                width:  _splitView.orientation == Qt.Horizontal ? parent.width : 48
+                color: _splitSeparator1.color
+            }
 
-                Rectangle
+            states: [  State
                 {
-                    anchors.centerIn: parent
-                    height: _splitView.orientation == Qt.Horizontal ? 48 : parent.height -2
-                    width:  _splitView.orientation == Qt.Horizontal ? parent.width-2 : 48
-                    color: SplitHandle.pressed || SplitHandle.hovered ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
+                    when: _splitView.orientation === Qt.Horizontal
+
+                    AnchorChanges
+                    {
+                        target: _splitSeparator1
+                        anchors.top: parent.top
+                        anchors.bottom: parent.bottom
+                        anchors.left: parent.left
+                        anchors.right: undefined
+                    }
+
+                    AnchorChanges
+                    {
+                        target: _splitSeparator2
+                        anchors.top: parent.top
+                        anchors.bottom: parent.bottom
+                        anchors.right: parent.right
+                        anchors.left: undefined
+                    }
+                },
+
+                State
+                {
+                    when: _splitView.orientation === Qt.Vertical
+
+                    AnchorChanges
+                    {
+                        target: _splitSeparator1
+                        anchors.top: parent.top
+                        anchors.bottom: undefined
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                    }
+
+                    AnchorChanges
+                    {
+                        target: _splitSeparator2
+                        anchors.top: undefined
+                        anchors.bottom: parent.bottom
+                        anchors.right: parent.right
+                        anchors.left: parent.left
+                    }
                 }
+            ]
+
+            Kirigami.Separator
+            {
+                id: _splitSeparator1
+            }
+
+            Kirigami.Separator
+            {
+                id: _splitSeparator2
             }
         }
 
