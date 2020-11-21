@@ -8,12 +8,13 @@ import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
-import org.kde.kirigami 2.7 as Kirigami
-import org.kde.mauikit 1.2 as Maui
-import org.maui.index 1.0 as Index
 import Qt.labs.settings 1.0
-
 import QtQml.Models 2.3
+
+import org.kde.kirigami 2.7 as Kirigami
+import org.kde.mauikit 1.3 as Maui
+
+import org.maui.index 1.0 as Index
 
 import "widgets"
 import "widgets/views"
@@ -134,6 +135,7 @@ Maui.ApplicationWindow
     Component
     {
         id: _extractDialogComponent
+
         Maui.Dialog
         {
             id: _extractDialog
@@ -154,19 +156,15 @@ Maui.ApplicationWindow
     {
         id: _compressDialogComponent
 
-        Maui.Dialog
+        Maui.FileListingDialog
         {
             id: _compressDialog
-            
-            property var urls : []
-            
+                        
             title: i18n("Compress %1 files", urls.length)
-
             message: i18n("Compress selected files into a  new file.")
+
             textEntry.placeholderText: i18n("Archive name...")
             entryField: true
-            spacing: Maui.Style.space.medium
-            page.margins: Maui.Style.space.big                      
             
             function clear()
             {
@@ -174,6 +172,13 @@ Maui.ApplicationWindow
                 compressType.currentIndex = 0
                 urls = []
                 _showCompressedFiles.checked = false
+            }
+
+            Maui.Separator
+            {
+                Layout.fillWidth: true
+                radius: height
+                Layout.margins: Maui.Style.space.medium
             }
 
             Maui.ToolActions
@@ -197,44 +202,13 @@ Maui.ApplicationWindow
                 {
                     text: ".7ZIP"
                 }
+
                 Action
                 {
                     text: ".AR"
                 }
             }
 
-            Maui.Separator
-            {
-                Layout.fillWidth: true
-                radius: height
-                Layout.margins: Maui.Style.space.medium
-            }
-
-            CheckBox
-            {
-                id: _showCompressedFiles
-                Layout.fillWidth: true
-                text: i18n("Show files to be compressed")
-            }
-
-            Item {Layout.fillWidth: true}
-
-            Repeater
-            {
-                model: _compressDialog.urls
-                Maui.ListItemTemplate
-                {
-                    Layout.fillWidth: true
-                    visible: _showCompressedFiles.checked
-                    property var item : Maui.FM.getFileInfo(modelData)
-                    label1.text: item.label
-                    label2.text: item.url
-                    iconVisible: true
-                    iconSource: item.icon
-                    iconSizeHint: Maui.Style.iconSizes.medium
-                }
-            }
-            
             onRejected:
             {
                 _compressDialog.clear()
