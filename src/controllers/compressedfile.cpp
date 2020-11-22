@@ -159,11 +159,14 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
             while (dir.hasNext())
             {
                 auto entrie = dir.next();
+
                 qDebug() << entrie << " " << where.toString() << QFileInfo(entrie).isFile();
                 if (QFileInfo(entrie).isFile() == true)
                 {
-                    qDebug() << entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
-                    kzip->writeFile(entrie.remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                    auto file = QFile(entrie);
+                    file.open(QIODevice::ReadOnly);
+                    qDebug() << entrie <<entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
+                    kzip->writeFile(entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
                                     file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
                 }
             }
