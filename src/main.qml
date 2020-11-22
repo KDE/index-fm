@@ -174,13 +174,6 @@ Maui.ApplicationWindow
                 _showCompressedFiles.checked = false
             }
 
-            Maui.Separator
-            {
-                Layout.fillWidth: true
-                radius: height
-                Layout.margins: Maui.Style.space.medium
-            }
-
             Maui.ToolActions
             {
                 id: compressType
