@@ -57,3 +57,4 @@ CMakeLists.txt.user*
 
 # build folders and output
 build/
+.vscode/
