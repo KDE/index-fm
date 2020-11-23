@@ -94,10 +94,12 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                     kzip->open(QIODevice::ReadWrite);
                     assert(kzip->isOpen() == true);
 
-                    kzip->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                    error = kzip->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
                                     file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
-                    kzip->close();
-                    error = false;
+                    (void) kzip->close();
+                    // WriteFile returns if the file was written or not,
+                    //but this function returns if some error occurs so for this reason it is needed to toggle the value
+                    error = !error;
                     break;
                 }
                 case 1: // .TAR
@@ -105,10 +107,9 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                     auto ktar = new KTar(QUrl(where.toString() + "/" + fileName + ".tar").toLocalFile());
                     ktar->open(QIODevice::ReadWrite);
                     assert(ktar->isOpen() == true);
-                    ktar->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                    error = ktar->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
                                     file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
-                    ktar->close();
-                    error = false;
+                    (void) ktar->close();
                     break;
                 }
                 case 2: //.7ZIP
@@ -117,10 +118,12 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                     auto k7zip = new K7Zip(QUrl(where.toString() + "/" + fileName + ".7z").toLocalFile());
                     k7zip->open(QIODevice::ReadWrite);
                     assert(k7zip->isOpen() == true);
-                    k7zip->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                    error = k7zip->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
                                      file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
                     k7zip->close();
-                    error = false;
+                    // WriteFile returns if the file was written or not,
+                    //but this function returns if some error occurs so for this reason it is needed to toggle the value
+                    error = !error;
                     break;
                 }
                 case 3: //.AR
@@ -129,10 +132,12 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                     auto kar = new KAr(QUrl(where.toString() + "/" + fileName + ".ar").toLocalFile());
                     kar->open(QIODevice::ReadWrite);
                     assert(kar->isOpen() == true);
-                    kar->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                    error = kar->writeFile(uri.toString().remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
                                    file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
-                    kar->close();
-                    error = false;
+                    (void) kar->close();
+                    // WriteFile returns if the file was written or not,
+                    //but this function returns if some error occurs so for this reason it is needed to toggle the value
+                    error = !error;
                     break;
                 }
                 default:
@@ -150,25 +155,117 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
         {
             qDebug() << "Dir: " << QUrl(uri.toString()).toLocalFile();
             auto dir = QDirIterator(QUrl(uri.toString()).toLocalFile(), QDirIterator::Subdirectories);
-            auto file = QFile(QUrl(uri.toString()).toLocalFile());
-            file.open(QIODevice::ReadWrite);
-            auto kzip = new KZip(QUrl(where.toString() + "/" + fileName + ".zip").toLocalFile());
-            kzip->open(QIODevice::ReadWrite);
-            assert(kzip->isOpen() == true);
-
-            while (dir.hasNext())
+            switch (compressTypeSelected)
             {
-                auto entrie = dir.next();
-                qDebug() << entrie << " " << where.toString() << QFileInfo(entrie).isFile();
-                if (QFileInfo(entrie).isFile() == true)
+            case 0: //.ZIP
+            {
+                auto kzip = new KZip(QUrl(where.toString() + "/" + fileName + ".zip").toLocalFile());
+                kzip->open(QIODevice::ReadWrite);
+                assert(kzip->isOpen() == true);
+                while (dir.hasNext())
                 {
-                    qDebug() << entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
-                    kzip->writeFile(entrie.remove(where.toString(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
-                                    file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                    auto entrie = dir.next();
+
+                    qDebug() << entrie << " " << where.toString() << QFileInfo(entrie).isFile();
+                    if (QFileInfo(entrie).isFile() == true)
+                    {
+                        auto file = QFile(entrie);
+                        file.open(QIODevice::ReadOnly);
+                        qDebug() << entrie <<entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
+                        error = kzip->writeFile(entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                        file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                        // WriteFile returns if the file was written or not,
+                        //but this function returns if some error occurs so for this reason it is needed to toggle the value
+                        error = !error;
+                    }
+                }
+                (void) kzip->close();
+                break;
+            }
+            case 1: // .TAR
+            {
+                auto ktar = new KTar(QUrl(where.toString() + "/" + fileName + ".tar").toLocalFile());
+                ktar->open(QIODevice::ReadWrite);
+                assert(ktar->isOpen() == true);
+                while (dir.hasNext())
+                {
+                    auto entrie = dir.next();
+
+                    qDebug() << entrie << " " << where.toString() << QFileInfo(entrie).isFile();
+                    if (QFileInfo(entrie).isFile() == true)
+                    {
+                        auto file = QFile(entrie);
+                        file.open(QIODevice::ReadOnly);
+                        qDebug() << entrie <<entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
+                        error = ktar->writeFile(entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                        file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                        // WriteFile returns if the file was written or not,
+                        //but this function returns if some error occurs so for this reason it is needed to toggle the value
+                        error = !error;
+                    }
+                }
+                (void) ktar->close();
+                break;
+
+            }
+            case 2: //.7ZIP
+            {
+                auto k7zip = new K7Zip(QUrl(where.toString() + "/" + fileName + ".7z").toLocalFile());
+                k7zip->open(QIODevice::ReadWrite);
+                assert(k7zip->isOpen() == true);
+                while (dir.hasNext())
+                {
+                    auto entrie = dir.next();
+
+                    qDebug() << entrie << " " << where.toString() << QFileInfo(entrie).isFile();
+                    if (QFileInfo(entrie).isFile() == true)
+                    {
+                        auto file = QFile(entrie);
+                        file.open(QIODevice::ReadOnly);
+                        qDebug() << entrie <<entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
+                        error = k7zip->writeFile(entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                         file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                        // WriteFile returns if the file was written or not,
+                        //but this function returns if some error occurs so for this reason it is needed to toggle the value
+                        error = !error;
+
+                    }
+                    (void) k7zip->close();
+                    break;
                 }
             }
+            case 3: //.AR
+            {
+                auto kAr = new KAr(QUrl(where.toString() + "/" + fileName + ".ar").toLocalFile());
+                kAr->open(QIODevice::ReadWrite);
+                assert(kAr->isOpen() == true);
+                while (dir.hasNext())
+                {
+                    auto entrie = dir.next();
 
-            kzip->close();
+                    qDebug() << entrie << " " << where.toString() << QFileInfo(entrie).isFile();
+                    if (QFileInfo(entrie).isFile() == true)
+                    {
+                        auto file = QFile(entrie);
+                        file.open(QIODevice::ReadOnly);
+                        qDebug() << entrie <<entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive);
+                        error = kAr->writeFile(entrie.remove(QUrl(where).toLocalFile(), Qt::CaseSensitivity::CaseSensitive), // Mirror file path in compressed file from current directory
+                                       file.readAll(), 0100775, QFileInfo(file).owner(), QFileInfo(file).group(), QDateTime(), QDateTime(), QDateTime());
+                        // WriteFile returns if the file was written or not,
+                        //but this function returns if some error occurs so for this reason it is needed to toggle the value
+                        error = !error;
+                    }
+                }
+                (void) kAr->close();
+                break;
+            }
+            default:
+                qDebug() << "ERROR. COMPRESSED TYPE SELECTED NOT COMPATIBLE";
+                break;
+            }
+
+
+
         }
     }
 
@@ -178,6 +275,7 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
 
     return error;
 }
+
 
 KArchive *CompressedFile::getKArchiveObject(const QUrl &url)
 {
