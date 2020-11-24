@@ -214,7 +214,7 @@ Maui.ApplicationWindow
 
                 if(error)
                 {
-                    root.notify("","Compress Error", "Current user does not have permission for writing in this directory.")
+                    root.notify("","Compress Error", "Some error occurs. Maybe current user does not have permission for writing in this directory.")
                 }
                 else
                 {
