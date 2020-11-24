@@ -72,7 +72,7 @@ Maui.Page
                 label1.horizontalAlignment:Qt.AlignHCenter
                 label2.horizontalAlignment:Qt.AlignHCenter
 
-                label2.text:  player.metaData.albumArtist
+                label2.text: player.metaData.albumArtist || player.metaData.albumTitle
             }
         }
     }

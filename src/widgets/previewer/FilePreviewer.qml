@@ -37,15 +37,16 @@ Maui.Page
         id: _listView
         anchors.fill: parent
         orientation: ListView.Horizontal
+        currentIndex: -1
         clip: true
         focus: true
         spacing: 0
-        interactive: true
+        interactive: Maui.Handy.isTouch
         highlightFollowsCurrentItem: true
         highlightMoveDuration: 0
         highlightResizeDuration : 0
         snapMode: ListView.SnapOneItem
-        cacheBuffer: 0
+        cacheBuffer: width
         keyNavigationEnabled : true
         keyNavigationWraps : true
         onMovementEnded: currentIndex = indexAt(contentX, contentY)
@@ -53,22 +54,23 @@ Maui.Page
         delegate: Item
         {
             id: _delegate
+
+            height: ListView.view.height
+            width: ListView.view.width
+
             property bool isCurrentItem : ListView.isCurrentItem
             property url currentUrl: model.path
             property var iteminfo : model
             property alias infoModel : _infoModel
             readonly property string title: model.label
 
-            height: _listView.height
-            width: _listView.width
-
             Loader
             {
                 id: previewLoader
-                active: _delegate.isCurrentItem && control.visible
+                active: _delegate.isCurrentItem
                 visible: !control.showInfo
-                anchors.fill: parent
-                clip: false
+                width: parent.width
+                height: parent.height
                 onActiveChanged: if(active) show(currentUrl)
             }
 
@@ -145,6 +147,7 @@ Maui.Page
 
             function show(path)
             {
+                console.log("Init model for ", path, previewLoader.active, _delegate.isCurrentItem)
                 initModel()
 
                 control.isDir = model.isdir == "true"
@@ -155,36 +158,27 @@ Maui.Page
                 if(Maui.FM.checkFileType(Maui.FMList.AUDIO, iteminfo.mime))
                 {
                     source = "AudioPreview.qml"
-                }
-
-                if(Maui.FM.checkFileType(Maui.FMList.VIDEO, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(Maui.FMList.VIDEO, iteminfo.mime))
                 {
                     source = "VideoPreview.qml"
-                }
-
-                if(Maui.FM.checkFileType(Maui.FMList.TEXT, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(Maui.FMList.TEXT, iteminfo.mime))
                 {
                     source = "TextPreview.qml"
-                }
-
-                if(Maui.FM.checkFileType(Maui.FMList.IMAGE, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(Maui.FMList.IMAGE, iteminfo.mime))
                 {
                     source = "ImagePreview.qml"
-                }
-
-                if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime))
                 {
                     source = "DocumentPreview.qml"
-                }
-
-                if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime))
                 {
                     source = "CompressedPreview.qml"
-                }
-
-                if(Maui.FM.checkFileType(Maui.FMList.FONT, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(Maui.FMList.FONT, iteminfo.mime))
                 {
                     source = "FontPreviewer.qml"
+                }else
+                {
+                    source = "DefaultPreview.qml"
                 }
 
                 console.log("previe mime", iteminfo.mime)

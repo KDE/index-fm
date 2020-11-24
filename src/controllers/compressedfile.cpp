@@ -9,7 +9,8 @@
 #include <KArchive/kar.h>
 #include <qdiriterator.h>
 
-CompressedFile::CompressedFile(QObject *parent) : QObject(parent), m_model(new CompressedFileModel(this))
+CompressedFile::CompressedFile(QObject *parent) : QObject(parent)
+  , m_model(new CompressedFileModel(this))
 {
 }
 
@@ -17,7 +18,7 @@ CompressedFileModel::CompressedFileModel(QObject *parent) : MauiList(parent)
 {
 }
 
-FMH::MODEL_LIST CompressedFileModel::items() const
+const FMH::MODEL_LIST &CompressedFileModel::items() const
 {
     return m_list;
 }
