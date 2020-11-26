@@ -205,8 +205,8 @@ Maui.ApplicationWindow
 
             onRejected:
             {
-                _compressDialog.clear()
-                close()
+//                _compressDialog.clear()
+                _compressDialog.close()
             }
 
             onAccepted:
