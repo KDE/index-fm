@@ -242,58 +242,84 @@ Maui.SettingsDialog
 
     Maui.SettingsSection
     {
-//        alt: true
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
         lastOne: true
 
         Maui.SettingTemplate
         {
-            label1.text: i18n("Grid Size")
-            label2.text: i18n("Thumbnails size in the grid view")
+            label1.text: i18n("Grid Items Size")
+            label2.text: i18n("Size of the grid and list view thumbnails.")
 
             Maui.ToolActions
             {
-                id: _gridIconSizesGroup
                 expanded: true
                 autoExclusive: true
                 display: ToolButton.TextOnly
 
-                Binding on currentIndex
-                {
-                    value:  switch(appSettings.iconSize)
-                            {
-                            case 32: return 0;
-                            case 48: return 1;
-                            case 64: return 2;
-                            case 96: return 3;
-                            default: return -1;
-                            }
-                    restoreMode: Binding.RestoreValue
-                }
+                currentIndex: appSettings.gridSize
 
                 Action
                 {
                     text: i18n("S")
-                    onTriggered: setIconSize(32)
+                    onTriggered: appSettings.gridSize = 0
                 }
 
                 Action
                 {
                     text: i18n("M")
-                    onTriggered: setIconSize(48)
+                    onTriggered: appSettings.gridSize = 1
                 }
 
                 Action
                 {
                     text: i18n("X")
-                    onTriggered: setIconSize(64)
+                    onTriggered: appSettings.gridSize = 2
                 }
 
                 Action
                 {
                     text: i18n("XL")
-                    onTriggered: setIconSize(96)
+                    onTriggered: appSettings.gridSize = 3
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("List Items Size")
+            label2.text: i18n("Size of the grid and list view thumbnails.")
+
+            Maui.ToolActions
+            {
+                expanded: true
+                autoExclusive: true
+                display: ToolButton.TextOnly
+
+                currentIndex: appSettings.listSize
+
+                Action
+                {
+                    text: i18n("S")
+                    onTriggered: appSettings.listSize = 0
+                }
+
+                Action
+                {
+                    text: i18n("M")
+                    onTriggered: appSettings.listSize = 1
+                }
+
+                Action
+                {
+                    text: i18n("X")
+                    onTriggered: appSettings.listSize = 2
+                }
+
+                Action
+                {
+                    text: i18n("XL")
+                    onTriggered: appSettings.listSize = 3
                 }
             }
         }

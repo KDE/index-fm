@@ -125,7 +125,24 @@ Item
                 headerBackground.color: "transparent"
 
                 selectionBar: root.selectionBar
-                thumbnailsSize: appSettings.iconSize * 1.7
+                gridItemSize: switch(appSettings.gridSize)
+                              {
+                              case 0: return Math.floor(48 * 1.7);
+                              case 1: return Math.floor(64 * 1.7);
+                              case 2: return Math.floor(96 * 1.7);
+                              case 3: return Math.floor(124 * 1.7);
+                              default: return Math.floor(96 * 1.7);
+                              }
+
+                listItemSize:   switch(appSettings.listSize)
+                                {
+                                case 0: return 32;
+                                case 1: return 48;
+                                case 2: return 64;
+                                case 3: return 96;
+                                default: return 96;
+                                }
+
                 selectionMode: root.selectionMode
                 onSelectionModeChanged:
                 {

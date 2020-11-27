@@ -51,7 +51,8 @@ Maui.ApplicationWindow
         property bool supportSplit : !Kirigami.Settings.isMobile
 
         property int viewType : Maui.FMList.LIST_VIEW
-        property int iconSize : Maui.Style.iconSizes.large
+        property int listSize : 0 // s-m-x-xl
+        property int gridSize : 1 // s-m-x-xl
 
         property var lastSession : [[({'path': Maui.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
@@ -159,13 +160,13 @@ Maui.ApplicationWindow
         Maui.FileListingDialog
         {
             id: _compressDialog
-                        
+
             title: i18n("Compress %1 files", urls.length)
             message: i18n("Compress selected files into a  new file.")
 
             textEntry.placeholderText: i18n("Archive name...")
             entryField: true
-            
+
             function clear()
             {
                 textEntry.clear()
@@ -180,17 +181,17 @@ Maui.ApplicationWindow
                 autoExclusive: true
                 expanded: true
                 currentIndex: 0
-                
+
                 Action
                 {
                     text: ".ZIP"
                 }
-                
+
                 Action
                 {
                     text: ".TAR"
                 }
-                
+
                 Action
                 {
                     text: ".7ZIP"
@@ -204,8 +205,8 @@ Maui.ApplicationWindow
 
             onRejected:
             {
-                _compressDialog.clear()
-                close()
+//                _compressDialog.clear()
+                _compressDialog.close()
             }
 
             onAccepted:
@@ -848,11 +849,6 @@ Maui.ApplicationWindow
                 _browserList.currentIndex = tabsObjectModel.count - 1
             }
         }
-    }
-
-    function setIconSize(size)
-    {
-        settings.iconSize = size
     }
 
     function tagFiles(urls)
