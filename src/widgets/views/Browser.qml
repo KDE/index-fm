@@ -187,19 +187,6 @@ Item
 
                 itemMenu.contentData : [
 
-                    MenuSeparator {},
-
-                    MenuItem
-                    {
-                        visible: !control.isExec && openWithDialog
-                        text: i18n("Open with")
-                        icon.name: "document-open"
-                        onTriggered:
-                        {
-                            openWith([_browser.itemMenu.item.path])
-                        }
-                    },
-
                     MenuItem
                     {
                         visible: !control.isExec

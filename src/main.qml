@@ -864,20 +864,6 @@ Maui.ApplicationWindow
     /**
       *
       **/
-    function openWith(urls)
-    {
-        if(urls.length <= 0)
-        {
-            return
-        }
-
-        openWithDialog.urls = urls
-        openWithDialog.open()
-    }
-
-    /**
-      *
-      **/
     function shareFiles(urls)
     {
         if(urls.length <= 0)
