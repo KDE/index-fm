@@ -122,6 +122,7 @@ Item
             initialItem: Maui.FileBrowser
             {
                 id: _browser
+                Component.onCompleted: {browserMenu.insertItem(0, openTerminalMenuItem)}
                 headerBackground.color: "transparent"
 
                 selectionBar: root.selectionBar
@@ -410,7 +411,20 @@ Item
         onClicked: _splitView.currentIndex = _index
     }
 
-    Component.onCompleted: syncTerminal(control.currentPath)
+    MenuItem
+    {
+        text: i18n("Open Terminal")
+        id: openTerminalMenuItem
+        icon.name: "utilities-terminal"
+        onTriggered:
+        {
+            console.log("@gadominguez File: main.qml Path: " + currentPath)
+            inx.openTerminal(currentPath)
+        }
+    }
+
+
+    Component.onCompleted: {syncTerminal(control.currentPath)}
     Component.onDestruction: console.log("Destroyed browsers!!!!!!!!")
 
     function syncTerminal(path)
