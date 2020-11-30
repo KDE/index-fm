@@ -33,6 +33,14 @@ signals:
 
 
 public slots:
+
+    /**
+     * @brief openTerminal
+     * Open Terminal Windows
+     * @param url
+     * Path in which terminal should open
+     */
+    static void openTerminal(const QUrl &url);
 };
 
 #endif // INDEX_H

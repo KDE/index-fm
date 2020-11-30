@@ -5,6 +5,7 @@
 
 
 #include "index.h"
+#include "ktoolinvocation.h"
 #include <QFileInfo>
 #include <QDir>
 #include <QDebug>
@@ -30,4 +31,15 @@ void Index::openPaths(const QStringList &paths)
 
                             return list;
                         }));
+}
+
+void Index::openTerminal(const QUrl &url)
+{
+    if (url.isLocalFile()) {
+        KToolInvocation::invokeTerminal(QString(), url.toLocalFile());
+        return;
+    }
+
+    // Nothing worked, just use $HOME
+    KToolInvocation::invokeTerminal(QString(), QDir::homePath());
 }
