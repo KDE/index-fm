@@ -19,25 +19,13 @@ Maui.SideBar
     signal placeClicked (string path)
 
     collapsible: true
-    collapsedSize: stick ?  Maui.Style.iconSizes.medium + (Maui.Style.space.medium*4) - Maui.Style.space.tiny : 0
     collapsed : !root.isWide
-    stick: appSettings.stickSidebar
     preferredWidth: Math.min(Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 11), root.width)
-    iconSize: privateProperties.isCollapsed && stick ? Maui.Style.iconSizes.medium : Maui.Style.iconSizes.small
-
-    Behavior on iconSize
-    {
-        NumberAnimation
-        {
-            duration: Kirigami.Units.shortDuration
-            easing.type: Easing.InOutQuad
-        }
-    }
 
     onPlaceClicked:
     {
         currentBrowser.openFolder(path)
-        if(placesSidebar.modal)
+        if(placesSidebar.collapsed)
             placesSidebar.collapse()
     }
 
@@ -65,13 +53,11 @@ Maui.SideBar
     {
         id: itemDelegate
         width: ListView.view.width
-        iconSize: control.iconSize
-        labelVisible: control.showLabels
+        iconSize: Maui.Style.iconSizes.small
         label: model.label
         count: model.count > 0 ? model.count : ""
         iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
         iconVisible: true
-//        template.leftMargin: privateProperties.isCollapsed && stick ? 0 : Maui.Style.space.medium
 
         onClicked:
         {
@@ -80,7 +66,7 @@ Maui.SideBar
 
             placeClicked(model.path)
             if(control.collapsed)
-                control.collapse()
+                control.close()
         }
 
         onRightClicked:
@@ -96,7 +82,7 @@ Maui.SideBar
         }
     }
 
-    section.property: !showLabels ? "" : "type"
+    section.property: "type"
     section.criteria: ViewSection.FullString
     section.delegate: Maui.LabelDelegate
     {

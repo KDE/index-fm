@@ -47,6 +47,9 @@ Item
     onCurrentPathChanged:
     {
         syncTerminal(currentBrowser.currentPath)
+
+        if(previewerVisible)
+            _stackView.pop()
     }
 
     Component

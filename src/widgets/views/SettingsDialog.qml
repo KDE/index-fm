@@ -326,20 +326,6 @@ Maui.SettingsDialog
 
         Maui.SettingTemplate
         {
-            label1.text:  i18n("Sidebar always visible")
-            label2.text: i18n("Keep sidebar on constrained spaces")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked: appSettings.stickSidebar
-                onToggled: appSettings.stickSidebar = !appSettings.stickSidebar
-            }
-        }
-
-        Maui.SettingTemplate
-        {
             label1.text: i18n("Dark Mode")
             enabled: false
 

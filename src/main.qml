@@ -47,7 +47,6 @@ Maui.ApplicationWindow
         property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
-        property bool stickSidebar :  !Kirigami.Settings.isMobile
         property bool supportSplit : !Kirigami.Settings.isMobile
 
         property int viewType : Maui.FMList.LIST_VIEW
@@ -205,7 +204,7 @@ Maui.ApplicationWindow
 
             onRejected:
             {
-//                _compressDialog.clear()
+                //                _compressDialog.clear()
                 _compressDialog.close()
             }
 
@@ -484,13 +483,52 @@ Maui.ApplicationWindow
                 }
             ]
 
-            headBar.farLeftContent: ToolButton
-            {
-                icon.name: "bookmarks"
-                checked: placesSidebar.position == 1
-                visible: !placesSidebar.stick
-                onClicked: placesSidebar.visible = checked
-            }
+            headBar.farLeftContent: [
+                MouseArea
+                {
+                    id: _handle
+                    visible: placesSidebar.position == 0 || placesSidebar.collapsed
+                    Layout.preferredWidth: Maui.Style.iconSizes.big
+                    Layout.fillHeight: true
+                    Layout.alignment: Qt.AlignBottom
+                    hoverEnabled: true
+                    preventStealing: true
+                    propagateComposedEvents: false
+
+                    ToolTip.delay: 1000
+                    ToolTip.timeout: 5000
+                    ToolTip.visible: _handle.containsMouse || _handle.containsPress
+                    ToolTip.text: i18n("Toogle SideBar")
+
+                    Rectangle
+                    {
+                        anchors.centerIn: parent
+                        radius: 2
+                        height: 18
+                        width: 16
+
+                        color: _handle.containsMouse || _handle.containsPress  ?  Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        border.color: Qt.darker(color, 1.2)
+
+                        Rectangle
+                        {
+                            radius: 1
+                            height: 10
+                            width: 3
+
+                            anchors.left: parent.left
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.margins: 4
+
+                            color: _handle.containsMouse || _handle.containsPress ?  Kirigami.Theme.highlightedTextColor : Kirigami.Theme.backgroundColor
+                        }
+                    }
+
+                    onClicked: placesSidebar.visible = !placesSidebar.visible
+                }
+
+
+            ]
 
             headBar.leftContent: [
 
@@ -529,7 +567,7 @@ Maui.ApplicationWindow
                         delayed: true
                     }
 
-//                    display: ToolButton.TextBesideIcon
+                    //                    display: ToolButton.TextBesideIcon
                     onCurrentIndexChanged:
                     {
                         if(currentTab && currentBrowser)
