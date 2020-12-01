@@ -87,7 +87,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text:  i18n("Split Views")
-            label2.text: i18n("Support split views horizontally or vertically depending on the avaliable space.")
+            label2.text: i18n("Support split views horizontally or vertically depending on the available space.")
 
             Switch
             {
