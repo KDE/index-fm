@@ -11,6 +11,7 @@
   <name xml:lang="el">Δείκτης</name>
   <name xml:lang="en-GB">Index</name>
   <name xml:lang="es">Index</name>
+  <name xml:lang="eu">Index</name>
   <name xml:lang="fr">Index</name>
   <name xml:lang="hi">निर्देशिका (Index)</name>
   <name xml:lang="it">Index</name>
@@ -31,6 +32,7 @@
   <summary xml:lang="el">Διαχειριστείτε τα αρχεία σας</summary>
   <summary xml:lang="en-GB">Manage your files</summary>
   <summary xml:lang="es">Administre sus archivos</summary>
+  <summary xml:lang="eu">Kudeatu zure fitxategiak</summary>
   <summary xml:lang="fr">Gérer vos fichiers</summary>
   <summary xml:lang="hi">फ़ाइलों का प्रबंधन करें</summary>
   <summary xml:lang="it">Gestisci i tuoi file</summary>
@@ -51,6 +53,7 @@
     <p xml:lang="el">Το Index σάς επιτρέπει να πλοηγηθείτε στον υπολογιστή σας και να κάνετε προεπισκόπηση των αρχείων σας με τα πολυμέσα.</p>
     <p xml:lang="en-GB">Index allows you to navigate your computer and preview multimedia files.</p>
     <p xml:lang="es">Index le permite navegar por su equipo y previsualizar archivos multimedia.</p>
+    <p xml:lang="eu">Index-ek zure ordenagailuan nabigatzen eta multimedia fitxategiak aurreikusten uzten dizu.</p>
     <p xml:lang="fr">Index vous permet de naviguer dans les fichiers de votre ordinateurs et d'avoir un aperçu des fichiers multimédia.</p>
     <p xml:lang="hi">निर्देशिका (Index) आपको अपने कंप्यूटर पर मल़टीमिडिया फाइल संचालन व देखने देता है</p>
     <p xml:lang="it">Index ti consente di navigare il tuo computer e offre un'anteprima dei file multimediali.</p>
@@ -78,6 +81,7 @@
       <caption xml:lang="el">Index διαχειριστής αρχείων</caption>
       <caption xml:lang="en-GB">Index file manager</caption>
       <caption xml:lang="es">Administrador de archivos Index</caption>
+      <caption xml:lang="eu">Index fitxategi-kudeatzailea</caption>
       <caption xml:lang="fr">Gestionnaire de fichiers Index</caption>
       <caption xml:lang="hi">निर्देशिका (Index) फ़ाइल प्रबंधक</caption>
       <caption xml:lang="it">Gestore dei file Index</caption>
