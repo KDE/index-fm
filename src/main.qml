@@ -160,8 +160,8 @@ Maui.ApplicationWindow
         {
             id: _compressDialog
 
-            title: i18n("Compress %1 files", urls.length)
-            message: i18n("Compress selected files into a  new file.")
+            title: i18np("Compress %1 file", "Compress %1 files", urls.length)
+            message: i18n("Compress selected files into a new file.")
 
             textEntry.placeholderText: i18n("Archive name...")
             entryField: true
