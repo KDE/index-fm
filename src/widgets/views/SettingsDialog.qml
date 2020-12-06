@@ -10,6 +10,7 @@ Maui.SettingsDialog
 {
     Maui.SettingsSection
     {
+//        alt: true
         title: i18n("Navigation")
         description: i18n("Configure the app plugins and behavior.")
 
@@ -20,9 +21,10 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
-                checked:  root.showThumbnails
-                onToggled:  root.showThumbnails = ! root.showThumbnails
+                checked:  settings.showThumbnails
+                onToggled: settings.showThumbnails = ! settings.showThumbnails
             }
         }
 
@@ -33,9 +35,10 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
-                checked:  root.showHiddenFiles
-                onToggled:  root.showHiddenFiles = !root.showHiddenFiles
+                checked:  settings.showHiddenFiles
+                onToggled: settings.showHiddenFiles = !settings.showHiddenFiles
             }
         }
 
@@ -46,13 +49,10 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
-                checked:  root.singleClick
-                onToggled:
-                {
-                    root.singleClick = !root.singleClick
-                    Maui.FM.saveSettings("SINGLE_CLICK",  root.singleClick, "BROWSER")
-                }
+                checked:  settings.singleClick
+                onToggled: settings.singleClick = !settings.singleClick
             }
         }
 
@@ -63,12 +63,178 @@ Maui.SettingsDialog
 
             Switch
             {
+                Layout.fillHeight: true
                 checkable: true
-                checked:  root.restoreSession
-                onToggled:
+                checked:  settings.restoreSession
+                onToggled: settings.restoreSession = !settings.restoreSession
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Preview Files")
+            label2.text: i18n("Opens a quick preview with information of the file instead of opening it with an external application.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  settings.previewFiles
+                onToggled: settings.previewFiles = !settings.previewFiles
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Split Views")
+            label2.text: i18n("Support split views horizontally or vertically depending on the available space.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  settings.supportSplit
+                onToggled: settings.supportSplit = !settings.supportSplit
+            }
+        }
+    }
+
+    Maui.SettingsSection
+    {
+//        alt: false
+        title: i18n("Sorting")
+        description: i18n("Sorting order and behavior.")
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Global Sorting")
+            label2.text: i18n("Use the sorting preferences globally for all the tabs and splits.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  sortSettings.globalSorting
+                onToggled: sortSettings.globalSorting = !sortSettings.globalSorting
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            enabled: sortSettings.globalSorting
+            label1.text: i18n("Folders first")
+            label2.text: i18n("Show folders first.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  sortSettings.foldersFirst
+                onToggled: sortSettings.foldersFirst = !sortSettings.foldersFirst
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            enabled: sortSettings.globalSorting
+            label1.text: i18n("Group")
+            label2.text: i18n("Groups by the sort category.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  sortSettings.group
+                onToggled: sortSettings.group = !sortSettings.group
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            enabled: sortSettings.globalSorting
+            label1.text: i18n("Sorting by")
+            label2.text: i18n("Change the sorting key.")
+
+            Maui.ToolActions
+            {
+                expanded: true
+                autoExclusive: true
+                display: ToolButton.TextOnly
+
+                Binding on currentIndex
                 {
-                    root.restoreSession = !root.restoreSession
-                    Maui.FM.saveSettings("RESTORE_SESSION",  root.restoreSession, "BROWSER")
+                    value:  switch(sortSettings.sortBy)
+                            {
+                            case  Maui.FMList.LABEL: return 0;
+                            case  Maui.FMList.MODIFIED: return 1;
+                            case  Maui.FMList.SIZE: return 2;
+                            case  Maui.FMList.TYPE: return 2;
+                            default: return -1;
+                            }
+                    restoreMode: Binding.RestoreValue
+                }
+
+                Action
+                {
+                    text: i18n("Title")
+                    onTriggered: sortSettings.sortBy =  Maui.FMList.LABEL
+                }
+
+                Action
+                {
+                    text: i18n("Date")
+                    onTriggered: sortSettings.sortBy =  Maui.FMList.MODIFIED
+                }
+
+                Action
+                {
+                    text: i18n("Size")
+                    onTriggered: sortSettings.sortBy =  Maui.FMList.SIZE
+                }
+
+                Action
+                {
+                    text: i18n("Type")
+                    onTriggered: sortSettings.sortBy =  Maui.FMList.MIME
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            enabled: sortSettings.globalSorting
+            label1.text: i18n("Sort order")
+            label2.text: i18n("Change the sorting order.")
+
+            Maui.ToolActions
+            {
+                expanded: true
+                autoExclusive: true
+                display: ToolButton.IconOnly
+
+                Binding on currentIndex
+                {
+                    value:  switch(sortSettings.sortOrder)
+                            {
+                            case Qt.AscendingOrder: return 0;
+                            case Qt.DescendingOrder: return 1;
+                            default: return -1;
+                            }
+                    restoreMode: Binding.RestoreValue
+                }
+
+                Action
+                {
+                    text: i18n("Ascending")
+                    icon.name: "view-sort-ascending"
+                    onTriggered: sortSettings.sortOrder = Qt.AscendingOrder
+                }
+
+                Action
+                {
+                    text: i18n("Descending")
+                    icon.name: "view-sort-descending"
+                    onTriggered: sortSettings.sortOrder = Qt.DescendingOrder
                 }
             }
         }
@@ -82,47 +248,78 @@ Maui.SettingsDialog
 
         Maui.SettingTemplate
         {
-            label1.text:  i18n("SideBar")
-            label2.text: i18n("Keep sidebar on constrained spaces")
+            label1.text: i18n("Grid Items Size")
+            label2.text: i18n("Size of the grid and list view thumbnails.")
 
-            Switch
+            Maui.ToolActions
             {
-                checkable: true
-                checked: placesSidebar.stick
-                onToggled:
+                expanded: true
+                autoExclusive: true
+                display: ToolButton.TextOnly
+
+                currentIndex: appSettings.gridSize
+
+                Action
                 {
-                    placesSidebar.stick = ! placesSidebar.stick
-                    Maui.FM.saveSettings("STICK_SIDEBAR", placesSidebar.stick, "UI")
+                    text: i18n("S")
+                    onTriggered: appSettings.gridSize = 0
+                }
+
+                Action
+                {
+                    text: i18n("M")
+                    onTriggered: appSettings.gridSize = 1
+                }
+
+                Action
+                {
+                    text: i18n("X")
+                    onTriggered: appSettings.gridSize = 2
+                }
+
+                Action
+                {
+                    text: i18n("XL")
+                    onTriggered: appSettings.gridSize = 3
                 }
             }
         }
 
         Maui.SettingTemplate
         {
-            label1.text: i18n("Show Status Bar")
-            label2.text: i18n("For filtering and other quick actions")
+            label1.text: i18n("List Items Size")
+            label2.text: i18n("Size of the grid and list view thumbnails.")
 
-            Switch
+            Maui.ToolActions
             {
-                checkable: true
-                checked:  root.showStatusBar
-                onToggled:  root.showStatusBar = !root.showStatusBar
-            }
-        }
+                expanded: true
+                autoExclusive: true
+                display: ToolButton.TextOnly
 
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Translucent Sidebar")
+                currentIndex: appSettings.listSize
 
-            Switch
-            {
-                checkable: true
-                checked:  root.translucency
-                enabled: Maui.Handy.isLinux
-                onToggled:
+                Action
                 {
-                    root.translucency = !root.translucency
-                    Maui.FM.saveSettings("TRANSLUCENCY",  root.translucency, "UI")
+                    text: i18n("S")
+                    onTriggered: appSettings.listSize = 0
+                }
+
+                Action
+                {
+                    text: i18n("M")
+                    onTriggered: appSettings.listSize = 1
+                }
+
+                Action
+                {
+                    text: i18n("X")
+                    onTriggered: appSettings.listSize = 2
+                }
+
+                Action
+                {
+                    text: i18n("XL")
+                    onTriggered: appSettings.listSize = 3
                 }
             }
         }
@@ -134,58 +331,7 @@ Maui.SettingsDialog
 
             Switch
             {
-
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Grid Size")
-            label2.text: i18n("Thumbnails size in the grid view")
-
-            Maui.ToolActions
-            {
-                id: _gridIconSizesGroup
-                expanded: true
-                autoExclusive: true
-                display: ToolButton.TextOnly
-
-                Binding on currentIndex
-                {
-                    value:  switch(iconSize)
-                            {
-                            case 32: return 0;
-                            case 48: return 1;
-                            case 64: return 2;
-                            case 96: return 3;
-                            default: return -1;
-                            }
-                    restoreMode: Binding.RestoreValue
-                }
-
-                Action
-                {
-                    text: i18n("S")
-                    onTriggered: setIconSize(32)
-                }
-
-                Action
-                {
-                    text: i18n("M")
-                    onTriggered: setIconSize(48)
-                }
-
-                Action
-                {
-                    text: i18n("X")
-                    onTriggered: setIconSize(64)
-                }
-
-                Action
-                {
-                    text: i18n("XL")
-                    onTriggered: setIconSize(96)
-                }
+                Layout.fillHeight: true
             }
         }
     }
