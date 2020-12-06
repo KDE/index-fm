@@ -125,6 +125,9 @@ Item
             initialItem: Maui.FileBrowser
             {
                 id: _browser
+                Component.onCompleted: {
+                    itemMenu.insertItem(1, openWithMenuItem)
+                }
                 headerBackground.color: "transparent"
 
                 selectionBar: root.selectionBar
@@ -188,20 +191,21 @@ Item
                     visible: _splitView.currentIndex === _index && _splitView.count === 2
                 }
 
-                itemMenu.contentData : [
-
-                    MenuSeparator {},
-
+                browserMenu.contentData : [
                     MenuItem
                     {
-                        visible: !control.isExec && openWithDialog
-                        text: i18n("Open with")
-                        icon.name: "document-open"
+                        visible: !control.isExec
+                        text: i18n("Open terminal here")
+                        id: openTerminal
+                        icon.name: "utilities-terminal"
                         onTriggered:
                         {
-                            openWith([_browser.itemMenu.item.path])
+                            inx.openTerminal(currentPath)
                         }
-                    },
+                    }
+                ]
+
+                itemMenu.contentData : [
 
                     MenuItem
                     {
@@ -242,6 +246,17 @@ Item
                         text: i18n("Open in split view")
                         icon.name: "view-split-left-right"
                         onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
+                    },
+
+                    MenuItem
+                    {
+                        visible: !control.isExec && Maui.Handy.isLinux
+                        text: i18n("Open terminal here")
+                        icon.name: "utilities-terminal"
+                        onTriggered:
+                        {
+                            inx.openTerminal(_browser.itemMenu.item.path)
+                        }
                     },
 
                     MenuSeparator {},
@@ -426,7 +441,19 @@ Item
         onClicked: _splitView.currentIndex = _index
     }
 
-    Component.onCompleted: syncTerminal(control.currentPath)
+    MenuItem
+    {
+        visible: !control.isExec
+        id: openWithMenuItem
+        text: i18n("Open with")
+        icon.name: "document-open"
+        onTriggered:
+        {
+            openWith([_browser.itemMenu.item.path])
+        }
+    }
+
+    Component.onCompleted: {syncTerminal(control.currentPath)}
     Component.onDestruction: console.log("Destroyed browsers!!!!!!!!")
 
     function syncTerminal(path)

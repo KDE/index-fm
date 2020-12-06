@@ -287,7 +287,8 @@ KArchive *CompressedFile::getKArchiveObject(const QUrl &url)
                         */
     qDebug() << "@gadominguez File: fmstatic.cpp Func: getKArchiveObject MimeType: " << FMH::getMime(url);
 
-    if (FMH::getMime(url).contains("application/x-tar"))
+    if (FMH::getMime(url).contains("application/x-tar") ||
+            FMH::getMime(url).contains("application/x-compressed-tar"))
     {
         kArch = new KTar(url.toString().split(QString("file://"))[1]);
     }
