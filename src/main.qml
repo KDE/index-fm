@@ -871,8 +871,8 @@ Maui.ApplicationWindow
             return
         }
 
-        _openWithDialog.urls = urls
-        _openWithDialog.open()
+        openWithDialog.urls = urls
+        openWithDialog.open()
     }
 
     /**

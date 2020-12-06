@@ -44,8 +44,6 @@ Item
 
     opacity: _splitView.currentIndex === _index ? 1 : 0.7
 
-    Maui.OpenWithDialog {id: _openWithDialog}
-
     onCurrentPathChanged:
     {
         syncTerminal(currentBrowser.currentPath)
@@ -442,7 +440,7 @@ Item
 
     MenuItem
     {
-        visible: !control.isExec && _openWithDialog
+        visible: !control.isExec
         id: openWithMenuItem
         text: i18n("Open with")
         icon.name: "document-open"
