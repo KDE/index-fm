@@ -125,9 +125,7 @@ Item
             initialItem: Maui.FileBrowser
             {
                 id: _browser
-                Component.onCompleted: {
-                    itemMenu.insertItem(1, openWithMenuItem)
-                }
+
                 headerBackground.color: "transparent"
 
                 selectionBar: root.selectionBar
@@ -453,7 +451,12 @@ Item
         }
     }
 
-    Component.onCompleted: {syncTerminal(control.currentPath)}
+    Component.onCompleted:
+    {
+        _browser.itemMenu.insertItem(1, openWithMenuItem)
+        syncTerminal(control.currentPath)
+    }
+
     Component.onDestruction: console.log("Destroyed browsers!!!!!!!!")
 
     function syncTerminal(path)
