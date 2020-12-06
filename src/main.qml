@@ -862,6 +862,20 @@ Maui.ApplicationWindow
     }
 
     /**
+     * For this to work the implementation needs to have passed a selectionBar
+     **/
+    function openWith(urls)
+    {
+        if(urls.length <= 0)
+        {
+            return
+        }
+
+        _openWithDialog.urls = urls
+        _openWithDialog.open()
+    }
+
+    /**
       *
       **/
     function shareFiles(urls)

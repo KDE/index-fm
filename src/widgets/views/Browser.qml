@@ -125,7 +125,6 @@ Item
             {
                 id: _browser
                 Component.onCompleted: {
-                    browserMenu.insertItem(0, openTerminalMenuItem);
                     itemMenu.insertItem(1, openWithMenuItem)
                 }
                 headerBackground.color: "transparent"
@@ -191,6 +190,20 @@ Item
                     visible: _splitView.currentIndex === _index && _splitView.count === 2
                 }
 
+                browserMenu.contentData : [
+                    MenuItem
+                    {
+                        visible: !control.isExec
+                        text: i18n("Open terminal here")
+                        id: openTerminal
+                        icon.name: "utilities-terminal"
+                        onTriggered:
+                        {
+                            inx.openTerminal(currentPath)
+                        }
+                    }
+                ]
+
                 itemMenu.contentData : [
 
                     MenuItem
@@ -232,6 +245,17 @@ Item
                         text: i18n("Open in split view")
                         icon.name: "view-split-left-right"
                         onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
+                    },
+
+                    MenuItem
+                    {
+                        visible: !control.isExec && Maui.Handy.isLinux
+                        text: i18n("Open terminal here")
+                        icon.name: "utilities-terminal"
+                        onTriggered:
+                        {
+                            inx.openTerminal(_browser.itemMenu.item.path)
+                        }
                     },
 
                     MenuSeparator {},
@@ -418,18 +442,6 @@ Item
 
     MenuItem
     {
-        text: i18n("Open Terminal")
-        id: openTerminalMenuItem
-        icon.name: "utilities-terminal"
-        onTriggered:
-        {
-            console.log("@gadominguez File: main.qml Path: " + currentPath)
-            inx.openTerminal(currentPath)
-        }
-    }
-
-    MenuItem
-    {
         visible: !control.isExec && _openWithDialog
         id: openWithMenuItem
         text: i18n("Open with")
@@ -453,21 +465,6 @@ Item
     {
         terminalVisible = !terminalVisible
         //        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
-    }
-
-
-    /**
-     * For this to work the implementation needs to have passed a selectionBar
-     **/
-    function openWith(urls)
-    {
-        if(urls.length <= 0)
-        {
-            return
-        }
-
-        _openWithDialog.urls = urls
-        _openWithDialog.open()
     }
 
 }
