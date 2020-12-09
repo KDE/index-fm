@@ -35,9 +35,9 @@ void Index::openPaths(const QStringList &paths)
                         }));
 }
 
-#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
 void Index::openTerminal(const QUrl &url)
 {
+#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
     if (url.isLocalFile()) {
         KToolInvocation::invokeTerminal(QString(), url.toLocalFile());
         return;
@@ -45,5 +45,8 @@ void Index::openTerminal(const QUrl &url)
 
     // Nothing worked, just use $HOME
     KToolInvocation::invokeTerminal(QString(), QDir::homePath());
-}
+#else
+    Q_UNUSED(url)
 #endif
+
+}

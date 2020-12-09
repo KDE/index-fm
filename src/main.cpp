@@ -5,8 +5,10 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
-#include <QtPlugin>
+#include <QQuickStyle>
+
 #include <QCommandLineParser>
+
 #include <KAboutData>
 
 #include "index.h"
@@ -22,12 +24,7 @@
 #include "mauimacos.h"
 #endif
 
-#ifdef STATIC_MAUIKIT
-#include "3rdparty/mauikit/src/mauikit.h"
-#include "mauiapp.h"
-#else
 #include <MauiKit/mauiapp.h>
-#endif
 
 #if defined Q_OS_MACOS || defined Q_OS_WIN
 #include <KF5/KI18n/KLocalizedString>
@@ -35,14 +32,7 @@
 #include <KI18n/KLocalizedString>
 #endif
 
-#ifndef STATIC_MAUIKIT
 #include "../index_version.h"
-#endif
-
-#ifdef STATIC_KIRIGAMI
-#include "./3rdparty/kirigami/src/kirigamiplugin.h"
-//Q_IMPORT_PLUGIN(KirigamiPlugin)
-#endif
 
 #include "controllers/compressedfile.h"
 #include "controllers/filepreviewer.h"
@@ -62,6 +52,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle("maui-style");
+
     if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE"}))
         return -1;
 #else
@@ -115,15 +107,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("inx", &index);
     qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
-
-#ifdef STATIC_KIRIGAMI
-//    KirigamiPlugin::getInstance().registerTypes(&engine);
-    KirigamiPlugin::getInstance().registerTypes();
-#endif
-
-#ifdef STATIC_MAUIKIT
-    MauiKit::getInstance().registerTypes(&engine);
-#endif
 
     engine.load(url);
 
