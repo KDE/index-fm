@@ -5,7 +5,10 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
+
+#ifdef Q_OS_ANDROID
 #include <QQuickStyle>
+#endif
 
 #include <QCommandLineParser>
 

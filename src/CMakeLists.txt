@@ -30,6 +30,8 @@ endif()
 if (ANDROID)
     target_link_libraries(index Qt5::AndroidExtras Qt5::QuickControls2)
     kde_source_files_enable_exceptions(index index.cpp)
+elseif(UNIX)
+    target_link_libraries(index KF5::ConfigCore KF5::KIOCore KF5::KIOFileWidgets KF5::KIONTLM KF5::KIOWidgets)
 endif()
 
 target_compile_definitions(index
