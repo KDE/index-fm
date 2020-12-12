@@ -5,9 +5,11 @@
 #include <KArchive/KZip>
 #include <KArchive/kcompressiondevice.h>
 #include <KArchive/kfilterdev.h>
-#ifdef K7ZIP_H
+
+#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
 #include <KArchive/k7zip.h>
 #endif
+
 #include <KArchive/kar.h>
 #include <qdiriterator.h>
 

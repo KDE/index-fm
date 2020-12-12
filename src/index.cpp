@@ -5,9 +5,11 @@
 
 
 #include "index.h"
+
 #if defined Q_OS_LINUX && !defined Q_OS_ANDROID
 #include "ktoolinvocation.h"
 #endif
+
 #include <QFileInfo>
 #include <QDir>
 #include <QDebug>

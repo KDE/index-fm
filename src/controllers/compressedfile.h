@@ -3,13 +3,8 @@
 
 #include <QObject>
 
-#ifdef STATIC_MAUIKIT
-#include "fmh.h"
-#include "mauilist.h"
-#else
 #include <MauiKit/fmh.h>
 #include <MauiKit/mauilist.h>
-#endif
 
 class KArchive;
 class CompressedFileModel : public MauiList
