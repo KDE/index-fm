@@ -5,11 +5,6 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
-
-#ifdef Q_OS_ANDROID
-#include <QQuickStyle>
-#endif
-
 #include <QCommandLineParser>
 
 #include <KAboutData>
@@ -55,8 +50,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle("maui-style");
-
     if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE"}))
         return -1;
 #else
@@ -65,7 +58,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     app.setOrganizationName(QStringLiteral("Maui"));
     app.setWindowIcon(QIcon(":/index.png"));
-    MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
+    MauiApp::instance()->setHandleAccounts(true); //for now index can not handle cloud accounts
     MauiApp::instance()->setIconName("qrc:/assets/index.svg");
 
     KLocalizedString::setApplicationDomain("index");

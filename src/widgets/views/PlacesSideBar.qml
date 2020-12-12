@@ -31,7 +31,7 @@ Maui.SideBar
 
     model: Maui.BaseModel
     {
-        list:  Maui.PlacesList
+        list: Maui.PlacesList
         {
             id: placesList
 
