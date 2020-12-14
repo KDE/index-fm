@@ -5,7 +5,6 @@
 
 if(ANDROID)
     add_library(index SHARED
-        ../android_files/AndroidManifest.xml
         index_assets.qrc
         main.cpp
         index.cpp
