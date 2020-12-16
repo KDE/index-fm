@@ -3,15 +3,14 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQml 2.14
-import QtQuick 2.14
-import QtQuick.Controls 2.14
+import QtQuick 2.13
+import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
 
 import Qt.labs.settings 1.0
 import QtQml.Models 2.3
 
-import org.kde.kirigami 2.7 as Kirigami
+import org.kde.kirigami 2.14 as Kirigami
 import org.kde.mauikit 1.3 as Maui
 
 import org.maui.index 1.0 as Index
@@ -229,17 +228,6 @@ Maui.ApplicationWindow
     Index.CompressedFile
     {
         id: _compressedFile
-    }
-
-    headBar.rightContent: ToolButton
-    {
-        id: _selectButton
-        visible: Maui.Handy.isTouch
-        icon.name: "item-select"
-        checkable: true
-        checked: root.selectionMode
-        onClicked: root.selectionMode = !root.selectionMode
-        onPressAndHold: currentBrowser.selectAll()
     }
 
     headBar.middleContent: Maui.PathBar

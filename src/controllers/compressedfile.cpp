@@ -5,7 +5,11 @@
 #include <KArchive/KZip>
 #include <KArchive/kcompressiondevice.h>
 #include <KArchive/kfilterdev.h>
+
+#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
 #include <KArchive/k7zip.h>
+#endif
+
 #include <KArchive/kar.h>
 #include <qdiriterator.h>
 
@@ -115,6 +119,8 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                 }
                 case 2: //.7ZIP
                 {
+#ifdef K7ZIP_H
+
                     //TODO: KArchive no permite comprimir ficheros del mismo modo que con TAR o ZIP. Hay que hacerlo de otra forma y requiere disponer de una libreria actualizada de KArchive.
                     auto k7zip = new K7Zip(QUrl(where.toString() + "/" + fileName + ".7z").toLocalFile());
                     k7zip->open(QIODevice::ReadWrite);
@@ -125,6 +131,7 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                     // WriteFile returns if the file was written or not,
                     //but this function returns if some error occurs so for this reason it is needed to toggle the value
                     error = !error;
+#endif
                     break;
                 }
                 case 3: //.AR
@@ -211,6 +218,8 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
             }
             case 2: //.7ZIP
             {
+#ifdef K7ZIP_H
+
                 auto k7zip = new K7Zip(QUrl(where.toString() + "/" + fileName + ".7z").toLocalFile());
                 k7zip->open(QIODevice::ReadWrite);
                 assert(k7zip->isOpen() == true);
@@ -234,6 +243,7 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                     (void) k7zip->close();
                     break;
                 }
+#endif
             }
             case 3: //.AR
             {
@@ -302,7 +312,9 @@ KArchive *CompressedFile::getKArchiveObject(const QUrl &url)
     }
     else if (FMH::getMime(url).contains("application/x-7z-compressed"))
     {
+#ifdef K7ZIP_H
         kArch = new K7Zip(url.toString().split(QString("file://"))[1]);
+#endif
     }
     else
     {
