@@ -834,7 +834,7 @@ Maui.ApplicationWindow
         placesSidebar.currentIndex = -1
 
         for(var i = 0; i < placesSidebar.count; i++)
-            if(String(path) === placesSidebar.list.get(i).path)
+            if(String(path) === placesSidebar.model.get(i).path)
             {
                 placesSidebar.currentIndex = i
                 return;
