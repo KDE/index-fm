@@ -400,7 +400,7 @@ Item
 
                 onItemClicked:
                 {
-                    const item = currentFMList.get(index)
+                    const item = currentFMModel.get(index)
 
                     if(appSettings.singleClick)
                     {
@@ -416,7 +416,7 @@ Item
 
                 onItemDoubleClicked:
                 {
-                    const item = currentFMList.get(index)
+                    const item = currentFMModel.get(index)
 
                     if(!appSettings.singleClick)
                     {
