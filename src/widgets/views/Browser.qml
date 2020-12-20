@@ -391,10 +391,10 @@ Item
                     }
 
                     //@gadominguez At this moment this function doesnt work because goForward not exist
-                    /*if(event.button === Qt.ForwardButton)
+                    if(event.button === Qt.ForwardButton)
                     {
                         _browser.goForward()
-                    }*/
+                    }
 
                 }
 
