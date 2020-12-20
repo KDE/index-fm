@@ -330,17 +330,24 @@ Item
                 {
                     anchors.fill: parent
                     propagateComposedEvents: true
+                    acceptedButtons: Qt.BackButton | Qt.ForwardButton
                     //        hoverEnabled: true
                     //        onEntered: _splitView.currentIndex = control.index
                     onPressed:
                     {
                         _splitView.currentIndex = control._index
                         mouse.accepted = false
+                        _browser.keyPress(mouse);
                     }
                 }
 
                 onKeyPress:
                 {
+                    if (event.key == Qt.Key_Forward)
+                    {
+                        _browser.goForward()
+                    }
+
                     if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
                     {
                         openTab(control.currentPath)
@@ -377,11 +384,23 @@ Item
                     {
                         _stackView.push(_previewerComponent, StackView.Immediate)
                     }
+
+                    if(event.button === Qt.BackButton)
+                    {
+                        _browser.goBack()
+                    }
+
+                    //@gadominguez At this moment this function doesnt work because goForward not exist
+                    /*if(event.button === Qt.ForwardButton)
+                    {
+                        _browser.goForward()
+                    }*/
+
                 }
 
                 onItemClicked:
                 {
-                    const item = currentFMList.get(index)
+                    const item = currentFMModel.get(index)
 
                     if(appSettings.singleClick)
                     {
@@ -397,7 +416,7 @@ Item
 
                 onItemDoubleClicked:
                 {
-                    const item = currentFMList.get(index)
+                    const item = currentFMModel.get(index)
 
                     if(!appSettings.singleClick)
                     {
