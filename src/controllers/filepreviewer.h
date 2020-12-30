@@ -10,7 +10,6 @@ public:
     explicit FilePreviewer(QObject *parent = nullptr);
 
 signals:
-
 };
 
 #endif // FILEPREVIEWER_H

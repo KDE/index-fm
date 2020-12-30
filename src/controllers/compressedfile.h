@@ -15,6 +15,7 @@ public:
     const FMH::MODEL_LIST &items() const override final;
 
     void setUrl(const QUrl &url);
+
 private:
     FMH::MODEL_LIST m_list;
 };
@@ -40,11 +41,10 @@ private:
 
 public slots:
     void extract(const QUrl &where, const QString &directory = QString());
-    bool compress(const QVariantList &files, const QUrl &where, const QString & fileName, const int &compressTypeSelected);
+    bool compress(const QVariantList &files, const QUrl &where, const QString &fileName, const int &compressTypeSelected);
 
 signals:
     void urlChanged();
-
 };
 
 #endif // COMPRESSEDFILE_H

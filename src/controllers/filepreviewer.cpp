@@ -1,6 +1,6 @@
 #include "filepreviewer.h"
 
-FilePreviewer::FilePreviewer(QObject *parent) : QObject(parent)
+FilePreviewer::FilePreviewer(QObject *parent)
+    : QObject(parent)
 {
-
 }

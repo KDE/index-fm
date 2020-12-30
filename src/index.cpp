@@ -3,38 +3,38 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 #include "index.h"
 
 #if defined Q_OS_LINUX && !defined Q_OS_ANDROID
 #include "ktoolinvocation.h"
 #endif
 
-#include <QFileInfo>
-#include <QDir>
 #include <QDebug>
+#include <QDir>
+#include <QFileInfo>
 #include <QUrl>
 
-Index::Index(QObject *parent) : QObject(parent) {}
+Index::Index(QObject *parent)
+    : QObject(parent)
+{
+}
 
 /* to be called to launch index with opening different paths */
 void Index::openPaths(const QStringList &paths)
 {
-    emit this->openPath(std::accumulate(paths.constBegin(), paths.constEnd(), QStringList(), [](QStringList &list, const QString &path) -> QStringList
-    {
-                            const auto url = QUrl::fromUserInput(path);
-                            if(url.isLocalFile())
-                            {
-                                const QFileInfo file(url.toLocalFile());
-                                if(file.isDir())
-                                list << url.toString();
-                                else
-                                list << QUrl::fromLocalFile(file.dir().absolutePath()).toString();
-                            }else
-                            list << url.toString();
+    emit this->openPath(std::accumulate(paths.constBegin(), paths.constEnd(), QStringList(), [](QStringList &list, const QString &path) -> QStringList {
+        const auto url = QUrl::fromUserInput(path);
+        if (url.isLocalFile()) {
+            const QFileInfo file(url.toLocalFile());
+            if (file.isDir())
+                list << url.toString();
+            else
+                list << QUrl::fromLocalFile(file.dir().absolutePath()).toString();
+        } else
+            list << url.toString();
 
-                            return list;
-                        }));
+        return list;
+    }));
 }
 
 void Index::openTerminal(const QUrl &url)
@@ -50,5 +50,4 @@ void Index::openTerminal(const QUrl &url)
 #else
     Q_UNUSED(url)
 #endif
-
 }
