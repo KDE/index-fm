@@ -267,6 +267,7 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                     break;
                 }
 #endif
+                break;
             }
             case 3: //.AR
             {
