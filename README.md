@@ -8,19 +8,21 @@ Index lets you browse your system files and applications and preview your music,
 ### Ubuntu
 
 **GCC and Build Essentials**
+```shell
 sudo apt-get update
 sudo apt install build-essential libgl1-mesa-dev qtdeclarative5-dev libqt5svg5-dev \ qtquickcontols2-5-dev qt5-default
 sudo apt install cmake
 sudo apt install libkdecorations2-dev qml-module-qtquick-shapes
-
+```
 
 **Install extra-cmake-module >5.60**
-```
+```shell
 git clone https://anongit.kde.org/extra-cmake-modules
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr .. && make
 make install
 ```
+
 **Install QT5 Libraries >5.10**
 Download and install QT binaries from Qt Open Source
 ```
@@ -31,26 +33,27 @@ Download and install QT binaries from Qt Open Source
 ```
 TODO GABRIDC
 ```
+```shell
 sudo apt install libqt5svg5-dev && qtquickcontols2-5-dev && qt5-default
+```
 
 **Upgrade Qt libraries to 5.13**
-
+```shell
 add source deb http://cz.archive.ubuntu.com/ubuntu groovy main universe
 sudo apt get update && upgrade
+```
 
 **Install KF5 Libraries**
 Download and install KF5 Attica
-```
-Requeriment: KDE Neon 5.19
+```shell
+Requirement: KDE Neon 5.19
 sudo apt install gettext
 sudo apt install libkf5attica-dev libkf5kio-dev libkf5notifications-dev libkf5coreaddons-dev libkf5activities-dev libkf5i18n-dev libkf5declarative-dev libkf5plasma-dev libkf5syntaxhighlighting-dev
 ```
+
 **Download MAUI Kit**
-
-```
+```shell
 git clone https://invent.kde.org/maui/mauikit.git
-
-
 ```
 
 ## Build
@@ -64,19 +67,19 @@ Index-FM use Qt version 5.14.2 so we need this version or higer installed on owe
 **Check libraries and other components**
 
 1. Update the latest version of default OS libraries: **Open Discover and install all updates**
-2. Check KDE Framework and Qt version installed: **Open System Preferenca > System Information**
+2. Check KDE Framework and Qt version installed: **Open System Settings > System Information**
 
 
 **GCC and Build Essentials**
 
-```
+```shell
 sudo apt-get update
 sudo apt install cmake git
 sudo apt install build-essential libgl1-mesa-dev qtdeclarative5-dev libqt5svg5-dev qtquickcontrols2-5-dev qt5-default libkdecorations2-dev qml-module-qtquick-shapes
 ```
 
 **Install extra-cmake-module >5.60**
-```
+```shell
 cd <path to download extra-cmake-modules>
 git clone https://anongit.kde.org/extra-cmake-modules
 mkdir build && cd build
@@ -86,13 +89,14 @@ make install
 
 **Install KF5 Libraries**
 Download and install KF5 Attica
-```
+```shell
 sudo apt install gettext
 sudo apt install libkf5attica-dev libkf5kio-dev libkf5notifications-dev libkf5coreaddons-dev libkf5activities-dev libkf5i18n-dev libkf5declarative-dev libkf5plasma-dev libkf5syntaxhighlighting-dev
 ```
+
 **Download and install MAUI KIT**
 
-```
+```shell
 cd <path to download Maui>
 git clone https://invent.kde.org/maui/mauikit.git
 git checkout origin/development
@@ -100,6 +104,7 @@ cd mauikit && mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr .. && make
 sudo make install
 ```
+
 ### **Other Host OS**
 
 **Install QT5 Libraries >5.10**
@@ -107,7 +112,6 @@ Download and install QT binaries from Qt Open Source
 ```
 https://www.qt.io/cs/c/?cta_guid=074ddad0-fdef-4e53-8aa8-5e8a876d6ab4&placement_guid=99d9dd4f-5681-48d2-b096-470725510d34&portal_id=149513&canon=https%3A%2F%2Fwww.qt.io%2Fdownload-open-source&redirect_url=APefjpHQjssyGwlBYE-rW_TcMDvQTTSN3igs_sES0bNmU4j3dNgz_g7U1gRD5rU9XP6QCagDltYNZe1mC_6yuR-J9-W2YmcKATNxGjM6fTT48JNue9VuRi4DK7LXluTHxwtZRv8NK3hLkSNlk4AKqcxomUJZqosxV3GK0cryzQm5xtWguoQg5Sg-E3LLyWQcat5flnqFkP-N5WbMKOQiHXZCCFTtzz-R5-48fCOn5EOIYCa4ePXGI-SHM-vf3KokrwZ_5LPenmO7pMJaXlm5vEoa1VyWrurg3A&click=f8615a00-0c1d-4cfe-8af2-2090813f25fa&hsutk=f0a10f80ae5765dd6d56a9d6725ee662&signature=AAH58kGBEuTlcag57Ka07aFLDeEt5qyytQ&pageId=12602948080&__hstc=152220518.f0a10f80ae5765dd6d56a9d6725ee662.1595615134675.1595615134675.1595615134675.1&__hssc=152220518.12.1595615134675&__hsfp=256125709&contentType=standard-page
 ```
-
 
 
 # Build
@@ -126,7 +130,7 @@ QT += KService KNotifications KI18n KIOCore KIOFileWidgets KIOWidgets KNTLM
 
 https://github.com/Swordfish90/qmltermwidget
 
-``` bash
+```shell
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
@@ -136,11 +140,9 @@ sudo make install
 Before continue preparing your developer environment it is necesary preapare your Gitlab account for developer in your fork and update latest commits.
 
 
-
 ### Compilation
 
-
-```bash
+```shell
 cd <path to download Maui>
 git clone https://invent.kde.org/<username>/index-fm.git
 cd index-fm
@@ -152,18 +154,19 @@ git checkout origin/development
 git pull --rebase upstream development
 ```
 
-
 ### KDE Neon >=5.19.4
 
 After all the dependencies are met you can throw the following command lines to build Index and test it
 
-``` bash
+```shell
 mkdir build && cd build
 
 cmake -DCMAKE_INSTALL_PREFIX=/usr .. && make
 ```
+
 ### Other Host OS
 
+```shell
 cmake .. -DCMAKE_INSTALL_INSTALL_PREFIX=/usr 
 #-DQt5_DIR="/home/<username>/Qt/<Qt_Version>/gcc_64/lib/cmake/Qt5/" -DMauiKit_DIR="/home/gabridc/Repositorio/KDE/mauikit/"
 
