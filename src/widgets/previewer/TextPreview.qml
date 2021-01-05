@@ -8,6 +8,7 @@ Maui.Editor
 {
     id: control
     anchors.fill: parent
+    headBar.visible: false
     footBar.visible: false
     body.readOnly: true
     document.enableSyntaxHighlighting: true

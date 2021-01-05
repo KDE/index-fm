@@ -8,6 +8,7 @@ import org.maui.index 1.0 as Index
 Maui.Page
 {
     id: control
+    headBar.visible: false
 
     FontLoader
     {

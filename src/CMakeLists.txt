@@ -3,24 +3,20 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+set(index_SRCS
+    index_assets.qrc
+    main.cpp
+    index.cpp
+    controllers/filepreviewer.cpp
+    controllers/compressedfile.cpp
+    models/recentfilesmodel.cpp
+    qml.qrc
+    )
+
 if(ANDROID)
-    add_library(index SHARED
-        index_assets.qrc
-        main.cpp
-        index.cpp
-        controllers/filepreviewer.cpp
-        controllers/compressedfile.cpp
-        qml.qrc
-    )
+    add_library(index SHARED ${index_SRCS})
 else()
-    add_executable(index
-        index_assets.qrc
-        main.cpp
-        index.cpp
-        controllers/filepreviewer.cpp
-        controllers/compressedfile.cpp
-        qml.qrc
-    )
+    add_executable(index ${index_SRCS})
 endif()
 
 if(EMBEDDED_TERMINAL)

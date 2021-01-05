@@ -15,8 +15,8 @@ import QtQml.Models 2.3
 Item
 {
     id: control
-    height: _browserList.height
-    width: _browserList.width
+    height: _browserView.browserList.height
+    width: _browserView.browserList.width
 
     property url path
 
@@ -143,7 +143,7 @@ Item
 
         if (component.status === Component.Ready)
         {
-            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': _viewTypeGroup.currentIndex});
+            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': viewTypeGroup.currentIndex});
             splitObjectModel.append(object)
             _splitView.insertItem(splitObjectModel.count, object) // duplicating object insertion due to bug on android not picking the repeater
             _splitView.currentIndex = splitObjectModel.count - 1

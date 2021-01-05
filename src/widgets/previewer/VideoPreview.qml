@@ -9,6 +9,7 @@ Maui.Page
 {
     id: control
     property alias player : player
+    headBar.visible: false
     anchors.fill: parent
     Video
     {
