@@ -15,6 +15,7 @@ class RecentFilesModel : public MauiList
     Q_OBJECT
     Q_PROPERTY(QUrl url WRITE setUrl READ url NOTIFY urlChanged)
     Q_PROPERTY(QStringList filters WRITE setFilters READ filters NOTIFY filtersChanged)
+    Q_PROPERTY(QStringList urls READ urls NOTIFY urlsChanged CONSTANT)
 
 public:
     RecentFilesModel(QObject * parent = nullptr);
@@ -26,6 +27,8 @@ public:
 
     void componentComplete() override final;
 
+    QStringList urls() const;
+
 public slots:
     void setUrl(QUrl url);
 
@@ -36,6 +39,8 @@ signals:
 
     void filtersChanged(QStringList filters);
 
+    void urlsChanged();
+
 private:
     FMH::MODEL_LIST m_list;
     FMH::FileLoader * m_loader;
@@ -43,6 +48,7 @@ private:
 
     QUrl m_url;
     QStringList m_filters;
+    QStringList m_urls;
 };
 
 #endif // RECENTFILESMODEL_H

@@ -8,5 +8,9 @@
         <file>widgets/views/PlacesSection.qml</file>
         <file>widgets/views/RecentSection.qml</file>
         <file>widgets/views/DisksSection.qml</file>
+        <file>widgets/views/home/AudioCard.qml</file>
+        <file>widgets/views/home/Card.qml</file>
+        <file>widgets/views/home/ImageCard.qml</file>
+        <file>widgets/views/home/QuickCommonSection.qml</file>
     </qresource>
 </RCC>

@@ -7,38 +7,33 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.2 as Maui
+import org.kde.mauikit 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
 
 import TagsList 1.0
 
-Column
+ColumnLayout
 {
-    Maui.ListItemTemplate
-    {
-        width: parent.width
-        implicitHeight: Maui.Style.rowHeight * 2
-        label1.text: i18n("Favorite files")
-        label1.font.pointSize: Maui.Style.fontSizes.huge
-        label1.font.bold: true
-        label1.font.weight: Font.Bold
-        label2.text: i18n("Your files marked as favorites")
+    id: control
 
-        ToolButton
-        {
-            icon.name: checked ? "arrow-up" : "arrow-down"
-            checked: !_favsGrid.visible
-            onClicked: _favsGrid.visible = !_favsGrid.visible
-        }
+    Maui.SectionDropDown
+    {
+        id: _dropDown
+        Layout.fillWidth: true
+        label1.text: i18n("Favorite files")
+
+        label2.text: i18n("Your files marked as favorites")
+        checked: true
     }
 
     Maui.GridView
     {
         id: _favsGrid
-        width: parent.width
+        Layout.fillWidth: true
+        visible: _dropDown.checked
         enableLassoSelection: true
 
-        itemSize: control.itemWidth
+        itemSize: Math.min(width, 180)
         itemHeight: 140
 
         model: Maui.BaseModel

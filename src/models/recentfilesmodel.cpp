@@ -51,7 +51,7 @@ void RecentFilesModel::setList()
 //  m_loader->requestPath({m_url}, true, m_filters.isEmpty () ? QStringList () : m_filters, QDir::Files, 50);
 
   QDir dir(m_url.toLocalFile ());
-//  dir.setNameFilters (m_filters);
+  dir.setNameFilters (m_filters);
   dir.setFilter (QDir::Files);
   dir.setSorting (QDir::Time);
   int i = 0;
@@ -62,10 +62,12 @@ void RecentFilesModel::setList()
       if(i >= 6)
         break;
       qDebug() << "RECENT:" << url.filePath () << dir.path ();
+      m_urls << QUrl::fromLocalFile (url.filePath ()).toString();
       m_list << FMH::getFileInfoModel (QUrl::fromLocalFile (url.filePath ()));
       i++;
     }
   emit postListChanged ();
+  emit urlsChanged();
 }
 
 
@@ -76,7 +78,12 @@ void RecentFilesModel::componentComplete()
   setList ();
 }
 
+QStringList RecentFilesModel::urls() const
+{
+    return m_urls;
+}
+
 QStringList RecentFilesModel::filters() const
 {
-  return m_filters;
+    return m_filters;
 }
