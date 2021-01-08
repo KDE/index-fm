@@ -105,6 +105,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("inx", &index);
     qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
+    qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");
 
     engine.load(url);
 

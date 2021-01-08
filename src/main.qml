@@ -231,44 +231,67 @@ Maui.ApplicationWindow
         id: _compressedFile
     }
 
-    headBar.middleContent: Maui.PathBar
+
+    headBar.leftContent: ToolButton
     {
-        id: _pathBar
-        Layout.fillWidth: true
-        Layout.minimumWidth: 100
-        Layout.maximumWidth: 500
-        onPathChanged: currentBrowser.openFolder(path.trim())
-        url: root.currentPath
-
-        onHomeClicked: _stackView.push(_homeViewComponent, StackView.Immediate)
-        onPlaceClicked: currentBrowser.openFolder(path)
-        onPlaceRightClicked:
-        {
-            _pathBarmenu.path = path
-            _pathBarmenu.popup()
-        }
-
-        Menu
-        {
-            id: _pathBarmenu
-            property url path
-
-            MenuItem
-            {
-                text: i18n("Open in new tab")
-                icon.name: "tab-new"
-                onTriggered: openTab(_pathBarmenu.path)
-            }
-
-            MenuItem
-            {
-                visible: root.currentTab.count === 1 && settings.supportSplit
-                text: i18n("Open in split view")
-                icon.name: "view-split-left-right"
-                onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
-            }
-        }
+        icon.name: "go-previous"
+        text: "Browser"
+        visible: _stackView.depth === 2
+        display: ToolButton.TextBesideIcon
+        onClicked: _stackView.pop()
     }
+
+    headBar.middleContent: [Maui.PathBar
+        {
+            id: _pathBar
+            visible: _stackView.depth === 1
+
+            Layout.fillWidth: true
+            Layout.minimumWidth: 100
+            Layout.maximumWidth: 500
+            onPathChanged: currentBrowser.openFolder(path.trim())
+            url: root.currentPath
+
+            onHomeClicked: _stackView.push(_homeViewComponent, StackView.Immediate)
+            onPlaceClicked: currentBrowser.openFolder(path)
+            onPlaceRightClicked:
+            {
+                _pathBarmenu.path = path
+                _pathBarmenu.popup()
+            }
+
+            Menu
+            {
+                id: _pathBarmenu
+                property url path
+
+                MenuItem
+                {
+                    text: i18n("Open in new tab")
+                    icon.name: "tab-new"
+                    onTriggered: openTab(_pathBarmenu.path)
+                }
+
+                MenuItem
+                {
+                    visible: root.currentTab.count === 1 && settings.supportSplit
+                    text: i18n("Open in split view")
+                    icon.name: "view-split-left-right"
+                    onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                }
+            }
+        },
+
+        Maui.TextField
+        {
+            id: _searchField
+            visible: _stackView.depth === 2
+            Layout.fillWidth: true
+            Layout.minimumWidth: 100
+            Layout.maximumWidth: 500
+            placeholderText: i18n("Search for files")
+        }
+    ]
 
     Loader
     {
@@ -286,16 +309,7 @@ Maui.ApplicationWindow
     Component
     {
         id: _homeViewComponent
-        HomeView
-        {
-            headBar.farLeftContent: ToolButton
-            {
-                icon.name: "go-previous"
-                text: "Browser"
-                display: ToolButton.TextBesideIcon
-                onClicked: _stackView.pop()
-            }
-        }
+        HomeView { }
     }
 
     StackView
