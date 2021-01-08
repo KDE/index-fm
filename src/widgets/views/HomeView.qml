@@ -12,6 +12,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.maui.index 1.0 as Index
 
 import TagsList 1.0
+import "home"
 
 Maui.Page
 {
@@ -38,6 +39,11 @@ Maui.Page
             width: parent.width
             spacing: Maui.Style.space.huge
 
+            FavoritesSection
+            {
+                Layout.fillWidth: true
+            }
+
             PlacesSection
             {
                 Layout.fillWidth: true
@@ -48,12 +54,10 @@ Maui.Page
                 Layout.fillWidth: true
             }
 
-            FavoritesSection
+            QuickCommonSection
             {
                 Layout.fillWidth: true
             }
-
-
 
             TagsSection
             {
