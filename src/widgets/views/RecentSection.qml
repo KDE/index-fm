@@ -6,43 +6,40 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.2 as Maui
+import org.kde.mauikit 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
+import org.maui.index 1.0 as Index
+ import Qt.labs.platform 1.1
 
-Column
+ColumnLayout
 {
-    Maui.ListItemTemplate
-    {
-        width: parent.width
-        implicitHeight: Maui.Style.rowHeight * 2
-        label1.text: i18n("Recent files")
-        label1.font.pointSize: Maui.Style.fontSizes.huge
-        label1.font.bold: true
-        label1.font.weight: Font.Bold
-        label2.text: i18n("Your most recent files")
+    id: control
 
-        ToolButton
-        {
-            icon.name: checked ? "arrow-up" : "arrow-down"
-            checked: !_recentGrid.visible
-            onClicked: _recentGrid.visible = !_recentGrid.visible
-        }
+    Maui.SectionDropDown
+    {
+        id: _dropDown
+        Layout.fillWidth: true
+        label1.text: i18n("Downloads")
+        label1.font.pointSize: Maui.Style.fontSizes.huge
+        label2.text: i18n("Your most recent downloaded files")
+        checked: true
     }
 
     Maui.GridView
     {
         id: _recentGrid
-        width: parent.width
+        Layout.fillWidth: true
         enableLassoSelection: true
-
-        itemSize: 200
-        itemHeight: 140
+visible: _dropDown.checked
+        itemSize: 180
+        itemHeight: 180
 
         model: Maui.BaseModel
         {
-            list: Maui.FMList
+            list: Index.RecentFiles
             {
-                path: "recentdocuments:///"
+                url: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
+//                filters: Maui.FM.nameFilters(Maui.FMList.AUDIO_TYPE)
             }
         }
 
@@ -60,7 +57,7 @@ Column
                 iconSource: model.icon
                 imageSource: model.thumbnail
                 template.fillMode: Image.PreserveAspectFit
-                iconSizeHint: height * 0.6
+                iconSizeHint: height * 0.4
                 checkable: selectionMode
 
                 onClicked:

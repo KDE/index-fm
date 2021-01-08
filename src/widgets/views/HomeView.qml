@@ -9,6 +9,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import org.kde.mauikit 1.2 as Maui
 import org.kde.kirigami 2.14 as Kirigami
+import org.maui.index 1.0 as Index
 
 import TagsList 1.0
 
@@ -16,15 +17,7 @@ Maui.Page
 {
     id: control
 
-    headBar.middleContent:  Maui.TextField
-    {
-        Layout.fillWidth: true
-        placeholderText: i18n("Search for files")
-        onAccepted:
-        {
-            _browserView.browser.search(text)
-        }
-    }
+    headBar.visible: false
 
     Kirigami.ScrollablePage
     {
@@ -45,7 +38,10 @@ Maui.Page
             width: parent.width
             spacing: Maui.Style.space.huge
 
-
+            PlacesSection
+            {
+                Layout.fillWidth: true
+            }
 
             RecentSection
             {
@@ -57,10 +53,7 @@ Maui.Page
                 Layout.fillWidth: true
             }
 
-            PlacesSection
-            {
-                Layout.fillWidth: true
-            }
+
 
             TagsSection
             {

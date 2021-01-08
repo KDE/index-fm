@@ -9,19 +9,40 @@ namespace FMH
 {
 class FileLoader;
 }
+
 class RecentFilesModel : public MauiList
 {
     Q_OBJECT
+    Q_PROPERTY(QUrl url WRITE setUrl READ url NOTIFY urlChanged)
+    Q_PROPERTY(QStringList filters WRITE setFilters READ filters NOTIFY filtersChanged)
+
 public:
     RecentFilesModel(QObject * parent = nullptr);
 
     const FMH::MODEL_LIST &items() const override final;
+
+    QUrl url() const;
+    QStringList filters() const;
+
+    void componentComplete() override final;
+
+public slots:
+    void setUrl(QUrl url);
+
+    void setFilters(QStringList filters);
+
+signals:
+    void urlChanged(QUrl url);
+
+    void filtersChanged(QStringList filters);
 
 private:
     FMH::MODEL_LIST m_list;
     FMH::FileLoader * m_loader;
     void setList();
 
+    QUrl m_url;
+    QStringList m_filters;
 };
 
 #endif // RECENTFILESMODEL_H

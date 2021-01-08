@@ -75,7 +75,8 @@ Column
                 {
                     _placesGrid.currentIndex = index
                     model.count = 0
-                    open(model.path)
+                    _stackView.pop()
+                    currentBrowser.openFolder(model.path)
                 }
 
                 //                    Kirigami.ImageColors
