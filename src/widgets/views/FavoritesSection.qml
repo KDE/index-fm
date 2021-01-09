@@ -33,7 +33,7 @@ ColumnLayout
         visible: _dropDown.checked
         enableLassoSelection: true
 
-        itemSize: Math.min(width, 180)
+        itemSize: Math.min(width * 0.3, 180)
         itemHeight: 140
 
         model: Maui.BaseModel

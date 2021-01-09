@@ -44,12 +44,12 @@ Maui.Page
                 Layout.fillWidth: true
             }
 
-            PlacesSection
+            RecentSection
             {
                 Layout.fillWidth: true
             }
 
-            RecentSection
+            PlacesSection
             {
                 Layout.fillWidth: true
             }
