@@ -33,7 +33,7 @@ ColumnLayout
         Layout.fillWidth: true
         enableLassoSelection: true
         visible: _dropDown.checked
-        itemSize: 180
+        itemSize: Math.min(width * 0.3, 180)
         itemHeight: 180
 
         model: Maui.BaseModel
@@ -141,14 +141,14 @@ ColumnLayout
         checked: true
     }
 
-    Maui.GridView
+    Maui.ListBrowser
     {
         id: _recentGridPictures
+        orientation: ListView.Horizontal
         Layout.fillWidth: true
+        implicitHeight: 200
         enableLassoSelection: true
         visible: _dropDownPictures.checked
-        itemSize: Math.min(width, 220)
-        itemHeight: 220
 
         model: Maui.BaseModel
         {
@@ -161,9 +161,9 @@ ColumnLayout
 
         delegate: Item
         {
-            property bool isCurrentItem : GridView.isCurrentItem
-            width: _recentGridPictures.cellWidth
-            height: _recentGridPictures.itemHeight
+            property bool isCurrentItem : ListView.isCurrentItem
+            width: 180
+            height: 180
 
             ImageCard
             {
