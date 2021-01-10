@@ -20,6 +20,32 @@ Maui.Page
 
     headBar.visible: false
 
+    Menu
+    {
+        id: _fileItemMenu
+        property url url
+
+        MenuItem
+        {
+            text: i18n("Open")
+        }
+
+        MenuItem
+        {
+            text: i18n("Open with")
+        }
+
+        MenuItem
+        {
+            text: i18n("Share")
+        }
+
+        MenuItem
+        {
+            text: i18n("Open folder")
+        }
+    }
+
     Kirigami.ScrollablePage
     {
         anchors.fill: parent
@@ -61,6 +87,11 @@ Maui.Page
             RecentSection
             {
                 Layout.fillWidth: true
+                onItemClicked:
+                {
+                    _fileItemMenu.url = url
+                    _fileItemMenu.popup()
+                }
             }
 
             Maui.ListItemTemplate

@@ -19,6 +19,8 @@ ColumnLayout
 
     spacing: Maui.Style.space.big
 
+    signal itemClicked(url url)
+
     Maui.SectionDropDown
     {
         id: _dropDown
@@ -65,7 +67,7 @@ ColumnLayout
 
                 onClicked:
                 {
-                    _previewer.show(_recentGrid.model, index)
+                   control.itemClicked(model.url)
                 }
 
                 template.content: Label
@@ -131,9 +133,7 @@ ColumnLayout
                 player.source: model.url
                 checkable: selectionMode
 
-                onClicked:
-                {
-                }
+                onClicked: control.itemClicked(model.url)
             }
         }
     }
@@ -184,10 +184,7 @@ ColumnLayout
                 anchors.margins: Maui.Style.space.medium
                 imageSource: model.thumbnail
 //                checkable: selectionMode
-
-                onClicked:
-                {
-                }
+                onClicked: control.itemClicked(model.url)
             }
         }
     }
