@@ -17,12 +17,13 @@ ColumnLayout
 {
     id: control
 
+    spacing: Maui.Style.space.big
+
     Maui.SectionDropDown
     {
         id: _dropDown
         Layout.fillWidth: true
         label1.text: i18n("Downloads")
-        label1.font.pointSize: Maui.Style.fontSizes.huge
         label2.text: i18n("Your most recent downloaded files")
         checked: true
     }
@@ -81,12 +82,18 @@ ColumnLayout
         }
     }
 
+    Button
+    {
+        text: i18n("More")
+        icon.name: "list-add"
+        onClicked: openTab(_recentGrid.model.list.url)
+    }
+
     Maui.SectionDropDown
     {
         id: _dropDownAudio
         Layout.fillWidth: true
         label1.text: i18n("Audio")
-        label1.font.pointSize: Maui.Style.fontSizes.huge
         label2.text: i18n("Your most recent audio files")
         checked: true
     }
@@ -131,12 +138,18 @@ ColumnLayout
         }
     }
 
+    Button
+    {
+        text: i18n("More")
+        icon.name: "list-add"
+        onClicked: openTab(_recentGridAudio.model.list.url)
+    }
+
     Maui.SectionDropDown
     {
         id: _dropDownPictures
         Layout.fillWidth: true
         label1.text: i18n("Pictures")
-        label1.font.pointSize: Maui.Style.fontSizes.huge
         label2.text: i18n("Your most recent image files")
         checked: true
     }
@@ -146,7 +159,7 @@ ColumnLayout
         id: _recentGridPictures
         orientation: ListView.Horizontal
         Layout.fillWidth: true
-        implicitHeight: 200
+        implicitHeight: 220
         enableLassoSelection: true
         visible: _dropDownPictures.checked
 
@@ -177,6 +190,13 @@ ColumnLayout
                 }
             }
         }
+    }
+
+    Button
+    {
+        text: i18n("More")
+        icon.name: "list-add"
+        onClicked: openTab(_recentGridPictures.model.list.url)
     }
 }
 

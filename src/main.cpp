@@ -34,6 +34,7 @@
 
 #include "controllers/compressedfile.h"
 #include "controllers/filepreviewer.h"
+#include "controllers/dirinfo.h"
 
 #include "models/recentfilesmodel.h"
 
@@ -106,6 +107,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
     qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");
+    qmlRegisterType<DirInfo>(INDEX_URI, 1, 0, "DirInfo");
 
     engine.load(url);
 
