@@ -5,6 +5,7 @@
 
 #include <QObject>
 
+class QFileSystemWatcher;
 namespace FMH
 {
 class FileLoader;
@@ -44,6 +45,7 @@ signals:
 private:
     FMH::MODEL_LIST m_list;
     FMH::FileLoader * m_loader;
+    QFileSystemWatcher *m_watcher;
     void setList();
 
     QUrl m_url;

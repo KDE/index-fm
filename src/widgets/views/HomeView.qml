@@ -29,15 +29,29 @@ Maui.Page
         padding: isWide ? Maui.Style.space.big : Maui.Style.space.tiny
         leftPadding: padding
         rightPadding: padding
+        topPadding: padding
 
         property int itemWidth : Math.min(140, _layout.width * 0.3)
-
 
         ColumnLayout
         {
             id: _layout
             width: parent.width
-            spacing: Maui.Style.space.huge
+            spacing: Maui.Style.space.medium
+
+            SystemInfo
+            {
+                Layout.fillWidth: true
+            }
+
+            Maui.ListItemTemplate
+            {
+                Layout.fillWidth: true
+                label1.font.pointSize: 22
+                label1.font.bold: true
+                label1.font.weight: Font.Bold
+                label1.text: i18n("Files")
+            }
 
             FavoritesSection
             {
@@ -47,6 +61,15 @@ Maui.Page
             RecentSection
             {
                 Layout.fillWidth: true
+            }
+
+            Maui.ListItemTemplate
+            {
+                Layout.fillWidth: true
+                label1.font.pointSize: 22
+                label1.font.bold: true
+                label1.font.weight: Font.Bold
+                label1.text: i18n("Places")
             }
 
             PlacesSection

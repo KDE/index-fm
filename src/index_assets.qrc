@@ -12,5 +12,6 @@
         <file>widgets/views/home/Card.qml</file>
         <file>widgets/views/home/ImageCard.qml</file>
         <file>widgets/views/home/QuickCommonSection.qml</file>
+        <file>widgets/views/home/SystemInfo.qml</file>
     </qresource>
 </RCC>

@@ -1,9 +1,11 @@
 #include "recentfilesmodel.h"
 #include <MauiKit/fileloader.h>
+#include <QFileSystemWatcher>
 
 RecentFilesModel::RecentFilesModel(QObject *parent) :
   MauiList(parent)
 , m_loader(new FMH::FileLoader)
+, m_watcher(new QFileSystemWatcher(this))
 {
 //  connect(m_loader, &FMH::FileLoader::itemsReady, [&](FMH::MODEL_LIST items)
 //  {
@@ -11,6 +13,8 @@ RecentFilesModel::RecentFilesModel(QObject *parent) :
 //    this->m_list << items;
 //    emit postItemAppended();
 //  });
+
+    connect(m_watcher, &QFileSystemWatcher::directoryChanged, this, &RecentFilesModel::setList);
 }
 
 
@@ -30,6 +34,8 @@ void RecentFilesModel::setUrl(QUrl url)
     return;
 
   m_url = url;
+  m_watcher->removePaths(m_watcher->directories());
+  m_watcher->addPath(m_url.toLocalFile());
   emit urlChanged(m_url);
 }
 
@@ -56,6 +62,7 @@ void RecentFilesModel::setList()
   dir.setSorting (QDir::Time);
   int i = 0;
 
+  this->m_list.clear();
   emit this->preListChanged ();
   for(const auto &url : dir.entryInfoList ())
     {
