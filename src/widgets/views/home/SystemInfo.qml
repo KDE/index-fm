@@ -18,22 +18,27 @@ Maui.ListBrowser
 {
     id: control
     orientation: ListView.Horizontal
-    implicitHeight: 180
+    implicitHeight: 260
     verticalScrollBarPolicy: ScrollBar.AlwaysOff
 //    horizontalScrollBarPolicy: ScrollBar.AlwaysOff
 
     model: [StandardPaths.writableLocation(StandardPaths.MusicLocation), StandardPaths.writableLocation(StandardPaths.DownloadLocation), StandardPaths.writableLocation(StandardPaths.MoviesLocation), StandardPaths.writableLocation(StandardPaths.DocumentsLocation)]
 
-    delegate: Rectangle
+    delegate: Maui.ItemDelegate
     {
         id: _delegate
-        property bool isCurrentItem : GridView.isCurrentItem
-        width: 350
-        height: 140
-        color: Kirigami.Theme.backgroundColor
-        radius: Maui.Style.radiusV
+        property bool isCurrentItem : ListView.isCurrentItem
+        anchors.verticalCenter: parent.verticalCenter
+        width: Math.min(ListView.view.width * 0.35, 350)
+        height: _layout.implicitHeight + Maui.Style.space.huge
+//        color: Kirigami.Theme.backgroundColor
+//        radius: Maui.Style.radiusV
 
         property var info : Maui.FM.getFileInfo(modelData)
+
+        background: Item {}
+
+        onClicked: openTab(modelData)
 
         Index.DirInfo
         {
@@ -92,6 +97,7 @@ Maui.ListBrowser
         {
             anchors.fill: parent
             anchors.margins: Maui.Style.space.big
+            id: _layout
 
             Kirigami.Icon
             {
@@ -102,7 +108,7 @@ Maui.ListBrowser
                 source: info.icon
             }
 
-            Maui.ListItemTemplate
+            Maui.FlexListItem
             {
                 Layout.fillWidth: true
                 label1.font.pointSize: Maui.Style.fontSizes.huge
@@ -110,15 +116,13 @@ Maui.ListBrowser
                 label1.font.bold: true
                 label1.text: info.label
                 label2.text: i18n("%1 Directories - %2 Files", _dirInfo.dirCount, _dirInfo.filesCount)
-                leftLabels.spacing: Maui.Style.space.tiny
-
 
                 Rectangle
                 {
                     radius: Maui.Style.radiusV
                     color: "#333"
                     Layout.preferredWidth: _sizeLabel.implicitWidth + Maui.Style.space.big
-                    implicitHeight: 48
+                    implicitHeight: 36
 
                     Label
                     {
@@ -155,6 +159,25 @@ Maui.ListBrowser
                     anchors.fill: parent
                     radius: Maui.Style.radiusV
                 }
+            }
+        }
+
+        Rectangle
+        {
+            Kirigami.Theme.inherit: false
+            anchors.fill: parent
+            color: "transparent"
+            radius: Maui.Style.radiusV
+            border.color: _delegate.isCurrentItem || _delegate.hovered ? Kirigami.Theme.highlightColor : Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.2)
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "transparent"
+                radius: parent.radius - 0.5
+                border.color: Qt.lighter(Kirigami.Theme.backgroundColor, 2)
+                opacity: 0.2
+                anchors.margins: 1
             }
         }
     }

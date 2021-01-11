@@ -414,6 +414,9 @@ Maui.ApplicationWindow
     {
         if(path)
         {
+            if(_stackView.depth === 2)
+                _stackView.pop(StackView.Immediate)
+
             const component = Qt.createComponent("qrc:/widgets/views/BrowserLayout.qml");
 
             if (component.status === Component.Ready)
