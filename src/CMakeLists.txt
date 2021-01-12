@@ -45,6 +45,5 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
     install(FILES org.kde.index.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
     install(FILES assets/index.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)
-    # install(FILES org.kde.index.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 endif()
 
