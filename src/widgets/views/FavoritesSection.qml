@@ -34,7 +34,7 @@ ColumnLayout
         enableLassoSelection: true
 
         itemSize: Math.min(width * 0.3, 180)
-        itemHeight: 140
+        itemHeight: 180
 
         model: Maui.BaseModel
         {
@@ -58,7 +58,7 @@ ColumnLayout
                 iconSource: model.icon
                 imageSource: model.thumbnail
                 template.fillMode: Image.PreserveAspectFit
-                iconSizeHint: height * 0.4
+                iconSizeHint: height * 0.5
                 checkable: selectionMode
 
                 onClicked:

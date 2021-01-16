@@ -62,7 +62,7 @@ ColumnLayout
                 iconSource: model.icon
                 imageSource: model.thumbnail
                 template.fillMode: Image.PreserveAspectFit
-                iconSizeHint: height * 0.4
+                iconSizeHint: height * 0.5
                 checkable: selectionMode
 
                 onClicked:
