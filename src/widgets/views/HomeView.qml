@@ -65,11 +65,6 @@ Maui.Page
             width: parent.width
             spacing: Maui.Style.space.medium
 
-            SystemInfo
-            {
-                Layout.fillWidth: true
-            }
-
             Maui.ListItemTemplate
             {
                 Layout.fillWidth: true
@@ -103,12 +98,12 @@ Maui.Page
                 label1.text: i18n("Places")
             }
 
-            PlacesSection
+            SystemInfo
             {
                 Layout.fillWidth: true
             }
 
-            QuickCommonSection
+            PlacesSection
             {
                 Layout.fillWidth: true
             }
