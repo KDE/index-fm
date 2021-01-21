@@ -273,14 +273,20 @@ Maui.SettingsDialog
 
                 Action
                 {
-                    text: i18n("X")
+                    text: i18n("L")
                     onTriggered: appSettings.gridSize = 2
                 }
 
                 Action
                 {
-                    text: i18n("XL")
+                    text: i18n("X")
                     onTriggered: appSettings.gridSize = 3
+                }
+
+                Action
+                {
+                    text: i18n("XL")
+                    onTriggered: appSettings.gridSize = 4
                 }
             }
         }
@@ -312,14 +318,20 @@ Maui.SettingsDialog
 
                 Action
                 {
-                    text: i18n("X")
+                    text: i18n("L")
                     onTriggered: appSettings.listSize = 2
                 }
 
                 Action
                 {
-                    text: i18n("XL")
+                    text: i18n("X")
                     onTriggered: appSettings.listSize = 3
+                }
+
+                Action
+                {
+                    text: i18n("XL")
+                    onTriggered: appSettings.listSize = 4
                 }
             }
         }

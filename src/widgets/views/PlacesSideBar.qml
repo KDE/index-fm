@@ -33,8 +33,8 @@ Maui.SideBar
     {
         width: parent.width
         iconSize: Maui.Style.iconSizes.small
-        label: i18n("Home")
-        iconName: "go-home"
+        label: i18n("Overview")
+        iconName: "start-here-symbolic"
         iconVisible: true
 
         onClicked: _stackView.push(_homeViewComponent)

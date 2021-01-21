@@ -104,6 +104,7 @@ Maui.ApplicationWindow
         close.accepted = true
     }
 
+    menuButton.visible: _stackView.depth === 1
     floatingHeader: false
     flickable: currentBrowser.flickable
     mainMenu: [Action
