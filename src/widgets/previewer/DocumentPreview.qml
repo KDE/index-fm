@@ -8,6 +8,7 @@ import org.kde.kirigami 2.7 as Kirigami
 Maui.Page
 {
     id: control
+    headBar.visible: false
 
     property int currentPage;
     property int pageCount;

@@ -35,6 +35,8 @@
 #include "controllers/compressedfile.h"
 #include "controllers/filepreviewer.h"
 
+#include "models/recentfilesmodel.h"
+
 #define INDEX_URI "org.maui.index"
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
@@ -62,7 +64,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     MauiApp::instance()->setIconName("qrc:/assets/index.svg");
 
     KLocalizedString::setApplicationDomain("index");
-    KAboutData about(QStringLiteral("index"), i18n("Index"), INDEX_VERSION_STRING, i18n("Index allows you to navigate your computer and preview multimedia files."), KAboutLicense::LGPL_V3, i18n("© 2019-2020 Nitrux Development Team"));
+
+    KAboutData about(QStringLiteral("index"), i18n("Index"), INDEX_VERSION_STRING, i18n("Index allows you to navigate your computer and preview multimedia files."),
+                     KAboutLicense::LGPL_V3, i18n("© 2019-%1 Nitrux Development Team", QString::number(QDate::currentDate().year())));
+
     about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
     about.addAuthor(i18n("Gabriel Dominguez"), i18n("Developer"), QStringLiteral("gabriel@gabrieldominguez.es"));
     about.setHomepage("https://mauikit.org");

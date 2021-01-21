@@ -29,6 +29,17 @@ Maui.SideBar
             placesSidebar.collapse()
     }
 
+    listView.flickable.header: Maui.ListDelegate
+    {
+        width: parent.width
+        iconSize: Maui.Style.iconSizes.small
+        label: i18n("Home")
+        iconName: "go-home"
+        iconVisible: true
+
+        onClicked: _stackView.push(_homeViewComponent)
+    }
+
     model: Maui.BaseModel
     {
         list: Maui.PlacesList
@@ -51,7 +62,6 @@ Maui.SideBar
 
     delegate: Maui.ListDelegate
     {
-        id: itemDelegate
         width: ListView.view.width
         iconSize: Maui.Style.iconSizes.small
         label: model.label

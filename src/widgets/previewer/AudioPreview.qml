@@ -9,6 +9,8 @@ Maui.Page
 {
     id: control
     anchors.fill: parent
+    headBar.visible: false
+
     property alias player: player
 
     MediaPlayer

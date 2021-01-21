@@ -8,6 +8,7 @@ import org.maui.index 1.0 as Index
 Maui.Page
 {
     id: control
+    headBar.visible: false
     footBar.visible: true
     footerBackground.color: "transparent"
     footBar.rightContent: Button
