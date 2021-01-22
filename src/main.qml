@@ -236,7 +236,7 @@ Maui.ApplicationWindow
     headBar.leftContent: ToolButton
     {
         icon.name: "go-previous"
-        text: "Browser"
+        text: i18n("Browser")
         display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
         visible: _stackView.depth === 2
         onClicked: _stackView.pop()
