@@ -23,6 +23,7 @@ ColumnLayout
 
     Maui.SectionDropDown
     {
+        id: _dropDown
         Layout.fillWidth: true
         label1.text: i18n("Downloads, Audio & Pictures")
         label2.text: i18n("Your most recent downloaded files, audio and images")
@@ -36,7 +37,7 @@ ColumnLayout
         id: _recentGrid
         Layout.fillWidth: true
         enableLassoSelection: true
-        visible: _dropDown.checked
+        visible: _dropDown.checked && count > 0
         implicitHeight: 220
         orientation: ListView.Horizontal
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
@@ -115,7 +116,7 @@ ColumnLayout
         id: _recentGridAudio
         Layout.fillWidth: true
         enableLassoSelection: true
-        visible: _dropDown.checked
+        visible: _dropDown.checked && count > 0
         implicitHeight: 120
         orientation: ListView.Horizontal
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
@@ -179,7 +180,7 @@ ColumnLayout
         Layout.fillWidth: true
         implicitHeight: 220
         enableLassoSelection: true
-        visible: _dropDownPictures.checked
+        visible: _dropDown.checked && count > 0
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item

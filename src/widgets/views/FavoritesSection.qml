@@ -23,7 +23,8 @@ ColumnLayout
         label1.text: i18n("Favorite files")
 
         label2.text: i18n("Your files marked as favorites")
-        checked: true
+        checked: _favsGrid.count > 0
+        enabled: _favsGrid.count > 0
         template.iconSource: "love"
         template.iconSizeHint: Maui.Style.iconSizes.medium
     }
