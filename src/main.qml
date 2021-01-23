@@ -302,7 +302,6 @@ Maui.ApplicationWindow
     sideBar: PlacesSideBar
     {
         id: placesSidebar
-        visible: _stackView.depth === 1
     }
 
     ObjectModel { id: tabsObjectModel }
