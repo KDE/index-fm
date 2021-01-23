@@ -7,35 +7,29 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.2 as Maui
+import org.kde.mauikit 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
 
 import TagsList 1.0
 
-Column
+ColumnLayout
 {
-    Maui.ListItemTemplate
-    {
-        width: parent.width
-        implicitHeight: Maui.Style.rowHeight * 2
-        label1.text: i18n("Tags")
-        label1.font.pointSize: Maui.Style.fontSizes.huge
-        label1.font.bold: true
-        label1.font.weight: Font.Bold
-        label2.text: i18n("Tagged files for quick access")
 
-        ToolButton
-        {
-            icon.name: checked ? "arrow-up" : "arrow-down"
-            checked: !_tagsGrid.visible
-            onClicked: _tagsGrid.visible = !_tagsGrid.visible
-        }
+    Maui.SectionDropDown
+    {
+        id: _dropDown
+        Layout.fillWidth: true
+        label1.text: i18n("Tags")
+        label2.text: i18n("Tagged files for quick access")
+        checked: true
+        template.iconSource: "tag"
+        template.iconSizeHint: Maui.Style.iconSizes.medium
     }
 
     Maui.GridView
     {
         id: _tagsGrid
-        width: parent.width
+        Layout.fillWidth: true
         itemSize: 140
         itemHeight: Maui.Style.rowHeight * 2
 

@@ -52,7 +52,7 @@ Maui.Page
         contentHeight: _layout.implicitHeight
         //    contentWidth: width
         background: null
-        padding: isWide ? Maui.Style.space.big : Maui.Style.space.tiny
+        padding: 0
         leftPadding: padding
         rightPadding: padding
         topPadding: padding
@@ -63,61 +63,97 @@ Maui.Page
         {
             id: _layout
             width: parent.width
-            spacing: Maui.Style.space.medium
+            spacing: 0
 
-            Maui.ListItemTemplate
+
+            Maui.AlternateListItem
             {
                 Layout.fillWidth: true
-                label1.font.pointSize: 22
-                label1.font.bold: true
-                label1.font.weight: Font.Bold
-                label1.text: i18n("Files")
-            }
+                implicitHeight: _favSection.implicitHeight + Maui.Style.space.huge
 
-            FavoritesSection
-            {
-                Layout.fillWidth: true
-            }
-
-            RecentSection
-            {
-                Layout.fillWidth: true
-                onItemClicked:
+                FavoritesSection
                 {
-                    _fileItemMenu.url = url
-                    _fileItemMenu.popup()
+                    id: _favSection
+                    width: parent.width
+                    anchors.centerIn: parent
                 }
             }
 
-            Maui.ListItemTemplate
+            Maui.AlternateListItem
             {
+                alt: true
                 Layout.fillWidth: true
-                label1.font.pointSize: 22
-                label1.font.bold: true
-                label1.font.weight: Font.Bold
-                label1.text: i18n("Places")
+                implicitHeight: _recentSection.implicitHeight + Maui.Style.space.huge
+
+                RecentSection
+                {
+                    id:_recentSection
+                    width: parent.width
+                    anchors.centerIn: parent
+
+                    onItemClicked:
+                    {
+                        _fileItemMenu.url = url
+                        _fileItemMenu.popup()
+                    }
+                }
             }
 
-            SystemInfo
+            Maui.AlternateListItem
             {
                 Layout.fillWidth: true
+                implicitHeight: _sysInfoSection.implicitHeight + Maui.Style.space.huge
+
+                SystemInfo
+                {
+                    id: _sysInfoSection
+                    width: parent.width
+                    anchors.centerIn: parent
+                }
             }
 
-            PlacesSection
+//            Maui.AlternateListItem
+//            {
+//                alt: true
+//                Layout.fillWidth: true
+//                implicitHeight: _bookmarksSection.implicitHeight + Maui.Style.space.huge
+
+//                PlacesSection
+//                {
+//                    id: _bookmarksSection
+//                    width: parent.width
+//                    anchors.centerIn: parent
+//                }
+//            }
+
+            Maui.AlternateListItem
             {
                 Layout.fillWidth: true
+                implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
+
+                TagsSection
+                {
+                    id: _tagsSection
+                    width: parent.width
+                    anchors.centerIn: parent
+
+                }
             }
 
-            TagsSection
+            Maui.AlternateListItem
             {
+                alt: true
+                lastOne: true
                 Layout.fillWidth: true
+                implicitHeight: _disksSection.implicitHeight + Maui.Style.space.huge
 
-            }
+                DisksSection
+                {
+                    id: _disksSection
+                    width: parent.width
+                    anchors.centerIn: parent
 
-            DisksSection
-            {
-                Layout.fillWidth: true
-
+                }
             }
         }
     }

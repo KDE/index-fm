@@ -7,39 +7,30 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.2 as Maui
+import org.kde.mauikit 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
 
 import TagsList 1.0
 
-Column
+ColumnLayout
 {
-    Layout.fillWidth: true
 
-    Maui.ListItemTemplate
+    Maui.SectionDropDown
     {
-        width: parent.width
-        implicitHeight: Maui.Style.rowHeight * 2
+        id: _dropDown
+        Layout.fillWidth: true
         label1.text: i18n("Devices and Remote")
-        label1.font.pointSize: Maui.Style.fontSizes.huge
-        label1.font.bold: true
-        label1.font.weight: Font.Bold
         label2.text: i18n("Remote locations and devices like disks, phones and cameras")
-
-        ToolButton
-        {
-            icon.name: checked ? "arrow-up" : "arrow-down"
-            checked: !_othersGrid.visible
-            onClicked: _othersGrid.visible = !_othersGrid.visible
-        }
+        checked: true
     }
 
     Maui.GridView
     {
         id: _othersGrid
-        width: parent.width
-        itemSize: control.itemWidth
-        itemHeight: 140
+        Layout.fillWidth: true
+        visible: _dropDown.checked
+        itemSize: Math.min(width * 0.3, 180)
+        itemHeight: 180
 
         model: Maui.BaseModel
         {

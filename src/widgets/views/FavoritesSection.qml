@@ -24,17 +24,20 @@ ColumnLayout
 
         label2.text: i18n("Your files marked as favorites")
         checked: true
+        template.iconSource: "love"
+        template.iconSizeHint: Maui.Style.iconSizes.medium
     }
 
-    Maui.GridView
+    Maui.ListBrowser
     {
         id: _favsGrid
         Layout.fillWidth: true
         visible: _dropDown.checked
         enableLassoSelection: true
 
-        itemSize: Math.min(width * 0.3, 180)
-        itemHeight: 180
+        implicitHeight: 220
+        orientation: ListView.Horizontal
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         model: Maui.BaseModel
         {
@@ -46,9 +49,10 @@ ColumnLayout
 
         delegate: Item
         {
-            property bool isCurrentItem : GridView.isCurrentItem
-            width: _favsGrid.cellWidth
-            height: _favsGrid.itemHeight
+            property bool isCurrentItem : ListView.isCurrentItem
+            width: 180
+            height: 180
+            anchors.verticalCenter: parent.verticalCenter
 
             Maui.GridBrowserDelegate
             {

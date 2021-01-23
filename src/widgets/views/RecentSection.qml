@@ -17,27 +17,45 @@ ColumnLayout
 {
     id: control
 
-    spacing: Maui.Style.space.big
+    spacing: Maui.Style.space.medium
 
     signal itemClicked(url url)
 
     Maui.SectionDropDown
     {
-        id: _dropDown
         Layout.fillWidth: true
-        label1.text: i18n("Downloads")
-        label2.text: i18n("Your most recent downloaded files")
+        label1.text: i18n("Downloads, Audio & Pictures")
+        label2.text: i18n("Your most recent downloaded files, audio and images")
         checked: true
+        template.iconSource: "view-media-recent"
+        template.iconSizeHint: Maui.Style.iconSizes.medium
     }
 
-    Maui.GridView
+    Maui.ListBrowser
     {
         id: _recentGrid
         Layout.fillWidth: true
         enableLassoSelection: true
         visible: _dropDown.checked
-        itemSize: Math.min(width * 0.3, 180)
-        itemHeight: 180
+        implicitHeight: 220
+        orientation: ListView.Horizontal
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+
+        flickable.footer: Item
+        {
+            height: 180
+            width: height
+
+            ToolButton
+            {
+                anchors.centerIn: parent
+                icon.name: "list-add"
+                display: ToolButton.TextUnderIcon
+                flat: true
+                text: i18n("Downloads")
+                onClicked: openTab(_recentGrid.model.list.url)
+            }
+        }
 
         model: Maui.BaseModel
         {
@@ -50,9 +68,11 @@ ColumnLayout
 
         delegate: Item
         {
-            property bool isCurrentItem : GridView.isCurrentItem
-            width: _recentGrid.cellWidth
-            height: _recentGrid.itemHeight
+            property bool isCurrentItem : ListView.isCurrentItem
+
+            width: 180
+            height: 180
+            anchors.verticalCenter: parent.verticalCenter
 
             Maui.GridBrowserDelegate
             {
@@ -67,7 +87,7 @@ ColumnLayout
 
                 onClicked:
                 {
-                   control.itemClicked(model.url)
+                    control.itemClicked(model.url)
                 }
 
                 template.content: Label
@@ -84,30 +104,37 @@ ColumnLayout
         }
     }
 
-    Button
+    Maui.Separator
     {
-        text: i18n("More")
-        icon.name: "list-add"
-        onClicked: openTab(_recentGrid.model.list.url)
-    }
-
-    Maui.SectionDropDown
-    {
-        id: _dropDownAudio
+        position: Qt.Horizontal
         Layout.fillWidth: true
-        label1.text: i18n("Audio")
-        label2.text: i18n("Your most recent audio files")
-        checked: true
     }
 
-    Maui.GridView
+    Maui.ListBrowser
     {
         id: _recentGridAudio
         Layout.fillWidth: true
         enableLassoSelection: true
         visible: _dropDown.checked
-        itemSize: Math.min(width, 220)
-        itemHeight: 80
+        implicitHeight: 120
+        orientation: ListView.Horizontal
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+
+        flickable.footer: Item
+        {
+            height: 80
+            width: height
+
+            ToolButton
+            {
+                anchors.centerIn: parent
+                icon.name: "list-add"
+                display: ToolButton.TextUnderIcon
+                flat: true
+                text: i18n("Music")
+                onClicked: openTab(_recentGridAudio.model.list.url)
+            }
+        }
 
         model: Maui.BaseModel
         {
@@ -120,9 +147,10 @@ ColumnLayout
 
         delegate: Item
         {
-            property bool isCurrentItem : GridView.isCurrentItem
-            width: _recentGridAudio.cellWidth
-            height: _recentGridAudio.itemHeight
+            property bool isCurrentItem : ListView.isCurrentItem
+            width: 220
+            height: 80
+            anchors.verticalCenter: parent.verticalCenter
 
             AudioCard
             {
@@ -138,20 +166,10 @@ ColumnLayout
         }
     }
 
-    Button
+    Maui.Separator
     {
-        text: i18n("More")
-        icon.name: "list-add"
-        onClicked: openTab(_recentGridAudio.model.list.url)
-    }
-
-    Maui.SectionDropDown
-    {
-        id: _dropDownPictures
+        position: Qt.Horizontal
         Layout.fillWidth: true
-        label1.text: i18n("Pictures")
-        label2.text: i18n("Your most recent image files")
-        checked: true
     }
 
     Maui.ListBrowser
@@ -162,6 +180,24 @@ ColumnLayout
         implicitHeight: 220
         enableLassoSelection: true
         visible: _dropDownPictures.checked
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+
+        flickable.footer: Item
+        {
+            height: 180
+            width: height
+
+            ToolButton
+            {
+                anchors.centerIn: parent
+                icon.name: "list-add"
+                display: ToolButton.TextUnderIcon
+                flat: true
+                text: i18n("Pictures")
+                onClicked: openTab(_recentGridPictures.model.list.url)
+            }
+        }
+
 
         model: Maui.BaseModel
         {
@@ -177,23 +213,17 @@ ColumnLayout
             property bool isCurrentItem : ListView.isCurrentItem
             width: 180
             height: 180
+            anchors.verticalCenter: parent.verticalCenter
 
             ImageCard
             {
                 anchors.fill: parent
                 anchors.margins: Maui.Style.space.medium
                 imageSource: model.thumbnail
-//                checkable: selectionMode
+                //                checkable: selectionMode
                 onClicked: control.itemClicked(model.url)
             }
         }
-    }
-
-    Button
-    {
-        text: i18n("More")
-        icon.name: "list-add"
-        onClicked: openTab(_recentGridPictures.model.list.url)
     }
 }
 
