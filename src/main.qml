@@ -291,6 +291,11 @@ Maui.ApplicationWindow
             Layout.minimumWidth: 100
             Layout.maximumWidth: 500
             placeholderText: i18n("Search for files")
+            onAccepted:
+            {
+                _stackView.pop()
+                currentBrowser.search(text)
+            }
         }
     ]
 

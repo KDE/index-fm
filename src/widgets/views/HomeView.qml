@@ -50,7 +50,6 @@ Maui.Page
     {
         anchors.fill: parent
         contentHeight: _layout.implicitHeight
-        //    contentWidth: width
         background: null
         padding: 0
         leftPadding: padding
@@ -111,20 +110,6 @@ Maui.Page
                     anchors.centerIn: parent
                 }
             }
-
-//            Maui.AlternateListItem
-//            {
-//                alt: true
-//                Layout.fillWidth: true
-//                implicitHeight: _bookmarksSection.implicitHeight + Maui.Style.space.huge
-
-//                PlacesSection
-//                {
-//                    id: _bookmarksSection
-//                    width: parent.width
-//                    anchors.centerIn: parent
-//                }
-//            }
 
             Maui.AlternateListItem
             {
