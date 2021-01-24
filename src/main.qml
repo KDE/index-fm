@@ -48,6 +48,7 @@ Maui.ApplicationWindow
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool supportSplit : !Kirigami.Settings.isMobile
+        property bool overview : Kirigami.Settings.isMobile
 
         property int viewType : Maui.FMList.LIST_VIEW
         property int listSize : 0 // s-m-x-xl
@@ -253,7 +254,7 @@ Maui.ApplicationWindow
             onPathChanged: currentBrowser.openFolder(path.trim())
             url: root.currentPath
 
-            onHomeClicked: _stackView.push(_homeViewComponent, StackView.Immediate)
+            onHomeClicked: currentBrowser.openFolder(Maui.FM.homePath())
             onPlaceClicked: currentBrowser.openFolder(path)
             onPlaceRightClicked:
             {
@@ -311,19 +312,20 @@ Maui.ApplicationWindow
 
     ObjectModel { id: tabsObjectModel }
 
-    Component
-    {
-        id: _homeViewComponent
-        HomeView { }
-    }
-
     StackView
     {
         id: _stackView
         anchors.fill: parent
-        initialItem: BrowserView
+        initialItem: settings.overview ? _homeViewComponent : _browserView
+
+        BrowserView
         {
             id: _browserView
+        }
+
+        HomeView
+        {
+            id : _homeViewComponent
         }
     }
 

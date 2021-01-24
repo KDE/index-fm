@@ -105,12 +105,6 @@ ColumnLayout
         }
     }
 
-    Maui.Separator
-    {
-        position: Qt.Horizontal
-        Layout.fillWidth: true
-    }
-
     Maui.ListBrowser
     {
         id: _recentGridAudio
@@ -165,12 +159,6 @@ ColumnLayout
                 onClicked: control.itemClicked(model.url)
             }
         }
-    }
-
-    Maui.Separator
-    {
-        position: Qt.Horizontal
-        Layout.fillWidth: true
     }
 
     Maui.ListBrowser

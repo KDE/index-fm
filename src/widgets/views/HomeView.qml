@@ -28,21 +28,25 @@ Maui.Page
         MenuItem
         {
             text: i18n("Open")
+            onTriggered: currentBrowser.openFile(_fileItemMenu.url)
         }
 
         MenuItem
         {
             text: i18n("Open with")
+            onTriggered: openWith([_fileItemMenu.url])
         }
 
         MenuItem
         {
             text: i18n("Share")
+            onTriggered: shareFiles([_fileItemMenu.url])
         }
 
         MenuItem
         {
             text: i18n("Open folder")
+            onTriggered: openTab(Maui.FM.fileDir(_fileItemMenu.url))
         }
     }
 

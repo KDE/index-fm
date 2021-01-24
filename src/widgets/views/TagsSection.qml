@@ -57,14 +57,8 @@ ColumnLayout
                 onClicked:
                 {
                     _tagsGrid.currentIndex = index
-                    open("tags:///"+model.tag)
+                    openTab("tags:///"+model.tag)
                 }
-
-                //                    Kirigami.ImageColors
-                //                    {
-                //                        id: _colors
-                //                        source: model.icon
-                //                    }
 
                 background: Rectangle
                 {
