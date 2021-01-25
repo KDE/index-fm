@@ -21,7 +21,8 @@ ColumnLayout
         Layout.fillWidth: true
         label1.text: i18n("Devices and Remote")
         label2.text: i18n("Remote locations and devices like disks, phones and cameras")
-        checked: true
+        checked: _favsGrid.count > 0
+        enabled: _favsGrid.count > 0
     }
 
     Maui.GridView

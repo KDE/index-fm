@@ -14,6 +14,8 @@
 #include <QFileInfo>
 #include <QUrl>
 
+#include <MauiKit/fmh.h>
+
 Index::Index(QObject *parent)
     : QObject(parent)
 {
@@ -23,18 +25,18 @@ Index::Index(QObject *parent)
 void Index::openPaths(const QStringList &paths)
 {
     emit this->openPath(std::accumulate(paths.constBegin(), paths.constEnd(), QStringList(), [](QStringList &list, const QString &path) -> QStringList {
-        const auto url = QUrl::fromUserInput(path);
-        if (url.isLocalFile()) {
-            const QFileInfo file(url.toLocalFile());
-            if (file.isDir())
-                list << url.toString();
-            else
-                list << QUrl::fromLocalFile(file.dir().absolutePath()).toString();
-        } else
-            list << url.toString();
+                            const auto url = QUrl::fromUserInput(path);
+                            if (url.isLocalFile()) {
+                                const QFileInfo file(url.toLocalFile());
+                                if (file.isDir())
+                                list << url.toString();
+                                else
+                                list << QUrl::fromLocalFile(file.dir().absolutePath()).toString();
+                            } else
+                            list << url.toString();
 
-        return list;
-    }));
+                            return list;
+                        }));
 }
 
 void Index::openTerminal(const QUrl &url)
@@ -50,4 +52,28 @@ void Index::openTerminal(const QUrl &url)
 #else
     Q_UNUSED(url)
 #endif
+}
+
+QUrl Index::cameraPath()
+{
+    const static auto paths = QStringList{FMH::HomePath + "/DCIM/Camera", FMH::HomePath + "/Camera"};
+
+    for (const auto &path : paths) {
+        if (FMH::fileExists(path))
+            return QUrl(path);
+    }
+
+    return QUrl();
+}
+
+QUrl Index::screenshotsPath()
+{
+    const static auto paths = QStringList{FMH::HomePath + "/DCIM/Screenshots", FMH::HomePath + "/Screenshots"};
+
+    for (const auto &path : paths) {
+        if (FMH::fileExists(path))
+            return QUrl(path);
+    }
+
+    return QUrl();
 }

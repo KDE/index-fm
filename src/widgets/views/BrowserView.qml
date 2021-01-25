@@ -59,8 +59,8 @@ ColumnLayout
                 implicitHeight: tabsBar.implicitHeight
                 implicitWidth: Math.max(parent.width / _repeater.count, 120)
                 checked: index === _browserList.currentIndex
-                template.iconSource: "folder"
-                template.iconSizeHint: 16
+//                template.iconSource: "folder"
+//                template.iconSizeHint: 16
                 text: tabsObjectModel.get(index).title
 
                 onClicked:

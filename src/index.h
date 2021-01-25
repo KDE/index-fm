@@ -30,6 +30,9 @@ public slots:
 #endif
     }
 
+    static QUrl cameraPath();
+    static QUrl screenshotsPath();
+
 public slots:
 
     /**
@@ -40,5 +43,6 @@ public slots:
      */
     static void openTerminal(const QUrl &url);
 };
+
 
 #endif // INDEX_H

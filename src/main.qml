@@ -233,7 +233,6 @@ Maui.ApplicationWindow
         id: _compressedFile
     }
 
-
     headBar.leftContent: ToolButton
     {
         icon.name: "go-previous"
@@ -243,7 +242,8 @@ Maui.ApplicationWindow
         onClicked: _stackView.pop()
     }
 
-    headBar.middleContent: [Maui.PathBar
+    headBar.middleContent: [
+        Maui.PathBar
         {
             id: _pathBar
             visible: _stackView.depth === 1
@@ -316,9 +316,7 @@ Maui.ApplicationWindow
     {
         id: _stackView
         anchors.fill: parent
-        initialItem: settings.overview ? _homeViewComponent : _browserView
-
-        BrowserView
+        initialItem: BrowserView
         {
             id: _browserView
         }
@@ -367,6 +365,9 @@ Maui.ApplicationWindow
         {
             root.openTab(Maui.FM.homePath())
             currentBrowser.settings.viewType = settings.viewType
+
+            if( settings.overview )
+                _stackView.push(_homeViewComponent)
         }
 
     }
@@ -422,7 +423,7 @@ Maui.ApplicationWindow
         if(path)
         {
             if(_stackView.depth === 2)
-                _stackView.pop(StackView.Immediate)
+                _stackView.pop()
 
             const component = Qt.createComponent("qrc:/widgets/views/BrowserLayout.qml");
 

@@ -38,13 +38,13 @@ ColumnLayout
         Layout.fillWidth: true
         enableLassoSelection: true
         visible: _dropDown.checked && count > 0
-        implicitHeight: 220
+        implicitHeight: 180
         orientation: ListView.Horizontal
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item
         {
-            height: 180
+            height: 140
             width: height
 
             ToolButton
@@ -71,8 +71,8 @@ ColumnLayout
         {
             property bool isCurrentItem : ListView.isCurrentItem
 
-            width: 180
-            height: 180
+            width: 140
+            height: width
             anchors.verticalCenter: parent.verticalCenter
 
             Maui.GridBrowserDelegate
@@ -166,14 +166,14 @@ ColumnLayout
         id: _recentGridPictures
         orientation: ListView.Horizontal
         Layout.fillWidth: true
-        implicitHeight: 220
+        implicitHeight: 180
         enableLassoSelection: true
         visible: _dropDown.checked && count > 0
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item
         {
-            height: 180
+            height: 140
             width: height
 
             ToolButton
@@ -200,8 +200,8 @@ ColumnLayout
         delegate: Item
         {
             property bool isCurrentItem : ListView.isCurrentItem
-            width: 180
-            height: 180
+            width: 140
+            height: width
             anchors.verticalCenter: parent.verticalCenter
 
             ImageCard
@@ -210,6 +210,112 @@ ColumnLayout
                 anchors.margins: Maui.Style.space.medium
                 imageSource: model.thumbnail
                 //                checkable: selectionMode
+                onClicked: control.itemClicked(model.url)
+            }
+        }
+    }
+
+    Maui.ListBrowser
+    {
+        id: _recentCamera
+        orientation: ListView.Horizontal
+        Layout.fillWidth: true
+        implicitHeight: 180
+        enableLassoSelection: true
+        visible: _dropDown.checked && count > 0
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+
+        flickable.footer: Item
+        {
+            height: 140
+            width: height
+
+            ToolButton
+            {
+                anchors.centerIn: parent
+                icon.name: "list-add"
+                display: ToolButton.TextUnderIcon
+                flat: true
+                text: i18n("Camera")
+                onClicked: openTab(_recentCamera.model.list.url)
+            }
+        }
+
+
+        model: Maui.BaseModel
+        {
+            list: Index.RecentFiles
+            {
+                url: inx.cameraPath()
+                filters: Maui.FM.nameFilters(Maui.FMList.IMAGE)
+            }
+        }
+
+        delegate: Item
+        {
+            property bool isCurrentItem : ListView.isCurrentItem
+            width: 140
+            height: width
+            anchors.verticalCenter: parent.verticalCenter
+
+            ImageCard
+            {
+                anchors.fill: parent
+                anchors.margins: Maui.Style.space.medium
+                imageSource: model.thumbnail
+                onClicked: control.itemClicked(model.url)
+            }
+        }
+    }
+
+    Maui.ListBrowser
+    {
+        id: _recentScreenshots
+        orientation: ListView.Horizontal
+        Layout.fillWidth: true
+        implicitHeight: 180
+        enableLassoSelection: true
+        visible: _dropDown.checked && count > 0
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+
+        flickable.footer: Item
+        {
+            height: 140
+            width: height
+
+            ToolButton
+            {
+                anchors.centerIn: parent
+                icon.name: "list-add"
+                display: ToolButton.TextUnderIcon
+                flat: true
+                text: i18n("Screenshots")
+                onClicked: openTab(_recentScreenshots.model.list.url)
+            }
+        }
+
+
+        model: Maui.BaseModel
+        {
+            list: Index.RecentFiles
+            {
+                url: inx.screenshotsPath()
+                filters: Maui.FM.nameFilters(Maui.FMList.IMAGE)
+            }
+        }
+
+        delegate: Item
+        {
+            property bool isCurrentItem : ListView.isCurrentItem
+            width: 140
+            height: width
+            anchors.verticalCenter: parent.verticalCenter
+
+            ImageCard
+            {
+                anchors.fill: parent
+                anchors.margins: Maui.Style.space.medium
+                imageSource: model.thumbnail
                 onClicked: control.itemClicked(model.url)
             }
         }

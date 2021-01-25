@@ -79,6 +79,12 @@ Maui.Page
                     id: _favSection
                     width: parent.width
                     anchors.centerIn: parent
+
+                    onItemClicked:
+                    {
+                        _fileItemMenu.url = url
+                        _fileItemMenu.popup()
+                    }
                 }
             }
 

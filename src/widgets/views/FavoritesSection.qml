@@ -16,6 +16,8 @@ ColumnLayout
 {
     id: control
 
+    signal itemClicked(url url)
+
     Maui.SectionDropDown
     {
         id: _dropDown
@@ -36,7 +38,7 @@ ColumnLayout
         visible: _dropDown.checked
         enableLassoSelection: true
 
-        implicitHeight: 220
+        implicitHeight: 180
         orientation: ListView.Horizontal
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
@@ -51,8 +53,8 @@ ColumnLayout
         delegate: Item
         {
             property bool isCurrentItem : ListView.isCurrentItem
-            width: 180
-            height: 180
+            width: 140
+            height: width
             anchors.verticalCenter: parent.verticalCenter
 
             Maui.GridBrowserDelegate
@@ -66,10 +68,7 @@ ColumnLayout
                 iconSizeHint: height * 0.5
                 checkable: selectionMode
 
-                onClicked:
-                {
-                    _previewer.show(_favsGrid.model, index)
-                }
+                onClicked: control.itemClicked(model.url)
 
                 template.content: Label
                 {
