@@ -21,8 +21,8 @@ ColumnLayout
         Layout.fillWidth: true
         label1.text: i18n("Devices and Remote")
         label2.text: i18n("Remote locations and devices like disks, phones and cameras")
-        checked: _favsGrid.count > 0
-        enabled: _favsGrid.count > 0
+        checked: _othersGrid.count > 0
+        enabled: _othersGrid.count > 0
     }
 
     Maui.GridView
@@ -33,13 +33,13 @@ ColumnLayout
         itemSize: Math.min(width * 0.3, 180)
         itemHeight: 180
 
-        model: Maui.BaseModel
-        {
-            list:  Maui.PlacesList
-            {
-                groups: [Maui.FMList.DRIVES_PATH, Maui.FMList.REMOTE_PATH]
-            }
-        }
+//        model: Maui.BaseModel
+//        {
+//            list:  Maui.PlacesList
+//            {
+//                groups: [Maui.FMList.DRIVES_PATH, Maui.FMList.REMOTE_PATH]
+//            }
+//        }
 
         delegate: Item
         {

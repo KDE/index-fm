@@ -43,23 +43,20 @@ Maui.SideBar
         onClicked: _stackView.push(_homeViewComponent)
     }
 
-    model: Maui.BaseModel
+    model: Maui.PlacesList
     {
-        list: Maui.PlacesList
+        id: placesList
+
+        groups: [
+                Maui.FMList.QUICK_PATH,
+                Maui.FMList.PLACES_PATH,
+                Maui.FMList.REMOTE_PATH,
+                Maui.FMList.REMOVABLE_PATH,
+                Maui.FMList.DRIVES_PATH]
+
+        onBookmarksChanged:
         {
-            id: placesList
-
-            groups: [
-                    Maui.FMList.QUICK_PATH,
-                    Maui.FMList.PLACES_PATH,
-                    Maui.FMList.REMOTE_PATH,
-                    Maui.FMList.REMOVABLE_PATH,
-                    Maui.FMList.DRIVES_PATH]
-
-            onBookmarksChanged:
-            {
-                syncSidebar(currentPath)
-            }
+            syncSidebar(currentPath)
         }
     }
 
@@ -67,9 +64,9 @@ Maui.SideBar
     {
         width: ListView.view.width
         iconSize: Maui.Style.iconSizes.small
-        label: model.label
+        label: model.name
         count: model.count > 0 ? model.count : ""
-        iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
+        iconName: model.icon.name() +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
         iconVisible: true
 
         onClicked:
@@ -77,7 +74,9 @@ Maui.SideBar
             control.currentIndex = index
             placesList.clearBadgeCount(index)
 
-            placeClicked(model.path)
+
+
+            placeClicked(model.url)
             if(control.collapsed)
                 control.close()
         }
@@ -92,6 +91,13 @@ Maui.SideBar
         {
             control.currentIndex = index
             _menu.popup()
+        }
+
+        ToolButton
+        {
+            flat: true
+            icon.name: "media-eject"
+            visible: model.setup
         }
     }
 
