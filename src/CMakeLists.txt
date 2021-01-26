@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 set(index_SRCS
-    index_assets.qrc
     main.cpp
     index.cpp
     controllers/filepreviewer.cpp
     controllers/compressedfile.cpp
     controllers/dirinfo.cpp
     models/recentfilesmodel.cpp
+    index_assets.qrc
     qml.qrc
     )
 

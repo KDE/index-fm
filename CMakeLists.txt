@@ -18,11 +18,12 @@ set(CMAKE_AUTORCC ON)
 
 project(index VERSION ${INDEX_VERSION})
 
-set(REQUIRED_QT_VERSION 5.10.0)
+set(REQUIRED_QT_VERSION 5.14.0)
 set(REQUIRED_KF5_VERSION 5.60)
 
 find_package(ECM ${REQUIRED_KF5_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
+
 option(EMBEDDED_TERMINAL "If set to true then tries to load the QmlTermWidget. v 0.1 is needed later version might not work" OFF)
 
 find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Sql Svg QuickControls2 Concurrent)
