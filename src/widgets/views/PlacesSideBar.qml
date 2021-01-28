@@ -39,7 +39,7 @@ Maui.SideBar
         label: i18n("Overview")
         iconName: "start-here-symbolic"
         iconVisible: true
-
+        isCurrentItem: _stackView.depth === 2
         onClicked: _stackView.push(_homeViewComponent)
     }
 
@@ -65,6 +65,7 @@ Maui.SideBar
 
     delegate: Maui.ListDelegate
     {
+        isCurrentItem: ListView.isCurrentItem && _stackView.depth === 1
         width: ListView.view.width
         iconSize: Maui.Style.iconSizes.small
         label: model.label
