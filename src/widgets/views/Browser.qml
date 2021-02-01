@@ -194,7 +194,7 @@ Item
                 browserMenu.contentData : [
                     MenuItem
                     {
-                        visible: !control.isExec && Maui.Handy.isLinux
+                        visible: _browser.itemMenu.isDir && Maui.Handy.isLinux
                         text: i18n("Open terminal here")
                         id: openTerminal
                         icon.name: "utilities-terminal"
@@ -250,7 +250,7 @@ Item
 
                     MenuItem
                     {
-                        visible: !control.isExec && Maui.Handy.isLinux
+                        visible: _browser.itemMenu.isDir && Maui.Handy.isLinux
                         text: i18n("Open terminal here")
                         icon.name: "utilities-terminal"
                         onTriggered:
@@ -267,8 +267,7 @@ Item
                         text: i18n("Preview")
                         icon.name: "view-preview"
                         onTriggered:
-                        {
-                            //                        previewer.show(_browser.currentFMModel, _browser.currentView.currentIndex)
+                        {                           
                             _stackView.push(_previewerComponent, StackView.Immediate)
                         }
                     },
@@ -292,7 +291,6 @@ Item
                     {
                         visible: true
                         text: i18n("Compress")
-
                         icon.name: "archive-insert"
                         onTriggered:
                         {
