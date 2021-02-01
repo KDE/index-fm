@@ -48,7 +48,7 @@ Maui.ApplicationWindow
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool supportSplit : !Kirigami.Settings.isMobile
-        property bool overview : Kirigami.Settings.isMobile
+        property bool overview : false
 
         property int viewType : Maui.FMList.LIST_VIEW
         property int listSize : 0 // s-m-x-xl
