@@ -366,8 +366,8 @@ Maui.ApplicationWindow
             root.openTab(Maui.FM.homePath())
             currentBrowser.settings.viewType = settings.viewType
 
-            if( settings.overview )
-                _stackView.push(_homeViewComponent)
+//            if( settings.overview )
+//                _stackView.push(_homeViewComponent)
         }
 
     }
