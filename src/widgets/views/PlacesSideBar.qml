@@ -40,7 +40,13 @@ Maui.SideBar
         iconName: "start-here-symbolic"
         iconVisible: true
         isCurrentItem: _stackView.depth === 2
-        onClicked: _stackView.push(_homeViewComponent)
+        onClicked:
+        {
+            if(placesSidebar.collapsed)
+                placesSidebar.collapse()
+
+            _stackView.push(_homeViewComponent)
+        }
     }
 
     model: Maui.BaseModel
