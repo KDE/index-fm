@@ -253,10 +253,8 @@ ColumnLayout
                     }
                 }
 
-                onClicked: placesSidebar.visible = !placesSidebar.visible
+                onClicked: placesSidebar.open()
             }
-
-
         ]
 
         headBar.leftContent: [
