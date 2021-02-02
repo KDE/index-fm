@@ -321,12 +321,16 @@ Maui.ApplicationWindow
             id: _browserView
         }
 
-        HomeView
-        {
-            id : _homeViewComponent
-        }
     }
 
+
+    Component
+    {
+        id : _homeViewComponent
+        HomeView
+        {
+        }
+    }
     Connections
     {
         target: inx

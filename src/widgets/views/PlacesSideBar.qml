@@ -26,7 +26,7 @@ Maui.SideBar
     {
         currentBrowser.openFolder(path)
         if(placesSidebar.collapsed)
-            placesSidebar.collapse()
+            placesSidebar.close()
 
         if(_stackView.depth === 2)
             _stackView.pop()
@@ -43,7 +43,7 @@ Maui.SideBar
         onClicked:
         {
             if(placesSidebar.collapsed)
-                placesSidebar.collapse()
+                placesSidebar.close()
 
             _stackView.push(_homeViewComponent)
         }
