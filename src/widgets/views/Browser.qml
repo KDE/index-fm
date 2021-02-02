@@ -194,7 +194,7 @@ Item
                 browserMenu.contentData : [
                     MenuItem
                     {
-                        visible: _browser.itemMenu.isDir && Maui.Handy.isLinux
+                        visible: Maui.Handy.isLinux
                         text: i18n("Open terminal here")
                         id: openTerminal
                         icon.name: "utilities-terminal"
