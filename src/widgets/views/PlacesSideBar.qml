@@ -20,7 +20,7 @@ Maui.SideBar
 
     collapsible: true
     collapsed : !root.isWide
-    preferredWidth: Math.min(Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 11), root.width)
+    preferredWidth: Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 11)
 
     onPlaceClicked:
     {

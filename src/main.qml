@@ -320,9 +320,7 @@ Maui.ApplicationWindow
         {
             id: _browserView
         }
-
     }
-
 
     Component
     {

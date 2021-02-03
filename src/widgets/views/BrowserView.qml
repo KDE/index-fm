@@ -216,11 +216,10 @@ ColumnLayout
             MouseArea
             {
                 id: _handle
-                visible: placesSidebar.position == 0 || placesSidebar.collapsed
+                visible: placesSidebar.collapsed || placesSidebar.position === 0
                 Layout.preferredWidth: Maui.Style.iconSizes.big
-                Layout.fillHeight: true
-                Layout.alignment: Qt.AlignBottom
-                hoverEnabled: true
+Layout.fillHeight: true
+                hoverEnabled: !Kirigami.Settings.isMobile
                 preventStealing: true
                 propagateComposedEvents: false
 
