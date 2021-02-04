@@ -23,6 +23,7 @@ Maui.ApplicationWindow
 {
     id: root
     title: currentTab ? currentTab.title : ""
+    altHeader: Kirigami.Settings.isMobile
 
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
     readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
