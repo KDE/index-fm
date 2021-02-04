@@ -216,9 +216,10 @@ ColumnLayout
             MouseArea
             {
                 id: _handle
-                visible: placesSidebar.collapsed || placesSidebar.position === 0
-                Layout.preferredWidth: Maui.Style.iconSizes.big
-Layout.fillHeight: true
+                visible: placesSidebar.collapsed
+
+                implicitWidth: Maui.Style.iconSizes.big
+                implicitHeight: implicitWidth
                 hoverEnabled: !Kirigami.Settings.isMobile
                 preventStealing: true
                 propagateComposedEvents: false
