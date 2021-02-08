@@ -194,7 +194,7 @@ Item
                 browserMenu.contentData : [
                     MenuItem
                     {
-                        visible: Maui.Handy.isLinux
+                        visible: Maui.Handy.isLinux & !Kirigami.Settings.isMobile
                         text: i18n("Open terminal here")
                         id: openTerminal
                         icon.name: "utilities-terminal"
@@ -250,7 +250,7 @@ Item
 
                     MenuItem
                     {
-                        visible: _browser.itemMenu.isDir && Maui.Handy.isLinux
+                        visible: _browser.itemMenu.isDir && Maui.Handy.isLinux && !Kirigami.Settings.isMobile
                         text: i18n("Open terminal here")
                         icon.name: "utilities-terminal"
                         onTriggered:
