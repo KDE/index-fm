@@ -263,9 +263,8 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
                         // but this function returns if some error occurs so for this reason it is needed to toggle the value
                         error = !error;
                     }
-                    (void)k7zip->close();
-                    break;
                 }
+                (void)k7zip->close();
 #endif
                 break;
             }
@@ -325,8 +324,6 @@ KArchive *CompressedFile::getKArchiveObject(const QUrl &url)
         kArch = new KTar(url.toString().split(QString("file://"))[1]);
     } else if (FMH::getMime(url).contains("application/zip")) {
         kArch = new KZip(url.toString().split(QString("file://"))[1]);
-    } else if (FMH::getMime(url).contains("application/x-archive")) {
-        kArch = new KAr(url.toString().split(QString("file://"))[1]);
     } else if (FMH::getMime(url).contains("application/x-7z-compressed")) {
 #ifdef K7ZIP_H
         kArch = new K7Zip(url.toString().split(QString("file://"))[1]);

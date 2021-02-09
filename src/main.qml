@@ -198,11 +198,6 @@ Maui.ApplicationWindow
                 {
                     text: ".7ZIP"
                 }
-
-                Action
-                {
-                    text: ".AR"
-                }
             }
 
             onRejected:
