@@ -79,9 +79,29 @@ Maui.SideBar
         iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
         iconVisible: true
 
+        template.content: ToolButton
+        {
+            visible: placesList.isDevice(index) && placesList.setupNeeded(index)
+            icon.name: "media-eject"
+            flat: true
+
+            onClicked: placesList.requestSetup(index)
+        }
+
+        function mount()
+        {
+            placesList.requestSetup(index);
+        }
+
         onClicked:
         {
             control.currentIndex = index
+
+            if( placesList.isDevice(index) && placesList.setupNeeded(index))
+            {
+                notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), mount)
+            }
+
             placesList.clearBadgeCount(index)
 
             placeClicked(model.path)
