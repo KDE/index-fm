@@ -82,7 +82,7 @@ Maui.SideBar
         template.content: ToolButton
         {
             visible: placesList.isDevice(index) && placesList.setupNeeded(index)
-            icon.name: "media-eject"
+            icon.name: "media-mount"
             flat: true
 
             onClicked: placesList.requestSetup(index)
