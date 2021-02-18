@@ -59,8 +59,8 @@ ColumnLayout
                 implicitHeight: tabsBar.implicitHeight
                 implicitWidth: Math.max(parent.width / _repeater.count, 120)
                 checked: index === _browserList.currentIndex
-//                template.iconSource: "folder"
-//                template.iconSizeHint: 16
+                //                template.iconSource: "folder"
+                //                template.iconSizeHint: 16
                 text: tabsObjectModel.get(index).title
 
                 onClicked:
@@ -212,50 +212,17 @@ ColumnLayout
             }
         ]
 
-        headBar.farLeftContent: [
-            MouseArea
-            {
-                id: _handle
-                visible: placesSidebar.collapsed
+        headBar.farLeftContent: ToolButton
+        {
+            visible: placesSidebar.collapsed
+            icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
+            onClicked: placesSidebar.toggle()
 
-                implicitWidth: Maui.Style.iconSizes.big
-                implicitHeight: implicitWidth
-                hoverEnabled: !Kirigami.Settings.isMobile
-                preventStealing: true
-                propagateComposedEvents: false
-
-                ToolTip.delay: 1000
-                ToolTip.timeout: 5000
-                ToolTip.visible: _handle.containsMouse || _handle.containsPress
-                ToolTip.text: i18n("Toogle SideBar")
-
-                Rectangle
-                {
-                    anchors.centerIn: parent
-                    radius: 2
-                    height: 18
-                    width: 16
-
-                    color: _handle.containsMouse || _handle.containsPress  ?  Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                    border.color: Qt.darker(color, 1.2)
-
-                    Rectangle
-                    {
-                        radius: 1
-                        height: 10
-                        width: 3
-
-                        anchors.left: parent.left
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.margins: 4
-
-                        color: _handle.containsMouse || _handle.containsPress ?  Kirigami.Theme.highlightedTextColor : Kirigami.Theme.backgroundColor
-                    }
-                }
-
-                onClicked: placesSidebar.open()
-            }
-        ]
+            ToolTip.delay: 1000
+            ToolTip.timeout: 5000
+            ToolTip.visible: hovered
+            ToolTip.text: i18n("Toogle SideBar")
+        }
 
         headBar.leftContent: [
 
