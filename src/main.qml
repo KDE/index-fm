@@ -318,13 +318,12 @@ Maui.ApplicationWindow
         }
     }
 
-    Component
-    {
-        id : _homeViewComponent
         HomeView
         {
+            id : _homeViewComponent
+            visible: StackView.status === StackView.Active
         }
-    }
+
     Connections
     {
         target: inx
