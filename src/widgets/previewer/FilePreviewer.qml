@@ -108,7 +108,7 @@ Maui.Page
 
                     Maui.Separator
                     {
-                        position: Qt.Horizontal
+                        edge: Qt.BottomEdge
                         Layout.fillWidth: true
                     }
 
