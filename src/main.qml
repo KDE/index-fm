@@ -37,7 +37,7 @@ Maui.ApplicationWindow
     property alias viewTypeGroup : _browserView.viewTypeGroup
     property alias appSettings : settings
 
-    property bool selectionMode: true
+    property bool selectionMode: false
 
     Settings
     {
