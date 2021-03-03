@@ -120,6 +120,7 @@ Maui.ApplicationWindow
     {
         id: _tagsDialog
         taglist.strict: false
+        composerList.strict: false
 
         onTagsReady:
         {
