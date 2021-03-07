@@ -80,7 +80,7 @@ Maui.Page
                 anchors.fill: parent
                 visible: control.showInfo
 
-                Kirigami.Theme.backgroundColor: "transparent"
+//                Kirigami.Theme.backgroundColor: "transparent"
                 padding:  0
                 leftPadding: padding
                 rightPadding: padding

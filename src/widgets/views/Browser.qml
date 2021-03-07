@@ -214,7 +214,7 @@ Item
                         icon.name: "document-share"
                         onTriggered:
                         {
-                            shareFiles([_browser.itemMenu.item.path])
+                            shareFiles(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
                         }
                     },
 
@@ -225,7 +225,7 @@ Item
                         icon.name: "tag"
                         onTriggered:
                         {
-                            tagsDialog.composerList.urls = [_browser.itemMenu.item.path]
+                            tagsDialog.composerList.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
                             tagsDialog.open()
                         }
                     },
@@ -295,7 +295,7 @@ Item
                         onTriggered:
                         {
                             dialogLoader.sourceComponent= _compressDialogComponent
-                            dialog.urls = currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path)
+                            dialog.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
                             dialog.open()
                         }
                     },
@@ -466,7 +466,7 @@ Item
         icon.name: "document-open"
         onTriggered:
         {
-            openWith([_browser.itemMenu.item.path])
+            openWith(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
         }
     }
 
