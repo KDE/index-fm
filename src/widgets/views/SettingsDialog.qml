@@ -18,7 +18,6 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Thumbnails")
             label2.text: i18n("Show previews of images, videos and PDF files")
-            onClicked: settings.showThumbnails = ! settings.showThumbnails
 
             Switch
             {
@@ -33,7 +32,6 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Hidden Files")
             label2.text: i18n("List hidden files")
-            onClicked: settings.showHiddenFiles = !settings.showHiddenFiles
 
             Switch
             {
@@ -48,7 +46,6 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Single Click")
             label2.text: i18n("Open files with a single or double click")
-            onClicked: settings.singleClick = !settings.singleClick
 
             Switch
             {
@@ -63,7 +60,6 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Save Session")
             label2.text: i18n("Save and restore tabs")
-            onClicked: settings.restoreSession = !settings.restoreSession
 
             Switch
             {
@@ -78,7 +74,6 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Preview Files")
             label2.text: i18n("Opens a quick preview with information of the file instead of opening it with an external application.")
-            onClicked: settings.previewFiles = !settings.previewFiles
 
             Switch
             {
@@ -93,7 +88,6 @@ Maui.SettingsDialog
         {
             label1.text:  i18n("Split Views")
             label2.text: i18n("Support split views horizontally or vertically depending on the available space.")
-            onClicked: settings.supportSplit = !settings.supportSplit
 
             Switch
             {
@@ -115,7 +109,6 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Global Sorting")
             label2.text: i18n("Use the sorting preferences globally for all the tabs and splits.")
-            onClicked: sortSettings.globalSorting = !sortSettings.globalSorting
 
             Switch
             {
@@ -131,7 +124,6 @@ Maui.SettingsDialog
             enabled: sortSettings.globalSorting
             label1.text: i18n("Folders first")
             label2.text: i18n("Show folders first.")
-            onClicked: sortSettings.foldersFirst = !sortSettings.foldersFirst
 
             Switch
             {
@@ -147,7 +139,6 @@ Maui.SettingsDialog
             enabled: sortSettings.globalSorting
             label1.text: i18n("Group")
             label2.text: i18n("Groups by the sort category.")
-            onClicked: sortSettings.group = !sortSettings.group
 
             Switch
             {
@@ -349,7 +340,6 @@ Maui.SettingsDialog
         {
             label1.text: i18n("Overview")
             label2.text: i18n("Use overview mode as default on launch.")
-            onClicked: settings.overview = !settings.overview
 
             Switch
             {
