@@ -208,7 +208,6 @@ Maui.Page
         Maui.TagsBar
         {
             id: _tagsBar
-            position: ToolBar.Footer
             width: parent.width
             list.urls: [control.currentUrl]
             list.strict: false
