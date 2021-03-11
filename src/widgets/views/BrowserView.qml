@@ -282,6 +282,14 @@ ColumnLayout
                     text: i18n("List")
                     shortcut: "Ctrl+L"
                 }
+
+                Action
+                {
+                    enabled: settings.millerColumns
+                    icon.name: "view-file-columns"
+                    text: i18n("Columns")
+                    shortcut: "Ctrl+C"
+                }
             }
         ]
 
