@@ -50,7 +50,32 @@ endif()
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 include(ECMSetupVersion)
+include(ECMSourceVersionControl)
 include(FeatureSummary)
+
+if(${ECM_SOURCE_UNDER_VERSION_CONTROL})
+execute_process(
+  COMMAND git rev-parse --abbrev-ref HEAD
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+  OUTPUT_VARIABLE GIT_BRANCH
+  OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# Get the latest abbreviated commit hash of the working branch
+execute_process(
+  COMMAND git log -1 --format=%h
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+  OUTPUT_VARIABLE GIT_COMMIT_HASH
+  OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+add_definitions(-DGIT_COMMIT_HASH="${GIT_COMMIT_HASH}")
+add_definitions(-DGIT_BRANCH="${GIT_BRANCH}")
+
+else()
+    add_definitions(-DGIT_COMMIT_HASH="${INDEX_VERSION}")
+    add_definitions(-DGIT_BRANCH="Stable")
+endif()
 
 ecm_setup_version(${INDEX_VERSION}
     VARIABLE_PREFIX INDEX
