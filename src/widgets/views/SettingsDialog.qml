@@ -97,20 +97,6 @@ Maui.SettingsDialog
                 onToggled: settings.supportSplit = !settings.supportSplit
             }
         }
-
-        Maui.SettingTemplate
-        {
-            label1.text:  i18n("Miller Columns")
-            label2.text: i18n("Enable the columns browsing view, as an alternative to the grid and list views.")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  settings.millerColumns
-                onToggled: settings.millerColumns = !settings.millerColumns
-            }
-        }
     }
 
     Maui.SettingsSection
