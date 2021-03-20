@@ -41,7 +41,11 @@ Maui.Page
         clip: true
         focus: true
         spacing: 0
-        interactive: Maui.Handy.isTouch
+
+        interactive: Kirigami.Settings.hasTransientTouchInput
+        boundsBehavior: Flickable.StopAtBounds
+        boundsMovement :Flickable.StopAtBounds
+
         highlightFollowsCurrentItem: true
         highlightMoveDuration: 0
         highlightResizeDuration : 0
