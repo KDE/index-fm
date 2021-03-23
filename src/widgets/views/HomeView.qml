@@ -131,7 +131,6 @@ Maui.Page
                     id: _tagsSection
                     width: parent.width
                     anchors.centerIn: parent
-
                 }
             }
 

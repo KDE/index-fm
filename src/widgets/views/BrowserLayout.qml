@@ -15,8 +15,6 @@ import QtQml.Models 2.3
 Item
 {
     id: control
-    height: _browserView.browserList.height
-    width: _browserView.browserList.width
 
     property url path
 

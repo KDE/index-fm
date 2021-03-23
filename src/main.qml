@@ -229,6 +229,11 @@ Maui.ApplicationWindow
         }
     }
 
+    Component
+    {
+        id: _browserComponent
+        BrowserLayout {}
+    }
 
     Index.CompressedFile
     {
@@ -419,7 +424,7 @@ Maui.ApplicationWindow
         var item = tabsObjectModel.get(index)
         item.destroy()
         tabsObjectModel.remove(index)
-    }
+    }   
 
     function openTab(path)
     {
@@ -428,14 +433,9 @@ Maui.ApplicationWindow
             if(_stackView.depth === 2)
                 _stackView.pop()
 
-            const component = Qt.createComponent("qrc:/widgets/views/BrowserLayout.qml");
+                const object = _browserComponent.createObject(_browserView.browserList, {'path': path});
+                currentTabIndex = _browserView.browserList.count - 1
 
-            if (component.status === Component.Ready)
-            {
-                const object = component.createObject(tabsObjectModel, {'path': path});
-                tabsObjectModel.append(object)
-                currentTabIndex = tabsObjectModel.count - 1
-            }
         }
     }
 
