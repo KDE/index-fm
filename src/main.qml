@@ -430,7 +430,7 @@ Maui.ApplicationWindow
                 _stackView.pop()
 
              _browserView.browserList.addTab(_browserComponent, {'path': path})
-            _layout.incrementCurrentIndex()
+            _browserView.browserList.currentIndex = _browserView.browserList.count -1
         }
     }
 
