@@ -7,7 +7,8 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.2 as Maui
+
+import org.kde.mauikit 1.3 as Maui
 import org.kde.kirigami 2.6 as Kirigami
 
 Maui.SideBar
@@ -112,13 +113,13 @@ Maui.SideBar
         onRightClicked:
         {
             control.currentIndex = index
-            _menu.popup()
+            _menu.open()
         }
 
         onPressAndHold:
         {
             control.currentIndex = index
-            _menu.popup()
+            _menu.open()
         }
     }
 
@@ -139,7 +140,7 @@ Maui.SideBar
         placesList.addPlace(drop.text)
     }
 
-    Menu
+    Maui.ContextualMenu
     {
         id: _menu
 
