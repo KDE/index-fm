@@ -15,8 +15,10 @@ import QtQml.Models 2.3
 Item
 {
     id: control
-
+    height: ListView.view.height
+    width:  ListView.view.width
     focus: true
+
     property url path
 
     property alias orientation : _splitView.orientation

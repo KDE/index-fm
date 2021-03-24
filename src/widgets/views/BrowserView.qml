@@ -370,9 +370,6 @@ Maui.Page
         confirmClose: true
         onNewTabClicked: openTab(currentPath)
 
-        Keys.enabled : true
-        Keys.forwardTo : currentBrowser.currentView
-
         onCurrentItemChanged:
         {
             if(currentBrowser)

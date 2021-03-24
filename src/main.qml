@@ -429,9 +429,8 @@ Maui.ApplicationWindow
             if(_stackView.depth === 2)
                 _stackView.pop()
 
-                const object = _browserComponent.createObject(_browserView.browserList, {'path': path});
-                currentTabIndex = _browserView.browserList.count - 1
-
+             _browserView.browserList.addTab(_browserComponent, {'path': path})
+            _layout.incrementCurrentIndex()
         }
     }
 
