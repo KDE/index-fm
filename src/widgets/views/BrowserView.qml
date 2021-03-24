@@ -143,13 +143,7 @@ Maui.Page
             id: _optionsButton
             icon.name: "overflow-menu"
             enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.APPS_PATH
-            onClicked:
-            {
-                if(currentBrowser.browserMenu.visible)
-                    currentBrowser.browserMenu.close()
-                else
-                    currentBrowser.browserMenu.show(_optionsButton, 0, height)
-            }
+            onClicked: currentBrowser.browserMenu.show(_optionsButton, 0, height)
             checked: currentBrowser.browserMenu.visible
             checkable: false
         }
