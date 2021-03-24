@@ -81,9 +81,9 @@ Maui.ApplicationWindow
         close.accepted = !settings.restoreSession
         var tabs = []
 
-        for(var i = 0; i <tabsObjectModel.count; i ++)
+        for(var i = 0; i < _browserView.browserList.count; i ++)
         {
-            const tab = tabsObjectModel.get(i)
+            const tab = _browserView.browserList.contentModel.get(i)
             var tabPaths = []
 
             for(var j = 0; j < tab.model.count; j++)
@@ -317,8 +317,6 @@ Maui.ApplicationWindow
         id: placesSidebar
     }
 
-    ObjectModel { id: tabsObjectModel }
-
     StackView
     {
         id: _stackView
@@ -421,10 +419,8 @@ Maui.ApplicationWindow
 
     function closeTab(index)
     {
-        var item = tabsObjectModel.get(index)
-        item.destroy()
-        tabsObjectModel.remove(index)
-    }   
+        _browserView.browserList.closeTab(index)
+    }
 
     function openTab(path)
     {

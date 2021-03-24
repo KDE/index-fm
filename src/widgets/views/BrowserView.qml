@@ -365,12 +365,19 @@ Maui.Page
     {
         id: _browserList
         anchors.fill: parent
+        mobile: true
+        focus: false
+        confirmClose: true
         onNewTabClicked: openTab(currentPath)
+
+        Keys.enabled : true
+        Keys.forwardTo : currentBrowser.currentView
+
         onCurrentItemChanged:
         {
             if(currentBrowser)
             {
-                currentItem.forceActiveFocus()
+                currentBrowser.currentView.forceActiveFocus()
             }
         }
     }

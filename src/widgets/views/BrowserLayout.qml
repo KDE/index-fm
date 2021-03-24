@@ -16,6 +16,7 @@ Item
 {
     id: control
 
+    focus: true
     property url path
 
     property alias orientation : _splitView.orientation

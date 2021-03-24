@@ -126,8 +126,6 @@ Item
             {
                 id: _browser
 
-                headerBackground.color: "transparent"
-
                 selectionBar: root.selectionBar
                 gridItemSize: switch(appSettings.gridSize)
                               {
@@ -267,7 +265,7 @@ Item
                         text: i18n("Preview")
                         icon.name: "view-preview"
                         onTriggered:
-                        {                           
+                        {
                             _stackView.push(_previewerComponent, StackView.Immediate)
                         }
                     },
@@ -356,7 +354,7 @@ Item
                     // Shortcut for closing tab
                     if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
                     {
-                        if(tabsObjectModel.count > 1)
+                        if(_browserView.browserList.count > 1)
                             root.closeTab(tabsBar.currentIndex)
                     }
 
