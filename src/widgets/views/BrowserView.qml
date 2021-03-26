@@ -358,9 +358,7 @@ Maui.Page
     Maui.TabView
     {
         id: _browserList
-        anchors.fill: parent
-        mobile: true
-        focus: false
+        anchors.fill: parent       
         confirmClose: true
         onNewTabClicked: openTab(currentPath)
 
