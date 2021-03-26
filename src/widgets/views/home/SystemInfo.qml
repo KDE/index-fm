@@ -17,6 +17,9 @@ import org.maui.index 1.0 as Index
 Maui.ListBrowser
 {
     id: control
+
+    signal itemClicked(url url)
+
     orientation: ListView.Horizontal
     implicitHeight: 260
     verticalScrollBarPolicy: ScrollBar.AlwaysOff
@@ -38,7 +41,11 @@ Maui.ListBrowser
 
         background: Item {}
 
-        onClicked: openTab(modelData)
+        onClicked:
+        {
+            control.currentIndex = index
+            control.itemClicked(modelData)
+        }
 
         Index.DirInfo
         {
@@ -116,6 +123,12 @@ Maui.ListBrowser
                 label1.font.bold: true
                 label1.text: info.label
                 label2.text: i18n("%1 Directories - %2 Files", _dirInfo.dirCount, _dirInfo.filesCount)
+
+                onClicked:
+                {
+                    control.currentIndex = index
+                    control.itemClicked(modelData)
+                }
 
                 Rectangle
                 {

@@ -84,7 +84,7 @@ Maui.Page
                     onItemClicked:
                     {
                         _fileItemMenu.url = url
-                        _fileItemMenu.popup()
+                        _fileItemMenu.open()
                     }
                 }
             }
@@ -103,7 +103,7 @@ Maui.Page
                     onItemClicked:
                     {
                         _fileItemMenu.url = url
-                        _fileItemMenu.popup()
+                        _fileItemMenu.open()
                     }
                 }
             }
@@ -118,6 +118,11 @@ Maui.Page
                     id: _sysInfoSection
                     width: parent.width
                     anchors.centerIn: parent
+
+                    onItemClicked:
+                    {
+                        openTab(url)
+                    }
                 }
             }
 

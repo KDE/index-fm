@@ -33,6 +33,7 @@ Maui.SideBar
             _stackView.pop()
     }
 
+//    listView.flickable.headerPositioning: ListView.OverlayHeader
     listView.flickable.header: Maui.ListDelegate
     {
         width: parent.width

@@ -327,11 +327,11 @@ Maui.ApplicationWindow
         }
     }
 
-        HomeView
-        {
-            id : _homeViewComponent
-            visible: StackView.status === StackView.Active
-        }
+    HomeView
+    {
+        id : _homeViewComponent
+        visible: StackView.status === StackView.Active
+    }
 
     Connections
     {
@@ -372,8 +372,8 @@ Maui.ApplicationWindow
             root.openTab(Maui.FM.homePath())
             currentBrowser.settings.viewType = settings.viewType
 
-//            if( settings.overview )
-//                _stackView.push(_homeViewComponent)
+            //            if( settings.overview )
+            //                _stackView.push(_homeViewComponent)
         }
 
     }
@@ -429,7 +429,7 @@ Maui.ApplicationWindow
             if(_stackView.depth === 2)
                 _stackView.pop()
 
-             _browserView.browserList.addTab(_browserComponent, {'path': path})
+            _browserView.browserList.addTab(_browserComponent, {'path': path})
             _browserView.browserList.currentIndex = _browserView.browserList.count -1
         }
     }
