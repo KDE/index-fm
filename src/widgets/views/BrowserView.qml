@@ -346,16 +346,12 @@ Maui.Page
     Maui.TabView
     {
         id: _browserList
-<<<<<<< HEAD
         anchors.fill: parent       
-        confirmClose: true
-=======
-        anchors.fill: parent
 
->>>>>>> eaf5251 (toggle butotn bwteen list and grid view)
         onNewTabClicked: openTab(currentPath)
 
         onCloseTabClicked: closeTab(index)
+
         onCurrentItemChanged:
         {
             if(currentBrowser)
