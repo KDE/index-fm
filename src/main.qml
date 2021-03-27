@@ -251,10 +251,7 @@ Maui.ApplicationWindow
     {
         icon.name: "edit-find"
         checked: currentBrowser.headBar.visible
-        onClicked:
-        {
-            currentBrowser.headBar.visible = !currentBrowser.headBar.visible
-        }
+        onClicked: currentBrowser.toggleSearchBar()
     }
 
     headBar.middleContent: [
