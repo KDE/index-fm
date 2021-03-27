@@ -126,6 +126,7 @@ Item
             {
                 id: _browser
 
+                altHeader: _browserView.altHeader
                 selectionBar: root.selectionBar
                 gridItemSize: switch(appSettings.gridSize)
                               {

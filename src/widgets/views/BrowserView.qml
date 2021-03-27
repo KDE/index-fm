@@ -129,16 +129,6 @@ Maui.Page
 
         ToolButton
         {
-            icon.name: "edit-find"
-            checked: currentBrowser.headBar.visible
-            onClicked:
-            {
-                currentBrowser.headBar.visible = !currentBrowser.headBar.visible
-            }
-        },
-
-        ToolButton
-        {
             id: _optionsButton
             icon.name: "overflow-menu"
             enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.APPS_PATH
