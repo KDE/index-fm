@@ -144,7 +144,7 @@ Item
 
         if (component.status === Component.Ready)
         {
-            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': viewTypeGroup.currentIndex});
+            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': settings.viewType});
             splitObjectModel.append(object)
             _splitView.insertItem(splitObjectModel.count, object) // duplicating object insertion due to bug on android not picking the repeater
             _splitView.currentIndex = splitObjectModel.count - 1

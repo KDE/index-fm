@@ -34,7 +34,6 @@ Maui.ApplicationWindow
     property alias tagsDialog : _tagsDialog
     property alias currentTabIndex : _browserView.currentTabIndex
     property alias currentTab : _browserView.currentTab
-    property alias viewTypeGroup : _browserView.viewTypeGroup
     property alias appSettings : settings
 
     property bool selectionMode: false
@@ -49,7 +48,6 @@ Maui.ApplicationWindow
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool supportSplit : !Kirigami.Settings.isMobile
-        property bool millerColumns : false
         property bool overview : false
 
         property int viewType : Maui.FMList.LIST_VIEW
@@ -266,10 +264,10 @@ Maui.ApplicationWindow
             onPlaceRightClicked:
             {
                 _pathBarmenu.path = path
-                _pathBarmenu.popup()
+                _pathBarmenu.open()
             }
 
-            Menu
+            Maui.ContextualMenu
             {
                 id: _pathBarmenu
                 property url path

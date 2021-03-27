@@ -24,7 +24,6 @@ Maui.Page
     property alias selectionBar: _selectionBar
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
-    property alias viewTypeGroup: _viewTypeGroup
     property alias browserList : _browserList
 
     altHeader: Kirigami.Settings.isMobile
@@ -38,7 +37,7 @@ Maui.Page
         ToolButton
         {
             visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-            icon.name: "utilities-terminal"
+            icon.name: "dialog-scripts"
             onClicked: currentTab.currentItem.toogleTerminal()
             checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
             checkable: true
@@ -186,40 +185,27 @@ Maui.Page
             }
         },
 
-        Maui.ToolActions
+        ToolButton
         {
-            id: _viewTypeGroup
-            autoExclusive: true
-            cyclic: true
-            expanded: headBar.width > Kirigami.Units.gridUnit * 32
 
-            Binding on currentIndex
-            {
-                value: currentBrowser ? currentBrowser.settings.viewType : -1
-                //                    restoreMode: Binding.RestoreBinding
-                delayed: true
-            }
+            icon.name: settings.viewType === Maui.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
+//            Binding on currentIndex
+//            {
+//                value: currentBrowser ? currentBrowser.settings.viewType : -1
+//                //                    restoreMode: Binding.RestoreBinding
+//                delayed: true
+//            }
 
             //                    display: ToolButton.TextBesideIcon
-            onCurrentIndexChanged:
+            onClicked:
             {
+                var type = settings.viewType === Maui.FMList.LIST_VIEW ? Maui.FMList.ICON_VIEW : Maui.FMList.LIST_VIEW
                 if(currentBrowser)
-                currentBrowser.settings.viewType = currentIndex
-                settings.viewType = currentIndex
-            }
+                {
+                    currentBrowser.settings.viewType = type
+                }
 
-            Action
-            {
-                icon.name: "view-list-icons"
-                text: i18n("Grid")
-                shortcut: "Ctrl+G"
-            }
-
-            Action
-            {
-                icon.name: "view-list-details"
-                text: i18n("List")
-                shortcut: "Ctrl+L"
+                settings.viewType = type
             }
         }
     ]
@@ -360,10 +346,16 @@ Maui.Page
     Maui.TabView
     {
         id: _browserList
+<<<<<<< HEAD
         anchors.fill: parent       
         confirmClose: true
+=======
+        anchors.fill: parent
+
+>>>>>>> eaf5251 (toggle butotn bwteen list and grid view)
         onNewTabClicked: openTab(currentPath)
 
+        onCloseTabClicked: closeTab(index)
         onCurrentItemChanged:
         {
             if(currentBrowser)
