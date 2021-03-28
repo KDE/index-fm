@@ -454,7 +454,11 @@ Item
         enabled: _splitView.currentIndex !== _index
         propagateComposedEvents: false
         preventStealing: true
-        onClicked: _splitView.currentIndex = _index
+        onClicked:
+        {
+            _splitView.currentIndex = _index
+            browser.forceActiveFocus()
+        }
     }
 
     MenuItem
