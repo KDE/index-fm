@@ -12,6 +12,7 @@ import QtQml.Models 2.3
 
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.mauikit 1.3 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
 
 import org.maui.index 1.0 as Index
 
@@ -26,7 +27,7 @@ Maui.ApplicationWindow
     altHeader: Kirigami.Settings.isMobile
 
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
-    readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
+    readonly property FB.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
@@ -50,7 +51,7 @@ Maui.ApplicationWindow
         property bool supportSplit : !Kirigami.Settings.isMobile
         property bool overview : false
 
-        property int viewType : Maui.FMList.LIST_VIEW
+        property int viewType : FB.FMList.LIST_VIEW
         property int listSize : 0 // s-m-x-xl
         property int gridSize : 1 // s-m-x-xl
 
@@ -63,7 +64,7 @@ Maui.ApplicationWindow
         id: sortSettings
         category: "Sorting"
         property bool foldersFirst: true
-        property int sortBy:  Maui.FMList.MODIFIED
+        property int sortBy:  FB.FMList.MODIFIED
         property int sortOrder : Qt.AscendingOrder
         property bool group : false
         property bool globalSorting: Kirigami.Settings.isMobile
@@ -390,7 +391,7 @@ Maui.ApplicationWindow
     //             else
     //                 Maui.FM.saveSettings("IconSize", thumbnailsSize, "SETTINGS")
     //
-    //                 if(browserView.viewType === Maui.FMList.ICON_VIEW)
+    //                 if(browserView.viewType === FB.FMList.ICON_VIEW)
     //                     browserView.currentView.adaptGrid()
     //     }
 

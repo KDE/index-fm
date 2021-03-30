@@ -1,5 +1,5 @@
 #include "recentfilesmodel.h"
-#include <MauiKit/fileloader.h>
+#include <MauiKit/FileBrowsing/fileloader.h>
 #include <QFileSystemWatcher>
 
 RecentFilesModel::RecentFilesModel(QObject *parent) :

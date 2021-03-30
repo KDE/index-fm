@@ -8,9 +8,11 @@ import QtQuick 2.14
 import QtQml 2.12
 import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
+import QtQml.Models 2.3
+
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.0 as Maui
-import QtQml.Models 2.3
+import org.mauikit.filebrowsing 1.0 as FB
 
 Item
 {
@@ -28,7 +30,7 @@ Item
     readonly property alias model : splitObjectModel
     readonly property string title : count === 2 ?  model.get(0).browser.title + "  -  " + model.get(1).browser.title : browser.title
 
-    readonly property Maui.FileBrowser browser : currentItem.browser
+    readonly property FB.FileBrowser browser : currentItem.browser
 
     ObjectModel { id: splitObjectModel }
 

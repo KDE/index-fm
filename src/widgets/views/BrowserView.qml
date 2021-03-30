@@ -12,6 +12,7 @@ import QtQml.Models 2.3
 
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.mauikit 1.3 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
 
 import org.maui.index 1.0 as Index
 
@@ -61,18 +62,18 @@ Maui.Page
             MenuItem
             {
                 text: i18n("Type")
-                checked: currentBrowser.settings.sortBy === Maui.FMList.MIME
+                checked: currentBrowser.settings.sortBy === FB.FMList.MIME
                 checkable: true
-                onTriggered: currentBrowser.settings.sortBy = Maui.FMList.MIME
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MIME
                 autoExclusive: true
             }
 
             MenuItem
             {
                 text: i18n("Date")
-                checked:currentBrowser.settings.sortBy === Maui.FMList.DATE
+                checked:currentBrowser.settings.sortBy === FB.FMList.DATE
                 checkable: true
-                onTriggered: currentBrowser.settings.sortBy = Maui.FMList.DATE
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.DATE
                 autoExclusive: true
             }
 
@@ -80,8 +81,8 @@ Maui.Page
             {
                 text: i18n("Modified")
                 checkable: true
-                checked: currentBrowser.settings.sortBy === Maui.FMList.MODIFIED
-                onTriggered: currentBrowser.settings.sortBy = Maui.FMList.MODIFIED
+                checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MODIFIED
                 autoExclusive: true
             }
 
@@ -89,8 +90,8 @@ Maui.Page
             {
                 text: i18n("Size")
                 checkable: true
-                checked: currentBrowser.settings.sortBy === Maui.FMList.SIZE
-                onTriggered: currentBrowser.settings.sortBy = Maui.FMList.SIZE
+                checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.SIZE
                 autoExclusive: true
             }
 
@@ -98,8 +99,8 @@ Maui.Page
             {
                 text: i18n("Name")
                 checkable: true
-                checked: currentBrowser.settings.sortBy === Maui.FMList.LABEL
-                onTriggered: currentBrowser.settings.sortBy = Maui.FMList.LABEL
+                checked: currentBrowser.settings.sortBy === FB.FMList.LABEL
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.LABEL
                 autoExclusive: true
             }
 
@@ -131,7 +132,7 @@ Maui.Page
         {
             id: _optionsButton
             icon.name: "overflow-menu"
-            enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== Maui.FMList.APPS_PATH
+            enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
 
             onClicked: currentBrowser.browserMenu.show(_optionsButton, 0, height + Maui.Style.space.medium)
 
@@ -178,7 +179,7 @@ Maui.Page
         ToolButton
         {
 
-            icon.name: settings.viewType === Maui.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
+            icon.name: settings.viewType === FB.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
 //            Binding on currentIndex
 //            {
 //                value: currentBrowser ? currentBrowser.settings.viewType : -1
@@ -189,7 +190,7 @@ Maui.Page
             //                    display: ToolButton.TextBesideIcon
             onClicked:
             {
-                var type = settings.viewType === Maui.FMList.LIST_VIEW ? Maui.FMList.ICON_VIEW : Maui.FMList.LIST_VIEW
+                var type = settings.viewType === FB.FMList.LIST_VIEW ? FB.FMList.ICON_VIEW : FB.FMList.LIST_VIEW
                 if(currentBrowser)
                 {
                     currentBrowser.settings.viewType = type

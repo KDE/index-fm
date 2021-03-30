@@ -4,6 +4,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.2 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
 
 Maui.Page
 {
@@ -159,25 +160,25 @@ Maui.Page
                 control.isFav =  _tagsBar.list.contains("fav")
 
                 var source = "DefaultPreview.qml"
-                if(Maui.FM.checkFileType(Maui.FMList.AUDIO, iteminfo.mime))
+                if(Maui.FM.checkFileType(FB.FMList.AUDIO, iteminfo.mime))
                 {
                     source = "AudioPreview.qml"
-                }else if(Maui.FM.checkFileType(Maui.FMList.VIDEO, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(FB.FMList.VIDEO, iteminfo.mime))
                 {
                     source = "VideoPreview.qml"
-                }else if(Maui.FM.checkFileType(Maui.FMList.TEXT, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(FB.FMList.TEXT, iteminfo.mime))
                 {
                     source = "TextPreview.qml"
-                }else if(Maui.FM.checkFileType(Maui.FMList.IMAGE, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(FB.FMList.IMAGE, iteminfo.mime))
                 {
                     source = "ImagePreview.qml"
-                }else if(Maui.FM.checkFileType(Maui.FMList.DOCUMENT, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(FB.FMList.DOCUMENT, iteminfo.mime))
                 {
                     source = "DocumentPreview.qml"
-                }else if(Maui.FM.checkFileType(Maui.FMList.COMPRESSED, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(FB.FMList.COMPRESSED, iteminfo.mime))
                 {
                     source = "CompressedPreview.qml"
-                }else if(Maui.FM.checkFileType(Maui.FMList.FONT, iteminfo.mime))
+                }else if(Maui.FM.checkFileType(FB.FMList.FONT, iteminfo.mime))
                 {
                     source = "FontPreviewer.qml"
                 }else

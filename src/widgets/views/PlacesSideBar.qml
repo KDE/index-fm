@@ -9,6 +9,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
 import org.kde.mauikit 1.3 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
 import org.kde.kirigami 2.6 as Kirigami
 
 Maui.SideBar
@@ -53,16 +54,16 @@ Maui.SideBar
 
     model: Maui.BaseModel
     {
-        list: Maui.PlacesList
+        list: FB.PlacesList
         {
             id: placesList
 
             groups: [
-                    Maui.FMList.QUICK_PATH,
-                    Maui.FMList.PLACES_PATH,
-                    Maui.FMList.REMOTE_PATH,
-                    Maui.FMList.REMOVABLE_PATH,
-                    Maui.FMList.DRIVES_PATH]
+                    FB.FMList.QUICK_PATH,
+                    FB.FMList.PLACES_PATH,
+                    FB.FMList.REMOTE_PATH,
+                    FB.FMList.REMOVABLE_PATH,
+                    FB.FMList.DRIVES_PATH]
 
             onBookmarksChanged:
             {

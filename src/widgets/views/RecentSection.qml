@@ -6,9 +6,13 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
+
 import org.kde.mauikit 1.3 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
 import org.kde.kirigami 2.14 as Kirigami
+
 import org.maui.index 1.0 as Index
+
 import Qt.labs.platform 1.1
 
 import "home"
@@ -63,7 +67,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
-                //                filters: Maui.FM.nameFilters(Maui.FMList.AUDIO_TYPE)
+                //                filters: Maui.FM.nameFilters(FB.FMList.AUDIO_TYPE)
             }
         }
 
@@ -136,7 +140,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.MusicLocation)
-                filters: Maui.FM.nameFilters(Maui.FMList.AUDIO)
+                filters: Maui.FM.nameFilters(FB.FMList.AUDIO)
             }
         }
 
@@ -193,7 +197,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
-                filters: Maui.FM.nameFilters(Maui.FMList.IMAGE)
+                filters: Maui.FM.nameFilters(FB.FMList.IMAGE)
             }
         }
 
@@ -247,7 +251,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: inx.cameraPath()
-                filters: Maui.FM.nameFilters(Maui.FMList.IMAGE)
+                filters: Maui.FM.nameFilters(FB.FMList.IMAGE)
             }
         }
 
@@ -300,7 +304,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: inx.screenshotsPath()
-                filters: Maui.FM.nameFilters(Maui.FMList.IMAGE)
+                filters: Maui.FM.nameFilters(FB.FMList.IMAGE)
             }
         }
 
