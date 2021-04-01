@@ -39,7 +39,8 @@ else()
 endif()
 
 find_package(MauiKit REQUIRED)
-find_package(MauiKit REQUIRED COMPONENTS FileBrowsing)
+find_package(MauiKitFileBrowsing REQUIRED)
+#find_package(MauiKit REQUIRED COMPONENTS FileBrowsing)
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)
     include(KDEInstallDirs)
