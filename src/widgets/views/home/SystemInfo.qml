@@ -7,10 +7,12 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.3 as Maui
-import org.kde.kirigami 2.14 as Kirigami
 import Qt.labs.platform 1.1
 import QtGraphicalEffects 1.0
+
+import org.kde.mauikit 1.3 as Maui
+import org.kde.kirigami 2.14 as Kirigami
+import org.mauikit.filebrowsing 1.0 as FB
 
 import org.maui.index 1.0 as Index
 
@@ -37,7 +39,7 @@ Maui.ListBrowser
 //        color: Kirigami.Theme.backgroundColor
 //        radius: Maui.Style.radiusV
 
-        property var info : Maui.FM.getFileInfo(modelData)
+        property var info : FB.FM.getFileInfo(modelData)
 
         background: Item {}
 

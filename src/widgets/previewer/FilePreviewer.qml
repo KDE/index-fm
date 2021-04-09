@@ -2,8 +2,10 @@ import QtQuick 2.14
 import QtQml 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
+
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.mauikit 1.2 as Maui
+
 import org.mauikit.filebrowsing 1.0 as FB
 
 Maui.Page
@@ -160,25 +162,25 @@ Maui.Page
                 control.isFav =  _tagsBar.list.contains("fav")
 
                 var source = "DefaultPreview.qml"
-                if(Maui.FM.checkFileType(FB.FMList.AUDIO, iteminfo.mime))
+                if(FB.FM.checkFileType(FB.FMList.AUDIO, iteminfo.mime))
                 {
                     source = "AudioPreview.qml"
-                }else if(Maui.FM.checkFileType(FB.FMList.VIDEO, iteminfo.mime))
+                }else if(FB.FM.checkFileType(FB.FMList.VIDEO, iteminfo.mime))
                 {
                     source = "VideoPreview.qml"
-                }else if(Maui.FM.checkFileType(FB.FMList.TEXT, iteminfo.mime))
+                }else if(FB.FM.checkFileType(FB.FMList.TEXT, iteminfo.mime))
                 {
                     source = "TextPreview.qml"
-                }else if(Maui.FM.checkFileType(FB.FMList.IMAGE, iteminfo.mime))
+                }else if(FB.FM.checkFileType(FB.FMList.IMAGE, iteminfo.mime))
                 {
                     source = "ImagePreview.qml"
-                }else if(Maui.FM.checkFileType(FB.FMList.DOCUMENT, iteminfo.mime))
+                }else if(FB.FM.checkFileType(FB.FMList.DOCUMENT, iteminfo.mime))
                 {
                     source = "DocumentPreview.qml"
-                }else if(Maui.FM.checkFileType(FB.FMList.COMPRESSED, iteminfo.mime))
+                }else if(FB.FM.checkFileType(FB.FMList.COMPRESSED, iteminfo.mime))
                 {
                     source = "CompressedPreview.qml"
-                }else if(Maui.FM.checkFileType(FB.FMList.FONT, iteminfo.mime))
+                }else if(FB.FM.checkFileType(FB.FMList.FONT, iteminfo.mime))
                 {
                     source = "FontPreviewer.qml"
                 }else
@@ -200,7 +202,7 @@ Maui.Page
                 infoModel.append({key: "Last Read", value: Qt.formatDateTime(new Date(model.lastread), "d MMM yyyy")})
                 infoModel.append({key: "Owner", value: iteminfo.owner})
                 infoModel.append({key: "Group", value: iteminfo.group})
-                infoModel.append({key: "Size", value: Maui.FM.formatSize(iteminfo.size)})
+                infoModel.append({key: "Size", value: Maui.Handy.formatSize(iteminfo.size)})
                 infoModel.append({key: "Symbolic Link", value: iteminfo.symlink})
                 infoModel.append({key: "Path", value: iteminfo.path})
                 infoModel.append({key: "Thumbnail", value: iteminfo.thumbnail})
@@ -210,7 +212,7 @@ Maui.Page
     }
 
     footerColumn: [
-        Maui.TagsBar
+        FB.TagsBar
         {
             id: _tagsBar
             width: parent.width

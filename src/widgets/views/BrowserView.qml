@@ -222,10 +222,10 @@ Maui.Page
         {
             for(var i in uris)
             {
-                if(!Maui.FM.fileExists(uris[i]))
+                if(!FB.FM.fileExists(uris[i]))
                     continue;
 
-                const item = Maui.FM.getFileInfo(uris[i])
+                const item = FB.FM.getFileInfo(uris[i])
                 _selectionBar.append(item.path, item)
             }
         }
@@ -362,7 +362,7 @@ Maui.Page
             const urls = drop.urls
             for(var i in urls)
             {
-                const item = Maui.FM.getFileInfo(urls[i])
+                const item = FB.FM.getFileInfo(urls[i])
                 if(item.isdir == "true")
                 {
                     control.openTab(urls[i])

@@ -11,8 +11,6 @@ import org.kde.mauikit 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.filebrowsing 1.0 as FB
 
-import TagsList 1.0
-
 ColumnLayout
 {
 

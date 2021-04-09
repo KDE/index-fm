@@ -1,8 +1,11 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
+
 import org.kde.mauikit 1.0 as Maui
 import org.kde.kirigami 2.7 as Kirigami
+
+import org.mauikit.filebrowsing 1.0 as FB
 import org.maui.index 1.0 as Index
 
 Maui.Page
@@ -29,7 +32,7 @@ Maui.Page
         text: i18n("Install")
         onClicked:
         {
-            Maui.FM.copy([currentUrl], Maui.FM.homePath()+"/.fonts")
+            FB.FM.copy([currentUrl], FB.FM.homePath()+"/.fonts")
         }
     }
 

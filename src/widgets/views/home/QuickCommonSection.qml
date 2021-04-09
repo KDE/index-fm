@@ -49,7 +49,7 @@ ColumnLayout
             {
                 id: _collectionFiles
                 url: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
-                filters: Maui.FM.nameFilters(Maui.FMList.IMAGE)
+                filters: FB.FM.nameFilters(FB.FMList.IMAGE)
 //                onUrlsChanged: _collage.urls = urls
             }
             Maui.GalleryRollItem

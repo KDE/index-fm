@@ -9,8 +9,8 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import org.kde.mauikit 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
+import org.mauikit.filebrowsing 1.3 as FB
 
-import TagsList 1.0
 
 ColumnLayout
 {
@@ -35,7 +35,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
-            list:  TagsList {urls: []; strict: false }
+            list:  FB.TagsListModel {urls: []; strict: false }
         }
 
         delegate: Item

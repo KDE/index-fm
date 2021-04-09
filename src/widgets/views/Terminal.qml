@@ -35,7 +35,7 @@ Maui.Terminal
 //        console.log("yea", path)
 //        root.currentBrowser.currentPath = path;
 
-//        if(Maui.FM.fileExists(path))
+//        if(FB.FM.fileExists(path))
 //        {
 //            root.currentBrowser.currentPath = path;
 //        }

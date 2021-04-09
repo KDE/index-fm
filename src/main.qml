@@ -12,6 +12,7 @@ import QtQml.Models 2.3
 
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.mauikit 1.3 as Maui
+
 import org.mauikit.filebrowsing 1.0 as FB
 
 import org.maui.index 1.0 as Index
@@ -55,7 +56,7 @@ Maui.ApplicationWindow
         property int listSize : 0 // s-m-x-xl
         property int gridSize : 1 // s-m-x-xl
 
-        property var lastSession : [[({'path': Maui.FM.homePath(), 'viewType': 1})]]
+        property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
     }
 
@@ -116,7 +117,7 @@ Maui.ApplicationWindow
             onTriggered: openConfigDialog()
         }]
 
-    Maui.TagsDialog
+    FB.TagsDialog
     {
         id: _tagsDialog
         taglist.strict: false
@@ -128,7 +129,7 @@ Maui.ApplicationWindow
         }
     }
 
-    Maui.OpenWithDialog {id: _openWithDialog}
+    Maui.OpenWithDialog { id: _openWithDialog }
 
     Component
     {
@@ -263,11 +264,11 @@ Maui.ApplicationWindow
 
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-            Layout.maximumWidth: 500
+//            Layout.maximumWidth: 500
             onPathChanged: currentBrowser.openFolder(path.trim())
             url: root.currentPath
 
-            onHomeClicked: currentBrowser.openFolder(Maui.FM.homePath())
+            onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
             onPlaceClicked: currentBrowser.openFolder(path)
             onPlaceRightClicked:
             {
@@ -303,7 +304,7 @@ Maui.ApplicationWindow
             visible: _stackView.depth === 2
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-            Layout.maximumWidth: 500
+//            Layout.maximumWidth: 500
             placeholderText: i18n("Search for files")
             onAccepted:
             {
@@ -375,7 +376,7 @@ Maui.ApplicationWindow
 
         }else
         {
-            root.openTab(Maui.FM.homePath())
+            root.openTab(FB.FM.homePath())
             currentBrowser.settings.viewType = settings.viewType
 
             //            if( settings.overview )

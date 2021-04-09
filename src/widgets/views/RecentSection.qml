@@ -67,7 +67,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
-                //                filters: Maui.FM.nameFilters(FB.FMList.AUDIO_TYPE)
+                //                filters: FB.FM.nameFilters(FB.FMList.AUDIO_TYPE)
             }
         }
 
@@ -140,7 +140,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.MusicLocation)
-                filters: Maui.FM.nameFilters(FB.FMList.AUDIO)
+                filters: FB.FM.nameFilters(FB.FMList.AUDIO)
             }
         }
 
@@ -197,7 +197,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
-                filters: Maui.FM.nameFilters(FB.FMList.IMAGE)
+                filters: FB.FM.nameFilters(FB.FMList.IMAGE)
             }
         }
 
@@ -251,7 +251,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: inx.cameraPath()
-                filters: Maui.FM.nameFilters(FB.FMList.IMAGE)
+                filters: FB.FM.nameFilters(FB.FMList.IMAGE)
             }
         }
 
@@ -304,7 +304,7 @@ ColumnLayout
             list: Index.RecentFiles
             {
                 url: inx.screenshotsPath()
-                filters: Maui.FM.nameFilters(FB.FMList.IMAGE)
+                filters: FB.FM.nameFilters(FB.FMList.IMAGE)
             }
         }
 

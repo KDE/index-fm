@@ -31,7 +31,6 @@ Item
     property alias title : _browser.title
 
     readonly property bool previewerVisible : _stackView.depth === 2
-    //    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
@@ -277,7 +276,7 @@ Item
 
                     MenuItem
                     {
-                        visible: Maui.FM.checkFileType(FB.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                        visible: FB.FM.checkFileType(FB.FMList.COMPRESSED, _browser.itemMenu.item.mime)
                         text: i18n("Extract")
                         icon.name: "archive-extract"
                         onTriggered:
@@ -492,7 +491,6 @@ Item
     function toogleTerminal()
     {
         terminalVisible = !terminalVisible
-        //        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
     }
 
 }

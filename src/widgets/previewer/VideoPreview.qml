@@ -88,7 +88,7 @@ Maui.Page
 
     footBar.rightContent: Label
     {
-        text: Maui.FM.formatTime((player.duration - player.position)/1000)
+        text: Maui.Handy.formatTime((player.duration - player.position)/1000)
     }
 
     footBar.middleContent : Slider
