@@ -11,7 +11,7 @@ import Qt.labs.settings 1.0
 import QtQml.Models 2.3
 
 import org.kde.kirigami 2.14 as Kirigami
-import org.kde.mauikit 1.3 as Maui
+import org.mauikit.controls 1.3 as Maui
 
 import org.mauikit.filebrowsing 1.0 as FB
 
@@ -129,7 +129,7 @@ Maui.ApplicationWindow
         }
     }
 
-    Maui.OpenWithDialog { id: _openWithDialog }
+    FB.OpenWithDialog { id: _openWithDialog }
 
     Component
     {

@@ -6,7 +6,7 @@
 #endif
 
 #include <QDebug>
-#include <MauiKit/fmstatic.h>
+#include <MauiKit/FileBrowsing/fmstatic.h>
 
 DirInfo::DirInfo(QObject *parent) : QObject(parent)
 {

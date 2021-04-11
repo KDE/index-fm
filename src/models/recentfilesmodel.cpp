@@ -1,7 +1,10 @@
 #include "recentfilesmodel.h"
+
 #include <MauiKit/FileBrowsing/fileloader.h>
 #include <MauiKit/FileBrowsing/fmstatic.h>
+
 #include <QFileSystemWatcher>
+#include <QDebug>
 
 RecentFilesModel::RecentFilesModel(QObject *parent) :
   MauiList(parent)
