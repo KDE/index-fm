@@ -290,7 +290,7 @@ Item
                     MenuItem
                     {
                         visible: true
-                        text: colorBar.currentColor
+                        text: i18n("Compress")
                         icon.name: "archive-insert"
                         onTriggered:
                         {
@@ -317,7 +317,11 @@ Item
                              restoreMode: Binding.RestoreBindingOrValue
                             }
 
-                            onFolderColorPicked: _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
+                            onFolderColorPicked:
+                            {
+                                 _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
+                                _browser.itemMenu.close()
+                            }
                         }
                     }
                 ]
