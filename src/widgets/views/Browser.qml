@@ -290,7 +290,7 @@ Item
                     MenuItem
                     {
                         visible: true
-                        text: i18n("Compress")
+                        text: colorBar.currentColor
                         icon.name: "archive-insert"
                         onTriggered:
                         {
@@ -306,12 +306,18 @@ Item
                     {
                         height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
                         visible: _browser.itemMenu.isDir
+
                         ColorsBar
                         {
                             id: colorBar
                             anchors.centerIn: parent
-                            size: Maui.Style.iconSizes.medium
-                            onColorPicked: _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
+
+                            Binding on folderColor {
+                             value: _browser.itemMenu.item.icon
+                             restoreMode: Binding.RestoreBindingOrValue
+                            }
+
+                            onFolderColorPicked: _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
                         }
                     }
                 ]

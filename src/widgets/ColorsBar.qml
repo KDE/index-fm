@@ -1,157 +1,44 @@
 import QtQuick 2.14
+
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.mauikit.controls 1.0 as Maui
+
+import org.mauikit.controls 1.3 as Maui
 import org.kde.kirigami 2.7 as Kirigami
 
-/**
- * ColorsBar
- * A global sidebar for the application window that can be collapsed.
- *
- *
- *
- *
- *
- *
- */
-Row
+Maui.ColorsRow
 {
     id: control
-    anchors.verticalCenter: parent.verticalCenter
-    spacing: Maui.Style.space.medium
 
-    /**
-      * currentColor : string
-      */
-    property string currentColor
+    colors: ["#f21b51", "#f9a32b", "#3eb881", "#b2b9bd", "#474747"]
 
-    /**
-      * size : int
-      */
-    property int size : Maui.Style.iconSizes.medium
+    signal folderColorPicked(string color)
 
-    /**
-      * colorPicked :
-      */
-    signal colorPicked(string color)
+    property string folderColor : "folder"
 
-    Rectangle
+    currentColor : switch(control.folderColor)
+               {
+               case "folder-red": "#f21b51"; break;
+               case "folder-orange": "#f9a32b"; break;
+               case "folder-green": "#3eb881"; break;
+               case "folder-grey": "#b2b9bd"; break;
+               case "folder-black": "#474747"; break;
+               default : return control.Kirigami.Theme.backgroundColor;
+               }
+
+    onColorPicked:
     {
-        color:"#f21b51"
-        anchors.verticalCenter: parent.verticalCenter
-        height: size
-        width: height
-        radius: Maui.Style.radiusV
-        border.color: Qt.darker(color, 1.7)
-
-        MouseArea
+        switch(color)
         {
-            anchors.fill: parent
-            onClicked:
-            {
-                currentColor = parent.color
-                colorPicked("folder-red")
-            }
+        case "#f21b51" : folderColor = "folder-red"; break;
+        case "#f9a32b" : folderColor = "folder-orange"; break;
+        case "#3eb881" : folderColor = "folder-green"; break;
+        case "#b2b9bd" : folderColor = "folder-grey"; break;
+        case "#474747" : folderColor = "folder-black"; break;
+        default : folderColor = "folder";
         }
+
+        control.folderColorPicked(folderColor)
     }
 
-    Rectangle
-    {
-        color:"#f9a32b"
-        anchors.verticalCenter: parent.verticalCenter
-        height: size
-        width: height
-        radius: Maui.Style.radiusV
-        border.color: Qt.darker(color, 1.7)
-
-        MouseArea
-        {
-            anchors.fill: parent
-            onClicked:
-            {
-                currentColor = parent.color
-                colorPicked("folder-orange")
-            }
-        }
-    }
-
-    Rectangle
-    {
-        color:"#3eb881"
-        anchors.verticalCenter: parent.verticalCenter
-        height: size
-        width: height
-        radius: Maui.Style.radiusV
-        border.color: Qt.darker(color, 1.7)
-
-        MouseArea
-        {
-            anchors.fill: parent
-            onClicked:
-            {
-                currentColor = parent.color
-                colorPicked("folder-green")
-            }
-        }
-    }
-
-    Rectangle
-    {
-        color:"#b2b9bd"
-        anchors.verticalCenter: parent.verticalCenter
-        height: size
-        width: height
-        radius: Maui.Style.radiusV
-        border.color: Qt.darker(color, 1.7)
-
-        MouseArea
-        {
-            anchors.fill: parent
-            onClicked:
-            {
-                currentColor = parent.color
-                colorPicked("folder-grey")
-            }
-        }
-    }
-
-    Rectangle
-    {
-        color:"#474747"
-        anchors.verticalCenter: parent.verticalCenter
-        height: size
-        width: height
-        radius: Maui.Style.radiusV
-        border.color: Qt.darker(color, 1.7)
-
-        MouseArea
-        {
-            anchors.fill: parent
-            onClicked:
-            {
-                currentColor = parent.color
-                colorPicked("folder-black")
-            }
-        }
-    }
-
-    Kirigami.Icon
-    {
-        anchors.verticalCenter: parent.verticalCenter
-        height: size
-        width: height
-
-        source: "edit-clear"
-        color: Kirigami.Theme.textColor
-
-        MouseArea
-        {
-            anchors.fill: parent
-            onClicked:
-            {
-                currentColor = ""
-                colorPicked("folder")
-            }
-        }
-    }
 }
