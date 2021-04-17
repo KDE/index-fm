@@ -14,14 +14,22 @@ set(index_SRCS
     qml.qrc
     )
 
+if (EXISTS /usr/lib/qt/qml/QMLTermWidget OR EXISTS /lib/qt/qml/QMLTermWidget)
+    message("QMLTermWidget found")
+    set(QMLTermWidget_FOUND true)
+else()
+    message("QMLTermWidget NOT found")
+    set(QMLTermWidget_FOUND false)
+    endif()
+
+if(QMLTermWidget_FOUND)
+    add_definitions(-DEMBEDDED_TERMINAL)
+endif()
+
 if(ANDROID)
     add_library(index SHARED ${index_SRCS})
 else()
     add_executable(index ${index_SRCS})
-endif()
-
-if(EMBEDDED_TERMINAL)
-    target_compile_definitions(index PUBLIC EMBEDDED_TERMINAL)
 endif()
 
 if (ANDROID)
