@@ -172,7 +172,7 @@ Maui.Page
             {
                 text: i18n("Next")
                 icon.name: "go-next"
-                onTriggered: currentBrowser.goNext()
+                onTriggered: currentBrowser.goForward()
             }
         },
 

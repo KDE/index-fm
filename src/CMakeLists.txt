@@ -20,7 +20,7 @@ if (EXISTS /usr/lib/qt/qml/QMLTermWidget OR EXISTS /lib/qt/qml/QMLTermWidget)
 else()
     message("QMLTermWidget NOT found")
     set(QMLTermWidget_FOUND false)
-    endif()
+endif()
 
 if(QMLTermWidget_FOUND)
     add_definitions(-DEMBEDDED_TERMINAL)
