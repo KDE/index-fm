@@ -14,16 +14,18 @@ set(index_SRCS
     qml.qrc
     )
 
-if (EXISTS /usr/lib/qt/qml/QMLTermWidget OR EXISTS /lib/qt/qml/QMLTermWidget)
-    message("QMLTermWidget found")
-    set(QMLTermWidget_FOUND true)
-else()
-    message("QMLTermWidget NOT found")
-    set(QMLTermWidget_FOUND false)
-endif()
+if(UNIX AND NOT APPLE AND NOT ANDROID)
+    if (EXISTS /usr/lib/qt/qml/QMLTermWidget OR EXISTS /lib/qt/qml/QMLTermWidget)
+        message("QMLTermWidget found")
+        set(QMLTermWidget_FOUND true)
+    else()
+        message("QMLTermWidget NOT found")
+        set(QMLTermWidget_FOUND false)
+    endif()
 
-if(QMLTermWidget_FOUND)
-    add_definitions(-DEMBEDDED_TERMINAL)
+    if(QMLTermWidget_FOUND)
+        add_definitions(-DEMBEDDED_TERMINAL)
+    endif()
 endif()
 
 if(ANDROID)

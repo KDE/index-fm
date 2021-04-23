@@ -155,8 +155,16 @@ Maui.Page
 
     headBar.leftContent: [
 
+        ToolButton
+        {
+            visible: !root.isWide
+            icon.name: "go-previous"
+            onClicked : currentBrowser.goBack()
+        },
+
         Maui.ToolActions
         {
+            visible: root.isWide
             expanded: true
             autoExclusive: false
             checkable: false
