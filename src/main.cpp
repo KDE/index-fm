@@ -13,8 +13,8 @@
 #include "index.h"
 
 #ifdef Q_OS_ANDROID
-#include "mauiandroid.h"
 #include <QGuiApplication>
+#include <MauiKit/Core/mauiandroid.h>
 #else
 #include <QApplication>
 #endif
