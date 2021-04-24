@@ -16,6 +16,5 @@
         <file>widgets/previewer/CompressedPreview.qml</file>
         <file>widgets/previewer/FontPreviewer.qml</file>
         <file>widgets/ColorsBar.qml</file>
-        <file>qtquickcontrols2.conf</file>
     </qresource>
 </RCC>

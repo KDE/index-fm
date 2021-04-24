@@ -224,7 +224,6 @@ Maui.ApplicationWindow
                 {
                     _compressDialog.close()
                 }
-
             }
         }
     }
@@ -264,7 +263,7 @@ Maui.ApplicationWindow
 
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-//            Layout.maximumWidth: 500
+            //            Layout.maximumWidth: 500
             onPathChanged: currentBrowser.openFolder(path.trim())
             url: root.currentPath
 
@@ -304,7 +303,7 @@ Maui.ApplicationWindow
             visible: _stackView.depth === 2
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-//            Layout.maximumWidth: 500
+            //            Layout.maximumWidth: 500
             placeholderText: i18n("Search for files")
             onAccepted:
             {
@@ -352,6 +351,12 @@ Maui.ApplicationWindow
 
     Component.onCompleted:
     {
+        if(Maui.Handy.isAndroid)
+        {
+            Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, false)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, false)
+        }
+
         const tabs = settings.lastSession
 
         if(settings.restoreSession && tabs.length)
