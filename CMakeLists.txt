@@ -46,7 +46,7 @@ if(ANDROID)
     message("CURRENT DIR" ${CMAKE_CURRENT_SOURCE_DIR})
     set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
     set(ANDROID_ABIS "armeabi-v7a")
-else()
+elseif(UNIX)
     find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Config KIO)
 endif()
 
