@@ -50,7 +50,7 @@ Maui.ApplicationWindow
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool supportSplit : !Kirigami.Settings.isMobile
-        property bool overview : false
+        property bool overviewStart : false
 
         property int viewType : FB.FMList.LIST_VIEW
         property int listSize : 0 // s-m-x-xl
@@ -384,8 +384,10 @@ Maui.ApplicationWindow
             root.openTab(FB.FM.homePath())
             currentBrowser.settings.viewType = settings.viewType
 
-            //            if( settings.overview )
-            //                _stackView.push(_homeViewComponent)
+            if( settings.overviewStart )
+            {
+                _stackView.push(_homeViewComponent)
+            }
         }
 
     }

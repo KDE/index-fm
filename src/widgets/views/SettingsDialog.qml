@@ -345,19 +345,9 @@ Maui.SettingsDialog
             Switch
             {
                 Layout.fillHeight: true
-                onClicked: settings.overview = !settings.overview
+                checked:  sortSettings.overviewStart
+                onToggled: sortSettings.overviewStart = !sortSettings.overviewStart
             }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Dark Mode")
-            enabled: false
-
-            Switch
-            {
-                Layout.fillHeight: true
-            }
-        }
+        }        
     }
 }
