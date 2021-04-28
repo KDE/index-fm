@@ -8,15 +8,18 @@ import QtQuick 2.14
 import QtQml 2.12
 import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.7 as Kirigami
-import org.kde.mauikit 1.0 as Maui
 import QtQml.Models 2.3
+
+import org.kde.kirigami 2.7 as Kirigami
+import org.mauikit.controls 1.0 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
 
 Item
 {
     id: control
-    height: _browserView.browserList.height
-    width: _browserView.browserList.width
+    height: ListView.view.height
+    width:  ListView.view.width
+    focus: true
 
     property url path
 
@@ -27,7 +30,7 @@ Item
     readonly property alias model : splitObjectModel
     readonly property string title : count === 2 ?  model.get(0).browser.title + "  -  " + model.get(1).browser.title : browser.title
 
-    readonly property Maui.FileBrowser browser : currentItem.browser
+    readonly property FB.FileBrowser browser : currentItem.browser
 
     ObjectModel { id: splitObjectModel }
 
@@ -143,7 +146,7 @@ Item
 
         if (component.status === Component.Ready)
         {
-            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': viewTypeGroup.currentIndex});
+            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': settings.viewType});
             splitObjectModel.append(object)
             _splitView.insertItem(splitObjectModel.count, object) // duplicating object insertion due to bug on android not picking the repeater
             _splitView.currentIndex = splitObjectModel.count - 1

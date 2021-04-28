@@ -10,7 +10,12 @@
 #endif
 
 #include <KArchive/kar.h>
-#include <qdiriterator.h>
+
+#include <QDirIterator>
+#include <QDebug>
+
+#include <MauiKit/FileBrowsing/fmstatic.h>
+
 
 CompressedFile::CompressedFile(QObject *parent)
     : QObject(parent)
@@ -43,7 +48,7 @@ void CompressedFileModel::setUrl(const QUrl &url)
         for (auto entry : kArch->directory()->entries()) {
             auto e = kArch->directory()->entry(entry);
 
-            this->m_list << FMH::MODEL{{FMH::MODEL_KEY::LABEL, e->name()}, {FMH::MODEL_KEY::ICON, e->isDirectory() ? "folder" : FMH::getIconName(e->name())}, {FMH::MODEL_KEY::DATE, e->date().toString()}};
+            this->m_list << FMH::MODEL{{FMH::MODEL_KEY::LABEL, e->name()}, {FMH::MODEL_KEY::ICON, e->isDirectory() ? "folder" : FMStatic::getIconName(e->name())}, {FMH::MODEL_KEY::DATE, e->date().toString()}};
         }
     }
 
@@ -318,13 +323,13 @@ KArchive *CompressedFile::getKArchiveObject(const QUrl &url)
     /*
      * This checks depends on type COMPRESSED_MIMETYPES in file fmh.h
      */
-    qDebug() << "@gadominguez File: fmstatic.cpp Func: getKArchiveObject MimeType: " << FMH::getMime(url);
+    qDebug() << "@gadominguez File: fmstatic.cpp Func: getKArchiveObject MimeType: " << FMStatic::getMime(url);
 
-    if (FMH::getMime(url).contains("application/x-tar") || FMH::getMime(url).contains("application/x-compressed-tar")) {
+    if (FMStatic::getMime(url).contains("application/x-tar") || FMStatic::getMime(url).contains("application/x-compressed-tar")) {
         kArch = new KTar(url.toString().split(QString("file://"))[1]);
-    } else if (FMH::getMime(url).contains("application/zip")) {
+    } else if (FMStatic::getMime(url).contains("application/zip")) {
         kArch = new KZip(url.toString().split(QString("file://"))[1]);
-    } else if (FMH::getMime(url).contains("application/x-7z-compressed")) {
+    } else if (FMStatic::getMime(url).contains("application/x-7z-compressed")) {
 #ifdef K7ZIP_H
         kArch = new K7Zip(url.toString().split(QString("file://"))[1]);
 #endif

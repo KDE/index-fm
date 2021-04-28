@@ -7,11 +7,13 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.2 as Maui
+
+import org.mauikit.controls 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
+import org.mauikit.filebrowsing 1.0 as FB
+
 import org.maui.index 1.0 as Index
 
-import TagsList 1.0
 import "home"
 
 Maui.Page
@@ -20,7 +22,7 @@ Maui.Page
 
     headBar.visible: false
 
-    Menu
+    Maui.ContextualMenu
     {
         id: _fileItemMenu
         property url url
@@ -46,7 +48,7 @@ Maui.Page
         MenuItem
         {
             text: i18n("Open folder")
-            onTriggered: openTab(Maui.FM.fileDir(_fileItemMenu.url))
+            onTriggered: openTab(FB.FM.fileDir(_fileItemMenu.url))
         }
     }
 
@@ -68,7 +70,6 @@ Maui.Page
             width: parent.width
             spacing: 0
 
-
             Maui.AlternateListItem
             {
                 Layout.fillWidth: true
@@ -83,14 +84,13 @@ Maui.Page
                     onItemClicked:
                     {
                         _fileItemMenu.url = url
-                        _fileItemMenu.popup()
+                        _fileItemMenu.open()
                     }
                 }
             }
 
             Maui.AlternateListItem
             {
-                alt: true
                 Layout.fillWidth: true
                 implicitHeight: _recentSection.implicitHeight + Maui.Style.space.huge
 
@@ -103,7 +103,7 @@ Maui.Page
                     onItemClicked:
                     {
                         _fileItemMenu.url = url
-                        _fileItemMenu.popup()
+                        _fileItemMenu.open()
                     }
                 }
             }
@@ -118,6 +118,11 @@ Maui.Page
                     id: _sysInfoSection
                     width: parent.width
                     anchors.centerIn: parent
+
+                    onItemClicked:
+                    {
+                        openTab(url)
+                    }
                 }
             }
 
@@ -131,13 +136,11 @@ Maui.Page
                     id: _tagsSection
                     width: parent.width
                     anchors.centerIn: parent
-
                 }
             }
 
             Maui.AlternateListItem
             {
-                alt: true
                 lastOne: true
                 Layout.fillWidth: true
                 implicitHeight: _disksSection.implicitHeight + Maui.Style.space.huge
@@ -147,7 +150,6 @@ Maui.Page
                     id: _disksSection
                     width: parent.width
                     anchors.centerIn: parent
-
                 }
             }
         }

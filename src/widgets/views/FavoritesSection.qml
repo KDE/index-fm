@@ -7,10 +7,10 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.mauikit 1.3 as Maui
+import org.mauikit.controls 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
 
-import TagsList 1.0
+import org.mauikit.filebrowsing 1.0 as FB
 
 ColumnLayout
 {
@@ -44,7 +44,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
-            list: Maui.FMList
+            list: FB.FMList
             {
                 path: "tags:///fav"
             }
@@ -78,7 +78,7 @@ ColumnLayout
                     font.pointSize: Maui.Style.fontSizes.tiny
                     horizontalAlignment: Qt.AlignHCenter
                     Layout.fillWidth: true
-                    text: model.mime ? (model.mime === "inode/directory" ? (model.count ? model.count + i18n(" items") : "") : Maui.FM.formatSize(model.size)) : ""
+                    text: model.mime ? (model.mime === "inode/directory" ? (model.count ? model.count + i18n(" items") : "") : Maui.Handy.formatSize(model.size)) : ""
                 }
             }
         }

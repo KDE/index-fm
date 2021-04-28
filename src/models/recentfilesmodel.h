@@ -1,7 +1,7 @@
 #ifndef RECENTFILESMODEL_H
 #define RECENTFILESMODEL_H
 
-#include <MauiKit/mauilist.h>
+#include <MauiKit/Core/mauilist.h>
 
 #include <QObject>
 

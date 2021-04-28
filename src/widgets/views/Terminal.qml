@@ -5,7 +5,7 @@
 
 
 import QtQuick 2.0
-import org.kde.mauikit 1.0 as Maui
+import org.mauikit.controls 1.0 as Maui
 
 Maui.Terminal
 {
@@ -35,7 +35,7 @@ Maui.Terminal
 //        console.log("yea", path)
 //        root.currentBrowser.currentPath = path;
 
-//        if(Maui.FM.fileExists(path))
+//        if(FB.FM.fileExists(path))
 //        {
 //            root.currentBrowser.currentPath = path;
 //        }

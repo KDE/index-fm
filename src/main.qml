@@ -11,7 +11,9 @@ import Qt.labs.settings 1.0
 import QtQml.Models 2.3
 
 import org.kde.kirigami 2.14 as Kirigami
-import org.kde.mauikit 1.3 as Maui
+import org.mauikit.controls 1.3 as Maui
+
+import org.mauikit.filebrowsing 1.0 as FB
 
 import org.maui.index 1.0 as Index
 
@@ -26,7 +28,7 @@ Maui.ApplicationWindow
     altHeader: Kirigami.Settings.isMobile
 
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
-    readonly property Maui.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
+    readonly property FB.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
@@ -34,7 +36,6 @@ Maui.ApplicationWindow
     property alias tagsDialog : _tagsDialog
     property alias currentTabIndex : _browserView.currentTabIndex
     property alias currentTab : _browserView.currentTab
-    property alias viewTypeGroup : _browserView.viewTypeGroup
     property alias appSettings : settings
 
     property bool selectionMode: false
@@ -49,13 +50,13 @@ Maui.ApplicationWindow
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool supportSplit : !Kirigami.Settings.isMobile
-        property bool overview : false
+        property bool overviewStart : false
 
-        property int viewType : Maui.FMList.LIST_VIEW
+        property int viewType : FB.FMList.LIST_VIEW
         property int listSize : 0 // s-m-x-xl
         property int gridSize : 1 // s-m-x-xl
 
-        property var lastSession : [[({'path': Maui.FM.homePath(), 'viewType': 1})]]
+        property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
     }
 
@@ -64,7 +65,7 @@ Maui.ApplicationWindow
         id: sortSettings
         category: "Sorting"
         property bool foldersFirst: true
-        property int sortBy:  Maui.FMList.MODIFIED
+        property int sortBy:  FB.FMList.MODIFIED
         property int sortOrder : Qt.AscendingOrder
         property bool group : false
         property bool globalSorting: Kirigami.Settings.isMobile
@@ -80,9 +81,9 @@ Maui.ApplicationWindow
         close.accepted = !settings.restoreSession
         var tabs = []
 
-        for(var i = 0; i <tabsObjectModel.count; i ++)
+        for(var i = 0; i < _browserView.browserList.count; i ++)
         {
-            const tab = tabsObjectModel.get(i)
+            const tab = _browserView.browserList.contentModel.get(i)
             var tabPaths = []
 
             for(var j = 0; j < tab.model.count; j++)
@@ -116,10 +117,11 @@ Maui.ApplicationWindow
             onTriggered: openConfigDialog()
         }]
 
-    Maui.TagsDialog
+    FB.TagsDialog
     {
         id: _tagsDialog
         taglist.strict: false
+        composerList.strict: false
 
         onTagsReady:
         {
@@ -127,7 +129,7 @@ Maui.ApplicationWindow
         }
     }
 
-    Maui.OpenWithDialog {id: _openWithDialog}
+    FB.OpenWithDialog { id: _openWithDialog }
 
     Component
     {
@@ -142,10 +144,12 @@ Maui.ApplicationWindow
         Maui.Dialog
         {
             id: _extractDialog
+
             title: i18n("Extract")
             message: i18n("Extract the content of the compressed file into a new or existing subdirectory or inside the current directory.")
             entryField: true
             page.margins: Maui.Style.space.big
+            closeButtonVisible: false
 
             onAccepted:
             {
@@ -162,6 +166,8 @@ Maui.ApplicationWindow
         Maui.FileListingDialog
         {
             id: _compressDialog
+
+            closeButtonVisible: false
 
             title: i18np("Compress %1 file", "Compress %1 files", urls.length)
             message: i18n("Compress selected files into a new file.")
@@ -218,11 +224,15 @@ Maui.ApplicationWindow
                 {
                     _compressDialog.close()
                 }
-
             }
         }
     }
 
+    Component
+    {
+        id: _browserComponent
+        BrowserLayout {}
+    }
 
     Index.CompressedFile
     {
@@ -238,6 +248,13 @@ Maui.ApplicationWindow
         onClicked: _stackView.pop()
     }
 
+    headBar.rightContent: ToolButton
+    {
+        icon.name: "edit-find"
+        checked: currentBrowser.headBar.visible
+        onClicked: currentBrowser.toggleSearchBar()
+    }
+
     headBar.middleContent: [
         Maui.PathBar
         {
@@ -246,19 +263,19 @@ Maui.ApplicationWindow
 
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-            Layout.maximumWidth: 500
+            //            Layout.maximumWidth: 500
             onPathChanged: currentBrowser.openFolder(path.trim())
             url: root.currentPath
 
-            onHomeClicked: currentBrowser.openFolder(Maui.FM.homePath())
+            onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
             onPlaceClicked: currentBrowser.openFolder(path)
             onPlaceRightClicked:
             {
                 _pathBarmenu.path = path
-                _pathBarmenu.popup()
+                _pathBarmenu.open()
             }
 
-            Menu
+            Maui.ContextualMenu
             {
                 id: _pathBarmenu
                 property url path
@@ -286,7 +303,7 @@ Maui.ApplicationWindow
             visible: _stackView.depth === 2
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-            Layout.maximumWidth: 500
+            //            Layout.maximumWidth: 500
             placeholderText: i18n("Search for files")
             onAccepted:
             {
@@ -306,8 +323,6 @@ Maui.ApplicationWindow
         id: placesSidebar
     }
 
-    ObjectModel { id: tabsObjectModel }
-
     StackView
     {
         id: _stackView
@@ -318,11 +333,11 @@ Maui.ApplicationWindow
         }
     }
 
-        HomeView
-        {
-            id : _homeViewComponent
-            visible: StackView.status === StackView.Active
-        }
+    HomeView
+    {
+        id : _homeViewComponent
+        visible: StackView.status === StackView.Active
+    }
 
     Connections
     {
@@ -336,6 +351,12 @@ Maui.ApplicationWindow
 
     Component.onCompleted:
     {
+        if(Maui.Handy.isAndroid)
+        {
+            Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, false)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, false)
+        }
+
         const tabs = settings.lastSession
 
         if(settings.restoreSession && tabs.length)
@@ -360,11 +381,13 @@ Maui.ApplicationWindow
 
         }else
         {
-            root.openTab(Maui.FM.homePath())
+            root.openTab(FB.FM.homePath())
             currentBrowser.settings.viewType = settings.viewType
 
-//            if( settings.overview )
-//                _stackView.push(_homeViewComponent)
+            if( settings.overviewStart )
+            {
+                _stackView.push(_homeViewComponent)
+            }
         }
 
     }
@@ -376,7 +399,7 @@ Maui.ApplicationWindow
     //             else
     //                 Maui.FM.saveSettings("IconSize", thumbnailsSize, "SETTINGS")
     //
-    //                 if(browserView.viewType === Maui.FMList.ICON_VIEW)
+    //                 if(browserView.viewType === FB.FMList.ICON_VIEW)
     //                     browserView.currentView.adaptGrid()
     //     }
 
@@ -410,9 +433,7 @@ Maui.ApplicationWindow
 
     function closeTab(index)
     {
-        var item = tabsObjectModel.get(index)
-        item.destroy()
-        tabsObjectModel.remove(index)
+        _browserView.browserList.closeTab(index)
     }
 
     function openTab(path)
@@ -422,14 +443,8 @@ Maui.ApplicationWindow
             if(_stackView.depth === 2)
                 _stackView.pop()
 
-            const component = Qt.createComponent("qrc:/widgets/views/BrowserLayout.qml");
-
-            if (component.status === Component.Ready)
-            {
-                const object = component.createObject(tabsObjectModel, {'path': path});
-                tabsObjectModel.append(object)
-                currentTabIndex = tabsObjectModel.count - 1
-            }
+            _browserView.browserList.addTab(_browserComponent, {'path': path})
+            _browserView.browserList.currentIndex = _browserView.browserList.count -1
         }
     }
 

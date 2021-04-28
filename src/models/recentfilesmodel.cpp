@@ -1,6 +1,10 @@
 #include "recentfilesmodel.h"
-#include <MauiKit/fileloader.h>
+
+#include <MauiKit/FileBrowsing/fileloader.h>
+#include <MauiKit/FileBrowsing/fmstatic.h>
+
 #include <QFileSystemWatcher>
+#include <QDebug>
 
 RecentFilesModel::RecentFilesModel(QObject *parent) :
   MauiList(parent)
@@ -70,7 +74,7 @@ void RecentFilesModel::setList()
         break;
       qDebug() << "RECENT:" << url.filePath () << dir.path ();
       m_urls << QUrl::fromLocalFile (url.filePath ()).toString();
-      m_list << FMH::getFileInfoModel (QUrl::fromLocalFile (url.filePath ()));
+      m_list << FMStatic::getFileInfoModel (QUrl::fromLocalFile (url.filePath ()));
       i++;
     }
   emit postListChanged ();

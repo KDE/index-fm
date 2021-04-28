@@ -14,7 +14,8 @@
 #include <QFileInfo>
 #include <QUrl>
 
-#include <MauiKit/fmh.h>
+#include <MauiKit/Core/fmh.h>
+#include <MauiKit/FileBrowsing/fmstatic.h>
 
 Index::Index(QObject *parent)
     : QObject(parent)
@@ -56,7 +57,7 @@ void Index::openTerminal(const QUrl &url)
 
 QUrl Index::cameraPath()
 {
-    const static auto paths = QStringList{FMH::HomePath + "/DCIM/Camera", FMH::HomePath + "/Camera"};
+    const static auto paths = QStringList{FMStatic::HomePath + "/DCIM/Camera", FMStatic::HomePath + "/Camera"};
 
     for (const auto &path : paths) {
         if (FMH::fileExists(path))
@@ -68,7 +69,7 @@ QUrl Index::cameraPath()
 
 QUrl Index::screenshotsPath()
 {
-    const static auto paths = QStringList{FMH::HomePath + "/DCIM/Screenshots", FMH::HomePath + "/Screenshots"};
+    const static auto paths = QStringList{FMStatic::HomePath + "/DCIM/Screenshots", FMStatic::HomePath + "/Screenshots"};
 
     for (const auto &path : paths) {
         if (FMH::fileExists(path))

@@ -14,14 +14,24 @@ set(index_SRCS
     qml.qrc
     )
 
+if(UNIX AND NOT APPLE AND NOT ANDROID)
+    if (EXISTS /usr/lib/qt/qml/QMLTermWidget OR EXISTS /lib/qt/qml/QMLTermWidget)
+        message("QMLTermWidget found")
+        set(QMLTermWidget_FOUND true)
+    else()
+        message("QMLTermWidget NOT found")
+        set(QMLTermWidget_FOUND false)
+    endif()
+
+    if(QMLTermWidget_FOUND)
+        add_definitions(-DEMBEDDED_TERMINAL)
+    endif()
+endif()
+
 if(ANDROID)
     add_library(index SHARED ${index_SRCS})
 else()
     add_executable(index ${index_SRCS})
-endif()
-
-if(EMBEDDED_TERMINAL)
-    target_compile_definitions(index PUBLIC EMBEDDED_TERMINAL)
 endif()
 
 if (ANDROID)
@@ -34,7 +44,7 @@ endif()
 target_compile_definitions(index
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
-target_link_libraries(index MauiKit Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Svg KF5::Archive KF5::CoreAddons KF5::I18n)
+target_link_libraries(index MauiKit MauiKit::FileBrowsing Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Svg KF5::Archive KF5::CoreAddons KF5::I18n)
 
 #TODO: port to ecm_install_icons()
 if(UNIX AND NOT APPLE AND NOT ANDROID)

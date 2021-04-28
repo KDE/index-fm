@@ -11,7 +11,9 @@ import QtQml.Models 2.3
 import QtQml 2.14
 
 import org.kde.kirigami 2.8 as Kirigami
-import org.kde.mauikit 1.2 as Maui
+import org.mauikit.controls 1.2 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
+
 import org.maui.index 1.0 as Index
 
 import "../previewer"
@@ -29,7 +31,6 @@ Item
     property alias title : _browser.title
 
     readonly property bool previewerVisible : _stackView.depth === 2
-    //    property bool terminalVisible : Maui.FM.loadSettings("TERMINAL", "EXTENSIONS", false) == "true"
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
@@ -122,12 +123,11 @@ Item
             SplitView.fillWidth: true
             SplitView.fillHeight: true
 
-            initialItem: Maui.FileBrowser
+            initialItem: FB.FileBrowser
             {
                 id: _browser
 
-                headerBackground.color: "transparent"
-
+                altHeader: _browserView.altHeader
                 selectionBar: root.selectionBar
                 gridItemSize: switch(appSettings.gridSize)
                               {
@@ -214,7 +214,7 @@ Item
                         icon.name: "document-share"
                         onTriggered:
                         {
-                            shareFiles([_browser.itemMenu.item.path])
+                            shareFiles(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
                         }
                     },
 
@@ -225,7 +225,7 @@ Item
                         icon.name: "tag"
                         onTriggered:
                         {
-                            tagsDialog.composerList.urls = [_browser.itemMenu.item.path]
+                            tagsDialog.composerList.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
                             tagsDialog.open()
                         }
                     },
@@ -267,7 +267,7 @@ Item
                         text: i18n("Preview")
                         icon.name: "view-preview"
                         onTriggered:
-                        {                           
+                        {
                             _stackView.push(_previewerComponent, StackView.Immediate)
                         }
                     },
@@ -276,7 +276,7 @@ Item
 
                     MenuItem
                     {
-                        visible: Maui.FM.checkFileType(Maui.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                        visible: FB.FM.checkFileType(FB.FMList.COMPRESSED, _browser.itemMenu.item.mime)
                         text: i18n("Extract")
                         icon.name: "archive-extract"
                         onTriggered:
@@ -295,7 +295,7 @@ Item
                         onTriggered:
                         {
                             dialogLoader.sourceComponent= _compressDialogComponent
-                            dialog.urls = currentBrowser.filterSelection(currentPath, currentBrowser.itemMenu.item.path)
+                            dialog.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
                             dialog.open()
                         }
                     },
@@ -306,12 +306,22 @@ Item
                     {
                         height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
                         visible: _browser.itemMenu.isDir
+
                         ColorsBar
                         {
                             id: colorBar
                             anchors.centerIn: parent
-                            size: Maui.Style.iconSizes.medium
-                            onColorPicked: _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
+
+                            Binding on folderColor {
+                             value: _browser.itemMenu.item.icon
+                             restoreMode: Binding.RestoreBindingOrValue
+                            }
+
+                            onFolderColorPicked:
+                            {
+                                 _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
+                                _browser.itemMenu.close()
+                            }
                         }
                     }
                 ]
@@ -356,7 +366,7 @@ Item
                     // Shortcut for closing tab
                     if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
                     {
-                        if(tabsObjectModel.count > 1)
+                        if(_browserView.browserList.count > 1)
                             root.closeTab(tabsBar.currentIndex)
                     }
 
@@ -455,7 +465,11 @@ Item
         enabled: _splitView.currentIndex !== _index
         propagateComposedEvents: false
         preventStealing: true
-        onClicked: _splitView.currentIndex = _index
+        onClicked:
+        {
+            _splitView.currentIndex = _index
+            browser.forceActiveFocus()
+        }
     }
 
     MenuItem
@@ -466,7 +480,7 @@ Item
         icon.name: "document-open"
         onTriggered:
         {
-            openWith([_browser.itemMenu.item.path])
+            openWith(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
         }
     }
 
@@ -487,7 +501,6 @@ Item
     function toogleTerminal()
     {
         terminalVisible = !terminalVisible
-        //        Maui.FM.saveSettings("TERMINAL", terminalVisible, "EXTENSIONS")
     }
 
 }
