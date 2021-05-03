@@ -11,7 +11,8 @@ import QtQuick.Layouts 1.3
 import QtQml.Models 2.3
 
 import org.kde.kirigami 2.7 as Kirigami
-import org.mauikit.controls 1.0 as Maui
+
+import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
 
 Item
@@ -29,6 +30,9 @@ Item
     readonly property alias currentItem : _splitView.currentItem
     readonly property alias model : splitObjectModel
     readonly property string title : count === 2 ?  model.get(0).browser.title + "  -  " + model.get(1).browser.title : browser.title
+
+    Maui.TabViewInfo.tabTitle: title
+    Maui.TabViewInfo.tabToolTipText:  browser.currentPath
 
     readonly property FB.FileBrowser browser : currentItem.browser
 
