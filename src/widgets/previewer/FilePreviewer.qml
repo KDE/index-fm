@@ -53,7 +53,7 @@ Maui.Dialog
 
         interactive: Kirigami.Settings.hasTransientTouchInput
         boundsBehavior: Flickable.StopAtBounds
-        boundsMovement :Flickable.StopAtBounds
+        boundsMovement: Flickable.StopAtBounds
 
         highlightFollowsCurrentItem: true
         highlightMoveDuration: 0

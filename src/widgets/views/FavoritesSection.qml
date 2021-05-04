@@ -74,7 +74,7 @@ ColumnLayout
                 onClicked:
                 {
                     _favsGrid.currentIndex = index
-                    control.itemClicked(model.url)
+                    openPreview(listModel, currentIndex)
                 }
 
                 template.content: Label

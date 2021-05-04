@@ -80,16 +80,6 @@ Maui.Page
                     id: _favSection
                     width: parent.width
                     anchors.centerIn: parent
-
-                    onItemClicked:
-                    {
-                        openPreview(listModel, currentIndex)
-
-//                        _fileItemMenu.url = url
-//                        _fileItemMenu.open()
-
-                    }                    
-
                 }
             }
 
@@ -103,12 +93,6 @@ Maui.Page
                     id:_recentSection
                     width: parent.width
                     anchors.centerIn: parent
-
-                    onItemClicked:
-                    {
-                        _fileItemMenu.url = url
-                        _fileItemMenu.open()
-                    }
                 }
             }
 

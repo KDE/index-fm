@@ -345,8 +345,8 @@ Maui.SettingsDialog
             Switch
             {
                 Layout.fillHeight: true
-                checked:  sortSettings.overviewStart
-                onToggled: sortSettings.overviewStart = !sortSettings.overviewStart
+                checked:  appSettings.overviewStart
+                onToggled: appSettings.overviewStart = !appSettings.overviewStart
             }
         }        
     }
