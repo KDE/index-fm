@@ -230,6 +230,16 @@ Maui.ApplicationWindow
 
     Component
     {
+        id: _previewerComponent
+
+        FilePreviewer
+        {
+
+        }
+    }
+
+    Component
+    {
         id: _browserComponent
         BrowserLayout {}
     }
@@ -483,5 +493,13 @@ Maui.ApplicationWindow
         }
 
         Maui.Platform.shareFiles(urls)
+    }
+
+    function openPreview(model, index)
+    {
+       dialogLoader.sourceComponent = _previewerComponent
+        dialog.model = model
+        dialog.currentIndex = index
+        dialog.open()
     }
 }

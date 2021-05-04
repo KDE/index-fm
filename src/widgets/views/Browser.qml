@@ -30,7 +30,6 @@ Item
     property alias settings : _browser.settings
     property alias title : _browser.title
 
-    readonly property bool previewerVisible : _stackView.depth === 2
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
@@ -48,40 +47,12 @@ Item
     onCurrentPathChanged:
     {
         syncTerminal(currentBrowser.currentPath)
-
-        if(previewerVisible)
-            _stackView.pop()
-    }
-
-    Component
-    {
-        id: _previewerComponent
-
-        FilePreviewer
-        {
-            model: _browser.currentFMModel
-            //            currentIndex: _browser.currentIndex
-            headBar.farLeftContent: ToolButton
-            {
-                icon.name: "go-previous"
-                onClicked:
-                {
-                    _stackView.pop(StackView.Immediate)
-                }
-            }
-
-            Component.onCompleted:
-            {
-                listView.forceActiveFocus()
-                listView.currentIndex = Qt.binding(function() { return _browser.currentIndex })
-            }
-        }
     }
 
     SplitView
     {
         anchors.fill: parent
-        anchors.bottomMargin: selectionBar.visible && (terminalVisible | _stackView.depth == 2) ? selectionBar.height : 0
+        anchors.bottomMargin: selectionBar.visible && (terminalVisible) ? selectionBar.height : 0
         spacing: 0
         orientation: Qt.Vertical
 
@@ -116,17 +87,11 @@ Item
             }
         }
 
-        StackView
-        {
-            id: _stackView
-
-            SplitView.fillWidth: true
-            SplitView.fillHeight: true
-
-            initialItem: FB.FileBrowser
+                 FB.FileBrowser
             {
                 id: _browser
-
+                SplitView.fillWidth: true
+                SplitView.fillHeight: true
                 altHeader: _browserView.altHeader
                 selectionBar: root.selectionBar
                 gridItemSize: switch(appSettings.gridSize)
@@ -268,7 +233,7 @@ Item
                         icon.name: "view-preview"
                         onTriggered:
                         {
-                            _stackView.push(_previewerComponent, StackView.Immediate)
+                            openPreview(_browser.currentFMModel, _browser.currentIndex)
                         }
                     },
 
@@ -392,7 +357,7 @@ Item
 
                     if(event.key === Qt.Key_Space)
                     {
-                        _stackView.push(_previewerComponent, StackView.Immediate)
+                        openPreview(_browser.currentFMModel, _browser.currentIndex)
                     }
 
                     if(event.button === Qt.BackButton)
@@ -416,7 +381,7 @@ Item
                     {
                         if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                         {
-                            _stackView.push(_previewerComponent, StackView.Immediate)
+                            openPreview(_browser.currentFMModel, _browser.currentIndex)
                             return
                         }
 
@@ -432,7 +397,7 @@ Item
                     {
                         if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                         {
-                            _stackView.push(_previewerComponent)
+                            openPreview(_browser.currentFMModel, _browser.currentIndex)
                             return
                         }
 
@@ -440,7 +405,7 @@ Item
                     }
                 }
             }
-        }
+
 
         Loader
         {

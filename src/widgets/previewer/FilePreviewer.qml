@@ -8,7 +8,7 @@ import org.mauikit.controls 1.2 as Maui
 
 import org.mauikit.filebrowsing 1.0 as FB
 
-Maui.Page
+Maui.Dialog
 {
     id: control
 
@@ -26,7 +26,12 @@ Maui.Page
 
     title: _listView.currentItem.title
 
-    headerBackground.color: "transparent"
+    hint: 1
+    maxWidth: 800
+    maxHeight: 1000
+    defaultButtons: false
+
+//    page.headerBackground.color: "transparent"
     headBar.rightContent: ToolButton
     {
         icon.name: "documentinfo"
@@ -35,10 +40,11 @@ Maui.Page
         onClicked: control.showInfo = !control.showInfo
     }
 
-    ListView
+    stack: ListView
     {
         id: _listView
-        anchors.fill: parent
+        Layout.fillHeight: true
+        Layout.fillWidth: true
         orientation: ListView.Horizontal
         currentIndex: -1
         clip: true
@@ -211,7 +217,7 @@ Maui.Page
         }
     }
 
-    footerColumn: [
+    page.footerColumn: [
         FB.TagsBar
         {
             id: _tagsBar
