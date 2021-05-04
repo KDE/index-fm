@@ -83,9 +83,13 @@ Maui.Page
 
                     onItemClicked:
                     {
-                        _fileItemMenu.url = url
-                        _fileItemMenu.open()
-                    }
+                        openPreview(listModel, currentIndex)
+
+//                        _fileItemMenu.url = url
+//                        _fileItemMenu.open()
+
+                    }                    
+
                 }
             }
 

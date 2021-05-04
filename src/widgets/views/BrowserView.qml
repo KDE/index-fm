@@ -32,7 +32,6 @@ Maui.Page
     floatingFooter: true
     floatingHeader: false
 
-    headBar.visible: !currentTab.currentItem.previewerVisible
     headBar.rightContent:[
 
         ToolButton

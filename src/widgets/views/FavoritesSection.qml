@@ -15,6 +15,8 @@ import org.mauikit.filebrowsing 1.0 as FB
 ColumnLayout
 {
     id: control
+    property alias listModel : _model
+    property alias currentIndex : _favsGrid.currentIndex
 
     signal itemClicked(url url)
 
@@ -44,6 +46,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
+            id: _model
             list: FB.FMList
             {
                 path: "tags:///fav"
@@ -68,7 +71,11 @@ ColumnLayout
                 iconSizeHint: height * 0.5
                 checkable: selectionMode
 
-                onClicked: control.itemClicked(model.url)
+                onClicked:
+                {
+                    _favsGrid.currentIndex = index
+                    control.itemClicked(model.url)
+                }
 
                 template.content: Label
                 {
