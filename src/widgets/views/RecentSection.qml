@@ -64,6 +64,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
+            id: _recentDownloadsModel
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
@@ -92,7 +93,8 @@ ColumnLayout
 
                 onClicked:
                 {
-                    control.itemClicked(model.url)
+                    _recentGrid.currentIndex = index
+                    openPreview(_recentDownloadsModel, index)
                 }
 
                 template.content: Label
@@ -137,6 +139,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
+            id: _recentMusicModel
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.MusicLocation)
@@ -160,7 +163,11 @@ ColumnLayout
                 player.source: model.url
                 checkable: selectionMode
 
-                onClicked: control.itemClicked(model.url)
+                onClicked:
+                {
+                    _recentGridAudio.currentIndex = index
+                    openPreview(_recentMusicModel, index)
+                }
             }
         }
     }
@@ -194,6 +201,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
+            id: _recentPicturesModel
             list: Index.RecentFiles
             {
                 url: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
@@ -214,7 +222,11 @@ ColumnLayout
                 anchors.margins: Maui.Style.space.medium
                 imageSource: model.thumbnail
                 //                checkable: selectionMode
-                onClicked: control.itemClicked(model.url)
+                onClicked:
+                {
+                    _recentGridPictures.currentIndex = index
+                    openPreview(_recentPicturesModel, index)
+                }
             }
         }
     }
@@ -248,6 +260,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
+            id: _recentCameraModel
             list: Index.RecentFiles
             {
                 url: inx.cameraPath()
@@ -267,7 +280,11 @@ ColumnLayout
                 anchors.fill: parent
                 anchors.margins: Maui.Style.space.medium
                 imageSource: model.thumbnail
-                onClicked: control.itemClicked(model.url)
+                onClicked:
+                {
+                    _recentCamera.currentIndex = index
+                    openPreview(_recentCameraModel, index)
+                }
             }
         }
     }
@@ -301,6 +318,7 @@ ColumnLayout
 
         model: Maui.BaseModel
         {
+            id: _recentScreenshotsModel
             list: Index.RecentFiles
             {
                 url: inx.screenshotsPath()
@@ -320,7 +338,11 @@ ColumnLayout
                 anchors.fill: parent
                 anchors.margins: Maui.Style.space.medium
                 imageSource: model.thumbnail
-                onClicked: control.itemClicked(model.url)
+                onClicked:
+                {
+                    _recentScreenshots.currentIndex = index
+                    openPreview(_recentScreenshotsModel, index)
+                }
             }
         }
     }
