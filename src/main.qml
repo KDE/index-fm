@@ -249,11 +249,6 @@ Maui.ApplicationWindow
         id: _compressedFile
     }
 
-    headBar.farRightContent: Maui.WindowControls
-    {
-        side: Qt.RightEdge
-    }
-
     headBar.leftContent: ToolButton
     {
         icon.name: "go-previous"
