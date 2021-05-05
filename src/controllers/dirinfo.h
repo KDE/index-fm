@@ -11,17 +11,17 @@ class DirInfo : public QObject
 
     Q_OBJECT
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
-    Q_PROPERTY(quint64 size READ size NOTIFY sizeChanged CONSTANT)
-    Q_PROPERTY(QString sizeString READ sizeString NOTIFY sizeChanged CONSTANT)
+    Q_PROPERTY(quint64 size READ size NOTIFY sizeChanged FINAL)
+    Q_PROPERTY(QString sizeString READ sizeString NOTIFY sizeChanged FINAL)
 
-    Q_PROPERTY(quint64 filesCount READ filesCount NOTIFY filesCountChanged CONSTANT)
-    Q_PROPERTY(quint64 dirCount READ dirCount NOTIFY dirsCountChanged CONSTANT)
+    Q_PROPERTY(quint64 filesCount READ filesCount NOTIFY filesCountChanged FINAL)
+    Q_PROPERTY(quint64 dirCount READ dirCount NOTIFY dirsCountChanged FINAL)
 
-    Q_PROPERTY(quint64 avaliableSpace READ avaliableSpace NOTIFY avaliableSpaceChanged CONSTANT)
-    Q_PROPERTY(quint64 totalSpace READ totalSpace NOTIFY totalSpaceChanged CONSTANT)
+    Q_PROPERTY(quint64 avaliableSpace READ avaliableSpace NOTIFY avaliableSpaceChanged FINAL)
+    Q_PROPERTY(quint64 totalSpace READ totalSpace NOTIFY totalSpaceChanged FINAL)
 
-    Q_PROPERTY(QString avaliableSpaceString READ avaliableSpaceString NOTIFY avaliableSpaceChanged CONSTANT)
-    Q_PROPERTY(QString totalSpaceString READ totalSpaceString NOTIFY totalSpaceChanged CONSTANT)
+    Q_PROPERTY(QString avaliableSpaceString READ avaliableSpaceString NOTIFY avaliableSpaceChanged FINAL)
+    Q_PROPERTY(QString totalSpaceString READ totalSpaceString NOTIFY totalSpaceChanged FINAL)
 
 public:
     explicit DirInfo(QObject *parent = nullptr);
