@@ -234,6 +234,10 @@ Maui.ApplicationWindow
 
         FilePreviewer
         {
+            onClosed:
+            {
+                dialogLoader.sourceComponent = null
+            }
 
         }
     }
