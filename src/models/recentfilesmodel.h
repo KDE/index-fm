@@ -16,7 +16,7 @@ class RecentFilesModel : public MauiList
     Q_OBJECT
     Q_PROPERTY(QUrl url WRITE setUrl READ url NOTIFY urlChanged)
     Q_PROPERTY(QStringList filters WRITE setFilters READ filters NOTIFY filtersChanged)
-    Q_PROPERTY(QStringList urls READ urls NOTIFY urlsChanged CONSTANT)
+    Q_PROPERTY(QStringList urls READ urls NOTIFY urlsChanged FINAL)
 
 public:
     RecentFilesModel(QObject * parent = nullptr);
