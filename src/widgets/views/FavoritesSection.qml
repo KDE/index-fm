@@ -77,16 +77,16 @@ ColumnLayout
                     openPreview(listModel, currentIndex)
                 }
 
-                template.content: Label
-                {
-                    visible: parent.height > 100
-                    opacity: 0.5
-                    color: Kirigami.Theme.textColor
-                    font.pointSize: Maui.Style.fontSizes.tiny
-                    horizontalAlignment: Qt.AlignHCenter
-                    Layout.fillWidth: true
-                    text: model.mime ? (model.mime === "inode/directory" ? (model.count ? model.count + i18n(" items") : "") : Maui.Handy.formatSize(model.size)) : ""
-                }
+//                template.content: Label
+//                {
+//                    visible: parent.height > 100
+//                    opacity: 0.5
+//                    color: Kirigami.Theme.textColor
+//                    font.pointSize: Maui.Style.fontSizes.tiny
+//                    horizontalAlignment: Qt.AlignHCenter
+//                    Layout.fillWidth: true
+//                    text: model.mime ? (model.mime === "inode/directory" ? (model.count ? model.count + i18n(" items") : "") : Maui.Handy.formatSize(model.size)) : ""
+//                }
             }
         }
     }

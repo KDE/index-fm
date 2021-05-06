@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
+
 import org.kde.kirigami 2.14 as Kirigami
 
 import org.maui.index 1.0 as Index
@@ -97,16 +98,16 @@ ColumnLayout
                     openPreview(_recentDownloadsModel, index)
                 }
 
-                template.content: Label
-                {
-                    visible: parent.height > 100
-                    opacity: 0.5
-                    color: Kirigami.Theme.textColor
-                    font.pointSize: Maui.Style.fontSizes.tiny
-                    horizontalAlignment: Qt.AlignHCenter
-                    Layout.fillWidth: true
-                    text: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")
-                }
+//                template.content: Label
+//                {
+//                    visible: parent.height > 100
+//                    opacity: 0.5
+//                    color: Kirigami.Theme.textColor
+//                    font.pointSize: Maui.Style.fontSizes.tiny
+//                    horizontalAlignment: Qt.AlignHCenter
+//                    Layout.fillWidth: true
+//                    text: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")
+//                }
             }
         }
     }
