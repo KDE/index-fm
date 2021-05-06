@@ -128,6 +128,13 @@ Maui.Page
         },
 
         ToolButton
+           {
+               icon.name: "edit-find"
+               checked: currentBrowser.headBar.visible
+               onClicked: currentBrowser.toggleSearchBar()
+           },
+
+        ToolButton
         {
             id: _optionsButton
             icon.name: "overflow-menu"

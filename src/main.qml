@@ -262,13 +262,6 @@ Maui.ApplicationWindow
         onClicked: _stackView.pop()
     }
 
-    headBar.rightContent: ToolButton
-    {
-        icon.name: "edit-find"
-        checked: currentBrowser.headBar.visible
-        onClicked: currentBrowser.toggleSearchBar()
-    }
-
     headBar.middleContent: [
         Maui.PathBar
         {
