@@ -87,324 +87,324 @@ Item
             }
         }
 
-                 FB.FileBrowser
-            {
-                id: _browser
-                SplitView.fillWidth: true
-                SplitView.fillHeight: true
-                altHeader: _browserView.altHeader
-                selectionBar: root.selectionBar
-                gridItemSize: switch(appSettings.gridSize)
-                              {
-                              case 0: return Math.floor(48 * 1.5);
-                              case 1: return Math.floor(64 * 1.5);
-                              case 2: return Math.floor(80 * 1.5);
-                              case 3: return Math.floor(124 * 1.5);
-                              case 4: return Math.floor(140 * 1.5);
-                              default: return Math.floor(80 * 1.5);
-                              }
+        FB.FileBrowser
+        {
+            id: _browser
+            SplitView.fillWidth: true
+            SplitView.fillHeight: true
+            altHeader: _browserView.altHeader
+            selectionBar: root.selectionBar
+            gridItemSize: switch(appSettings.gridSize)
+                          {
+                          case 0: return Math.floor(48 * 1.5);
+                          case 1: return Math.floor(64 * 1.5);
+                          case 2: return Math.floor(80 * 1.5);
+                          case 3: return Math.floor(124 * 1.5);
+                          case 4: return Math.floor(140 * 1.5);
+                          default: return Math.floor(80 * 1.5);
+                          }
 
-                listItemSize:   switch(appSettings.listSize)
-                                {
-                                case 0: return 32;
-                                case 1: return 48;
-                                case 2: return 64;
-                                case 3: return 96;
-                                case 4: return 120;
-                                default: return 96;
-                                }
-
-                selectionMode: root.selectionMode
-                onSelectionModeChanged:
-                {
-                    root.selectionMode = selectionMode
-                    selectionMode = Qt.binding(function() { return root.selectionMode })
-                } // rebind this property in case filebrowser breaks it
-
-                settings.showHiddenFiles: appSettings.showHiddenFiles
-                settings.showThumbnails: appSettings.showThumbnails
-                settings.foldersFirst: sortSettings.globalSorting ? sortSettings.foldersFirst : true
-                settings.sortBy: sortSettings.sortBy
-                settings.group: sortSettings.group
-
-                Binding
-                {
-                    target: _browser.settings
-                    property: "sortBy"
-                    when: sortSettings.globalSorting
-                    value: sortSettings.sortBy
-                    restoreMode: Binding.RestoreBindingOrValue
-                }
-
-                Binding
-                {
-                    target: _browser.settings
-                    property: "group"
-                    when: sortSettings.globalSorting
-                    value: sortSettings.group
-                    restoreMode: Binding.RestoreBindingOrValue
-                }
-
-                Rectangle
-                {
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    height: 2
-                    opacity: 1
-                    color: Kirigami.Theme.highlightColor
-                    visible: _splitView.currentIndex === _index && _splitView.count === 2
-                }
-
-                browserMenu.contentData : [
-                    MenuItem
-                    {
-                        visible: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                        text: i18n("Open terminal here")
-                        id: openTerminal
-                        icon.name: "utilities-terminal"
-                        onTriggered:
-                        {
-                            inx.openTerminal(currentPath)
-                        }
-                    }
-                ]
-
-                itemMenu.contentData : [
-
-                    MenuItem
-                    {
-                        visible: !control.isExec
-                        text: i18n("Share")
-                        icon.name: "document-share"
-                        onTriggered:
-                        {
-                            shareFiles(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
-                        }
-                    },
-
-                    MenuItem
-                    {
-                        visible: !control.isExec && tagsDialog
-                        text: i18n("Tags")
-                        icon.name: "tag"
-                        onTriggered:
-                        {
-                            tagsDialog.composerList.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
-                            tagsDialog.open()
-                        }
-                    },
-
-                    MenuSeparator {visible: _browser.itemMenu.isDir},
-
-                    MenuItem
-                    {
-                        visible: _browser.itemMenu.isDir
-                        text: i18n("Open in new tab")
-                        icon.name: "tab-new"
-                        onTriggered: root.openTab(_browser.itemMenu.item.path)
-                    },
-
-                    MenuItem
-                    {
-                        visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && appSettings.supportSplit
-                        text: i18n("Open in split view")
-                        icon.name: "view-split-left-right"
-                        onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
-                    },
-
-                    MenuItem
-                    {
-                        visible: _browser.itemMenu.isDir && Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                        text: i18n("Open terminal here")
-                        icon.name: "utilities-terminal"
-                        onTriggered:
-                        {
-                            inx.openTerminal(_browser.itemMenu.item.path)
-                        }
-                    },
-
-                    MenuSeparator {},
-
-                    MenuItem
-                    {
-                        visible: !_browser.itemMenu.isExec
-                        text: i18n("Preview")
-                        icon.name: "view-preview"
-                        onTriggered:
-                        {
-                            openPreview(_browser.currentFMModel, _browser.currentIndex)
-                        }
-                    },
-
-                    MenuSeparator {},
-
-                    MenuItem
-                    {
-                        visible: FB.FM.checkFileType(FB.FMList.COMPRESSED, _browser.itemMenu.item.mime)
-                        text: i18n("Extract")
-                        icon.name: "archive-extract"
-                        onTriggered:
-                        {
-                            _compressedFile.url = _browser.itemMenu.item.path
-                            dialogLoader.sourceComponent= _extractDialogComponent
-                            dialog.open()
-                        }
-                    },
-
-                    MenuItem
-                    {
-                        visible: true
-                        text: i18n("Compress")
-                        icon.name: "archive-insert"
-                        onTriggered:
-                        {
-                            dialogLoader.sourceComponent= _compressDialogComponent
-                            dialog.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
-                            dialog.open()
-                        }
-                    },
-
-                    MenuSeparator{ visible: colorBar.visible },
-
-                    MenuItem
-                    {
-                        height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
-                        visible: _browser.itemMenu.isDir
-
-                        ColorsBar
-                        {
-                            id: colorBar
-                            anchors.centerIn: parent
-
-                            Binding on folderColor {
-                             value: _browser.itemMenu.item.icon
-                             restoreMode: Binding.RestoreBindingOrValue
-                            }
-
-                            onFolderColorPicked:
+            listItemSize:   switch(appSettings.listSize)
                             {
-                                 _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
-                                _browser.itemMenu.close()
+                            case 0: return 32;
+                            case 1: return 48;
+                            case 2: return 64;
+                            case 3: return 96;
+                            case 4: return 120;
+                            default: return 96;
                             }
-                        }
-                    }
-                ]
 
-                Connections
+            selectionMode: root.selectionMode
+            onSelectionModeChanged:
+            {
+                root.selectionMode = selectionMode
+                selectionMode = Qt.binding(function() { return root.selectionMode })
+            } // rebind this property in case filebrowser breaks it
+
+            settings.showHiddenFiles: appSettings.showHiddenFiles
+            settings.showThumbnails: appSettings.showThumbnails
+            settings.foldersFirst: sortSettings.globalSorting ? sortSettings.foldersFirst : true
+            settings.sortBy: sortSettings.sortBy
+            settings.group: sortSettings.group
+
+            Binding
+            {
+                target: _browser.settings
+                property: "sortBy"
+                when: sortSettings.globalSorting
+                value: sortSettings.sortBy
+                restoreMode: Binding.RestoreBindingOrValue
+            }
+
+            Binding
+            {
+                target: _browser.settings
+                property: "group"
+                when: sortSettings.globalSorting
+                value: sortSettings.group
+                restoreMode: Binding.RestoreBindingOrValue
+            }
+
+            Rectangle
+            {
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: 2
+                opacity: 1
+                color: Kirigami.Theme.highlightColor
+                visible: _splitView.currentIndex === _index && _splitView.count === 2
+            }
+
+            browserMenu.contentData : [
+                MenuItem
                 {
-                    target: _browser.dropArea
-                    ignoreUnknownSignals: true
-                    function onEntered()
+                    visible: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                    text: i18n("Open terminal here")
+                    id: openTerminal
+                    icon.name: "utilities-terminal"
+                    onTriggered:
                     {
-                        _splitView.currentIndex = control._index
+                        inx.openTerminal(currentPath)
                     }
                 }
+            ]
 
-                MouseArea
+            itemMenu.contentData : [
+
+                MenuItem
                 {
-                    anchors.fill: parent
-                    propagateComposedEvents: true
-                    acceptedButtons: Qt.BackButton | Qt.ForwardButton
-                    //        hoverEnabled: true
-                    //        onEntered: _splitView.currentIndex = control.index
-                    onPressed:
+                    visible: !control.isExec
+                    text: i18n("Share")
+                    icon.name: "document-share"
+                    onTriggered:
                     {
-                        _splitView.currentIndex = control._index
-                        mouse.accepted = false
-                        _browser.keyPress(mouse);
+                        shareFiles(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
                     }
-                }
+                },
 
-                onKeyPress:
+                MenuItem
                 {
-                    if (event.key == Qt.Key_Forward)
+                    visible: !control.isExec && tagsDialog
+                    text: i18n("Tags")
+                    icon.name: "tag"
+                    onTriggered:
                     {
-                        _browser.goForward()
+                        tagsDialog.composerList.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
+                        tagsDialog.open()
                     }
+                },
 
-                    if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+                MenuSeparator {visible: _browser.itemMenu.isDir},
+
+                MenuItem
+                {
+                    visible: _browser.itemMenu.isDir
+                    text: i18n("Open in new tab")
+                    icon.name: "tab-new"
+                    onTriggered: root.openTab(_browser.itemMenu.item.path)
+                },
+
+                MenuItem
+                {
+                    visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && appSettings.supportSplit
+                    text: i18n("Open in split view")
+                    icon.name: "view-split-left-right"
+                    onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
+                },
+
+                MenuItem
+                {
+                    visible: _browser.itemMenu.isDir && Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                    text: i18n("Open terminal here")
+                    icon.name: "utilities-terminal"
+                    onTriggered:
                     {
-                        openTab(control.currentPath)
+                        inx.openTerminal(_browser.itemMenu.item.path)
                     }
+                },
 
-                    // Shortcut for closing tab
-                    if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
-                    {
-                        if(_browserView.browserList.count > 1)
-                            root.closeTab(tabsBar.currentIndex)
-                    }
+                MenuSeparator {},
 
-                    if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
-                    {
-                        _pathBar.showEntryBar()
-                    }
-
-                    if(event.key === Qt.Key_F4)
-                    {
-                        toogleTerminal()
-                    }
-
-                    if(event.key === Qt.Key_F3)
-                    {
-                        toogleSplitView()
-                    }
-
-                    if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
-                    {
-                        newItem()
-                    }
-
-                    if(event.key === Qt.Key_Space)
+                MenuItem
+                {
+                    visible: !_browser.itemMenu.isExec
+                    text: i18n("Preview")
+                    icon.name: "view-preview"
+                    onTriggered:
                     {
                         openPreview(_browser.currentFMModel, _browser.currentIndex)
                     }
+                },
 
-                    if(event.button === Qt.BackButton)
-                    {
-                        _browser.goBack()
-                    }
+                MenuSeparator {},
 
-                    //@gadominguez At this moment this function doesnt work because goForward not exist
-                    if(event.button === Qt.ForwardButton)
-                    {
-                        _browser.goForward()
-                    }
-
-                }
-
-                onItemClicked:
+                MenuItem
                 {
-                    const item = currentFMModel.get(index)
-
-                    if(appSettings.singleClick)
+                    visible: FB.FM.checkFileType(FB.FMList.COMPRESSED, _browser.itemMenu.item.mime)
+                    text: i18n("Extract")
+                    icon.name: "archive-extract"
+                    onTriggered:
                     {
-                        if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
-                        {
-                            openPreview(_browser.currentFMModel, _browser.currentIndex)
-                            return
+                        _compressedFile.url = _browser.itemMenu.item.path
+                        dialogLoader.sourceComponent= _extractDialogComponent
+                        dialog.open()
+                    }
+                },
+
+                MenuItem
+                {
+                    visible: true
+                    text: i18n("Compress")
+                    icon.name: "archive-insert"
+                    onTriggered:
+                    {
+                        dialogLoader.sourceComponent= _compressDialogComponent
+                        dialog.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
+                        dialog.open()
+                    }
+                },
+
+                MenuSeparator{ visible: colorBar.visible },
+
+                MenuItem
+                {
+                    height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
+                    visible: _browser.itemMenu.isDir
+
+                    ColorsBar
+                    {
+                        id: colorBar
+                        anchors.centerIn: parent
+
+                        Binding on folderColor {
+                            value: _browser.itemMenu.item.icon
+                            restoreMode: Binding.RestoreBindingOrValue
                         }
 
-                        openItem(index)
+                        onFolderColorPicked:
+                        {
+                            _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
+                            _browser.itemMenu.close()
+                        }
                     }
                 }
+            ]
 
-                onItemDoubleClicked:
+            Connections
+            {
+                target: _browser.dropArea
+                ignoreUnknownSignals: true
+                function onEntered()
                 {
-                    const item = currentFMModel.get(index)
-
-                    if(!appSettings.singleClick)
-                    {
-                        if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
-                        {
-                            openPreview(_browser.currentFMModel, _browser.currentIndex)
-                            return
-                        }
-
-                        openItem(index)
-                    }
+                    _splitView.currentIndex = control._index
                 }
             }
+
+            MouseArea
+            {
+                anchors.fill: parent
+                propagateComposedEvents: true
+                acceptedButtons: Qt.BackButton | Qt.ForwardButton
+                //        hoverEnabled: true
+                //        onEntered: _splitView.currentIndex = control.index
+                onPressed:
+                {
+                    _splitView.currentIndex = control._index
+                    mouse.accepted = false
+                    _browser.keyPress(mouse);
+                }
+            }
+
+            onKeyPress:
+            {
+                if (event.key == Qt.Key_Forward)
+                {
+                    _browser.goForward()
+                }
+
+                if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+                {
+                    openTab(control.currentPath)
+                }
+
+                // Shortcut for closing tab
+                if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
+                {
+                    if(_browserView.browserList.count > 1)
+                        root.closeTab(tabsBar.currentIndex)
+                }
+
+                if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+                {
+                    _pathBar.showEntryBar()
+                }
+
+                if(event.key === Qt.Key_F4)
+                {
+                    toogleTerminal()
+                }
+
+                if(event.key === Qt.Key_F3)
+                {
+                    toogleSplitView()
+                }
+
+                if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
+                {
+                    newItem()
+                }
+
+                if(event.key === Qt.Key_Space)
+                {
+                    openPreview(_browser.currentFMModel, _browser.currentIndex)
+                }
+
+                if(event.button === Qt.BackButton)
+                {
+                    _browser.goBack()
+                }
+
+                //@gadominguez At this moment this function doesnt work because goForward not exist
+                if(event.button === Qt.ForwardButton)
+                {
+                    _browser.goForward()
+                }
+
+            }
+
+            onItemClicked:
+            {
+                const item = currentFMModel.get(index)
+
+                if(appSettings.singleClick)
+                {
+                    if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
+                    {
+                        openPreview(_browser.currentFMModel, _browser.currentIndex)
+                        return
+                    }
+
+                    openItem(index)
+                }
+            }
+
+            onItemDoubleClicked:
+            {
+                const item = currentFMModel.get(index)
+
+                if(!appSettings.singleClick)
+                {
+                    if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
+                    {
+                        openPreview(_browser.currentFMModel, _browser.currentIndex)
+                        return
+                    }
+
+                    openItem(index)
+                }
+            }
+        }
 
 
         Loader

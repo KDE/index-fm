@@ -193,18 +193,10 @@ Maui.Page
         ToolButton
         {
 
-            icon.name: settings.viewType === FB.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
-//            Binding on currentIndex
-//            {
-//                value: currentBrowser ? currentBrowser.settings.viewType : -1
-//                //                    restoreMode: Binding.RestoreBinding
-//                delayed: true
-//            }
-
-            //                    display: ToolButton.TextBesideIcon
+            icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
             onClicked:
             {
-                var type = settings.viewType === FB.FMList.LIST_VIEW ? FB.FMList.ICON_VIEW : FB.FMList.LIST_VIEW
+                var type = currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? FB.FMList.ICON_VIEW : FB.FMList.LIST_VIEW
                 if(currentBrowser)
                 {
                     currentBrowser.settings.viewType = type
