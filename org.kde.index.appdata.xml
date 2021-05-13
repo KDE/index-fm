@@ -123,8 +123,12 @@
   <provides>
     <binary>index</binary>
   </provides>
+  <content_rating type="oars-1.0" />
   <project_group>KDE</project_group>
   <releases>
+    <release version="1.2.2" date="2021-05-11">
+      <url>https://nxos.org/maui/maui-1-2-2-release/</url>
+    </release>
     <release version="1.1.1" date="2020-05-17"/>
   </releases>
 </component>
