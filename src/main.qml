@@ -65,9 +65,9 @@ Maui.ApplicationWindow
         id: sortSettings
         category: "Sorting"
         property bool foldersFirst: true
-        property int sortBy:  FB.FMList.MODIFIED
-        property int sortOrder : Qt.AscendingOrder
-        property bool group : false
+        property int sortBy: FB.FMList.MODIFIED
+        property int sortOrder: Qt.AscendingOrder
+        property bool group: false
         property bool perFolderSort : true
     }
 

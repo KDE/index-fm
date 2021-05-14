@@ -21,6 +21,8 @@ Maui.Page
     id: control
 
     headBar.visible: false
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
 
     Maui.ContextualMenu
     {
@@ -61,6 +63,9 @@ Maui.Page
         leftPadding: padding
         rightPadding: padding
         topPadding: padding
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
 
         property int itemWidth : Math.min(140, _layout.width * 0.3)
 

@@ -114,7 +114,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
     qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");
     qmlRegisterType<DirInfo>(INDEX_URI, 1, 0, "DirInfo");
-    qmlRegisterType<FolderConfig>(INDEX_URI, 1, 0, "FolderConfig");
+//    qmlRegisterType<FolderConfig>(INDEX_URI, 1, 0, "FolderConfig");
 
     engine.load(url);
 

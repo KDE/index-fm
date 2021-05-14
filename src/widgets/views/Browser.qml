@@ -29,10 +29,12 @@ Item
     property alias currentPath: _browser.currentPath
     property alias settings : _browser.settings
     property alias title : _browser.title
-    property alias dirConf : _dirConf
+//    property alias dirConf : _dirConf
 
-    property alias sortBy : _dirConf.sortKey
-    property alias terminalVisible : _dirConf.terminalVisible
+//    property alias sortBy : _dirConf.sortKey
+//    property alias viewType : _dirConf.viewType
+
+    property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
     SplitView.fillHeight: true
@@ -126,15 +128,15 @@ Item
             settings.showHiddenFiles: appSettings.showHiddenFiles
             settings.showThumbnails: appSettings.showThumbnails
             settings.foldersFirst: true
-            settings.sortBy: _dirConf.sortKey
+            settings.sortBy: sortSettings.sortBy
             settings.group: sortSettings.group
+//            settings.viewType: _dirConf.viewType
 
-            Index.FolderConfig
-            {
-                id:  _dirConf
-                path: control.currentPath
-                sortKey: settings.sortBy
-            }
+//            Index.FolderConfig
+//            {
+//                id:  _dirConf
+//                path: control.currentPath
+//            }
 
             Rectangle
             {
@@ -404,7 +406,7 @@ Item
             SplitView.preferredHeight: 200
             SplitView.maximumHeight: parent.height * 0.5
             SplitView.minimumHeight : 100
-            visible: active && _dirConf.terminalVisible
+            visible: active && control.terminalVisible
 
             active: inx.supportsEmbededTerminal()
 

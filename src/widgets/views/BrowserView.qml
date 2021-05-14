@@ -62,7 +62,7 @@ Maui.Page
                 text: i18n("Type")
                 checked: currentBrowser.currentFMList.sortBy === FB.FMList.MIME
                 checkable: true
-                onTriggered: currentTab.currentItem.sortBy = FB.FMList.MIME
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MIME
                 autoExclusive: true
             }
 
@@ -71,7 +71,7 @@ Maui.Page
                 text: i18n("Date")
                 checked:currentBrowser.currentFMList.sortBy === FB.FMList.DATE
                 checkable: true
-                onTriggered: currentTab.currentItem.sortBy = FB.FMList.DATE
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.DATE
                 autoExclusive: true
             }
 
@@ -80,7 +80,7 @@ Maui.Page
                 text: i18n("Modified")
                 checkable: true
                 checked: currentBrowser.currentFMList.sortBy === FB.FMList.MODIFIED
-                onTriggered: currentTab.currentItem.sortBy = FB.FMList.MODIFIED
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MODIFIED
                 autoExclusive: true
             }
 
@@ -89,7 +89,7 @@ Maui.Page
                 text: i18n("Size")
                 checkable: true
                 checked: currentBrowser.currentFMList.sortBy === FB.FMList.SIZE
-                onTriggered:  currentTab.currentItem.sortBy = FB.FMList.SIZE
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.SIZE
                 autoExclusive: true
             }
 
@@ -98,7 +98,7 @@ Maui.Page
                 text: i18n("Name")
                 checkable: true
                 checked: currentBrowser.currentFMList.sortBy === FB.FMList.LABEL
-                onTriggered:  currentTab.currentItem.sortBy = FB.FMList.LABEL
+                onTriggered: currentBrowser.settings.sortBy = FB.FMList.LABEL
                 autoExclusive: true
             }
 
@@ -342,7 +342,7 @@ Maui.Page
     Maui.TabView
     {
         id: _browserList
-        anchors.fill: parent       
+        anchors.fill: parent
 
         onNewTabClicked: openTab(currentPath)
 
