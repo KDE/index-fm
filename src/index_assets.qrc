@@ -13,5 +13,7 @@
         <file>widgets/views/home/ImageCard.qml</file>
         <file>widgets/views/home/QuickCommonSection.qml</file>
         <file>widgets/views/home/SystemInfo.qml</file>
+        <file>controllers/folderconfig.h</file>
+        <file>controllers/folderconfig.cpp</file>
     </qresource>
 </RCC>

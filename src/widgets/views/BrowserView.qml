@@ -45,13 +45,12 @@ Maui.Page
 
         Maui.ToolButtonMenu
         {
-            visible: !sortSettings.globalSorting
             icon.name: "view-sort"
 
             MenuItem
             {
                 text: i18n("Show Folders First")
-                checked: currentBrowser.settings.foldersFirst
+                checked: currentBrowser.currentFMList.foldersFirst
                 checkable: true
                 onTriggered: currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
             }
@@ -61,18 +60,18 @@ Maui.Page
             MenuItem
             {
                 text: i18n("Type")
-                checked: currentBrowser.settings.sortBy === FB.FMList.MIME
+                checked: currentBrowser.currentFMList.sortBy === FB.FMList.MIME
                 checkable: true
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MIME
+                onTriggered: currentTab.currentItem.sortBy = FB.FMList.MIME
                 autoExclusive: true
             }
 
             MenuItem
             {
                 text: i18n("Date")
-                checked:currentBrowser.settings.sortBy === FB.FMList.DATE
+                checked:currentBrowser.currentFMList.sortBy === FB.FMList.DATE
                 checkable: true
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.DATE
+                onTriggered: currentTab.currentItem.sortBy = FB.FMList.DATE
                 autoExclusive: true
             }
 
@@ -80,8 +79,8 @@ Maui.Page
             {
                 text: i18n("Modified")
                 checkable: true
-                checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MODIFIED
+                checked: currentBrowser.currentFMList.sortBy === FB.FMList.MODIFIED
+                onTriggered: currentTab.currentItem.sortBy = FB.FMList.MODIFIED
                 autoExclusive: true
             }
 
@@ -89,8 +88,8 @@ Maui.Page
             {
                 text: i18n("Size")
                 checkable: true
-                checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.SIZE
+                checked: currentBrowser.currentFMList.sortBy === FB.FMList.SIZE
+                onTriggered:  currentTab.currentItem.sortBy = FB.FMList.SIZE
                 autoExclusive: true
             }
 
@@ -98,8 +97,8 @@ Maui.Page
             {
                 text: i18n("Name")
                 checkable: true
-                checked: currentBrowser.settings.sortBy === FB.FMList.LABEL
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.LABEL
+                checked: currentBrowser.currentFMList.sortBy === FB.FMList.LABEL
+                onTriggered:  currentTab.currentItem.sortBy = FB.FMList.LABEL
                 autoExclusive: true
             }
 

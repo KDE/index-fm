@@ -9,6 +9,7 @@ set(index_SRCS
     controllers/filepreviewer.cpp
     controllers/compressedfile.cpp
     controllers/dirinfo.cpp
+    controllers/folderconfig.cpp
     models/recentfilesmodel.cpp
     index_assets.qrc
     qml.qrc

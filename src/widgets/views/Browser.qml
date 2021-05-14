@@ -29,8 +29,10 @@ Item
     property alias currentPath: _browser.currentPath
     property alias settings : _browser.settings
     property alias title : _browser.title
+    property alias dirConf : _dirConf
 
-    property bool terminalVisible : false
+    property alias sortBy : _dirConf.sortKey
+    property alias terminalVisible : _dirConf.terminalVisible
     readonly property bool supportsTerminal : terminalLoader.item
 
     SplitView.fillHeight: true
@@ -123,26 +125,15 @@ Item
 
             settings.showHiddenFiles: appSettings.showHiddenFiles
             settings.showThumbnails: appSettings.showThumbnails
-            settings.foldersFirst: sortSettings.globalSorting ? sortSettings.foldersFirst : true
-            settings.sortBy: sortSettings.sortBy
+            settings.foldersFirst: true
+            settings.sortBy: _dirConf.sortKey
             settings.group: sortSettings.group
 
-            Binding
+            Index.FolderConfig
             {
-                target: _browser.settings
-                property: "sortBy"
-                when: sortSettings.globalSorting
-                value: sortSettings.sortBy
-                restoreMode: Binding.RestoreBindingOrValue
-            }
-
-            Binding
-            {
-                target: _browser.settings
-                property: "group"
-                when: sortSettings.globalSorting
-                value: sortSettings.group
-                restoreMode: Binding.RestoreBindingOrValue
+                id:  _dirConf
+                path: control.currentPath
+                sortKey: settings.sortBy
             }
 
             Rectangle
@@ -406,7 +397,6 @@ Item
             }
         }
 
-
         Loader
         {
             id: terminalLoader
@@ -414,7 +404,7 @@ Item
             SplitView.preferredHeight: 200
             SplitView.maximumHeight: parent.height * 0.5
             SplitView.minimumHeight : 100
-            visible: active && terminalVisible
+            visible: active && _dirConf.terminalVisible
 
             active: inx.supportsEmbededTerminal()
 

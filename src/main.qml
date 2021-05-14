@@ -68,7 +68,7 @@ Maui.ApplicationWindow
         property int sortBy:  FB.FMList.MODIFIED
         property int sortOrder : Qt.AscendingOrder
         property bool group : false
-        property bool globalSorting: Kirigami.Settings.isMobile
+        property bool perFolderSort : true
     }
 
     onCurrentPathChanged:
@@ -451,7 +451,6 @@ Maui.ApplicationWindow
                 _stackView.pop()
 
             _browserView.browserList.addTab(_browserComponent, {'path': path})
-            _browserView.browserList.currentIndex = _browserView.browserList.count -1
         }
     }
 
