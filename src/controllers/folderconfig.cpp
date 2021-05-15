@@ -123,12 +123,12 @@ const QVariantMap FolderConfig::dirConf(const QUrl &path)
     file.endGroup();
 #else
     KConfig file(path.toLocalFile());
-    showterminal = file.entryMap(QString("MAUIFM"))["ShowTerminal"];
+    showterminal = file.entryMap(QString("MAUIFM")).value("ShowTerminal");
 
-    const auto sortValue = file.entryMap(QString("MAUIFM"))["SortBy"];
+    const auto sortValue = file.entryMap(QString("MAUIFM")).value("SortBy");
     sortby = !sortValue.isEmpty() ? sortValue.toInt() : FMList::SORTBY::LABEL;
 
-    const auto viewTypeValue =  file.entryMap(QString("MAUIFM"))["ViewType"];
+    const auto viewTypeValue =  file.entryMap(QString("MAUIFM")).value("ViewType");
     viewType = !viewTypeValue.isEmpty() ? viewTypeValue.toInt() : FMList::VIEW_TYPE::ICON_VIEW;
 
 #endif

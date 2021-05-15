@@ -45,7 +45,8 @@ void CompressedFileModel::setUrl(const QUrl &url)
     if (kArch->isOpen()) {
         qDebug() << "@gadominguez File:fm.cpp Funcion: getEntries  Entries:" << kArch->directory()->entries();
 
-        for (auto entry : kArch->directory()->entries()) {
+        const auto entries = kArch->directory()->entries();
+        for (const auto &entry : entries) {
             auto e = kArch->directory()->entry(entry);
 
             this->m_list << FMH::MODEL{{FMH::MODEL_KEY::LABEL, e->name()}, {FMH::MODEL_KEY::ICON, e->isDirectory() ? "folder" : FMStatic::getIconName(e->name())}, {FMH::MODEL_KEY::DATE, e->date().toString()}};
@@ -84,7 +85,7 @@ bool CompressedFile::compress(const QVariantList &files, const QUrl &where, cons
 {
     bool error = true;
     assert(compressTypeSelected >= 0 && compressTypeSelected <= 8);
-    for (auto uri : files) {
+    for (const auto &uri : files) {
         qDebug() << "@gadominguez File:fm.cpp Funcion: compress  " << QUrl(uri.toString()).toLocalFile() << " " << fileName;
 
         if (!QFileInfo(QUrl(uri.toString()).toLocalFile()).isDir()) {

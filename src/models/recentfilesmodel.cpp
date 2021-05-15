@@ -68,7 +68,8 @@ void RecentFilesModel::setList()
 
   this->m_list.clear();
   emit this->preListChanged ();
-  for(const auto &url : dir.entryInfoList ())
+  const auto urls = dir.entryInfoList ();
+  for(const auto &url : urls)
     {
       if(i >= 6)
         break;
