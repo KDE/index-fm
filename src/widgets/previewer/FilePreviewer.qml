@@ -80,6 +80,7 @@ Maui.Dialog
             Loader
             {
                 id: previewLoader
+                asynchronous: true
                 active: _delegate.isCurrentItem
                 visible: !control.showInfo
                 width: parent.width
