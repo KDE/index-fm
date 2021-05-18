@@ -38,6 +38,7 @@ Maui.SideBar
     listView.flickable.header: Maui.ListDelegate
     {
         width: parent.width
+        template.headerSizeHint: iconSize + Maui.Style.space.small
         iconSize: Maui.Style.iconSizes.small
         label: i18n("Overview")
         iconName: "start-here-symbolic"
@@ -76,6 +77,8 @@ Maui.SideBar
     {
         isCurrentItem: ListView.isCurrentItem && _stackView.depth === 1
         width: ListView.view.width
+        template.headerSizeHint: iconSize + Maui.Style.space.small
+
         iconSize: Maui.Style.iconSizes.small
         label: model.label
         count: model.count > 0 ? model.count : ""

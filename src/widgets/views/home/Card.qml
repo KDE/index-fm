@@ -77,6 +77,8 @@ Maui.ItemDelegate
     {
         id: _template
         anchors.fill: parent
+        headerSizeHint: iconSizeHint + Maui.Style.space.small
+
         label1.font.pointSize: Maui.Style.fontSizes.big
         label1.font.weight: Font.Bold
         label1.font.bold: true

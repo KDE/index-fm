@@ -16,9 +16,6 @@ Maui.ItemDelegate
         id: _template
         anchors.fill: parent
         labelsVisible: false
-        imageSizeHint: height
         fillMode: Image.PreserveAspectCrop
-//        imageWidth: width
-        imageHeight: height
     }
 }

@@ -31,7 +31,7 @@ Maui.Dialog
     maxHeight: 1000
     defaultButtons: false
 
-//    page.headerBackground.color: "transparent"
+    //    page.headerBackground.color: "transparent"
     headBar.rightContent: ToolButton
     {
         icon.name: "documentinfo"
@@ -94,7 +94,7 @@ Maui.Dialog
                 anchors.fill: parent
                 visible: control.showInfo
 
-//                Kirigami.Theme.backgroundColor: "transparent"
+                //                Kirigami.Theme.backgroundColor: "transparent"
                 padding:  0
                 leftPadding: padding
                 rightPadding: padding
@@ -139,10 +139,6 @@ Maui.Dialog
                             Maui.ListItemTemplate
                             {
                                 id: _delegateColumnInfo
-
-                                iconSource: "documentinfo"
-                                iconSizeHint: Maui.Style.iconSizes.medium
-
                                 anchors.fill: parent
                                 anchors.margins: Maui.Style.space.medium
 
@@ -264,7 +260,7 @@ Maui.Dialog
                 }
             }
 
-           rightContent: [
+            rightContent: [
                 ToolButton
                 {
                     icon.name: "document-open"
@@ -302,7 +298,7 @@ Maui.Dialog
             ]
         }
 
-       ]
+    ]
 
 
     Connections
