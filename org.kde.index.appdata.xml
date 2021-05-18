@@ -24,6 +24,7 @@
   <name xml:lang="pa">ਇੰਡੈਕਸ</name>
   <name xml:lang="pl">Indeks</name>
   <name xml:lang="pt">Índice</name>
+  <name xml:lang="pt-BR">Index</name>
   <name xml:lang="ro">Index</name>
   <name xml:lang="sk">Index</name>
   <name xml:lang="sl">Indeks</name>
@@ -50,6 +51,7 @@
   <summary xml:lang="pa">ਆਪਣੀਆਂ ਫਾਇਲਾਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ</summary>
   <summary xml:lang="pl">Zarządzaj swoimi plikami</summary>
   <summary xml:lang="pt">Faça a gestão dos seus ficheiros</summary>
+  <summary xml:lang="pt-BR">Gerencie seus arquivos</summary>
   <summary xml:lang="ro">Gestionați-vă fișierele</summary>
   <summary xml:lang="sk">Spravovať vaše súbory</summary>
   <summary xml:lang="sl">Upravljanje vaših datotek</summary>
@@ -76,6 +78,7 @@
     <p xml:lang="pa">ਇੰਡੈਕਸ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਨੂੰ ਫੋਲਣ ਤੇ ਮਲਟੀਮੀਡੀਆ ਫਾਇਲਾਂ ਦੀ ਝਲਕ ਵੇਖਣ ਲਈ ਮਦਦਗਾਰ ਹੈ।</p>
     <p xml:lang="pl">Index umożliwia przeglądanie i podgląd plików multimedialnych na twoim komputerze.</p>
     <p xml:lang="pt">O Índice permite-lhe navegar pelo seu computador e antever os ficheiros multimédia.</p>
+    <p xml:lang="pt-BR">O Index permite que você navegue no seu computador e visualize arquivos multimídia.</p>
     <p xml:lang="ro">Index vă permite să răsfoiți calculatorul și să previzualizați fișiere multimedia.</p>
     <p xml:lang="sk">Index vám umožní prechádzať váš počítač a prehliadať multimediálne súbory.</p>
     <p xml:lang="sl">Kazalo omogoča krmarjenje po računalniku in predogled večpredstavnostnih datotek.</p>
@@ -109,6 +112,7 @@
       <caption xml:lang="pa">ਇੰਡੈਕਸ ਫਾਇਲ ਮੈਨੇਜਰ</caption>
       <caption xml:lang="pl">Przeglądarka do indeksowania plików</caption>
       <caption xml:lang="pt">Gestor de ficheiros Índice</caption>
+      <caption xml:lang="pt-BR">Gerenciador de arquivos Index</caption>
       <caption xml:lang="ro">Gestionarul de fișiere Index</caption>
       <caption xml:lang="sk">Správca súborov Index</caption>
       <caption xml:lang="sl">Upravljalnik indeksa datotek</caption>
