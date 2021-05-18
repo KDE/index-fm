@@ -162,7 +162,6 @@ ColumnLayout
                 iconSource: model.icon
                 iconSizeHint: Maui.Style.iconSizes.big
                 player.source: model.url
-                checkable: selectionMode
 
                 onClicked:
                 {

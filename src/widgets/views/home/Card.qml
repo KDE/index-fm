@@ -15,7 +15,6 @@ Maui.ItemDelegate
     property alias iconSource : _template.iconSource
     property alias iconSizeHint: _template.iconSizeHint
     property alias template : _template
-    property alias checkable: _template.checkable
 
     background: Rectangle
     {
