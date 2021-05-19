@@ -4,6 +4,8 @@ Maui File manager
 Index is a file manager that works on desktops, Android and Plasma Mobile.
 Index lets you browse your system files and applications and preview your music, text, image and video files and share them with external applications.
 
+<a href='https://flathub.org/apps/details/org.kde.index'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
+
 ## Installation  
 
 Index can be installed on Arch Linux using the AUR Package [index-fm-git](https://aur.archlinux.org/packages/index-fm-git/)
