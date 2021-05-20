@@ -81,7 +81,6 @@ Maui.SideBar
 
         iconSize: Maui.Style.iconSizes.small
         label: model.label
-        count: model.count > 0 ? model.count : ""
         iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
         iconVisible: true
 
@@ -107,8 +106,6 @@ Maui.SideBar
             {
                 notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), mount)
             }
-
-            placesList.clearBadgeCount(index)
 
             placeClicked(model.path)
             if(control.collapsed)

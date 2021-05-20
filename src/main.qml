@@ -412,16 +412,8 @@ Maui.ApplicationWindow
 
     function syncSidebar(path)
     {
-        placesSidebar.currentIndex = -1
-
-        for(var i = 0; i < placesSidebar.count; i++)
-        {
-            if(String(path) === placesSidebar.model.get(i).path)
-            {
-                placesSidebar.currentIndex = i
-                return;
-            }
-        }
+        console.log("Sync sidebar", path)
+        placesSidebar.currentIndex = placesSidebar.list.indexOfPath(path)
     }
 
     function toogleSplitView()
