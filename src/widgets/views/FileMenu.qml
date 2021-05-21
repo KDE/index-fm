@@ -65,6 +65,8 @@ Maui.ContextualMenu
         }
     }
 
+    MenuSeparator {}
+
     MenuItem
     {
         text: control.isFav ? i18n("Remove from Favorites") : i18n("Add to Favorites")

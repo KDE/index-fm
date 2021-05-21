@@ -281,7 +281,7 @@ Item
 
             onRightClicked:
             {
-                _optionsButton.open()
+                _browserView.browserMenu.open()
             }
         }
 

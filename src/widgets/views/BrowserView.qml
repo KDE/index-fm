@@ -26,6 +26,7 @@ Maui.Page
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
     property alias browserList : _browserList
+    property alias browserMenu :_optionsButton
 
     altHeader: Kirigami.Settings.isMobile
     flickable: root.flickable
@@ -127,11 +128,11 @@ Maui.Page
         },
 
         ToolButton
-           {
-               icon.name: "edit-find"
-               checked: currentBrowser.headBar.visible
-               onClicked: currentBrowser.toggleSearchBar()
-           },
+        {
+            icon.name: "edit-find"
+            checked: currentBrowser.headBar.visible
+            onClicked: currentBrowser.toggleSearchBar()
+        },
 
         Maui.ToolButtonMenu
         {
@@ -139,54 +140,54 @@ Maui.Page
             icon.name: "overflow-menu"
             enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
 
-               MenuItem
-               {
-                   icon.name: "bookmark-new"
-                   text: i18n("Bookmark")
-                   onTriggered: currentBrowser.bookmarkFolder([currentPath])
-           //         enabled: _optionsButton.enabled
-               }
+            MenuItem
+            {
+                icon.name: "bookmark-new"
+                text: i18n("Bookmark")
+                onTriggered: currentBrowser.bookmarkFolder([currentPath])
+                //         enabled: _optionsButton.enabled
+            }
 
-               MenuItem
-               {
-                   icon.name: "document-new"
-                   text: i18n("New")
-           //         enabled: _optionsButton.enabled
-                   onTriggered: currentBrowser.newItem()
-               }
+            MenuItem
+            {
+                icon.name: "document-new"
+                text: i18n("New")
+                //         enabled: _optionsButton.enabled
+                onTriggered: currentBrowser.newItem()
+            }
 
-               MenuSeparator {}
+            MenuSeparator {}
 
-               MenuItem
-               {
-                   text: i18n("Paste")
-           //         enabled: _optionsButton.enabled
+            MenuItem
+            {
+                text: i18n("Paste")
+                //         enabled: _optionsButton.enabled
 
-                   icon.name: "edit-paste"
-                   // 		enabled: control.clipboardItems.length > 0
-                   onTriggered: currentBrowser.paste()
-               }
+                icon.name: "edit-paste"
+                // 		enabled: control.clipboardItems.length > 0
+                onTriggered: currentBrowser.paste()
+            }
 
-               MenuSeparator {}
+            MenuSeparator {}
 
-               MenuItem
-               {
-                   text: i18n("Select all")
-                   icon.name: "edit-select-all"
-                   onTriggered: currentBrowser.selectAll()
-               }
+            MenuItem
+            {
+                text: i18n("Select all")
+                icon.name: "edit-select-all"
+                onTriggered: currentBrowser.selectAll()
+            }
 
-               MenuItem
-               {
-                   visible: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                   text: i18n("Open terminal here")
-                   id: openTerminal
-                   icon.name: "utilities-terminal"
-                   onTriggered:
-                   {
-                       inx.openTerminal(currentPath)
-                   }
-               }
+            MenuItem
+            {
+                visible: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                text: i18n("Open terminal here")
+                id: openTerminal
+                icon.name: "utilities-terminal"
+                onTriggered:
+                {
+                    inx.openTerminal(currentPath)
+                }
+            }
         }
     ]
 
