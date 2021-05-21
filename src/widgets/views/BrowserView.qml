@@ -133,16 +133,60 @@ Maui.Page
                onClicked: currentBrowser.toggleSearchBar()
            },
 
-        ToolButton
+        Maui.ToolButtonMenu
         {
             id: _optionsButton
             icon.name: "overflow-menu"
             enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
 
-            onClicked: currentBrowser.browserMenu.show(_optionsButton, 0, height + Maui.Style.space.medium)
+               MenuItem
+               {
+                   icon.name: "bookmark-new"
+                   text: i18n("Bookmark")
+                   onTriggered: currentBrowser.bookmarkFolder([currentPath])
+           //         enabled: _optionsButton.enabled
+               }
 
-            checked: currentBrowser.browserMenu.visible
-            checkable: false
+               MenuItem
+               {
+                   icon.name: "document-new"
+                   text: i18n("New")
+           //         enabled: _optionsButton.enabled
+                   onTriggered: currentBrowser.newItem()
+               }
+
+               MenuSeparator {}
+
+               MenuItem
+               {
+                   text: i18n("Paste")
+           //         enabled: _optionsButton.enabled
+
+                   icon.name: "edit-paste"
+                   // 		enabled: control.clipboardItems.length > 0
+                   onTriggered: currentBrowser.paste()
+               }
+
+               MenuSeparator {}
+
+               MenuItem
+               {
+                   text: i18n("Select all")
+                   icon.name: "edit-select-all"
+                   onTriggered: currentBrowser.selectAll()
+               }
+
+               MenuItem
+               {
+                   visible: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                   text: i18n("Open terminal here")
+                   id: openTerminal
+                   icon.name: "utilities-terminal"
+                   onTriggered:
+                   {
+                       inx.openTerminal(currentPath)
+                   }
+               }
         }
     ]
 

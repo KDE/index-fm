@@ -94,8 +94,10 @@ Item
         FB.FileBrowser
         {
             id: _browser
+
             SplitView.fillWidth: true
             SplitView.fillHeight: true
+
             altHeader: _browserView.altHeader
             selectionBar: root.selectionBar
             gridItemSize: switch(appSettings.gridSize)
@@ -149,140 +151,10 @@ Item
                 visible: _splitView.currentIndex === _index && _splitView.count === 2
             }
 
-            browserMenu.contentData : [
-                MenuItem
-                {
-                    visible: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                    text: i18n("Open terminal here")
-                    id: openTerminal
-                    icon.name: "utilities-terminal"
-                    onTriggered:
-                    {
-                        inx.openTerminal(currentPath)
-                    }
-                }
-            ]
-
-            itemMenu.contentData : [
-
-                MenuItem
-                {
-                    visible: !control.isExec
-                    text: i18n("Share")
-                    icon.name: "document-share"
-                    onTriggered:
-                    {
-                        shareFiles(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
-                    }
-                },
-
-                MenuItem
-                {
-                    visible: !control.isExec && tagsDialog
-                    text: i18n("Tags")
-                    icon.name: "tag"
-                    onTriggered:
-                    {
-                        tagsDialog.composerList.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
-                        tagsDialog.open()
-                    }
-                },
-
-                MenuSeparator {visible: _browser.itemMenu.isDir},
-
-                MenuItem
-                {
-                    visible: _browser.itemMenu.isDir
-                    text: i18n("Open in new tab")
-                    icon.name: "tab-new"
-                    onTriggered: root.openTab(_browser.itemMenu.item.path)
-                },
-
-                MenuItem
-                {
-                    visible: _browser.itemMenu.isDir && root.currentTab.count === 1 && appSettings.supportSplit
-                    text: i18n("Open in split view")
-                    icon.name: "view-split-left-right"
-                    onTriggered: root.currentTab.split(_browser.itemMenu.item.path, Qt.Horizontal)
-                },
-
-                MenuItem
-                {
-                    visible: _browser.itemMenu.isDir && Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                    text: i18n("Open terminal here")
-                    icon.name: "utilities-terminal"
-                    onTriggered:
-                    {
-                        inx.openTerminal(_browser.itemMenu.item.path)
-                    }
-                },
-
-                MenuSeparator {},
-
-                MenuItem
-                {
-                    visible: !_browser.itemMenu.isExec
-                    text: i18n("Preview")
-                    icon.name: "view-preview"
-                    onTriggered:
-                    {
-                        openPreview(_browser.currentFMModel, _browser.currentIndex)
-                    }
-                },
-
-                MenuSeparator {},
-
-                MenuItem
-                {
-                    visible: FB.FM.checkFileType(FB.FMList.COMPRESSED, _browser.itemMenu.item.mime)
-                    text: i18n("Extract")
-                    icon.name: "archive-extract"
-                    onTriggered:
-                    {
-                        _compressedFile.url = _browser.itemMenu.item.path
-                        dialogLoader.sourceComponent= _extractDialogComponent
-                        dialog.open()
-                    }
-                },
-
-                MenuItem
-                {
-                    visible: true
-                    text: i18n("Compress")
-                    icon.name: "archive-insert"
-                    onTriggered:
-                    {
-                        dialogLoader.sourceComponent= _compressDialogComponent
-                        dialog.urls = _browser.filterSelection(currentPath, _browser.itemMenu.item.path)
-                        dialog.open()
-                    }
-                },
-
-                MenuSeparator{ visible: colorBar.visible },
-
-                MenuItem
-                {
-                    height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
-                    visible: _browser.itemMenu.isDir
-
-                    ColorsBar
-                    {
-                        id: colorBar
-                        anchors.centerIn: parent
-
-                        Binding on folderColor {
-                            value: _browser.itemMenu.item.icon
-                            restoreMode: Binding.RestoreBindingOrValue
-                        }
-
-                        onFolderColorPicked:
-                        {
-                            _browser.currentFMList.setDirIcon(_browser.itemMenu.index, color)
-                            _browser.itemMenu.close()
-                        }
-                    }
-                }
-            ]
+            FileMenu
+            {
+                id: itemMenu
+            }
 
             Connections
             {
@@ -397,6 +269,20 @@ Item
                     openItem(index)
                 }
             }
+
+            onItemRightClicked:
+            {
+
+                if(_browser.currentFMList.pathType !== FB.FMList.TRASH_PATH && _browser.currentFMList.pathType !== FB.FMList.REMOTE_PATH)
+                   {
+                     itemMenu.show(index)
+                }
+            }
+
+            onRightClicked:
+            {
+                _optionsButton.open()
+            }
         }
 
         Loader
@@ -429,21 +315,8 @@ Item
         }
     }
 
-    MenuItem
-    {
-        visible: !control.isExec
-        id: openWithMenuItem
-        text: i18n("Open with")
-        icon.name: "document-open"
-        onTriggered:
-        {
-            openWith(_browser.filterSelection(currentPath, _browser.itemMenu.item.path))
-        }
-    }
-
     Component.onCompleted:
     {
-        _browser.itemMenu.insertItem(1, openWithMenuItem)
         syncTerminal(control.currentPath)
     }
 
