@@ -132,12 +132,6 @@ Item
 
     function split(path, orientation)
     {
-        //        _splitView.orientaion = orientation
-
-        if(_splitView.count === 1 && !settings.supportSplit)
-        {
-            return
-        }
 
         if(_splitView.count === 2)
         {

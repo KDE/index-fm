@@ -29,19 +29,6 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Hidden Files")
-            label2.text: i18n("List hidden files")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  settings.showHiddenFiles
-                onToggled: settings.showHiddenFiles = !settings.showHiddenFiles
-            }
-        }
 
         Maui.SettingTemplate
         {
@@ -83,21 +70,7 @@ Maui.SettingsDialog
                 checked:  settings.previewFiles
                 onToggled: settings.previewFiles = !settings.previewFiles
             }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text:  i18n("Split Views")
-            label2.text: i18n("Support split views horizontally or vertically depending on the available space.")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  settings.supportSplit
-                onToggled: settings.supportSplit = !settings.supportSplit
-            }
-        }
+        }        
     }
 
    Maui.SettingsSection

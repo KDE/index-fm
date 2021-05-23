@@ -20,15 +20,12 @@ import org.maui.index 1.0 as Index
 Maui.Page
 {
     id: control
-    //    spacing: 0
 
     property alias selectionBar: _selectionBar
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
     property alias browserList : _browserList
-    property alias browserMenu :_optionsButton
 
-    altHeader: Kirigami.Settings.isMobile
     flickable: root.flickable
     floatingFooter: true
     floatingHeader: false
@@ -37,11 +34,38 @@ Maui.Page
 
         ToolButton
         {
+
+            icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
+            onClicked:
+            {
+                var type = currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? FB.FMList.ICON_VIEW : FB.FMList.LIST_VIEW
+                if(currentBrowser)
+                {
+                    currentBrowser.settings.viewType = type
+                }
+
+                settings.viewType = type
+            }
+        },
+
+        ToolButton
+        {
+//            text: i18n("Embedded Terminal")
             visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
             icon.name: "dialog-scripts"
             onClicked: currentTab.currentItem.toogleTerminal()
             checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
             checkable: true
+        },
+
+
+        ToolButton
+        {
+//            text: i18n("Split View")
+            icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+            checked: currentTab.count == 2
+            checkable: true
+            onClicked: toogleSplitView()
         },
 
         Maui.ToolButtonMenu
@@ -120,15 +144,6 @@ Maui.Page
 
         ToolButton
         {
-            visible: settings.supportSplit
-            icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-            checked: currentTab.count == 2
-            autoExclusive: true
-            onClicked: toogleSplitView()
-        },
-
-        ToolButton
-        {
             icon.name: "edit-find"
             checked: currentBrowser.headBar.visible
             onClicked: currentBrowser.toggleSearchBar()
@@ -188,15 +203,29 @@ Maui.Page
                     inx.openTerminal(currentPath)
                 }
             }
+
+            MenuSeparator{}
+
+            MenuItem
+            {
+                text: i18n("Hidden Files")
+                checkable: true
+                checked: settings.showHiddenFiles
+                onTriggered:
+                {
+                    settings.showHiddenFiles = !settings.showHiddenFiles
+                }
+            }
         }
     ]
+    property alias browserMenu :_optionsButton
 
     headBar.farLeftContent: ToolButton
     {
-        visible: placesSidebar.collapsed
+//        visible: placesSidebar.collapsed
         icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
         onClicked: placesSidebar.toggle()
-
+        checked: placesSidebar.visible
         ToolTip.delay: 1000
         ToolTip.timeout: 5000
         ToolTip.visible: hovered
@@ -204,6 +233,14 @@ Maui.Page
     }
 
     headBar.leftContent: [
+        ToolButton
+        {
+            icon.name: "go-previous"
+            text: i18n("Browser")
+            display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
+            visible: _stackView.depth === 2
+            onClicked: _stackView.pop()
+        },
 
         ToolButton
         {
@@ -231,22 +268,6 @@ Maui.Page
                 text: i18n("Next")
                 icon.name: "go-next"
                 onTriggered: currentBrowser.goForward()
-            }
-        },
-
-        ToolButton
-        {
-
-            icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
-            onClicked:
-            {
-                var type = currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? FB.FMList.ICON_VIEW : FB.FMList.LIST_VIEW
-                if(currentBrowser)
-                {
-                    currentBrowser.settings.viewType = type
-                }
-
-                settings.viewType = type
             }
         }
     ]

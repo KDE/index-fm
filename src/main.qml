@@ -49,7 +49,6 @@ Maui.ApplicationWindow
         property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
-        property bool supportSplit : !Kirigami.Settings.isMobile
         property bool overviewStart : false
 
         property int viewType : FB.FMList.LIST_VIEW
@@ -262,17 +261,16 @@ Maui.ApplicationWindow
         onClicked: _stackView.pop()
     }
 
-    headBar.middleContent: [
-        Maui.PathBar
+    headBar.middleContent: [Maui.PathBar
         {
             id: _pathBar
             visible: _stackView.depth === 1
-
-            Layout.fillWidth: true
-            Layout.minimumWidth: 100
-            //            Layout.maximumWidth: 500
+            //            implicitWidth: visible ? 500 : 0
+            Layout.fillWidth: visible
+            Layout.minimumWidth: visible? 100 : 0
+            Layout.maximumWidth: 500
             onPathChanged: currentBrowser.openFolder(path.trim())
-            url: root.currentPath
+            url: currentBrowser.currentPath
 
             onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
             onPlaceClicked: currentBrowser.openFolder(path)
@@ -296,29 +294,28 @@ Maui.ApplicationWindow
 
                 MenuItem
                 {
-                    visible: root.currentTab.count === 1 && settings.supportSplit
+                    visible: root.currentTab.count === 1
                     text: i18n("Open in split view")
                     icon.name: "view-split-left-right"
                     onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
                 }
             }
         },
-
         Maui.TextField
         {
             id: _searchField
             visible: _stackView.depth === 2
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-            //            Layout.maximumWidth: 500
+            Layout.maximumWidth: 500
             placeholderText: i18n("Search for files")
             onAccepted:
             {
-                _stackView.pop()
                 currentBrowser.search(text)
             }
         }
     ]
+
 
     Loader
     {
@@ -418,7 +415,7 @@ Maui.ApplicationWindow
 
     function toogleSplitView()
     {
-        if(currentTab.count == 2)
+        if(currentTab.count === 2)
             currentTab.pop()
         else
             currentTab.split(root.currentPath, Qt.Horizontal)
@@ -485,7 +482,7 @@ Maui.ApplicationWindow
 
     function openPreview(model, index)
     {
-       dialogLoader.sourceComponent = _previewerComponent
+        dialogLoader.sourceComponent = _previewerComponent
         dialog.model = model
         dialog.currentIndex = index
         dialog.open()

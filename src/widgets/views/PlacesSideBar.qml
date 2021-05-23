@@ -155,7 +155,7 @@ Maui.SideBar
 
         MenuItem
         {
-            visible: root.currentTab.count === 1 && settings.supportSplit
+            visible: root.currentTab.count === 1
             text: i18n("Open in split view")
             icon.name: "view-split-left-right"
             onTriggered: currentTab.split(control.model.get(placesSidebar.currentIndex).path, Qt.Horizontal)

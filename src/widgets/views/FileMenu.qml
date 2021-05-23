@@ -41,7 +41,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec
+        enabled: !control.isExec
         text: i18n("Select")
         icon.name: "edit-select"
         onTriggered:
@@ -55,8 +55,8 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec
         id: openWithMenuItem
+        enabled: !control.isExec
         text: i18n("Open with")
         icon.name: "document-open"
         onTriggered:
@@ -80,7 +80,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec && control.isDir
+        enabled: !control.isExec && control.isDir
         text: i18n("Add to Bookmarks")
         icon.name: "bookmark-new"
         onTriggered:
@@ -93,7 +93,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec
+        enabled: !control.isExec
         text: i18n("Copy")
         icon.name: "edit-copy"
         onTriggered:
@@ -104,7 +104,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec
+        enabled: !control.isExec
         text: i18n("Cut")
         icon.name: "edit-cut"
         onTriggered:
@@ -115,7 +115,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec
+        enabled: !control.isExec
         text: i18n("Rename")
         icon.name: "edit-rename"
         onTriggered:
@@ -139,7 +139,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec
+        enabled: !control.isExec
         text: i18n("Share")
         icon.name: "document-share"
         onTriggered:
@@ -150,7 +150,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec && tagsDialog
+        enabled: !control.isExec && tagsDialog
         text: i18n("Tags")
         icon.name: "tag"
         onTriggered:
@@ -164,7 +164,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: control.isDir
+        enabled: control.isDir
         text: i18n("Open in new tab")
         icon.name: "tab-new"
         onTriggered: root.openTab(control.item.path)
@@ -172,7 +172,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: control.isDir && root.currentTab.count === 1 && appSettings.supportSplit
+        enabled: control.isDir && root.currentTab.count === 1
         text: i18n("Open in split view")
         icon.name: "view-split-left-right"
         onTriggered: root.currentTab.split(control.item.path, Qt.Horizontal)
@@ -180,7 +180,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: control.isDir && Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+        enabled: control.isDir && Maui.Handy.isLinux && !Kirigami.Settings.isMobile
         text: i18n("Open terminal here")
         icon.name: "utilities-terminal"
         onTriggered:
@@ -193,7 +193,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: !control.isExec
+        enabled: !control.isExec
         text: i18n("Preview")
         icon.name: "view-preview"
         onTriggered:
@@ -206,7 +206,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: FB.FM.checkFileType(FB.FMList.COMPRESSED, control.item.mime)
+        enabled: FB.FM.checkFileType(FB.FMList.COMPRESSED, control.item.mime)
         text: i18n("Extract")
         icon.name: "archive-extract"
         onTriggered:
@@ -219,7 +219,6 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        visible: true
         text: i18n("Compress")
         icon.name: "archive-insert"
         onTriggered:
@@ -235,7 +234,7 @@ Maui.ContextualMenu
     MenuItem
     {
         height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
-        visible: control.isDir
+        enabled: control.isDir
 
         ColorsBar
         {

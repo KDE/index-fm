@@ -11,8 +11,9 @@ import QtQml.Models 2.3
 import QtQml 2.14
 
 import org.kde.kirigami 2.8 as Kirigami
-import org.mauikit.controls 1.2 as Maui
-import org.mauikit.filebrowsing 1.0 as FB
+
+import org.mauikit.controls 1.3 as Maui
+import org.mauikit.filebrowsing 1.3 as FB
 
 import org.maui.index 1.0 as Index
 
