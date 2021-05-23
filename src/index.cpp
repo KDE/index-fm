@@ -25,14 +25,17 @@ void Index::openPaths(const QStringList &paths)
 {
     emit this->openPath(std::accumulate(paths.constBegin(), paths.constEnd(), QStringList(), [](QStringList &list, const QString &path) -> QStringList {
                             const auto url = QUrl::fromUserInput(path);
-                            if (url.isLocalFile()) {
-                                const QFileInfo file(url.toLocalFile());
-                                if (file.isDir())
-                                list << url.toString();
+                            if (url.isLocalFile())
+                            {
+                                if (FMStatic::isDir(url))
+                                {
+                                    list << url.toString();
+                                }
                                 else
-                                list << QUrl::fromLocalFile(file.dir().absolutePath()).toString();
-                            } else
-                            list << url.toString();
+                                {
+                                    list <<  FMStatic::fileDir(url);
+                                }
+                            }
 
                             return list;
                         }));
