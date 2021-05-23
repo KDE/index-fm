@@ -7,6 +7,7 @@
 #define INDEX_H
 
 #include <QObject>
+#include <QUrl>
 #include <QStringList>
 
 class Index : public QObject

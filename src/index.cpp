@@ -10,9 +10,7 @@
 #endif
 
 #include <QDebug>
-#include <QDir>
 #include <QFileInfo>
-#include <QUrl>
 
 #include <MauiKit/Core/fmh.h>
 #include <MauiKit/FileBrowsing/fmstatic.h>
@@ -44,7 +42,7 @@ void Index::openTerminal(const QUrl &url)
 {
 #if defined Q_OS_LINUX && !defined Q_OS_ANDROID 
 
-    KToolInvocation::invokeTerminal(QString(), {}, url.isLocalFile() ? url.toLocalFile() : QDir::homePath());
+    KToolInvocation::invokeTerminal(QString(), {}, url.isLocalFile() ? url.toLocalFile() : FMStatic::HomePath);
 
 #else
     Q_UNUSED(url)
