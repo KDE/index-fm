@@ -29,7 +29,7 @@ Maui.Page
     flickable: root.flickable
     floatingFooter: true
     floatingHeader: false
-
+    altHeader: root.altHeader
     headBar.rightContent:[
 
         ToolButton
@@ -62,6 +62,7 @@ Maui.Page
         ToolButton
         {
 //            text: i18n("Split View")
+            visible: !Kirigami.Settings.isMobile
             icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
             checked: currentTab.count == 2
             checkable: true
