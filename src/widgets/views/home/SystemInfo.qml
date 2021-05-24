@@ -34,8 +34,8 @@ Maui.ListBrowser
         id: _delegate
         property bool isCurrentItem : ListView.isCurrentItem
         anchors.verticalCenter: parent.verticalCenter
-        width: 250
-        height: _layout.implicitHeight + Maui.Style.space.huge
+        width: 320
+        height: 180
 //        color: Kirigami.Theme.backgroundColor
 //        radius: Maui.Style.radiusV
 

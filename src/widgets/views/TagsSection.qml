@@ -11,10 +11,8 @@ import org.mauikit.controls 1.3 as Maui
 import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.filebrowsing 1.3 as FB
 
-
 ColumnLayout
 {
-
     Maui.SectionDropDown
     {
         id: _dropDown
@@ -48,11 +46,10 @@ ColumnLayout
                 anchors.fill: parent
                 anchors.margins: Maui.Style.space.medium
 
-                iconSizeHint: Maui.Style.iconSizes.big
+                iconSizeHint: Maui.Style.iconSizes.small
                 label1.text: model.tag
                 iconSource: model.icon
                 iconVisible: true
-                template.leftMargin: Maui.Style.space.small
 
                 onClicked:
                 {
