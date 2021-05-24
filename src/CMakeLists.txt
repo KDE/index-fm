@@ -11,6 +11,7 @@ set(index_SRCS
     controllers/dirinfo.cpp
     controllers/folderconfig.cpp
     models/recentfilesmodel.cpp
+    models/pathlist.cpp
     index_assets.qrc
     qml.qrc
     )

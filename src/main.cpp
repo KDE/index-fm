@@ -39,6 +39,7 @@
 #include "controllers/folderconfig.h"
 
 #include "models/recentfilesmodel.h"
+#include "models/pathlist.h"
 
 #define INDEX_URI "org.maui.index"
 
@@ -114,6 +115,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
     qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");
     qmlRegisterType<DirInfo>(INDEX_URI, 1, 0, "DirInfo");
+    qmlRegisterType<PathList>(INDEX_URI, 1, 0, "PathList");
 //    qmlRegisterType<FolderConfig>(INDEX_URI, 1, 0, "FolderConfig");
 
     engine.load(url);

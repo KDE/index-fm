@@ -261,7 +261,8 @@ Maui.ApplicationWindow
         onClicked: _stackView.pop()
     }
 
-    headBar.middleContent: [Maui.PathBar
+    headBar.middleContent: [
+        PathBar
         {
             id: _pathBar
             visible: _stackView.depth === 1
@@ -301,6 +302,7 @@ Maui.ApplicationWindow
                 }
             }
         },
+
         Maui.TextField
         {
             id: _searchField

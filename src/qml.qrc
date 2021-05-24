@@ -17,5 +17,7 @@
         <file>widgets/previewer/FontPreviewer.qml</file>
         <file>widgets/ColorsBar.qml</file>
         <file>widgets/views/FileMenu.qml</file>
+        <file>widgets/views/PathBarDelegate.qml</file>
+        <file>widgets/views/PathBar.qml</file>
     </qresource>
 </RCC>
