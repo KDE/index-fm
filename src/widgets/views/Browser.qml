@@ -294,7 +294,7 @@ Item
             SplitView.maximumHeight: parent.height * 0.5
             SplitView.minimumHeight : 100
             visible: active && control.terminalVisible
-
+            asynchronous: true
             active: inx.supportsEmbededTerminal()
 
             source: "Terminal.qml"
