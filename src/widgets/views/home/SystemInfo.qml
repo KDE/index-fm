@@ -23,7 +23,7 @@ Maui.ListBrowser
     signal itemClicked(url url)
 
     orientation: ListView.Horizontal
-    implicitHeight: 260
+    implicitHeight: 200
     verticalScrollBarPolicy: ScrollBar.AlwaysOff
 //    horizontalScrollBarPolicy: ScrollBar.AlwaysOff
 
@@ -35,7 +35,7 @@ Maui.ListBrowser
         property bool isCurrentItem : ListView.isCurrentItem
         anchors.verticalCenter: parent.verticalCenter
         width: 320
-        height: 180
+        height: 150
 //        color: Kirigami.Theme.backgroundColor
 //        radius: Maui.Style.radiusV
 
@@ -112,7 +112,7 @@ Maui.ListBrowser
             {
                 id: _icon
                 Layout.leftMargin: Maui.Style.space.medium
-                implicitHeight: Maui.Style.iconSizes.big
+                implicitHeight: Maui.Style.iconSizes.large
                 implicitWidth: height
                 source: info.icon
             }
