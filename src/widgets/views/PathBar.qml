@@ -34,7 +34,7 @@ Rectangle
     /**
       * url : string
       */
-    property string url : ""
+    property alias url : _pathList.path
 
     /**
       * pathEntry : bool
@@ -76,7 +76,7 @@ Rectangle
       */
     signal placeRightClicked(string path)
 
-    onUrlChanged: append()
+//    onUrlChanged: append()
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
@@ -100,7 +100,7 @@ Rectangle
         {
             id: _pathList
         }
-    }    
+    }
 
     Component
     {
@@ -112,8 +112,7 @@ Rectangle
             text: control.url
             focus: true
             inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoAutoUppercase
-            Kirigami.Theme.textColor: control.Kirigami.Theme.textColor
-            Kirigami.Theme.backgroundColor: "transparent"
+
             horizontalAlignment: Qt.AlignLeft
             onAccepted:
             {
@@ -121,11 +120,7 @@ Rectangle
                 showEntryBar()
             }
 
-            background: Rectangle
-            {
-                color: "transparent"
-            }
-
+            background: null
             actions: Action
             {
                 icon.name: "go-next"
@@ -137,12 +132,11 @@ Rectangle
                 }
             }
 
-            //             Keys.enabled: true
-            //             Keys.onPressed:
-            //             {
-            //                 console.log(event.key)
-            //                 pathEntry = false
-            //             }
+            Component.onCompleted:
+            {
+                entry.forceActiveFocus()
+                entry.selectAll()
+            }
         }
     }
 
@@ -274,28 +268,9 @@ Rectangle
     /**
       *
       */
-    function append()
-    {
-        _pathList.path = control.url
-
-        if(_loader.sourceComponent !== _pathCrumbsComponent)
-        {
-            return
-        }
-
-        _loader.item.listView.currentIndex = _loader.item.listView.count-1
-        _loader.item.listView.positionViewAtEnd()
-    }
-
-    /**
-      *
-      */
     function showEntryBar()
     {
         control.pathEntry = !control.pathEntry
-        if(_loader.sourceComponent === _pathEntryComponent)
-        {
-            _loader.item.forceActiveFocus()
-        }
+
     }
 }
