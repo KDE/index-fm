@@ -147,7 +147,6 @@ Rectangle
         RowLayout
         {
             implicitWidth: _listView.contentWidth + (height * 2) + Maui.Style.space.small
-            property alias listView: _listView
             spacing: 0
 
             MouseArea
@@ -189,7 +188,7 @@ Rectangle
                     orientation: ListView.Horizontal
                     clip: true
                     spacing: 0
-                    currentIndex: _listView.count - 1
+                    currentIndex: _pathList.count - 1
                     focus: true
                     interactive: Maui.Handy.isTouch
                     highlightFollowsCurrentItem: true

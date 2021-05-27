@@ -254,6 +254,11 @@ Maui.ContextualMenu
         }
     }
 
+    onClosed:
+    {
+        control.index = -1
+    }
+
     function show(index)
     {
         control.item = _browser.currentFMModel.get(index)

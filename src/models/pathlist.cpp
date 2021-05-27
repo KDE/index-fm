@@ -79,6 +79,8 @@ void PathList::setList()
             emit postItemAppended();
         }
     }
+
+emit this->countChanged();
 }
 
 void PathList::setPath(const QString &path)
