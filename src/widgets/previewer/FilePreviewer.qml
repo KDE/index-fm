@@ -4,7 +4,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
 import org.kde.kirigami 2.7 as Kirigami
-import org.mauikit.controls 1.2 as Maui
+import org.mauikit.controls 1.3 as Maui
 
 import org.mauikit.filebrowsing 1.0 as FB
 
@@ -101,6 +101,8 @@ Maui.Dialog
                 topPadding: padding
                 bottomPadding: padding
 
+                background: null
+
                 ColumnLayout
                 {
                     width: parent.width
@@ -109,14 +111,16 @@ Maui.Dialog
                     Item
                     {
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 100
+                        Layout.preferredHeight: 150
 
-                        Kirigami.Icon
+                        Maui.IconItem
                         {
-                            height: Maui.Style.iconSizes.large
+                            height: parent.height * 0.9
                             width: height
                             anchors.centerIn: parent
-                            source: iteminfo.icon
+                            iconSource: iteminfo.icon
+                            imageSource: iteminfo.thumbnail
+                            iconSizeHint: Maui.Style.iconSizes.large
                         }
                     }
 
@@ -131,7 +135,7 @@ Maui.Dialog
                         model: ListModel { id: _infoModel }
                         delegate: Maui.AlternateListItem
                         {
-                            visible: model.value
+                            visible: model.value && String(model.value).length > 0
                             Layout.preferredHeight: visible ? _delegateColumnInfo.label1.implicitHeight + _delegateColumnInfo.label2.implicitHeight + Maui.Style.space.large : 0
                             Layout.fillWidth: true
                             lastOne: index === _infoModel.count-1
@@ -297,9 +301,7 @@ Maui.Dialog
                 }
             ]
         }
-
     ]
-
 
     Connections
     {

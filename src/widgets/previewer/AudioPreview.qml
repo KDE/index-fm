@@ -2,7 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtMultimedia 5.8
-import org.mauikit.controls 1.2 as Maui
+import org.mauikit.controls 1.3 as Maui
 import org.kde.kirigami 2.7 as Kirigami
 
 Maui.Page
@@ -56,12 +56,13 @@ Maui.Page
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                Kirigami.Icon
+                Maui.IconItem
                 {
                     height: parent.height
                     width: parent.width
-                    source: iteminfo.icon
-                    smooth: true
+                    iconSizeHint: height
+                    iconSource: iteminfo.icon
+                    imageSource: iteminfo.thumbnail
                 }
             }
 
