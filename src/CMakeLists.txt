@@ -40,7 +40,7 @@ if (ANDROID)
     target_link_libraries(index Qt5::AndroidExtras Qt5::QuickControls2)
     kde_source_files_enable_exceptions(index index.cpp)
 
-    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
+#    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
 
 elseif(UNIX)
     target_link_libraries(index KF5::ConfigCore KF5::KIOCore KF5::KIOFileWidgets KF5::KIONTLM KF5::KIOWidgets)

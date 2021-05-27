@@ -25,6 +25,7 @@ Maui.Page
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
     property alias browserList : _browserList
+    property alias browserMenu :_optionsButton
 
     flickable: root.flickable
     floatingFooter: true
@@ -57,7 +58,6 @@ Maui.Page
             checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
             checkable: true
         },
-
 
         ToolButton
         {
@@ -209,6 +209,7 @@ Maui.Page
 
             MenuItem
             {
+                icon.name: "view-hidden"
                 text: i18n("Hidden Files")
                 checkable: true
                 checked: settings.showHiddenFiles
@@ -217,9 +218,19 @@ Maui.Page
                     settings.showHiddenFiles = !settings.showHiddenFiles
                 }
             }
+
+            MenuItem
+            {
+                text: i18n("Split View")
+                visible: Kirigami.Settings.isMobile
+                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                checked: currentTab.count == 2
+                checkable: true
+                onClicked: toogleSplitView()
+            }
+
         }
     ]
-    property alias browserMenu :_optionsButton
 
     headBar.farLeftContent: ToolButton
     {
