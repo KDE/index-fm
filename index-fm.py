@@ -17,6 +17,10 @@ class subinfo(info.infoclass):
     def setDependencies(self):
         self.runtimeDependencies["virtual/base"] = None
         self.runtimeDependencies["libs/qt5/qtbase"] = None
+        self.runtimeDependencies["kde/maui/mauikit-filebrowsing"] = None
+        self.runtimeDependencies["kde/maui/mauikit-texteditor"] = None
+        self.runtimeDependencies["kde/maui/mauikit-imagetools"] = None
+        self.runtimeDependencies["kde/maui/mauikit"] = None
 
 
 class Package(CMakePackageBase):
