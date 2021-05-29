@@ -237,7 +237,6 @@ Maui.ApplicationWindow
             {
                 dialogLoader.sourceComponent = null
             }
-
         }
     }
 
@@ -267,9 +266,9 @@ Maui.ApplicationWindow
             id: _pathBar
             visible: _stackView.depth === 1
             //            implicitWidth: visible ? 500 : 0
-            Layout.fillWidth: visible
-            Layout.minimumWidth: visible? 100 : 0
-            Layout.maximumWidth: 500
+            Layout.fillWidth: true
+            Layout.minimumWidth: 100
+            Layout.maximumWidth: 1500
             onPathChanged: currentBrowser.openFolder(path.trim())
             url: currentBrowser.currentPath
 
