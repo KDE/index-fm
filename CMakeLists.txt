@@ -61,7 +61,6 @@ find_package(MauiKit REQUIRED COMPONENTS FileBrowsing)
 #ecm_find_qmlmodule(QtQuick.Shapes 1.0)
 #ecm_find_qmlmodule(org.kde.kirigami 2.10)
 
-
 if(${ECM_SOURCE_UNDER_VERSION_CONTROL})
 execute_process(
   COMMAND git rev-parse --abbrev-ref HEAD

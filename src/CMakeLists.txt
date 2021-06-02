@@ -31,29 +31,29 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
 endif()
 
 if(ANDROID)
-    add_library(index SHARED ${index_SRCS})
+    add_library(${PROJECT_NAME} SHARED ${index_SRCS})
 else()
-    add_executable(index ${index_SRCS})
+    add_executable(${PROJECT_NAME} ${index_SRCS})
 endif()
 
 if (ANDROID)
-    target_link_libraries(index Qt5::AndroidExtras Qt5::QuickControls2)
-    kde_source_files_enable_exceptions(index index.cpp)
+    target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras Qt5::QuickControls2)
+    kde_source_files_enable_exceptions(${PROJECT_NAME} index.cpp)
 
 #    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
 
 elseif(UNIX)
-    target_link_libraries(index KF5::ConfigCore KF5::KIOCore KF5::KIOFileWidgets KF5::KIONTLM KF5::KIOWidgets)
+    target_link_libraries(${PROJECT_NAME} KF5::ConfigCore KF5::KIOCore KF5::KIOFileWidgets KF5::KIONTLM KF5::KIOWidgets)
 endif()
 
-target_compile_definitions(index
+target_compile_definitions(${PROJECT_NAME}
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
-target_link_libraries(index MauiKit MauiKit::FileBrowsing Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Svg KF5::Archive KF5::CoreAddons KF5::I18n)
+target_link_libraries(${PROJECT_NAME} MauiKit MauiKit::FileBrowsing Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Svg KF5::Archive KF5::CoreAddons KF5::I18n)
 
 #TODO: port to ecm_install_icons()
 if(UNIX AND NOT APPLE AND NOT ANDROID)
-    install(TARGETS index ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+    install(TARGETS ${PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
     install(FILES org.kde.index.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
     install(FILES assets/index.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)
