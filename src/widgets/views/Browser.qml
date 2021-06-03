@@ -4,8 +4,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import QtQuick 2.14
-import QtQuick.Controls 2.14
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 import QtQml.Models 2.3
 import QtQml 2.14
@@ -20,11 +20,9 @@ import org.maui.index 1.0 as Index
 import "../previewer"
 import ".."
 
-Item
+Maui.SplitViewItem
 {
     id: control
-
-    readonly property int _index : ObjectModel.index
 
     property alias browser : _browser
     property alias currentPath: _browser.currentPath
@@ -38,59 +36,17 @@ Item
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
-    SplitView.fillHeight: true
-    SplitView.fillWidth: true
-
-    SplitView.preferredHeight: _splitView.orientation === Qt.Vertical ? _splitView.height / (_splitView.count) :  _splitView.height
-    SplitView.minimumHeight: _splitView.orientation === Qt.Vertical ?  200 : 0
-
-    SplitView.preferredWidth: _splitView.orientation === Qt.Horizontal ? _splitView.width / (_splitView.count) : _splitView.width
-    SplitView.minimumWidth: _splitView.orientation === Qt.Horizontal ? 300 :  0
-
-    opacity: _splitView.currentIndex === _index ? 1 : 0.7
-
     onCurrentPathChanged:
     {
         syncTerminal(currentBrowser.currentPath)
     }
 
-    SplitView
+    Maui.SplitView
     {
         anchors.fill: parent
         anchors.bottomMargin: selectionBar.visible && (terminalVisible) ? selectionBar.height : 0
         spacing: 0
-        orientation: Qt.Vertical
-
-        handle: Rectangle
-        {
-            implicitWidth: 6
-            implicitHeight: 6
-            color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
-                                       : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
-
-            Rectangle
-            {
-                anchors.centerIn: parent
-                width: 48
-                height: parent.height
-                color: _splitSeparator.color
-            }
-
-            Kirigami.Separator
-            {
-                id: _splitSeparator
-                anchors.bottom: parent.bottom
-                anchors.right: parent.right
-                anchors.left: parent.left
-            }
-
-            Kirigami.Separator
-            {
-                anchors.top: parent.top
-                anchors.right: parent.right
-                anchors.left: parent.left
-            }
-        }
+        orientation: Qt.Vertical      
 
         FB.FileBrowser
         {
@@ -139,18 +95,7 @@ Item
 //            {
 //                id:  _dirConf
 //                path: control.currentPath
-//            }
-
-            Rectangle
-            {
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                anchors.right: parent.right
-                height: 2
-                opacity: 1
-                color: Kirigami.Theme.highlightColor
-                visible: _splitView.currentIndex === _index && _splitView.count === 2
-            }
+//            }          
 
             FileMenu
             {
@@ -163,11 +108,11 @@ Item
                 ignoreUnknownSignals: true
                 function onEntered()
                 {
-                    _splitView.currentIndex = control._index
+                    control.focusSplitItem()
                 }
             }
 
-            MouseArea
+            MouseArea // to support tbutton go back and forward
             {
                 anchors.fill: parent
                 propagateComposedEvents: true
@@ -176,7 +121,6 @@ Item
                 //        onEntered: _splitView.currentIndex = control.index
                 onPressed:
                 {
-                    _splitView.currentIndex = control._index
                     mouse.accepted = false
                     _browser.keyPress(mouse);
                 }
@@ -301,20 +245,7 @@ Item
 
             onVisibleChanged: syncTerminal(control.currentPath)
         }
-    }
-
-    MouseArea
-    {
-        anchors.fill: parent
-        enabled: _splitView.currentIndex !== _index
-        propagateComposedEvents: false
-        preventStealing: true
-        onClicked:
-        {
-            _splitView.currentIndex = _index
-            browser.forceActiveFocus()
-        }
-    }
+    }  
 
     Component.onCompleted:
     {

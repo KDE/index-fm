@@ -28,7 +28,7 @@ Item
     property alias currentIndex : _splitView.currentIndex
     property alias count : _splitView.count
     readonly property alias currentItem : _splitView.currentItem
-    readonly property alias model : splitObjectModel
+    readonly property alias model : _splitView.contentModel
     readonly property string title : count === 2 ?  model.get(0).browser.title + "  -  " + model.get(1).browser.title : browser.title
 
     Maui.TabViewInfo.tabTitle: title
@@ -36,119 +36,31 @@ Item
 
     readonly property FB.FileBrowser browser : currentItem.browser
 
-    ObjectModel { id: splitObjectModel }
-
-    SplitView
+    Maui.SplitView
     {
         id: _splitView
 
         anchors.fill: parent
         orientation: width > 600 ? Qt.Horizontal :  Qt.Vertical
 
-        clip: true
-        focus: true
-
-        handle: Rectangle
-        {
-            implicitWidth: Maui.Handy.isTouch ? 10 : 6
-            implicitHeight: Maui.Handy.isTouch ? 10 : 6
-
-            color: SplitHandle.pressed ? Kirigami.Theme.highlightColor
-                                       : (SplitHandle.hovered ? Qt.lighter(Kirigami.Theme.backgroundColor, 1.1) : Kirigami.Theme.backgroundColor)
-
-            Rectangle
-            {
-                anchors.centerIn: parent
-                height: _splitView.orientation == Qt.Horizontal ? 48 : parent.height
-                width:  _splitView.orientation == Qt.Horizontal ? parent.width : 48
-                color: _splitSeparator1.color
-            }
-
-            states: [  State
-                {
-                    when: _splitView.orientation === Qt.Horizontal
-
-                    AnchorChanges
-                    {
-                        target: _splitSeparator1
-                        anchors.top: parent.top
-                        anchors.bottom: parent.bottom
-                        anchors.left: parent.left
-                        anchors.right: undefined
-                    }
-
-                    AnchorChanges
-                    {
-                        target: _splitSeparator2
-                        anchors.top: parent.top
-                        anchors.bottom: parent.bottom
-                        anchors.right: parent.right
-                        anchors.left: undefined
-                    }
-                },
-
-                State
-                {
-                    when: _splitView.orientation === Qt.Vertical
-
-                    AnchorChanges
-                    {
-                        target: _splitSeparator1
-                        anchors.top: parent.top
-                        anchors.bottom: undefined
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                    }
-
-                    AnchorChanges
-                    {
-                        target: _splitSeparator2
-                        anchors.top: undefined
-                        anchors.bottom: parent.bottom
-                        anchors.right: parent.right
-                        anchors.left: parent.left
-                    }
-                }
-            ]
-
-            Kirigami.Separator
-            {
-                id: _splitSeparator1
-            }
-
-            Kirigami.Separator
-            {
-                id: _splitSeparator2
-            }
-        }
-
-        onCurrentItemChanged:
-        {
-            currentItem.forceActiveFocus()
-        }
-
         Component.onCompleted: split(control.path, Qt.Vertical)
+    }
+
+    Component
+    {
+        id: _browserComponent
+        Browser {}
     }
 
     function split(path, orientation)
     {
-
         if(_splitView.count === 2)
         {
             return
         }
-        console.log("ERROR")
 
-        const component = Qt.createComponent("qrc:/widgets/views/Browser.qml");
-        console.log("ERROR", component.errorString())
+        _splitView.addSplit(_browserComponent, {'browser.currentPath': path, 'browser.settings.viewType': settings.viewType})
 
-        if (component.status === Component.Ready)
-        {
-            const object = component.createObject(splitObjectModel, {'browser.currentPath': path, 'browser.settings.viewType': settings.viewType});
-            splitObjectModel.append(object)
-            _splitView.insertItem(splitObjectModel.count, object) // duplicating object insertion due to bug on android not picking the repeater
-            _splitView.currentIndex = splitObjectModel.count - 1
-        }
     }
 
     function pop()
@@ -158,10 +70,7 @@ Item
             return //can not pop all the browsers, leave at least 1
         }
         const index = _splitView.currentIndex === 1 ? 0 : 1
-        splitObjectModel.remove(index)
-        var item = _splitView.takeItem(index)
-        item.destroy()
-        _splitView.currentIndex = 0
+        _splitView.closeSplit(index)
     }
 }
 

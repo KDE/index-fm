@@ -49,4 +49,9 @@ Maui.Terminal
 
         control.session.sendText(str)
     }
+
+    Component.onCompleted:
+    {
+        control.forceActiveFocus()
+    }
 }
