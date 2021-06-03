@@ -109,7 +109,6 @@ Maui.ApplicationWindow
     menuButton.visible: _stackView.depth === 1
     headBar.forceCenterMiddleContent: false
     floatingHeader: false
-	headBar.forceCenterMiddleContent: false
     flickable: currentBrowser.flickable
     mainMenu: [Action
         {

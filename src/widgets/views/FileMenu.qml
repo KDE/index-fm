@@ -136,15 +136,16 @@ Maui.ContextualMenu
         }
     }
 
+    MenuSeparator {}
 
     MenuItem
     {
         enabled: !control.isExec
-        text: i18n("Share")
-        icon.name: "document-share"
+        text: i18n("Preview")
+        icon.name: "view-preview"
         onTriggered:
         {
-            shareFiles(_browser.filterSelection(currentPath, control.item.path))
+            openPreview(_browser.currentFMModel, _browser.currentIndex)
         }
     }
 
@@ -160,7 +161,18 @@ Maui.ContextualMenu
         }
     }
 
-    MenuSeparator {visible: control.isDir}
+    MenuItem
+    {
+        enabled: !control.isExec
+        text: i18n("Share")
+        icon.name: "document-share"
+        onTriggered:
+        {
+            shareFiles(_browser.filterSelection(currentPath, control.item.path))
+        }
+    }
+
+    MenuSeparator {}
 
     MenuItem
     {
@@ -186,19 +198,6 @@ Maui.ContextualMenu
         onTriggered:
         {
             inx.openTerminal(control.item.path)
-        }
-    }
-
-    MenuSeparator {}
-
-    MenuItem
-    {
-        enabled: !control.isExec
-        text: i18n("Preview")
-        icon.name: "view-preview"
-        onTriggered:
-        {
-            openPreview(_browser.currentFMModel, _browser.currentIndex)
         }
     }
 
