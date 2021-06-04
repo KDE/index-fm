@@ -61,7 +61,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text:  i18n("Preview Files")
-            label2.text: i18n("Opens a quick preview with information of the file instead of opening it with an external application.")
+            label2.text: i18n("Opens a quick preview with information of the file instead of opening it with an external application")
 
             Switch
             {
@@ -70,7 +70,7 @@ Maui.SettingsDialog
                 checked:  settings.previewFiles
                 onToggled: settings.previewFiles = !settings.previewFiles
             }
-        }        
+        }
     }
 
    Maui.SettingsSection
@@ -82,7 +82,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("Grid Items Size")
-            label2.text: i18n("Size of the grid and list view thumbnails.")
+            label2.text: i18n("Size of the grid view.")
 
             Maui.ToolActions
             {
@@ -127,7 +127,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("List Items Size")
-            label2.text: i18n("Size of the grid and list view thumbnails.")
+            label2.text: i18n("Size of the list view.")
 
             Maui.ToolActions
             {
@@ -172,7 +172,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("Overview")
-            label2.text: i18n("Use overview mode as default on launch.")
+            label2.text: i18n("Use overview mode as default on launch")
 
             Switch
             {
@@ -180,6 +180,6 @@ Maui.SettingsDialog
                 checked:  appSettings.overviewStart
                 onToggled: appSettings.overviewStart = !appSettings.overviewStart
             }
-        }        
+        }
     }
 }
