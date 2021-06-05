@@ -20,7 +20,7 @@
 #endif
 
 #ifdef Q_OS_MACOS
-#include "mauimacos.h"
+#include <MauiKit/Core/mauimacos.h>
 #endif
 
 #include <MauiKit/Core/mauiapp.h>

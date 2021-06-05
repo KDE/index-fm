@@ -28,17 +28,20 @@ Maui.SplitViewItem
     property alias currentPath: _browser.currentPath
     property alias settings : _browser.settings
     property alias title : _browser.title
-//    property alias dirConf : _dirConf
+    //    property alias dirConf : _dirConf
 
-//    property alias sortBy : _dirConf.sortKey
-//    property alias viewType : _dirConf.viewType
+    //    property alias sortBy : _dirConf.sortKey
+    //    property alias viewType : _dirConf.viewType
 
     property bool terminalVisible : false
     readonly property bool supportsTerminal : terminalLoader.item
 
     onCurrentPathChanged:
     {
-        syncTerminal(currentBrowser.currentPath)
+        if(currentBrowser)
+        {
+            syncTerminal(currentBrowser.currentPath)
+        }
     }
 
     Maui.SplitView
@@ -46,7 +49,7 @@ Maui.SplitViewItem
         anchors.fill: parent
         anchors.bottomMargin: selectionBar.visible && (terminalVisible) ? selectionBar.height : 0
         spacing: 0
-        orientation: Qt.Vertical      
+        orientation: Qt.Vertical
 
         FB.FileBrowser
         {
@@ -89,13 +92,13 @@ Maui.SplitViewItem
             settings.foldersFirst: true
             settings.sortBy: sortSettings.sortBy
             settings.group: sortSettings.group
-//            settings.viewType: _dirConf.viewType
+            //            settings.viewType: _dirConf.viewType
 
-//            Index.FolderConfig
-//            {
-//                id:  _dirConf
-//                path: control.currentPath
-//            }          
+            //            Index.FolderConfig
+            //            {
+            //                id:  _dirConf
+            //                path: control.currentPath
+            //            }
 
             FileMenu
             {
@@ -219,8 +222,8 @@ Maui.SplitViewItem
             {
 
                 if(_browser.currentFMList.pathType !== FB.FMList.TRASH_PATH && _browser.currentFMList.pathType !== FB.FMList.REMOTE_PATH)
-                   {
-                     itemMenu.show(index)
+                {
+                    itemMenu.show(index)
                 }
             }
 
@@ -245,7 +248,7 @@ Maui.SplitViewItem
 
             onVisibleChanged: syncTerminal(control.currentPath)
         }
-    }  
+    }
 
     Component.onCompleted:
     {
