@@ -11,7 +11,6 @@ Maui.SettingsDialog
 {
     Maui.SettingsSection
     {
-//        alt: true
         title: i18n("Navigation")
         description: i18n("Configure the app plugins and behavior.")
 
