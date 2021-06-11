@@ -22,15 +22,6 @@ signals:
     void openPath(QStringList paths);
 
 public slots:
-    bool supportsEmbededTerminal()
-    {
-#ifdef EMBEDDED_TERMINAL
-        return true;
-#else
-        return false;
-#endif
-    }
-
     static QUrl cameraPath();
     static QUrl screenshotsPath();
 

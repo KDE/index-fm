@@ -242,7 +242,6 @@ Maui.SplitViewItem
             SplitView.minimumHeight : 100
             visible: active && control.terminalVisible
             asynchronous: true
-            active: inx.supportsEmbededTerminal()
 
             source: "Terminal.qml"
 
