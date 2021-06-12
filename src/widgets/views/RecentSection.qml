@@ -95,17 +95,6 @@ ColumnLayout
                     _recentGrid.currentIndex = index
                     openPreview(_recentDownloadsModel, index)
                 }
-
-//                template.content: Label
-//                {
-//                    visible: parent.height > 100
-//                    opacity: 0.5
-//                    color: Kirigami.Theme.textColor
-//                    font.pointSize: Maui.Style.fontSizes.tiny
-//                    horizontalAlignment: Qt.AlignHCenter
-//                    Layout.fillWidth: true
-//                    text: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")
-//                }
             }
         }
     }
