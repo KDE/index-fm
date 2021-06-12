@@ -63,9 +63,9 @@ Maui.SplitViewItem
             gridItemSize: switch(appSettings.gridSize)
                           {
                           case 0: return Math.floor(48 * 1.5);
-                          case 1: return Math.floor(64 * 1.5);
+                          case 1: return Math.floor(60 * 1.5);
                           case 2: return Math.floor(80 * 1.5);
-                          case 3: return Math.floor(124 * 1.5);
+                          case 3: return Math.floor(110 * 1.5);
                           case 4: return Math.floor(140 * 1.5);
                           default: return Math.floor(80 * 1.5);
                           }
