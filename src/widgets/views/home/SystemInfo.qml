@@ -23,7 +23,7 @@ Maui.ListBrowser
     signal itemClicked(url url)
 
     orientation: ListView.Horizontal
-    implicitHeight: 200
+    implicitHeight: 220
     verticalScrollBarPolicy: ScrollBar.AlwaysOff
 //    horizontalScrollBarPolicy: ScrollBar.AlwaysOff
 
@@ -35,7 +35,7 @@ Maui.ListBrowser
         property bool isCurrentItem : ListView.isCurrentItem
         anchors.verticalCenter: parent.verticalCenter
         width: 320
-        height: 150
+        height: 180
 //        color: Kirigami.Theme.backgroundColor
 //        radius: Maui.Style.radiusV
 
@@ -155,6 +155,7 @@ Maui.ListBrowser
             ProgressBar
             {
                 Layout.fillWidth: true
+                Layout.margins: Maui.Style.space.medium
                 value:  Math.round((_dirInfo.size * 100) / _dirInfo.totalSpace)
                 from: 0
                 to : 100
@@ -174,25 +175,6 @@ Maui.ListBrowser
                     anchors.fill: parent
                     radius: Maui.Style.radiusV
                 }
-            }
-        }
-
-        Rectangle
-        {
-            Kirigami.Theme.inherit: false
-            anchors.fill: parent
-            color: "transparent"
-            radius: Maui.Style.radiusV
-            border.color: _delegate.isCurrentItem || _delegate.hovered ? Kirigami.Theme.highlightColor : Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.2)
-
-            Rectangle
-            {
-                anchors.fill: parent
-                color: "transparent"
-                radius: parent.radius - 0.5
-                border.color: Qt.lighter(Kirigami.Theme.backgroundColor, 2)
-                opacity: 0.2
-                anchors.margins: 1
             }
         }
     }

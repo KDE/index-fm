@@ -75,11 +75,8 @@ ColumnLayout
 
         delegate: Item
         {
-            property bool isCurrentItem : ListView.isCurrentItem
-
-            width: 140
-            height: width
-            anchors.verticalCenter: parent.verticalCenter
+            width: height
+            height: ListView.view.height
 
             Maui.GridBrowserDelegate
             {
@@ -91,6 +88,7 @@ ColumnLayout
                 template.fillMode: Image.PreserveAspectFit
                 iconSizeHint: height * 0.5
                 checkable: selectionMode
+                isCurrentItem: parent.ListView.isCurrentItem
 
                 onClicked:
                 {
@@ -150,10 +148,8 @@ ColumnLayout
 
         delegate: Item
         {
-            property bool isCurrentItem : ListView.isCurrentItem
-            width: 220
-            height: 80
-            anchors.verticalCenter: parent.verticalCenter
+            width: 300
+            height: ListView.view.height
 
             AudioCard
             {
@@ -161,8 +157,9 @@ ColumnLayout
                 anchors.margins: Maui.Style.space.medium
                 iconSource: model.icon
                 iconSizeHint: Maui.Style.iconSizes.big
+                imageSource: model.thumbnail
                 player.source: model.url
-
+                isCurrentItem: parent.ListView.isCurrentItem
                 onClicked:
                 {
                     _recentGridAudio.currentIndex = index
@@ -211,10 +208,8 @@ ColumnLayout
 
         delegate: Item
         {
-            property bool isCurrentItem : ListView.isCurrentItem
-            width: 140
-            height: width
-            anchors.verticalCenter: parent.verticalCenter
+            width: height
+            height: ListView.view.height
 
             ImageCard
             {
@@ -222,6 +217,7 @@ ColumnLayout
                 anchors.margins: Maui.Style.space.medium
                 imageSource: model.thumbnail
                 //                checkable: selectionMode
+                isCurrentItem: parent.ListView.isCurrentItem
                 onClicked:
                 {
                     _recentGridPictures.currentIndex = index
