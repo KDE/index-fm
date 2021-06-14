@@ -62,12 +62,12 @@ Maui.SplitViewItem
             selectionBar: root.selectionBar
             gridItemSize: switch(appSettings.gridSize)
                           {
-                          case 0: return Math.floor(48 * 1.5);
-                          case 1: return Math.floor(60 * 1.5);
-                          case 2: return Math.floor(80 * 1.5);
-                          case 3: return Math.floor(110 * 1.5);
-                          case 4: return Math.floor(140 * 1.5);
-                          default: return Math.floor(80 * 1.5);
+                          case 0: return 72;
+                          case 1: return 90;
+                          case 2: return 120;
+                          case 3: return 160;
+                          case 4: return 210;
+                          default: return 120;
                           }
 
             listItemSize:   switch(appSettings.listSize)
