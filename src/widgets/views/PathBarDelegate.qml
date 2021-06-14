@@ -1,7 +1,7 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.7 as Kirigami
+import QtQuick 2.14
+import QtQuick.Controls 2.14
+
+import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.0 as Maui
 
 Rectangle
@@ -12,7 +12,7 @@ Rectangle
     /**
       *
       */
-    readonly property bool hovered: _mouseArea.containsMouse
+    property alias hovered: _mouseArea.containsMouse
 
     /**
       *
@@ -23,6 +23,8 @@ Rectangle
     ToolTip.timeout: 5000
     ToolTip.visible: _mouseArea.containsMouse || _mouseArea.containsPress
     ToolTip.text: model.path
+
+    color: control.checked || hovered ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.15) : Kirigami.Theme.backgroundColor
 
     /**
       *
@@ -44,6 +46,21 @@ Rectangle
       */
     signal pressAndHold()
 
+
+    Label
+    {
+        id: _label
+        text: model.label
+        anchors.fill: parent
+        rightPadding: Maui.Style.space.medium
+        leftPadding: rightPadding
+        horizontalAlignment: Qt.AlignHCenter
+        verticalAlignment:  Qt.AlignVCenter
+        elide: Qt.ElideRight
+        wrapMode: Text.NoWrap
+        color: control.checked ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+    }
+
     MouseArea
     {
         id: _mouseArea
@@ -62,17 +79,4 @@ Rectangle
         onPressAndHold : control.pressAndHold()
     }
 
-    Label
-    {
-        id: _label
-        text: model.label
-        anchors.fill: parent
-        rightPadding: Maui.Style.space.medium
-        leftPadding: rightPadding
-        horizontalAlignment: Qt.AlignHCenter
-        verticalAlignment:  Qt.AlignVCenter
-        elide: Qt.ElideRight
-        wrapMode: Text.NoWrap
-        color: control.checked ?Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-    }
 }

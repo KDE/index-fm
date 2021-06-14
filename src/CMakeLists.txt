@@ -10,6 +10,7 @@ set(index_SRCS
     controllers/compressedfile.cpp
     controllers/dirinfo.cpp
     controllers/folderconfig.cpp
+    controllers/sessionmanager.cpp
     models/recentfilesmodel.cpp
     models/pathlist.cpp
     index_assets.qrc

@@ -20,7 +20,8 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.7 as Kirigami
+
+import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.2 as Maui
 
 import org.maui.index 1.0 as Index
@@ -28,28 +29,17 @@ import org.maui.index 1.0 as Index
 Rectangle
 {
     id: control
-
     implicitHeight: Math.floor(Maui.Style.iconSizes.medium + (Maui.Style.space.medium * 1.5))
-
+    implicitWidth: item ? item.implicitWidth :  500
     /**
       * url : string
       */
-    property alias url : _pathList.path
+    property url url
 
     /**
       * pathEntry : bool
       */
     property bool pathEntry: false
-
-    /**
-      *  list : PathList
-      */
-    readonly property alias list : _pathList
-
-    /**
-      * model : BaseModel
-      */
-    readonly property alias model : _pathModel
 
     /**
       * item : Item
@@ -76,181 +66,205 @@ Rectangle
       */
     signal placeRightClicked(string path)
 
-//    onUrlChanged: append()
+    //    onUrlChanged: append()
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
-    Kirigami.Theme.inherit: false
+    //    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    //    Kirigami.Theme.inherit: false
 
-    color: Kirigami.Theme.backgroundColor
+    //    color: Qt.lighter(control.Kirigami.Theme.backgroundColor)
+    color:  Qt.rgba(m_color.r, m_color.g, m_color.b, 0.3)
     radius: Maui.Style.radiusV
-    border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
+    border.color: pathEntry ? control.Kirigami.Theme.highlightColor : "transparent"
+
+    readonly property color m_color : Qt.tint(root.Kirigami.Theme.textColor, Qt.rgba(root.Kirigami.Theme.backgroundColor.r, root.Kirigami.Theme.backgroundColor.g, root.Kirigami.Theme.backgroundColor.b, 0.6))
 
     Loader
     {
         id: _loader
         anchors.fill: parent
         asynchronous: true
-        sourceComponent: pathEntry ? _pathEntryComponent : _pathCrumbsComponent
-    }
-
-    Maui.BaseModel
-    {
-        id: _pathModel
-        list: Index.PathList
+        sourceComponent: Item
         {
-            id: _pathList
-        }
-    }
+            implicitWidth: _rowLayout.implicitWidth
 
-    Component
-    {
-        id: _pathEntryComponent
-
-        Maui.TextField
-        {
-            id: entry
-            text: control.url
-            focus: true
-            inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoAutoUppercase
-
-            horizontalAlignment: Qt.AlignLeft
-            onAccepted:
+            Maui.TextField
             {
-                pathChanged(text)
-                showEntryBar()
-            }
-
-            background: null
-            actions: Action
-            {
-                icon.name: "go-next"
-                icon.color: control.Kirigami.Theme.textColor
-                onTriggered:
+                id: entry
+                anchors.fill: parent
+                visible: pathEntry
+                enabled: visible
+                text: control.url
+                inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoAutoUppercase
+                implicitWidth: 500
+                horizontalAlignment: Qt.AlignLeft
+                onAccepted:
                 {
-                    pathChanged(entry.text)
+                    pathChanged(text)
                     showEntryBar()
                 }
-            }
 
-            Component.onCompleted:
-            {
-                entry.forceActiveFocus()
-                entry.selectAll()
-            }
-        }
-    }
-
-    Component
-    {
-        id: _pathCrumbsComponent
-
-        RowLayout
-        {
-            implicitWidth: _listView.contentWidth + (height * 2) + Maui.Style.space.small
-            spacing: 0
-
-            MouseArea
-            {
-                Layout.fillHeight: true
-                Layout.preferredWidth: height * 1.5
-                onClicked: control.homeClicked()
-                hoverEnabled: Kirigami.Settings.isMobile
-
-                Kirigami.Icon
+                background: null
+                actions: Action
                 {
-                    anchors.centerIn: parent
-                    source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
-                    color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
-                    width: Maui.Style.iconSizes.medium
-                    height: width
+                    icon.name: "go-next"
+                    icon.color: control.Kirigami.Theme.textColor
+                    onTriggered:
+                    {
+                        pathChanged(entry.text)
+                        showEntryBar()
+                    }
+                }
+
+                Component.onCompleted:
+                {
+                    entry.forceActiveFocus()
+                    entry.selectAll()
                 }
             }
 
-            Kirigami.Separator
+            RowLayout
             {
-                Layout.fillHeight: true
-            }
-
-            ScrollView
-            {
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-                ScrollBar.vertical.policy: ScrollBar.AlwaysOff
-                contentWidth: _listView.contentWidth
-                contentHeight: height
-
-                ListView
+                id: _rowLayout
+                spacing: 1
+                visible: !pathEntry
+                anchors.fill: parent
+//                anchors.margins: 2
+                MouseArea
                 {
-                    id: _listView
-                    anchors.fill: parent
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: height * 1.5
+                    onClicked: control.homeClicked()
+                    hoverEnabled: Kirigami.Settings.isMobile
 
-                    orientation: ListView.Horizontal
-                    clip: true
-                    spacing: 0
-                    currentIndex: _pathList.count - 1
-                    focus: true
-                    interactive: Maui.Handy.isTouch
-                    highlightFollowsCurrentItem: true
-
-                    boundsBehavior: Flickable.StopAtBounds
-                    boundsMovement :Flickable.StopAtBounds
-
-                    model: _pathModel
-
-                    delegate: PathBarDelegate
+                    Kirigami.ShadowedRectangle
                     {
-                        id: delegate
-
-                        color: ListView.isCurrentItem || hovered ? Qt.rgba(control.Kirigami.Theme.highlightColor.r, control.Kirigami.Theme.highlightColor.g, control.Kirigami.Theme.highlightColor.b, 0.15) : "transparent"
-
-                        height: ListView.view.height
-                        width: Math.max(Maui.Style.iconSizes.medium * 2, implicitWidth)
-
-                        Kirigami.Separator
+                        corners
                         {
-                            anchors.top: parent.top
-                            anchors.bottom: parent.bottom
-                            anchors.right: parent.right
+                            topLeftRadius: Maui.Style.radiusV
+                            topRightRadius: 0
+                            bottomLeftRadius: Maui.Style.radiusV
+                            bottomRightRadius: 0
                         }
 
-                        onClicked:
-                        {
-                            control.placeClicked(model.path)
-                        }
-
-                        onRightClicked:
-                        {
-                            control.placeRightClicked(model.path)
-                        }
-
-                        onPressAndHold:
-                        {
-                            control.placeRightClicked(model.path)
-                        }
-                    }
-
-                    MouseArea
-                    {
+                        radius: Maui.Style.radiusV
+                        anchors.margins: 2
                         anchors.fill: parent
-                        onClicked: showEntryBar()
-                        z: -1
+                        color: Kirigami.Theme.backgroundColor
+                        Kirigami.Icon
+                        {
+                            anchors.centerIn: parent
+                            source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
+                            color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
+                            width: Maui.Style.iconSizes.medium
+                            height: width
+                        }
+                    }
+
+
+                }
+
+                //            Kirigami.Separator
+                //            {
+                //                Layout.fillHeight: true
+                //            }
+
+                ScrollView
+                {
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+
+                    implicitWidth: contentWidth
+
+                    ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+                    ScrollBar.vertical.policy: ScrollBar.AlwaysOff
+
+                    contentHeight: availableHeight
+
+                    background: null
+
+                    ListView
+                    {
+                        id: _listView
+
+                        Kirigami.Theme.colorSet: control.Kirigami.Theme.colorSet
+                        Kirigami.Theme.inherit: false
+
+                        orientation: ListView.Horizontal
+                        clip: true
+                        spacing: 2
+                        currentIndex: _pathList.count - 1
+                        focus: true
+                        interactive: Maui.Handy.isTouch
+                        highlightFollowsCurrentItem: true
+
+                        boundsBehavior: Flickable.StopAtBounds
+                        boundsMovement :Flickable.StopAtBounds
+
+                        model:  Maui.BaseModel
+                        {
+                            id: _pathModel
+                            list: Index.PathList
+                            {
+                                id: _pathList
+                                path: control.url
+                            }
+                        }
+
+                        delegate: Item
+                        {
+                            height: ListView.view.height
+                            width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
+
+                            PathBarDelegate
+                            {
+                                id: delegate
+                                checked: parent.ListView.isCurrentItem
+//                                radius: Maui.Style.radiusV
+                                anchors.fill: parent
+                                anchors.topMargin: 2
+                                anchors.bottomMargin: 2
+
+
+                                //                        Kirigami.Separator
+                                //                        {
+                                //                            anchors.top: parent.top
+                                //                            anchors.bottom: parent.bottom
+                                //                            anchors.right: parent.right
+                                //                        }
+
+                                onClicked:
+                                {
+                                    control.placeClicked(model.path)
+                                }
+
+                                onRightClicked:
+                                {
+                                    control.placeRightClicked(model.path)
+                                }
+
+                                onPressAndHold:
+                                {
+                                    control.placeRightClicked(model.path)
+                                }
+                            }
+                        }
+
+                        MouseArea
+                        {
+                            anchors.fill: parent
+                            onClicked: showEntryBar()
+                            z: -1
+                        }
                     }
                 }
-            }
 
-            MouseArea
-            {
-                Layout.fillHeight: true
-                Layout.preferredWidth: control.height
-                onClicked: control.showEntryBar()
-                hoverEnabled: Kirigami.Settings.isMobile
-
-                Rectangle
+                MouseArea
                 {
-                    anchors.fill: parent
-                    radius: Maui.Style.radiusV
-                    color: parent.containsMouse ?  Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.2)  : "transparent"
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: control.height
+                    onClicked: control.showEntryBar()
+                    hoverEnabled: Kirigami.Settings.isMobile
+
                     Kirigami.Icon
                     {
                         anchors.centerIn: parent
@@ -259,10 +273,23 @@ Rectangle
                         width: Maui.Style.iconSizes.medium
                         height: width
                     }
+
                 }
             }
         }
     }
+
+
+
+
+    //    Rectangle
+    //    {
+    //        anchors.fill: parent
+    //        color: "transparent"
+    //        radius: Maui.Style.radiusV
+    //        border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
+    //    }
+
 
     /**
       *

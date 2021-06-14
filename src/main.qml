@@ -261,46 +261,51 @@ Maui.ApplicationWindow
     }
 
     headBar.middleContent: [
-        PathBar
+        Item
         {
-            id: _pathBar
             visible: _stackView.depth === 1
-            //            implicitWidth: visible ? 500 : 0
             Layout.fillWidth: true
             Layout.minimumWidth: 100
-            Layout.maximumWidth: 1500
-            onPathChanged: currentBrowser.openFolder(path.trim())
-            url: currentBrowser.currentPath
+            Layout.fillHeight: true
 
-            onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
-            onPlaceClicked: currentBrowser.openFolder(path)
-            onPlaceRightClicked:
+            PathBar
             {
-                _pathBarmenu.path = path
-                _pathBarmenu.open()
-            }
+                id: _pathBar
 
-            Maui.ContextualMenu
-            {
-                id: _pathBarmenu
-                property url path
+                width: Math.min(parent.width, implicitWidth)
+                anchors.centerIn: parent
+                onPathChanged: currentBrowser.openFolder(path.trim())
+                url: currentBrowser.currentPath
 
-                MenuItem
+                onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
+                onPlaceClicked: currentBrowser.openFolder(path)
+                onPlaceRightClicked:
                 {
-                    text: i18n("Open in new tab")
-                    icon.name: "tab-new"
-                    onTriggered: openTab(_pathBarmenu.path)
+                    _pathBarmenu.path = path
+                    _pathBarmenu.open()
                 }
 
-                MenuItem
+                Maui.ContextualMenu
                 {
-                    visible: root.currentTab.count === 1
-                    text: i18n("Open in split view")
-                    icon.name: "view-split-left-right"
-                    onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                    id: _pathBarmenu
+                    property url path
+
+                    MenuItem
+                    {
+                        text: i18n("Open in new tab")
+                        icon.name: "tab-new"
+                        onTriggered: openTab(_pathBarmenu.path)
+                    }
+
+                    MenuItem
+                    {
+                        visible: root.currentTab.count === 1
+                        text: i18n("Open in split view")
+                        icon.name: "view-split-left-right"
+                        onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                    }
                 }
-            }
-        },
+            }},
 
         Maui.TextField
         {
