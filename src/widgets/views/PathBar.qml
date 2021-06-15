@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.14
+import QtQml 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
@@ -30,7 +31,15 @@ Rectangle
 {
     id: control
     implicitHeight: Math.floor(Maui.Style.iconSizes.medium + (Maui.Style.space.medium * 1.5))
-    implicitWidth: item ? item.implicitWidth :  500
+    implicitWidth: 500
+
+    Binding on implicitWidth
+    {
+        when: _loader.status === Loader.Ready
+        value: control.item.implicitWidth
+        restoreMode: Binding.RestoreBindingOrValue
+    }
+
     /**
       * url : string
       */
@@ -128,7 +137,7 @@ Rectangle
                 spacing: 1
                 visible: !pathEntry
                 anchors.fill: parent
-//                anchors.margins: 2
+                //                anchors.margins: 2
                 MouseArea
                 {
                     Layout.fillHeight: true
@@ -159,8 +168,6 @@ Rectangle
                             height: width
                         }
                     }
-
-
                 }
 
                 //            Kirigami.Separator
@@ -219,7 +226,7 @@ Rectangle
                             {
                                 id: delegate
                                 checked: parent.ListView.isCurrentItem
-//                                radius: Maui.Style.radiusV
+                                //                                radius: Maui.Style.radiusV
                                 anchors.fill: parent
                                 anchors.topMargin: 2
                                 anchors.bottomMargin: 2

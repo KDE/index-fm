@@ -428,10 +428,7 @@ Maui.Page
 
         onCurrentItemChanged:
         {
-            if(currentBrowser)
-            {
-                currentBrowser.currentView.forceActiveFocus()
-            }
+            currentBrowser.currentView.forceActiveFocus()            
         }
     }
 

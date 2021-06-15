@@ -45,7 +45,7 @@ ColumnLayout
         visible: _dropDown.checked && count > 0
         implicitHeight: 180
         orientation: ListView.Horizontal
-//        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item
         {
@@ -107,7 +107,7 @@ ColumnLayout
         visible: _dropDown.checked && count > 0
         implicitHeight: 120
         orientation: ListView.Horizontal
-//        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item
         {
@@ -166,7 +166,7 @@ ColumnLayout
         implicitHeight: 180
         enableLassoSelection: true
         visible: _dropDown.checked && count > 0
-//        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item
         {
@@ -224,7 +224,7 @@ ColumnLayout
         implicitHeight: 180
         enableLassoSelection: true
         visible: _dropDown.checked && count > 0
-//        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item
         {
@@ -282,7 +282,7 @@ ColumnLayout
         implicitHeight: 180
         enableLassoSelection: true
         visible: _dropDown.checked && count > 0
-//        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         flickable.footer: Item
         {
