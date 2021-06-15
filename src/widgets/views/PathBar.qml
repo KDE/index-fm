@@ -81,11 +81,8 @@ Rectangle
     //    Kirigami.Theme.inherit: false
 
     //    color: Qt.lighter(control.Kirigami.Theme.backgroundColor)
-    color:  Qt.rgba(m_color.r, m_color.g, m_color.b, 0.3)
+    color: Kirigami.Theme.backgroundColor
     radius: Maui.Style.radiusV
-    border.color: pathEntry ? control.Kirigami.Theme.highlightColor : "transparent"
-
-    readonly property color m_color : Qt.tint(root.Kirigami.Theme.textColor, Qt.rgba(root.Kirigami.Theme.backgroundColor.r, root.Kirigami.Theme.backgroundColor.g, root.Kirigami.Theme.backgroundColor.b, 0.6))
 
     Loader
     {
@@ -134,10 +131,10 @@ Rectangle
             RowLayout
             {
                 id: _rowLayout
-                spacing: 1
+                spacing: 0
                 visible: !pathEntry
                 anchors.fill: parent
-                //                anchors.margins: 2
+
                 MouseArea
                 {
                     Layout.fillHeight: true
@@ -145,35 +142,21 @@ Rectangle
                     onClicked: control.homeClicked()
                     hoverEnabled: Kirigami.Settings.isMobile
 
-                    Kirigami.ShadowedRectangle
+                    Kirigami.Icon
                     {
-                        corners
-                        {
-                            topLeftRadius: Maui.Style.radiusV
-                            topRightRadius: 0
-                            bottomLeftRadius: Maui.Style.radiusV
-                            bottomRightRadius: 0
-                        }
-
-                        radius: Maui.Style.radiusV
-                        anchors.margins: 2
-                        anchors.fill: parent
-                        color: Kirigami.Theme.backgroundColor
-                        Kirigami.Icon
-                        {
-                            anchors.centerIn: parent
-                            source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
-                            color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
-                            width: Maui.Style.iconSizes.medium
-                            height: width
-                        }
+                        anchors.centerIn: parent
+                        source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
+                        color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
+                        width: Maui.Style.iconSizes.medium
+                        height: width
                     }
+
                 }
 
-                //            Kirigami.Separator
-                //            {
-                //                Layout.fillHeight: true
-                //            }
+                Kirigami.Separator
+                {
+                    Layout.fillHeight: true
+                }
 
                 ScrollView
                 {
@@ -198,7 +181,7 @@ Rectangle
 
                         orientation: ListView.Horizontal
                         clip: true
-                        spacing: 2
+                        spacing: 0
                         currentIndex: _pathList.count - 1
                         focus: true
                         interactive: Maui.Handy.isTouch
@@ -217,42 +200,33 @@ Rectangle
                             }
                         }
 
-                        delegate: Item
+                        delegate: PathBarDelegate
                         {
+                            id: delegate
+
                             height: ListView.view.height
                             width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
 
-                            PathBarDelegate
+                            Kirigami.Separator
                             {
-                                id: delegate
-                                checked: parent.ListView.isCurrentItem
-                                //                                radius: Maui.Style.radiusV
-                                anchors.fill: parent
-                                anchors.topMargin: 2
-                                anchors.bottomMargin: 2
+                                anchors.top: parent.top
+                                anchors.bottom: parent.bottom
+                                anchors.right: parent.right
+                            }
 
+                            onClicked:
+                            {
+                                control.placeClicked(model.path)
+                            }
 
-                                //                        Kirigami.Separator
-                                //                        {
-                                //                            anchors.top: parent.top
-                                //                            anchors.bottom: parent.bottom
-                                //                            anchors.right: parent.right
-                                //                        }
+                            onRightClicked:
+                            {
+                                control.placeRightClicked(model.path)
+                            }
 
-                                onClicked:
-                                {
-                                    control.placeClicked(model.path)
-                                }
-
-                                onRightClicked:
-                                {
-                                    control.placeRightClicked(model.path)
-                                }
-
-                                onPressAndHold:
-                                {
-                                    control.placeRightClicked(model.path)
-                                }
+                            onPressAndHold:
+                            {
+                                control.placeRightClicked(model.path)
                             }
                         }
 
@@ -286,16 +260,14 @@ Rectangle
         }
     }
 
+    Rectangle
+    {
+        anchors.fill: parent
+        color: "transparent"
+        radius: Maui.Style.radiusV
+        border.color: pathEntry ? control.Kirigami.Theme.highlightColor : Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
 
-
-
-    //    Rectangle
-    //    {
-    //        anchors.fill: parent
-    //        color: "transparent"
-    //        radius: Maui.Style.radiusV
-    //        border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
-    //    }
+    }
 
 
     /**
