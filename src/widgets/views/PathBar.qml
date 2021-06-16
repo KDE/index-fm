@@ -113,10 +113,13 @@ Rectangle
                     }
                 }
 
-                Component.onCompleted:
+                onVisibleChanged:
                 {
-                    entry.forceActiveFocus()
-                    entry.selectAll()
+                    if(visible)
+                    {
+                        entry.forceActiveFocus()
+                        entry.selectAll()
+                    }
                 }
             }
 
