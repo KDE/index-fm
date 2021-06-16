@@ -31,15 +31,7 @@ Rectangle
 {
     id: control
     implicitHeight: Math.floor(Maui.Style.iconSizes.medium + (Maui.Style.space.medium * 1.5))
-    implicitWidth: 500
-
-    Binding on implicitWidth
-    {
-        when: _loader.status === Loader.Ready
-        value: control.item.implicitWidth
-        restoreMode: Binding.RestoreBindingOrValue
-    }
-
+  
     /**
       * url : string
       */
