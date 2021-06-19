@@ -261,14 +261,21 @@ Maui.ApplicationWindow
     }
 
     headBar.middleContent: [
+
+        Item
+        {
+            visible: _stackView.depth === 1
+
+            Layout.fillWidth: true
+            Layout.minimumWidth: 100
+            Layout.fillHeight: true
+
         PathBar
             {
                 id: _pathBar
 
-                visible: _stackView.depth === 1
-                Layout.fillWidth: true
-                Layout.minimumWidth: 100
-
+                anchors.centerIn: parent
+                width: Math.min(parent.width, implicitWidth)
                 onPathChanged: currentBrowser.openFolder(path.trim())
                 url: currentBrowser.currentPath
 
@@ -300,7 +307,8 @@ Maui.ApplicationWindow
                         onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
                     }
                 }
-            },
+            }
+        },
 
         Maui.TextField
         {

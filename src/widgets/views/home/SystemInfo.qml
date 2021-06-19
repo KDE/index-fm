@@ -24,7 +24,7 @@ Maui.ListBrowser
 
     orientation: ListView.Horizontal
     implicitHeight: 220
-    verticalScrollBarPolicy: ScrollBar.AlwaysOff
+//    verticalScrollBarPolicy: ScrollBar.AlwaysOff
 //    horizontalScrollBarPolicy: ScrollBar.AlwaysOff
 
     model: [StandardPaths.writableLocation(StandardPaths.MusicLocation), StandardPaths.writableLocation(StandardPaths.DownloadLocation), StandardPaths.writableLocation(StandardPaths.MoviesLocation), StandardPaths.writableLocation(StandardPaths.DocumentsLocation)]

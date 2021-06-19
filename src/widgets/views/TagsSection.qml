@@ -13,6 +13,8 @@ import org.mauikit.filebrowsing 1.3 as FB
 
 ColumnLayout
 {
+    id: control
+
     Maui.SectionDropDown
     {
         id: _dropDown
@@ -24,44 +26,42 @@ ColumnLayout
         template.iconSizeHint: Maui.Style.iconSizes.medium
     }
 
-    Maui.GridView
+    Loader
     {
-        id: _tagsGrid
         Layout.fillWidth: true
-        itemSize: 140
-        itemHeight: Maui.Style.rowHeight * 2
+        asynchronous: true
 
-        model: Maui.BaseModel
+        sourceComponent: Maui.GridView
         {
-            list:  FB.TagsListModel {urls: []; strict: false }
-        }
+            id: _tagsGrid
+            itemSize: 140
+            itemHeight: Maui.Style.rowHeight * 2
 
-        delegate: Item
-        {
-            width: _tagsGrid.cellWidth
-            height: _tagsGrid.itemHeight
-
-            Maui.ListBrowserDelegate
+            model: Maui.BaseModel
             {
-                anchors.fill: parent
-                anchors.margins: Maui.Style.space.medium
+                list:  FB.TagsListModel {urls: []; strict: false }
+            }
 
-                iconSizeHint: Maui.Style.iconSizes.small
-                label1.text: model.tag
-                iconSource: model.icon
-                iconVisible: true
+            delegate: Item
+            {
+                width: GridView.view.cellWidth
+                height: GridView.view.itemHeight
 
-                onClicked:
+                Maui.ListBrowserDelegate
                 {
-                    _tagsGrid.currentIndex = index
-                    openTab("tags:///"+model.tag)
-                }
+                    anchors.fill: parent
+                    anchors.margins: Maui.Style.space.medium
 
-                background: Rectangle
-                {
-                    color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.9))
-                    opacity: 0.8
-                    radius: Maui.Style.radiusV
+                    iconSizeHint: Maui.Style.iconSizes.small
+                    label1.text: model.tag
+                    iconSource: model.icon
+                    iconVisible: true
+
+                    onClicked:
+                    {
+                        _tagsGrid.currentIndex = index
+                        openTab("tags:///"+model.tag)
+                    }
                 }
             }
         }

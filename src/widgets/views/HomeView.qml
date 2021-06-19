@@ -75,74 +75,95 @@ Maui.Page
             width: parent.width
             spacing: 0
 
-            Maui.AlternateListItem
+            Loader
             {
                 Layout.fillWidth: true
-                implicitHeight: _favSection.implicitHeight + Maui.Style.space.huge
+                asynchronous: true
 
-                FavoritesSection
+                sourceComponent: Maui.AlternateListItem
                 {
-                    id: _favSection
-                    width: parent.width
-                    anchors.centerIn: parent
-                }
-            }
+                    implicitHeight: _favSection.implicitHeight + Maui.Style.space.huge
 
-            Maui.AlternateListItem
-            {
-                Layout.fillWidth: true
-                implicitHeight: _recentSection.implicitHeight + Maui.Style.space.huge
-
-                RecentSection
-                {
-                    id:_recentSection
-                    width: parent.width
-                    anchors.centerIn: parent
-                }
-            }
-
-            Maui.AlternateListItem
-            {
-                Layout.fillWidth: true
-                implicitHeight: _sysInfoSection.implicitHeight + Maui.Style.space.huge
-
-                SystemInfo
-                {
-                    id: _sysInfoSection
-                    width: parent.width
-                    anchors.centerIn: parent
-
-                    onItemClicked:
+                    FavoritesSection
                     {
-                        openTab(url)
+                        id: _favSection
+                        width: parent.width
+                        anchors.centerIn: parent
                     }
                 }
             }
 
-            Maui.AlternateListItem
+            Loader
             {
                 Layout.fillWidth: true
-                implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
-
-                TagsSection
+                asynchronous: true
+                sourceComponent:  Maui.AlternateListItem
                 {
-                    id: _tagsSection
-                    width: parent.width
-                    anchors.centerIn: parent
+                    implicitHeight: _recentSection.implicitHeight + Maui.Style.space.huge
+
+                    RecentSection
+                    {
+                        id:_recentSection
+                        width: parent.width
+                        anchors.centerIn: parent
+                    }
                 }
             }
 
-            Maui.AlternateListItem
+            Loader
             {
-                lastOne: true
                 Layout.fillWidth: true
-                implicitHeight: _disksSection.implicitHeight + Maui.Style.space.huge
-
-                DisksSection
+                asynchronous: true
+                sourceComponent:  Maui.AlternateListItem
                 {
-                    id: _disksSection
-                    width: parent.width
-                    anchors.centerIn: parent
+                    implicitHeight: _sysInfoSection.implicitHeight + Maui.Style.space.huge
+
+                    SystemInfo
+                    {
+                        id: _sysInfoSection
+                        width: parent.width
+                        anchors.centerIn: parent
+
+                        onItemClicked:
+                        {
+                            openTab(url)
+                        }
+                    }
+                }
+            }
+
+            Loader
+            {
+                Layout.fillWidth: true
+                asynchronous: true
+                sourceComponent:  Maui.AlternateListItem
+                {
+                    implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
+
+                    TagsSection
+                    {
+                        id: _tagsSection
+                        width: parent.width
+                        anchors.centerIn: parent
+                    }
+                }
+            }
+
+            Loader
+            {
+                Layout.fillWidth: true
+                asynchronous: true
+                sourceComponent:  Maui.AlternateListItem
+                {
+                    lastOne: true
+                    implicitHeight: _disksSection.implicitHeight + Maui.Style.space.huge
+
+                    DisksSection
+                    {
+                        id: _disksSection
+                        width: parent.width
+                        anchors.centerIn: parent
+                    }
                 }
             }
         }

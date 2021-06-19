@@ -24,19 +24,34 @@ else()
 endif()
 
 if (ANDROID)
-    target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras Qt5::QuickControls2)
+    target_link_libraries(${PROJECT_NAME}
+        Qt5::AndroidExtras
+        Qt5::QuickControls2)
     kde_source_files_enable_exceptions(${PROJECT_NAME} index.cpp)
 
 #    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
 
 elseif(UNIX)
-    target_link_libraries(${PROJECT_NAME} KF5::ConfigCore KF5::KIOCore KF5::KIOFileWidgets KF5::KIONTLM KF5::KIOWidgets)
+    target_link_libraries(${PROJECT_NAME}
+        KF5::ConfigCore
+        KF5::KIOCore
+        KF5::KIOFileWidgets
+        KF5::KIONTLM
+        KF5::KIOWidgets)
 endif()
 
 target_compile_definitions(${PROJECT_NAME}
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
-target_link_libraries(${PROJECT_NAME} MauiKit MauiKit::FileBrowsing Qt5::Sql Qt5::Quick Qt5::Qml Qt5::Svg KF5::Archive KF5::CoreAddons KF5::I18n)
+target_link_libraries(${PROJECT_NAME}
+    MauiKit
+    MauiKit::FileBrowsing
+    Qt5::Sql
+    Qt5::Quick
+    Qt5::Qml
+    KF5::Archive
+    KF5::CoreAddons
+    KF5::I18n)
 
 #TODO: port to ecm_install_icons()
 if(UNIX AND NOT APPLE AND NOT ANDROID)

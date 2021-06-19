@@ -13,6 +13,7 @@ import org.mauikit.filebrowsing 1.0 as FB
 
 ColumnLayout
 {
+    id: control
 
     Maui.SectionDropDown
     {
@@ -42,15 +43,15 @@ ColumnLayout
 
         delegate: Item
         {
-            width: _othersGrid.cellWidth
-            height: _othersGrid.itemHeight
+            width: GridView.view.cellWidth
+            height: GridView.view.cellHeight
 
             Maui.GridBrowserDelegate
             {
                 anchors.fill: parent
                 anchors.margins: Maui.Style.space.medium
 
-                iconSizeHint: height * 0.7
+                iconSizeHint: Maui.Style.iconSizes.huge
                 label1.text: model.label
                 iconSource: model.icon
                 iconVisible: true
@@ -59,19 +60,6 @@ ColumnLayout
                 {
                     _othersGrid.currentIndex = index
                     open(model.path)
-                }
-
-                //                    Kirigami.ImageColors
-                //                    {
-                //                        id: _colors
-                //                        source: model.icon
-                //                    }
-
-                background: Rectangle
-                {
-                    color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.9))
-                    opacity: 0.8
-                    radius: Maui.Style.radiusV
                 }
             }
         }
