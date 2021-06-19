@@ -11,23 +11,6 @@ Maui.Terminal
 {
     id: control
     kterminal.colorScheme: "DarkPastels"
-    onKeyPressed:
-    {
-        if ((event.key == Qt.Key_V) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
-        {
-            kterminal.pasteClipboard()
-        }
-
-        if ((event.key == Qt.Key_C) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
-        {
-            kterminal.copyClipboard()
-        }
-
-        if ((event.key == Qt.Key_F) && (event.modifiers & Qt.ControlModifier) && (event.modifiers & Qt.ShiftModifier))
-        {
-            footBar.visible = !footBar.visible
-        }
-    }
 
     onTitleChanged:
     {
@@ -48,10 +31,5 @@ Maui.Terminal
             str = str + urls[i].replace("file://", "")+ " "
 
         control.session.sendText(str)
-    }
-
-    Component.onCompleted:
-    {
-        control.forceActiveFocus()
     }
 }

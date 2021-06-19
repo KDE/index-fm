@@ -174,6 +174,9 @@ Rectangle
                         entry.selectAll()
                     }
                 }
+
+                Keys.enabled: true
+                Keys.onEscapePressed: control.pathEntry = false
             }
 
             RowLayout
