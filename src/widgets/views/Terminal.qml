@@ -21,8 +21,12 @@ Maui.Terminal
         control.session.sendText(str)
     }
 
-    Component.onCompleted:
+    onKeyPressed:
     {
-        control.forceActiveFocus()
+        if(event.key == Qt.Key_F4)
+        {
+            toogleTerminal()
+        }
     }
+
 }

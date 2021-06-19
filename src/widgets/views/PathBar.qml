@@ -43,7 +43,7 @@ Rectangle
     color:  item ? "transparent" : Qt.lighter(Kirigami.Theme.backgroundColor)
     radius: Maui.Style.radiusV
 
-    implicitHeight: Math.floor(Maui.Style.iconSizes.medium + (Maui.Style.space.medium * 1.5))
+    implicitHeight: Maui.Style.rowHeight
     implicitWidth: preferredWidth
     /**
       * url : string
@@ -248,7 +248,9 @@ Rectangle
                         boundsBehavior: Flickable.StopAtBounds
                         boundsMovement :Flickable.StopAtBounds
 
-                        model:  Maui.BaseModel
+                        onContentWidthChanged: _listView.positionViewAtEnd()
+
+                        model: Maui.BaseModel
                         {
                             id: _pathModel
                             list: Index.PathList

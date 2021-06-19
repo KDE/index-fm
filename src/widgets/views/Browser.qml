@@ -245,7 +245,23 @@ Maui.SplitViewItem
             active: (Maui.Handy.isLinux && control.terminalVisible) || item
             source: "Terminal.qml"
 
-            onVisibleChanged: syncTerminal(control.currentPath)
+            onVisibleChanged:
+            {
+                syncTerminal(control.currentPath)
+                if(item && item.visible)
+                {
+                    item.forceActiveFocus()
+                }
+            }
+
+            onLoaded:
+            {
+                syncTerminal(control.currentPath)
+                if(item && item.visible)
+                {
+                    item.forceActiveFocus()
+                }
+            }
         }
     }
 
@@ -266,5 +282,4 @@ Maui.SplitViewItem
     {
         terminalVisible = !terminalVisible
     }
-
 }
