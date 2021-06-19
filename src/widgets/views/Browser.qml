@@ -242,7 +242,7 @@ Maui.SplitViewItem
             SplitView.minimumHeight : 100
             visible: active && control.terminalVisible
             asynchronous: true
-            active: Maui.Handy.isLinux
+            active: (Maui.Handy.isLinux && control.terminalVisible) || item
             source: "Terminal.qml"
 
             onVisibleChanged: syncTerminal(control.currentPath)
