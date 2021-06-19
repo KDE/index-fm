@@ -240,21 +240,12 @@ Maui.SplitViewItem
             SplitView.preferredHeight: 200
             SplitView.maximumHeight: parent.height * 0.5
             SplitView.minimumHeight : 100
-            visible: active && control.terminalVisible
+            visible: control.terminalVisible
             asynchronous: true
-            active: (Maui.Handy.isLinux && control.terminalVisible) || item
+            active: Maui.Handy.isLinux
             source: "Terminal.qml"
 
             onVisibleChanged:
-            {
-                syncTerminal(control.currentPath)
-                if(item && item.visible)
-                {
-                    item.forceActiveFocus()
-                }
-            }
-
-            onLoaded:
             {
                 syncTerminal(control.currentPath)
                 if(item && item.visible)
