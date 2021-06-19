@@ -33,7 +33,7 @@ void Index::openPaths(const QStringList &paths)
                                 }
                                 else
                                 {
-                                    list <<  FMStatic::fileDir(url);
+                                    list <<  FMStatic::fileDir(url).toString();
                                 }
                             }
 
