@@ -19,5 +19,6 @@
         <file>widgets/views/FileMenu.qml</file>
         <file>widgets/views/PathBarDelegate.qml</file>
         <file>widgets/views/PathBar.qml</file>
+        <file>widgets/views/ShortcutsDialog.qml</file>
     </qresource>
 </RCC>

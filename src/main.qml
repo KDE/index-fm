@@ -109,7 +109,19 @@ Maui.ApplicationWindow
     headBar.forceCenterMiddleContent: false
     floatingHeader: false
     flickable: currentBrowser.flickable
-    mainMenu: [Action
+    mainMenu: [
+        Action
+        {
+            text: i18n("Shortcuts")
+            icon.name: "configure-shortcuts"
+            onTriggered:
+            {
+                dialogLoader.sourceComponent = _shortcutsDialogComponent
+                dialog.open()
+            }
+        },
+
+        Action
         {
             text: i18n("Settings")
             icon.name: "settings-configure"
@@ -134,6 +146,12 @@ Maui.ApplicationWindow
     {
         id: _configDialogComponent
         SettingsDialog {}
+    }
+
+    Component
+    {
+        id: _shortcutsDialogComponent
+        ShortcutsDialog {}
     }
 
     Component
@@ -270,7 +288,7 @@ Maui.ApplicationWindow
             Layout.minimumWidth: 100
             Layout.fillHeight: true
 
-        PathBar
+            PathBar
             {
                 id: _pathBar
 

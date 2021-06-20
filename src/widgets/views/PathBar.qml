@@ -154,7 +154,13 @@ Rectangle
                     showEntryBar()
                 }
 
-                background: null
+                background: Rectangle
+                {
+                    color: Qt.lighter(Kirigami.Theme.backgroundColor)
+                    radius: Maui.Style.radiusV
+                    border.color:  control.Kirigami.Theme.highlightColor
+                }
+
                 actions: Action
                 {
                     icon.name: "go-next"
@@ -326,14 +332,6 @@ Rectangle
                 }
             }
         }
-    }
-
-    Rectangle
-    {
-        anchors.fill: parent
-        color: "transparent"
-        radius: Maui.Style.radiusV
-        border.color: pathEntry ? control.Kirigami.Theme.highlightColor : "transparent"
     }
 
 
