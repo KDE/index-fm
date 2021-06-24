@@ -258,7 +258,7 @@ Maui.ContextualMenu
         control.index = -1
     }
 
-    function show(index)
+    function showFor(index)
     {
         control.item = _browser.currentFMModel.get(index)
 ''
@@ -273,7 +273,7 @@ Maui.ContextualMenu
                 control.isDir = item.isdir == true || item.isdir == "true"
                 control.isExec = item.executable == true || item.executable == "true"
                 control.isFav = FB.Tagging.isFav(item.path)
-                control.open()
+                control.show()
             }
     }
 }

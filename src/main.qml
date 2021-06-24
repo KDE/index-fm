@@ -302,7 +302,7 @@ Maui.ApplicationWindow
                 onPlaceRightClicked:
                 {
                     _pathBarmenu.path = path
-                    _pathBarmenu.open()
+                    _pathBarmenu.show()
                 }
 
                 Maui.ContextualMenu

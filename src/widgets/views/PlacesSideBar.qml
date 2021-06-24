@@ -115,13 +115,13 @@ Maui.SideBar
         onRightClicked:
         {
             control.currentIndex = index
-            _menu.open()
+            _menu.show()
         }
 
         onPressAndHold:
         {
             control.currentIndex = index
-            _menu.open()
+            _menu.show()
         }
     }
 
