@@ -101,7 +101,7 @@ Maui.SideBar
                     isCurrentItem: parent.GridView.isCurrentItem && _stackView.depth === 1
                     anchors.fill: parent
                     anchors.margins: Maui.Style.space.tiny
-                    iconSource: model.icon
+                    iconSource: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
                     iconSizeHint: Maui.Style.iconSizes.medium
                     label1.text: model.label
                     labelsVisible: false
