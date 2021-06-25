@@ -22,7 +22,8 @@ Maui.SideBar
 
     collapsible: true
     collapsed : !root.isWide
-    preferredWidth: Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 11)
+    preferredWidth: Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 13)
+    currentIndex: list.indexOfPath(currentPath)
 
     onPlaceClicked:
     {
@@ -39,7 +40,6 @@ Maui.SideBar
     {
         width: parent.width
         spacing: Maui.Style.space.medium
-
 
         Maui.ListBrowserDelegate
         {
@@ -73,7 +73,7 @@ Maui.SideBar
             clip: true
             implicitHeight: contentHeight + Maui.Style.space.medium * 2
             //verticalSrollBarPolicy: ScrollBar.AlwaysOff
-
+            currentIndex : _quickPacesList.indexOfPath(currentPath)
             width: parent.width
             itemSize: width * 0.3
             padding: 0
@@ -82,6 +82,8 @@ Maui.SideBar
             {
                 list: FB.PlacesList
                 {
+                    id: _quickPacesList
+
                     groups: [
                         FB.FMList.QUICK_PATH,
                         FB.FMList.PLACES_PATH
@@ -106,8 +108,6 @@ Maui.SideBar
                     tooltipText: model.label
                     onClicked:
                     {
-                        _toggles.currentIndex = index
-
                         placeClicked(model.path)
                         if(control.collapsed)
                             control.close()
@@ -164,8 +164,6 @@ Maui.SideBar
 
         onClicked:
         {
-            control.currentIndex = index
-
             if( placesList.isDevice(index) && placesList.setupNeeded(index))
             {
                 notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), mount)
@@ -237,6 +235,6 @@ Maui.SideBar
     function syncSidebar(path)
     {
         console.log("Sync sidebar", path)
-        control.currentIndex = control.list.indexOfPath(path)
+//        control.currentIndex = control.list.indexOfPath(path)
     }
 }

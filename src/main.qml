@@ -69,11 +69,6 @@ Maui.ApplicationWindow
         property bool perFolderSort : true
     }
 
-    onCurrentPathChanged:
-    {
-        placesSidebar.syncSidebar(currentBrowser.currentPath)
-    }
-
     onClosing:
     {
         close.accepted = !settings.restoreSession
