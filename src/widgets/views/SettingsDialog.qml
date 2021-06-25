@@ -28,21 +28,6 @@ Maui.SettingsDialog
             }
         }
 
-
-        Maui.SettingTemplate
-        {
-            label1.text:  i18n("Single Click")
-            label2.text: i18n("Open files with a single or double click")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  settings.singleClick
-                onToggled: settings.singleClick = !settings.singleClick
-            }
-        }
-
         Maui.SettingTemplate
         {
             label1.text:  i18n("Save Session")

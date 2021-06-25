@@ -45,7 +45,6 @@ Maui.ApplicationWindow
         category: "Browser"
         property bool showHiddenFiles: false
         property bool showThumbnails: true
-        property bool singleClick : Kirigami.Settings.isMobile ? true : Maui.Handy.singleClick
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool overviewStart : false

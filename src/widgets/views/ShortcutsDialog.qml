@@ -9,6 +9,9 @@ import org.mauikit.controls 1.3 as Maui
 Maui.SettingsDialog
 {
     id: control
+    maxWidth: 400
+    maxHeight: 400
+
     title: i18n("Shortcuts")
     persistent: false
     page.showTitle: false
@@ -17,7 +20,7 @@ Maui.SettingsDialog
     Maui.SettingsSection
     {
         title: i18n("Navigation")
-        description: i18n("Browser navigation.")
+        description: i18n("Browser navigation with keyboard.")
 
         Maui.SettingTemplate
         {

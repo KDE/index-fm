@@ -190,7 +190,7 @@ Maui.SplitViewItem
             {
                 const item = currentFMModel.get(index)
 
-                if(appSettings.singleClick)
+                if(Maui.Handy.singleClick)
                 {
                     if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                     {
@@ -206,7 +206,7 @@ Maui.SplitViewItem
             {
                 const item = currentFMModel.get(index)
 
-                if(!appSettings.singleClick)
+                if(!Maui.Handy.singleClick)
                 {
                     if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                     {
