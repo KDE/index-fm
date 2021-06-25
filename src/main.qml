@@ -71,7 +71,7 @@ Maui.ApplicationWindow
 
     onCurrentPathChanged:
     {
-        syncSidebar(currentBrowser.currentPath)
+        placesSidebar.syncSidebar(currentBrowser.currentPath)
     }
 
     onClosing:
@@ -433,11 +433,7 @@ Maui.ApplicationWindow
     //                     browserView.currentView.adaptGrid()
     //     }
 
-    function syncSidebar(path)
-    {
-        console.log("Sync sidebar", path)
-        placesSidebar.currentIndex = placesSidebar.list.indexOfPath(path)
-    }
+
 
     function toogleSplitView()
     {
