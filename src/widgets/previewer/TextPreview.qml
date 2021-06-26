@@ -1,21 +1,17 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
+
 import org.mauikit.texteditor 1.0 as TE
-import org.kde.kirigami 2.7 as Kirigami
 
 TE.TextEditor
 {
     id: control
-    anchors.fill: parent
     headBar.visible: false
     footBar.visible: false
     body.readOnly: true
     document.enableSyntaxHighlighting: true
-    Kirigami.Theme.backgroundColor: "transparent"
-
-    //    Component.onCompleted: document.load(currentUrl)
     fileUrl: currentUrl
+
     Connections
     {
         target: control.document

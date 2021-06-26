@@ -22,7 +22,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
 import org.kde.kirigami 2.14 as Kirigami
-import org.mauikit.controls 1.2 as Maui
+import org.mauikit.controls 1.3 as Maui
 
 import org.maui.index 1.0 as Index
 
@@ -80,54 +80,13 @@ Rectangle
       */
     signal placeRightClicked(string path)
 
-    ProgressBar
+    Maui.ProgressIndicator
     {
         id: _progress
         width: parent.width
         anchors.centerIn: parent
         visible: _loader.status == Loader.Loading
-        indeterminate: true
-
-        contentItem: Item {
-            x: _progress.leftPadding
-            y: _progress.topPadding
-            width: _progress.availableWidth
-            height: _progress.availableHeight
-
-            scale: _progress.mirrored ? -1 : 1
-
-            Repeater {
-                model: 2
-
-                Rectangle {
-                    property real offset: 0
-
-                    x: (_progress.indeterminate ? offset * parent.width : 0)
-                    y: (parent.height - height) / 2
-                    width: offset * (parent.width - x)
-                    height: 4
-
-                    color: "violet"
-
-                    SequentialAnimation on offset {
-                        loops: Animation.Infinite
-                        running: _progress.indeterminate && _progress.visible
-                        PauseAnimation { duration: index ? 520 : 0 }
-                        NumberAnimation {
-                            easing.type: Easing.OutCubic
-                            duration: 1240
-                            from: 0
-                            to: 1
-                        }
-                        PauseAnimation { duration: index ? 0 : 520 }
-                    }
-                }
-            }
-        }
-
-        background: null
     }
-
 
     Loader
     {

@@ -1,16 +1,17 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+
 import QtMultimedia 5.8
+
 import org.mauikit.controls 1.0 as Maui
-import org.kde.kirigami 2.7 as Kirigami
 
 Maui.Page
 {
     id: control
     property alias player : player
     headBar.visible: false
-    anchors.fill: parent
+
     Video
     {
         id: player

@@ -5,17 +5,10 @@
 
 import QtQuick 2.13
 import QtQuick.Controls 2.13
-import QtQuick.Layouts 1.3
-
-import Qt.labs.settings 1.0
-import QtQml.Models 2.3
 
 import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
-
-import org.maui.index 1.0 as Index
-
 
 Maui.Page
 {
@@ -218,17 +211,6 @@ Maui.Page
                     settings.showHiddenFiles = !settings.showHiddenFiles
                 }
             }
-
-            MenuItem
-            {
-                text: i18n("Split View")
-                visible: Kirigami.Settings.isMobile
-                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                checked: currentTab.count == 2
-                checkable: true
-                onClicked: toogleSplitView()
-            }
-
         }
     ]
 
@@ -428,7 +410,7 @@ Maui.Page
 
         onCurrentItemChanged:
         {
-            currentBrowser.currentView.forceActiveFocus()            
+            currentBrowser.currentView.forceActiveFocus()
         }
     }
 

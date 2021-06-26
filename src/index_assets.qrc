@@ -1,19 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>assets/index.svg</file>
-        <file>widgets/views/BrowserView.qml</file>
-        <file>widgets/views/HomeView.qml</file>
-        <file>widgets/views/FavoritesSection.qml</file>
-        <file>widgets/views/TagsSection.qml</file>
-        <file>widgets/views/PlacesSection.qml</file>
-        <file>widgets/views/RecentSection.qml</file>
-        <file>widgets/views/DisksSection.qml</file>
-        <file>widgets/views/home/AudioCard.qml</file>
-        <file>widgets/views/home/Card.qml</file>
-        <file>widgets/views/home/ImageCard.qml</file>
-        <file>widgets/views/home/QuickCommonSection.qml</file>
-        <file>widgets/views/home/SystemInfo.qml</file>
-        <file>controllers/folderconfig.h</file>
-        <file>controllers/folderconfig.cpp</file>
     </qresource>
 </RCC>

@@ -1,5 +1,4 @@
 import QtQuick 2.14
-import QtQml 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
@@ -47,7 +46,6 @@ Maui.Dialog
         Layout.fillWidth: true
         orientation: ListView.Horizontal
         currentIndex: -1
-        clip: true
         focus: true
         spacing: 0
 
@@ -88,71 +86,73 @@ Maui.Dialog
                 onActiveChanged: if(active) show(currentUrl)
             }
 
-            Kirigami.ScrollablePage
+            ScrollView
             {
                 id: _infoContent
                 anchors.fill: parent
                 visible: control.showInfo
-
-                //                Kirigami.Theme.backgroundColor: "transparent"
-                padding:  0
-                leftPadding: padding
-                rightPadding: padding
-                topPadding: padding
-                bottomPadding: padding
+                contentHeight: _layout.implicitHeight
+                contentWidth: availableWidth
 
                 background: null
 
-                ColumnLayout
+                Flickable
                 {
-                    width: parent.width
-                    spacing: 0
+                    boundsBehavior: Flickable.StopAtBounds
+                    boundsMovement: Flickable.StopAtBounds
 
-                    Item
+                    ColumnLayout
                     {
-                        Layout.fillWidth: true
-                        Layout.preferredHeight: 150
+                        id: _layout
+                        width: parent.width
+                        spacing: 0
 
-                        Maui.IconItem
+                        Item
                         {
-                            height: parent.height * 0.9
-                            width: height
-                            anchors.centerIn: parent
-                            iconSource: iteminfo.icon
-                            imageSource: iteminfo.thumbnail
-                            iconSizeHint: Maui.Style.iconSizes.large
-                        }
-                    }
-
-                    Maui.Separator
-                    {
-                        edge: Qt.BottomEdge
-                        Layout.fillWidth: true
-                    }
-
-                    Repeater
-                    {
-                        model: ListModel { id: _infoModel }
-                        delegate: Maui.AlternateListItem
-                        {
-                            visible: model.value && String(model.value).length > 0
-                            Layout.preferredHeight: visible ? _delegateColumnInfo.label1.implicitHeight + _delegateColumnInfo.label2.implicitHeight + Maui.Style.space.large : 0
                             Layout.fillWidth: true
-                            lastOne: index === _infoModel.count-1
+                            Layout.preferredHeight: 150
 
-                            Maui.ListItemTemplate
+                            Maui.IconItem
                             {
-                                id: _delegateColumnInfo
-                                anchors.fill: parent
-                                anchors.margins: Maui.Style.space.medium
+                                height: parent.height * 0.9
+                                width: height
+                                anchors.centerIn: parent
+                                iconSource: iteminfo.icon
+                                imageSource: iteminfo.thumbnail
+                                iconSizeHint: Maui.Style.iconSizes.large
+                            }
+                        }
 
-                                label1.text: model.key
-                                label1.font.weight: Font.Bold
-                                label1.font.bold: true
-                                label2.text: model.value
-                                label2.elide: Qt.ElideMiddle
-                                label2.wrapMode: Text.Wrap
-                                label2.font.weight: Font.Light
+                        Maui.Separator
+                        {
+                            edge: Qt.BottomEdge
+                            Layout.fillWidth: true
+                        }
+
+                        Repeater
+                        {
+                            model: ListModel { id: _infoModel }
+                            delegate: Maui.AlternateListItem
+                            {
+                                visible: model.value && String(model.value).length > 0
+                                Layout.preferredHeight: visible ? _delegateColumnInfo.label1.implicitHeight + _delegateColumnInfo.label2.implicitHeight + Maui.Style.space.large : 0
+                                Layout.fillWidth: true
+                                lastOne: index === _infoModel.count-1
+
+                                Maui.ListItemTemplate
+                                {
+                                    id: _delegateColumnInfo
+                                    anchors.fill: parent
+                                    anchors.margins: Maui.Style.space.medium
+
+                                    label1.text: model.key
+                                    label1.font.weight: Font.Bold
+                                    label1.font.bold: true
+                                    label2.text: model.value
+                                    label2.elide: Qt.ElideMiddle
+                                    label2.wrapMode: Text.Wrap
+                                    label2.font.weight: Font.Light
+                                }
                             }
                         }
                     }

@@ -413,21 +413,7 @@ Maui.ApplicationWindow
                 _stackView.push(_homeViewComponent)
             }
         }
-
     }
-
-    //     onThumbnailsSizeChanged:
-    //     {
-    //         if(settings.trackChanges && settings.saveDirProps)
-    //             Maui.FM.setDirConf(currentPath+"/.directory", "MAUIFM", "IconSize", thumbnailsSize)
-    //             else
-    //                 Maui.FM.saveSettings("IconSize", thumbnailsSize, "SETTINGS")
-    //
-    //                 if(browserView.viewType === FB.FMList.ICON_VIEW)
-    //                     browserView.currentView.adaptGrid()
-    //     }
-
-
 
     function toogleSplitView()
     {

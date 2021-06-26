@@ -20,5 +20,18 @@
         <file>widgets/views/PathBarDelegate.qml</file>
         <file>widgets/views/PathBar.qml</file>
         <file>widgets/views/ShortcutsDialog.qml</file>
+        <file>widgets/views/BrowserView.qml</file>
+        <file>widgets/views/TagsSection.qml</file>
+        <file>widgets/views/RecentSection.qml</file>
+        <file>widgets/views/HomeView.qml</file>
+        <file>widgets/views/FavoritesSection.qml</file>
+        <file>widgets/views/DisksSection.qml</file>
+        <file>widgets/views/PlacesSection.qml</file>
+        <file>widgets/views/BrowserMenu.qml</file>
+        <file>widgets/views/home/SystemInfo.qml</file>
+        <file>widgets/views/home/Card.qml</file>
+        <file>widgets/views/home/QuickCommonSection.qml</file>
+        <file>widgets/views/home/ImageCard.qml</file>
+        <file>widgets/views/home/AudioCard.qml</file>
     </qresource>
 </RCC>

@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import QtQuick 2.14
 import org.mauikit.controls 1.0 as Maui
 
 Maui.Terminal
@@ -28,5 +27,4 @@ Maui.Terminal
             toogleTerminal()
         }
     }
-
 }

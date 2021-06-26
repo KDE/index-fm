@@ -5,10 +5,7 @@
 
 
 import QtQuick 2.14
-import QtQml 2.12
 import QtQuick.Controls 2.13
-import QtQuick.Layouts 1.3
-import QtQml.Models 2.3
 
 import org.kde.kirigami 2.7 as Kirigami
 
@@ -39,7 +36,6 @@ Item
     Maui.SplitView
     {
         id: _splitView
-
         anchors.fill: parent
         orientation: width > 600 ? Qt.Horizontal :  Qt.Vertical
 

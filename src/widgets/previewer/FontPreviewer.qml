@@ -6,7 +6,6 @@ import org.mauikit.controls 1.0 as Maui
 import org.kde.kirigami 2.7 as Kirigami
 
 import org.mauikit.filebrowsing 1.0 as FB
-import org.maui.index 1.0 as Index
 
 Maui.Page
 {
@@ -36,63 +35,72 @@ Maui.Page
         }
     }
 
-    Kirigami.ScrollablePage
+    ScrollView
     {
         anchors.fill: parent
+        contentHeight: _layout.implicitHeight
+        contentWidth: availableWidth
 
-        ColumnLayout
+        Flickable
         {
-            width: parent.width
-            spacing: Maui.Style.space.medium
+            boundsBehavior: Flickable.StopAtBounds
+            boundsMovement: Flickable.StopAtBounds
 
-            Label
+            ColumnLayout
             {
-                font.family: _font.name
-                Layout.fillWidth: true
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: abc.toUpperCase()
-                color: Kirigami.Theme.textColor
-                font.pointSize: 30
-            }
+                id: _layout
+                width: parent.width
+                spacing: Maui.Style.space.medium
 
-            Label
-            {
-                font.family: _font.name
-                Layout.fillWidth: true
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: abc
-                color: Kirigami.Theme.textColor
-                font.pointSize: 20
-            }
+                Label
+                {
+                    font.family: _font.name
+                    Layout.fillWidth: true
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    text: abc.toUpperCase()
+                    color: Kirigami.Theme.textColor
+                    font.pointSize: 30
+                }
 
-            Label
-            {
-                font.family: _font.name
-                Layout.fillWidth: true
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: nums
-                color: Kirigami.Theme.textColor
-                font.pointSize: 30
-            }
+                Label
+                {
+                    font.family: _font.name
+                    Layout.fillWidth: true
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    text: abc
+                    color: Kirigami.Theme.textColor
+                    font.pointSize: 20
+                }
 
-            Label
-            {
-                font.family: _font.name
-                Layout.fillWidth: true
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: paragraph
-                color: Kirigami.Theme.textColor
-                font.pointSize: Maui.Style.fontSizes.huge
-            }
+                Label
+                {
+                    font.family: _font.name
+                    Layout.fillWidth: true
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    text: nums
+                    color: Kirigami.Theme.textColor
+                    font.pointSize: 30
+                }
 
-            Label
-            {
-                font.family: _font.name
-                Layout.fillWidth: true
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                text: symbols
-                color: Kirigami.Theme.textColor
-                font.pointSize: 15
+                Label
+                {
+                    font.family: _font.name
+                    Layout.fillWidth: true
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    text: paragraph
+                    color: Kirigami.Theme.textColor
+                    font.pointSize: Maui.Style.fontSizes.huge
+                }
+
+                Label
+                {
+                    font.family: _font.name
+                    Layout.fillWidth: true
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    text: symbols
+                    color: Kirigami.Theme.textColor
+                    font.pointSize: 15
+                }
             }
         }
     }

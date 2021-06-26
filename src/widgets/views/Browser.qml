@@ -6,9 +6,6 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.3
-import QtQml.Models 2.3
-import QtQml 2.14
 
 import org.kde.kirigami 2.8 as Kirigami
 
@@ -229,7 +226,7 @@ Maui.SplitViewItem
 
             onRightClicked:
             {
-                _browserView.browserMenu.show()
+                _browserView.browserMenu.open()
             }
         }
 
