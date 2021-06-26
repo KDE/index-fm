@@ -132,22 +132,22 @@ Maui.Page
                 }
             }
 
-            Loader
-            {
-                Layout.fillWidth: true
-                asynchronous: true
-                sourceComponent:  Maui.AlternateListItem
-                {
-                    implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
+//            Loader
+//            {
+//                Layout.fillWidth: true
+//                asynchronous: true
+//                sourceComponent:  Maui.AlternateListItem
+//                {
+//                    implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
 
-                    TagsSection
-                    {
-                        id: _tagsSection
-                        width: parent.width
-                        anchors.centerIn: parent
-                    }
-                }
-            }
+//                    TagsSection
+//                    {
+//                        id: _tagsSection
+//                        width: parent.width
+//                        anchors.centerIn: parent
+//                    }
+//                }
+//            }
 
             Loader
             {
