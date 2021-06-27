@@ -217,10 +217,9 @@ Maui.SplitViewItem
 
             onItemRightClicked:
             {
-
                 if(_browser.currentFMList.pathType !== FB.FMList.TRASH_PATH && _browser.currentFMList.pathType !== FB.FMList.REMOTE_PATH)
                 {
-                    itemMenu.showFor(index)
+                    itemMenu.showFor(_browser.currentFMModel.mappedToSource(index))
                 }
             }
 

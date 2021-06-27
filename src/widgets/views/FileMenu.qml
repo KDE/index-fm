@@ -260,7 +260,7 @@ Maui.ContextualMenu
 
     function showFor(index)
     {
-        control.item = _browser.currentFMModel.get(index)
+        control.item = _browser.currentFMList.get(index)
 ''
         console.log("CURRENT ITEM" , item.name)
         if(item.path.startsWith("tags://") || item.path.startsWith("applications://") )
