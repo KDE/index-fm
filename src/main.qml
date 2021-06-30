@@ -104,7 +104,7 @@ Maui.ApplicationWindow
     floatingHeader: false
     flickable: currentBrowser.flickable
     mainMenu: [
-        Action
+        MenuItem
         {
             text: i18n("Shortcuts")
             icon.name: "configure-shortcuts"
@@ -115,12 +115,20 @@ Maui.ApplicationWindow
             }
         },
 
-        Action
+        MenuItem
         {
             text: i18n("Settings")
             icon.name: "settings-configure"
             onTriggered: openConfigDialog()
-        }]
+        },
+
+        MenuItem
+        {
+            text: i18n("About")
+            icon.name: "documentinfo"
+            onTriggered: root.about()
+        }
+    ]
 
     FB.TagsDialog
     {
