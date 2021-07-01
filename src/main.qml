@@ -104,35 +104,45 @@ Maui.ApplicationWindow
     floatingHeader: false
     flickable: currentBrowser.flickable
 
-    headBar.leftContent: Maui.ToolButtonMenu
-    {
-        icon.name: "application-menu"
-
-        MenuItem
+    headBar.leftContent:[
+        Maui.ToolButtonMenu
         {
-            text: i18n("Shortcuts")
-            icon.name: "configure-shortcuts"
-            onTriggered:
+            icon.name: "application-menu"
+
+            MenuItem
             {
-                dialogLoader.sourceComponent = _shortcutsDialogComponent
-                dialog.open()
+                text: i18n("Shortcuts")
+                icon.name: "configure-shortcuts"
+                onTriggered:
+                {
+                    dialogLoader.sourceComponent = _shortcutsDialogComponent
+                    dialog.open()
+                }
             }
-        }
 
-        MenuItem
-        {
-            text: i18n("Settings")
-            icon.name: "settings-configure"
-            onTriggered: openConfigDialog()
-        }
+            MenuItem
+            {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                onTriggered: openConfigDialog()
+            }
 
-        MenuItem
+            MenuItem
+            {
+                text: i18n("About")
+                icon.name: "documentinfo"
+                onTriggered: root.about()
+            }
+        },
+        ToolButton
         {
-            text: i18n("About")
-            icon.name: "documentinfo"
-            onTriggered: root.about()
+            icon.name: "go-previous"
+            text: i18n("Browser")
+            display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
+            visible: _stackView.depth === 2
+            onClicked: _stackView.pop()
         }
-    }
+    ]
 
     FB.TagsDialog
     {
@@ -275,14 +285,6 @@ Maui.ApplicationWindow
         id: _compressedFile
     }
 
-    headBar.leftContent: ToolButton
-    {
-        icon.name: "go-previous"
-        text: i18n("Browser")
-        display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
-        visible: _stackView.depth === 2
-        onClicked: _stackView.pop()
-    }
 
     headBar.middleContent: [
 
