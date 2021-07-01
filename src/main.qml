@@ -103,7 +103,11 @@ Maui.ApplicationWindow
     headBar.forceCenterMiddleContent: false
     floatingHeader: false
     flickable: currentBrowser.flickable
-    mainMenu: [
+
+    headBar.leftContent: Maui.ToolButtonMenu
+    {
+        icon.name: "application-menu"
+
         MenuItem
         {
             text: i18n("Shortcuts")
@@ -113,14 +117,14 @@ Maui.ApplicationWindow
                 dialogLoader.sourceComponent = _shortcutsDialogComponent
                 dialog.open()
             }
-        },
+        }
 
         MenuItem
         {
             text: i18n("Settings")
             icon.name: "settings-configure"
             onTriggered: openConfigDialog()
-        },
+        }
 
         MenuItem
         {
@@ -128,7 +132,7 @@ Maui.ApplicationWindow
             icon.name: "documentinfo"
             onTriggered: root.about()
         }
-    ]
+    }
 
     FB.TagsDialog
     {
