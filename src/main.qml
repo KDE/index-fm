@@ -99,7 +99,6 @@ Maui.ApplicationWindow
         close.accepted = true
     }
 
-    menuButton.visible: _stackView.depth === 1
     headBar.forceCenterMiddleContent: false
     floatingHeader: false
     flickable: currentBrowser.flickable
@@ -107,6 +106,7 @@ Maui.ApplicationWindow
     headBar.leftContent:[
         Maui.ToolButtonMenu
         {
+            visible: _stackView.depth === 1
             icon.name: "application-menu"
 
             MenuItem

@@ -131,11 +131,13 @@ Maui.SplitViewItem
                 if (event.key == Qt.Key_Forward)
                 {
                     _browser.goForward()
+                    event.accepted = true
                 }
 
                 if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
                 {
                     openTab(control.currentPath)
+                    event.accepted = true
                 }
 
                 // Shortcut for closing tab
@@ -143,42 +145,50 @@ Maui.SplitViewItem
                 {
                     if(_browserView.browserList.count > 1)
                         root.closeTab(tabsBar.currentIndex)
+                    event.accepted = true
                 }
 
                 if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
                 {
                     _pathBar.showEntryBar()
+                    event.accepted = true
                 }
 
                 if(event.key === Qt.Key_F4)
                 {
                     toogleTerminal()
+                    event.accepted = true
                 }
 
                 if(event.key === Qt.Key_F3)
                 {
                     toogleSplitView()
+                    event.accepted = true
                 }
 
                 if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
                 {
                     newItem()
+                    event.accepted = true
                 }
 
                 if(event.key === Qt.Key_Space)
                 {
                     openPreview(_browser.currentFMModel, _browser.currentIndex)
+                    event.accepted = true
                 }
 
                 if(event.button === Qt.BackButton)
                 {
                     _browser.goBack()
+                    event.accepted = true
                 }
 
                 //@gadominguez At this moment this function doesnt work because goForward not exist
                 if(event.button === Qt.ForwardButton)
                 {
                     _browser.goForward()
+                    event.accepted = true
                 }
 
             }
