@@ -100,10 +100,10 @@ void DirInfo::getSize()
     //        qDebug() << "got dir size info percent" << percent;
     //    });
 
-    connect(m_job, &KIO::DirectorySizeJob::processedSize, [this, m_job](KJob *, qulonglong size)
-    {
-        qDebug() << "got dir size info processed size" << size;
-    });
+//    connect(m_job, &KIO::DirectorySizeJob::processedSize, [this, m_job](KJob *, qulonglong size)
+//    {
+//        qDebug() << "got dir size info processed size" << size;
+//    });
 
     connect(m_job, &KIO::DirectorySizeJob::result, [this, m_job](KJob *)
     {
@@ -116,8 +116,8 @@ void DirInfo::getSize()
         emit this->filesCountChanged(m_filesCount);
         emit this->dirsCountChanged(m_dirCount);
 
-        m_job->deleteLater();
     });
+
 #endif
 }
 

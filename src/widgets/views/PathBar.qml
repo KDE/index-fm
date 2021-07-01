@@ -110,7 +110,14 @@ Rectangle
                 onAccepted:
                 {
                     pathChanged(text)
-                    showEntryBar()
+                }
+
+                onActiveFocusChanged:
+                {
+                    if(!activeFocus)
+                    {
+                        control.pathEntry = false
+                    }
                 }
 
                 background: Rectangle
