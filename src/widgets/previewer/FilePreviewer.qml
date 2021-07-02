@@ -93,6 +93,7 @@ Maui.Dialog
                 visible: control.showInfo
                 contentHeight: _layout.implicitHeight
                 contentWidth: availableWidth
+                clip: true
 
                 background: null
 

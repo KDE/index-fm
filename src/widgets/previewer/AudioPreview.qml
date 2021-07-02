@@ -81,7 +81,7 @@ Maui.Page
     }
 
     footBar.visible: true
-    footerBackground.color: "transparent"
+    footBar.background: null
     footBar.leftContent: ToolButton
     {
         icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
