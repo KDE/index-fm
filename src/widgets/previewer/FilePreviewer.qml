@@ -246,6 +246,7 @@ Maui.Dialog
             background: null
             leftContent: Maui.ToolActions
             {
+                visible: !Kirigami.Settings.isMobile
                 expanded: true
                 autoExclusive: false
                 checkable: false
