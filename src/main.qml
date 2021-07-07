@@ -257,6 +257,7 @@ Maui.ApplicationWindow
         anchors.fill: parent
         initialItem: Maui.Page
         {
+            id: _browserPage
             headBar.forceCenterMiddleContent: false
             floatingHeader: false
             altHeader: Kirigami.Settings.isMobile
@@ -349,8 +350,8 @@ Maui.ApplicationWindow
             BrowserView
             {
                 anchors.fill: parent
-                altHeader: parent.altHeader
-                flickable: parent.flickable
+                altHeader: _browserPage.altHeader
+                flickable: _browserPage.flickable
 
                 id: _browserView
             }
