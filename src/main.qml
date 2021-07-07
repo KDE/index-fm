@@ -24,7 +24,7 @@ Maui.ApplicationWindow
 {
     id: root
     title: currentTab ? currentTab.title : ""
-    altHeader: Kirigami.Settings.isMobile
+    header.visible: false
 
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
     readonly property FB.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
@@ -98,51 +98,6 @@ Maui.ApplicationWindow
 
         close.accepted = true
     }
-
-    headBar.forceCenterMiddleContent: false
-    floatingHeader: false
-    flickable: currentBrowser.flickable
-
-    headBar.leftContent:[
-        Maui.ToolButtonMenu
-        {
-            visible: _stackView.depth === 1
-            icon.name: "application-menu"
-
-            MenuItem
-            {
-                text: i18n("Shortcuts")
-                icon.name: "configure-shortcuts"
-                onTriggered:
-                {
-                    dialogLoader.sourceComponent = _shortcutsDialogComponent
-                    dialog.open()
-                }
-            }
-
-            MenuItem
-            {
-                text: i18n("Settings")
-                icon.name: "settings-configure"
-                onTriggered: openConfigDialog()
-            }
-
-            MenuItem
-            {
-                text: i18n("About")
-                icon.name: "documentinfo"
-                onTriggered: root.about()
-            }
-        },
-        ToolButton
-        {
-            icon.name: "go-previous"
-            text: i18n("Browser")
-            display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
-            visible: _stackView.depth === 2
-            onClicked: _stackView.pop()
-        }
-    ]
 
     FB.TagsDialog
     {
@@ -286,71 +241,6 @@ Maui.ApplicationWindow
     }
 
 
-    headBar.middleContent: [
-
-        Item
-        {
-            visible: _stackView.depth === 1
-
-            Layout.fillWidth: true
-            Layout.minimumWidth: 100
-            Layout.fillHeight: true
-
-            PathBar
-            {
-                id: _pathBar
-
-                anchors.centerIn: parent
-                width: Math.min(parent.width, implicitWidth)
-                onPathChanged: currentBrowser.openFolder(path.trim())
-                url: currentBrowser.currentPath
-
-                onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
-                onPlaceClicked: currentBrowser.openFolder(path)
-                onPlaceRightClicked:
-                {
-                    _pathBarmenu.path = path
-                    _pathBarmenu.show()
-                }
-
-                Maui.ContextualMenu
-                {
-                    id: _pathBarmenu
-                    property url path
-
-                    MenuItem
-                    {
-                        text: i18n("Open in new tab")
-                        icon.name: "tab-new"
-                        onTriggered: openTab(_pathBarmenu.path)
-                    }
-
-                    MenuItem
-                    {
-                        visible: root.currentTab.count === 1
-                        text: i18n("Open in split view")
-                        icon.name: "view-split-left-right"
-                        onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
-                    }
-                }
-            }
-        },
-
-        Maui.TextField
-        {
-            id: _searchField
-            visible: _stackView.depth === 2
-            Layout.fillWidth: true
-            Layout.minimumWidth: 100
-            Layout.maximumWidth: 500
-            placeholderText: i18n("Search for files")
-            onAccepted:
-            {
-                currentBrowser.search(text)
-            }
-        }
-    ]
-
     Loader
     {
         id: dialogLoader
@@ -365,9 +255,102 @@ Maui.ApplicationWindow
     {
         id: _stackView
         anchors.fill: parent
-        initialItem: BrowserView
+        initialItem: Maui.Page
         {
-            id: _browserView
+            headBar.forceCenterMiddleContent: false
+            floatingHeader: false
+            altHeader: Kirigami.Settings.isMobile
+
+            flickable: currentBrowser.flickable
+
+            headBar.leftContent: [
+                Maui.ToolButtonMenu
+                {
+                    icon.name: "application-menu"
+
+                    MenuItem
+                    {
+                        text: i18n("Shortcuts")
+                        icon.name: "configure-shortcuts"
+                        onTriggered:
+                        {
+                            dialogLoader.sourceComponent = _shortcutsDialogComponent
+                            dialog.open()
+                        }
+                    }
+
+                    MenuItem
+                    {
+                        text: i18n("Settings")
+                        icon.name: "settings-configure"
+                        onTriggered: openConfigDialog()
+                    }
+
+                    MenuItem
+                    {
+                        text: i18n("About")
+                        icon.name: "documentinfo"
+                        onTriggered: root.about()
+                    }
+                }
+            ]
+
+            headBar.middleContent: [
+
+                Item
+                {
+                    visible: _stackView.depth === 1
+
+                    Layout.fillWidth: true
+                    Layout.minimumWidth: 100
+                    Layout.fillHeight: true
+
+                    PathBar
+                    {
+                        id: _pathBar
+
+                        anchors.centerIn: parent
+                        width: Math.min(parent.width, implicitWidth)
+                        onPathChanged: currentBrowser.openFolder(path.trim())
+                        url: currentBrowser.currentPath
+
+                        onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
+                        onPlaceClicked: currentBrowser.openFolder(path)
+                        onPlaceRightClicked:
+                        {
+                            _pathBarmenu.path = path
+                            _pathBarmenu.show()
+                        }
+
+                        Maui.ContextualMenu
+                        {
+                            id: _pathBarmenu
+                            property url path
+
+                            MenuItem
+                            {
+                                text: i18n("Open in new tab")
+                                icon.name: "tab-new"
+                                onTriggered: openTab(_pathBarmenu.path)
+                            }
+
+                            MenuItem
+                            {
+                                visible: root.currentTab.count === 1
+                                text: i18n("Open in split view")
+                                icon.name: "view-split-left-right"
+                                onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                            }
+                        }
+                    }
+                }
+            ]
+
+            BrowserView
+            {
+                anchors.fill: parent
+                id: _browserView
+            }
         }
     }
 

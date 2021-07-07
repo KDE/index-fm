@@ -20,7 +20,6 @@ Maui.Page
 {
     id: control
 
-    headBar.visible: false
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
 
@@ -53,6 +52,28 @@ Maui.Page
             onTriggered: openTab(FB.FM.fileDir(_fileItemMenu.url))
         }
     }
+
+   headBar.middleContent: Maui.TextField
+    {
+        id: _searchField
+        Layout.fillWidth: true
+        Layout.minimumWidth: 100
+        Layout.maximumWidth: 500
+        placeholderText: i18n("Search for files")
+        onAccepted:
+        {
+            currentBrowser.search(text)
+        }
+    }
+
+   headBar.farLeftContent: ToolButton
+   {
+       icon.name: "go-previous"
+       text: i18n("Browser")
+       display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
+       visible: _stackView.depth === 2
+       onClicked: _stackView.pop()
+   }
 
     Kirigami.ScrollablePage
     {
