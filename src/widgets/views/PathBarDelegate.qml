@@ -4,7 +4,7 @@ import QtQuick.Controls 2.14
 import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.0 as Maui
 
-Kirigami.ShadowedRectangle
+Rectangle
 {
     id: control
     implicitWidth: _label.implicitWidth + Maui.Style.space.big

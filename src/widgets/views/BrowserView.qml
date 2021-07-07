@@ -24,32 +24,46 @@ Maui.Page
     floatingHeader: false
     headBar.rightContent:[
 
-        ToolButton
-        {
-
-            icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-icons" : "view-list-details"
-            onClicked:
-            {
-                var type = currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? FB.FMList.ICON_VIEW : FB.FMList.LIST_VIEW
-                if(currentBrowser)
-                {
-                    currentBrowser.settings.viewType = type
-                }
-
-                settings.viewType = type
-            }
-        },
-
         Maui.ToolButtonMenu
         {
             icon.name: "view-sort"
 
             MenuItem
             {
-                text: i18n("Show Folders First")
-                checked: currentBrowser.currentFMList.foldersFirst
+                text: i18n("List")
+                icon.name: "view-list-details"
+                autoExclusive: true
+                checked:  currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
                 checkable: true
-                onTriggered: currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+                onTriggered:
+                {
+                    if(currentBrowser)
+                    {
+                        currentBrowser.settings.viewType = FB.FMList.LIST_VIEW
+                    }
+
+                    settings.viewType = FB.FMList.LIST_VIEW
+                }
+            }
+
+
+            MenuItem
+            {
+                text: i18n("Grid")
+                icon.name:  "view-list-icons"
+                autoExclusive: true
+                checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
+                checkable: true
+                onTriggered:
+                {
+                    if(currentBrowser)
+                    {
+                        currentBrowser.settings.viewType = FB.FMList.ICON_VIEW
+                    }
+
+                    settings.viewType = FB.FMList.ICON_VIEW
+                }
+
             }
 
             MenuSeparator {}
@@ -103,6 +117,15 @@ Maui.Page
 
             MenuItem
             {
+                text: i18n("Show Folders First")
+                checked: currentBrowser.currentFMList.foldersFirst
+                checkable: true
+                onTriggered: currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+            }
+
+
+            MenuItem
+            {
                 id: groupAction
                 text: i18n("Group")
                 checkable: true
@@ -114,18 +137,20 @@ Maui.Page
             }
         },
 
-        ToolButton
-        {
-            icon.name: "edit-find"
-            checked: currentBrowser.headBar.visible
-            onClicked: currentBrowser.toggleSearchBar()
-        },
-
         Maui.ToolButtonMenu
         {
             id: _optionsButton
             icon.name: "overflow-menu"
             enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
+
+            MenuItem
+            {
+                text: i18n("Search & Filter")
+                icon.name: "edit-find"
+                checked: currentBrowser.headBar.visible
+                checkable: true
+                onTriggered: currentBrowser.toggleSearchBar()
+            }
 
             MenuItem
             {
@@ -241,11 +266,10 @@ Maui.Page
         }
     ]
 
-
     headBar.farLeftContent: ToolButton
     {
-        //        visible: placesSidebar.collapsed
-        icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
+        visible: !placesSidebar.visible
+        icon.name: "sidebar-expand"
         onClicked: placesSidebar.toggle()
         checked: placesSidebar.visible
         ToolTip.delay: 1000

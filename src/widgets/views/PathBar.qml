@@ -20,6 +20,7 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
+import QtGraphicalEffects 1.0
 
 import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.3 as Maui
@@ -133,8 +134,7 @@ Rectangle
                     icon.color: control.Kirigami.Theme.textColor
                     onTriggered:
                     {
-                        pathChanged(entry.text)
-                        showEntryBar()
+                        entry.accepted()
                     }
                 }
 
@@ -255,15 +255,6 @@ Rectangle
                             {
                                 control.placeRightClicked(model.path)
                             }
-
-                            corners
-                            {
-                                topLeftRadius: index === 0 ? Maui.Style.radiusV : 0
-                                topRightRadius: 0
-                                bottomLeftRadius: index === 0 ? Maui.Style.radiusV : 0
-                                bottomRightRadius: 0
-                            }
-
                         }
 
                         MouseArea
@@ -272,39 +263,55 @@ Rectangle
                             onClicked: showEntryBar()
                             z: -1
                         }
+
+                        layer.enabled: true
+                        layer.effect: OpacityMask
+                        {
+                            maskSource: Item
+                            {
+                                width: _listView.width
+                                height: _listView.height
+
+                                Rectangle
+                                {
+                                    anchors.fill: parent
+                                    radius: Maui.Style.radiusV
+                                }
+                            }
+                        }
                     }
                 }
 
-                MouseArea
-                {
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: control.height
-                    onClicked: control.showEntryBar()
-                    hoverEnabled: Kirigami.Settings.isMobile
+//                MouseArea
+//                {
+//                    Layout.fillHeight: true
+//                    Layout.preferredWidth: control.height
+//                    onClicked: control.showEntryBar()
+//                    hoverEnabled: Kirigami.Settings.isMobile
 
-                    Kirigami.ShadowedRectangle
-                    {
-                        anchors.fill: parent
-                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
-                        corners
-                        {
-                            topLeftRadius: 0
-                            topRightRadius: Maui.Style.radiusV
-                            bottomLeftRadius: 0
-                            bottomRightRadius: Maui.Style.radiusV
-                        }
+//                    Kirigami.ShadowedRectangle
+//                    {
+//                        anchors.fill: parent
+//                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
+//                        corners
+//                        {
+//                            topLeftRadius: 0
+//                            topRightRadius: Maui.Style.radiusV
+//                            bottomLeftRadius: 0
+//                            bottomRightRadius: Maui.Style.radiusV
+//                        }
 
-                        Kirigami.Icon
-                        {
-                            anchors.centerIn: parent
-                            source: "filename-space-amarok"
-                            color: control.Kirigami.Theme.textColor
-                            width: Maui.Style.iconSizes.medium
-                            height: width
-                        }
-                    }
+//                        Kirigami.Icon
+//                        {
+//                            anchors.centerIn: parent
+//                            source: "filename-space-amarok"
+//                            color: control.Kirigami.Theme.textColor
+//                            width: Maui.Style.iconSizes.medium
+//                            height: width
+//                        }
+//                    }
 
-                }
+//                }
             }
         }
     }

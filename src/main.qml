@@ -255,115 +255,118 @@ Maui.ApplicationWindow
     {
         id: _stackView
         anchors.fill: parent
-        initialItem: Maui.Page
-        {
-            id: _browserPage
-            headBar.forceCenterMiddleContent: false
-            floatingHeader: false
-            altHeader: Kirigami.Settings.isMobile
-
-            flickable: currentBrowser.flickable
-
-            headBar.leftContent: [
-                ToolButton
-                {
-                    icon.name: "go-previous"
-                    text: i18n("Browser")
-                    display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
-                    visible: _stackView.depth === 2
-                    onClicked: _stackView.pop()
-                },
-
-                ToolButton
-                {
-                    visible: !root.isWide
-                    icon.name: "go-previous"
-                    onClicked : currentBrowser.goBack()
-                },
-
-                Maui.ToolActions
-                {
-                    visible: root.isWide
-                    expanded: true
-                    autoExclusive: false
-                    checkable: false
-
-                    Action
-                    {
-                        text: i18n("Previous")
-                        icon.name: "go-previous"
-                        onTriggered : currentBrowser.goBack()
-                    }
-
-                    Action
-                    {
-                        text: i18n("Next")
-                        icon.name: "go-next"
-                        onTriggered: currentBrowser.goForward()
-                    }
-                }
-            ]
-
-            headBar.middleContent: [
-
-                Item
-                {
-                    visible: _stackView.depth === 1
-
-                    Layout.fillWidth: true
-                    Layout.minimumWidth: 100
-                    Layout.fillHeight: true
-
-                    PathBar
-                    {
-                        id: _pathBar
-
-                        anchors.centerIn: parent
-                        width: Math.min(parent.width, implicitWidth)
-                        onPathChanged: currentBrowser.openFolder(path.trim())
-                        url: currentBrowser.currentPath
-
-                        onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
-                        onPlaceClicked: currentBrowser.openFolder(path)
-                        onPlaceRightClicked:
-                        {
-                            _pathBarmenu.path = path
-                            _pathBarmenu.show()
-                        }
-
-                        Maui.ContextualMenu
-                        {
-                            id: _pathBarmenu
-                            property url path
-
-                            MenuItem
-                            {
-                                text: i18n("Open in new tab")
-                                icon.name: "tab-new"
-                                onTriggered: openTab(_pathBarmenu.path)
-                            }
-
-                            MenuItem
-                            {
-                                visible: root.currentTab.count === 1
-                                text: i18n("Open in split view")
-                                icon.name: "view-split-left-right"
-                                onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
-                            }
-                        }
-                    }
-                }
-            ]
-
-            BrowserView
+        initialItem: BrowserView
             {
-                anchors.fill: parent
-                altHeader: _browserPage.altHeader
-                flickable: _browserPage.flickable
 
                 id: _browserView
+
+                headBar.forceCenterMiddleContent: root.isWide
+                floatingHeader: false
+                altHeader: Kirigami.Settings.isMobile
+
+                flickable: currentBrowser.flickable
+
+                headBar.leftContent: [
+                    ToolButton
+                    {
+                        icon.name: "go-previous"
+                        text: i18n("Browser")
+                        display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
+                        visible: _stackView.depth === 2
+                        onClicked: _stackView.pop()
+                    },
+
+                    ToolButton
+                    {
+                        visible: !root.isWide
+                        icon.name: "go-previous"
+                        onClicked : currentBrowser.goBack()
+                    },
+
+                    Maui.ToolActions
+                    {
+                        visible: root.isWide
+                        expanded: true
+                        autoExclusive: false
+                        checkable: false
+
+                        Action
+                        {
+                            text: i18n("Previous")
+                            icon.name: "go-previous"
+                            onTriggered : currentBrowser.goBack()
+                        }
+
+                        Action
+                        {
+                            text: i18n("Next")
+                            icon.name: "go-next"
+                            onTriggered: currentBrowser.goForward()
+                        }
+                    }
+                ]
+
+                headBar.middleContent: [
+
+                    Item
+                    {
+                        visible: _stackView.depth === 1
+
+                        Layout.fillWidth: true
+                        Layout.minimumWidth: 100
+                        Layout.fillHeight: true
+
+                        PathBar
+                        {
+                            id: _pathBar
+
+                            anchors.centerIn: parent
+                            width: Math.min(parent.width, implicitWidth)
+                            onPathChanged: currentBrowser.openFolder(path.trim())
+                            url: currentBrowser.currentPath
+
+                            onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
+                            onPlaceClicked: currentBrowser.openFolder(path)
+                            onPlaceRightClicked:
+                            {
+                                _pathBarmenu.path = path
+                                _pathBarmenu.show()
+                            }
+
+                            Maui.ContextualMenu
+                            {
+                                id: _pathBarmenu
+                                property url path
+
+                                MenuItem
+                                {
+                                    text: i18n("Open in new tab")
+                                    icon.name: "tab-new"
+                                    onTriggered: openTab(_pathBarmenu.path)
+                                }
+
+                                MenuItem
+                                {
+                                    visible: root.currentTab.count === 1
+                                    text: i18n("Open in split view")
+                                    icon.name: "view-split-left-right"
+                                    onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                                }
+
+                                MenuSeparator{}
+
+                                MenuItem
+                                {
+                                    text: i18n("Edit path")
+                                    icon.name: "edit"
+                                    onTriggered: _pathBar.pathEntry = true
+                                }
+                            }
+                        }
+                    }
+                ]
             }
-        }
+
     }
 
     HomeView
