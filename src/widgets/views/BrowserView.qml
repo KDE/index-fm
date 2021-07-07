@@ -20,10 +20,8 @@ Maui.Page
     property alias browserList : _browserList
     property alias browserMenu :_optionsButton
 
-    flickable: root.flickable
     floatingFooter: true
     floatingHeader: false
-    altHeader: root.altHeader
     headBar.rightContent:[
 
         ToolButton

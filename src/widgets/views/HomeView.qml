@@ -22,6 +22,7 @@ Maui.Page
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
+    headBar.forceCenterMiddleContent: false
 
     Maui.ContextualMenu
     {

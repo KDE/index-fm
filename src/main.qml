@@ -349,6 +349,9 @@ Maui.ApplicationWindow
             BrowserView
             {
                 anchors.fill: parent
+                altHeader: parent.altHeader
+                flickable: parent.flickable
+
                 id: _browserView
             }
         }
