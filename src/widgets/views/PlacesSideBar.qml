@@ -37,8 +37,8 @@ Maui.AbstractSideBar
     Maui.Page
     {
         anchors.fill: parent
-        margins: 0
-        padding: 0
+        altHeader: Kirigami.Settings.isMobile
+
         headBar.farLeftContent: ToolButton
         {
             icon.name: "sidebar-collapse"

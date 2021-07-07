@@ -23,6 +23,7 @@ Maui.Page
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
     headBar.forceCenterMiddleContent: false
+    altHeader: Kirigami.Settings.isMobile
 
     Maui.ContextualMenu
     {
@@ -54,7 +55,7 @@ Maui.Page
         }
     }
 
-   headBar.middleContent: Maui.TextField
+    headBar.middleContent: Maui.TextField
     {
         id: _searchField
         Layout.fillWidth: true
@@ -67,14 +68,14 @@ Maui.Page
         }
     }
 
-   headBar.farLeftContent: ToolButton
-   {
-       icon.name: "go-previous"
-       text: i18n("Browser")
-       display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
-       visible: _stackView.depth === 2
-       onClicked: _stackView.pop()
-   }
+    headBar.farLeftContent: ToolButton
+    {
+        icon.name: "go-previous"
+        text: i18n("Browser")
+        display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
+        visible: _stackView.depth === 2
+        onClicked: _stackView.pop()
+    }
 
     Kirigami.ScrollablePage
     {
@@ -154,22 +155,22 @@ Maui.Page
                 }
             }
 
-//            Loader
-//            {
-//                Layout.fillWidth: true
-//                asynchronous: true
-//                sourceComponent:  Maui.AlternateListItem
-//                {
-//                    implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
+            //            Loader
+            //            {
+            //                Layout.fillWidth: true
+            //                asynchronous: true
+            //                sourceComponent:  Maui.AlternateListItem
+            //                {
+            //                    implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
 
-//                    TagsSection
-//                    {
-//                        id: _tagsSection
-//                        width: parent.width
-//                        anchors.centerIn: parent
-//                    }
-//                }
-//            }
+            //                    TagsSection
+            //                    {
+            //                        id: _tagsSection
+            //                        width: parent.width
+            //                        anchors.centerIn: parent
+            //                    }
+            //                }
+            //            }
 
             Loader
             {

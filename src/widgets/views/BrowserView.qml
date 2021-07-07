@@ -46,7 +46,6 @@ Maui.Page
                 }
             }
 
-
             MenuItem
             {
                 text: i18n("Grid")
@@ -63,7 +62,6 @@ Maui.Page
 
                     settings.viewType = FB.FMList.ICON_VIEW
                 }
-
             }
 
             MenuSeparator {}
