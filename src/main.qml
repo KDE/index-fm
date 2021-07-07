@@ -265,33 +265,41 @@ Maui.ApplicationWindow
             flickable: currentBrowser.flickable
 
             headBar.leftContent: [
-                Maui.ToolButtonMenu
+                ToolButton
                 {
-                    icon.name: "application-menu"
+                    icon.name: "go-previous"
+                    text: i18n("Browser")
+                    display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
+                    visible: _stackView.depth === 2
+                    onClicked: _stackView.pop()
+                },
 
-                    MenuItem
+                ToolButton
+                {
+                    visible: !root.isWide
+                    icon.name: "go-previous"
+                    onClicked : currentBrowser.goBack()
+                },
+
+                Maui.ToolActions
+                {
+                    visible: root.isWide
+                    expanded: true
+                    autoExclusive: false
+                    checkable: false
+
+                    Action
                     {
-                        text: i18n("Shortcuts")
-                        icon.name: "configure-shortcuts"
-                        onTriggered:
-                        {
-                            dialogLoader.sourceComponent = _shortcutsDialogComponent
-                            dialog.open()
-                        }
+                        text: i18n("Previous")
+                        icon.name: "go-previous"
+                        onTriggered : currentBrowser.goBack()
                     }
 
-                    MenuItem
+                    Action
                     {
-                        text: i18n("Settings")
-                        icon.name: "settings-configure"
-                        onTriggered: openConfigDialog()
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("About")
-                        icon.name: "documentinfo"
-                        onTriggered: root.about()
+                        text: i18n("Next")
+                        icon.name: "go-next"
+                        onTriggered: currentBrowser.goForward()
                     }
                 }
             ]

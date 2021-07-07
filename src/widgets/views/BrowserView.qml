@@ -40,26 +40,6 @@ Maui.Page
             }
         },
 
-        ToolButton
-        {
-//            text: i18n("Embedded Terminal")
-            visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-            icon.name: "dialog-scripts"
-            onClicked: currentTab.currentItem.toogleTerminal()
-            checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-            checkable: true
-        },
-
-        ToolButton
-        {
-//            text: i18n("Split View")
-            visible: !Kirigami.Settings.isMobile
-            icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-            checked: currentTab.count == 2
-            checkable: true
-            onClicked: toogleSplitView()
-        },
-
         Maui.ToolButtonMenu
         {
             icon.name: "view-sort"
@@ -209,12 +189,62 @@ Maui.Page
                     settings.showHiddenFiles = !settings.showHiddenFiles
                 }
             }
+
+            MenuSeparator{}
+
+            MenuItem
+            {
+                text: i18n("Embedded Terminal")
+                visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+                icon.name: "dialog-scripts"
+                onClicked: currentTab.currentItem.toogleTerminal()
+                checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+                checkable: true
+            }
+
+            MenuItem
+            {
+                text: i18n("Split View")
+                visible: !Kirigami.Settings.isMobile
+                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                checked: currentTab.count == 2
+                checkable: true
+                onClicked: toogleSplitView()
+            }
+
+            MenuSeparator {}
+
+            MenuItem
+            {
+                text: i18n("Shortcuts")
+                icon.name: "configure-shortcuts"
+                onTriggered:
+                {
+                    dialogLoader.sourceComponent = _shortcutsDialogComponent
+                    dialog.open()
+                }
+            }
+
+            MenuItem
+            {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                onTriggered: openConfigDialog()
+            }
+
+            MenuItem
+            {
+                text: i18n("About")
+                icon.name: "documentinfo"
+                onTriggered: root.about()
+            }
         }
     ]
 
+
     headBar.farLeftContent: ToolButton
     {
-//        visible: placesSidebar.collapsed
+        //        visible: placesSidebar.collapsed
         icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
         onClicked: placesSidebar.toggle()
         checked: placesSidebar.visible
@@ -223,46 +253,6 @@ Maui.Page
         ToolTip.visible: hovered
         ToolTip.text: i18n("Toogle SideBar")
     }
-
-    headBar.leftContent: [
-        ToolButton
-        {
-            icon.name: "go-previous"
-            text: i18n("Browser")
-            display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
-            visible: _stackView.depth === 2
-            onClicked: _stackView.pop()
-        },
-
-        ToolButton
-        {
-            visible: !root.isWide
-            icon.name: "go-previous"
-            onClicked : currentBrowser.goBack()
-        },
-
-        Maui.ToolActions
-        {
-            visible: root.isWide
-            expanded: true
-            autoExclusive: false
-            checkable: false
-
-            Action
-            {
-                text: i18n("Previous")
-                icon.name: "go-previous"
-                onTriggered : currentBrowser.goBack()
-            }
-
-            Action
-            {
-                text: i18n("Next")
-                icon.name: "go-next"
-                onTriggered: currentBrowser.goForward()
-            }
-        }
-    ]
 
     footer: Maui.SelectionBar
     {

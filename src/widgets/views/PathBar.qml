@@ -158,35 +158,35 @@ Rectangle
                 visible: !pathEntry
                 anchors.fill: parent
 
-                MouseArea
-                {
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: height * 1.5
-                    onClicked: control.homeClicked()
-                    hoverEnabled: Kirigami.Settings.isMobile
+//                MouseArea
+//                {
+//                    Layout.fillHeight: true
+//                    Layout.preferredWidth: height * 1.5
+//                    onClicked: control.homeClicked()
+//                    hoverEnabled: Kirigami.Settings.isMobile
 
-                    Kirigami.ShadowedRectangle
-                    {
-                        anchors.fill: parent
-                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
-                        corners
-                        {
-                            topLeftRadius: Maui.Style.radiusV
-                            topRightRadius: 0
-                            bottomLeftRadius: Maui.Style.radiusV
-                            bottomRightRadius: 0
-                        }
+//                    Kirigami.ShadowedRectangle
+//                    {
+//                        anchors.fill: parent
+//                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
+//                        corners
+//                        {
+//                            topLeftRadius: Maui.Style.radiusV
+//                            topRightRadius: 0
+//                            bottomLeftRadius: Maui.Style.radiusV
+//                            bottomRightRadius: 0
+//                        }
 
-                        Kirigami.Icon
-                        {
-                            anchors.centerIn: parent
-                            source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
-                            color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
-                            width: Maui.Style.iconSizes.small
-                            height: width
-                        }
-                    }
-                }
+//                        Kirigami.Icon
+//                        {
+//                            anchors.centerIn: parent
+//                            source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
+//                            color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
+//                            width: Maui.Style.iconSizes.small
+//                            height: width
+//                        }
+//                    }
+//                }
 
                 ScrollView
                 {
@@ -255,6 +255,15 @@ Rectangle
                             {
                                 control.placeRightClicked(model.path)
                             }
+
+                            corners
+                            {
+                                topLeftRadius: index === 0 ? Maui.Style.radiusV : 0
+                                topRightRadius: 0
+                                bottomLeftRadius: index === 0 ? Maui.Style.radiusV : 0
+                                bottomRightRadius: 0
+                            }
+
                         }
 
                         MouseArea
