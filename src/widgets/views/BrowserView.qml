@@ -152,11 +152,16 @@ Maui.Page
 
             MenuItem
             {
-                icon.name: "bookmark-new"
-                text: i18n("Bookmark")
-                onTriggered: currentBrowser.bookmarkFolder([currentPath])
-                //         enabled: _optionsButton.enabled
+                icon.name: "view-hidden"
+                text: i18n("Hidden Files")
+                checkable: true
+                checked: settings.showHiddenFiles
+                onTriggered:
+                {
+                    settings.showHiddenFiles = !settings.showHiddenFiles
+                }
             }
+            MenuSeparator {}
 
             MenuItem
             {
@@ -166,7 +171,6 @@ Maui.Page
                 onTriggered: currentBrowser.newItem()
             }
 
-            MenuSeparator {}
 
             MenuItem
             {
@@ -178,7 +182,6 @@ Maui.Page
                 onTriggered: currentBrowser.paste()
             }
 
-            MenuSeparator {}
 
             MenuItem
             {
@@ -187,9 +190,12 @@ Maui.Page
                 onTriggered: currentBrowser.selectAll()
             }
 
+
+            MenuSeparator{}
+
             MenuItem
             {
-                visible: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
                 text: i18n("Open terminal here")
                 id: openTerminal
                 icon.name: "utilities-terminal"
@@ -203,22 +209,8 @@ Maui.Page
 
             MenuItem
             {
-                icon.name: "view-hidden"
-                text: i18n("Hidden Files")
-                checkable: true
-                checked: settings.showHiddenFiles
-                onTriggered:
-                {
-                    settings.showHiddenFiles = !settings.showHiddenFiles
-                }
-            }
-
-            MenuSeparator{}
-
-            MenuItem
-            {
                 text: i18n("Embedded Terminal")
-                visible: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+                enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
                 icon.name: "dialog-scripts"
                 onClicked: currentTab.currentItem.toogleTerminal()
                 checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
@@ -228,7 +220,6 @@ Maui.Page
             MenuItem
             {
                 text: i18n("Split View")
-                visible: !Kirigami.Settings.isMobile
                 icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
                 checked: currentTab.count == 2
                 checkable: true
@@ -266,8 +257,8 @@ Maui.Page
 
     headBar.farLeftContent: ToolButton
     {
-        visible: !placesSidebar.visible
-        icon.name: "sidebar-expand"
+        visible: placesSidebar.collapsed
+        icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
         onClicked: placesSidebar.toggle()
         checked: placesSidebar.visible
         ToolTip.delay: 1000

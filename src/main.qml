@@ -267,14 +267,6 @@ Maui.ApplicationWindow
                 flickable: currentBrowser.flickable
 
                 headBar.leftContent: [
-                    ToolButton
-                    {
-                        icon.name: "go-previous"
-                        text: i18n("Browser")
-                        display: isWide ? ToolButton.TextBesideIcon : ToolButton.IconOnly
-                        visible: _stackView.depth === 2
-                        onClicked: _stackView.pop()
-                    },
 
                     ToolButton
                     {
@@ -337,6 +329,13 @@ Maui.ApplicationWindow
                             {
                                 id: _pathBarmenu
                                 property url path
+
+                                MenuItem
+                                {
+                                    text: i18n("Bookmark")
+                                    icon.name: "bookmark-new"
+                                    onTriggered: currentBrowser.bookmarkFolder(_pathBarmenu.path)
+                                }
 
                                 MenuItem
                                 {
