@@ -235,7 +235,7 @@ Maui.SplitViewItem
 
             onRightClicked:
             {
-                _browserView.browserMenu.open()
+                _pathBar.openMenu()
             }
         }
 

@@ -18,7 +18,6 @@ Maui.Page
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
     property alias browserList : _browserList
-    property alias browserMenu :_optionsButton
 
     floatingFooter: true
     floatingHeader: false
@@ -133,127 +132,8 @@ Maui.Page
                     currentBrowser.settings.group = !currentBrowser.settings.group
                 }
             }
-        },
-
-        Maui.ToolButtonMenu
-        {
-            id: _optionsButton
-            icon.name: "overflow-menu"
-            enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
-
-            MenuItem
-            {
-                text: i18n("Search & Filter")
-                icon.name: "edit-find"
-                checked: currentBrowser.headBar.visible
-                checkable: true
-                onTriggered: currentBrowser.toggleSearchBar()
-            }
-
-            MenuItem
-            {
-                icon.name: "view-hidden"
-                text: i18n("Hidden Files")
-                checkable: true
-                checked: settings.showHiddenFiles
-                onTriggered:
-                {
-                    settings.showHiddenFiles = !settings.showHiddenFiles
-                }
-            }
-            MenuSeparator {}
-
-            MenuItem
-            {
-                icon.name: "document-new"
-                text: i18n("New")
-                //         enabled: _optionsButton.enabled
-                onTriggered: currentBrowser.newItem()
-            }
-
-
-            MenuItem
-            {
-                text: i18n("Paste")
-                //         enabled: _optionsButton.enabled
-
-                icon.name: "edit-paste"
-                // 		enabled: control.clipboardItems.length > 0
-                onTriggered: currentBrowser.paste()
-            }
-
-
-            MenuItem
-            {
-                text: i18n("Select all")
-                icon.name: "edit-select-all"
-                onTriggered: currentBrowser.selectAll()
-            }
-
-
-            MenuSeparator{}
-
-            MenuItem
-            {
-                enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                text: i18n("Open terminal here")
-                id: openTerminal
-                icon.name: "utilities-terminal"
-                onTriggered:
-                {
-                    inx.openTerminal(currentPath)
-                }
-            }
-
-            MenuSeparator{}
-
-            MenuItem
-            {
-                text: i18n("Embedded Terminal")
-                enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                icon.name: "dialog-scripts"
-                onClicked: currentTab.currentItem.toogleTerminal()
-                checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-                checkable: true
-            }
-
-            MenuItem
-            {
-                text: i18n("Split View")
-                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                checked: currentTab.count == 2
-                checkable: true
-                onClicked: toogleSplitView()
-            }
-
-            MenuSeparator {}
-
-            MenuItem
-            {
-                text: i18n("Shortcuts")
-                icon.name: "configure-shortcuts"
-                onTriggered:
-                {
-                    dialogLoader.sourceComponent = _shortcutsDialogComponent
-                    dialog.open()
-                }
-            }
-
-            MenuItem
-            {
-                text: i18n("Settings")
-                icon.name: "settings-configure"
-                onTriggered: openConfigDialog()
-            }
-
-            MenuItem
-            {
-                text: i18n("About")
-                icon.name: "documentinfo"
-                onTriggered: root.about()
-            }
         }
-    ]
+     ]
 
     headBar.farLeftContent: ToolButton
     {

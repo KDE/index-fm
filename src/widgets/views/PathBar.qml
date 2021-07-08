@@ -76,6 +76,8 @@ Rectangle
       */
     signal placeClicked(string path)
 
+    signal menuClicked()
+
     /**
       * placeRightClicked :
       */
@@ -154,39 +156,39 @@ Rectangle
             RowLayout
             {
                 id: _rowLayout
-                spacing: 2
+                spacing: 0
                 visible: !pathEntry
                 anchors.fill: parent
 
-//                MouseArea
-//                {
-//                    Layout.fillHeight: true
-//                    Layout.preferredWidth: height * 1.5
-//                    onClicked: control.homeClicked()
-//                    hoverEnabled: Kirigami.Settings.isMobile
+                //                MouseArea
+                //                {
+                //                    Layout.fillHeight: true
+                //                    Layout.preferredWidth: height * 1.5
+                //                    onClicked: control.homeClicked()
+                //                    hoverEnabled: Kirigami.Settings.isMobile
 
-//                    Kirigami.ShadowedRectangle
-//                    {
-//                        anchors.fill: parent
-//                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
-//                        corners
-//                        {
-//                            topLeftRadius: Maui.Style.radiusV
-//                            topRightRadius: 0
-//                            bottomLeftRadius: Maui.Style.radiusV
-//                            bottomRightRadius: 0
-//                        }
+                //                    Kirigami.ShadowedRectangle
+                //                    {
+                //                        anchors.fill: parent
+                //                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
+                //                        corners
+                //                        {
+                //                            topLeftRadius: Maui.Style.radiusV
+                //                            topRightRadius: 0
+                //                            bottomLeftRadius: Maui.Style.radiusV
+                //                            bottomRightRadius: 0
+                //                        }
 
-//                        Kirigami.Icon
-//                        {
-//                            anchors.centerIn: parent
-//                            source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
-//                            color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
-//                            width: Maui.Style.iconSizes.small
-//                            height: width
-//                        }
-//                    }
-//                }
+                //                        Kirigami.Icon
+                //                        {
+                //                            anchors.centerIn: parent
+                //                            source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
+                //                            color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
+                //                            width: Maui.Style.iconSizes.small
+                //                            height: width
+                //                        }
+                //                    }
+                //                }
 
                 ScrollView
                 {
@@ -272,46 +274,53 @@ Rectangle
                                 width: _listView.width
                                 height: _listView.height
 
-                                Rectangle
+                                Kirigami.ShadowedRectangle
                                 {
                                     anchors.fill: parent
-                                    radius: Maui.Style.radiusV
+                                    corners
+                                    {
+                                        topLeftRadius: Maui.Style.radiusV
+                                        topRightRadius: 0
+                                        bottomLeftRadius: Maui.Style.radiusV
+                                        bottomRightRadius: 0
+                                    }
                                 }
                             }
                         }
                     }
                 }
 
-//                MouseArea
-//                {
-//                    Layout.fillHeight: true
-//                    Layout.preferredWidth: control.height
-//                    onClicked: control.showEntryBar()
-//                    hoverEnabled: Kirigami.Settings.isMobile
+                MouseArea
+                {
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: control.height
+                    onClicked: control.menuClicked()
+                    hoverEnabled: Kirigami.Settings.isMobile
 
-//                    Kirigami.ShadowedRectangle
-//                    {
-//                        anchors.fill: parent
-//                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
-//                        corners
-//                        {
-//                            topLeftRadius: 0
-//                            topRightRadius: Maui.Style.radiusV
-//                            bottomLeftRadius: 0
-//                            bottomRightRadius: Maui.Style.radiusV
-//                        }
+                    Kirigami.ShadowedRectangle
+                    {
+                        anchors.fill: parent
+                       color: browserMenu.visible ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.15) : Qt.lighter(Kirigami.Theme.backgroundColor)
 
-//                        Kirigami.Icon
-//                        {
-//                            anchors.centerIn: parent
-//                            source: "filename-space-amarok"
-//                            color: control.Kirigami.Theme.textColor
-//                            width: Maui.Style.iconSizes.medium
-//                            height: width
-//                        }
-//                    }
+                        corners
+                        {
+                            topLeftRadius: 0
+                            topRightRadius: Maui.Style.radiusV
+                            bottomLeftRadius: 0
+                            bottomRightRadius: Maui.Style.radiusV
+                        }
 
-//                }
+                        Kirigami.Icon
+                        {
+                            anchors.centerIn: parent
+                            source: "go-down"
+                            color: browserMenu.visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                            width: Maui.Style.iconSizes.small
+                            height: width
+                        }
+                    }
+
+                }
             }
         }
     }
