@@ -240,7 +240,6 @@ Maui.ApplicationWindow
         id: _compressedFile
     }
 
-
     Loader
     {
         id: dialogLoader
@@ -257,11 +256,9 @@ Maui.ApplicationWindow
         anchors.fill: parent
         initialItem: BrowserView
         {
-
             id: _browserView
 
             headBar.forceCenterMiddleContent: root.isWide
-            floatingHeader: false
             altHeader: Kirigami.Settings.isMobile
 
             flickable: currentBrowser.flickable
@@ -302,8 +299,6 @@ Maui.ApplicationWindow
 
                 Item
                 {
-                    visible: _stackView.depth === 1
-
                     Layout.fillWidth: true
                     Layout.minimumWidth: 100
                     Layout.fillHeight: true
@@ -406,6 +401,7 @@ Maui.ApplicationWindow
                                     settings.showHiddenFiles = !settings.showHiddenFiles
                                 }
                             }
+
                             MenuSeparator {}
 
                             MenuItem
@@ -415,7 +411,6 @@ Maui.ApplicationWindow
                                 //         enabled: _optionsButton.enabled
                                 onTriggered: currentBrowser.newItem()
                             }
-
 
                             MenuItem
                             {
@@ -427,14 +422,12 @@ Maui.ApplicationWindow
                                 onTriggered: currentBrowser.paste()
                             }
 
-
                             MenuItem
                             {
                                 text: i18n("Select all")
                                 icon.name: "edit-select-all"
                                 onTriggered: currentBrowser.selectAll()
                             }
-
 
                             MenuSeparator{}
 
@@ -498,18 +491,16 @@ Maui.ApplicationWindow
                                 onTriggered: root.about()
                             }
                         }
-
                     }
                 }
             ]
         }
 
-    }
-
-    HomeView
-    {
-        id : _homeViewComponent
-        visible: StackView.status === StackView.Active
+        HomeView
+        {
+            id : _homeViewComponent
+            visible: StackView.status === StackView.Active
+        }
     }
 
     Connections
@@ -530,38 +521,20 @@ Maui.ApplicationWindow
             Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, false)
         }
 
-        const tabs = settings.lastSession
+        //        const tabs = settings.lastSession
+        //        if(settings.restoreSession && tabs.length)
+        //        {
+        //            console.log("restore", tabs.length)
+        //            restoreSession(tabs)
+        //            return
+        //        }
+        root.openTab(FB.FM.homePath())
+        currentBrowser.settings.viewType = settings.viewType
 
-        if(settings.restoreSession && tabs.length)
-        {
-            console.log("restore", tabs.length)
-
-            for(var i = 0; i < tabs.length; i++ )
-            {
-                const tab = tabs[i]
-
-                root.openTab(tab[0].path)
-                currentBrowser.settings.viewType = tab[0].viewType
-
-                if(tab.length === 2)
-                {
-                    currentTab.split(tab[1].path, Qt.Horizontal)
-                    currentBrowser.settings.viewType = tab[1].viewType
-                }
-            }
-
-            currentTabIndex = settings.lastTabIndex
-
-        }else
-        {
-            root.openTab(FB.FM.homePath())
-            currentBrowser.settings.viewType = settings.viewType
-
-            if( settings.overviewStart )
-            {
-                _stackView.push(_homeViewComponent)
-            }
-        }
+        //            if(settings.overviewStart)
+        //            {
+        //                _stackView.push(_homeViewComponent)
+        //            }
     }
 
     function toogleSplitView()
@@ -637,5 +610,24 @@ Maui.ApplicationWindow
         dialog.model = model
         dialog.currentIndex = index
         dialog.open()
+    }
+
+    function restoreSession(tabs)
+    {
+        for(var i = 0; i < tabs.length; i++ )
+        {
+            const tab = tabs[i]
+
+            root.openTab(tab[0].path)
+            currentBrowser.settings.viewType = tab[0].viewType
+
+            if(tab.length === 2)
+            {
+                currentTab.split(tab[1].path, Qt.Horizontal)
+                currentBrowser.settings.viewType = tab[1].viewType
+            }
+        }
+
+        currentTabIndex = settings.lastTabIndex
     }
 }

@@ -218,11 +218,13 @@ Rectangle
                         focus: true
                         interactive: Maui.Handy.isTouch
                         highlightFollowsCurrentItem: true
+                        snapMode: ListView.NoSnap
 
                         boundsBehavior: Flickable.StopAtBounds
                         boundsMovement :Flickable.StopAtBounds
 
-                        onContentWidthChanged: _listView.positionViewAtEnd()
+                        ListView.onAdd: _listView.positionViewAtEnd()
+                        ListView.onRemove: _listView.positionViewAtEnd()
 
                         model: Maui.BaseModel
                         {

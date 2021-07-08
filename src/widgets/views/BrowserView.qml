@@ -20,12 +20,19 @@ Maui.Page
     property alias browserList : _browserList
 
     floatingFooter: true
-    floatingHeader: false
+
     headBar.rightContent:[
 
         Maui.ToolButtonMenu
         {
             icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons"
+
+            Maui.LabelDelegate
+            {
+                width: parent.width
+                isSection: true
+                label: i18n("View type")
+            }
 
             MenuItem
             {
@@ -64,6 +71,13 @@ Maui.Page
             }
 
             MenuSeparator {}
+
+            Maui.LabelDelegate
+            {
+                width: parent.width
+                isSection: true
+                label: i18n("Sort by")
+            }
 
             MenuItem
             {
@@ -119,7 +133,6 @@ Maui.Page
                 checkable: true
                 onTriggered: currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
             }
-
 
             MenuItem
             {
