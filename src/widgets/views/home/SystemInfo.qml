@@ -51,11 +51,11 @@ Maui.ListBrowser
             control.itemClicked(modelData)
         }
 
-        Index.DirInfo
-        {
-            id: _dirInfo
-            url: modelData
-        }
+//        Index.DirInfo
+//        {
+//            id: _dirInfo
+//            url: modelData
+//        }
 
         Rectangle
         {
@@ -126,7 +126,7 @@ Maui.ListBrowser
                 label1.font.weight: Font.Bold
                 label1.font.bold: true
                 label1.text: info.label
-                label2.text: i18n("%1 Directories - %2 Files", _dirInfo.dirCount, _dirInfo.filesCount)
+//                label2.text: i18n("%1 Directories - %2 Files", _dirInfo.dirCount, _dirInfo.filesCount)
 
                 onClicked:
                 {
@@ -148,7 +148,7 @@ Maui.ListBrowser
                         font.bold: true
                         font.weight: Font.Bold
                         anchors.centerIn: parent
-                        text:  _dirInfo.sizeString
+//                        text:  _dirInfo.sizeString
                         color: "#fafafa"
                     }
                 }
@@ -158,7 +158,7 @@ Maui.ListBrowser
             {
                 Layout.fillWidth: true
                 Layout.margins: Maui.Style.space.medium
-                value:  Math.round((_dirInfo.size * 100) / _dirInfo.totalSpace)
+//                value:  Math.round((_dirInfo.size * 100) / _dirInfo.totalSpace)
                 from: 0
                 to : 100
             }

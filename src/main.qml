@@ -70,6 +70,7 @@ Maui.ApplicationWindow
 
     onClosing:
     {
+        //        sortSettings.sortBy = currentBrowser.settings.sortBy
         close.accepted = !settings.restoreSession
         var tabs = []
 
@@ -263,38 +264,6 @@ Maui.ApplicationWindow
 
             flickable: currentBrowser.flickable
 
-            headBar.leftContent: [
-
-                ToolButton
-                {
-                    visible: !root.isWide
-                    icon.name: "go-previous"
-                    onClicked : currentBrowser.goBack()
-                },
-
-                Maui.ToolActions
-                {
-                    visible: root.isWide
-                    expanded: true
-                    autoExclusive: false
-                    checkable: false
-
-                    Action
-                    {
-                        text: i18n("Previous")
-                        icon.name: "go-previous"
-                        onTriggered : currentBrowser.goBack()
-                    }
-
-                    Action
-                    {
-                        text: i18n("Next")
-                        icon.name: "go-next"
-                        onTriggered: currentBrowser.goForward()
-                    }
-                }
-            ]
-
             headBar.middleContent: [
 
                 Item
@@ -317,7 +286,7 @@ Maui.ApplicationWindow
                         {
                             if(path === String(currentPath))
                             {
-                               openMenu()
+                                openMenu()
 
                             }
                             else
@@ -383,6 +352,15 @@ Maui.ApplicationWindow
 
                             MenuItem
                             {
+                                text: i18n("Next")
+                                icon.name: "go-next"
+                                onTriggered: currentBrowser.goForward()
+                            }
+
+                            MenuSeparator {}
+
+                            MenuItem
+                            {
                                 text: i18n("Search or Filter")
                                 icon.name: "edit-find"
                                 checked: currentBrowser.headBar.visible
@@ -433,20 +411,6 @@ Maui.ApplicationWindow
 
                             MenuItem
                             {
-                                enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                                text: i18n("Open terminal here")
-                                id: openTerminal
-                                icon.name: "utilities-terminal"
-                                onTriggered:
-                                {
-                                    inx.openTerminal(currentPath)
-                                }
-                            }
-
-                            MenuSeparator{}
-
-                            MenuItem
-                            {
                                 text: i18n("Embedded Terminal")
                                 enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
                                 icon.name: "dialog-scripts"
@@ -462,6 +426,18 @@ Maui.ApplicationWindow
                                 checked: currentTab.count == 2
                                 checkable: true
                                 onClicked: toogleSplitView()
+                            }
+
+                            MenuItem
+                            {
+                                enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                                text: i18n("Open terminal here")
+                                id: openTerminal
+                                icon.name: "utilities-terminal"
+                                onTriggered:
+                                {
+                                    inx.openTerminal(currentPath)
+                                }
                             }
 
                             MenuSeparator {}
@@ -496,10 +472,16 @@ Maui.ApplicationWindow
             ]
         }
 
-        HomeView
+        Loader
         {
             id : _homeViewComponent
+            asynchronous: true
             visible: StackView.status === StackView.Active
+            active: StackView.status === StackView.Active || item
+            HomeView
+            {
+                anchors.fill: parent
+            }
         }
     }
 
@@ -530,6 +512,7 @@ Maui.ApplicationWindow
         //        }
         root.openTab(FB.FM.homePath())
         currentBrowser.settings.viewType = settings.viewType
+        currentBrowser.settings.sortBy = sortSettings.sortBy
 
         //            if(settings.overviewStart)
         //            {

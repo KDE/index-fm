@@ -150,7 +150,7 @@ Maui.Page
 
     headBar.farLeftContent: ToolButton
     {
-        visible: placesSidebar.collapsed
+//        visible: placesSidebar.collapsed
         icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
         onClicked: placesSidebar.toggle()
         checked: placesSidebar.visible

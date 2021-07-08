@@ -160,35 +160,36 @@ Rectangle
                 visible: !pathEntry
                 anchors.fill: parent
 
-                //                MouseArea
-                //                {
-                //                    Layout.fillHeight: true
-                //                    Layout.preferredWidth: height * 1.5
-                //                    onClicked: control.homeClicked()
-                //                    hoverEnabled: Kirigami.Settings.isMobile
+                AbstractButton
+                {
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: height * 1.2
+                    hoverEnabled: Kirigami.Settings.isMobile
+                    onClicked : currentBrowser.goBack()
 
-                //                    Kirigami.ShadowedRectangle
-                //                    {
-                //                        anchors.fill: parent
-                //                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
-                //                        corners
-                //                        {
-                //                            topLeftRadius: Maui.Style.radiusV
-                //                            topRightRadius: 0
-                //                            bottomLeftRadius: Maui.Style.radiusV
-                //                            bottomRightRadius: 0
-                //                        }
+                    contentItem: Item
+                    {
+                        Kirigami.Icon
+                        {
+                            anchors.centerIn: parent
+                            source: "go-previous"
+                            width: Maui.Style.iconSizes.small
+                            height: width
+                        }
+                    }
 
-                //                        Kirigami.Icon
-                //                        {
-                //                            anchors.centerIn: parent
-                //                            source: Qt.platform.os == "android" ?  "user-home-sidebar" : "user-home"
-                //                            color: parent.hovered ? control.Kirigami.Theme.highlightColor : control.Kirigami.Theme.textColor
-                //                            width: Maui.Style.iconSizes.small
-                //                            height: width
-                //                        }
-                //                    }
-                //                }
+                    background : Kirigami.ShadowedRectangle
+                    {
+                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
+                        corners
+                        {
+                            topLeftRadius: Maui.Style.radiusV
+                            topRightRadius: 0
+                            bottomLeftRadius: Maui.Style.radiusV
+                            bottomRightRadius: 0
+                        }
+                    }
+                }
 
                 ScrollView
                 {
@@ -267,51 +268,18 @@ Rectangle
                             onClicked: showEntryBar()
                             z: -1
                         }
-
-                        layer.enabled: true
-                        layer.effect: OpacityMask
-                        {
-                            maskSource: Item
-                            {
-                                width: _listView.width
-                                height: _listView.height
-
-                                Kirigami.ShadowedRectangle
-                                {
-                                    anchors.fill: parent
-                                    corners
-                                    {
-                                        topLeftRadius: Maui.Style.radiusV
-                                        topRightRadius: 0
-                                        bottomLeftRadius: Maui.Style.radiusV
-                                        bottomRightRadius: 0
-                                    }
-                                }
-                            }
-                        }
                     }
                 }
 
-                MouseArea
+                AbstractButton
                 {
                     Layout.fillHeight: true
-                    Layout.preferredWidth: control.height
+                    Layout.preferredWidth: height * 1.2
                     onClicked: control.menuClicked()
                     hoverEnabled: Kirigami.Settings.isMobile
 
-                    Kirigami.ShadowedRectangle
+                    contentItem: Item
                     {
-                        anchors.fill: parent
-                       color: browserMenu.visible ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.15) : Qt.lighter(Kirigami.Theme.backgroundColor)
-
-                        corners
-                        {
-                            topLeftRadius: 0
-                            topRightRadius: Maui.Style.radiusV
-                            bottomLeftRadius: 0
-                            bottomRightRadius: Maui.Style.radiusV
-                        }
-
                         Kirigami.Icon
                         {
                             anchors.centerIn: parent
@@ -322,6 +290,18 @@ Rectangle
                         }
                     }
 
+                    background: Kirigami.ShadowedRectangle
+                    {
+                        color: browserMenu.visible ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.15) : Qt.lighter(Kirigami.Theme.backgroundColor)
+
+                        corners
+                        {
+                            topLeftRadius: 0
+                            topRightRadius: Maui.Style.radiusV
+                            bottomLeftRadius: 0
+                            bottomRightRadius: Maui.Style.radiusV
+                        }
+                    }
                 }
             }
         }

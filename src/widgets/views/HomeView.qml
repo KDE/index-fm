@@ -133,27 +133,27 @@ Maui.Page
                 }
             }
 
-            Loader
-            {
-                Layout.fillWidth: true
-                asynchronous: true
-                sourceComponent:  Maui.AlternateListItem
-                {
-                    implicitHeight: _sysInfoSection.implicitHeight + Maui.Style.space.huge
+//            Loader
+//            {
+//                Layout.fillWidth: true
+//                asynchronous: true
+//                sourceComponent:  Maui.AlternateListItem
+//                {
+//                    implicitHeight: _sysInfoSection.implicitHeight + Maui.Style.space.huge
 
-                    SystemInfo
-                    {
-                        id: _sysInfoSection
-                        width: parent.width
-                        anchors.centerIn: parent
+//                    SystemInfo
+//                    {
+//                        id: _sysInfoSection
+//                        width: parent.width
+//                        anchors.centerIn: parent
 
-                        onItemClicked:
-                        {
-                            openTab(url)
-                        }
-                    }
-                }
-            }
+//                        onItemClicked:
+//                        {
+//                            openTab(url)
+//                        }
+//                    }
+//                }
+//            }
 
             //            Loader
             //            {
