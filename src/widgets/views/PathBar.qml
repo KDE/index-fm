@@ -156,7 +156,7 @@ Rectangle
             RowLayout
             {
                 id: _rowLayout
-                spacing: 0
+                spacing: 2
                 visible: !pathEntry
                 anchors.fill: parent
 

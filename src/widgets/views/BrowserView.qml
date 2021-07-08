@@ -25,14 +25,14 @@ Maui.Page
 
         Maui.ToolButtonMenu
         {
-            icon.name: "view-sort"
+            icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons"
 
             MenuItem
             {
                 text: i18n("List")
                 icon.name: "view-list-details"
                 autoExclusive: true
-                checked:  currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
+                checked: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
                 checkable: true
                 onTriggered:
                 {
@@ -48,7 +48,7 @@ Maui.Page
             MenuItem
             {
                 text: i18n("Grid")
-                icon.name:  "view-list-icons"
+                icon.name: "view-list-icons"
                 autoExclusive: true
                 checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
                 checkable: true
