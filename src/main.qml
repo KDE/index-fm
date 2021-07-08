@@ -335,14 +335,6 @@ Maui.ApplicationWindow
                                 onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
                             }
 
-                            MenuSeparator{}
-
-                            MenuItem
-                            {
-                                text: i18n("Edit path")
-                                icon.name: "edit-entry"
-                                onTriggered: _pathBar.pathEntry = true
-                            }
                         }
 
                         Maui.ContextualMenu
@@ -411,21 +403,21 @@ Maui.ApplicationWindow
 
                             MenuItem
                             {
+                                text: i18n("Split View")
+                                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                                checked: currentTab.count == 2
+                                checkable: true
+                                onClicked: toogleSplitView()
+                            }
+
+                            MenuItem
+                            {
                                 text: i18n("Embedded Terminal")
                                 enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
                                 icon.name: "dialog-scripts"
                                 onClicked: currentTab.currentItem.toogleTerminal()
                                 checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
                                 checkable: true
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Split View")
-                                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                                checked: currentTab.count == 2
-                                checkable: true
-                                onClicked: toogleSplitView()
                             }
 
                             MenuItem
@@ -438,6 +430,15 @@ Maui.ApplicationWindow
                                 {
                                     inx.openTerminal(currentPath)
                                 }
+                            }
+
+                            MenuSeparator{}
+
+                            MenuItem
+                            {
+                                text: i18n("Go to")
+                                icon.name: "edit-entry"
+                                onTriggered: _pathBar.pathEntry = true
                             }
 
                             MenuSeparator {}
