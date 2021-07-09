@@ -22,7 +22,7 @@ Maui.SideBar
     collapsible: true
     collapsed : !root.isWide
     preferredWidth: Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 13)
-    currentIndex: list.indexOfPath(currentPath)
+    currentIndex: placesList.indexOfPath(currentPath)
 
     onPlaceClicked:
     {

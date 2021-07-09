@@ -504,13 +504,14 @@ Maui.ApplicationWindow
             Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, false)
         }
 
-        //        const tabs = settings.lastSession
-        //        if(settings.restoreSession && tabs.length)
-        //        {
-        //            console.log("restore", tabs.length)
-        //            restoreSession(tabs)
-        //            return
-        //        }
+        const tabs = settings.lastSession
+        if(settings.restoreSession && tabs.length)
+        {
+            console.log("restore", tabs.length)
+            restoreSession(tabs)
+            return
+        }
+
         root.openTab(FB.FM.homePath())
         currentBrowser.settings.viewType = settings.viewType
         currentBrowser.settings.sortBy = sortSettings.sortBy
