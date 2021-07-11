@@ -5,6 +5,8 @@
 
 
 import QtQuick 2.14
+import QtQml 2.14
+
 import QtQuick.Controls 2.14
 
 import org.mauikit.controls 1.3 as Maui
@@ -22,8 +24,12 @@ Maui.SideBar
     collapsible: true
     collapsed : !root.isWide
     preferredWidth: Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 13)
-    currentIndex: placesList.indexOfPath(currentPath)
 
+    Binding on currentIndex
+    {
+        value: placesList.indexOfPath(currentPath)
+        restoreMode: Binding.RestoreBindingOrValue
+    }
     onPlaceClicked:
     {
         currentBrowser.openFolder(path)
@@ -227,6 +233,6 @@ Maui.SideBar
     function syncSidebar(path)
     {
         console.log("Sync sidebar", path)
-//        control.currentIndex = control.list.indexOfPath(path)
+        //        control.currentIndex = control.list.indexOfPath(path)
     }
 }
