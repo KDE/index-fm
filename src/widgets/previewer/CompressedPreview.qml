@@ -8,7 +8,8 @@ Maui.Page
     id: control
     headBar.visible: false
     footBar.visible: true
-    footerBackground.color: "transparent"
+    footBar.background: null
+
     footBar.rightContent: Button
     {
         text: i18n("Extract")
@@ -33,8 +34,6 @@ Maui.Page
         {
             list: _compressedFile.model
         }
-
-        margins: Maui.Style.space.medium
 
         delegate: Maui.ItemDelegate
         {

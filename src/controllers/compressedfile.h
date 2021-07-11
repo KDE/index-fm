@@ -18,6 +18,7 @@ public:
 
 private:
     FMH::MODEL_LIST m_list;
+    QUrl m_url;
 };
 
 class CompressedFile : public QObject

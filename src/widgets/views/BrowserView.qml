@@ -91,7 +91,7 @@ Maui.Page
             MenuItem
             {
                 text: i18n("Date")
-                checked:currentBrowser.currentFMList.sortBy === FB.FMList.DATE
+                checked: currentBrowser.currentFMList.sortBy === FB.FMList.DATE
                 checkable: true
                 onTriggered: currentBrowser.settings.sortBy = FB.FMList.DATE
                 autoExclusive: true
