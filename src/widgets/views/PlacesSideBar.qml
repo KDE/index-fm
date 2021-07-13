@@ -30,6 +30,7 @@ Maui.SideBar
         value: placesList.indexOfPath(currentPath)
         restoreMode: Binding.RestoreBindingOrValue
     }
+
     onPlaceClicked:
     {
         currentBrowser.openFolder(path)

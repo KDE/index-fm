@@ -19,6 +19,7 @@ Maui.Page
     property alias currentTab : _browserList.currentItem
     property alias browserList : _browserList
 
+    showCSDControls: true
     floatingFooter: true
 
     headBar.rightContent:[
