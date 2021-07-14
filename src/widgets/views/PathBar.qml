@@ -283,7 +283,7 @@ Rectangle
                         Kirigami.Icon
                         {
                             anchors.centerIn: parent
-                            source: "go-down"
+                            source: "overflow-menu"
                             color: browserMenu.visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                             width: Maui.Style.iconSizes.small
                             height: width
