@@ -86,10 +86,10 @@ Maui.SplitViewItem
 
             settings.showHiddenFiles: appSettings.showHiddenFiles
             settings.showThumbnails: appSettings.showThumbnails
-            settings.foldersFirst: true
+            settings.foldersFirst: sortSettings.foldersFirst
             settings.sortBy: sortSettings.sortBy
             settings.group: sortSettings.group
-            //            settings.viewType: _dirConf.viewType
+            settings.viewType: appSettings.viewType
 
             //            Index.FolderConfig
             //            {

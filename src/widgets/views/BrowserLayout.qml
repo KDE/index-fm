@@ -24,6 +24,7 @@ Item
     property alias orientation : _splitView.orientation
     property alias currentIndex : _splitView.currentIndex
     property alias count : _splitView.count
+
     readonly property alias currentItem : _splitView.currentItem
     readonly property alias model : _splitView.contentModel
     readonly property string title : count === 2 ?  model.get(0).browser.title + "  -  " + model.get(1).browser.title : browser.title

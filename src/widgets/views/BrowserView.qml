@@ -17,10 +17,27 @@ Maui.Page
     property alias selectionBar: _selectionBar
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
+    property Browser currentSplit: currentTab.currentItem
     property alias browserList : _browserList
 
     showCSDControls: true
     floatingFooter: true
+
+    ActionGroup
+    {
+        id: _viewTypeGroup
+        exclusive: true
+
+
+    }
+
+    ActionGroup
+    {
+        id: _sortByGroup
+
+
+
+    }
 
     headBar.rightContent:[
 
@@ -35,13 +52,13 @@ Maui.Page
                 label: i18n("View type")
             }
 
-            MenuItem
+            Action
             {
                 text: i18n("List")
                 icon.name: "view-list-details"
-                autoExclusive: true
                 checked: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
                 checkable: true
+                ActionGroup.group: _viewTypeGroup
                 onTriggered:
                 {
                     if(currentBrowser)
@@ -53,13 +70,14 @@ Maui.Page
                 }
             }
 
-            MenuItem
+            Action
             {
                 text: i18n("Grid")
                 icon.name: "view-list-icons"
-                autoExclusive: true
                 checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
                 checkable: true
+                ActionGroup.group: _viewTypeGroup
+
                 onTriggered:
                 {
                     if(currentBrowser)
@@ -80,49 +98,74 @@ Maui.Page
                 label: i18n("Sort by")
             }
 
-            MenuItem
+            Action
             {
                 text: i18n("Type")
-                checked: currentBrowser.currentFMList.sortBy === FB.FMList.MIME
+                checked: currentBrowser.settings.sortBy === FB.FMList.MIME
                 checkable: true
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MIME
-                autoExclusive: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.MIME
+                    sortSettings.sortBy = FB.FMList.MIME
+                }
             }
 
-            MenuItem
+            Action
             {
                 text: i18n("Date")
-                checked: currentBrowser.currentFMList.sortBy === FB.FMList.DATE
+                checked: currentBrowser.settings.sortBy === FB.FMList.DATE
                 checkable: true
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.DATE
-                autoExclusive: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.DATE
+                    sortSettings.sortBy = FB.FMList.DATE
+                }
             }
 
-            MenuItem
+            Action
             {
                 text: i18n("Modified")
+                checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
                 checkable: true
-                checked: currentBrowser.currentFMList.sortBy === FB.FMList.MODIFIED
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.MODIFIED
-                autoExclusive: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.MODIFIED
+                    sortSettings.sortBy = FB.FMList.MODIFIED
+                }
             }
 
-            MenuItem
+            Action
             {
                 text: i18n("Size")
+                checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
                 checkable: true
-                checked: currentBrowser.currentFMList.sortBy === FB.FMList.SIZE
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.SIZE
-                autoExclusive: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.SIZE
+                    sortSettings.sortBy = FB.FMList.SIZE
+                }
             }
 
-            MenuItem
+            Action
             {
                 text: i18n("Name")
+                checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
                 checkable: true
-                checked: currentBrowser.currentFMList.sortBy === FB.FMList.LABEL
-                onTriggered: currentBrowser.settings.sortBy = FB.FMList.LABEL
-                autoExclusive: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.LABEL
+                    sortSettings.sortBy = FB.FMList.LABEL
+                }
             }
 
             MenuSeparator{}
@@ -130,9 +173,14 @@ Maui.Page
             MenuItem
             {
                 text: i18n("Show Folders First")
-                checked: currentBrowser.currentFMList.foldersFirst
+                checked: currentBrowser.settings.foldersFirst
                 checkable: true
-                onTriggered: currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+
+                onTriggered:
+                {
+                    currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+                    sortSettings.foldersFirst =  !sortSettings.foldersFirst
+                }
             }
 
             MenuItem
@@ -144,14 +192,15 @@ Maui.Page
                 onTriggered:
                 {
                     currentBrowser.settings.group = !currentBrowser.settings.group
+                    sortSettings.group = !sortSettings.group
                 }
             }
         }
-     ]
+    ]
 
     headBar.farLeftContent: ToolButton
     {
-//        visible: placesSidebar.collapsed
+        //        visible: placesSidebar.collapsed
         icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
         onClicked: placesSidebar.toggle()
         checked: placesSidebar.visible

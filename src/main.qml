@@ -27,14 +27,17 @@ Maui.ApplicationWindow
     header.visible: false
 
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
-    readonly property FB.FileBrowser currentBrowser : currentTab && currentTab.browser ? currentTab.browser : null
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
     property alias openWithDialog : _openWithDialog
     property alias tagsDialog : _tagsDialog
     property alias currentTabIndex : _browserView.currentTabIndex
+
     property alias currentTab : _browserView.currentTab
+    property alias currentSplit : _browserView.currentSplit
+    readonly property FB.FileBrowser currentBrowser : currentSplit.browser
+
     property alias appSettings : settings
 
     property bool selectionMode: false
@@ -65,7 +68,6 @@ Maui.ApplicationWindow
         property int sortBy: FB.FMList.MODIFIED
         property int sortOrder: Qt.AscendingOrder
         property bool group: false
-        property bool perFolderSort : true
     }
 
     onClosing:
@@ -513,9 +515,6 @@ Maui.ApplicationWindow
         }
 
         root.openTab(FB.FM.homePath())
-        currentBrowser.settings.viewType = settings.viewType
-        currentBrowser.settings.sortBy = sortSettings.sortBy
-
         //            if(settings.overviewStart)
         //            {
         //                _stackView.push(_homeViewComponent)
