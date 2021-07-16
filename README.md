@@ -66,7 +66,7 @@ git clone https://invent.kde.org/maui/mauikit.git
 
 We recommmend use KDE Neon for developing because KDE Neon has by default the latest version of Qt version supported in KDE Plasma.
 
-Index-FM use Qt version 5.14.2 so we need this version or higer installed on ower host.
+Index-FM use Qt version 5.14.2 so we need this version or higher installed on own host.
 
 ### **KDE Neon >= 5.19.4**
 
