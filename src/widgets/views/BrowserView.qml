@@ -207,7 +207,6 @@ Maui.Page
 
     headBar.farLeftContent: ToolButton
     {
-        //        visible: placesSidebar.collapsed
         icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
         onClicked: placesSidebar.toggle()
         checked: placesSidebar.visible
@@ -358,11 +357,6 @@ Maui.Page
         onNewTabClicked: openTab(currentPath)
 
         onCloseTabClicked: closeTab(index)
-
-        onCurrentItemChanged:
-        {
-            currentBrowser.currentView.forceActiveFocus()
-        }
     }
 
     DropArea

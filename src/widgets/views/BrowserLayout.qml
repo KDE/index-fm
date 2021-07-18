@@ -49,6 +49,11 @@ Item
         Browser {}
     }
 
+    function forceActiveFocus()
+    {
+        control.currentItem.forceActiveFocus()
+    }
+
     function split(path, orientation)
     {
         if(_splitView.count === 2)

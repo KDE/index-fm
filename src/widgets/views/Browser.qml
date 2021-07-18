@@ -278,5 +278,10 @@ Maui.SplitViewItem
     function toogleTerminal()
     {
         terminalVisible = !terminalVisible
+    }    
+
+    function forceActiveFocus()
+    {
+       browser.forceActiveFocus()
     }
 }
