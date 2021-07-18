@@ -27,16 +27,11 @@ Maui.Page
     {
         id: _viewTypeGroup
         exclusive: true
-
-
     }
 
     ActionGroup
     {
         id: _sortByGroup
-
-
-
     }
 
     headBar.rightContent:[
@@ -169,6 +164,18 @@ Maui.Page
             }
 
             MenuSeparator{}
+
+            MenuItem
+            {
+                icon.name: "view-hidden"
+                text: i18n("Hidden Files")
+                checkable: true
+                checked: settings.showHiddenFiles
+                onTriggered:
+                {
+                    settings.showHiddenFiles = !settings.showHiddenFiles
+                }
+            }
 
             MenuItem
             {

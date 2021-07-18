@@ -360,19 +360,7 @@ Maui.ApplicationWindow
                                 checked: currentBrowser.headBar.visible
                                 checkable: true
                                 onTriggered: currentBrowser.toggleSearchBar()
-                            }
-
-                            MenuItem
-                            {
-                                icon.name: "view-hidden"
-                                text: i18n("Hidden Files")
-                                checkable: true
-                                checked: settings.showHiddenFiles
-                                onTriggered:
-                                {
-                                    settings.showHiddenFiles = !settings.showHiddenFiles
-                                }
-                            }
+                            }                            
 
                             MenuSeparator {}
 
