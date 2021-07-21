@@ -360,7 +360,7 @@ Maui.ApplicationWindow
                                 checked: currentBrowser.headBar.visible
                                 checkable: true
                                 onTriggered: currentBrowser.toggleSearchBar()
-                            }                            
+                            }
 
                             MenuSeparator {}
 
@@ -390,15 +390,6 @@ Maui.ApplicationWindow
                             }
 
                             MenuSeparator{}
-
-                            MenuItem
-                            {
-                                text: i18n("Split View")
-                                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                                checked: currentTab.count == 2
-                                checkable: true
-                                onClicked: toogleSplitView()
-                            }
 
                             MenuItem
                             {

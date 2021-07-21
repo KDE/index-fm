@@ -167,18 +167,6 @@ Maui.Page
 
             MenuItem
             {
-                icon.name: "view-hidden"
-                text: i18n("Hidden Files")
-                checkable: true
-                checked: settings.showHiddenFiles
-                onTriggered:
-                {
-                    settings.showHiddenFiles = !settings.showHiddenFiles
-                }
-            }
-
-            MenuItem
-            {
                 text: i18n("Show Folders First")
                 checked: currentBrowser.settings.foldersFirst
                 checkable: true
@@ -202,6 +190,38 @@ Maui.Page
                     sortSettings.group = !sortSettings.group
                 }
             }
+
+            MenuSeparator {}
+
+            Maui.LabelDelegate
+            {
+                width: parent.width
+                isSection: true
+                label: i18n("Advanced")
+            }
+
+
+            MenuItem
+            {
+                icon.name: "view-hidden"
+                text: i18n("Hidden Files")
+                checkable: true
+                checked: settings.showHiddenFiles
+                onTriggered:
+                {
+                    settings.showHiddenFiles = !settings.showHiddenFiles
+                }
+            }
+
+            MenuItem
+            {
+                text: i18n("Split View")
+                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                checked: currentTab.count === 2
+                checkable: true
+                onClicked: toogleSplitView()
+            }
+
         }
     ]
 

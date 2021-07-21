@@ -152,7 +152,8 @@ Maui.SideBar
             visible: placesList.isDevice(index) && placesList.setupNeeded(index)
             icon.name: "media-mount"
             flat: true
-
+            icon.height: Maui.Style.iconSizes.small
+            icon.width: Maui.Style.iconSizes.small
             onClicked: placesList.requestSetup(index)
         }
 
