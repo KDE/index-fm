@@ -274,49 +274,6 @@ Maui.Page
 
         Action
         {
-            text: i18n("Open")
-            icon.name: "document-open"
-            onTriggered:
-            {
-                for(var i in selectionBar.uris)
-                    currentBrowser.openFile(_selectionBar.uris[i])
-            }
-        }
-
-        Action
-        {
-            text: i18n("Compress")
-            icon.name: "archive-insert"
-            onTriggered:
-            {
-                dialogLoader.sourceComponent= _compressDialogComponent
-                dialog.urls = selectionBar.uris
-                dialog.open()
-            }
-        }
-
-        Action
-        {
-            text: i18n("Tags")
-            icon.name: "tag"
-            onTriggered:
-            {
-                tagFiles(_selectionBar.uris)
-            }
-        }
-
-        Action
-        {
-            text: i18n("Share")
-            icon.name: "document-share"
-            onTriggered:
-            {
-                shareFiles(_selectionBar.uris)
-            }
-        }
-
-        Action
-        {
             text: i18n("Copy")
             icon.name: "edit-copy"
             onTriggered:
@@ -339,14 +296,59 @@ Maui.Page
 
         Action
         {
-            text: i18n("Remove")
-            icon.name: "edit-delete"
-
+            text: i18n("Share")
+            icon.name: "document-share"
             onTriggered:
             {
-                currentBrowser.remove(_selectionBar.uris)
+                shareFiles(_selectionBar.uris)
             }
         }
+
+        hiddenActions:[
+            Action
+            {
+                text: i18n("Open")
+                icon.name: "document-open"
+                onTriggered:
+                {
+                    for(var i in selectionBar.uris)
+                        currentBrowser.openFile(_selectionBar.uris[i])
+                }
+            },
+
+            Action
+            {
+                text: i18n("Compress")
+                icon.name: "archive-insert"
+                onTriggered:
+                {
+                    dialogLoader.sourceComponent= _compressDialogComponent
+                    dialog.urls = selectionBar.uris
+                    dialog.open()
+                }
+            },
+
+            Action
+            {
+                text: i18n("Tags")
+                icon.name: "tag"
+                onTriggered:
+                {
+                    tagFiles(_selectionBar.uris)
+                }
+            },
+
+            Action
+            {
+                text: i18n("Remove")
+                icon.name: "edit-delete"
+
+                onTriggered:
+                {
+                    currentBrowser.remove(_selectionBar.uris)
+                }
+            }
+        ]
     }
 
     Maui.TabView
