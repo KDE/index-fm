@@ -6,7 +6,7 @@
 #include "index.h"
 
 #if defined Q_OS_LINUX && !defined Q_OS_ANDROID
-#include "ktoolinvocation.h"
+#include <KToolInvocation>
 #endif
 
 #include <QDebug>
@@ -43,7 +43,7 @@ void Index::openPaths(const QStringList &paths)
 
 void Index::openTerminal(const QUrl &url)
 {
-#if defined Q_OS_LINUX && !defined Q_OS_ANDROID 
+#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
 
     KToolInvocation::invokeTerminal(QString(), {}, url.isLocalFile() ? url.toLocalFile() : FMStatic::HomePath);
 
