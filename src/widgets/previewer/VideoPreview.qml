@@ -81,17 +81,7 @@ Maui.Page
     }
 
     footBar.visible: true
-    footBar.background: null
-    footBar.leftContent: ToolButton
-    {
-        icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
-        onClicked: player.playbackState === MediaPlayer.PlayingState ? player.pause() : player.play()
-    }
-
-    footBar.rightContent: Label
-    {
-        text: Maui.Handy.formatTime((player.duration - player.position)/1000)
-    }
+    footBar.background: null   
 
     footBar.middleContent : Slider
     {

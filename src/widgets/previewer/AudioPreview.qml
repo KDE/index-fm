@@ -48,7 +48,7 @@ Maui.Page
         {
             anchors.centerIn: parent
             width: Math.min(parent.width, 200)
-            height: Math.min(200, parent.height)
+            height: Math.min(400, parent.height)
             spacing: Maui.Style.space.big
 
             Item
@@ -77,31 +77,18 @@ Maui.Page
 
                 label2.text: player.metaData.albumArtist || player.metaData.albumTitle
             }
+
+            Slider
+            {
+                id: _slider
+                Layout.fillWidth: true
+                orientation: Qt.Horizontal
+                from: 0
+                to: 1000
+                value: (1000 * player.position) / player.duration
+                onMoved: player.seek((_slider.value / 1000) * player.duration)
+            }
         }
-    }
-
-    footBar.visible: true
-    footBar.background: null
-    footBar.leftContent: ToolButton
-    {
-        icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
-        onClicked: player.playbackState === MediaPlayer.PlayingState ? player.pause() : player.play()
-    }
-
-    footBar.rightContent: Label
-    {
-        text: Maui.Handy.formatTime((player.duration - player.position)/1000)
-    }
-
-    footBar.middleContent : Slider
-    {
-        id: _slider
-        Layout.fillWidth: true
-        orientation: Qt.Horizontal
-        from: 0
-        to: 1000
-        value: (1000 * player.position) / player.duration
-        onMoved: player.seek((_slider.value / 1000) * player.duration)
     }
 }
 
