@@ -35,9 +35,7 @@ elseif(UNIX)
     target_link_libraries(${PROJECT_NAME}
         KF5::ConfigCore
         KF5::KIOCore
-        KF5::KIOFileWidgets
-        KF5::KIONTLM
-        KF5::KIOWidgets)
+        KF5::KIOFileWidgets)
 endif()
 
 target_compile_definitions(${PROJECT_NAME}
@@ -46,7 +44,6 @@ target_compile_definitions(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
     MauiKit
     MauiKit::FileBrowsing
-    Qt5::Sql
     Qt5::Quick
     Qt5::Qml
     KF5::Archive

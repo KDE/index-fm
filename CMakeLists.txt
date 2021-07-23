@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.16)
 
 set(INDEX_VERSION 2.0.0)
 
@@ -22,6 +22,11 @@ project(index VERSION ${INDEX_VERSION})
 set(REQUIRED_QT_VERSION 5.14.0)
 set(REQUIRED_KF5_VERSION 5.40.0)
 
+if(ANDROID)
+    set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
+    set(ANDROID_ABIS "armeabi-v7a")
+endif()
+
 find_package(ECM ${REQUIRED_KF5_VERSION} NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
@@ -39,14 +44,11 @@ include(ECMSourceVersionControl)
 include(FeatureSummary)
 include(ECMQMLModules)
 
-find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Sql QuickControls2 Concurrent)
+find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick QuickControls2)
 find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons Archive)
 
 if(ANDROID)
-    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras QuickControls2)
-    message("CURRENT DIR" ${CMAKE_CURRENT_SOURCE_DIR})
-    set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
-    set(ANDROID_ABIS "armeabi-v7a")
+    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras QuickControls2)  
 elseif(UNIX)
     find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Config KIO)
 endif()
