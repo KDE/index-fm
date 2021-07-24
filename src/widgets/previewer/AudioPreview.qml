@@ -6,10 +6,9 @@ import QtMultimedia 5.8
 
 import org.mauikit.controls 1.3 as Maui
 
-Maui.Page
+Item
 {
     id: control
-    headBar.visible: false
 
     property alias player: player
 
@@ -39,57 +38,53 @@ Maui.Page
         }
     }
 
-    Item
+
+    ColumnLayout
     {
-        anchors.fill: parent
-        anchors.margins: Maui.Style.space.big
+        anchors.centerIn: parent
+        width: Math.min(parent.width, 200)
+        height: Math.min(400, parent.height)
+        spacing: Maui.Style.space.big
 
-        ColumnLayout
+        Item
         {
-            anchors.centerIn: parent
-            width: Math.min(parent.width, 200)
-            height: Math.min(400, parent.height)
-            spacing: Maui.Style.space.big
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-            Item
+            Maui.IconItem
             {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                Maui.IconItem
-                {
-                    height: parent.height
-                    width: parent.width
-                    iconSizeHint: height
-                    iconSource: iteminfo.icon
-                    imageSource: iteminfo.thumbnail
-                }
-            }
-
-            Maui.ListItemTemplate
-            {
-                Layout.fillWidth: true
-                label1.text:  player.metaData.title
-                label1.font.pointSize: Maui.Style.fontSizes.huge
-                label2.font.pointSize: Maui.Style.fontSizes.big
-                label1.horizontalAlignment:Qt.AlignHCenter
-                label2.horizontalAlignment:Qt.AlignHCenter
-
-                label2.text: player.metaData.albumArtist || player.metaData.albumTitle
-            }
-
-            Slider
-            {
-                id: _slider
-                Layout.fillWidth: true
-                orientation: Qt.Horizontal
-                from: 0
-                to: 1000
-                value: (1000 * player.position) / player.duration
-                onMoved: player.seek((_slider.value / 1000) * player.duration)
+                height: parent.height
+                width: parent.width
+                iconSizeHint: height
+                iconSource: iteminfo.icon
+                imageSource: iteminfo.thumbnail
             }
         }
+
+        Maui.ListItemTemplate
+        {
+            Layout.fillWidth: true
+            label1.text:  player.metaData.title
+            label1.font.pointSize: Maui.Style.fontSizes.huge
+            label2.font.pointSize: Maui.Style.fontSizes.big
+            label1.horizontalAlignment:Qt.AlignHCenter
+            label2.horizontalAlignment:Qt.AlignHCenter
+
+            label2.text: player.metaData.albumArtist || player.metaData.albumTitle
+        }
+
+        Slider
+        {
+            id: _slider
+            Layout.fillWidth: true
+            orientation: Qt.Horizontal
+            from: 0
+            to: 1000
+            value: (1000 * player.position) / player.duration
+            onMoved: player.seek((_slider.value / 1000) * player.duration)
+        }
     }
+
 }
 
 
