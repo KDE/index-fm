@@ -1,0 +1,16 @@
+[Global]
+IconName=system-file-manager
+Name=Index
+Comment=File Manager
+DesktopEntry=org.kde.index.desktop
+
+[Context/operations]
+Name=Operations
+Comment=File operations
+
+[Event/fileOperation]
+Name=File Operation
+Comment=Performing a file operation
+Contexts=operations
+Action=Sound|Popup
+Urgency=Low

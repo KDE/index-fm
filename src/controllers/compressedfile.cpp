@@ -42,7 +42,6 @@ void CompressedFileModel::setUrl(const QUrl &url)
 
   qDebug() << "@gadominguez File:fm.cpp Funcion: getEntries  Url:" << url.toString();
 
-
   KArchive *kArch = CompressedFile::getKArchiveObject(url);
   kArch->open(QIODevice::ReadOnly);
   assert(kArch->isOpen() == true);
@@ -80,10 +79,18 @@ void CompressedFile::extract(const QUrl &where, const QString &directory)
   kArch->open(QIODevice::ReadOnly);
   qDebug() << "@gadominguez File:fm.cpp Funcion: extractFile  " << kArch->directory()->entries();
   assert(kArch->isOpen() == true);
-  if (kArch->isOpen()) {
-      bool recursive = true;
-      kArch->directory()->copyTo(where_, recursive);
+
+  if (kArch->isOpen())
+    {
+      if(kArch->directory()->copyTo(where_, true))
+        {
+          emit this->extractionFinished (where);
+        }
+
+      kArch->close ();
+
     }
+  delete kArch;
 }
 
 /*

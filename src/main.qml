@@ -13,7 +13,6 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.3 as Maui
 
 import org.mauikit.filebrowsing 1.0 as FB
-
 import org.maui.index 1.0 as Index
 
 import "widgets"
@@ -41,6 +40,13 @@ Maui.ApplicationWindow
     property alias appSettings : settings
 
     property bool selectionMode: false
+
+    Maui.Notify
+    {
+        id: _notifyOperation
+        componentName: "org.kde.index"
+        eventId: "fileOperation"
+    }
 
     Settings
     {
@@ -238,9 +244,25 @@ Maui.ApplicationWindow
         BrowserLayout {}
     }
 
+    Action
+    {
+        id: _extractionFinishedAction
+        text: i18n("Open folder")
+    }
+
     Index.CompressedFile
     {
         id: _compressedFile
+
+
+        onExtractionFinished:
+        {
+            _notifyOperation.title = i18n("Extracted")
+            _notifyOperation.message = i18n("File was extracted")
+            _notifyOperation.defaultAction = _extractionFinishedAction
+            _notifyOperation.iconName = "application-x-archive"
+            _notifyOperation.send()
+        }
     }
 
     Loader

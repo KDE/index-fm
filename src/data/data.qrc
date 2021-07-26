@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/knotifications5">
+        <file>org.kde.index.notifyrc</file>
+    </qresource>
+</RCC>

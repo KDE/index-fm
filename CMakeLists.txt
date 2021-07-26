@@ -99,6 +99,7 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
     install(FILES org.kde.index.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 endif()
 
+install(FILES src/data/org.kde.index.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)

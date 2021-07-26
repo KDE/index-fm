@@ -46,6 +46,8 @@ public slots:
 
 signals:
     void urlChanged();
+    void extractionFinished(QUrl url);
+    void compressionFinished(QUrl url);
 };
 
 #endif // COMPRESSEDFILE_H

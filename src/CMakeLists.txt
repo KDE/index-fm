@@ -14,6 +14,7 @@ set(index_SRCS
     models/recentfilesmodel.cpp
     models/pathlist.cpp
     index_assets.qrc
+    data/data.qrc
     qml.qrc
     )
 
