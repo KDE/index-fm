@@ -1,6 +1,34 @@
 [Global]
 IconName=system-file-manager
 Name=Index
+Name[ca]=Índex
+Name[ca@valencia]=Índex
+Name[cs]=Rejstřík
+Name[de]=Index
+Name[el]=Δείκτης
+Name[en_GB]=Index
+Name[es]=Índice
+Name[et]=Index
+Name[eu]=Index
+Name[fi]=Index
+Name[fr]=Indice
+Name[hi]=निर्देशिका (Index)
+Name[hu]=Index
+Name[it]=Index
+Name[ko]=Index
+Name[lt]=Index
+Name[nl]=Index
+Name[nn]=Index
+Name[pa]=ਇੰਡੈਕਸ
+Name[pl]=Indeks
+Name[pt]=Índice
+Name[pt_BR]=Index
+Name[sk]=Index
+Name[sl]=Indeks
+Name[sv]=Index
+Name[uk]=Індекс
+Name[x-test]=xxIndexxx
+Name[zh_TW]=索引
 Comment=File Manager
 DesktopEntry=org.kde.index.desktop
 
