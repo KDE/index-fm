@@ -11,6 +11,7 @@ import QtQuick.Controls 2.14
 
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
+
 import org.kde.kirigami 2.6 as Kirigami
 
 Maui.SideBar
@@ -31,6 +32,19 @@ Maui.SideBar
         restoreMode: Binding.RestoreBindingOrValue
     }
 
+    Maui.Holder
+    {
+        anchors.bottom: parent.bottom
+        height: parent.height - 200
+        width: parent.width
+        visible: listView.count === 0
+
+//        emoji: "qrc:/assets/bookmark-new.svg"
+//        emojiSize: Maui.Style.iconSizes.huge
+        title: i18n("Bookmarks!")
+        body: i18n("Your bookmarks will be listed here")
+    }
+
     onPlaceClicked:
     {
         currentBrowser.openFolder(path)
@@ -46,6 +60,7 @@ Maui.SideBar
     listView.flickable.bottomMargin: Maui.Style.space.medium
     listView.flickable.header: Column
     {
+        id:  _defaultSection
         width: parent.width
         spacing: Maui.Style.space.medium
 
