@@ -30,15 +30,40 @@ Name[uk]=Індекс
 Name[x-test]=xxIndexxx
 Name[zh_TW]=索引
 Comment=File Manager
+Comment[nl]=Bestandsbeheerder
+Comment[pt]=Gestor de Ficheiros
+Comment[sv]=Filhanterare
+Comment[uk]=Керування файлами
+Comment[x-test]=xxFile Managerxx
 DesktopEntry=org.kde.index.desktop
 
 [Context/operations]
 Name=Operations
+Name[nl]=Bewerkingen
+Name[pt]=Operações
+Name[sv]=Åtgärder
+Name[uk]=Дії
+Name[x-test]=xxOperationsxx
 Comment=File operations
+Comment[nl]=Bestandsbewerkingen
+Comment[pt]=Operações com ficheiros
+Comment[sv]=Filåtgärder
+Comment[uk]=Дії із файлами
+Comment[x-test]=xxFile operationsxx
 
 [Event/fileOperation]
 Name=File Operation
+Name[nl]=Bestandsbewerking
+Name[pt]=Operação com Ficheiro
+Name[sv]=Filåtgärder
+Name[uk]=Дія з файлами
+Name[x-test]=xxFile Operationxx
 Comment=Performing a file operation
+Comment[nl]=Bestandsbewerking uitvoeren
+Comment[pt]=A efectuar uma operação com um ficheiro
+Comment[sv]=Utför en filåtgärd
+Comment[uk]=Виконання дії з файлами
+Comment[x-test]=xxPerforming a file operationxx
 Contexts=operations
 Action=Sound|Popup
 Urgency=Low
