@@ -30,6 +30,9 @@ Name[uk]=Індекс
 Name[x-test]=xxIndexxx
 Name[zh_TW]=索引
 Comment=File Manager
+Comment[ca]=Gestor de fitxers
+Comment[el]=Διαχειριστής αρχείων
+Comment[ko]=파일 관리자
 Comment[nl]=Bestandsbeheerder
 Comment[pt]=Gestor de Ficheiros
 Comment[sv]=Filhanterare
@@ -39,12 +42,18 @@ DesktopEntry=org.kde.index.desktop
 
 [Context/operations]
 Name=Operations
+Name[ca]=Operacions
+Name[el]=Λειτουργίες
+Name[ko]=작업
 Name[nl]=Bewerkingen
 Name[pt]=Operações
 Name[sv]=Åtgärder
 Name[uk]=Дії
 Name[x-test]=xxOperationsxx
 Comment=File operations
+Comment[ca]=Operacions amb fitxers
+Comment[el]=Λειτουργίες αρχείου
+Comment[ko]=파일 작업
 Comment[nl]=Bestandsbewerkingen
 Comment[pt]=Operações com ficheiros
 Comment[sv]=Filåtgärder
@@ -53,12 +62,18 @@ Comment[x-test]=xxFile operationsxx
 
 [Event/fileOperation]
 Name=File Operation
+Name[ca]=Operació sobre el fitxer
+Name[el]=Λειτουργία αρχείου
+Name[ko]=파일 작업
 Name[nl]=Bestandsbewerking
 Name[pt]=Operação com Ficheiro
 Name[sv]=Filåtgärder
 Name[uk]=Дія з файлами
 Name[x-test]=xxFile Operationxx
 Comment=Performing a file operation
+Comment[ca]=Realitza una operació sobre el fitxer
+Comment[el]=Εκτέλεση μιας λειτουργίας αρχείου
+Comment[ko]=파일 작업 실행
 Comment[nl]=Bestandsbewerking uitvoeren
 Comment[pt]=A efectuar uma operação com um ficheiro
 Comment[sv]=Utför en filåtgärd
