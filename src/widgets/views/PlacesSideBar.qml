@@ -39,8 +39,6 @@ Maui.SideBar
         width: parent.width
         visible: listView.count === 0
 
-//        emoji: "qrc:/assets/bookmark-new.svg"
-//        emojiSize: Maui.Style.iconSizes.huge
         title: i18n("Bookmarks!")
         body: i18n("Your bookmarks will be listed here")
     }

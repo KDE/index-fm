@@ -19,111 +19,77 @@
 #include "pathlist.h"
 #include <QDebug>
 
-PathList::PathList(QObject *parent)
-    : MauiList(parent)
+PathList::PathList(QObject *parent) : MauiList(parent)
 {
 }
 
-QVariantMap PathList::get(const int &index) const
+void PathList::componentComplete()
 {
-    if (this->list.isEmpty() || index >= this->list.size() || index < 0) {
-        return QVariantMap();
-    }
-
-    const auto model = this->list.at(index);
-    return FMH::toMap(model);
+  connect(this, &PathList::pathChanged, this, &PathList::setList);
+  this->setList();
 }
 
 QString PathList::getPath() const
 {
-    return this->m_path;
+  return this->m_path;
 }
 
 const FMH::MODEL_LIST &PathList::items() const
 {
-    return this->list;
+  return this->list;
 }
 
 void PathList::setList()
 {
-    const auto paths = PathList::splitPath(m_path);
+  const auto paths = PathList::splitPath(m_path);
 
-    if (this->list.isEmpty()) {
-        emit this->preListChanged();
-        this->list << paths;
-        emit this->postListChanged();
-    } else {
-        const int index = [&]() -> int {
-            int i = 0;
-            for (const auto &item : qAsConst(list)) {
-                if (i < paths.size()) {
-                    if (item[FMH::MODEL_KEY::PATH] != paths[i][FMH::MODEL_KEY::PATH]) {
-                        break;
-                    } else
-                        i++;
-                } else
-                    break;
-            }
-            return i;
-        }();
+  emit this->preListChanged();
+  this->list = paths;
+  emit this->postListChanged();
 
-        for (auto i = this->list.size() - 1; i >= index; i--) {
-            emit preItemRemoved(i);
-            this->list.removeAt(i);
-            emit postItemRemoved();
-        }
-
-        for (auto i = index; i < paths.size(); i++) {
-            emit preItemAppended();
-            this->list << paths[i];
-            emit postItemAppended();
-        }
-    }
-
-emit this->countChanged();
+  emit this->countChanged();
 }
 
 void PathList::setPath(const QString &path)
 {
-    if (path == this->m_path)
-        return;
+  if (path == this->m_path)
+    return;
 
-    this->m_path = path;
-    this->setList();
-
-    emit this->pathChanged();
-
-    qDebug() << this->list;
+  this->m_path = path;
+  emit this->pathChanged();
 }
 
 FMH::MODEL_LIST PathList::splitPath(const QString &path)
 {
-    FMH::MODEL_LIST res;
+  FMH::MODEL_LIST res;
 
-    QString _url = path;
+  QString _url = path;
 
-    while (_url.endsWith("/"))
-        _url.chop(1);
+  while (_url.endsWith("/"))
+    {
+      _url.chop(1);
+    }
 
-    _url += "/";
+  _url += "/";
 
-    const auto count = _url.count("/");
+  const auto count = _url.count("/");
 
-    for (auto i = 0; i < count; i++) {
-        _url = QString(_url).left(_url.lastIndexOf("/"));
-        auto label = QString(_url).right(_url.length() - _url.lastIndexOf("/") - 1);
+  for (auto i = 0; i < count; i++)
+    {
+      _url = QString(_url).left(_url.lastIndexOf("/"));
+      auto label = QString(_url).right(_url.length() - _url.lastIndexOf("/") - 1);
 
-        if (label.isEmpty())
-            continue;
+      if (label.isEmpty())
+        continue;
 
-        if (label.contains(":") && i == count - 1) // handle the protocol
+      if (label.contains(":") && i == count - 1) // handle the protocol
         {
-            res << FMH::MODEL {{FMH::MODEL_KEY::LABEL, "/"}, {FMH::MODEL_KEY::PATH, _url + "///"}};
-            break;
+          res << FMH::MODEL {{FMH::MODEL_KEY::LABEL, "/"}, {FMH::MODEL_KEY::PATH, _url + "///"}};
+          break;
         }
 
-        res << FMH::MODEL {{FMH::MODEL_KEY::LABEL, label}, {FMH::MODEL_KEY::PATH, _url}};
+      res << FMH::MODEL {{FMH::MODEL_KEY::LABEL, label}, {FMH::MODEL_KEY::PATH, _url}};
     }
-    std::reverse(res.begin(), res.end());
-    return res;
+  std::reverse(res.begin(), res.end());
+  return res;
 }
