@@ -244,7 +244,7 @@ Maui.ApplicationWindow
         BrowserLayout {}
     }
 
-    Action
+    Maui.NotifyAction
     {
         id: _extractionFinishedAction
         text: i18n("Open folder")
