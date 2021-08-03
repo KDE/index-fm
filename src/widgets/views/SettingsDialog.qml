@@ -150,17 +150,17 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Overview")
-            label2.text: i18n("Use overview mode as default on launch")
+//        Maui.SettingTemplate
+//        {
+//            label1.text: i18n("Overview")
+//            label2.text: i18n("Use overview mode as default on launch")
 
-            Switch
-            {
-                Layout.fillHeight: true
-                checked:  appSettings.overviewStart
-                onToggled: appSettings.overviewStart = !appSettings.overviewStart
-            }
-        }
+//            Switch
+//            {
+//                Layout.fillHeight: true
+//                checked:  appSettings.overviewStart
+//                onToggled: appSettings.overviewStart = !appSettings.overviewStart
+//            }
+//        }
     }
 }
