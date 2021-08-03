@@ -3,14 +3,10 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QCommandLineParser>
+#include <QDate>
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QDate>
-
-#include <KAboutData>
-
-#include "index.h"
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
@@ -25,11 +21,8 @@
 
 #include <MauiKit/Core/mauiapp.h>
 
-#if defined Q_OS_MACOS || defined Q_OS_WIN
-#include <KF5/KI18n/KLocalizedString>
-#else
+#include <KAboutData>
 #include <KI18n/KLocalizedString>
-#endif
 
 #include "../index_version.h"
 
@@ -37,6 +30,8 @@
 #include "controllers/filepreviewer.h"
 #include "controllers/dirinfo.h"
 #include "controllers/folderconfig.h"
+
+#include "index.h"
 
 #include "models/recentfilesmodel.h"
 #include "models/pathlist.h"
@@ -46,9 +41,6 @@
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QCoreApplication::setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    QCoreApplication::setAttribute(Qt::AA_DisableSessionManager, true);
 
 #ifdef Q_OS_WIN32
     qputenv("QT_MULTIMEDIA_PREFERRED_PLUGINS", "w");

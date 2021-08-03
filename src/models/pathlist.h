@@ -1,4 +1,4 @@
-/*
+﻿/*
  * <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) 2019  camilo <chiguitar@unal.edu.co>
  *
@@ -28,7 +28,7 @@ class PathList : public MauiList
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString path READ getPath WRITE setPath NOTIFY pathChanged)
+    Q_PROPERTY(QString path READ getPath WRITE setPath NOTIFY pathChanged REQUIRED)
 
 public:
     PathList(QObject *parent = nullptr);
@@ -47,12 +47,7 @@ public:
      */
     QString getPath() const;
 
-    /**
-     * @brief get
-     * @param index
-     * @return
-     */
-    QVariantMap get(const int &index) const;
+    void componentComplete() override final;
 
 private:
     FMH::MODEL_LIST list;
