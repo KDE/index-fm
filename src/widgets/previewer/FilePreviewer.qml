@@ -234,8 +234,9 @@ Maui.Dialog
 
             onAddClicked:
             {
-                tagsDialog.composerList.urls = [ previewer.currentUrl]
-                tagsDialog.open()
+                dialogLoader.sourceComponent = _tagsDialogComponent
+                dialog.composerList.urls = [ previewer.currentUrl]
+                dialog.open()
             }
         },
 
@@ -304,17 +305,4 @@ Maui.Dialog
             ]
         }
     ]
-
-    Connections
-    {
-        target: tagsDialog
-        enabled: tagsDialog
-        ignoreUnknownSignals: true
-
-        function onTagsReady(tags)
-        {
-            tagsDialog.composerList.updateToUrls(tags)
-            tagBar.list.refresh()
-        }
-    }
 }

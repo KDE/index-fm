@@ -156,8 +156,9 @@ Maui.ContextualMenu
         icon.name: "tag"
         onTriggered:
         {
-            tagsDialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
-            tagsDialog.open()
+            dialogLoader.sourceComponent = _tagsDialogComponent
+            dialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
+            dialog.open()
         }
     }
 
