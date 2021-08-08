@@ -30,7 +30,6 @@ Maui.ApplicationWindow
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
     property alias openWithDialog : _openWithDialog
-    property alias tagsDialog : _tagsDialog
     property alias currentTabIndex : _browserView.currentTabIndex
 
     property alias currentTab : _browserView.currentTab
@@ -108,15 +107,19 @@ Maui.ApplicationWindow
         close.accepted = true
     }
 
-    FB.TagsDialog
+    Component
     {
-        id: _tagsDialog
-        taglist.strict: false
-        composerList.strict: false
+        id: _tagsDialogComponent
 
-        onTagsReady:
+        FB.TagsDialog
         {
-            composerList.updateToUrls(tags)
+            taglist.strict: false
+            composerList.strict: false
+
+            onTagsReady:
+            {
+                composerList.updateToUrls(tags)
+            }
         }
     }
 
