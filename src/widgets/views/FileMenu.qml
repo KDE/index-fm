@@ -151,7 +151,7 @@ Maui.ContextualMenu
 
     MenuItem
     {
-        enabled: !control.isExec && tagsDialog
+        enabled: !control.isExec
         text: i18n("Tags")
         icon.name: "tag"
         onTriggered:
