@@ -33,12 +33,44 @@ Maui.Page
     {
         id: _sortByGroup
     }
-
     headBar.rightContent:[
 
         Maui.ToolButtonMenu
         {
+            id: _viewMenu
             icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons"
+
+            Maui.MenuItemActionRow
+            {
+                Action
+                {
+                    icon.name: "view-hidden"
+//                        text: i18n("Hidden Files")
+                    checkable: true
+                    checked: settings.showHiddenFiles
+                    onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
+                }
+
+                Action
+                {
+//                        text: i18n("Split View")
+                    icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                    checked: currentTab.count === 2
+                    checkable: true
+                    onTriggered: toogleSplitView()
+                }
+
+                Action
+                {
+//                        text: i18n("Embedded Terminal")
+                    enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+                    icon.name: "dialog-scripts"
+                    checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+                    checkable: true
+
+                    onTriggered: currentTab.currentItem.toogleTerminal()
+                }
+            }
 
             Maui.LabelDelegate
             {
@@ -190,38 +222,6 @@ Maui.Page
                     sortSettings.group = !sortSettings.group
                 }
             }
-
-            MenuSeparator {}
-
-            Maui.LabelDelegate
-            {
-                width: parent.width
-                isSection: true
-                label: i18n("Advanced")
-            }
-
-
-            MenuItem
-            {
-                icon.name: "view-hidden"
-                text: i18n("Hidden Files")
-                checkable: true
-                checked: settings.showHiddenFiles
-                onTriggered:
-                {
-                    settings.showHiddenFiles = !settings.showHiddenFiles
-                }
-            }
-
-            MenuItem
-            {
-                text: i18n("Split View")
-                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                checked: currentTab.count === 2
-                checkable: true
-                onClicked: toogleSplitView()
-            }
-
         }
     ]
 

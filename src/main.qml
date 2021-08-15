@@ -340,6 +340,7 @@ Maui.ApplicationWindow
                             id: _pathBarmenu
                             property url path
 
+
                             MenuItem
                             {
                                 text: i18n("Bookmark")
@@ -367,35 +368,33 @@ Maui.ApplicationWindow
                         Maui.ContextualMenu
                         {
                             id: browserMenu
-                            enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
+                            //                            enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
 
-                            MenuItem
+
+                            Maui.MenuItemActionRow
                             {
-                                text: i18n("Next")
-                                icon.name: "go-next"
-                                onTriggered: currentBrowser.goForward()
+                                Action
+                                {
+                                    icon.name: "go-next"
+                                    onTriggered: currentBrowser.goForward()
+                                }
+
+                                Action
+                                {
+                                    icon.name: "edit-find"
+                                    checked: currentBrowser.headBar.visible
+                                    checkable: true
+                                    onTriggered: currentBrowser.toggleSearchBar()
+                                }
+
+                                Action
+                                {
+                                    icon.name: "list-add"
+                                    onTriggered: currentBrowser.newItem()
+                                }
                             }
 
                             MenuSeparator {}
-
-                            MenuItem
-                            {
-                                text: i18n("Search or Filter")
-                                icon.name: "edit-find"
-                                checked: currentBrowser.headBar.visible
-                                checkable: true
-                                onTriggered: currentBrowser.toggleSearchBar()
-                            }
-
-                            MenuSeparator {}
-
-                            MenuItem
-                            {
-                                icon.name: "document-new"
-                                text: i18n("New")
-                                //         enabled: _optionsButton.enabled
-                                onTriggered: currentBrowser.newItem()
-                            }
 
                             MenuItem
                             {
@@ -418,12 +417,9 @@ Maui.ApplicationWindow
 
                             MenuItem
                             {
-                                text: i18n("Embedded Terminal")
-                                enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                                icon.name: "dialog-scripts"
-                                onClicked: currentTab.currentItem.toogleTerminal()
-                                checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-                                checkable: true
+                                text: i18n("Go to")
+                                icon.name: "edit-entry"
+                                onTriggered: _pathBar.pathEntry = true
                             }
 
                             MenuItem
@@ -431,20 +427,11 @@ Maui.ApplicationWindow
                                 enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
                                 text: i18n("Open terminal here")
                                 id: openTerminal
-                                icon.name: "utilities-terminal"
+                                icon.name: "dialog-scripts"
                                 onTriggered:
                                 {
                                     inx.openTerminal(currentPath)
                                 }
-                            }
-
-                            MenuSeparator{}
-
-                            MenuItem
-                            {
-                                text: i18n("Go to")
-                                icon.name: "edit-entry"
-                                onTriggered: _pathBar.pathEntry = true
                             }
 
                             MenuSeparator {}

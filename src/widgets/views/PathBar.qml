@@ -163,7 +163,7 @@ Rectangle
                 AbstractButton
                 {
                     Layout.fillHeight: true
-                    Layout.preferredWidth: height * 1.2
+                    Layout.preferredWidth: height * 1.4
                     hoverEnabled: Kirigami.Settings.isMobile
                     onClicked : currentBrowser.goBack()
 
@@ -274,7 +274,7 @@ Rectangle
                 AbstractButton
                 {
                     Layout.fillHeight: true
-                    Layout.preferredWidth: height * 1.2
+                    Layout.preferredWidth: height * 1.4
                     onClicked: control.menuClicked()
                     hoverEnabled: Kirigami.Settings.isMobile
 

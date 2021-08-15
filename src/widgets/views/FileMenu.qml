@@ -38,6 +38,55 @@ Maui.ContextualMenu
       */
     property bool isFav: false
 
+    Maui.MenuItemActionRow
+    {
+        Action
+        {
+            enabled: !control.isExec
+            //                text: i18n("Copy")
+            icon.name: "edit-copy"
+            onTriggered:
+            {
+                _browser.copy(_browser.filterSelection(currentPath, control.item.path))
+            }
+        }
+
+        Action
+        {
+            enabled: !control.isExec
+            //                text: i18n("Cut")
+            icon.name: "edit-cut"
+            onTriggered:
+            {
+                _browser.cut(_browser.filterSelection(currentPath, control.item.path))
+            }
+        }
+
+        Action
+        {
+            enabled: !control.isExec
+            //                text: i18n("Rename")
+            icon.name: "edit-rename"
+            onTriggered:
+            {
+                _browser.renameItem()
+            }
+        }        
+
+        Action
+        {
+//            text: i18n("Remove")
+            Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
+            icon.name: "edit-delete"
+            onTriggered:
+            {
+                _browser.remove(_browser.filterSelection(currentPath, control.item.path))
+
+            }
+        }
+    }
+
+    MenuSeparator{}
 
     MenuItem
     {
@@ -65,79 +114,6 @@ Maui.ContextualMenu
         }
     }
 
-    MenuSeparator {}
-
-    MenuItem
-    {
-        text: control.isFav ? i18n("Remove from Favorites") : i18n("Add to Favorites")
-        icon.name: "love"
-        onTriggered:
-        {
-            if(FB.Tagging.toggleFav(item.path))
-                control.isFav = !control.isFav
-        }
-    }
-
-    MenuItem
-    {
-        enabled: !control.isExec && control.isDir
-        text: i18n("Add to Bookmarks")
-        icon.name: "bookmark-new"
-        onTriggered:
-        {
-            _browser.bookmarkFolder([control.item.path])
-        }
-    }
-
-    MenuSeparator{}
-
-    MenuItem
-    {
-        enabled: !control.isExec
-        text: i18n("Copy")
-        icon.name: "edit-copy"
-        onTriggered:
-        {
-            _browser.copy(_browser.filterSelection(currentPath, control.item.path))
-        }
-    }
-
-    MenuItem
-    {
-        enabled: !control.isExec
-        text: i18n("Cut")
-        icon.name: "edit-cut"
-        onTriggered:
-        {
-            _browser.cut(_browser.filterSelection(currentPath, control.item.path))
-        }
-    }
-
-    MenuItem
-    {
-        enabled: !control.isExec
-        text: i18n("Rename")
-        icon.name: "edit-rename"
-        onTriggered:
-        {
-            _browser.renameItem()
-        }
-    }
-
-    MenuItem
-    {
-        text: i18n("Remove")
-        Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
-        icon.name: "edit-delete"
-        onTriggered:
-        {
-            _browser.remove(_browser.filterSelection(currentPath, control.item.path))
-
-        }
-    }
-
-    MenuSeparator {}
-
     MenuItem
     {
         enabled: !control.isExec
@@ -148,28 +124,58 @@ Maui.ContextualMenu
             openPreview(_browser.currentFMModel, _browser.currentIndex)
         }
     }
+    MenuSeparator {}
 
-    MenuItem
+    Maui.MenuItemActionRow
     {
-        enabled: !control.isExec
-        text: i18n("Tags")
-        icon.name: "tag"
-        onTriggered:
+        Action
         {
-            dialogLoader.sourceComponent = _tagsDialogComponent
-            dialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
-            dialog.open()
+            //                text: control.isFav ? i18n("Remove from Favorites") : i18n("Add to Favorites")
+            checked: control.isFav
+            checkable: true
+            icon.name: "love"
+            onTriggered:
+            {
+                if(FB.Tagging.toggleFav(item.path))
+                {
+                    control.isFav = !control.isFav
+                }
+            }
         }
-    }
 
-    MenuItem
-    {
-        enabled: !control.isExec
-        text: i18n("Share")
-        icon.name: "document-share"
-        onTriggered:
+        Action
         {
-            shareFiles(_browser.filterSelection(currentPath, control.item.path))
+            enabled: !control.isExec
+            //                text: i18n("Tags")
+            icon.name: "tag"
+            onTriggered:
+            {
+                dialogLoader.sourceComponent = _tagsDialogComponent
+                dialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
+                dialog.open()
+            }
+        }
+
+        Action
+        {
+            enabled: !control.isExec
+            //                text: i18n("Share")
+            icon.name: "document-share"
+            onTriggered:
+            {
+                shareFiles(_browser.filterSelection(currentPath, control.item.path))
+            }
+        }        
+
+        Action
+        {
+            enabled: !control.isExec && control.isDir
+//            text: i18n("Add to Bookmarks")
+            icon.name: "bookmark-new"
+            onTriggered:
+            {
+                _browser.bookmarkFolder([control.item.path])
+            }
         }
     }
 
@@ -189,17 +195,6 @@ Maui.ContextualMenu
         text: i18n("Open in split view")
         icon.name: "view-split-left-right"
         onTriggered: root.currentTab.split(control.item.path, Qt.Horizontal)
-    }
-
-    MenuItem
-    {
-        enabled: control.isDir && Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-        text: i18n("Open terminal here")
-        icon.name: "utilities-terminal"
-        onTriggered:
-        {
-            inx.openTerminal(control.item.path)
-        }
     }
 
     MenuSeparator {}
@@ -262,19 +257,18 @@ Maui.ContextualMenu
     function showFor(index)
     {
         control.item = _browser.currentFMList.get(index)
-''
         console.log("CURRENT ITEM" , item.name)
-        if(item.path.startsWith("tags://") || item.path.startsWith("applications://") )
+        if(item.path.startsWith("tags://") || item.path.startsWith("applications://"))
             return
 
-            if(item)
-            {
-                console.log("GOT ITEM FILE", index, item.path)
-                control.index = index
-                control.isDir = item.isdir == true || item.isdir == "true"
-                control.isExec = item.executable == true || item.executable == "true"
-                control.isFav = FB.Tagging.isFav(item.path)
-                control.show()
-            }
+        if(item)
+        {
+            console.log("GOT ITEM FILE", index, item.path)
+            control.index = index
+            control.isDir = item.isdir == true || item.isdir == "true"
+            control.isExec = item.executable == true || item.executable == "true"
+            control.isFav = FB.Tagging.isFav(item.path)
+            control.show()
+        }
     }
 }
