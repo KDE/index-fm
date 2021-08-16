@@ -59,12 +59,12 @@ Maui.SplitViewItem
             selectionBar: root.selectionBar
             gridItemSize: switch(appSettings.gridSize)
                           {
-                          case 0: return 72;
-                          case 1: return 90;
-                          case 2: return 120;
-                          case 3: return 160;
-                          case 4: return 210;
-                          default: return 120;
+                          case 0: return 78;
+                          case 1: return 96;
+                          case 2: return 126;
+                          case 3: return 166;
+                          case 4: return 216;
+                          default: return 126;
                           }
 
             listItemSize:   switch(appSettings.listSize)
@@ -278,7 +278,7 @@ Maui.SplitViewItem
     function toogleTerminal()
     {
         terminalVisible = !terminalVisible
-    }    
+    }
 
     function forceActiveFocus()
     {
