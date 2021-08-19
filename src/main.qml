@@ -23,8 +23,11 @@ Maui.ApplicationWindow
 {
     id: root
     title: currentTab ? currentTab.title : ""
-    header.visible: false
 
+    headBar.forceCenterMiddleContent: root.isWide
+    altHeader: Kirigami.Settings.isMobile
+
+    page.showCSDControls: true
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
 
     property alias dialog : dialogLoader.item
@@ -77,7 +80,6 @@ Maui.ApplicationWindow
 
     onClosing:
     {
-        //        sortSettings.sortBy = currentBrowser.settings.sortBy
         close.accepted = !settings.restoreSession
         var tabs = []
 
@@ -257,7 +259,6 @@ Maui.ApplicationWindow
     {
         id: _compressedFile
 
-
         onExtractionFinished:
         {
             _notifyOperation.title = i18n("Extracted")
@@ -278,6 +279,389 @@ Maui.ApplicationWindow
         id: placesSidebar
     }
 
+    ActionGroup
+    {
+        id: _sortByGroup
+    }
+
+    headBar.rightContent:[
+
+        Maui.ToolButtonMenu
+        {
+            id: _viewMenu
+            icon.name: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons"
+
+            Maui.MenuItemActionRow
+            {
+                Action
+                {
+                    icon.name: "view-hidden"
+//                        text: i18n("Hidden Files")
+                    checkable: true
+                    checked: settings.showHiddenFiles
+                    onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
+                }
+
+                Action
+                {
+//                        text: i18n("Split View")
+                    icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                    checked: currentTab.count === 2
+                    checkable: true
+                    onTriggered: toogleSplitView()
+                }
+
+                Action
+                {
+//                        text: i18n("Embedded Terminal")
+                    enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+                    icon.name: "dialog-scripts"
+                    checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+                    checkable: true
+
+                    onTriggered: currentTab.currentItem.toogleTerminal()
+                }
+            }
+
+            Maui.LabelDelegate
+            {
+                width: parent.width
+                isSection: true
+                label: i18n("View type")
+            }
+
+            MenuItem
+            {
+                text: i18n("List")
+                icon.name: "view-list-details"
+                checked: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
+                checkable: true
+                autoExclusive: true
+                onTriggered:
+                {
+                    if(currentBrowser)
+                    {
+                        currentBrowser.settings.viewType = FB.FMList.LIST_VIEW
+                    }
+
+                    settings.viewType = FB.FMList.LIST_VIEW
+                }
+            }
+
+            MenuItem
+            {
+                text: i18n("Grid")
+                icon.name: "view-list-icons"
+                checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
+                checkable: true
+                autoExclusive: true
+
+                onTriggered:
+                {
+                    if(currentBrowser)
+                    {
+                        currentBrowser.settings.viewType = FB.FMList.ICON_VIEW
+                    }
+
+                    settings.viewType = FB.FMList.ICON_VIEW
+                }
+            }
+
+            MenuSeparator {}
+
+            Maui.LabelDelegate
+            {
+                width: parent.width
+                isSection: true
+                label: i18n("Sort by")
+            }
+
+            Action
+            {
+                text: i18n("Type")
+                checked: currentBrowser.settings.sortBy === FB.FMList.MIME
+                checkable: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.MIME
+                    sortSettings.sortBy = FB.FMList.MIME
+                }
+            }
+
+            Action
+            {
+                text: i18n("Date")
+                checked: currentBrowser.settings.sortBy === FB.FMList.DATE
+                checkable: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.DATE
+                    sortSettings.sortBy = FB.FMList.DATE
+                }
+            }
+
+            Action
+            {
+                text: i18n("Modified")
+                checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
+                checkable: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.MODIFIED
+                    sortSettings.sortBy = FB.FMList.MODIFIED
+                }
+            }
+
+            Action
+            {
+                text: i18n("Size")
+                checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
+                checkable: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.SIZE
+                    sortSettings.sortBy = FB.FMList.SIZE
+                }
+            }
+
+            Action
+            {
+                text: i18n("Name")
+                checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
+                checkable: true
+                ActionGroup.group: _sortByGroup
+
+                onTriggered:
+                {
+                    currentBrowser.settings.sortBy = FB.FMList.LABEL
+                    sortSettings.sortBy = FB.FMList.LABEL
+                }
+            }
+
+            MenuSeparator{}
+
+            MenuItem
+            {
+                text: i18n("Show Folders First")
+                checked: currentBrowser.settings.foldersFirst
+                checkable: true
+
+                onTriggered:
+                {
+                    currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+                    sortSettings.foldersFirst =  !sortSettings.foldersFirst
+                }
+            }
+
+            MenuItem
+            {
+                id: groupAction
+                text: i18n("Group")
+                checkable: true
+                checked: currentBrowser.settings.group
+                onTriggered:
+                {
+                    currentBrowser.settings.group = !currentBrowser.settings.group
+                    sortSettings.group = !sortSettings.group
+                }
+            }
+        }
+    ]
+
+    headBar.farLeftContent: ToolButton
+    {
+        icon.name: placesSidebar.visible ? "sidebar-collapse" : "sidebar-expand"
+        onClicked: placesSidebar.toggle()
+        checked: placesSidebar.visible
+        ToolTip.delay: 1000
+        ToolTip.timeout: 5000
+        ToolTip.visible: hovered
+        ToolTip.text: i18n("Toogle SideBar")
+    }
+
+
+    headBar.middleContent: [
+
+        Item
+        {
+            Layout.fillWidth: true
+            Layout.minimumWidth: 100
+            Layout.fillHeight: true
+
+            PathBar
+            {
+                id: _pathBar
+
+                anchors.centerIn: parent
+                width: Math.min(parent.width, implicitWidth)
+                onPathChanged: currentBrowser.openFolder(path.trim())
+                url: currentBrowser.currentPath
+
+                onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
+                onPlaceClicked:
+                {
+                    if(path === String(currentPath))
+                    {
+                        openMenu()
+
+                    }
+                    else
+                    {
+                        currentBrowser.openFolder(path)
+                    }
+                }
+
+                onPlaceRightClicked:
+                {
+                    _pathBarmenu.path = path
+                    _pathBarmenu.show()
+                }
+
+                onMenuClicked: openMenu()
+
+                function openMenu()
+                {
+                    browserMenu.show((width *0.5)-(browserMenu.width * 0.5), height + Maui.Style.space.medium)
+                }
+
+                Maui.ContextualMenu
+                {
+                    id: _pathBarmenu
+                    property url path
+
+
+                    MenuItem
+                    {
+                        text: i18n("Bookmark")
+                        icon.name: "bookmark-new"
+                        onTriggered: currentBrowser.bookmarkFolder([_pathBarmenu.path])
+                    }
+
+                    MenuItem
+                    {
+                        text: i18n("Open in new tab")
+                        icon.name: "tab-new"
+                        onTriggered: openTab(_pathBarmenu.path)
+                    }
+
+                    MenuItem
+                    {
+                        visible: root.currentTab.count === 1
+                        text: i18n("Open in split view")
+                        icon.name: "view-split-left-right"
+                        onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                    }
+
+                }
+
+                Maui.ContextualMenu
+                {
+                    id: browserMenu
+                    //                            enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
+
+
+                    Maui.MenuItemActionRow
+                    {
+                        Action
+                        {
+                            icon.name: "go-next"
+                            onTriggered: currentBrowser.goForward()
+                        }
+
+                        Action
+                        {
+                            icon.name: "edit-find"
+                            checked: currentBrowser.headBar.visible
+                            checkable: true
+                            onTriggered: currentBrowser.toggleSearchBar()
+                        }
+
+                        Action
+                        {
+                            icon.name: "list-add"
+                            onTriggered: currentBrowser.newItem()
+                        }
+                    }
+
+                    MenuSeparator {}
+
+                    MenuItem
+                    {
+                        text: i18n("Paste")
+                        //         enabled: _optionsButton.enabled
+
+                        icon.name: "edit-paste"
+                        // 		enabled: control.clipboardItems.length > 0
+                        onTriggered: currentBrowser.paste()
+                    }
+
+                    MenuItem
+                    {
+                        text: i18n("Select all")
+                        icon.name: "edit-select-all"
+                        onTriggered: currentBrowser.selectAll()
+                    }
+
+                    MenuSeparator{}
+
+                    MenuItem
+                    {
+                        text: i18n("Go to")
+                        icon.name: "edit-entry"
+                        onTriggered: _pathBar.pathEntry = true
+                    }
+
+                    MenuItem
+                    {
+                        enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                        text: i18n("Open terminal here")
+                        id: openTerminal
+                        icon.name: "dialog-scripts"
+                        onTriggered:
+                        {
+                            inx.openTerminal(currentPath)
+                        }
+                    }
+
+                    MenuSeparator {}
+
+                    MenuItem
+                    {
+                        text: i18n("Shortcuts")
+                        icon.name: "configure-shortcuts"
+                        onTriggered:
+                        {
+                            dialogLoader.sourceComponent = _shortcutsDialogComponent
+                            dialog.open()
+                        }
+                    }
+
+                    MenuItem
+                    {
+                        text: i18n("Settings")
+                        icon.name: "settings-configure"
+                        onTriggered: openConfigDialog()
+                    }
+
+                    MenuItem
+                    {
+                        text: i18n("About")
+                        icon.name: "documentinfo"
+                        onTriggered: root.about()
+                    }
+                }
+            }
+        }
+    ]
+
     StackView
     {
         id: _stackView
@@ -286,184 +670,7 @@ Maui.ApplicationWindow
         {
             id: _browserView
 
-            headBar.forceCenterMiddleContent: root.isWide
-            altHeader: Kirigami.Settings.isMobile
-
             flickable: currentBrowser.flickable
-
-            headBar.middleContent: [
-
-                Item
-                {
-                    Layout.fillWidth: true
-                    Layout.minimumWidth: 100
-                    Layout.fillHeight: true
-
-                    PathBar
-                    {
-                        id: _pathBar
-
-                        anchors.centerIn: parent
-                        width: Math.min(parent.width, implicitWidth)
-                        onPathChanged: currentBrowser.openFolder(path.trim())
-                        url: currentBrowser.currentPath
-
-                        onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
-                        onPlaceClicked:
-                        {
-                            if(path === String(currentPath))
-                            {
-                                openMenu()
-
-                            }
-                            else
-                            {
-                                currentBrowser.openFolder(path)
-                            }
-                        }
-
-                        onPlaceRightClicked:
-                        {
-                            _pathBarmenu.path = path
-                            _pathBarmenu.show()
-                        }
-
-                        onMenuClicked: openMenu()
-
-                        function openMenu()
-                        {
-                            browserMenu.show((width *0.5)-(browserMenu.width * 0.5), height + Maui.Style.space.medium)
-                        }
-
-                        Maui.ContextualMenu
-                        {
-                            id: _pathBarmenu
-                            property url path
-
-
-                            MenuItem
-                            {
-                                text: i18n("Bookmark")
-                                icon.name: "bookmark-new"
-                                onTriggered: currentBrowser.bookmarkFolder([_pathBarmenu.path])
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Open in new tab")
-                                icon.name: "tab-new"
-                                onTriggered: openTab(_pathBarmenu.path)
-                            }
-
-                            MenuItem
-                            {
-                                visible: root.currentTab.count === 1
-                                text: i18n("Open in split view")
-                                icon.name: "view-split-left-right"
-                                onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
-                            }
-
-                        }
-
-                        Maui.ContextualMenu
-                        {
-                            id: browserMenu
-                            //                            enabled: root.currentBrowser && root.currentBrowser.currentFMList.pathType !== FB.FMList.TAGS_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.TRASH_PATH && root.currentBrowser.currentFMList.pathType !== FB.FMList.APPS_PATH
-
-
-                            Maui.MenuItemActionRow
-                            {
-                                Action
-                                {
-                                    icon.name: "go-next"
-                                    onTriggered: currentBrowser.goForward()
-                                }
-
-                                Action
-                                {
-                                    icon.name: "edit-find"
-                                    checked: currentBrowser.headBar.visible
-                                    checkable: true
-                                    onTriggered: currentBrowser.toggleSearchBar()
-                                }
-
-                                Action
-                                {
-                                    icon.name: "list-add"
-                                    onTriggered: currentBrowser.newItem()
-                                }
-                            }
-
-                            MenuSeparator {}
-
-                            MenuItem
-                            {
-                                text: i18n("Paste")
-                                //         enabled: _optionsButton.enabled
-
-                                icon.name: "edit-paste"
-                                // 		enabled: control.clipboardItems.length > 0
-                                onTriggered: currentBrowser.paste()
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Select all")
-                                icon.name: "edit-select-all"
-                                onTriggered: currentBrowser.selectAll()
-                            }
-
-                            MenuSeparator{}
-
-                            MenuItem
-                            {
-                                text: i18n("Go to")
-                                icon.name: "edit-entry"
-                                onTriggered: _pathBar.pathEntry = true
-                            }
-
-                            MenuItem
-                            {
-                                enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
-                                text: i18n("Open terminal here")
-                                id: openTerminal
-                                icon.name: "dialog-scripts"
-                                onTriggered:
-                                {
-                                    inx.openTerminal(currentPath)
-                                }
-                            }
-
-                            MenuSeparator {}
-
-                            MenuItem
-                            {
-                                text: i18n("Shortcuts")
-                                icon.name: "configure-shortcuts"
-                                onTriggered:
-                                {
-                                    dialogLoader.sourceComponent = _shortcutsDialogComponent
-                                    dialog.open()
-                                }
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Settings")
-                                icon.name: "settings-configure"
-                                onTriggered: openConfigDialog()
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("About")
-                                icon.name: "documentinfo"
-                                onTriggered: root.about()
-                            }
-                        }
-                    }
-                }
-            ]
         }
 
         Loader
@@ -548,8 +755,10 @@ Maui.ApplicationWindow
         {
             return
         }
-        tagsDialog.composerList.urls = urls
-        tagsDialog.open()
+
+        dialogLoader.sourceComponent = _tagsDialogComponent
+        dialog.composerList.urls =urls
+        dialog.open()
     }
 
     /**
