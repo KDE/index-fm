@@ -26,7 +26,7 @@ Maui.ApplicationWindow
 
     headBar.forceCenterMiddleContent: root.isWide
     altHeader: Kirigami.Settings.isMobile
-
+headBar.visible: _stackView.depth === 1
     page.showCSDControls: true
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
 
