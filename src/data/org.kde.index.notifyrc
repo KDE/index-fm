@@ -28,6 +28,7 @@ Name[sl]=Indeks
 Name[sv]=Index
 Name[uk]=Індекс
 Name[x-test]=xxIndexxx
+Name[zh_CN]=Index
 Name[zh_TW]=索引
 Comment=File Manager
 Comment[ca]=Gestor de fitxers
@@ -49,6 +50,7 @@ Comment[sl]=Upravljalnik datotek
 Comment[sv]=Filhanterare
 Comment[uk]=Керування файлами
 Comment[x-test]=xxFile Managerxx
+Comment[zh_CN]=文件管理器
 DesktopEntry=org.kde.index.desktop
 
 [Context/operations]
@@ -72,6 +74,7 @@ Name[sl]=Operacije
 Name[sv]=Åtgärder
 Name[uk]=Дії
 Name[x-test]=xxOperationsxx
+Name[zh_CN]=操作
 Comment=File operations
 Comment[ca]=Operacions amb fitxers
 Comment[ca@valencia]=Operacions amb fitxers
@@ -92,6 +95,7 @@ Comment[sl]=Operacija z datotekami
 Comment[sv]=Filåtgärder
 Comment[uk]=Дії із файлами
 Comment[x-test]=xxFile operationsxx
+Comment[zh_CN]=文件操作
 
 [Event/fileOperation]
 Name=File Operation
@@ -114,6 +118,7 @@ Name[sl]=Operacija z datoteko
 Name[sv]=Filåtgärder
 Name[uk]=Дія з файлами
 Name[x-test]=xxFile Operationxx
+Name[zh_CN]=文件操作
 Comment=Performing a file operation
 Comment[ca]=Realitza una operació sobre el fitxer
 Comment[ca@valencia]=Realitza una operació sobre el fitxer
@@ -134,6 +139,7 @@ Comment[sl]=Izvajanje operacij z datoteko
 Comment[sv]=Utför en filåtgärd
 Comment[uk]=Виконання дії з файлами
 Comment[x-test]=xxPerforming a file operationxx
+Comment[zh_CN]=正在进行文件操作
 Contexts=operations
 Action=Sound|Popup
 Urgency=Low
