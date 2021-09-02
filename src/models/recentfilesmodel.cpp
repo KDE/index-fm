@@ -38,7 +38,10 @@ void RecentFilesModel::setUrl(QUrl url)
     return;
 
   m_url = url;
-  m_watcher->removePaths(m_watcher->directories());
+  if(!m_watcher->directories().isEmpty())
+  {
+      m_watcher->removePaths(m_watcher->directories());
+  }
   m_watcher->addPath(m_url.toLocalFile());
   emit urlChanged(m_url);
 }

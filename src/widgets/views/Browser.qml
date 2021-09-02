@@ -174,7 +174,10 @@ Maui.SplitViewItem
 
                 if(event.key === Qt.Key_Space)
                 {
-                    openPreview(_browser.currentFMModel, _browser.currentIndex)
+                    if(_browser.currentIndex > -1 && _browser.currentView.count > 0)
+                    {
+                        openPreview(_browser.currentFMModel, _browser.currentIndex)
+                    }
                     event.accepted = true
                 }
 
@@ -282,6 +285,6 @@ Maui.SplitViewItem
 
     function forceActiveFocus()
     {
-       browser.forceActiveFocus()
+        browser.forceActiveFocus()
     }
 }

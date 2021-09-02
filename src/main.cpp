@@ -38,7 +38,7 @@
 
 #define INDEX_URI "org.maui.index"
 
-Q_DECL_EXPORT int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
@@ -76,9 +76,14 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     KAboutData::setApplicationData(about);
 
     QCommandLineParser parser;
-    parser.process(app);
+    parser.setApplicationDescription(about.shortDescription());
 
-    about.setupCommandLine(&parser);
+    if(about.setupCommandLine(&parser))
+    {
+        qDebug() << "App data was set correctly";
+    }
+
+    parser.process(app);
     about.processCommandLine(&parser);
 
     const QStringList args = parser.positionalArguments();

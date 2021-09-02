@@ -43,7 +43,7 @@ Maui.ContextualMenu
         Action
         {
             enabled: !control.isExec
-            //                text: i18n("Copy")
+            text: i18n("Copy")
             icon.name: "edit-copy"
             onTriggered:
             {
@@ -54,7 +54,7 @@ Maui.ContextualMenu
         Action
         {
             enabled: !control.isExec
-            //                text: i18n("Cut")
+            text: i18n("Cut")
             icon.name: "edit-cut"
             onTriggered:
             {
@@ -65,17 +65,17 @@ Maui.ContextualMenu
         Action
         {
             enabled: !control.isExec
-            //                text: i18n("Rename")
+            text: i18n("Rename")
             icon.name: "edit-rename"
             onTriggered:
             {
                 _browser.renameItem()
             }
-        }        
+        }
 
         Action
         {
-//            text: i18n("Remove")
+            text: i18n("Remove")
             Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
             icon.name: "edit-delete"
             onTriggered:
@@ -130,7 +130,7 @@ Maui.ContextualMenu
     {
         Action
         {
-            //                text: control.isFav ? i18n("Remove from Favorites") : i18n("Add to Favorites")
+            text: control.isFav ? i18n("Remove from Favorites") : i18n("Add to Favorites")
             checked: control.isFav
             checkable: true
             icon.name: "love"
@@ -146,7 +146,7 @@ Maui.ContextualMenu
         Action
         {
             enabled: !control.isExec
-            //                text: i18n("Tags")
+            text: i18n("Tags")
             icon.name: "tag"
             onTriggered:
             {
@@ -159,18 +159,18 @@ Maui.ContextualMenu
         Action
         {
             enabled: !control.isExec
-            //                text: i18n("Share")
+            text: i18n("Share")
             icon.name: "document-share"
             onTriggered:
             {
                 shareFiles(_browser.filterSelection(currentPath, control.item.path))
             }
-        }        
+        }
 
         Action
         {
             enabled: !control.isExec && control.isDir
-//            text: i18n("Add to Bookmarks")
+            text: i18n("Add to Bookmarks")
             icon.name: "bookmark-new"
             onTriggered:
             {

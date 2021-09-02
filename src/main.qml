@@ -26,7 +26,7 @@ Maui.ApplicationWindow
 
     headBar.forceCenterMiddleContent: root.isWide
     altHeader: Kirigami.Settings.isMobile
-headBar.visible: _stackView.depth === 1
+    headBar.visible: _stackView.depth === 1
     page.showCSDControls: true
     readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
 
@@ -296,7 +296,7 @@ headBar.visible: _stackView.depth === 1
                 Action
                 {
                     icon.name: "view-hidden"
-//                        text: i18n("Hidden Files")
+                    text: i18n("Hidden Files")
                     checkable: true
                     checked: settings.showHiddenFiles
                     onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
@@ -304,7 +304,7 @@ headBar.visible: _stackView.depth === 1
 
                 Action
                 {
-//                        text: i18n("Split View")
+                    text: i18n("Split View")
                     icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
                     checked: currentTab.count === 2
                     checkable: true
@@ -313,7 +313,7 @@ headBar.visible: _stackView.depth === 1
 
                 Action
                 {
-//                        text: i18n("Embedded Terminal")
+                    text: i18n("Embedded Terminal")
                     enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
                     icon.name: "dialog-scripts"
                     checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
@@ -579,6 +579,7 @@ headBar.visible: _stackView.depth === 1
                         Action
                         {
                             icon.name: "edit-find"
+                            text: i18n("Search")
                             checked: currentBrowser.headBar.visible
                             checkable: true
                             onTriggered: currentBrowser.toggleSearchBar()
@@ -587,6 +588,7 @@ headBar.visible: _stackView.depth === 1
                         Action
                         {
                             icon.name: "list-add"
+                            text: i18n("New...")
                             onTriggered: currentBrowser.newItem()
                         }
                     }
