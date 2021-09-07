@@ -33,16 +33,14 @@ ColumnLayout
         template.iconSizeHint: Maui.Style.iconSizes.medium
     }
 
-    Maui.ListBrowser
+    ListView
     {
         id: _favsGrid
         Layout.fillWidth: true
         visible: _dropDown.checked
-        enableLassoSelection: true
 
         implicitHeight: 180
         orientation: ListView.Horizontal
-        verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         model: Maui.BaseModel
         {

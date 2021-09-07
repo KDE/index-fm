@@ -38,20 +38,6 @@ Maui.SettingsDialog
                 onToggled: settings.restoreSession = !settings.restoreSession
             }
         }
-
-        Maui.SettingTemplate
-        {
-            label1.text:  i18n("Preview Files")
-            label2.text: i18n("Opens a quick preview with information of the file instead of opening it with an external application")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  settings.previewFiles
-                onToggled: settings.previewFiles = !settings.previewFiles
-            }
-        }
     }
 
    Maui.SettingsSection

@@ -20,8 +20,11 @@ Maui.Page
     property Browser currentSplit: currentTab.currentItem
     property alias browserList : _browserList
 
-    headBar.visible: false
     floatingFooter: true
+
+    headBar.forceCenterMiddleContent: root.isWide
+    altHeader: Kirigami.Settings.isMobile
+    showCSDControls: true
 
     footer: Maui.SelectionBar
     {

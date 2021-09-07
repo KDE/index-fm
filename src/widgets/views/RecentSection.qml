@@ -42,31 +42,29 @@ ColumnLayout
         Layout.fillWidth: true
         asynchronous: true
 
-        sourceComponent: Maui.ListBrowser
+        sourceComponent: ListView
         {
             id: _recentGrid
             implicitHeight: visible ? 180 : 0
 
-            enableLassoSelection: true
             visible: _dropDown.checked && count > 0
             orientation: ListView.Horizontal
-            verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
-//            flickable.footer: Item
-//            {
-//                height: 140
-//                width: height
+            footer: Item
+            {
+                height: 140
+                width: height
 
-//                ToolButton
-//                {
-//                    anchors.centerIn: parent
-//                    icon.name: "list-add"
-//                    display: ToolButton.TextUnderIcon
-//                    flat: true
-//                    text: i18n("Downloads")
-//                    onClicked: openTab(_recentGrid.model.list.url)
-//                }
-//            }
+                ToolButton
+                {
+                    anchors.centerIn: parent
+                    icon.name: "list-add"
+                    display: ToolButton.TextUnderIcon
+                    flat: true
+                    text: i18n("Downloads")
+                    onClicked: openTab(_recentGrid.model.list.url)
+                }
+            }
 
             model: Maui.BaseModel
             {
@@ -105,36 +103,33 @@ ColumnLayout
         }
     }
 
-
     Loader
     {
         Layout.fillWidth: true
         asynchronous: true
 
-        sourceComponent: Maui.ListBrowser
+        sourceComponent: ListView
         {
             id: _recentGridAudio
-            implicitHeight: visible ? 110 : 0
-            enableLassoSelection: true
+            implicitHeight: visible ? 80 : 0
             visible: _dropDown.checked && count > 0
             orientation: ListView.Horizontal
-            verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
-//            flickable.footer: Item
-//            {
-//                height: 80
-//                width: height
+            footer: Item
+            {
+                height: 80
+                width: height
 
-//                ToolButton
-//                {
-//                    anchors.centerIn: parent
-//                    icon.name: "list-add"
-//                    display: ToolButton.TextUnderIcon
-//                    flat: true
-//                    text: i18n("Music")
-//                    onClicked: openTab(_recentGridAudio.model.list.url)
-//                }
-//            }
+                ToolButton
+                {
+                    anchors.centerIn: parent
+                    icon.name: "list-add"
+                    display: ToolButton.TextUnderIcon
+                    flat: true
+                    text: i18n("Music")
+                    onClicked: openTab(_recentGridAudio.model.list.url)
+                }
+            }
 
             model: Maui.BaseModel
             {
@@ -170,37 +165,34 @@ ColumnLayout
         }
     }
 
-
     Loader
     {
         Layout.fillWidth: true
         asynchronous: true
 
-        sourceComponent: Maui.ListBrowser
+        sourceComponent: ListView
         {
             id: _recentGridPictures
             orientation: ListView.Horizontal
             implicitHeight: visible ? 180 : 0
 
-            enableLassoSelection: true
             visible: _dropDown.checked && count > 0
-            verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
-//            flickable.footer: Item
-//            {
-//                height: 140
-//                width: height
+            footer: Item
+            {
+                height: 140
+                width: height
 
-//                ToolButton
-//                {
-//                    anchors.centerIn: parent
-//                    icon.name: "list-add"
-//                    display: ToolButton.TextUnderIcon
-//                    flat: true
-//                    text: i18n("Pictures")
-//                    onClicked: openTab(_recentGridPictures.model.list.url)
-//                }
-//            }
+                ToolButton
+                {
+                    anchors.centerIn: parent
+                    icon.name: "list-add"
+                    display: ToolButton.TextUnderIcon
+                    flat: true
+                    text: i18n("Pictures")
+                    onClicked: openTab(_recentGridPictures.model.list.url)
+                }
+            }
 
 
             model: Maui.BaseModel
@@ -240,30 +232,28 @@ ColumnLayout
         Layout.fillWidth: true
         asynchronous: true
 
-        sourceComponent: Maui.ListBrowser
+        sourceComponent: ListView
         {
             id: _recentCamera
             orientation: ListView.Horizontal
             implicitHeight: visible ? 180 : 0
-            enableLassoSelection: true
             visible: _dropDown.checked && count > 0
-            verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
-//            flickable.footer: Item
-//            {
-//                height: 140
-//                width: height
+            footer: Item
+            {
+                height: 140
+                width: height
 
-//                ToolButton
-//                {
-//                    anchors.centerIn: parent
-//                    icon.name: "list-add"
-//                    display: ToolButton.TextUnderIcon
-//                    flat: true
-//                    text: i18n("Camera")
-//                    onClicked: openTab(_recentCamera.model.list.url)
-//                }
-//            }
+                ToolButton
+                {
+                    anchors.centerIn: parent
+                    icon.name: "list-add"
+                    display: ToolButton.TextUnderIcon
+                    flat: true
+                    text: i18n("Camera")
+                    onClicked: openTab(_recentCamera.model.list.url)
+                }
+            }
 
 
             model: Maui.BaseModel
@@ -303,31 +293,29 @@ ColumnLayout
         Layout.fillWidth: true
         asynchronous: true
 
-        sourceComponent: Maui.ListBrowser
+        sourceComponent: ListView
         {
             id: _recentScreenshots
             orientation: ListView.Horizontal
             implicitHeight: visible ? 180 : 0
 
-            enableLassoSelection: true
             visible: _dropDown.checked && count > 0
-            //verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
-//            flickable.footer: Item
-//            {
-//                height: 140
-//                width: height
+            footer: Item
+            {
+                height: 140
+                width: height
 
-//                ToolButton
-//                {
-//                    anchors.centerIn: parent
-//                    icon.name: "list-add"
-//                    display: ToolButton.TextUnderIcon
-//                    flat: true
-//                    text: i18n("Screenshots")
-//                    onClicked: openTab(_recentScreenshots.model.list.url)
-//                }
-//            }
+                ToolButton
+                {
+                    anchors.centerIn: parent
+                    icon.name: "list-add"
+                    display: ToolButton.TextUnderIcon
+                    flat: true
+                    text: i18n("Screenshots")
+                    onClicked: openTab(_recentScreenshots.model.list.url)
+                }
+            }
 
             model: Maui.BaseModel
             {
