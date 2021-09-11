@@ -1,64 +1,10 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.15
+import org.shelf.poppler 1.0 as Poppler
 
-import org.mauikit.controls 1.0 as Maui
-//import QtQuick.Pdf 5.15
-
-Maui.Page
+Poppler.PDFViewer
 {
     id: control
-    headBar.visible: false
 
-    property int currentPage;
-    property int pageCount;
-    property var pagesModel;
-//    title: documentItem.title
-
-//    footBar.visible: true
-//    footBar.middleContent: [
-//        ToolButton
-//        {
-//            icon.name: "go-previous"
-//            enabled: documentItem.currentPage > 0
-//            onClicked:
-//            {
-//                if(documentItem.currentPage - 1  > -1)
-//                    documentItem.currentPage --
-//            }
-//        },
-
-//        ToolButton
-//        {
-//            icon.name: "go-next"
-////            enabled: documentItem.pageCount > 1	&& 	documentItem.currentPage + 1 < documentItem.pageCount
-//            onClicked:
-//            {
-
-////                if(documentItem.currentPage +1  < documentItem.pageCount)
-////                    documentItem.currentPage ++
-//                _viewer.source = _viewer.source+"#1"
-//            }
-//        }
-//    ]
-
-    Maui.ImageViewer
-    {
-        id: _viewer
-        anchors.fill: parent
-        source: currentUrl
-    }
-
-//    PdfDocument
-//    {
-//        id: documentItem
-////        height: 100
-////        width: 100
-//        source : currentUrl
-//        //         onWindowTitleForDocumentChanged: {
-//        //             fileBrowserRoot.title = windowTitleForDocument
-//        //         }
-
-//    }
-
+    path : currentUrl
 
 }
