@@ -45,7 +45,7 @@ Maui.ApplicationWindow
         view: root
         geometry: Qt.rect(root.x, root.y, root.width, root.height)
         windowRadius: root.background.radius
-        enabled: true
+        enabled: !Kirigami.Settings.isMobile
     }
 
     Maui.Notify
