@@ -112,7 +112,7 @@ Maui.SplitViewItem
                 }
             }
 
-            MouseArea // to support tbutton go back and forward
+            MouseArea // to support button go back and forward
             {
                 anchors.fill: parent
                 propagateComposedEvents: true

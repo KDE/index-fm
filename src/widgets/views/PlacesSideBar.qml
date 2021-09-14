@@ -32,6 +32,12 @@ Maui.SideBar
         restoreMode: Binding.RestoreBindingOrValue
     }
 
+    background: Rectangle
+    {
+        color: Kirigami.Theme.backgroundColor
+        opacity: 0.2
+    }
+
     Maui.Holder
     {
         anchors.bottom: parent.bottom
@@ -79,16 +85,15 @@ Maui.SideBar
             }
         }
 
-        Maui.GridView
+        GridView
         {
             id: _toggles
             clip: true
-            implicitHeight: contentHeight + Maui.Style.space.medium * 2
-            //verticalSrollBarPolicy: ScrollBar.AlwaysOff
+            implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
             currentIndex : _quickPacesList.indexOfPath(currentPath)
-            width: parent.width
-            itemSize: width * 0.3
-            padding: 0
+            width: control.width
+            cellWidth: width * 0.3
+            cellHeight: width * 0.3
 
             model: Maui.BaseModel
             {
@@ -127,7 +132,6 @@ Maui.SideBar
                 }
             }
         }
-
     }
 
     model: Maui.BaseModel
