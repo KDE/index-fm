@@ -181,19 +181,6 @@ Maui.SplitViewItem
                     event.accepted = true
                 }
 
-                if(event.button === Qt.BackButton)
-                {
-                    _browser.goBack()
-                    event.accepted = true
-                }
-
-                //@gadominguez At this moment this function doesnt work because goForward not exist
-                if(event.button === Qt.ForwardButton)
-                {
-                    _browser.goForward()
-                    event.accepted = true
-                }
-
             }
 
             onItemClicked:
