@@ -85,7 +85,7 @@ Maui.SideBar
             implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
             currentIndex : _quickPacesList.indexOfPath(currentPath)
             width: parent.width
-            cellWidth: Math.round(parent.width/3)
+            cellWidth: Math.floor(parent.width/3)
             cellHeight: cellWidth
 
             model: Maui.BaseModel
