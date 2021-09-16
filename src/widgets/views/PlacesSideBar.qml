@@ -32,12 +32,6 @@ Maui.SideBar
         restoreMode: Binding.RestoreBindingOrValue
     }
 
-    background: Rectangle
-    {
-        color: Kirigami.Theme.backgroundColor
-        opacity: 0.2
-    }
-
     Maui.Holder
     {
         anchors.bottom: parent.bottom
@@ -88,12 +82,11 @@ Maui.SideBar
         GridView
         {
             id: _toggles
-            clip: true
             implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
             currentIndex : _quickPacesList.indexOfPath(currentPath)
-            width: control.width
-            cellWidth: width * 0.3
-            cellHeight: width * 0.3
+            width: parent.width
+            cellWidth: Math.round(parent.width/3)
+            cellHeight: cellWidth
 
             model: Maui.BaseModel
             {
