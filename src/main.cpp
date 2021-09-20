@@ -30,6 +30,7 @@
 #include "controllers/filepreviewer.h"
 #include "controllers/dirinfo.h"
 #include "controllers/folderconfig.h"
+#include "controllers/fileproperties.h"
 
 #include "index.h"
 
@@ -108,7 +109,9 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");
     qmlRegisterType<DirInfo>(INDEX_URI, 1, 0, "DirInfo");
     qmlRegisterType<PathList>(INDEX_URI, 1, 0, "PathList");
-//    qmlRegisterType<FolderConfig>(INDEX_URI, 1, 0, "FolderConfig");
+    //    qmlRegisterType<FolderConfig>(INDEX_URI, 1, 0, "FolderConfig");
+    qmlRegisterType<FileProperties>(INDEX_URI, 1, 0, "FileProperties");
+    qmlRegisterType<Permission>(INDEX_URI, 1, 0, "Permission");
 
     engine.load(url);
 

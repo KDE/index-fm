@@ -32,5 +32,6 @@
         <file>widgets/views/home/QuickCommonSection.qml</file>
         <file>widgets/views/home/ImageCard.qml</file>
         <file>widgets/views/home/AudioCard.qml</file>
+        <file>widgets/previewer/FileProperties.qml</file>
     </qresource>
 </RCC>

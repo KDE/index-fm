@@ -117,13 +117,14 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: !control.isExec
-        text: i18n("Preview")
+        text: i18n("Preview and info")
         icon.name: "view-preview"
         onTriggered:
         {
             openPreview(_browser.currentFMModel, _browser.currentIndex)
         }
     }
+
     MenuSeparator {}
 
     Maui.MenuItemActionRow

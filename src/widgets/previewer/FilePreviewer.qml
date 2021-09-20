@@ -16,6 +16,7 @@ Maui.Dialog
     property alias listView : _listView
     property alias model : _listView.model
     property alias currentIndex: _listView.currentIndex
+    ListModel { id: infoModel }
 
     property bool isFav : false
     property bool isDir : false
@@ -72,7 +73,6 @@ Maui.Dialog
             property bool isCurrentItem : ListView.isCurrentItem
             property url currentUrl: model.path
             property var iteminfo : model
-            property alias infoModel : _infoModel
             readonly property string title: model.label
 
             Loader
@@ -81,85 +81,80 @@ Maui.Dialog
                 asynchronous: true
                 active: _delegate.isCurrentItem
                 visible: !control.showInfo
-                width: parent.width
-                height: parent.height
+                anchors.fill: parent
                 onActiveChanged: if(active) show(currentUrl)
             }
 
-            ScrollView
+            Loader
             {
-                id: _infoContent
                 anchors.fill: parent
                 visible: control.showInfo
-                contentHeight: _layout.implicitHeight
-                contentWidth: availableWidth
-                clip: true
+                active: _delegate.isCurrentItem
+                asynchronous: true
 
-                background: null
-
-                Flickable
+                sourceComponent:  ScrollView
                 {
-                    boundsBehavior: Flickable.StopAtBounds
-                    boundsMovement: Flickable.StopAtBounds
+                    contentHeight: _layout.implicitHeight
+                    contentWidth: availableWidth
+                    clip: true
 
-                    ColumnLayout
+                    background: null
+
+                    Flickable
                     {
-                        id: _layout
-                        width: parent.width
-                        spacing: 0
+                        boundsBehavior: Flickable.StopAtBounds
+                        boundsMovement: Flickable.StopAtBounds
 
-                        Item
+                        ColumnLayout
                         {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 150
+                            id: _layout
+                            anchors.fill: parent
+                            spacing: 0
 
-                            Maui.IconItem
+                            Item
                             {
-                                height: parent.height * 0.9
-                                width: height
-                                anchors.centerIn: parent
-                                iconSource: iteminfo.icon
-                                imageSource: iteminfo.thumbnail
-                                iconSizeHint: Maui.Style.iconSizes.large
-                            }
-                        }
-
-                        Maui.Separator
-                        {
-                            edge: Qt.BottomEdge
-                            Layout.fillWidth: true
-                        }
-
-                        Repeater
-                        {
-                            model: ListModel { id: _infoModel }
-                            delegate: Maui.AlternateListItem
-                            {
-                                visible: model.value && String(model.value).length > 0
-                                Layout.preferredHeight: visible ? _delegateColumnInfo.label1.implicitHeight + _delegateColumnInfo.label2.implicitHeight + Maui.Style.space.large : 0
                                 Layout.fillWidth: true
-                                lastOne: index === _infoModel.count-1
+                                Layout.preferredHeight: 150
 
-                                Maui.ListItemTemplate
+                                Maui.IconItem
                                 {
-                                    id: _delegateColumnInfo
-                                    anchors.fill: parent
-                                    anchors.margins: Maui.Style.space.medium
-
-                                    label1.text: model.key
-                                    label1.font.weight: Font.Bold
-                                    label1.font.bold: true
-                                    label2.text: model.value
-                                    label2.elide: Qt.ElideMiddle
-                                    label2.wrapMode: Text.Wrap
-                                    label2.font.weight: Font.Light
+                                    height: parent.height * 0.9
+                                    width: height
+                                    anchors.centerIn: parent
+                                    iconSource: iteminfo.icon
+                                    imageSource: iteminfo.thumbnail
+                                    iconSizeHint: Maui.Style.iconSizes.large
                                 }
+                            }
+
+                            Maui.SettingsSection
+                            {
+                                Layout.fillWidth: true
+
+                                title: i18n("Details")
+                                description: i18n("File information")
+                                Repeater
+                                {
+                                    model: infoModel
+                                    delegate:  Maui.SettingTemplate
+                                    {
+                                        visible: model.value && String(model.value).length > 0
+                                        Layout.fillWidth: true
+                                        label1.text: model.key
+                                        label2.text: model.value
+                                    }
+                                }
+                            }
+
+                            FileProperties
+                            {
+                                Layout.fillWidth: true
+                                url: control.currentUrl
                             }
                         }
                     }
                 }
             }
-
             function show(path)
             {
                 console.log("Init model for ", path, previewLoader.active, _delegate.isCurrentItem)
