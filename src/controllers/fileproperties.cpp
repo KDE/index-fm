@@ -13,8 +13,8 @@ FileProperties::FileProperties(QObject *parent) : QObject(parent)
 {
   connect(this, &FileProperties::urlChanged, [this]()
   {
-    this->setData ();
-  });
+      this->setData ();
+    });
 }
 
 const QUrl &FileProperties::url() const
@@ -51,7 +51,7 @@ bool Permission::checkPermission(const QUrl &url, const Permission::UserType &us
       switch(type)
         {
         case WRITE:
-          return true;
+          return permissions & QFileDevice::WriteOwner;
         case READ:
           return permissions & QFileDevice::ReadOwner;
         case EXECUTE:
@@ -63,11 +63,11 @@ bool Permission::checkPermission(const QUrl &url, const Permission::UserType &us
       switch(type)
         {
         case WRITE:
-          return ((permissions & QFileDevice::WriteGroup) == QFileDevice::WriteGroup);
+          return permissions & QFileDevice::WriteGroup;
         case READ:
-          return ((permissions & QFileDevice::ReadGroup) == QFileDevice::ReadGroup);
+          return permissions & QFileDevice::ReadGroup;
         case EXECUTE:
-          return ((permissions & QFileDevice::ExeGroup) == QFileDevice::ExeGroup);
+          return permissions & QFileDevice::ExeGroup;
         default: return false;
         }
       break;
@@ -75,17 +75,94 @@ bool Permission::checkPermission(const QUrl &url, const Permission::UserType &us
       switch(type)
         {
         case WRITE:
-          return ((permissions & QFileDevice::WriteOther) == QFileDevice::WriteOther);
+          return permissions & QFileDevice::WriteOther;
         case READ:
-          return ((permissions & QFileDevice::ReadOther) == QFileDevice::ReadOther);
+          return permissions & QFileDevice::ReadOther;
         case EXECUTE:
-          return ((permissions & QFileDevice::ExeOther) == QFileDevice::ExeOther);
+          return permissions & QFileDevice::ExeOther;
         default: return false;
         }
       break;
     }
 
   return false;
+}
+
+bool Permission::setPermission(const QUrl &url, const UserType &user, const PermissionType &key, const bool &state)
+{
+  qDebug() << "Setting permissions" <<url << user << key << state;
+
+  if(!url.isValid () || url.isEmpty () || !url.isLocalFile ())
+    {
+      return false;
+    }
+
+  qDebug() << "Setting permissions" <<url << user << key << state;
+
+  QFile file(url.toLocalFile ());
+  auto permissions = file.permissions ();
+  qDebug() << "Setting permissions" <<url << user << key << state << permissions;
+
+  switch(user)
+    {
+    case UserType::OWNER:
+      switch(key)
+        {
+        case WRITE:
+          permissions = state ? (permissions | QFileDevice::WriteOwner) : (permissions & (~QFileDevice::WriteOwner));
+          break;
+        case READ:
+          if(state)
+            {
+              permissions = permissions | QFileDevice::ReadOwner;
+            }else
+            {
+              permissions = permissions & (~QFileDevice::ReadOwner);
+              qDebug() << "Setting permissions" <<permissions;
+
+            }
+          break;
+        case EXECUTE:
+          permissions = state ? (permissions | QFileDevice::ExeOwner) : (permissions & (~QFileDevice::ExeOwner));
+          break;
+        default: return false;
+        }
+      break;
+
+    case UserType::GROUP:
+      switch(key)
+        {
+        case WRITE:
+          permissions = state ? (permissions | QFileDevice::WriteGroup) : (permissions & (~QFileDevice::WriteGroup));
+          break;
+        case READ:
+          permissions = state ? (permissions | QFileDevice::ReadGroup) : (permissions & (~QFileDevice::ReadGroup));
+          break;
+        case EXECUTE:
+          permissions = state ? (permissions | QFileDevice::ExeGroup) : (permissions & (~QFileDevice::ExeGroup));
+          break;
+        default: return false;
+        }
+      break;
+
+    case UserType::OTHER:
+      switch(key)
+        {
+        case WRITE:
+          permissions = state ? (permissions | QFileDevice::WriteOther) : (permissions & (~QFileDevice::WriteOther));
+          break;
+        case READ:
+          permissions = state ? (permissions | QFileDevice::ReadOther) : (permissions & (~QFileDevice::ReadOther));
+          break;
+        case EXECUTE:
+          permissions = state ? (permissions | QFileDevice::ExeOther) : (permissions & (~QFileDevice::ExeOther));
+          break;
+        default: return false;
+        }
+      break;
+    }
+
+  return file.setPermissions (permissions);
 }
 
 void FileProperties::setData()
@@ -103,8 +180,8 @@ void FileProperties::setData()
   emit ownerChanged ();
 
 
- m_users = KUser::allUserNames (MAXENTRIES);
-m_groups = KUser().groupNames (MAXENTRIES);
+  m_users = KUser::allUserNames (MAXENTRIES);
+  m_groups = KUser().groupNames (MAXENTRIES);
   // sort both lists
   m_users.sort();
   m_groups.sort();
@@ -153,13 +230,13 @@ Permission::Permission(QObject *parent) : QObject(parent)
 {
   connect(this, &Permission::urlChanged, [this]()
   {
-    this->setData();
-  });
+      this->setData();
+    });
 
   connect(this, &Permission::userChanged, [this]()
   {
-    this->setData();
-  });
+      this->setData();
+    });
 }
 
 const QUrl &Permission::url() const
@@ -210,8 +287,19 @@ void Permission::setRead(bool newRead)
 {
   if (m_read == newRead)
     return;
+
+  if(!Permission::setPermission (m_url, m_user, PermissionType::READ, newRead))
+    {
+      qDebug() << "Setting permissions failed";
+
+      return;
+    }
+
+  qDebug() << "Setting permissions?";
+
   m_read = newRead;
   emit readChanged();
+
 }
 
 bool Permission::write() const
@@ -223,6 +311,12 @@ void Permission::setWrite(bool newWrite)
 {
   if (m_write == newWrite)
     return;
+
+  if(!Permission::setPermission (m_url, m_user, PermissionType::WRITE, newWrite))
+    {
+      return;
+    }
+
   m_write = newWrite;
   emit writeChanged();
 }
@@ -236,6 +330,12 @@ void Permission::setExecute(bool newExecute)
 {
   if (m_execute == newExecute)
     return;
+
+  if(!Permission::setPermission (m_url, m_user, PermissionType::EXECUTE, newExecute))
+    {
+      return;
+    }
+
   m_execute = newExecute;
   emit executeChanged();
 }

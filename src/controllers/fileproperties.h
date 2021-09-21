@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QUrl>
+#include <QFileDevice>
 
 class Permission : public QObject
 {
@@ -41,7 +42,6 @@ class Permission : public QObject
   Permission::UserType user() const;
   void setUser(UserType newUser);
 
-
   bool read() const;
   void setRead(bool newRead);
 
@@ -58,8 +58,8 @@ private:
 
 void setData();
 static  bool checkPermission(const QUrl & url, const Permission::UserType &user, const Permission::PermissionType &type);
-
-  bool m_read = false;
+static bool setPermission(const QUrl &url,  const Permission::UserType &user, const PermissionType &key, const bool &state);
+bool m_read = false;
 
   bool m_write = false;
 

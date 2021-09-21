@@ -59,6 +59,7 @@ ColumnLayout
                 {
                     text: i18n("Read")
                     checked: _ownerPermissions.read
+                    onTriggered: _ownerPermissions.read = !_ownerPermissions.read
                 }
 
                 Action

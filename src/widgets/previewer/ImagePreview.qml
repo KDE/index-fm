@@ -1,6 +1,6 @@
-import org.mauikit.imagetools 1.0 as IT
+import org.mauikit.controls 1.3 as Maui
 
-IT.ImageViewer
+Maui.ImageViewer
 {
     id: control
     source: currentUrl
