@@ -305,7 +305,7 @@ Maui.ApplicationWindow
                         Action
                         {
                             icon.name: "view-hidden"
-                            text: i18n("Hidden Files")
+                            text: i18n("Hidden")
                             checkable: true
                             checked: settings.showHiddenFiles
                             onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
@@ -313,7 +313,7 @@ Maui.ApplicationWindow
 
                         Action
                         {
-                            text: i18n("Split View")
+                            text: i18n("Split")
                             icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
                             checked: currentTab.count === 2
                             checkable: true
@@ -322,7 +322,7 @@ Maui.ApplicationWindow
 
                         Action
                         {
-                            text: i18n("Embedded Terminal")
+                            text: i18n("Terminal")
                             enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
                             icon.name: "dialog-scripts"
                             checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
@@ -587,7 +587,7 @@ Maui.ApplicationWindow
                                 Action
                                 {
                                     icon.name: "list-add"
-                                    text: i18n("New...")
+                                    text: i18n("New")
                                     onTriggered: currentBrowser.newItem()
                                 }
                             }

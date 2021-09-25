@@ -131,7 +131,7 @@ Maui.ContextualMenu
     {
         Action
         {
-            text: control.isFav ? i18n("Remove from Favorites") : i18n("Add to Favorites")
+            text: control.isFav ? i18n("UnFav") : i18n("Fav")
             checked: control.isFav
             checkable: true
             icon.name: "love"
@@ -171,7 +171,7 @@ Maui.ContextualMenu
         Action
         {
             enabled: !control.isExec && control.isDir
-            text: i18n("Add to Bookmarks")
+            text: i18n("Bookmark")
             icon.name: "bookmark-new"
             onTriggered:
             {
