@@ -25,7 +25,7 @@ Maui.ApplicationWindow
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
 
-    readonly property url currentPath : currentBrowser ?  currentBrowser.currentPath : ""
+    readonly property url currentPath : currentBrowser ? currentBrowser.currentPath : ""
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
