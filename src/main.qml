@@ -572,6 +572,7 @@ Maui.ApplicationWindow
                                 Action
                                 {
                                     icon.name: "go-next"
+                                    text: i18n("Forward")
                                     onTriggered: currentBrowser.goForward()
                                 }
 

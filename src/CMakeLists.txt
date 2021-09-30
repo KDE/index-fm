@@ -16,13 +16,18 @@ set(index_SRCS
     models/pathlist.cpp
     index_assets.qrc
     data/data.qrc
-    qml.qrc
     )
 
-if(ANDROID)
-    add_library(${PROJECT_NAME} SHARED ${index_SRCS})
+if(QUICK_COMPILER)
+        qtquick_compiler_add_resources(index_QML_QRC qml.qrc)
 else()
-    add_executable(${PROJECT_NAME} ${index_SRCS})
+        qt5_add_resources(index_QML_QRC qml.qrc)
+endif()
+
+if(ANDROID)
+    add_library(${PROJECT_NAME} SHARED ${index_SRCS} ${index_QML_QRC})
+else()
+    add_executable(${PROJECT_NAME} ${index_SRCS} ${index_QML_QRC})
 endif()
 
 if (ANDROID)
