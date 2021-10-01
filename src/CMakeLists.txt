@@ -19,9 +19,9 @@ set(index_SRCS
     )
 
 if(QUICK_COMPILER)
-        qtquick_compiler_add_resources(index_QML_QRC qml.qrc)
+    qtquick_compiler_add_resources(index_QML_QRC qml.qrc)
 else()
-        qt5_add_resources(index_QML_QRC qml.qrc)
+    qt5_add_resources(index_QML_QRC qml.qrc)
 endif()
 
 if(ANDROID)
@@ -36,7 +36,7 @@ if (ANDROID)
         Qt5::QuickControls2)
     kde_source_files_enable_exceptions(${PROJECT_NAME} index.cpp)
 
-#    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
+    #    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
 
 elseif(UNIX)
     target_link_libraries(${PROJECT_NAME} KF5::KIOCore)
@@ -44,7 +44,7 @@ elseif(UNIX)
 endif()
 
 target_compile_definitions(${PROJECT_NAME}
-  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+    PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
 target_link_libraries(${PROJECT_NAME}
     MauiKit
