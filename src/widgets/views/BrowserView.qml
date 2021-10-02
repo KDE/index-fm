@@ -171,24 +171,5 @@ Maui.Page
 
         onCloseTabClicked: closeTab(index)
     }
-
-    DropArea
-    {
-        id: _dropArea
-        anchors.fill: parent
-        z: parent.z -2
-        onDropped:
-        {
-            const urls = drop.urls
-            for(var i in urls)
-            {
-                const item = FB.FM.getFileInfo(urls[i])
-                if(item.isdir == "true")
-                {
-                    control.openTab(urls[i])
-                }
-            }
-        }
-    }
 }
 

@@ -46,8 +46,8 @@ Maui.SideBar
     onPlaceClicked:
     {
         currentBrowser.openFolder(path)
-        if(placesSidebar.collapsed)
-            placesSidebar.close()
+        if(control.collapsed)
+            control.close()
 
         if(_stackView.depth === 2)
             _stackView.pop()
@@ -56,71 +56,74 @@ Maui.SideBar
     //    listView.flickable.headerPositioning: ListView.OverlayHeader
     listView.flickable.topMargin: Maui.Style.space.medium
     listView.flickable.bottomMargin: Maui.Style.space.medium
-    listView.flickable.header: Column
+    listView.flickable.header: Loader
     {
-        id:  _defaultSection
+        asynchronous: true
         width: parent.width
-        spacing: Maui.Style.space.medium
 
-        Maui.ListBrowserDelegate
+        sourceComponent: Column
         {
-            width: parent.width
-            iconSizeHint: Maui.Style.iconSizes.small
-            label1.text: i18n("Overview")
-            iconSource: "start-here-symbolic"
-            iconVisible: true
-            isCurrentItem: _stackView.depth === 2
-            onClicked:
+            spacing: Maui.Style.space.medium
+
+            Maui.ListBrowserDelegate
             {
-                if(placesSidebar.collapsed)
-                    placesSidebar.close()
-
-                _stackView.push(_homeViewComponent)
-            }
-        }
-
-        GridView
-        {
-            id: _toggles
-            implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
-            currentIndex : _quickPacesList.indexOfPath(currentPath)
-            width: parent.width
-            cellWidth: Math.floor(parent.width/3)
-            cellHeight: cellWidth
-
-            model: Maui.BaseModel
-            {
-                list: FB.PlacesList
+                width: parent.width
+                iconSizeHint: Maui.Style.iconSizes.small
+                label1.text: i18n("Overview")
+                iconSource: "start-here-symbolic"
+                iconVisible: true
+                isCurrentItem: _stackView.depth === 2
+                onClicked:
                 {
-                    id: _quickPacesList
+                    if(control.collapsed)
+                        control.close()
 
-                    groups: [
-                        FB.FMList.QUICK_PATH,
-                        FB.FMList.PLACES_PATH
-                    ]
+                    _stackView.push(_homeViewComponent)
                 }
             }
 
-            delegate: Item
+            GridView
             {
-                height: GridView.view.cellHeight
-                width: GridView.view.cellWidth
+                implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
+                currentIndex : _quickPacesList.indexOfPath(currentPath)
+                width: parent.width
+                cellWidth: Math.floor(parent.width/3)
+                cellHeight: cellWidth
 
-                Maui.GridBrowserDelegate
+                model: Maui.BaseModel
                 {
-                    isCurrentItem: parent.GridView.isCurrentItem && _stackView.depth === 1
-                    anchors.fill: parent
-                    anchors.margins: Maui.Style.space.tiny
-                    iconSource: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
-                    iconSizeHint: Maui.Style.iconSizes.medium
-                    label1.text: model.label
-                    labelsVisible: false
-                    tooltipText: model.label
-                    onClicked:
+                    list: FB.PlacesList
                     {
-                        placeClicked(model.path)
-                        if(control.collapsed)
-                            control.close()
+                        id: _quickPacesList
+
+                        groups: [
+                            FB.FMList.QUICK_PATH,
+                            FB.FMList.PLACES_PATH
+                        ]
+                    }
+                }
+
+                delegate: Item
+                {
+                    height: GridView.view.cellHeight
+                    width: GridView.view.cellWidth
+
+                    Maui.GridBrowserDelegate
+                    {
+                        isCurrentItem: parent.GridView.isCurrentItem && _stackView.depth === 1
+                        anchors.fill: parent
+                        anchors.margins: Maui.Style.space.tiny
+                        iconSource: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
+                        iconSizeHint: Maui.Style.iconSizes.medium
+                        label1.text: model.label
+                        labelsVisible: false
+                        tooltipText: model.label
+                        onClicked:
+                        {
+                            placeClicked(model.path)
+                            if(control.collapsed)
+                                control.close()
+                        }
                     }
                 }
             }
@@ -141,7 +144,6 @@ Maui.SideBar
 
             onBookmarksChanged:
             {
-                syncSidebar(currentPath)
             }
         }
     }
@@ -221,7 +223,7 @@ Maui.SideBar
         {
             text: i18n("Open in new tab")
             icon.name: "tab-new"
-            onTriggered: openTab(control.model.get(placesSidebar.currentIndex).path)
+            onTriggered: openTab(control.model.get(control.currentIndex).path)
         }
 
         MenuItem
@@ -229,7 +231,7 @@ Maui.SideBar
             visible: root.currentTab.count === 1
             text: i18n("Open in split view")
             icon.name: "view-split-left-right"
-            onTriggered: currentTab.split(control.model.get(placesSidebar.currentIndex).path, Qt.Horizontal)
+            onTriggered: currentTab.split(control.model.get(control.currentIndex).path, Qt.Horizontal)
         }
 
         MenuSeparator{}
@@ -240,11 +242,5 @@ Maui.SideBar
             Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
             onTriggered: list.removePlace(control.currentIndex)
         }
-    }
-
-    function syncSidebar(path)
-    {
-        console.log("Sync sidebar", path)
-        //        control.currentIndex = control.list.indexOfPath(path)
     }
 }

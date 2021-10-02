@@ -150,7 +150,7 @@ Maui.SplitViewItem
 
                 if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
                 {
-                    _pathBar.showEntryBar()
+                    pathBar.showEntryBar()
                     event.accepted = true
                 }
 
@@ -225,7 +225,7 @@ Maui.SplitViewItem
 
             onRightClicked:
             {
-                _pathBar.openMenu()
+                pathBar.openMenu()
             }
         }
 
