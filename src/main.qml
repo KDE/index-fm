@@ -29,7 +29,6 @@ Maui.ApplicationWindow
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
-    property alias openWithDialog : _openWithDialog
     property alias currentTabIndex : _browserView.currentTabIndex
     property alias pathBar: _pathBar
 
@@ -131,7 +130,11 @@ Maui.ApplicationWindow
         }
     }
 
-    FB.OpenWithDialog { id: _openWithDialog }
+    Component
+    {
+        id: _openWithDialogComponent
+        FB.OpenWithDialog {}
+    }
 
     Component
     {
@@ -764,8 +767,9 @@ Maui.ApplicationWindow
             return
         }
 
-        openWithDialog.urls = urls
-        openWithDialog.open()
+        dialogLoader.sourceComponent = _openWithDialogComponent
+        dialog.urls = urls
+        dialog.open()
     }
 
     /**
