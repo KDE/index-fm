@@ -29,11 +29,10 @@ Maui.AbstractSideBar
         id: _loader
         anchors.fill: parent
         asynchronous: true
-        active: control.enabled
+        active: (control.enabled && control.visible) || item
 
         sourceComponent: Maui.ListBrowser
         {
-
             topPadding: 0
             bottomPadding: 0
             verticalScrollBarPolicy: ScrollBar.AlwaysOff
