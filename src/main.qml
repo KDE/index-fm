@@ -40,13 +40,13 @@ Maui.ApplicationWindow
 
     property bool selectionMode: false
 
-    Maui.WindowBlur
-    {
-        view: root
-        geometry: Qt.rect(root.x, root.y, root.width, root.height)
-        windowRadius: root.background.radius
-        enabled: !Kirigami.Settings.isMobile
-    }
+//    Maui.WindowBlur
+//    {
+//        view: root
+//        geometry: Qt.rect(root.x, root.y, root.width, root.height)
+//        windowRadius: root.background.radius
+//        enabled: !Kirigami.Settings.isMobile
+//    }
 
     Maui.Notify
     {
