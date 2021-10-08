@@ -33,6 +33,7 @@ Maui.AbstractSideBar
 
         sourceComponent: Maui.ListBrowser
         {
+            id: _listBrowser
             topPadding: 0
             bottomPadding: 0
             verticalScrollBarPolicy: ScrollBar.AlwaysOff
@@ -41,7 +42,7 @@ Maui.AbstractSideBar
             {
                 if(event.key == Qt.Key_Return)
                 {
-                    control.itemClicked(control.currentIndex)
+                    control.itemClicked(_listBrowser.currentIndex)
                 }
             }
 
@@ -200,13 +201,13 @@ Maui.AbstractSideBar
 
                 onRightClicked:
                 {
-                    control.currentIndex = index
+                    _listBrowser.currentIndex = index
                     _menu.show()
                 }
 
                 onPressAndHold:
                 {
-                    control.currentIndex = index
+                    _listBrowser.currentIndex = index
                     _menu.show()
                 }
             }
