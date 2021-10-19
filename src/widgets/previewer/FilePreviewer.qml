@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.7 as Kirigami
 import org.mauikit.controls 1.3 as Maui
 
-import org.mauikit.filebrowsing 1.0 as FB
+import org.mauikit.filebrowsing 1.3 as FB
 
 Maui.Dialog
 {
@@ -21,8 +21,6 @@ Maui.Dialog
     property bool isFav : false
     property bool isDir : false
     property bool showInfo: true
-
-    property alias tagBar : _tagsBar
 
     title: _listView.currentItem.title
 
@@ -163,7 +161,7 @@ Maui.Dialog
 
                 control.isDir = model.isdir == "true"
                 control.currentUrl = path
-                control.isFav =  _tagsBar.list.contains("fav")
+                control.isFav = FB.Tagging.isFav(control.currentUrl)
 
                 var source = "DefaultPreview.qml"
                 if(FB.FM.checkFileType(FB.FMList.AUDIO, iteminfo.mime))
@@ -215,90 +213,59 @@ Maui.Dialog
         }
     }
 
-    page.footerColumn: [
-        FB.TagsBar
-        {
-            id: _tagsBar
-            width: parent.width
-            list.urls: [control.currentUrl]
-            list.strict: false
-            allowEditMode: true
-            onTagRemovedClicked: list.removeFromUrls(index)
-            onTagsEdited: list.updateToUrls(tags)
-            Kirigami.Theme.textColor: control.Kirigami.Theme.textColor
-            Kirigami.Theme.backgroundColor: control.Kirigami.Theme.backgroundColor
+    footBar.leftContent: Maui.ToolActions
+    {
+        visible: !Kirigami.Settings.isMobile
+        expanded: true
+        autoExclusive: false
+        checkable: false
 
-            onAddClicked:
+        Action
+        {
+            text: i18n("Previous")
+            icon.name: "go-previous"
+            onTriggered :  _listView.decrementCurrentIndex()
+        }
+
+        Action
+        {
+            text: i18n("Next")
+            icon.name: "go-next"
+            onTriggered: _listView.incrementCurrentIndex()
+        }
+    }
+
+    footBar.rightContent: [
+        ToolButton
+        {
+            icon.name: "document-open"
+            onClicked:
             {
-                dialogLoader.sourceComponent = _tagsDialogComponent
-                dialog.composerList.urls = [ previewer.currentUrl]
-                dialog.open()
+                currentBrowser.openFile(control.currentUrl)
             }
         },
 
-        Maui.ToolBar
+        ToolButton
         {
-            width: parent.width
-            position: ToolBar.Bottom
-            background: null
-            leftContent: Maui.ToolActions
+            icon.name: "love"
+            checkable: true
+            checked: control.isFav
+            onClicked:
             {
-                visible: !Kirigami.Settings.isMobile
-                expanded: true
-                autoExclusive: false
-                checkable: false
-
-                Action
-                {
-                    text: i18n("Previous")
-                    icon.name: "go-previous"
-                    onTriggered :  _listView.decrementCurrentIndex()
-                }
-
-                Action
-                {
-                    text: i18n("Next")
-                    icon.name: "go-next"
-                    onTriggered: _listView.incrementCurrentIndex()
-                }
+                FB.Tagging.toggleFav(control.currentUrl)
+                control.isFav = !control.isFav
             }
+        },
 
-            rightContent: [
-                ToolButton
-                {
-                    icon.name: "document-open"
-                    onClicked:
-                    {
-                        currentBrowser.openFile(control.currentUrl)
-                    }
-                },
-
-                ToolButton
-                {
-                    icon.name: "love"
-                    checkable: true
-                    checked: control.isFav
-                    onClicked:
-                    {
-                        if(control.isFav)
-                            _tagsBar.list.removeFromUrls("fav")
-                        else
-                            _tagsBar.list.insertToUrls("fav")
-
-                        control.isFav = !control.isFav
-                    }
-                },
-
-                ToolButton
-                {
-                    visible: !isDir
-                    icon.name: "document-share"
-                    onClicked:
-                    {
-                        Maui.Platform.shareFiles([control.currentUrl])
-                    }
-                }
-            ]
+        ToolButton
+        {
+            visible: !isDir
+            icon.name: "document-share"
+            onClicked:
+            {
+                Maui.Platform.shareFiles([control.currentUrl])
+            }
         }
     ]
+
 }
