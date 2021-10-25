@@ -56,7 +56,9 @@ if(ANDROID)
     find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras QuickControls2)
 elseif(UNIX)
     find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS KIO)
-else()
+endif()
+
+if(UNIX OR WIN32 OR APPLE AND NOT ANDROID)
     find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)
 endif()
 
