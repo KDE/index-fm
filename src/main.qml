@@ -509,7 +509,7 @@ Maui.ApplicationWindow
 
                     anchors.centerIn: parent
                     width: Math.min(parent.width, implicitWidth)
-                    onPathChanged: currentBrowser.openFolder(path.trim())
+                    onPathChanged: currentBrowser.openFolder(path)
                     url: currentBrowser.currentPath
 
                     onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
