@@ -40,6 +40,7 @@ if (ANDROID)
 
 elseif(UNIX)
     target_link_libraries(${PROJECT_NAME} KF5::KIOCore)
+else()
     target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
 endif()
 
