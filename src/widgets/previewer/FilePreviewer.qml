@@ -29,7 +29,6 @@ Maui.Dialog
     maxHeight: 1000
     defaultButtons: false
 
-    //    page.headerBackground.color: "transparent"
     headBar.rightContent: ToolButton
     {
         icon.name: "documentinfo"
@@ -90,7 +89,7 @@ Maui.Dialog
                 active: _delegate.isCurrentItem
                 asynchronous: true
 
-                sourceComponent:  ScrollView
+                sourceComponent: ScrollView
                 {
                     contentHeight: _layout.implicitHeight
                     contentWidth: availableWidth
@@ -235,10 +234,12 @@ Maui.Dialog
         }
     }
 
-    footBar.rightContent: [
+    footBar.middleContent: [
         ToolButton
         {
             icon.name: "document-open"
+            text: i18n("Open")
+            display: Kirigami.Settings.isMobile ? ToolButton.TextUnderIcon : ToolButton.IconOnly
             onClicked:
             {
                 currentBrowser.openFile(control.currentUrl)
@@ -248,6 +249,8 @@ Maui.Dialog
         ToolButton
         {
             icon.name: "love"
+            text: i18n("Fav")
+            display: Kirigami.Settings.isMobile ? ToolButton.TextUnderIcon : ToolButton.IconOnly
             checkable: true
             checked: control.isFav
             onClicked:
@@ -261,6 +264,8 @@ Maui.Dialog
         {
             visible: !isDir
             icon.name: "document-share"
+            display: Kirigami.Settings.isMobile ? ToolButton.TextUnderIcon : ToolButton.IconOnly
+            text: i18n("Share")
             onClicked:
             {
                 Maui.Platform.shareFiles([control.currentUrl])

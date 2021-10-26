@@ -27,7 +27,6 @@ Maui.SplitViewItem
     property alias title : _browser.title
     //    property alias dirConf : _dirConf
 
-    //    property alias sortBy : _dirConf.sortKey
     //    property alias viewType : _dirConf.viewType
 
     property bool terminalVisible : false
@@ -254,6 +253,11 @@ Maui.SplitViewItem
 
     Component.onCompleted:
     {
+        //set these values in here to avoid global binding them, so each view can have different sorting settings
+        settings.sortBy = sortSettings.sortBy
+        settings.foldersFirst = sortSettings.foldersFirst
+        settings.group = sortSettings.group
+
         syncTerminal(control.currentPath)
     }
 
