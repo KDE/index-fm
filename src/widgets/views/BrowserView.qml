@@ -169,7 +169,7 @@ Maui.Page
         id: _browserList
         anchors.fill: parent
 
-        onNewTabClicked: openTab(currentPath)
+        onNewTabClicked: openTab(currentBrowser.currentPath)
 
         onCloseTabClicked: closeTab(index)
     }
