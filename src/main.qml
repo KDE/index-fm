@@ -25,8 +25,6 @@ Maui.ApplicationWindow
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
 
-    readonly property url currentPath : currentBrowser ? currentBrowser.currentPath : ""
-
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
     property alias currentTabIndex : _browserView.currentTabIndex
@@ -169,7 +167,7 @@ Maui.ApplicationWindow
 
             onAccepted:
             {
-                _compressedFile.extract(currentPath, textEntry.text)
+                _compressedFile.extract(currentBrowser.currentPath, textEntry.text)
                 _extractDialog.close()
             }
         }
@@ -230,7 +228,7 @@ Maui.ApplicationWindow
 
             onAccepted:
             {
-                var error = _compressedFile.compress(urls, currentPath, textEntry.text, compressType.currentIndex)
+                var error = _compressedFile.compress(urls, currentBrowser.currentPath, textEntry.text, compressType.currentIndex)
 
                 if(error)
                 {
@@ -515,10 +513,9 @@ Maui.ApplicationWindow
                     onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
                     onPlaceClicked:
                     {
-                        if(path === String(currentPath))
+                        if(path === currentBrowser.currentPath)
                         {
                             openMenu()
-
                         }
                         else
                         {
@@ -637,7 +634,7 @@ Maui.ApplicationWindow
                             icon.name: "dialog-scripts"
                             onTriggered:
                             {
-                                inx.openTerminal(currentPath)
+                                inx.openTerminal(currentBrowser.currentPath)
                             }
                         }
 
@@ -725,7 +722,7 @@ Maui.ApplicationWindow
         if(currentTab.count === 2)
             currentTab.pop()
         else
-            currentTab.split(root.currentPath, Qt.Horizontal)
+            currentTab.split(currentBrowser.currentPath, Qt.Horizontal)
     }
 
     function openConfigDialog()

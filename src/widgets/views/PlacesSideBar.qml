@@ -40,7 +40,7 @@ Maui.AbstractSideBar
 
             onKeyPress:
             {
-                if(event.key == Qt.Key_Return)
+                if(event.key === Qt.Key_Return)
                 {
                     control.itemClicked(_listBrowser.currentIndex)
                 }

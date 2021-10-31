@@ -266,7 +266,7 @@ Maui.SplitViewItem
     function syncTerminal(path)
     {
         if(terminalLoader.item && terminalVisible)
-            terminalLoader.item.session.sendText("cd '" + String(path).replace("file://", "") + "'\n")
+            terminalLoader.item.session.sendText("cd '" + path.replace("file://", "") + "'\n")
     }
 
     function toogleTerminal()
