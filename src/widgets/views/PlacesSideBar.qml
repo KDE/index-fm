@@ -96,7 +96,7 @@ Maui.AbstractSideBar
                     GridView
                     {
                         implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
-                        currentIndex : _quickPacesList.indexOfPath(currentPath)
+                        currentIndex : _quickPacesList.indexOfPath(currentBrowser.currentPath)
                         width: parent.width
                         cellWidth: Math.floor(parent.width/3)
                         cellHeight: cellWidth
