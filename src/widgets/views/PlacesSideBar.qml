@@ -48,7 +48,7 @@ Maui.AbstractSideBar
 
             Binding on currentIndex
             {
-                value: placesList.indexOfPath(currentPath)
+                value: placesList.indexOfPath(currentBrowser.currentPath)
                 restoreMode: Binding.RestoreBindingOrValue
             }
 
