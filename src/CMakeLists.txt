@@ -54,6 +54,7 @@ target_link_libraries(${PROJECT_NAME}
     MauiKit::FileBrowsing
     Qt5::Quick
     Qt5::Qml
+    Qt5::PrintSupport
     KF5::Archive
     KF5::CoreAddons
     KF5::I18n)

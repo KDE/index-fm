@@ -672,14 +672,17 @@ Maui.ApplicationWindow
 
         Loader
         {
-            id : _homeViewComponent
             asynchronous: true
             visible: StackView.status === StackView.Active
             active: StackView.status === StackView.Active || item
+            anchors.fill: parent
 
-            HomeView
+            sourceComponent: HomeView {}
+
+            BusyIndicator
             {
-                anchors.fill: parent
+                running: parent.status === Loader.Loading
+                anchors.centerIn: parent
             }
         }
     }
@@ -710,11 +713,7 @@ Maui.ApplicationWindow
             return
         }
 
-        root.openTab(FB.FM.homePath())
-        //            if(settings.overviewStart)
-        //            {
-        //                _stackView.push(_homeViewComponent)
-        //            }
+        root.openTab(FB.FM.homePath())        
     }
 
     function toogleSplitView()
