@@ -74,6 +74,13 @@ Maui.ApplicationWindow
 
         property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
+
+        property bool quickSidebarSection : true
+        property var sidebarSections : [
+            FB.FMList.BOOKMARKS_PATH,
+            FB.FMList.REMOTE_PATH,
+            FB.FMList.REMOVABLE_PATH,
+            FB.FMList.DRIVES_PATH]
     }
 
     Settings
@@ -286,7 +293,10 @@ Maui.ApplicationWindow
         id: dialogLoader
     }
 
-    sideBar: PlacesSideBar {}
+    sideBar: PlacesSideBar
+    {
+        id: placesSidebar
+    }
 
     StackView
     {
@@ -713,7 +723,7 @@ Maui.ApplicationWindow
             return
         }
 
-        root.openTab(FB.FM.homePath())        
+        root.openTab(FB.FM.homePath())
     }
 
     function toogleSplitView()
@@ -811,5 +821,11 @@ Maui.ApplicationWindow
         }
 
         currentTabIndex = settings.lastTabIndex
+    }
+
+    function toggleSection(section)
+    {
+        placesSidebar.list.toggleSection(section)
+        appSettings.sidebarSections = placesSidebar.list.groups
     }
 }

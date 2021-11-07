@@ -24,6 +24,15 @@ Maui.AbstractSideBar
     collapsed : !root.isWide
     preferredWidth: Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 13)
 
+    property alias list : placesList
+
+    FB.PlacesList
+    {
+        id: placesList
+        groups: appSettings.sidebarSections
+
+    }
+
     Loader
     {
         id: _loader
@@ -52,7 +61,6 @@ Maui.AbstractSideBar
                 restoreMode: Binding.RestoreBindingOrValue
             }
 
-            property alias list : placesList
 
             Maui.Holder
             {
@@ -71,6 +79,9 @@ Maui.AbstractSideBar
             {
                 asynchronous: true
                 width: parent.width
+                height: item ? item.implicitHeight : 0
+                active: appSettings.quickSidebarSection
+                visible: active
 
                 sourceComponent: Column
                 {
@@ -106,11 +117,7 @@ Maui.AbstractSideBar
                             list: FB.PlacesList
                             {
                                 id: _quickPacesList
-
-                                groups: [
-                                    FB.FMList.QUICK_PATH,
-                                    FB.FMList.PLACES_PATH
-                                ]
+                                groups: [FB.FMList.QUICK_PATH, FB.FMList.PLACES_PATH]
                             }
                         }
 
@@ -144,21 +151,7 @@ Maui.AbstractSideBar
             model: Maui.BaseModel
             {
                 id: placesModel
-
-                list: FB.PlacesList
-                {
-                    id: placesList
-
-                    groups: [
-                        FB.FMList.BOOKMARKS_PATH,
-                        FB.FMList.REMOTE_PATH,
-                        FB.FMList.REMOVABLE_PATH,
-                        FB.FMList.DRIVES_PATH]
-
-                    onBookmarksChanged:
-                    {
-                    }
-                }
+                list: placesList
             }
 
             delegate: Maui.ListDelegate
@@ -238,7 +231,7 @@ Maui.AbstractSideBar
 
     onContentDropped:
     {
-        _loader.item.list.addPlace(drop.text)
+        placesList.addPlace(drop.text)
     }
 
     Maui.ContextualMenu
@@ -266,7 +259,7 @@ Maui.AbstractSideBar
         {
             text: i18n("Remove")
             Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
-            onTriggered:  _loader.item.list.removePlace( _loader.item.currentIndex)
+            onTriggered: placesList.removePlace( _loader.item.currentIndex)
         }
     }
 }

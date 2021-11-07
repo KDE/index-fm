@@ -3,6 +3,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.2 as Maui
+import org.mauikit.filebrowsing 1.0 as FB
 
 Maui.SettingsDialog
 {
@@ -40,7 +41,93 @@ Maui.SettingsDialog
         }
     }
 
-   Maui.SettingsSection
+    Maui.SettingsSection
+    {
+        title: i18n("Places")
+        description: i18n("Toggle sidebar sections.")
+        lastOne: true
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Quick places")
+            label2.text: i18n("Acess to standard locations.")
+
+            Switch
+            {
+                checkable: true
+                checked: appSettings.quickSidebarSection
+                onToggled: appSettings.quickSidebarSection = !appSettings.quickSidebarSection
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Bookmarks")
+            label2.text: i18n("Acess to standard locations.")
+
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.BOOKMARKS_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.BOOKMARKS_PATH)
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Remote")
+            label2.text: i18n("Acess to network locations.")
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.REMOTE_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.REMOTE_PATH)
+                }
+            }
+
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Removable")
+            label2.text: i18n("Acess to USB sticks and SD Cards.")
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.REMOVABLE_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.REMOVABLE_PATH)
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Devices")
+            label2.text: i18n("Acess drives.")
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.DRIVES_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.DRIVES_PATH)
+                }
+            }
+        }
+    }
+
+    Maui.SettingsSection
     {
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
@@ -136,17 +223,19 @@ Maui.SettingsDialog
             }
         }
 
-//        Maui.SettingTemplate
-//        {
-//            label1.text: i18n("Overview")
-//            label2.text: i18n("Use overview mode as default on launch")
+        //        Maui.SettingTemplate
+        //        {
+        //            label1.text: i18n("Overview")
+        //            label2.text: i18n("Use overview mode as default on launch")
 
-//            Switch
-//            {
-//                Layout.fillHeight: true
-//                checked:  appSettings.overviewStart
-//                onToggled: appSettings.overviewStart = !appSettings.overviewStart
-//            }
-//        }
+        //            Switch
+        //            {
+        //                Layout.fillHeight: true
+        //                checked:  appSettings.overviewStart
+        //                onToggled: appSettings.overviewStart = !appSettings.overviewStart
+        //            }
+        //        }
     }
+
+
 }
