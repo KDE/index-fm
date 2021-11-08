@@ -96,6 +96,14 @@ Maui.SplitViewItem
             //                path: control.currentPath
             //            }
 
+            browser.holder.actions: [
+                Action
+                {
+                    text: i18n("Create new")
+                    onTriggered: _browser.newItem()
+                }
+            ]
+
             FileMenu
             {
                 id: itemMenu

@@ -155,7 +155,6 @@ Maui.Dialog
 
             function show(path)
             {
-                console.log("Init model for ", path, previewLoader.active, _delegate.isCurrentItem)
                 initModel()
 
                 control.isDir = model.isdir == "true"
