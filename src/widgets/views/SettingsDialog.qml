@@ -50,7 +50,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("Quick places")
-            label2.text: i18n("Acess to standard locations.")
+            label2.text: i18n("Access to standard locations.")
 
             Switch
             {
@@ -63,7 +63,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("Bookmarks")
-            label2.text: i18n("Acess to standard locations.")
+            label2.text: i18n("Access to standard locations.")
 
 
             Switch
@@ -80,7 +80,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("Remote")
-            label2.text: i18n("Acess to network locations.")
+            label2.text: i18n("Access to network locations.")
 
             Switch
             {
@@ -97,7 +97,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("Removable")
-            label2.text: i18n("Acess to USB sticks and SD Cards.")
+            label2.text: i18n("Access to USB sticks and SD Cards.")
 
             Switch
             {
@@ -113,7 +113,7 @@ Maui.SettingsDialog
         Maui.SettingTemplate
         {
             label1.text: i18n("Devices")
-            label2.text: i18n("Acess drives.")
+            label2.text: i18n("Access drives.")
 
             Switch
             {
