@@ -24,7 +24,7 @@ Rectangle
     ToolTip.visible: _mouseArea.containsMouse || _mouseArea.containsPress
     ToolTip.text: model.path
 
-    color: control.checked || hovered ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.15) : Kirigami.Theme.backgroundColor
+    color: control.checked || hovered ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
 
     /**
       *
@@ -58,7 +58,7 @@ Rectangle
         verticalAlignment:  Qt.AlignVCenter
         elide: Qt.ElideRight
         wrapMode: Text.NoWrap
-        color: control.checked ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+        color: control.checked ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
     }
 
     MouseArea

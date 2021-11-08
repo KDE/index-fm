@@ -30,7 +30,6 @@ Maui.AbstractSideBar
     {
         id: placesList
         groups: appSettings.sidebarSections
-
     }
 
     Loader
@@ -60,7 +59,6 @@ Maui.AbstractSideBar
                 value: placesList.indexOfPath(currentBrowser.currentPath)
                 restoreMode: Binding.RestoreBindingOrValue
             }
-
 
             Maui.Holder
             {
@@ -106,6 +104,7 @@ Maui.AbstractSideBar
 
                     GridView
                     {
+                        id: _quickSection
                         implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
                         currentIndex : _quickPacesList.indexOfPath(currentBrowser.currentPath)
                         width: parent.width
@@ -141,6 +140,18 @@ Maui.AbstractSideBar
                                     placeClicked(model.path)
                                     if(control.collapsed)
                                         control.close()
+                                }
+
+                                onRightClicked:
+                                {
+                                    _menu.path = model.path
+                                    _menu.show()
+                                }
+
+                                onPressAndHold:
+                                {
+                                    _menu.path = model.path
+                                    _menu.show()
                                 }
                             }
                         }
@@ -194,13 +205,15 @@ Maui.AbstractSideBar
 
                 onRightClicked:
                 {
-                    _listBrowser.currentIndex = index
+                    _menu.path = model.path
+                    _menu.bookmarkIndex = index
                     _menu.show()
                 }
 
                 onPressAndHold:
                 {
-                    _listBrowser.currentIndex = index
+                    _menu.path = model.path
+                    _menu.bookmarkIndex = index
                     _menu.show()
                 }
             }
@@ -238,11 +251,16 @@ Maui.AbstractSideBar
     {
         id: _menu
 
+        property string path
+        property int bookmarkIndex : -1
+
+        onClosed: _menu.bookmarkIndex = -1
+
         MenuItem
         {
             text: i18n("Open in new tab")
             icon.name: "tab-new"
-            onTriggered: openTab( _loader.item.model.get( _loader.item.currentIndex).path)
+            onTriggered: openTab(_menu.path)
         }
 
         MenuItem
@@ -250,16 +268,17 @@ Maui.AbstractSideBar
             visible: root.currentTab.count === 1
             text: i18n("Open in split view")
             icon.name: "view-split-left-right"
-            onTriggered: currentTab.split( _loader.item.model.get( _loader.item.currentIndex).path, Qt.Horizontal)
+            onTriggered: currentTab.split(_menu.path, Qt.Horizontal)
         }
 
         MenuSeparator{}
 
         MenuItem
         {
+            enabled: _menu.bookmarkIndex >= 0
             text: i18n("Remove")
             Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
-            onTriggered: placesList.removePlace( _loader.item.currentIndex)
+            onTriggered: placesList.removePlace(_menu.bookmarkIndex)
         }
     }
 }

@@ -244,7 +244,7 @@ Rectangle
                             height: ListView.view.height
                             width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
 
-                            color: checked || hovered ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.15) : Qt.lighter(Kirigami.Theme.backgroundColor)
+                            color: hovered ? Kirigami.Theme.hoverColor : (checked ? Kirigami.Theme.highlightColor : Qt.lighter(Kirigami.Theme.backgroundColor))
 
                             onClicked:
                             {

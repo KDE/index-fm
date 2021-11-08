@@ -109,6 +109,54 @@ Maui.SplitViewItem
                 id: itemMenu
             }
 
+            Component
+            {
+                id: _removeTagDialogComponent
+                Maui.Dialog
+                {
+                    property string tag
+
+                    title: i18n("Remove '%1'", tag)
+                    acceptButton.text: i18n("Accept")
+                    rejectButton.text: i18n("Cancel")
+                    page.margins: Maui.Style.space.big
+                    message: i18n("Are you sure you want to remove this tag? This operation can not be undone.")
+                    onAccepted:
+                    {
+                        FB.Tagging.removeTag(tag, false)
+                        close()
+                    }
+
+                    onRejected: close()
+                }
+            }
+
+            Maui.ContextualMenu
+            {
+                id: _tagMenu
+                property string tag
+
+                MenuItem
+                {
+                    text: i18n("Edit")
+                    icon.name: "document-edit"
+                    onTriggered:
+                    {}
+                }
+
+                MenuItem
+                {
+                    text: i18n("Remove")
+                    icon.name: "edit-delete"
+                    onTriggered:
+                    {
+                        dialogLoader.sourceComponent = _removeTagDialogComponent
+                        dialog.tag = _tagMenu.tag
+                        dialog.open()
+                    }
+                }
+            }
+
             Connections
             {
                 target: _browser.dropArea
@@ -224,9 +272,18 @@ Maui.SplitViewItem
 
             onItemRightClicked:
             {
+                const itemIndex = _browser.currentFMModel.mappedToSource(index)
+                const item = _browser.currentFMModel.get(index)
+
+                if(item.path.startsWith("tags://"))
+                {
+                    _tagMenu.tag = item.label
+                    _tagMenu.show()
+                }
+
                 if(_browser.currentFMList.pathType !== FB.FMList.TRASH_PATH && _browser.currentFMList.pathType !== FB.FMList.REMOTE_PATH)
                 {
-                    itemMenu.showFor(_browser.currentFMModel.mappedToSource(index))
+                    itemMenu.showFor(itemIndex)
                 }
             }
 
