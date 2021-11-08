@@ -682,6 +682,7 @@ Maui.ApplicationWindow
 
         Loader
         {
+            id: _homeViewComponent
             asynchronous: true
             visible: StackView.status === StackView.Active
             active: StackView.status === StackView.Active || item
