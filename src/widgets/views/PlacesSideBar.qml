@@ -277,6 +277,7 @@ Maui.AbstractSideBar
         {
             enabled: _menu.bookmarkIndex >= 0
             text: i18n("Remove")
+            icon.name: "edit-delete"
             Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
             onTriggered: placesList.removePlace(_menu.bookmarkIndex)
         }
