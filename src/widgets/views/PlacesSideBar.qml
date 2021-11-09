@@ -111,7 +111,7 @@ Maui.AbstractSideBar
                         width: parent.width
                         cellWidth: Math.floor(parent.width/3)
                         cellHeight: cellWidth
-
+                        interactive: false
                         model: Maui.BaseModel
                         {
                             list: FB.PlacesList
