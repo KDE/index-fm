@@ -100,6 +100,7 @@ Maui.SplitViewItem
                 Action
                 {
                     text: i18n("Create new")
+                    enabled:  _browser.currentFMList.status.exists
                     onTriggered: _browser.newItem()
                 }
             ]
