@@ -133,6 +133,7 @@ Maui.AbstractSideBar
                                 anchors.margins: Maui.Style.space.tiny
                                 iconSource: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
                                 iconSizeHint: Maui.Style.iconSizes.medium
+                                template.isMask: true
                                 label1.text: model.label
                                 labelsVisible: false
                                 tooltipText: model.label
