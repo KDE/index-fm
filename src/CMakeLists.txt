@@ -39,7 +39,7 @@ if (ANDROID)
     #    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
 
 elseif(UNIX)
-    target_link_libraries(${PROJECT_NAME} KF5::KIOCore)
+    target_link_libraries(${PROJECT_NAME} KF5::KIOCore KF5::KIOFileWidgets)
 endif()
 
 if(UNIX OR WIN32 OR APPLE AND NOT ANDROID)
