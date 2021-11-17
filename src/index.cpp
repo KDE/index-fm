@@ -6,7 +6,7 @@
 #include "index.h"
 
 #if defined Q_OS_LINUX && !defined Q_OS_ANDROID
-#include <KToolInvocation>
+#include <KTerminalLauncherJob>
 #endif
 
 #include <QDebug>
@@ -45,7 +45,9 @@ void Index::openTerminal(const QUrl &url)
 {
 #if defined Q_OS_LINUX && !defined Q_OS_ANDROID
 
-    KToolInvocation::invokeTerminal(QString(), {}, url.isLocalFile() ? url.toLocalFile() : FMStatic::HomePath);
+    auto job = new KTerminalLauncherJob(QString());
+    job->setWorkingDirectory(url.toLocalFile());
+    job->start();
 
 #else
     Q_UNUSED(url)
