@@ -1,6 +1,6 @@
 #include "dirinfo.h"
 
-#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
+#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 #include <KIO/DirectorySizeJob>
 #include <KIO/FileSystemFreeSpaceJob>
 #endif
@@ -10,7 +10,7 @@
 
 DirInfo::DirInfo(QObject *parent) : QObject(parent)
 {
-#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
+#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
     auto m_free =  KIO::fileSystemFreeSpace (QUrl("file:///"));
     connect(m_free, &KIO::FileSystemFreeSpaceJob::result, [this, m_free](KJob *, KIO::filesize_t size, KIO::filesize_t available)
     {
@@ -92,7 +92,7 @@ void DirInfo::getSize()
         return;
     qDebug() << "Askign for dir size" << m_url;
 
-#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
+#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
     auto m_job = KIO::directorySize(m_url);
 
     //    connect(m_job, &KIO::DirectorySizeJob::percent, [this, m_job](KJob *, unsigned long percent)

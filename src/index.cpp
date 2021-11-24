@@ -5,7 +5,7 @@
 
 #include "index.h"
 
-#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
+#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 #include <KTerminalLauncherJob>
 #endif
 
@@ -43,7 +43,7 @@ void Index::openPaths(const QStringList &paths)
 
 void Index::openTerminal(const QUrl &url)
 {
-#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
+#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 
     auto job = new KTerminalLauncherJob(QString());
     job->setWorkingDirectory(url.toLocalFile());
