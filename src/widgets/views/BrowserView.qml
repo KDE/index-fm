@@ -33,7 +33,6 @@ Maui.Page
         anchors.horizontalCenter: parent.horizontalCenter
         width: Math.min(parent.width-(Maui.Style.space.medium*2), implicitWidth)
 
-        padding: Maui.Style.space.big
         maxListHeight: _browserList.height - (Maui.Style.contentMargins*2)
 
         display: ToolButton.IconOnly
