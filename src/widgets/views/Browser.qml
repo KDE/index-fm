@@ -43,7 +43,7 @@ Maui.SplitViewItem
     Maui.SplitView
     {
         anchors.fill: parent
-        anchors.bottomMargin: selectionBar.visible && (terminalVisible) ? selectionBar.height : 0
+        anchors.bottomMargin: !selectionBar.hidden && (terminalVisible) ? selectionBar.height : 0
         spacing: 0
         orientation: Qt.Vertical
 
