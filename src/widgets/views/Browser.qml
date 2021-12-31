@@ -175,13 +175,17 @@ Maui.SplitViewItem
             {
                 anchors.fill: parent
                 propagateComposedEvents: true
-                acceptedButtons: Qt.BackButton | Qt.ForwardButton
+                acceptedButtons: Qt.BackButton | Qt.ForwardButton | Qt.LeftButton
                 //        hoverEnabled: true
                 //        onEntered: _splitView.currentIndex = control.index
                 onPressed:
                 {
                     mouse.accepted = false
                     _browser.keyPress(mouse);
+                    if((mouse.button == Qt.LeftButton) && (mouse.modifiers == Qt.NoModifier) && (selectionBar.count > 0) && (!Kirigami.Settings.isMobile))
+                    {
+                        selectionBar.clear()
+                    }
                 }
             }
 
