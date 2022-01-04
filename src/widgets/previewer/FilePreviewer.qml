@@ -29,14 +29,6 @@ Maui.Dialog
     maxHeight: 1000
     defaultButtons: false
 
-    headBar.rightContent: ToolButton
-    {
-        icon.name: "documentinfo"
-        checkable: true
-        checked: control.showInfo
-        onClicked: control.showInfo = !control.showInfo
-    }
-
     stack: ListView
     {
         id: _listView
@@ -209,6 +201,14 @@ Maui.Dialog
                 infoModel.append({key: "Icon Name", value: iteminfo.icon})
             }
         }
+    }
+
+    footBar.rightContent: ToolButton
+    {
+        icon.name: "documentinfo"
+        checkable: true
+        checked: control.showInfo
+        onClicked: control.showInfo = !control.showInfo
     }
 
     footBar.leftContent: Maui.ToolActions
