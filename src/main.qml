@@ -24,6 +24,7 @@ Maui.ApplicationWindow
     id: root
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
+    Maui.App.darkMode: appSettings.darkMode
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
@@ -74,7 +75,7 @@ Maui.ApplicationWindow
 
         property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
-
+        property bool darkMode : true
         property bool quickSidebarSection : true
         property var sidebarSections : [
             FB.FMList.BOOKMARKS_PATH,
@@ -708,13 +709,19 @@ Maui.ApplicationWindow
         }
     }
 
+//    Connections
+//    {
+//        target: Maui.App
+//        function onDarkModeChanged()
+//        {
+//            setAndroidStatusBarColor()
+//        }
+//    }
+
+
     Component.onCompleted:
     {
-        if(Maui.Handy.isAndroid)
-        {
-            Maui.Android.statusbarColor(Kirigami.Theme.backgroundColor, false)
-            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, false)
-        }
+        setAndroidStatusBarColor()
 
         const tabs = settings.lastSession
         if(settings.restoreSession && tabs.length)
@@ -725,6 +732,16 @@ Maui.ApplicationWindow
         }
 
         root.openTab(FB.FM.homePath())
+    }
+
+
+    function setAndroidStatusBarColor()
+    {
+        if(Maui.Handy.isAndroid)
+        {
+            Maui.Android.statusbarColor( Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
+        }
     }
 
     function toogleSplitView()

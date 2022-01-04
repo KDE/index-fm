@@ -223,19 +223,34 @@ Maui.SettingsDialog
             }
         }
 
-        //        Maui.SettingTemplate
-        //        {
-        //            label1.text: i18n("Overview")
-        //            label2.text: i18n("Use overview mode as default on launch")
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Overview")
+            label2.text: i18n("Use overview mode as default on launch")
 
-        //            Switch
-        //            {
-        //                Layout.fillHeight: true
-        //                checked:  appSettings.overviewStart
-        //                onToggled: appSettings.overviewStart = !appSettings.overviewStart
-        //            }
-        //        }
+            Switch
+            {
+                Layout.fillHeight: true
+                checked:  appSettings.overviewStart
+                onToggled: appSettings.overviewStart = !appSettings.overviewStart
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Dark Mode")
+            label2.text: i18n("Switch between light and dark colorscheme")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checked: appSettings.darkMode
+                onToggled:
+                {
+                     appSettings.darkMode = !appSettings.darkMode
+                    setAndroidStatusBarColor()
+                }
+            }
+        }
     }
-
-
 }
