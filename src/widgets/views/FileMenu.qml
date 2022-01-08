@@ -101,7 +101,6 @@ Maui.ContextualMenu
         }
     }
 
-
     MenuItem
     {
         id: openWithMenuItem

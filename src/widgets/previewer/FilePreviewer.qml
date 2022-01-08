@@ -131,6 +131,7 @@ Maui.Dialog
                                         Layout.fillWidth: true
                                         label1.text: model.key
                                         label2.text: model.value
+                                        label2.wrapMode: Text.Wrap
                                     }
                                 }
                             }
@@ -188,6 +189,7 @@ Maui.Dialog
             function initModel()
             {
                 infoModel.clear()
+                infoModel.append({key: "Name", value: iteminfo.name})
                 infoModel.append({key: "Type", value: iteminfo.mime})
                 infoModel.append({key: "Date", value: Qt.formatDateTime(new Date(model.date), "d MMM yyyy")})
                 infoModel.append({key: "Modified", value: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")})
@@ -203,13 +205,7 @@ Maui.Dialog
         }
     }
 
-    footBar.rightContent: ToolButton
-    {
-        icon.name: "documentinfo"
-        checkable: true
-        checked: control.showInfo
-        onClicked: control.showInfo = !control.showInfo
-    }
+    page.showTitle: false
 
     footBar.leftContent: Maui.ToolActions
     {
@@ -233,23 +229,25 @@ Maui.Dialog
         }
     }
 
-    footBar.middleContent: [
-        ToolButton
+    footBar.rightContent: Button
+    {
+        text: i18n("Open")
+        icon.name: "document-open"
+//        flat: true
+        onClicked:
         {
-            icon.name: "document-open"
-            text: i18n("Open")
-            display: Kirigami.Settings.isMobile ? ToolButton.TextUnderIcon : ToolButton.IconOnly
-            onClicked:
-            {
-                currentBrowser.openFile(control.currentUrl)
-            }
-        },
+            currentBrowser.openFile(control.currentUrl)
+        }
+    }
+
+    headBar.rightContent: [
 
         ToolButton
         {
+            Layout.alignment: Qt.AlignCenter
             icon.name: "love"
             text: i18n("Fav")
-            display: Kirigami.Settings.isMobile ? ToolButton.TextUnderIcon : ToolButton.IconOnly
+            display: ToolButton.IconOnly
             checkable: true
             checked: control.isFav
             onClicked:
@@ -261,15 +259,25 @@ Maui.Dialog
 
         ToolButton
         {
+            Layout.alignment: Qt.AlignCenter
             visible: !isDir
             icon.name: "document-share"
-            display: Kirigami.Settings.isMobile ? ToolButton.TextUnderIcon : ToolButton.IconOnly
+            display: ToolButton.IconOnly
             text: i18n("Share")
             onClicked:
             {
                 Maui.Platform.shareFiles([control.currentUrl])
             }
-        }
+        },
+
+        ToolButton
+            {
+                icon.name: "documentinfo"
+                checkable: true
+                checked: control.showInfo
+                onClicked: control.showInfo = !control.showInfo
+            }
+
     ]
 
 }
