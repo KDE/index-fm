@@ -55,12 +55,13 @@ Maui.Page
         }
     }
 
-    headBar.middleContent: Maui.TextField
+    headBar.middleContent: Maui.SearchField
     {
         id: _searchField
         Layout.fillWidth: true
         Layout.minimumWidth: 100
         Layout.maximumWidth: 500
+        Layout.alignment: Qt.AlignCenter
         placeholderText: i18n("Search for files")
         onAccepted:
         {
