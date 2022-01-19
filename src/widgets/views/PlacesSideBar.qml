@@ -105,7 +105,10 @@ Maui.AbstractSideBar
                     GridView
                     {
                         id: _quickSection
-                        implicitHeight: contentHeight + Maui.Style.space.medium * 1.5
+                        implicitHeight: contentHeight +  topMargin+  bottomMargin
+                        leftMargin: 0
+                        rightMargin: 0
+//                        padding: 0
                         currentIndex : _quickPacesList.indexOfPath(currentBrowser.currentPath)
                         width: parent.width
                         cellWidth: Math.floor(parent.width/3)
