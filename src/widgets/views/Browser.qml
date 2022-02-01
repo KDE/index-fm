@@ -40,6 +40,61 @@ Maui.SplitViewItem
         }
     }
 
+    FileMenu
+    {
+        id: itemMenu
+    }
+
+    Maui.ContextualMenu
+    {
+        id: _tagMenu
+        property string tag
+
+        MenuItem
+        {
+            text: i18n("Edit")
+            icon.name: "document-edit"
+            onTriggered:
+            {}
+        }
+
+        MenuItem
+        {
+            text: i18n("Remove")
+            icon.name: "edit-delete"
+            onTriggered:
+            {
+                dialogLoader.sourceComponent = _removeTagDialogComponent
+                dialog.tag = _tagMenu.tag
+                dialog.open()
+            }
+        }
+    }
+
+    Component
+    {
+        id: _removeTagDialogComponent
+        Maui.Dialog
+        {
+            property string tag
+
+            title: i18n("Remove '%1'", tag)
+            acceptButton.text: i18n("Accept")
+            rejectButton.text: i18n("Cancel")
+            page.margins: Maui.Style.space.big
+            message: i18n("Are you sure you want to remove this tag? This operation can not be undone.")
+            onAccepted:
+            {
+                FB.Tagging.removeTag(tag, false)
+                close()
+            }
+
+            onRejected: close()
+        }
+    }
+
+
+
     Maui.SplitView
     {
         anchors.fill: parent
@@ -105,58 +160,6 @@ Maui.SplitViewItem
                 }
             ]
 
-            FileMenu
-            {
-                id: itemMenu
-            }
-
-            Component
-            {
-                id: _removeTagDialogComponent
-                Maui.Dialog
-                {
-                    property string tag
-
-                    title: i18n("Remove '%1'", tag)
-                    acceptButton.text: i18n("Accept")
-                    rejectButton.text: i18n("Cancel")
-                    page.margins: Maui.Style.space.big
-                    message: i18n("Are you sure you want to remove this tag? This operation can not be undone.")
-                    onAccepted:
-                    {
-                        FB.Tagging.removeTag(tag, false)
-                        close()
-                    }
-
-                    onRejected: close()
-                }
-            }
-
-            Maui.ContextualMenu
-            {
-                id: _tagMenu
-                property string tag
-
-                MenuItem
-                {
-                    text: i18n("Edit")
-                    icon.name: "document-edit"
-                    onTriggered:
-                    {}
-                }
-
-                MenuItem
-                {
-                    text: i18n("Remove")
-                    icon.name: "edit-delete"
-                    onTriggered:
-                    {
-                        dialogLoader.sourceComponent = _removeTagDialogComponent
-                        dialog.tag = _tagMenu.tag
-                        dialog.open()
-                    }
-                }
-            }
 
             Connections
             {

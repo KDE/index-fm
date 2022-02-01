@@ -46,6 +46,8 @@ ColumnLayout
         {
             id: _recentGrid
             implicitHeight: visible ? 180 : 0
+            boundsBehavior: ListView.StopAtBounds
+            spacing: Maui.Style.space.medium
 
             visible: _dropDown.checked && count > 0
             orientation: ListView.Horizontal
@@ -76,28 +78,22 @@ ColumnLayout
                 }
             }
 
-            delegate: Item
+            delegate:  Maui.GridBrowserDelegate
             {
                 width: height
                 height: ListView.view.height
+                label1.text: model.label
+                iconSource: model.icon
+                imageSource: model.thumbnail
+                template.fillMode: Image.PreserveAspectFit
+                iconSizeHint: height * 0.5
+                checkable: selectionMode
+                isCurrentItem: parent.ListView.isCurrentItem
 
-                Maui.GridBrowserDelegate
+                onClicked:
                 {
-                    anchors.fill: parent
-                    anchors.margins: Maui.Style.space.medium
-                    label1.text: model.label
-                    iconSource: model.icon
-                    imageSource: model.thumbnail
-                    template.fillMode: Image.PreserveAspectFit
-                    iconSizeHint: height * 0.5
-                    checkable: selectionMode
-                    isCurrentItem: parent.ListView.isCurrentItem
-
-                    onClicked:
-                    {
-                        _recentGrid.currentIndex = index
-                        openPreview(_recentDownloadsModel, index)
-                    }
+                    _recentGrid.currentIndex = index
+                    openPreview(_recentDownloadsModel, index)
                 }
             }
         }
@@ -114,6 +110,8 @@ ColumnLayout
             implicitHeight: visible ? 80 : 0
             visible: _dropDown.checked && count > 0
             orientation: ListView.Horizontal
+            boundsBehavior: ListView.StopAtBounds
+            spacing: Maui.Style.space.medium
 
             footer: Item
             {
@@ -141,25 +139,19 @@ ColumnLayout
                 }
             }
 
-            delegate: Item
+            delegate: AudioCard
             {
                 width: 300
                 height: ListView.view.height
-
-                AudioCard
+                iconSource: model.icon
+                iconSizeHint: Maui.Style.iconSizes.big
+                imageSource: model.thumbnail
+                player.source: model.url
+                isCurrentItem: parent.ListView.isCurrentItem
+                onClicked:
                 {
-                    anchors.fill: parent
-                    anchors.margins: Maui.Style.space.medium
-                    iconSource: model.icon
-                    iconSizeHint: Maui.Style.iconSizes.big
-                    imageSource: model.thumbnail
-                    player.source: model.url
-                    isCurrentItem: parent.ListView.isCurrentItem
-                    onClicked:
-                    {
-                        _recentGridAudio.currentIndex = index
-                        openPreview(_recentMusicModel, index)
-                    }
+                    _recentGridAudio.currentIndex = index
+                    openPreview(_recentMusicModel, index)
                 }
             }
         }
@@ -175,7 +167,8 @@ ColumnLayout
             id: _recentGridPictures
             orientation: ListView.Horizontal
             implicitHeight: visible ? 180 : 0
-
+            boundsBehavior: ListView.StopAtBounds
+            spacing: Maui.Style.space.medium
             visible: _dropDown.checked && count > 0
 
             footer: Item
@@ -205,23 +198,17 @@ ColumnLayout
                 }
             }
 
-            delegate: Item
+            delegate: ImageCard
             {
                 width: height
                 height: ListView.view.height
-
-                ImageCard
+                imageSource: model.thumbnail
+                //                checkable: selectionMode
+                isCurrentItem: parent.ListView.isCurrentItem
+                onClicked:
                 {
-                    anchors.fill: parent
-                    anchors.margins: Maui.Style.space.medium
-                    imageSource: model.thumbnail
-                    //                checkable: selectionMode
-                    isCurrentItem: parent.ListView.isCurrentItem
-                    onClicked:
-                    {
-                        _recentGridPictures.currentIndex = index
-                        openPreview(_recentPicturesModel, index)
-                    }
+                    _recentGridPictures.currentIndex = index
+                    openPreview(_recentPicturesModel, index)
                 }
             }
         }
@@ -238,6 +225,8 @@ ColumnLayout
             orientation: ListView.Horizontal
             implicitHeight: visible ? 180 : 0
             visible: _dropDown.checked && count > 0
+            boundsBehavior: ListView.StopAtBounds
+            spacing: Maui.Style.space.medium
 
             footer: Item
             {
@@ -255,7 +244,6 @@ ColumnLayout
                 }
             }
 
-
             model: Maui.BaseModel
             {
                 id: _recentCameraModel
@@ -266,23 +254,16 @@ ColumnLayout
                 }
             }
 
-            delegate: Item
+            delegate: ImageCard
             {
-                property bool isCurrentItem : ListView.isCurrentItem
-                width: 140
-                height: width
-                anchors.verticalCenter: parent.verticalCenter
+                width: height
+                height: ListView.view.height
 
-                ImageCard
+                imageSource: model.thumbnail
+                onClicked:
                 {
-                    anchors.fill: parent
-                    anchors.margins: Maui.Style.space.medium
-                    imageSource: model.thumbnail
-                    onClicked:
-                    {
-                        _recentCamera.currentIndex = index
-                        openPreview(_recentCameraModel, index)
-                    }
+                    _recentCamera.currentIndex = index
+                    openPreview(_recentCameraModel, index)
                 }
             }
         }
@@ -298,6 +279,8 @@ ColumnLayout
             id: _recentScreenshots
             orientation: ListView.Horizontal
             implicitHeight: visible ? 180 : 0
+            boundsBehavior: ListView.StopAtBounds
+            spacing: Maui.Style.space.medium
 
             visible: _dropDown.checked && count > 0
 
@@ -327,23 +310,15 @@ ColumnLayout
                 }
             }
 
-            delegate: Item
+            delegate: ImageCard
             {
-                property bool isCurrentItem : ListView.isCurrentItem
-                width: 140
-                height: width
-                anchors.verticalCenter: parent.verticalCenter
-
-                ImageCard
+                width: height
+                height: ListView.view.height
+                imageSource: model.thumbnail
+                onClicked:
                 {
-                    anchors.fill: parent
-                    anchors.margins: Maui.Style.space.medium
-                    imageSource: model.thumbnail
-                    onClicked:
-                    {
-                        _recentScreenshots.currentIndex = index
-                        openPreview(_recentScreenshotsModel, index)
-                    }
+                    _recentScreenshots.currentIndex = index
+                    openPreview(_recentScreenshotsModel, index)
                 }
             }
         }

@@ -37,9 +37,9 @@ Maui.Page
 
         display: ToolButton.IconOnly
 
-        onCountChanged:
+        onVisibleChanged:
         {
-            if(_selectionBar.count < 1)
+            if(!visible)
             {
                 root.selectionMode = false
             }

@@ -687,7 +687,6 @@ Maui.ApplicationWindow
             asynchronous: true
             visible: StackView.status === StackView.Active
             active: StackView.status === StackView.Active || item
-            anchors.fill: parent
 
             sourceComponent: HomeView {}
 

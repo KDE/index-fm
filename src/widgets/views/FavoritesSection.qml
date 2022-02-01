@@ -38,7 +38,8 @@ ColumnLayout
         id: _favsGrid
         Layout.fillWidth: true
         visible: _dropDown.checked
-
+        boundsBehavior: ListView.StopAtBounds
+        spacing: Maui.Style.space.medium
         implicitHeight: 180
         orientation: ListView.Horizontal
 
@@ -51,28 +52,23 @@ ColumnLayout
             }
         }
 
-        delegate: Item
+        delegate: Maui.GridBrowserDelegate
         {
             width: height
             height: ListView.view.height
+            label1.text: model.label
+            iconSource: model.icon
+            imageSource: model.thumbnail
+            template.fillMode: Image.PreserveAspectFit
+            template.labelSizeHint: 32
+            iconSizeHint: height * 0.5
+            checkable: selectionMode
+            isCurrentItem : ListView.isCurrentItem
 
-            Maui.GridBrowserDelegate
+            onClicked:
             {
-                anchors.fill: parent
-                anchors.margins: Maui.Style.space.medium
-                label1.text: model.label
-                iconSource: model.icon
-                imageSource: model.thumbnail
-                template.fillMode: Image.PreserveAspectFit
-                iconSizeHint: height * 0.5
-                checkable: selectionMode
-                isCurrentItem : parent.ListView.isCurrentItem
-
-                onClicked:
-                {
-                    _favsGrid.currentIndex = index
-                    openPreview(listModel, currentIndex)
-                }
+                _favsGrid.currentIndex = index
+                openPreview(listModel, currentIndex)
             }
         }
     }
