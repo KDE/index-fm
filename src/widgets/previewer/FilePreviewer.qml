@@ -127,7 +127,7 @@ Maui.Dialog
                                     model: infoModel
                                     delegate:  Maui.SettingTemplate
                                     {
-                                        visible: model.value && String(model.value).length > 0
+                                        visible:  model.value ? true : false
                                         Layout.fillWidth: true
                                         label1.text: model.key
                                         label2.text: model.value
@@ -189,7 +189,7 @@ Maui.Dialog
             function initModel()
             {
                 infoModel.clear()
-                infoModel.append({key: "Name", value: iteminfo.name})
+                infoModel.append({key: "Name", value: iteminfo.label})
                 infoModel.append({key: "Type", value: iteminfo.mime})
                 infoModel.append({key: "Date", value: Qt.formatDateTime(new Date(model.date), "d MMM yyyy")})
                 infoModel.append({key: "Modified", value: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")})
@@ -233,51 +233,18 @@ Maui.Dialog
     {
         text: i18n("Open")
         icon.name: "document-open"
-//        flat: true
+        //        flat: true
         onClicked:
         {
             currentBrowser.openFile(control.currentUrl)
         }
     }
 
-    headBar.rightContent: [
-
-        ToolButton
-        {
-            Layout.alignment: Qt.AlignCenter
-            icon.name: "love"
-            text: i18n("Fav")
-            display: ToolButton.IconOnly
-            checkable: true
-            checked: control.isFav
-            onClicked:
-            {
-                FB.Tagging.toggleFav(control.currentUrl)
-                control.isFav = !control.isFav
-            }
-        },
-
-        ToolButton
-        {
-            Layout.alignment: Qt.AlignCenter
-            visible: !isDir
-            icon.name: "document-share"
-            display: ToolButton.IconOnly
-            text: i18n("Share")
-            onClicked:
-            {
-                Maui.Platform.shareFiles([control.currentUrl])
-            }
-        },
-
-        ToolButton
-            {
-                icon.name: "documentinfo"
-                checkable: true
-                checked: control.showInfo
-                onClicked: control.showInfo = !control.showInfo
-            }
-
-    ]
-
+    headBar.rightContent: ToolButton
+    {
+        icon.name: "documentinfo"
+        checkable: true
+        checked: control.showInfo
+        onClicked: control.showInfo = !control.showInfo
+    }
 }

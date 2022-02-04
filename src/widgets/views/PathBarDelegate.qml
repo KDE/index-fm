@@ -58,6 +58,7 @@ Rectangle
         verticalAlignment:  Qt.AlignVCenter
         elide: Qt.ElideRight
         wrapMode: Text.NoWrap
+        font.bold: control.checked
         color: control.checked ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
     }
 
