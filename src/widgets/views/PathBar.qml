@@ -191,7 +191,7 @@ Rectangle
                     }
                 }
 
-                ScrollView
+                Maui.ScrollView
                 {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
