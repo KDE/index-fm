@@ -38,6 +38,11 @@ Maui.ContextualMenu
       */
     property bool isFav: false
 
+    title: control.item.label
+    subtitle: control.item.mime
+    titleImageSource: control.item.thumbnail
+    titleIconSource: control.item.icon
+
     Maui.MenuItemActionRow
     {
         Action
