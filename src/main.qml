@@ -502,7 +502,7 @@ Maui.ApplicationWindow
                     ToolTip.delay: 1000
                     ToolTip.timeout: 5000
                     ToolTip.visible: hovered
-                    ToolTip.text: i18n("Toogle SideBar")
+                    ToolTip.text: i18n("Toggle sidebar")
                 }
             }
 
