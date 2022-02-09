@@ -708,19 +708,17 @@ Maui.ApplicationWindow
         }
     }
 
-//    Connections
-//    {
-//        target: Maui.App
-//        function onDarkModeChanged()
-//        {
-//            setAndroidStatusBarColor()
-//        }
-//    }
-
-
     Component.onCompleted:
     {
         setAndroidStatusBarColor()
+
+        if(settings.overviewStart)
+        {
+            root.openTab(FB.FM.homePath())
+
+            _stackView.push(_homeViewComponent)
+            return
+        }
 
         const tabs = settings.lastSession
         if(settings.restoreSession && tabs.length)

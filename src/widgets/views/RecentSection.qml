@@ -87,6 +87,7 @@ ColumnLayout
                 imageSource: model.thumbnail
                 template.fillMode: Image.PreserveAspectFit
                 iconSizeHint: height * 0.5
+                template.labelSizeHint: 32
                 checkable: selectionMode
                 isCurrentItem: parent.ListView.isCurrentItem
 
