@@ -24,7 +24,6 @@ Maui.ApplicationWindow
     id: root
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
-    Maui.App.darkMode: appSettings.darkMode
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
@@ -75,7 +74,6 @@ Maui.ApplicationWindow
 
         property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
-        property bool darkMode : true
         property bool quickSidebarSection : true
         property var sidebarSections : [
             FB.FMList.BOOKMARKS_PATH,

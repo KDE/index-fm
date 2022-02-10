@@ -238,16 +238,17 @@ Maui.SettingsDialog
 
         Maui.SettingTemplate
         {
+            visible: Maui.App.bundledStyle
             label1.text: i18n("Dark Mode")
             label2.text: i18n("Switch between light and dark colorscheme")
 
             Switch
             {
                 Layout.fillHeight: true
-                checked: appSettings.darkMode
+                checked: Maui.App.darkMode
                 onToggled:
                 {
-                     appSettings.darkMode = !appSettings.darkMode
+                    Maui.App.darkMode = !Maui.App.darkMode
                     setAndroidStatusBarColor()
                 }
             }
