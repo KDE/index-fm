@@ -4,27 +4,29 @@ import QtQuick.Controls 2.14
 import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.0 as Maui
 
-Rectangle
+Control
 {
     id: control
-    implicitWidth: _label.implicitWidth + Maui.Style.space.big
-
+    implicitWidth: _label.implicitWidth + rightPadding + leftPadding
+    rightPadding: Maui.Style.space.medium
+    leftPadding: rightPadding
     /**
       *
       */
-    property alias hovered: _mouseArea.containsMouse
+    //    property alias hovered: _mouseArea.containsMouse
 
     /**
       *
       */
     property bool checked :  ListView.isCurrentItem
+    property bool lastOne : false
+    property bool firstOne : false
 
     ToolTip.delay: 1000
     ToolTip.timeout: 5000
     ToolTip.visible: _mouseArea.containsMouse || _mouseArea.containsPress
     ToolTip.text: model.path
 
-    color: control.checked || hovered ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
 
     /**
       *
@@ -46,26 +48,22 @@ Rectangle
       */
     signal pressAndHold()
 
-
-    Label
+    background: Kirigami.ShadowedRectangle
     {
-        id: _label
-        text: model.label
-        anchors.fill: parent
-        rightPadding: Maui.Style.space.medium
-        leftPadding: rightPadding
-        horizontalAlignment: Qt.AlignHCenter
-        verticalAlignment:  Qt.AlignVCenter
-        elide: Qt.ElideRight
-        wrapMode: Text.NoWrap
-        font.bold: control.checked
-        color: control.checked ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
+        color: control.checked ? Kirigami.Theme.highlightColor : (control.hovered ? Kirigami.Theme.hoverColor : Qt.lighter(Kirigami.Theme.backgroundColor))
+
+        corners
+        {
+            topLeftRadius: control.firstOne ? Maui.Style.radiusV : 0
+            topRightRadius: control.lastOne ? Maui.Style.radiusV : 0
+            bottomLeftRadius: control.firstOne ? Maui.Style.radiusV : 0
+            bottomRightRadius: control.lastOne ? Maui.Style.radiusV : 0
+        }
     }
 
-    MouseArea
+    contentItem: MouseArea
     {
         id: _mouseArea
-        anchors.fill: parent
         hoverEnabled: true
         acceptedButtons:  Qt.RightButton | Qt.LeftButton
         onClicked:
@@ -78,6 +76,23 @@ Rectangle
 
         onDoubleClicked: control.doubleClicked()
         onPressAndHold : control.pressAndHold()
+
+
+        Label
+        {
+            id: _label
+            text: model.label
+            anchors.fill: parent
+
+            horizontalAlignment: Qt.AlignHCenter
+            verticalAlignment:  Qt.AlignVCenter
+            elide: Qt.ElideRight
+            wrapMode: Text.NoWrap
+            font.bold: control.checked
+            color: control.checked ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
+        }
     }
+
+
 
 }

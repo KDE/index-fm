@@ -162,6 +162,7 @@ Rectangle
 
                 AbstractButton
                 {
+                    visible: !appSettings.actionBar
                     Layout.fillHeight: true
                     Layout.preferredWidth: height * 1.4
                     hoverEnabled: Kirigami.Settings.isMobile
@@ -240,11 +241,10 @@ Rectangle
                         delegate: PathBarDelegate
                         {
                             id: delegate
-
+                            lastOne: index === ListView.view.count-1
+                            firstOne: index === 0 && appSettings.actionBar
                             height: ListView.view.height
                             width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
-
-                            color: hovered ? Kirigami.Theme.hoverColor : (checked ? Kirigami.Theme.highlightColor : Qt.lighter(Kirigami.Theme.backgroundColor))
 
                             onClicked:
                             {
@@ -260,46 +260,6 @@ Rectangle
                             {
                                 control.placeRightClicked(model.path)
                             }
-                        }
-
-                        MouseArea
-                        {
-                            anchors.fill: parent
-                            onClicked: showEntryBar()
-                            z: -1
-                        }
-                    }
-                }
-
-                AbstractButton
-                {
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: height * 1.4
-                    onClicked: control.menuClicked()
-                    hoverEnabled: Kirigami.Settings.isMobile
-
-                    contentItem: Item
-                    {
-                        Kirigami.Icon
-                        {
-                            anchors.centerIn: parent
-                            source: "overflow-menu"
-                            color: browserMenu.visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                            width: Maui.Style.iconSizes.small
-                            height: width
-                        }
-                    }
-
-                    background: Kirigami.ShadowedRectangle
-                    {
-                        color: browserMenu.visible ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.15) : Qt.lighter(Kirigami.Theme.backgroundColor)
-
-                        corners
-                        {
-                            topLeftRadius: 0
-                            topRightRadius: Maui.Style.radiusV
-                            bottomLeftRadius: 0
-                            bottomRightRadius: Maui.Style.radiusV
                         }
                     }
                 }

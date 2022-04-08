@@ -297,7 +297,7 @@ Maui.SplitViewItem
 
             onRightClicked:
             {
-                pathBar.openMenu()
+                _mainMenuLoader.item.open()
             }
         }
 

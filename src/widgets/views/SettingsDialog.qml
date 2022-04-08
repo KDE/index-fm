@@ -39,6 +39,20 @@ Maui.SettingsDialog
                 onToggled: settings.restoreSession = !settings.restoreSession
             }
         }
+
+        Maui.SettingTemplate
+        {
+            label1.text:  i18n("Action Bar")
+            label2.text: i18n("Extra toolbar with quick actions.")
+
+            Switch
+            {
+                Layout.fillHeight: true
+                checkable: true
+                checked:  settings.actionBar
+                onToggled: settings.actionBar = !settings.actionBar
+            }
+        }
     }
 
     Maui.SettingsSection
