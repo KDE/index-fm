@@ -57,92 +57,6 @@ Maui.SettingsDialog
 
     Maui.SettingsSection
     {
-        title: i18n("Places")
-        description: i18n("Toggle sidebar sections.")
-        lastOne: true
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Quick places")
-            label2.text: i18n("Access to standard locations.")
-
-            Switch
-            {
-                checkable: true
-                checked: appSettings.quickSidebarSection
-                onToggled: appSettings.quickSidebarSection = !appSettings.quickSidebarSection
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Bookmarks")
-            label2.text: i18n("Access to standard locations.")
-
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.BOOKMARKS_PATH)
-                onToggled:
-                {
-                    toggleSection(FB.FMList.BOOKMARKS_PATH)
-                }
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Remote")
-            label2.text: i18n("Access to network locations.")
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.REMOTE_PATH)
-                onToggled:
-                {
-                    toggleSection(FB.FMList.REMOTE_PATH)
-                }
-            }
-
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Removable")
-            label2.text: i18n("Access to USB sticks and SD Cards.")
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.REMOVABLE_PATH)
-                onToggled:
-                {
-                    toggleSection(FB.FMList.REMOVABLE_PATH)
-                }
-            }
-        }
-
-        Maui.SettingTemplate
-        {
-            label1.text: i18n("Devices")
-            label2.text: i18n("Access drives.")
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.DRIVES_PATH)
-                onToggled:
-                {
-                    toggleSection(FB.FMList.DRIVES_PATH)
-                }
-            }
-        }
-    }
-
-    Maui.SettingsSection
-    {
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
         lastOne: true
@@ -264,6 +178,93 @@ Maui.SettingsDialog
                 {
                     Maui.App.darkMode = !Maui.App.darkMode
                     setAndroidStatusBarColor()
+                }
+            }
+        }
+    }
+
+
+    Maui.SettingsSection
+    {
+        title: i18n("Places")
+        description: i18n("Toggle sidebar sections.")
+        lastOne: true
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Quick places")
+            label2.text: i18n("Access to standard locations.")
+
+            Switch
+            {
+                checkable: true
+                checked: appSettings.quickSidebarSection
+                onToggled: appSettings.quickSidebarSection = !appSettings.quickSidebarSection
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Bookmarks")
+            label2.text: i18n("Access to standard locations.")
+
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.BOOKMARKS_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.BOOKMARKS_PATH)
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Remote")
+            label2.text: i18n("Access to network locations.")
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.REMOTE_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.REMOTE_PATH)
+                }
+            }
+
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Removable")
+            label2.text: i18n("Access to USB sticks and SD Cards.")
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.REMOVABLE_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.REMOVABLE_PATH)
+                }
+            }
+        }
+
+        Maui.SettingTemplate
+        {
+            label1.text: i18n("Devices")
+            label2.text: i18n("Access drives.")
+
+            Switch
+            {
+                checkable: true
+                checked: placesSidebar.list.groups.includes(FB.FMList.DRIVES_PATH)
+                onToggled:
+                {
+                    toggleSection(FB.FMList.DRIVES_PATH)
                 }
             }
         }

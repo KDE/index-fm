@@ -67,7 +67,7 @@ Maui.ApplicationWindow
         property bool previewFiles : Kirigami.Settings.isMobile
         property bool restoreSession:  false
         property bool overviewStart : false
-        property bool actionBar: true
+        property bool actionBar: false
 
         property int viewType : FB.FMList.LIST_VIEW
         property int listSize : 0 // s-m-x-xl
@@ -393,6 +393,7 @@ Maui.ApplicationWindow
 
                 ToolButton
                 {
+                    visible: !Maui.Handy.isAndroid
                     enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
                     icon.name: "dialog-scripts"
                     checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
