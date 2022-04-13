@@ -33,5 +33,6 @@
         <file>widgets/views/home/ImageCard.qml</file>
         <file>widgets/views/home/AudioCard.qml</file>
         <file>widgets/previewer/FileProperties.qml</file>
+        <file>widgets/views/ActionBar.qml</file>
     </qresource>
 </RCC>
