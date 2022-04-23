@@ -6,6 +6,7 @@
 
 [Desktop Entry]
 Name=Index
+Name[az]=İndeks
 Name[ca]=Índex
 Name[ca@valencia]=Índex
 Name[cs]=Rejstřík
@@ -36,6 +37,7 @@ Name[x-test]=xxIndexxx
 Name[zh_CN]=Index
 Name[zh_TW]=索引
 Comment=File manager
+Comment[az]=Fayl meneceri
 Comment[ca]=Gestor de fitxers
 Comment[ca@valencia]=Gestor de fitxers
 Comment[cs]=Správce souborů
@@ -71,6 +73,7 @@ Terminal=false
 Type=Application
 Categories=Qt;KDE;System;FileTools;FileManager;
 GenericName=File Manager
+GenericName[az]=Fayl meneceri
 GenericName[ca]=Gestor de fitxers
 GenericName[ca@valencia]=Gestor de fitxers
 GenericName[cs]=Správce souborů
