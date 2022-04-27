@@ -10,7 +10,7 @@ Item
     {
         anchors.fill: parent
         asynchronous: true
-        sourceComponent: iteminfo.mime === "image/gif" ? _animatedImgComponent : _imgComponent
+        sourceComponent: iteminfo.mime === "image/gif" || iteminfo.mime === "image/avif" ? _animatedImgComponent : _imgComponent
 
         Component
         {
