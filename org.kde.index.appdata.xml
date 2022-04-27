@@ -30,6 +30,7 @@
   <name xml:lang="sk">Index</name>
   <name xml:lang="sl">Indeks</name>
   <name xml:lang="sv">Index</name>
+  <name xml:lang="tr">İndeks</name>
   <name xml:lang="uk">Index</name>
   <name xml:lang="x-test">xxIndexxx</name>
   <name xml:lang="zh-CN">Index</name>
@@ -59,6 +60,7 @@
   <summary xml:lang="sk">Spravovať vaše súbory</summary>
   <summary xml:lang="sl">Upravljanje vaših datotek</summary>
   <summary xml:lang="sv">Hantera dina filer</summary>
+  <summary xml:lang="tr">Dosyalarınızı yönetin</summary>
   <summary xml:lang="uk">Керування вашими файлами</summary>
   <summary xml:lang="x-test">xxManage your filesxx</summary>
   <summary xml:lang="zh-CN">管理您的文件</summary>
@@ -89,6 +91,7 @@
     <p xml:lang="sk">Index vám umožní prechádzať váš počítač a prehliadať multimediálne súbory.</p>
     <p xml:lang="sl">Kazalo omogoča krmarjenje po računalniku in predogled večpredstavnostnih datotek.</p>
     <p xml:lang="sv">Index låter dig navigera på datorn och förhandsgranska multimediafiler.</p>
+    <p xml:lang="tr">İndeks, bilgisayarınızda dolaşmanıza ve çoklu ortam dosyalarını önizlemenize izin verir.</p>
     <p xml:lang="uk">За допомогою Index ви зможете здійснювати навігацію файловою системою вашого комп'ютера і попереднього переглядати файли мультимедійних даних.</p>
     <p xml:lang="x-test">xxIndex allows you to navigate your computer and preview multimedia files.xx</p>
     <p xml:lang="zh-CN">Index 让您可以浏览计算机中的内容，并预览多媒体文件。</p>
@@ -125,6 +128,7 @@
       <caption xml:lang="sk">Správca súborov Index</caption>
       <caption xml:lang="sl">Upravljalnik indeksa datotek</caption>
       <caption xml:lang="sv">Index filhanterare</caption>
+      <caption xml:lang="tr">İndeks dosya yöneticisi</caption>
       <caption xml:lang="uk">Програма для керування файлами Index</caption>
       <caption xml:lang="x-test">xxIndex file managerxx</caption>
       <caption xml:lang="zh-CN">Index 文件管理器</caption>
