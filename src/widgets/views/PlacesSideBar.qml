@@ -170,6 +170,11 @@ Maui.AbstractSideBar
                 list: placesList
             }
 
+            Component.onCompleted:
+            {
+                _listBrowser.flickable.positionViewAtBeginning()
+            }
+
             delegate: Maui.ListDelegate
             {
                 isCurrentItem: ListView.isCurrentItem && _stackView.depth === 1
@@ -229,7 +234,6 @@ Maui.AbstractSideBar
             {
                 width: control.width
                 label: section
-                labelTxt.font.pointSize: Maui.Style.fontSizes.big
                 isSection: true
                 height: Maui.Style.toolBarHeightAlt
             }
