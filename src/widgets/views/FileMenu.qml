@@ -39,7 +39,7 @@ Maui.ContextualMenu
     property bool isFav: false
 
     title: control.item.label
-    subtitle: control.item.mime
+    subtitle: control.item.mime ? (control.item.mime === "inode/directory" ? (control.item.count ? control.item.count + i18n(" items") : "") : Maui.Handy.formatSize(control.item.size)) : ""
     titleImageSource: control.item.thumbnail
     titleIconSource: control.item.icon
 
