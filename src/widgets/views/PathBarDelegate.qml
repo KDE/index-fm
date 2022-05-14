@@ -8,7 +8,7 @@ Control
 {
     id: control
     implicitWidth: _label.implicitWidth + rightPadding + leftPadding
-    rightPadding: Maui.Style.space.medium
+    rightPadding: Maui.Style.space.big
     leftPadding: rightPadding
     /**
       *
