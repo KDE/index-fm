@@ -24,7 +24,8 @@ Maui.ApplicationWindow
     id: root
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
-Maui.Style.accentColor: Maui.App.darkMode ? "#616ff5" : "#4d4f62"
+//    Maui.Style.accentColor: Maui.App.darkMode ? "#616ff5" : "#4d4f62"
+
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
     property alias currentTabIndex : _browserView.currentTabIndex
@@ -353,7 +354,7 @@ Maui.Style.accentColor: Maui.App.darkMode ? "#616ff5" : "#4d4f62"
                     }
 
                     MenuSeparator {                        visible: !settings.actionBar
-}
+                    }
 
                     Maui.LabelDelegate
                     {

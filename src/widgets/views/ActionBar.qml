@@ -22,7 +22,6 @@ Maui.ToolBar
             {
                 icon.name: "go-previous"
                 onTriggered : currentBrowser.goBack()
-
             }
 
             Action
