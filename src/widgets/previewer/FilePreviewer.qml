@@ -139,6 +139,8 @@ Maui.Dialog
                             FileProperties
                             {
                                 Layout.fillWidth: true
+                                      Layout.maximumWidth: 600
+                                      Layout.alignment: Qt.AlignCenter
                                 url: control.currentUrl
                             }
                         }

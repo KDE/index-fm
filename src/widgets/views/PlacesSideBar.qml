@@ -232,10 +232,10 @@ Maui.AbstractSideBar
             section.criteria: ViewSection.FullString
             section.delegate: Maui.LabelDelegate
             {
-                width: control.width
+                width: ListView.view.width
                 label: section
                 isSection: true
-                height: Maui.Style.toolBarHeightAlt
+//                height: Maui.Style.toolBarHeightAlt
             }
         }
 

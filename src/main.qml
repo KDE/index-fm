@@ -328,7 +328,6 @@ Maui.ApplicationWindow
 
                     Maui.MenuItemActionRow
                     {
-                        visible: !settings.actionBar
                         Action
                         {
                             icon.name: "go-next"
@@ -351,9 +350,6 @@ Maui.ApplicationWindow
                             text: i18n("New")
                             onTriggered: currentBrowser.newItem()
                         }
-                    }
-
-                    MenuSeparator {                        visible: !settings.actionBar
                     }
 
                     Maui.LabelDelegate
@@ -380,8 +376,6 @@ Maui.ApplicationWindow
                         onTriggered: currentBrowser.selectAll()
                     }
 
-                    MenuSeparator{}
-
                     Maui.LabelDelegate
                     {
                         width: parent.width
@@ -391,8 +385,6 @@ Maui.ApplicationWindow
 
                     Maui.MenuItemActionRow
                     {
-                        visible: !settings.actionBar
-
                         Action
                         {
                             icon.name: "view-hidden"
@@ -485,10 +477,6 @@ Maui.ApplicationWindow
                             settings.viewType = FB.FMList.ICON_VIEW
                         }
                     }
-
-                    MenuSeparator {}
-
-
 
                     Maui.LabelDelegate
                     {
@@ -676,7 +664,6 @@ Maui.ApplicationWindow
                         id: _pathBarmenu
                         property url path
 
-
                         MenuItem
                         {
                             text: i18n("Bookmark")
@@ -702,7 +689,6 @@ Maui.ApplicationWindow
                     }
                 }
             }
-
         }
 
         Loader

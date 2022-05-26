@@ -38,8 +38,6 @@ ColumnLayout
         user: Index.Permission.OTHER
     }
 
-
-
     Maui.SettingsSection
     {
         Layout.fillWidth: true
