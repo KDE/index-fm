@@ -173,10 +173,10 @@ Maui.SettingsDialog
             Switch
             {
                 Layout.fillHeight: true
-                checked: Maui.App.darkMode
+                checked: appSettings.darkMode
                 onToggled:
                 {
-                    Maui.App.darkMode = !Maui.App.darkMode
+                   appSettings.darkMode = !appSettings.darkMode
                     setAndroidStatusBarColor()
                 }
             }

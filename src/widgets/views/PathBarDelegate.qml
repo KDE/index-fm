@@ -4,7 +4,9 @@ import QtQuick.Controls 2.14
 import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.0 as Maui
 
-Control
+import QtQuick.Templates 2.15 as T
+
+T.Control
 {
     id: control
     implicitWidth: _label.implicitWidth + rightPadding + leftPadding
@@ -58,6 +60,11 @@ Control
             topRightRadius: control.lastOne ? Maui.Style.radiusV : 0
             bottomLeftRadius: control.firstOne ? Maui.Style.radiusV : 0
             bottomRightRadius: control.lastOne ? Maui.Style.radiusV : 0
+        }
+
+        Behavior on color
+        {
+            Maui.ColorTransition{}
         }
     }
 

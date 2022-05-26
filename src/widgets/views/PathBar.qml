@@ -41,6 +41,11 @@ Rectangle
         }
     }
 
+    Behavior on color
+    {
+        Maui.ColorTransition{}
+    }
+
     color:  item ? "transparent" : Qt.lighter(Kirigami.Theme.backgroundColor)
     radius: Maui.Style.radiusV
 
@@ -128,6 +133,11 @@ Rectangle
                     color: Qt.lighter(Kirigami.Theme.backgroundColor)
                     radius: Maui.Style.radiusV
                     border.color:  control.Kirigami.Theme.highlightColor
+
+                    Behavior on color
+                    {
+                        Maui.ColorTransition{}
+                    }
                 }
 
                 actions: Action
@@ -188,6 +198,11 @@ Rectangle
                             topRightRadius: 0
                             bottomLeftRadius: Maui.Style.radiusV
                             bottomRightRadius: 0
+                        }
+
+                        Behavior on color
+                        {
+                            Maui.ColorTransition{}
                         }
                     }
                 }

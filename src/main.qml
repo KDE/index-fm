@@ -24,6 +24,7 @@ Maui.ApplicationWindow
     id: root
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
+    Maui.Style.darkMode: appSettings.darkMode
 //    Maui.Style.accentColor: Maui.App.darkMode ? "#616ff5" : "#4d4f62"
 
     property alias dialog : dialogLoader.item
@@ -39,18 +40,6 @@ Maui.ApplicationWindow
 
     property bool selectionMode: false
 
-    Loader
-    {
-        active: !Kirigami.Settings.isMobile && Maui.Handy.isLinux
-        asynchronous: true
-        sourceComponent: Maui.WindowBlur
-        {
-            view: root
-            geometry: Qt.rect(root.x, root.y, root.width, root.height)
-            windowRadius: root.background.radius
-            enabled: true
-        }
-    }
 
     Maui.Notify
     {
@@ -82,6 +71,7 @@ Maui.ApplicationWindow
             FB.FMList.REMOTE_PATH,
             FB.FMList.REMOVABLE_PATH,
             FB.FMList.DRIVES_PATH]
+        property bool darkMode:  Maui.Style.darkMode
     }
 
     Settings
@@ -745,8 +735,8 @@ Maui.ApplicationWindow
     {
         if(Maui.Handy.isAndroid)
         {
-            Maui.Android.statusbarColor( Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
-            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
+            Maui.Android.statusbarColor( Kirigami.Theme.backgroundColor, !Maui.Style.darkMode)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, !Maui.Style.darkMode)
         }
     }
 
