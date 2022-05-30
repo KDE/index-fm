@@ -20,8 +20,8 @@ Maui.Page
 {
     id: control
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
-    Kirigami.Theme.inherit: false
+    Maui.Theme.colorSet: Maui.Theme.View
+    Maui.Theme.inherit: false
     headBar.forceCenterMiddleContent: false
     altHeader: Kirigami.Settings.isMobile
 
@@ -88,8 +88,8 @@ Maui.Page
         rightPadding: padding
         topPadding: padding
 
-        Kirigami.Theme.colorSet: Kirigami.Theme.View
-        Kirigami.Theme.inherit: false
+        Maui.Theme.colorSet: Maui.Theme.View
+        Maui.Theme.inherit: false
 
         property int itemWidth : Math.min(140, _layout.width * 0.3)
 

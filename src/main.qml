@@ -24,7 +24,7 @@ Maui.ApplicationWindow
     id: root
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
-    Maui.Style.darkMode: appSettings.darkMode
+//    Maui.Style.styleType: appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light
 //    Maui.Style.accentColor: Maui.App.darkMode ? "#616ff5" : "#4d4f62"
 
     property alias dialog : dialogLoader.item
@@ -71,7 +71,7 @@ Maui.ApplicationWindow
             FB.FMList.REMOTE_PATH,
             FB.FMList.REMOVABLE_PATH,
             FB.FMList.DRIVES_PATH]
-        property bool darkMode:  Maui.Style.darkMode
+        property bool darkMode:  Maui.Style.styleType === Maui.Style.Dark
     }
 
     Settings
@@ -735,8 +735,8 @@ Maui.ApplicationWindow
     {
         if(Maui.Handy.isAndroid)
         {
-            Maui.Android.statusbarColor( Kirigami.Theme.backgroundColor, !Maui.Style.darkMode)
-            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, !Maui.Style.darkMode)
+            Maui.Android.statusbarColor( Maui.Theme.backgroundColor, !appSettings.darkMode)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Maui.Theme.backgroundColor : Maui.Theme.backgroundColor, !appSettings.darkMode)
         }
     }
 

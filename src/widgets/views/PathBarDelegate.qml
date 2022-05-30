@@ -6,7 +6,7 @@ import org.mauikit.controls 1.0 as Maui
 
 import QtQuick.Templates 2.15 as T
 
-T.Control
+AbstractButton
 {
     id: control
     implicitWidth: _label.implicitWidth + rightPadding + leftPadding
@@ -20,7 +20,7 @@ T.Control
     /**
       *
       */
-    property bool checked :  ListView.isCurrentItem
+   checked :  ListView.isCurrentItem
     property bool lastOne : false
     property bool firstOne : false
 
@@ -52,7 +52,7 @@ T.Control
 
     background: Kirigami.ShadowedRectangle
     {
-        color: control.checked ? Kirigami.Theme.highlightColor : (control.hovered ? Kirigami.Theme.hoverColor : Qt.lighter(Kirigami.Theme.backgroundColor))
+        color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : Qt.lighter(Maui.Theme.backgroundColor))
 
         corners
         {
@@ -96,10 +96,7 @@ T.Control
             elide: Qt.ElideRight
             wrapMode: Text.NoWrap
             font.bold: control.checked
-            color: control.checked ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
+            color: control.checked ? Maui.Theme.highlightedTextColor : Maui.Theme.textColor
         }
     }
-
-
-
 }

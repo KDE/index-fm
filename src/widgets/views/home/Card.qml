@@ -19,14 +19,14 @@ Maui.ListBrowserDelegate
     background: Rectangle
     {
         radius: Maui.Style.radiusV
-        color: Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
+        color: Qt.tint(control.Maui.Theme.textColor, Qt.rgba(control.Maui.Theme.backgroundColor.r, control.Maui.Theme.backgroundColor.g, control.Maui.Theme.backgroundColor.b, 0.9))
 
         Rectangle
         {
             id: _iconRec
             opacity: 0.3
             anchors.fill: parent
-            color: Kirigami.Theme.backgroundColor
+            color: Maui.Theme.backgroundColor
             clip: true
 
             FastBlur
@@ -45,7 +45,7 @@ Maui.ListBrowserDelegate
             {
                 anchors.fill: parent
                 opacity: 0.5
-                color: Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
+                color: Qt.tint(control.Maui.Theme.textColor, Qt.rgba(control.Maui.Theme.backgroundColor.r, control.Maui.Theme.backgroundColor.g, control.Maui.Theme.backgroundColor.b, 0.9))
             }
         }
 

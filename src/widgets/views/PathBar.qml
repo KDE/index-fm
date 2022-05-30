@@ -46,7 +46,7 @@ Rectangle
         Maui.ColorTransition{}
     }
 
-    color:  item ? "transparent" : Qt.lighter(Kirigami.Theme.backgroundColor)
+    color:  item ? "transparent" : Qt.lighter(Maui.Theme.backgroundColor)
     radius: Maui.Style.radiusV
 
     implicitHeight: Maui.Style.rowHeight
@@ -130,9 +130,9 @@ Rectangle
 
                 background: Rectangle
                 {
-                    color: Qt.lighter(Kirigami.Theme.backgroundColor)
+                    color: Qt.lighter(Maui.Theme.backgroundColor)
                     radius: Maui.Style.radiusV
-                    border.color:  control.Kirigami.Theme.highlightColor
+                    border.color:  control.Maui.Theme.highlightColor
 
                     Behavior on color
                     {
@@ -143,7 +143,7 @@ Rectangle
                 actions: Action
                 {
                     icon.name: "go-next"
-                    icon.color: control.Kirigami.Theme.textColor
+                    icon.color: control.Maui.Theme.textColor
                     onTriggered:
                     {
                         entry.accepted()
@@ -191,7 +191,7 @@ Rectangle
 
                     background : Kirigami.ShadowedRectangle
                     {
-                        color: Qt.lighter(Kirigami.Theme.backgroundColor)
+                        color: Qt.lighter(Maui.Theme.backgroundColor)
                         corners
                         {
                             topLeftRadius: Maui.Style.radiusV
@@ -225,8 +225,8 @@ Rectangle
                     {
                         id: _listView
 
-                        Kirigami.Theme.colorSet: control.Kirigami.Theme.colorSet
-                        Kirigami.Theme.inherit: false
+                        Maui.Theme.colorSet: control.Maui.Theme.colorSet
+                        Maui.Theme.inherit: false
 
                         orientation: ListView.Horizontal
                         clip: true

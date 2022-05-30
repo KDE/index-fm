@@ -64,7 +64,7 @@ Maui.Page
                     Layout.fillWidth: true
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     text: abc.toUpperCase()
-                    color: Kirigami.Theme.textColor
+                    color: Maui.Theme.textColor
                     font.pointSize: 30
                     font.bold: true
                     font.weight: Font.Bold
@@ -76,7 +76,7 @@ Maui.Page
                     Layout.fillWidth: true
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     text: abc
-                    color: Kirigami.Theme.textColor
+                    color: Maui.Theme.textColor
                     font.pointSize: 20
                 }
 
@@ -86,7 +86,7 @@ Maui.Page
                     Layout.fillWidth: true
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     text: nums
-                    color: Kirigami.Theme.textColor
+                    color: Maui.Theme.textColor
                     font.pointSize: 30
                     font.weight: Font.Light
                 }
@@ -97,7 +97,7 @@ Maui.Page
                     Layout.fillWidth: true
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     text: paragraph
-                    color: Kirigami.Theme.textColor
+                    color: Maui.Theme.textColor
                     font.pointSize: Maui.Style.fontSizes.huge
                 }
 
@@ -107,7 +107,7 @@ Maui.Page
                     Layout.fillWidth: true
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     text: symbols
-                    color: Kirigami.Theme.textColor
+                    color: Maui.Theme.textColor
                     font.pointSize: 15
                 }
             }

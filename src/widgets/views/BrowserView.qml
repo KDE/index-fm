@@ -62,7 +62,7 @@ Maui.Page
         listDelegate: Maui.ListBrowserDelegate
         {
             isCurrentItem: false
-            Kirigami.Theme.inherit: true
+            Maui.Theme.inherit: true
             width: ListView.view.width
             height: Maui.Style.iconSizes.big + Maui.Style.space.big
             imageSource: root.showThumbnails ? model.thumbnail : ""

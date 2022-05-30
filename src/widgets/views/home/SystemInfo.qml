@@ -38,7 +38,7 @@ Maui.ListBrowser
         anchors.verticalCenter: parent.verticalCenter
         width: 320
         height: 180
-//        color: Kirigami.Theme.backgroundColor
+//        color: Maui.Theme.backgroundColor
 //        radius: Maui.Style.radiusV
 
         property var info : FB.FM.getFileInfo(modelData)
@@ -62,7 +62,7 @@ Maui.ListBrowser
             id: _iconRec
             opacity: 0.3
             anchors.fill: parent
-            color: Kirigami.Theme.backgroundColor
+            color: Maui.Theme.backgroundColor
             clip: true
 
             FastBlur
@@ -81,7 +81,7 @@ Maui.ListBrowser
             {
                 anchors.fill: parent
                 opacity: 0.5
-                color: Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
+                color: Qt.tint(control.Maui.Theme.textColor, Qt.rgba(control.Maui.Theme.backgroundColor.r, control.Maui.Theme.backgroundColor.g, control.Maui.Theme.backgroundColor.b, 0.9))
             }
         }
 

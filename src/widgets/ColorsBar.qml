@@ -20,7 +20,7 @@ Maui.ColorsRow
                case "folder-green": "#3eb881"; break;
                case "folder-grey": "#b2b9bd"; break;
                case "folder-black": "#474747"; break;
-               default : return control.Kirigami.Theme.backgroundColor;
+               default : return control.Maui.Theme.backgroundColor;
                }
 
     onColorPicked:

@@ -12,8 +12,6 @@ import QtQuick.Controls 2.14
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
 
-import org.kde.kirigami 2.6 as Kirigami
-
 Maui.AbstractSideBar
 {
     id: control
@@ -22,7 +20,7 @@ Maui.AbstractSideBar
 
     collapsible: true
     collapsed : !root.isWide
-    preferredWidth: Kirigami.Units.gridUnit * (Maui.Handy.isWindows ?  15 : 13)
+    preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows ?  15 : 13)
 
     property alias list : placesList
 
@@ -287,7 +285,7 @@ Maui.AbstractSideBar
             enabled: _menu.bookmarkIndex >= 0
             text: i18n("Remove")
             icon.name: "edit-delete"
-            Kirigami.Theme.textColor: Kirigami.Theme.negativeTextColor
+            Maui.Theme.textColor: Maui.Theme.negativeTextColor
             onTriggered: placesList.removePlace(_menu.bookmarkIndex)
         }
     }
