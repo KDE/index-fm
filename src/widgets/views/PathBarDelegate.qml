@@ -2,13 +2,17 @@ import QtQuick 2.14
 import QtQuick.Controls 2.14
 
 import org.kde.kirigami 2.14 as Kirigami
-import org.mauikit.controls 1.0 as Maui
+import org.mauikit.controls 1.3 as Maui
 
 import QtQuick.Templates 2.15 as T
 
 AbstractButton
 {
     id: control
+
+    Maui.Theme.colorSet: Maui.Theme.Button
+        Maui.Theme.inherit: false
+
     implicitWidth: _label.implicitWidth + rightPadding + leftPadding
     rightPadding: Maui.Style.space.big
     leftPadding: rightPadding
@@ -52,7 +56,7 @@ AbstractButton
 
     background: Kirigami.ShadowedRectangle
     {
-        color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : Qt.lighter(Maui.Theme.backgroundColor))
+        color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
 
         corners
         {
@@ -75,7 +79,7 @@ AbstractButton
         acceptedButtons:  Qt.RightButton | Qt.LeftButton
         onClicked:
         {
-            if(!Kirigami.Settings.isMobile && mouse.button === Qt.RightButton)
+            if(!Maui.Handy.isMobile && mouse.button === Qt.RightButton)
                 control.rightClicked()
             else
                 control.clicked()

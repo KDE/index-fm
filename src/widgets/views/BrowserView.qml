@@ -23,7 +23,7 @@ Maui.Page
     floatingFooter: true
 
     headBar.forceCenterMiddleContent: root.isWide
-    altHeader: Kirigami.Settings.isMobile
+    altHeader: Maui.Handy.isMobile
     showCSDControls: true
     flickable: currentBrowser.flickable
 

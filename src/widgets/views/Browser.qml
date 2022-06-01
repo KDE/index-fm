@@ -182,7 +182,7 @@ Maui.SplitViewItem
                 {
                     mouse.accepted = false
                     _browser.keyPress(mouse);
-                    if((mouse.button == Qt.LeftButton) && (mouse.modifiers == Qt.NoModifier) && (selectionBar.count > 0) && (!Kirigami.Settings.isMobile))
+                    if((mouse.button == Qt.LeftButton) && (mouse.modifiers == Qt.NoModifier) && (selectionBar.count > 0) && (!Maui.Handy.isMobile))
                     {
                         selectionBar.clear()
                     }

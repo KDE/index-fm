@@ -175,7 +175,7 @@ Rectangle
                     visible: !appSettings.actionBar
                     Layout.fillHeight: true
                     Layout.preferredWidth: height * 1.4
-                    hoverEnabled: Kirigami.Settings.isMobile
+                    hoverEnabled: Maui.Handy.isMobile
                     onClicked : currentBrowser.goBack()
 
                     contentItem: Item

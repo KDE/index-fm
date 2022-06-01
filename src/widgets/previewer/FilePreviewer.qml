@@ -211,7 +211,7 @@ Maui.Dialog
 
     footBar.leftContent: Maui.ToolActions
     {
-        visible: !Kirigami.Settings.isMobile
+        visible: !Maui.Handy.isMobile
         expanded: true
         autoExclusive: false
         checkable: false

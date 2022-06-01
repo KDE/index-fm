@@ -54,7 +54,7 @@ Maui.ApplicationWindow
         category: "Browser"
         property bool showHiddenFiles: false
         property bool showThumbnails: true
-        property bool previewFiles : Kirigami.Settings.isMobile
+        property bool previewFiles : Maui.Handy.isMobile
         property bool restoreSession:  false
         property bool overviewStart : false
         property bool actionBar: false
@@ -414,7 +414,7 @@ Maui.ApplicationWindow
 
                     MenuItem
                     {
-                        enabled: Maui.Handy.isLinux && !Kirigami.Settings.isMobile
+                        enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
                         text: i18n("Open terminal here")
                         id: openTerminal
                         icon.name: "dialog-scripts"

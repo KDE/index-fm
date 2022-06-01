@@ -23,7 +23,7 @@ Maui.Page
     Maui.Theme.colorSet: Maui.Theme.View
     Maui.Theme.inherit: false
     headBar.forceCenterMiddleContent: false
-    altHeader: Kirigami.Settings.isMobile
+    altHeader: Maui.Handy.isMobile
 
     Maui.ContextualMenu
     {
