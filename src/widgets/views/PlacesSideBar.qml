@@ -20,7 +20,7 @@ Maui.AbstractSideBar
 
     collapsible: true
     collapsed : !root.isWide
-    preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows ?  15 : 13)
+    preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows ? 13 : 11)
 
     property alias list : placesList
 
