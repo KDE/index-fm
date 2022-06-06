@@ -172,10 +172,14 @@ Rectangle
 
                 AbstractButton
                 {
+                    id: _backButton
+                    Maui.Theme.colorSet: Maui.Theme.Button
+                    Maui.Theme.inherit: false
+
                     visible: !appSettings.actionBar
                     Layout.fillHeight: true
                     Layout.preferredWidth: height * 1.4
-                    hoverEnabled: Maui.Handy.isMobile
+                    hoverEnabled: true
                     onClicked : currentBrowser.goBack()
 
                     contentItem: Item
@@ -186,12 +190,13 @@ Rectangle
                             source: "go-previous"
                             width: Maui.Style.iconSizes.small
                             height: width
+                            color: Maui.Theme.textColor
                         }
                     }
 
                     background : Kirigami.ShadowedRectangle
                     {
-                        color: Qt.lighter(Maui.Theme.backgroundColor)
+                        color: _backButton.checked ? Maui.Theme.highlightColor : (_backButton.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
                         corners
                         {
                             topLeftRadius: Maui.Style.radiusV
@@ -256,6 +261,7 @@ Rectangle
                         delegate: PathBarDelegate
                         {
                             id: delegate
+
                             lastOne: index === ListView.view.count-1
                             firstOne: index === 0 && appSettings.actionBar
                             height: ListView.view.height

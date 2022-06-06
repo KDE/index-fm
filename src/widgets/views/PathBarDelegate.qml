@@ -6,12 +6,12 @@ import org.mauikit.controls 1.3 as Maui
 
 import QtQuick.Templates 2.15 as T
 
-AbstractButton
+T.Control
 {
     id: control
 
     Maui.Theme.colorSet: Maui.Theme.Button
-        Maui.Theme.inherit: false
+    Maui.Theme.inherit: false
 
     implicitWidth: _label.implicitWidth + rightPadding + leftPadding
     rightPadding: Maui.Style.space.big
@@ -24,7 +24,7 @@ AbstractButton
     /**
       *
       */
-   checked :  ListView.isCurrentItem
+   property bool checked :  ListView.isCurrentItem
     property bool lastOne : false
     property bool firstOne : false
 
