@@ -37,7 +37,7 @@
   <summary>Manage your files</summary>
   <summary xml:lang="az">Fayllarınızı idarəsə edin</summary>
   <summary xml:lang="ca">Gestioneu els fitxers</summary>
-  <summary xml:lang="ca-valencia">Gestioneu els fitxers</summary>
+  <summary xml:lang="ca-valencia">Gestioneu els fichers</summary>
   <summary xml:lang="de">Verwalten Sie Ihre Dateien</summary>
   <summary xml:lang="el">Διαχειριστείτε τα αρχεία σας</summary>
   <summary xml:lang="en-GB">Manage your files</summary>
@@ -68,7 +68,7 @@
     <p>Index allows you to navigate your computer and preview multimedia files.</p>
     <p xml:lang="az">İndeks kompyuterinizdə gəzinməyə və multimedia fayllarınıza baxmağa imkan verir.</p>
     <p xml:lang="ca">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
-    <p xml:lang="ca-valencia">L'Índex permet navegar per l'ordinador i previsualisar fitxers multimèdia.</p>
+    <p xml:lang="ca-valencia">L'Índex permet navegar per l'ordinador i previsualisar fichers multimèdia.</p>
     <p xml:lang="de">Mit Index können Sie auf Ihrem Rechner navigieren und eine Vorschau von Multimediadateien ansehen.</p>
     <p xml:lang="el">Το Index σάς επιτρέπει να πλοηγηθείτε στον υπολογιστή σας και να κάνετε προεπισκόπηση των αρχείων σας με τα πολυμέσα.</p>
     <p xml:lang="en-GB">Index allows you to navigate your computer and preview multimedia files.</p>
@@ -104,7 +104,7 @@
       <caption>Index file manager</caption>
       <caption xml:lang="az">İndeks fayl meneceri</caption>
       <caption xml:lang="ca">Gestor de fitxers Índex</caption>
-      <caption xml:lang="ca-valencia">Gestor de fitxers Índex</caption>
+      <caption xml:lang="ca-valencia">Gestor de fichers Índex</caption>
       <caption xml:lang="cs">Správce souborů indexů</caption>
       <caption xml:lang="de">Index-Dateiverwaltung</caption>
       <caption xml:lang="el">Index διαχειριστής αρχείων</caption>
