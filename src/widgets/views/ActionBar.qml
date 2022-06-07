@@ -80,14 +80,6 @@ Maui.ToolBar
 
         ToolButton
         {
-            icon.name: "view-hidden"
-            checkable: true
-            checked: settings.showHiddenFiles
-            onClicked: settings.showHiddenFiles = !settings.showHiddenFiles
-        },
-
-        ToolButton
-        {
             icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
             checked: currentTab.count === 2
             checkable: true
