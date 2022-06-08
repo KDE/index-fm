@@ -10,7 +10,7 @@ import org.mauikit.filebrowsing 1.3 as FB
 Maui.Dialog
 {
     id: control
-
+    implicitHeight: 1000
     property url currentUrl: ""
 
     property alias listView : _listView
@@ -26,7 +26,7 @@ Maui.Dialog
 
     hint: 1
     maxWidth: 800
-    maxHeight: 1000
+    maxHeight: implicitHeight
     defaultButtons: false
 
     stack: ListView
@@ -139,8 +139,8 @@ Maui.Dialog
                             FileProperties
                             {
                                 Layout.fillWidth: true
-                                      Layout.maximumWidth: 600
-                                      Layout.alignment: Qt.AlignCenter
+                                Layout.maximumWidth: 600
+                                Layout.alignment: Qt.AlignCenter
                                 url: control.currentUrl
                             }
                         }
