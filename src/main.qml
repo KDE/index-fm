@@ -315,7 +315,6 @@ Maui.ApplicationWindow
                 sourceComponent: Maui.ToolButtonMenu
                 {
                     icon.name: settings.actionBar ? "overflow-menu" : (currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons")
-menu.cascade: false
                     Maui.MenuItemActionRow
                     {
                         Action
@@ -539,34 +538,33 @@ menu.cascade: false
                                 sortSettings.sortBy = FB.FMList.LABEL
                             }
                         }
-                    }
 
+                        MenuSeparator{}
 
-                    MenuSeparator{}
-
-                    MenuItem
-                    {
-                        text: i18n("Show Folders First")
-                        checked: currentBrowser.settings.foldersFirst
-                        checkable: true
-
-                        onTriggered:
+                        MenuItem
                         {
-                            currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
-                            sortSettings.foldersFirst =  !sortSettings.foldersFirst
+                            text: i18n("Show Folders First")
+                            checked: currentBrowser.settings.foldersFirst
+                            checkable: true
+
+                            onTriggered:
+                            {
+                                currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+                                sortSettings.foldersFirst =  !sortSettings.foldersFirst
+                            }
                         }
-                    }
 
-                    MenuItem
-                    {
-                        id: groupAction
-                        text: i18n("Group")
-                        checkable: true
-                        checked: currentBrowser.settings.group
-                        onTriggered:
+                        MenuItem
                         {
-                            currentBrowser.settings.group = !currentBrowser.settings.group
-                            sortSettings.group = !sortSettings.group
+                            id: groupAction
+                            text: i18n("Group")
+                            checkable: true
+                            checked: currentBrowser.settings.group
+                            onTriggered:
+                            {
+                                currentBrowser.settings.group = !currentBrowser.settings.group
+                                sortSettings.group = !sortSettings.group
+                            }
                         }
                     }
 

@@ -27,7 +27,7 @@ import org.mauikit.controls 1.3 as Maui
 
 import org.maui.index 1.0 as Index
 
-Rectangle
+Item
 {
     id: control
 
@@ -40,14 +40,6 @@ Rectangle
             duration: 100
         }
     }
-
-    Behavior on color
-    {
-        Maui.ColorTransition{}
-    }
-
-    color:  item ? "transparent" : Qt.lighter(Maui.Theme.backgroundColor)
-    radius: Maui.Style.radiusV
 
     implicitHeight: Maui.Style.rowHeight
     implicitWidth: preferredWidth
@@ -88,14 +80,6 @@ Rectangle
       */
     signal placeRightClicked(string path)
 
-    Maui.ProgressIndicator
-    {
-        id: _progress
-        width: parent.width
-        anchors.centerIn: parent
-        visible: _loader.status == Loader.Loading
-    }
-
     Loader
     {
         id: _loader
@@ -125,18 +109,6 @@ Rectangle
                     if(!activeFocus)
                     {
                         control.pathEntry = false
-                    }
-                }
-
-                background: Rectangle
-                {
-                    color: Qt.lighter(Maui.Theme.backgroundColor)
-                    radius: Maui.Style.radiusV
-                    border.color:  control.Maui.Theme.highlightColor
-
-                    Behavior on color
-                    {
-                        Maui.ColorTransition{}
                     }
                 }
 
