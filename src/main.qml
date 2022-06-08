@@ -315,7 +315,7 @@ Maui.ApplicationWindow
                 sourceComponent: Maui.ToolButtonMenu
                 {
                     icon.name: settings.actionBar ? "overflow-menu" : (currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons")
-
+menu.cascade: false
                     Maui.MenuItemActionRow
                     {
                         Action
@@ -475,66 +475,72 @@ Maui.ApplicationWindow
                         label: i18n("Sort by")
                     }
 
-                    Action
+                    Maui.ContextualMenu
                     {
-                        text: i18n("Type")
-                        checked: currentBrowser.settings.sortBy === FB.FMList.MIME
-                        checkable: true
+                        title: i18n("Sort by")
 
-                        onTriggered:
+                        Action
                         {
-                            currentBrowser.settings.sortBy = FB.FMList.MIME
-                            sortSettings.sortBy = FB.FMList.MIME
+                            text: i18n("Type")
+                            checked: currentBrowser.settings.sortBy === FB.FMList.MIME
+                            checkable: true
+
+                            onTriggered:
+                            {
+                                currentBrowser.settings.sortBy = FB.FMList.MIME
+                                sortSettings.sortBy = FB.FMList.MIME
+                            }
+                        }
+
+                        Action
+                        {
+                            text: i18n("Date")
+                            checked: currentBrowser.settings.sortBy === FB.FMList.DATE
+                            checkable: true
+                            onTriggered:
+                            {
+                                currentBrowser.settings.sortBy = FB.FMList.DATE
+                                sortSettings.sortBy = FB.FMList.DATE
+                            }
+                        }
+
+                        Action
+                        {
+                            text: i18n("Modified")
+                            checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
+                            checkable: true
+                            onTriggered:
+                            {
+                                currentBrowser.settings.sortBy = FB.FMList.MODIFIED
+                                sortSettings.sortBy = FB.FMList.MODIFIED
+                            }
+                        }
+
+                        Action
+                        {
+                            text: i18n("Size")
+                            checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
+                            checkable: true
+                            onTriggered:
+                            {
+                                currentBrowser.settings.sortBy = FB.FMList.SIZE
+                                sortSettings.sortBy = FB.FMList.SIZE
+                            }
+                        }
+
+                        Action
+                        {
+                            text: i18n("Name")
+                            checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
+                            checkable: true
+                            onTriggered:
+                            {
+                                currentBrowser.settings.sortBy = FB.FMList.LABEL
+                                sortSettings.sortBy = FB.FMList.LABEL
+                            }
                         }
                     }
 
-                    Action
-                    {
-                        text: i18n("Date")
-                        checked: currentBrowser.settings.sortBy === FB.FMList.DATE
-                        checkable: true
-                        onTriggered:
-                        {
-                            currentBrowser.settings.sortBy = FB.FMList.DATE
-                            sortSettings.sortBy = FB.FMList.DATE
-                        }
-                    }
-
-                    Action
-                    {
-                        text: i18n("Modified")
-                        checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
-                        checkable: true
-                        onTriggered:
-                        {
-                            currentBrowser.settings.sortBy = FB.FMList.MODIFIED
-                            sortSettings.sortBy = FB.FMList.MODIFIED
-                        }
-                    }
-
-                    Action
-                    {
-                        text: i18n("Size")
-                        checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
-                        checkable: true
-                        onTriggered:
-                        {
-                            currentBrowser.settings.sortBy = FB.FMList.SIZE
-                            sortSettings.sortBy = FB.FMList.SIZE
-                        }
-                    }
-
-                    Action
-                    {
-                        text: i18n("Name")
-                        checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
-                        checkable: true
-                        onTriggered:
-                        {
-                            currentBrowser.settings.sortBy = FB.FMList.LABEL
-                            sortSettings.sortBy = FB.FMList.LABEL
-                        }
-                    }
 
                     MenuSeparator{}
 
