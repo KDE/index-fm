@@ -21,7 +21,6 @@
 #endif
 
 #include <MauiKit/Core/mauiapp.h>
-#include <MauiKit/FileBrowsing/fmstatic.h>
 
 #include <KAboutData>
 #include <KI18n/KLocalizedString>
