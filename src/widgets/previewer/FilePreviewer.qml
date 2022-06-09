@@ -86,7 +86,7 @@ Maui.Dialog
                     contentHeight: _layout.implicitHeight
                     contentWidth: availableWidth
                     clip: true
-
+                    padding: Maui.Style.space.big
                     background: null
 
                     Flickable

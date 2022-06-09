@@ -24,7 +24,7 @@ Maui.ApplicationWindow
     id: root
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
-//    Maui.Style.styleType: appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light
+    Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
 //    Maui.Style.accentColor: Maui.App.darkMode ? "#616ff5" : "#4d4f62"
 
     property alias dialog : dialogLoader.item

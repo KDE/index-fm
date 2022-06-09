@@ -166,7 +166,7 @@ Maui.SettingsDialog
 
         Maui.SettingTemplate
         {
-            visible: Maui.App.bundledStyle
+            visible: Maui.Handy.isAndroid
             label1.text: i18n("Dark Mode")
             label2.text: i18n("Switch between light and dark colorscheme")
 
