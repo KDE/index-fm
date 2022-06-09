@@ -7,6 +7,7 @@
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QUrl>
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
@@ -20,6 +21,7 @@
 #endif
 
 #include <MauiKit/Core/mauiapp.h>
+#include <MauiKit/FileBrowsing/fmstatic.h>
 
 #include <KAboutData>
 #include <KI18n/KLocalizedString>
@@ -83,25 +85,27 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     const QStringList args = parser.positionalArguments();
     QStringList paths;
-
+    
     if (!args.isEmpty())
-        paths = args;
+    {
+        for(const auto &path : args)
+            paths << QUrl::fromUserInput(path).toString();
+    }
 
     Index index;
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreated,
-        &app,
-        [url, paths, &index](QObject *obj, const QUrl &objUrl) {
-            if (!obj && url == objUrl)
-                QCoreApplication::exit(-1);
+                &engine,
+                &QQmlApplicationEngine::objectCreated,
+                &app,
+                [url](QObject *obj, const QUrl &objUrl) {
+        if (!obj && url == objUrl)
+            QCoreApplication::exit(-1);
 
-            if (!paths.isEmpty())
-                index.openPaths(paths);
-        },
-        Qt::QueuedConnection);
+    }, Qt::QueuedConnection);
+
+    engine.rootContext()->setContextProperty("initPaths", paths);
 
     engine.rootContext()->setContextProperty("inx", &index);
     qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
@@ -116,8 +120,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.load(url);
 
 #ifdef Q_OS_MACOS
-//        MAUIMacOS::removeTitlebarFromWindow();
-//        MauiApp::instance()->setEnableCSD(true); //for now index can not handle cloud accounts
+    //        MAUIMacOS::removeTitlebarFromWindow();
+    //        MauiApp::instance()->setEnableCSD(true); //for now index can not handle cloud accounts
 #endif
     return app.exec();
 }

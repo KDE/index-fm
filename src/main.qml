@@ -9,7 +9,6 @@ import QtQuick.Layouts 1.3
 
 import Qt.labs.settings 1.0
 
-import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.3 as Maui
 
 import org.mauikit.filebrowsing 1.3 as FB
@@ -25,7 +24,6 @@ Maui.ApplicationWindow
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
     Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
-//    Maui.Style.accentColor: Maui.App.darkMode ? "#616ff5" : "#4d4f62"
 
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
@@ -722,6 +720,13 @@ Maui.ApplicationWindow
 
             _stackView.push(_homeViewComponent)
             return
+        }
+
+        if(initPaths.length)
+        {
+            for(var path of initPaths)
+                root.openTab(path)
+            return;
         }
 
         const tabs = settings.lastSession
