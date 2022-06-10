@@ -24,7 +24,7 @@ Maui.ApplicationWindow
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
     Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
-
+Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
     property alias currentTabIndex : _browserView.currentTabIndex
@@ -287,13 +287,12 @@ Maui.ApplicationWindow
         id: placesSidebar
     }
 
-
     footer: Loader
     {
         width: parent.width
         asynchronous: true
         active: settings.actionBar
-        visible: active
+        visible: active && !_homeViewComponent.visible
         sourceComponent:  ActionBar {}
     }
 
@@ -372,6 +371,14 @@ Maui.ApplicationWindow
 
                     Maui.MenuItemActionRow
                     {
+
+                        Action
+                        {
+                            icon.name: "tab-new"
+                            text: i18n("New tab")
+                            onTriggered: root.openTab(currentBrowser.currentPath)
+                        }
+
                         Action
                         {
                             icon.name: "view-hidden"
@@ -425,7 +432,7 @@ Maui.ApplicationWindow
                     {
                         width: parent.width
                         isSection: true
-                        label: i18n("View type")
+                        label: i18n("View")
                     }
 
                     MenuItem
@@ -463,13 +470,6 @@ Maui.ApplicationWindow
 
                             settings.viewType = FB.FMList.ICON_VIEW
                         }
-                    }
-
-                    Maui.LabelDelegate
-                    {
-                        width: parent.width
-                        isSection: true
-                        label: i18n("Sort by")
                     }
 
                     Maui.ContextualMenu
@@ -648,7 +648,7 @@ Maui.ApplicationWindow
 
                     function openMenu()
                     {
-                        browserMenu.show((width *0.5)-(browserMenu.width * 0.5), height + Maui.Style.space.medium)
+                        _mainMenuLoader.item.open()
                     }
 
                     Maui.ContextualMenu

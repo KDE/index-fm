@@ -81,7 +81,7 @@ Maui.Dialog
                 active: _delegate.isCurrentItem
                 asynchronous: true
 
-                sourceComponent: Maui.ScrollView
+                sourceComponent: ScrollView
                 {
                     contentHeight: _layout.implicitHeight
                     contentWidth: availableWidth
@@ -97,7 +97,7 @@ Maui.Dialog
                         ColumnLayout
                         {
                             id: _layout
-                            anchors.fill: parent
+                            width: parent.width
                             spacing: 0
 
                             Item

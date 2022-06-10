@@ -7,29 +7,21 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
+
 import org.mauikit.controls 1.3 as Maui
-import org.kde.kirigami 2.14 as Kirigami
+
 import org.mauikit.filebrowsing 1.0 as FB
 
-ColumnLayout
+Maui.SettingsSection
 {
     id: control
-
-    Maui.SectionDropDown
-    {
-        id: _dropDown
-        Layout.fillWidth: true
-        label1.text: i18n("Devices and Remote")
-        label2.text: i18n("Remote locations and devices like disks, phones and cameras")
-        checked: _othersGrid.count > 0
-        enabled: _othersGrid.count > 0
-    }
+    title: i18n("Devices and Remote")
+    description: i18n("Remote locations and devices like disks, phones and cameras")
 
     Maui.GridView
     {
         id: _othersGrid
         Layout.fillWidth: true
-        visible: _dropDown.checked
         itemSize: Math.min(width * 0.3, 180)
         itemHeight: 180
 

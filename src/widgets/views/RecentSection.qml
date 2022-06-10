@@ -10,32 +10,19 @@ import QtQuick.Layouts 1.3
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
 
-import org.kde.kirigami 2.14 as Kirigami
-
 import org.maui.index 1.0 as Index
 
 import Qt.labs.platform 1.1
 
 import "home"
 
-ColumnLayout
+Maui.SettingsSection
 {
     id: control
-
-    spacing: Maui.Style.space.medium
+    title: i18n("Downloads, Audio & Pictures")
+    description: i18n("Your most recent downloaded files, audio and images")
 
     signal itemClicked(url url)
-
-    Maui.SectionDropDown
-    {
-        id: _dropDown
-        Layout.fillWidth: true
-        label1.text: i18n("Downloads, Audio & Pictures")
-        label2.text: i18n("Your most recent downloaded files, audio and images")
-        checked: true
-        template.iconSource: "view-media-recent"
-        template.iconSizeHint: Maui.Style.iconSizes.medium
-    }
 
     Loader
     {
@@ -49,7 +36,7 @@ ColumnLayout
             boundsBehavior: ListView.StopAtBounds
             spacing: Maui.Style.space.medium
 
-            visible: _dropDown.checked && count > 0
+            visible: count > 0
             orientation: ListView.Horizontal
 
             footer: Item
@@ -109,7 +96,7 @@ ColumnLayout
         {
             id: _recentGridAudio
             implicitHeight: visible ? 80 : 0
-            visible: _dropDown.checked && count > 0
+            visible: count > 0
             orientation: ListView.Horizontal
             boundsBehavior: ListView.StopAtBounds
             spacing: Maui.Style.space.medium
@@ -170,7 +157,7 @@ ColumnLayout
             implicitHeight: visible ? 180 : 0
             boundsBehavior: ListView.StopAtBounds
             spacing: Maui.Style.space.medium
-            visible: _dropDown.checked && count > 0
+            visible: count > 0
 
             footer: Item
             {
@@ -225,7 +212,7 @@ ColumnLayout
             id: _recentCamera
             orientation: ListView.Horizontal
             implicitHeight: visible ? 180 : 0
-            visible: _dropDown.checked && count > 0
+            visible: count > 0
             boundsBehavior: ListView.StopAtBounds
             spacing: Maui.Style.space.medium
 
@@ -283,7 +270,7 @@ ColumnLayout
             boundsBehavior: ListView.StopAtBounds
             spacing: Maui.Style.space.medium
 
-            visible: _dropDown.checked && count > 0
+            visible: count > 0
 
             footer: Item
             {

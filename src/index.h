@@ -12,6 +12,7 @@
 
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 class OrgKdeIndexActionsInterface;
+
 namespace IndexInstance
 {
 QVector<QPair<QSharedPointer<OrgKdeIndexActionsInterface>, QStringList>> appInstances(const QString& preferredService);
@@ -25,9 +26,9 @@ bool registerService();
 class Index : public QObject
 {
     Q_OBJECT
-#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
+    //#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
     Q_CLASSINFO("D-Bus Interface", "org.kde.index.Actions")
-#endif
+    //#endif
 
 private:
     QObject* m_qmlObject = nullptr;

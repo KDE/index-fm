@@ -6,7 +6,7 @@ import org.mauikit.controls 1.3 as Maui
 
 import QtQuick.Templates 2.15 as T
 
-T.Control
+T.ItemDelegate
 {
     id: control
 
@@ -24,7 +24,7 @@ T.Control
     /**
       *
       */
-   property bool checked :  ListView.isCurrentItem
+   checked :  ListView.isCurrentItem
     property bool lastOne : false
     property bool firstOne : false
 
@@ -75,7 +75,9 @@ T.Control
     contentItem: MouseArea
     {
         id: _mouseArea
-        hoverEnabled: true
+        propagateComposedEvents: true
+        preventStealing: false
+        hoverEnabled: !Maui.Handy.isMobile
         acceptedButtons:  Qt.RightButton | Qt.LeftButton
         onClicked:
         {
@@ -87,7 +89,6 @@ T.Control
 
         onDoubleClicked: control.doubleClicked()
         onPressAndHold : control.pressAndHold()
-
 
         Label
         {

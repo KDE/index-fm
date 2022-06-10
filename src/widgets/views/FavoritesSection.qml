@@ -8,11 +8,10 @@ import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import org.mauikit.controls 1.3 as Maui
-import org.kde.kirigami 2.14 as Kirigami
 
 import org.mauikit.filebrowsing 1.0 as FB
 
-ColumnLayout
+Maui.SettingsSection
 {
     id: control
     property alias listModel : _model
@@ -20,24 +19,14 @@ ColumnLayout
 
     signal itemClicked(url url)
 
-    Maui.SectionDropDown
-    {
-        id: _dropDown
-        Layout.fillWidth: true
-        label1.text: i18n("Favorite files")
-
-        label2.text: i18n("Your files marked as favorites")
-        checked: _favsGrid.count > 0
-        enabled: _favsGrid.count > 0
-        template.iconSource: "love"
-        template.iconSizeHint: Maui.Style.iconSizes.medium
-    }
+    title: i18n("Favorite files")
+    description: i18n("Your files marked as favorites")
+//    template.iconSource: "love"
 
     ListView
     {
         id: _favsGrid
         Layout.fillWidth: true
-        visible: _dropDown.checked
         boundsBehavior: ListView.StopAtBounds
         spacing: Maui.Style.space.medium
         implicitHeight: 180

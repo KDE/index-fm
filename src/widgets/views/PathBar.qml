@@ -156,7 +156,7 @@ Item
 
                     contentItem: Item
                     {
-                        Kirigami.Icon
+                        Maui.Icon
                         {
                             anchors.centerIn: parent
                             source: "go-previous"

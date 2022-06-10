@@ -10,28 +10,19 @@ import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
-import org.kde.kirigami 2.14 as Kirigami
 import "home"
 
-ColumnLayout
+Maui.SettingsSection
 {
     id: control
-
-    Maui.SectionDropDown
-    {
-        id: _dropDown
-        Layout.fillWidth: true
-        label1.text: i18n("Bookmarks")
-        label2.text: i18n("Quick access to most common places and bookmarks")
-        checked: true
-    }
+    title: i18n("Bookmarks")
+    description: i18n("Quick access to most common places and bookmarks")
 
     Maui.GridView
     {
         id: _placesGrid
-        visible: _dropDown.checked
         Layout.fillWidth: true
-        itemSize: Math.min(width, 180)
+        itemSize: Math.min(width, 220)
         itemHeight: 80
 
         model: Maui.BaseModel
@@ -53,7 +44,7 @@ ColumnLayout
             {
                 anchors.fill: parent
                 anchors.margins: Maui.Style.space.medium
-
+                iconVisible: true
                 iconSizeHint: Maui.Style.iconSizes.big
                 label1.text: model.label
                 label2.text: Qt.formatDateTime(new Date(model.modified), "d MMM yyyy")
