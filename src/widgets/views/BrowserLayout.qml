@@ -29,6 +29,8 @@ Item
     readonly property alias model : _splitView.contentModel
     readonly property string title : count === 2 ?  model.get(0).browser.title + "  -  " + model.get(1).browser.title : browser.title
 
+    property alias splitView : _splitView
+
     Maui.TabViewInfo.tabTitle: title
     Maui.TabViewInfo.tabToolTipText:  browser.currentPath
 

@@ -24,10 +24,22 @@ else()
     qt5_add_resources(index_QML_QRC qml.qrc)
 endif()
 
+if(UNIX AND NOT ANDROID)
+    qt_generate_dbus_interface(${CMAKE_CURRENT_SOURCE_DIR}/index.h org.kde.Index.xml)
+    qt_add_dbus_adaptor(index_dbus_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.Index.xml index.h Index)
+    qt_add_dbus_interface(index_dbus_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.Index.xml indexinterface)
+endif()
+
 if(ANDROID)
-    add_library(${PROJECT_NAME} SHARED ${index_SRCS} ${index_QML_QRC})
+    add_library(${PROJECT_NAME}
+        SHARED
+        ${index_SRCS}
+        ${index_QML_QRC})
 else()
-    add_executable(${PROJECT_NAME} ${index_SRCS} ${index_QML_QRC})
+    add_executable(${PROJECT_NAME}
+        ${index_SRCS}
+        ${index_dbus_SRCS}
+        ${index_QML_QRC})
 endif()
 
 if (ANDROID)
@@ -39,7 +51,7 @@ if (ANDROID)
     #    set_target_properties(create-apk-${PROJECT_NAME} PROPERTIES ANDROID_APK_DIR "${APK_DIR}")
 
 elseif(UNIX)
-    target_link_libraries(${PROJECT_NAME} KF5::KIOCore KF5::KIOFileWidgets)
+    target_link_libraries(${PROJECT_NAME} KF5::KIOCore KF5::KIOFileWidgets  Qt5::DBus)
 endif()
 
 if(UNIX OR WIN32 OR APPLE AND NOT ANDROID)

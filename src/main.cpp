@@ -91,22 +91,42 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
             paths << QUrl::fromUserInput(path).toString();
     }
 
-    Index index;
+#if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
+    if (IndexInstance::attachToExistingInstance(QUrl::fromStringList(paths), false, false))
+    {
+        // Successfully attached to existing instance of Dolphin
+        return 0;
+    }else
+    {
+//        const QString serviceName = QStringLiteral("org.kde.index-%1").arg(QCoreApplication::applicationPid());
+//        auto instances = IndexInstance::appInstances(serviceName);
+//        if(instances.size() > 0)
+//        {
+//            instances.first().first->activateWindow();
+//        }
+    }
+
+    IndexInstance::registerService();
+#endif
+    Index *index = new Index();
+
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
                 &engine,
                 &QQmlApplicationEngine::objectCreated,
                 &app,
-                [url](QObject *obj, const QUrl &objUrl) {
+                [url, index](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
+
+        index->setQmlObject(obj);
 
     }, Qt::QueuedConnection);
 
     engine.rootContext()->setContextProperty("initPaths", paths);
 
-    engine.rootContext()->setContextProperty("inx", &index);
+    engine.rootContext()->setContextProperty("inx", index);
     qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
     qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");

@@ -700,15 +700,6 @@ Maui.ApplicationWindow
         }
     }
 
-    Connections
-    {
-        target: inx
-        function onOpenPath(paths)
-        {
-            for(var index in paths)
-                root.openTab(paths[index])
-        }
-    }
 
     Component.onCompleted:
     {
@@ -766,6 +757,12 @@ Maui.ApplicationWindow
     function closeTab(index)
     {
         _browserView.browserList.closeTab(index)
+    }
+
+    function openDirs(paths)
+    {
+        for(var path of paths)
+            root.openTab(path)
     }
 
     function openTab(path)
@@ -856,5 +853,10 @@ Maui.ApplicationWindow
     {
         placesSidebar.list.toggleSection(section)
         appSettings.sidebarSections = placesSidebar.list.groups
+    }
+
+    function isUrlOpen(url : string) : bool
+    {
+        return _browserView.isUrlOpen(url);
     }
 }
