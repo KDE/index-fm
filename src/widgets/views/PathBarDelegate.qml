@@ -6,7 +6,7 @@ import org.mauikit.controls 1.3 as Maui
 
 import QtQuick.Templates 2.15 as T
 
-T.ItemDelegate
+T.Control
 {
     id: control
 
@@ -24,7 +24,7 @@ T.ItemDelegate
     /**
       *
       */
-   checked :  ListView.isCurrentItem
+    property bool checked :  ListView.isCurrentItem
     property bool lastOne : false
     property bool firstOne : false
 

@@ -78,7 +78,7 @@ find_package(MauiKit REQUIRED COMPONENTS FileBrowsing)
 #ecm_find_qmlmodule(QtQuick.Shapes 1.0)
 #ecm_find_qmlmodule(org.kde.kirigami 2.10)
 
-if(${ECM_SOURCE_UNDER_VERSION_CONTROL})
+if(ECM_SOURCE_UNDER_VERSION_CONTROL)
     execute_process(
         COMMAND git rev-parse --abbrev-ref HEAD
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -99,7 +99,7 @@ if(${ECM_SOURCE_UNDER_VERSION_CONTROL})
 
 else()
     add_definitions(-DGIT_COMMIT_HASH="${INDEX_VERSION}")
-    add_definitions(-DGIT_BRANCH="Stable")
+    add_definitions(-DGIT_BRANCH="${CMAKE_BUILD_TYPE}")
 endif()
 
 ecm_setup_version(${INDEX_VERSION}

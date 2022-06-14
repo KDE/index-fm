@@ -98,7 +98,7 @@ Maui.Dialog
                         {
                             id: _layout
                             width: parent.width
-                            spacing: 0
+                            spacing: Maui.Style.space.huge
 
                             Item
                             {
@@ -142,6 +142,7 @@ Maui.Dialog
                                 Layout.maximumWidth: 600
                                 Layout.alignment: Qt.AlignCenter
                                 url: control.currentUrl
+                                spacing: parent.spacing
                             }
                         }
                     }

@@ -24,7 +24,8 @@ Maui.ApplicationWindow
     title: currentTab ? currentTab.title : ""
     headBar.visible: false
     Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
-Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
+    Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
+
     property alias dialog : dialogLoader.item
     property alias selectionBar : _browserView.selectionBar
     property alias currentTabIndex : _browserView.currentTabIndex
@@ -37,7 +38,6 @@ Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
     property alias appSettings : settings
 
     property bool selectionMode: false
-
 
     Maui.Notify
     {
@@ -859,4 +859,4 @@ Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
     {
         return _browserView.isUrlOpen(url);
     }
-}
+    }

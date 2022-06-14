@@ -179,10 +179,11 @@ Maui.AbstractSideBar
                 width: ListView.view.width
                 template.headerSizeHint: iconSize + Maui.Style.space.small
 
-                iconSize: Maui.Style.iconSizes.small
+                iconSize: Maui.Style.iconSize
                 label: model.label
                 iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
                 iconVisible: true
+                template.isMask: iconSize <= Maui.Style.iconSizes.medium
 
                 template.content: ToolButton
                 {
