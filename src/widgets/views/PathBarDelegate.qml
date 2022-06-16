@@ -1,7 +1,6 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 
-import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.3 as Maui
 
 import QtQuick.Templates 2.15 as T
@@ -54,7 +53,7 @@ T.Control
       */
     signal pressAndHold()
 
-    background: Kirigami.ShadowedRectangle
+    background: Maui.ShadowedRectangle
     {
         color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
 

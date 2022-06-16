@@ -136,6 +136,10 @@ Maui.SettingsSection
                 imageSource: model.thumbnail
                 player.source: model.url
                 isCurrentItem: parent.ListView.isCurrentItem
+
+
+                label1.text: player.metaData.title && player.metaData.title.length ? player.metaData.title :  model.name
+                label2.text: player.metaData.albumArtist || player.metaData.albumTitle
                 onClicked:
                 {
                     _recentGridAudio.currentIndex = index

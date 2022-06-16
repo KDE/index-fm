@@ -22,7 +22,6 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
-import org.kde.kirigami 2.14 as Kirigami
 import org.mauikit.controls 1.3 as Maui
 
 import org.maui.index 1.0 as Index
@@ -166,7 +165,7 @@ Item
                         }
                     }
 
-                    background : Kirigami.ShadowedRectangle
+                    background : Maui.ShadowedRectangle
                     {
                         color: _backButton.checked ? Maui.Theme.highlightColor : (_backButton.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
                         corners

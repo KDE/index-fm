@@ -14,7 +14,4 @@ Card
         id: _player
         autoLoad: true
     }
-
-    label1.text: player.metaData.title
-    label2.text: player.metaData.albumArtist || player.metaData.albumTitle
 }

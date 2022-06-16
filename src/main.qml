@@ -705,13 +705,13 @@ Maui.ApplicationWindow
     {
         setAndroidStatusBarColor()
 
-        if(settings.overviewStart)
-        {
-            root.openTab(FB.FM.homePath())
+//        if(settings.overviewStart)
+//        {
+//            root.openTab(FB.FM.homePath())
 
-            _stackView.push(_homeViewComponent)
-            return
-        }
+//            _stackView.push(_homeViewComponent)
+//            return
+//        }
 
         if(initPaths.length)
         {

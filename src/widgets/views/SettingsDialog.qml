@@ -3,7 +3,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.2 as Maui
-import org.mauikit.filebrowsing 1.0 as FB
+import org.mauikit.filebrowsing 1.3 as FB
 
 Maui.SettingsDialog
 {
@@ -59,7 +59,6 @@ Maui.SettingsDialog
     {
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
-        lastOne: true
 
         Maui.SettingTemplate
         {
@@ -188,7 +187,6 @@ Maui.SettingsDialog
     {
         title: i18n("Places")
         description: i18n("Toggle sidebar sections.")
-        lastOne: true
 
         Maui.SettingTemplate
         {
@@ -208,11 +206,10 @@ Maui.SettingsDialog
             label1.text: i18n("Bookmarks")
             label2.text: i18n("Access to standard locations.")
 
-
             Switch
             {
                 checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.BOOKMARKS_PATH)
+                checked: appSettings.sidebarSections.indexOf(FB.FMList.BOOKMARKS_PATH) >= 0
                 onToggled:
                 {
                     toggleSection(FB.FMList.BOOKMARKS_PATH)
@@ -228,7 +225,7 @@ Maui.SettingsDialog
             Switch
             {
                 checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.REMOTE_PATH)
+                checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOTE_PATH)>= 0
                 onToggled:
                 {
                     toggleSection(FB.FMList.REMOTE_PATH)
@@ -245,7 +242,7 @@ Maui.SettingsDialog
             Switch
             {
                 checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.REMOVABLE_PATH)
+                checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOVABLE_PATH)>= 0
                 onToggled:
                 {
                     toggleSection(FB.FMList.REMOVABLE_PATH)
@@ -261,7 +258,7 @@ Maui.SettingsDialog
             Switch
             {
                 checkable: true
-                checked: placesSidebar.list.groups.includes(FB.FMList.DRIVES_PATH)
+                checked: placesSidebar.list.groups.indexOf(FB.FMList.DRIVES_PATH)>= 0
                 onToggled:
                 {
                     toggleSection(FB.FMList.DRIVES_PATH)
