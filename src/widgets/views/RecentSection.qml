@@ -26,18 +26,21 @@ Maui.SettingsSection
 
     Loader
     {
-        Layout.fillWidth: true
         asynchronous: true
 
-        sourceComponent: ListView
+        Layout.fillWidth: true
+        Layout.preferredHeight: 140
+
+        sourceComponent: Maui.GridView
         {
             id: _recentGrid
-            implicitHeight: visible ? 180 : 0
-            boundsBehavior: ListView.StopAtBounds
-            spacing: Maui.Style.space.medium
-
-            visible: count > 0
-            orientation: ListView.Horizontal
+            verticalScrollBarPolicy: ScrollBar.AlwaysOff
+            horizontalScrollBarPolicy:  ScrollBar.AsNeeded
+            currentIndex: -1
+            flickable.flow: GridView.FlowTopToBottom
+            itemSize: 220
+            itemHeight: 70
+            adaptContent: false
 
             footer: Item
             {
@@ -65,23 +68,29 @@ Maui.SettingsSection
                 }
             }
 
-            delegate:  Maui.GridBrowserDelegate
+            delegate:  Item
             {
-                width: height
-                height: ListView.view.height
-                label1.text: model.label
-                iconSource: model.icon
-                imageSource: model.thumbnail
-                template.fillMode: Image.PreserveAspectFit
-                iconSizeHint: height * 0.5
-                template.labelSizeHint: 32
-                checkable: selectionMode
-                isCurrentItem: parent.ListView.isCurrentItem
+                height: GridView.view.cellHeight
+                width: GridView.view.cellWidth
 
-                onClicked:
+                Maui.ListBrowserDelegate
                 {
-                    _recentGrid.currentIndex = index
-                    openPreview(_recentDownloadsModel, index)
+                    anchors.fill: parent
+                    anchors.margins: Maui.Style.space.small
+                    iconVisible: true
+                    label1.text: model.label
+                    iconSource: model.icon
+                    imageSource: model.thumbnail
+                    template.fillMode: Image.PreserveAspectFit
+                    iconSizeHint: height * 0.5
+                    checkable: selectionMode
+                    isCurrentItem: parent.ListView.isCurrentItem
+
+                    onClicked:
+                    {
+                        _recentGrid.currentIndex = index
+                        openPreview(_recentDownloadsModel, index)
+                    }
                 }
             }
         }
@@ -89,17 +98,22 @@ Maui.SettingsSection
 
     Loader
     {
-        Layout.fillWidth: true
         asynchronous: true
+        Layout.fillWidth: true
+        Layout.preferredHeight: 140
 
-        sourceComponent: ListView
+        sourceComponent: Maui.GridView
         {
             id: _recentGridAudio
-            implicitHeight: visible ? 80 : 0
             visible: count > 0
-            orientation: ListView.Horizontal
-            boundsBehavior: ListView.StopAtBounds
-            spacing: Maui.Style.space.medium
+            verticalScrollBarPolicy: ScrollBar.AlwaysOff
+                            horizontalScrollBarPolicy:  ScrollBar.AsNeeded
+            currentIndex: -1
+
+            flickable.flow: GridView.FlowTopToBottom
+            itemSize: 220
+            itemHeight: 70
+            adaptContent: false
 
             footer: Item
             {
@@ -127,10 +141,14 @@ Maui.SettingsSection
                 }
             }
 
-            delegate: AudioCard
+            delegate: Item
             {
-                width: 300
-                height: ListView.view.height
+                height: GridView.view.cellHeight
+                width: GridView.view.cellWidth
+ AudioCard
+            {
+                anchors.fill: parent
+                anchors.margins: Maui.Style.space.small
                 iconSource: model.icon
                 iconSizeHint: Maui.Style.iconSizes.big
                 imageSource: model.thumbnail
@@ -145,6 +163,7 @@ Maui.SettingsSection
                     _recentGridAudio.currentIndex = index
                     openPreview(_recentMusicModel, index)
                 }
+            }
             }
         }
     }

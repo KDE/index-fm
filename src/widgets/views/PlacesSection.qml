@@ -21,9 +21,15 @@ Maui.SettingsSection
     Maui.GridView
     {
         id: _placesGrid
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+                        horizontalScrollBarPolicy:  ScrollBar.AsNeeded
+        currentIndex: -1
         Layout.fillWidth: true
-        itemSize: Math.min(width, 220)
-        itemHeight: 80
+        Layout.preferredHeight: 140
+        flickable.flow: GridView.FlowTopToBottom
+        itemSize: 220
+        itemHeight: 70
+        adaptContent: false
 
         model: Maui.BaseModel
         {
@@ -37,13 +43,13 @@ Maui.SettingsSection
 
         delegate: Item
         {
-            width: _placesGrid.cellWidth
-            height: _placesGrid.itemHeight
+            height: GridView.view.cellHeight
+            width: GridView.view.cellWidth
 
             Card
             {
                 anchors.fill: parent
-                anchors.margins: Maui.Style.space.medium
+                anchors.margins: Maui.Style.space.small
                 iconVisible: true
                 iconSizeHint: Maui.Style.iconSizes.big
                 label1.text: model.label

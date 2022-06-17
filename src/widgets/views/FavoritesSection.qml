@@ -26,7 +26,7 @@ Maui.SettingsSection
     {
         id: _favsGrid
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
-        //                horizontalScrollBarPolicy:  ScrollBar.AlwaysOff
+                        horizontalScrollBarPolicy:  ScrollBar.AsNeeded
         currentIndex: -1
         Layout.fillWidth: true
         Layout.preferredHeight: 220
