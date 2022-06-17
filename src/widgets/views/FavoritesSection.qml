@@ -21,16 +21,19 @@ Maui.SettingsSection
 
     title: i18n("Favorite files")
     description: i18n("Your files marked as favorites")
-//    template.iconSource: "love"
 
-    ListView
+    Maui.GridView
     {
         id: _favsGrid
+        verticalScrollBarPolicy: ScrollBar.AlwaysOff
+        //                horizontalScrollBarPolicy:  ScrollBar.AlwaysOff
+        currentIndex: -1
         Layout.fillWidth: true
-        boundsBehavior: ListView.StopAtBounds
-        spacing: Maui.Style.space.medium
-        implicitHeight: 180
-        orientation: ListView.Horizontal
+        Layout.preferredHeight: 220
+        flickable.flow: GridView.FlowTopToBottom
+        itemSize: 220
+        itemHeight: 70
+        adaptContent: false
 
         model: Maui.BaseModel
         {
@@ -41,23 +44,29 @@ Maui.SettingsSection
             }
         }
 
-        delegate: Maui.GridBrowserDelegate
+        delegate: Item
         {
-            width: height
-            height: ListView.view.height
-            label1.text: model.label
-            iconSource: model.icon
-            imageSource: model.thumbnail
-            template.fillMode: Image.PreserveAspectFit
-            template.labelSizeHint: 32
-            iconSizeHint: height * 0.5
-            checkable: selectionMode
-            isCurrentItem : ListView.isCurrentItem
+            height: GridView.view.cellHeight
+            width: GridView.view.cellWidth
 
-            onClicked:
+            Maui.ListBrowserDelegate
             {
-                _favsGrid.currentIndex = index
-                openPreview(listModel, currentIndex)
+                anchors.fill: parent
+                anchors.margins: Maui.Style.space.small
+                iconVisible: true
+
+                label1.text: model.label
+                iconSource: model.icon
+                imageSource: model.thumbnail
+                template.fillMode: Image.PreserveAspectFit
+                checkable: selectionMode
+                isCurrentItem : ListView.isCurrentItem
+
+                onClicked:
+                {
+                    _favsGrid.currentIndex = index
+                    openPreview(listModel, currentIndex)
+                }
             }
         }
     }
