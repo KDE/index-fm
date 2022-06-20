@@ -229,6 +229,34 @@ Item
                             }
                         }
 
+                        Maui.EdgeShadow
+                        {
+                            visible: !_listView.atXBeginning
+                            z: 999
+                            edge: Qt.LeftEdge
+
+                            anchors
+                            {
+                                left: parent.left
+                                top: parent.top
+                                bottom: parent.bottom
+                            }
+                        }
+
+                        Maui.EdgeShadow
+                        {
+                            visible: !_listView.atXEnd
+                            z: 999
+                            edge: Qt.RightEdge
+
+                            anchors
+                            {
+                                right: parent.right
+                                top: parent.top
+                                bottom: parent.bottom
+                            }
+                        }
+
                         delegate: PathBarDelegate
                         {
                             id: delegate
