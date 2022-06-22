@@ -73,17 +73,17 @@ Maui.SettingsDialog
 
                 currentIndex: appSettings.gridSize
 
-                Action
-                {
-                    text: i18n("S")
-                    onTriggered: appSettings.gridSize = 0
-                }
+//                Action
+//                {
+//                    text: i18n("S")
+//                    onTriggered: appSettings.gridSize = 0
+//                }
 
-                Action
-                {
-                    text: i18n("M")
-                    onTriggered: appSettings.gridSize = 1
-                }
+//                Action
+//                {
+//                    text: i18n("M")
+//                    onTriggered: appSettings.gridSize = 1
+//                }
 
                 Action
                 {

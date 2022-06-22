@@ -22,7 +22,7 @@ Maui.ApplicationWindow
 {
     id: root
     title: currentTab ? currentTab.title : ""
-    headBar.visible: false
+
     Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
     Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
 
@@ -58,7 +58,7 @@ Maui.ApplicationWindow
         property bool actionBar: false
 
         property int viewType : FB.FMList.LIST_VIEW
-        property int listSize : 0 // s-m-x-xl
+        property int listSize : 0 // s-m-l-x-xl
         property int gridSize : 1 // s-m-x-xl
 
         property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
@@ -70,6 +70,8 @@ Maui.ApplicationWindow
             FB.FMList.REMOVABLE_PATH,
             FB.FMList.DRIVES_PATH]
         property bool darkMode:  Maui.Style.styleType === Maui.Style.Dark
+
+        property alias sideBarWidth : _sideBarView.sideBar.preferredWidth
     }
 
     Settings
@@ -282,11 +284,25 @@ Maui.ApplicationWindow
         id: dialogLoader
     }
 
-    sideBar: PlacesSideBar
-    {
-        id: placesSidebar
-    }
 
+    Maui.SideBarView
+    {
+        id: _sideBarView
+        anchors.fill: parent
+       sideBar.preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows || Maui.Handy.isAndroid ? 13 : 11)
+
+
+        sideBarContent: PlacesSideBar
+        {
+            id: placesSidebar
+            anchors.fill: parent
+        }
+
+
+Maui.Page
+{
+    anchors.fill: parent
+    headBar.visible: false
     footer: Loader
     {
         width: parent.width
@@ -600,9 +616,9 @@ Maui.ApplicationWindow
                 asynchronous: true
                 sourceComponent: ToolButton
                 {
-                    icon.name: sideBar.visible ? "sidebar-collapse" : "sidebar-expand"
-                    onClicked: sideBar.toggle()
-                    checked: sideBar.visible
+                    icon.name: _sideBarView.sideBar.visible ? "sidebar-collapse" : "sidebar-expand"
+                    onClicked: _sideBarView.sideBar.toggle()
+                    checked: _sideBarView.sideBar.visible
                     ToolTip.delay: 1000
                     ToolTip.timeout: 5000
                     ToolTip.visible: hovered
@@ -699,8 +715,8 @@ Maui.ApplicationWindow
             }
         }
     }
-
-
+}
+}
     Component.onCompleted:
     {
         setAndroidStatusBarColor()

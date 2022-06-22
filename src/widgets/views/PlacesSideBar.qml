@@ -12,15 +12,12 @@ import QtQuick.Controls 2.14
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
 
-Maui.AbstractSideBar
+Item
 {
     id: control
 
     signal placeClicked (string path)
 
-    collapsible: true
-    collapsed : !root.isWide
-    preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows || Maui.Handy.isAndroid ? 13 : 11)
 
     property alias list : placesList
 
@@ -74,7 +71,7 @@ Maui.AbstractSideBar
             flickable.header: Loader
             {
                 asynchronous: true
-                width: parent.width
+                width: Math.min(parent.width, 180)
                 height: item ? item.implicitHeight : 0
                 active: appSettings.quickSidebarSection
                 visible: active
@@ -109,7 +106,7 @@ Maui.AbstractSideBar
 //                        padding: 0
                         currentIndex : _quickPacesList.indexOfPath(currentBrowser.currentPath)
                         width: parent.width
-                        cellWidth: Math.floor(parent.width/3)
+                        cellWidth: Math.floor(width/3)
                         cellHeight: cellWidth
                         interactive: false
 
@@ -250,10 +247,10 @@ Maui.AbstractSideBar
             _stackView.pop()
     }
 
-    onContentDropped:
-    {
-        placesList.addPlace(drop.text)
-    }
+//    onContentDropped:
+//    {
+//        placesList.addPlace(drop.text)
+//    }
 
     Maui.ContextualMenu
     {
