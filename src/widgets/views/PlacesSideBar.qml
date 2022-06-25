@@ -8,6 +8,7 @@ import QtQuick 2.14
 import QtQml 2.14
 
 import QtQuick.Controls 2.14
+import QtQuick.Layouts 1.12
 
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
@@ -80,78 +81,66 @@ Item
                 {
                     spacing: Maui.Style.space.medium
 
-                    Maui.ListBrowserDelegate
-                    {
-                        width: parent.width
-                        iconSizeHint: Maui.Style.iconSizes.small
-                        label1.text: i18n("Overview")
-                        iconSource: "start-here-symbolic"
-                        iconVisible: true
-                        isCurrentItem: _stackView.depth === 2
-                        onClicked:
-                        {
-                            if(control.collapsed)
-                                control.close()
-
-                            _stackView.push(_homeViewComponent)
-                        }
-                    }
-
-                    GridView
+                    GridLayout
                     {
                         id: _quickSection
-                        implicitHeight: contentHeight +  topMargin+  bottomMargin
-                        leftMargin: 0
-                        rightMargin: 0
-//                        padding: 0
-                        currentIndex : _quickPacesList.indexOfPath(currentBrowser.currentPath)
+
+                        rows: 3
+                        columns: 3
+                        columnSpacing: Maui.Style.space.small
+                        rowSpacing: Maui.Style.space.small
+
                         width: parent.width
-                        cellWidth: Math.floor(width/3)
-                        cellHeight: cellWidth
-                        interactive: false
 
-                        model: Maui.BaseModel
+                        Repeater
                         {
-                            list: FB.PlacesList
+                            model: inx.quickPaths()
+
+                            delegate: Item
                             {
-                                id: _quickPacesList
-                                groups: [FB.FMList.QUICK_PATH, FB.FMList.PLACES_PATH]
-                            }
-                        }
+                                Layout.preferredHeight: Math.min(50, width)
+                                Layout.preferredWidth: 50
+                                Layout.fillWidth: true
+                                Layout.fillHeight: true
+                                Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
 
-                        delegate: Item
-                        {
-                            height: GridView.view.cellHeight
-                            width: GridView.view.cellWidth
-
-                            Maui.GridBrowserDelegate
-                            {
-                                isCurrentItem: parent.GridView.isCurrentItem && _stackView.depth === 1
-                                anchors.fill: parent
-                                anchors.margins: Maui.Style.space.tiny
-                                iconSource: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
-                                iconSizeHint: Maui.Style.iconSize
-                                template.isMask: true
-                                label1.text: model.label
-                                labelsVisible: false
-                                tooltipText: model.label
-                                onClicked:
+                                Maui.GridBrowserDelegate
                                 {
-                                    placeClicked(model.path)
-                                    if(control.collapsed)
-                                        control.close()
-                                }
+                                    isCurrentItem: modelData.path === "overview:///" ? _stackView.depth === 2 : (currentBrowser.currentPath === modelData.path && _stackView.depth === 1)
+                                    anchors.fill: parent
+                                    iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
+                                    iconSizeHint: Maui.Style.iconSize
+                                    template.isMask: true
+                                    label1.text: modelData.label
+                                    labelsVisible: false
+                                    tooltipText: modelData.label
+                                    onClicked:
+                                    {
+                                        if(modelData.path === "overview:///")
+                                        {
+                                            if(control.collapsed)
+                                                control.close()
 
-                                onRightClicked:
-                                {
-                                    _menu.path = model.path
-                                    _menu.show()
-                                }
+                                            _stackView.push(_homeViewComponent)
+                                            return
+                                        }
 
-                                onPressAndHold:
-                                {
-                                    _menu.path = model.path
-                                    _menu.show()
+                                        placeClicked(modelData.path)
+                                        if(control.collapsed)
+                                            control.close()
+                                    }
+
+                                    onRightClicked:
+                                    {
+                                        _menu.path = modelData.path
+                                        _menu.show()
+                                    }
+
+                                    onPressAndHold:
+                                    {
+                                        _menu.path = modelData.path
+                                        _menu.show()
+                                    }
                                 }
                             }
                         }
@@ -231,7 +220,7 @@ Item
                 width: ListView.view.width
                 label: section
                 isSection: true
-//                height: Maui.Style.toolBarHeightAlt
+                //                height: Maui.Style.toolBarHeightAlt
             }
         }
 
@@ -247,10 +236,10 @@ Item
             _stackView.pop()
     }
 
-//    onContentDropped:
-//    {
-//        placesList.addPlace(drop.text)
-//    }
+    //    onContentDropped:
+    //    {
+    //        placesList.addPlace(drop.text)
+    //    }
 
     Maui.ContextualMenu
     {

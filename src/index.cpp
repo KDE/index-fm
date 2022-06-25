@@ -277,6 +277,22 @@ void Index::openTerminal(const QUrl &url)
 #endif
 }
 
+QVariantList Index::quickPaths()
+{
+    FMH::MODEL_LIST paths;
+
+    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "overview:///"}, {FMH::MODEL_KEY::ICON, "start-here"}, {FMH::MODEL_KEY::LABEL, "Overview"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
+
+    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, FMStatic::PATHTYPE_URI[FMStatic::PATHTYPE_KEY::TAGS_PATH] + "fav"}, {FMH::MODEL_KEY::ICON, "love"}, {FMH::MODEL_KEY::LABEL, "Favorite"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
+
+paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "tags:///"}, {FMH::MODEL_KEY::ICON, "tag"}, {FMH::MODEL_KEY::LABEL, "Tags"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
+
+paths << FMStatic::getDefaultPaths();
+
+
+return FMH::toMapList(paths);
+}
+
 QUrl Index::cameraPath()
 {
     const static auto paths = QStringList{FMStatic::HomePath + "/DCIM/Camera", FMStatic::HomePath + "/Camera"};

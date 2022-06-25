@@ -125,6 +125,8 @@ public slots:
      * Path in which terminal should open
      */
     static void openTerminal(const QUrl &url);
+
+    static QVariantList quickPaths();
 };
 
 

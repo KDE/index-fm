@@ -289,9 +289,9 @@ Maui.ApplicationWindow
     {
         id: _sideBarView
         anchors.fill: parent
-       sideBar.preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows || Maui.Handy.isAndroid ? 13 : 11)
+        sideBar.preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows || Maui.Handy.isAndroid ? 13 : 11)
 
-
+        sideBar.minimumWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows || Maui.Handy.isAndroid ? 13 : 11)
         sideBarContent: PlacesSideBar
         {
             id: placesSidebar
@@ -299,435 +299,435 @@ Maui.ApplicationWindow
         }
 
 
-Maui.Page
-{
-    anchors.fill: parent
-    headBar.visible: false
-    footer: Loader
-    {
-        width: parent.width
-        asynchronous: true
-        active: settings.actionBar
-        visible: active && !_homeViewComponent.visible
-        sourceComponent:  ActionBar {}
-    }
-
-    StackView
-    {
-        id: _stackView
-        anchors.fill: parent
-        initialItem: BrowserView
+        Maui.Page
         {
-            id: _browserView
-
-            flickable: currentBrowser.flickable
-            headBar.rightContent: Loader
+            anchors.fill: parent
+            headBar.visible: false
+            footer: Loader
             {
-                id: _mainMenuLoader
+                width: parent.width
                 asynchronous: true
-                sourceComponent: Maui.ToolButtonMenu
-                {
-                    icon.name: settings.actionBar ? "overflow-menu" : (currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons")
-                    Maui.MenuItemActionRow
-                    {
-                        Action
-                        {
-                            icon.name: "go-next"
-                            text: i18n("Forward")
-                            onTriggered: currentBrowser.goForward()
-                        }
-
-                        Action
-                        {
-                            icon.name: "edit-find"
-                            text: i18n("Search")
-                            checked: currentBrowser.headBar.visible
-                            checkable: true
-                            onTriggered: currentBrowser.toggleSearchBar()
-                        }
-
-                        Action
-                        {
-                            icon.name: "list-add"
-                            text: i18n("New")
-                            onTriggered: currentBrowser.newItem()
-                        }
-                    }
-
-                    Maui.LabelDelegate
-                    {
-                        width: parent.width
-                        isSection: true
-                        label: i18n("Edit")
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Paste")
-                        //         enabled: _optionsButton.enabled
-
-                        icon.name: "edit-paste"
-                        // 		enabled: control.clipboardItems.length > 0
-                        onTriggered: currentBrowser.paste()
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Select all")
-                        icon.name: "edit-select-all"
-                        onTriggered: currentBrowser.selectAll()
-                    }
-
-                    Maui.LabelDelegate
-                    {
-                        width: parent.width
-                        isSection: true
-                        label: i18n("Navigation")
-                    }
-
-                    Maui.MenuItemActionRow
-                    {
-
-                        Action
-                        {
-                            icon.name: "tab-new"
-                            text: i18n("New tab")
-                            onTriggered: root.openTab(currentBrowser.currentPath)
-                        }
-
-                        Action
-                        {
-                            icon.name: "view-hidden"
-                            text: i18n("Hidden")
-                            checkable: true
-                            checked: settings.showHiddenFiles
-                            onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
-                        }
-
-                        Action
-                        {
-                            text: i18n("Split")
-                            icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                            checked: currentTab.count === 2
-                            checkable: true
-                            onTriggered: toogleSplitView()
-                        }
-
-                        Action
-                        {
-                            text: i18n("Terminal")
-                            enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                            icon.name: "dialog-scripts"
-                            checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-                            checkable: true
-
-                            onTriggered: currentTab.currentItem.toogleTerminal()
-                        }
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Go to")
-                        icon.name: "edit-entry"
-                        onTriggered: pathBar.showEntryBar()
-                    }
-
-                    MenuItem
-                    {
-                        enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
-                        text: i18n("Open terminal here")
-                        id: openTerminal
-                        icon.name: "dialog-scripts"
-                        onTriggered:
-                        {
-                            inx.openTerminal(currentBrowser.currentPath)
-                        }
-                    }
-
-                    Maui.LabelDelegate
-                    {
-                        width: parent.width
-                        isSection: true
-                        label: i18n("View")
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("List")
-                        icon.name: "view-list-details"
-                        checked: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
-                        checkable: true
-                        autoExclusive: true
-                        onTriggered:
-                        {
-                            if(currentBrowser)
-                            {
-                                currentBrowser.settings.viewType = FB.FMList.LIST_VIEW
-                            }
-
-                            settings.viewType = FB.FMList.LIST_VIEW
-                        }
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Grid")
-                        icon.name: "view-list-icons"
-                        checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
-                        checkable: true
-                        autoExclusive: true
-
-                        onTriggered:
-                        {
-                            if(currentBrowser)
-                            {
-                                currentBrowser.settings.viewType = FB.FMList.ICON_VIEW
-                            }
-
-                            settings.viewType = FB.FMList.ICON_VIEW
-                        }
-                    }
-
-                    Maui.ContextualMenu
-                    {
-                        title: i18n("Sort by")
-
-                        Action
-                        {
-                            text: i18n("Type")
-                            checked: currentBrowser.settings.sortBy === FB.FMList.MIME
-                            checkable: true
-
-                            onTriggered:
-                            {
-                                currentBrowser.settings.sortBy = FB.FMList.MIME
-                                sortSettings.sortBy = FB.FMList.MIME
-                            }
-                        }
-
-                        Action
-                        {
-                            text: i18n("Date")
-                            checked: currentBrowser.settings.sortBy === FB.FMList.DATE
-                            checkable: true
-                            onTriggered:
-                            {
-                                currentBrowser.settings.sortBy = FB.FMList.DATE
-                                sortSettings.sortBy = FB.FMList.DATE
-                            }
-                        }
-
-                        Action
-                        {
-                            text: i18n("Modified")
-                            checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
-                            checkable: true
-                            onTriggered:
-                            {
-                                currentBrowser.settings.sortBy = FB.FMList.MODIFIED
-                                sortSettings.sortBy = FB.FMList.MODIFIED
-                            }
-                        }
-
-                        Action
-                        {
-                            text: i18n("Size")
-                            checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
-                            checkable: true
-                            onTriggered:
-                            {
-                                currentBrowser.settings.sortBy = FB.FMList.SIZE
-                                sortSettings.sortBy = FB.FMList.SIZE
-                            }
-                        }
-
-                        Action
-                        {
-                            text: i18n("Name")
-                            checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
-                            checkable: true
-                            onTriggered:
-                            {
-                                currentBrowser.settings.sortBy = FB.FMList.LABEL
-                                sortSettings.sortBy = FB.FMList.LABEL
-                            }
-                        }
-
-                        MenuSeparator{}
-
-                        MenuItem
-                        {
-                            text: i18n("Show Folders First")
-                            checked: currentBrowser.settings.foldersFirst
-                            checkable: true
-
-                            onTriggered:
-                            {
-                                currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
-                                sortSettings.foldersFirst =  !sortSettings.foldersFirst
-                            }
-                        }
-
-                        MenuItem
-                        {
-                            id: groupAction
-                            text: i18n("Group")
-                            checkable: true
-                            checked: currentBrowser.settings.group
-                            onTriggered:
-                            {
-                                currentBrowser.settings.group = !currentBrowser.settings.group
-                                sortSettings.group = !sortSettings.group
-                            }
-                        }
-                    }
-
-                    MenuSeparator {}
-
-                    MenuItem
-                    {
-                        text: i18n("Shortcuts")
-                        icon.name: "configure-shortcuts"
-                        onTriggered:
-                        {
-                            dialogLoader.sourceComponent = _shortcutsDialogComponent
-                            dialog.open()
-                        }
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Settings")
-                        icon.name: "settings-configure"
-                        onTriggered: openConfigDialog()
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("About")
-                        icon.name: "documentinfo"
-                        onTriggered: root.about()
-                    }
-                }
+                active: settings.actionBar
+                visible: active && !_homeViewComponent.visible
+                sourceComponent:  ActionBar {}
             }
 
-            headBar.farLeftContent: Loader
+            StackView
             {
-                asynchronous: true
-                sourceComponent: ToolButton
+                id: _stackView
+                anchors.fill: parent
+                initialItem: BrowserView
                 {
-                    icon.name: _sideBarView.sideBar.visible ? "sidebar-collapse" : "sidebar-expand"
-                    onClicked: _sideBarView.sideBar.toggle()
-                    checked: _sideBarView.sideBar.visible
-                    ToolTip.delay: 1000
-                    ToolTip.timeout: 5000
-                    ToolTip.visible: hovered
-                    ToolTip.text: i18n("Toggle sidebar")
+                    id: _browserView
+
+                    flickable: currentBrowser.flickable
+                    headBar.rightContent: Loader
+                    {
+                        id: _mainMenuLoader
+                        asynchronous: true
+                        sourceComponent: Maui.ToolButtonMenu
+                        {
+                            icon.name: settings.actionBar ? "overflow-menu" : (currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons")
+                            Maui.MenuItemActionRow
+                            {
+                                Action
+                                {
+                                    icon.name: "go-next"
+                                    text: i18n("Forward")
+                                    onTriggered: currentBrowser.goForward()
+                                }
+
+                                Action
+                                {
+                                    icon.name: "edit-find"
+                                    text: i18n("Search")
+                                    checked: currentBrowser.headBar.visible
+                                    checkable: true
+                                    onTriggered: currentBrowser.toggleSearchBar()
+                                }
+
+                                Action
+                                {
+                                    icon.name: "list-add"
+                                    text: i18n("New")
+                                    onTriggered: currentBrowser.newItem()
+                                }
+                            }
+
+                            Maui.LabelDelegate
+                            {
+                                width: parent.width
+                                isSection: true
+                                label: i18n("Edit")
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Paste")
+                                //         enabled: _optionsButton.enabled
+
+                                icon.name: "edit-paste"
+                                // 		enabled: control.clipboardItems.length > 0
+                                onTriggered: currentBrowser.paste()
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Select all")
+                                icon.name: "edit-select-all"
+                                onTriggered: currentBrowser.selectAll()
+                            }
+
+                            Maui.LabelDelegate
+                            {
+                                width: parent.width
+                                isSection: true
+                                label: i18n("Navigation")
+                            }
+
+                            Maui.MenuItemActionRow
+                            {
+
+                                Action
+                                {
+                                    icon.name: "tab-new"
+                                    text: i18n("New tab")
+                                    onTriggered: root.openTab(currentBrowser.currentPath)
+                                }
+
+                                Action
+                                {
+                                    icon.name: "view-hidden"
+                                    text: i18n("Hidden")
+                                    checkable: true
+                                    checked: settings.showHiddenFiles
+                                    onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
+                                }
+
+                                Action
+                                {
+                                    text: i18n("Split")
+                                    icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                                    checked: currentTab.count === 2
+                                    checkable: true
+                                    onTriggered: toogleSplitView()
+                                }
+
+                                Action
+                                {
+                                    text: i18n("Terminal")
+                                    enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+                                    icon.name: "dialog-scripts"
+                                    checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+                                    checkable: true
+
+                                    onTriggered: currentTab.currentItem.toogleTerminal()
+                                }
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Go to")
+                                icon.name: "edit-entry"
+                                onTriggered: pathBar.showEntryBar()
+                            }
+
+                            MenuItem
+                            {
+                                enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
+                                text: i18n("Open terminal here")
+                                id: openTerminal
+                                icon.name: "dialog-scripts"
+                                onTriggered:
+                                {
+                                    inx.openTerminal(currentBrowser.currentPath)
+                                }
+                            }
+
+                            Maui.LabelDelegate
+                            {
+                                width: parent.width
+                                isSection: true
+                                label: i18n("View")
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("List")
+                                icon.name: "view-list-details"
+                                checked: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
+                                checkable: true
+                                autoExclusive: true
+                                onTriggered:
+                                {
+                                    if(currentBrowser)
+                                    {
+                                        currentBrowser.settings.viewType = FB.FMList.LIST_VIEW
+                                    }
+
+                                    settings.viewType = FB.FMList.LIST_VIEW
+                                }
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Grid")
+                                icon.name: "view-list-icons"
+                                checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
+                                checkable: true
+                                autoExclusive: true
+
+                                onTriggered:
+                                {
+                                    if(currentBrowser)
+                                    {
+                                        currentBrowser.settings.viewType = FB.FMList.ICON_VIEW
+                                    }
+
+                                    settings.viewType = FB.FMList.ICON_VIEW
+                                }
+                            }
+
+                            Maui.ContextualMenu
+                            {
+                                title: i18n("Sort by")
+
+                                Action
+                                {
+                                    text: i18n("Type")
+                                    checked: currentBrowser.settings.sortBy === FB.FMList.MIME
+                                    checkable: true
+
+                                    onTriggered:
+                                    {
+                                        currentBrowser.settings.sortBy = FB.FMList.MIME
+                                        sortSettings.sortBy = FB.FMList.MIME
+                                    }
+                                }
+
+                                Action
+                                {
+                                    text: i18n("Date")
+                                    checked: currentBrowser.settings.sortBy === FB.FMList.DATE
+                                    checkable: true
+                                    onTriggered:
+                                    {
+                                        currentBrowser.settings.sortBy = FB.FMList.DATE
+                                        sortSettings.sortBy = FB.FMList.DATE
+                                    }
+                                }
+
+                                Action
+                                {
+                                    text: i18n("Modified")
+                                    checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
+                                    checkable: true
+                                    onTriggered:
+                                    {
+                                        currentBrowser.settings.sortBy = FB.FMList.MODIFIED
+                                        sortSettings.sortBy = FB.FMList.MODIFIED
+                                    }
+                                }
+
+                                Action
+                                {
+                                    text: i18n("Size")
+                                    checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
+                                    checkable: true
+                                    onTriggered:
+                                    {
+                                        currentBrowser.settings.sortBy = FB.FMList.SIZE
+                                        sortSettings.sortBy = FB.FMList.SIZE
+                                    }
+                                }
+
+                                Action
+                                {
+                                    text: i18n("Name")
+                                    checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
+                                    checkable: true
+                                    onTriggered:
+                                    {
+                                        currentBrowser.settings.sortBy = FB.FMList.LABEL
+                                        sortSettings.sortBy = FB.FMList.LABEL
+                                    }
+                                }
+
+                                MenuSeparator{}
+
+                                MenuItem
+                                {
+                                    text: i18n("Show Folders First")
+                                    checked: currentBrowser.settings.foldersFirst
+                                    checkable: true
+
+                                    onTriggered:
+                                    {
+                                        currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+                                        sortSettings.foldersFirst =  !sortSettings.foldersFirst
+                                    }
+                                }
+
+                                MenuItem
+                                {
+                                    id: groupAction
+                                    text: i18n("Group")
+                                    checkable: true
+                                    checked: currentBrowser.settings.group
+                                    onTriggered:
+                                    {
+                                        currentBrowser.settings.group = !currentBrowser.settings.group
+                                        sortSettings.group = !sortSettings.group
+                                    }
+                                }
+                            }
+
+                            MenuSeparator {}
+
+                            MenuItem
+                            {
+                                text: i18n("Shortcuts")
+                                icon.name: "configure-shortcuts"
+                                onTriggered:
+                                {
+                                    dialogLoader.sourceComponent = _shortcutsDialogComponent
+                                    dialog.open()
+                                }
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Settings")
+                                icon.name: "settings-configure"
+                                onTriggered: openConfigDialog()
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("About")
+                                icon.name: "documentinfo"
+                                onTriggered: root.about()
+                            }
+                        }
+                    }
+
+                    headBar.farLeftContent: Loader
+                    {
+                        asynchronous: true
+                        sourceComponent: ToolButton
+                        {
+                            icon.name: _sideBarView.sideBar.visible ? "sidebar-collapse" : "sidebar-expand"
+                            onClicked: _sideBarView.sideBar.toggle()
+                            checked: _sideBarView.sideBar.visible
+                            ToolTip.delay: 1000
+                            ToolTip.timeout: 5000
+                            ToolTip.visible: hovered
+                            ToolTip.text: i18n("Toggle sidebar")
+                        }
+                    }
+
+                    headBar.middleContent: Item
+                    {
+                        Layout.fillWidth: true
+                        Layout.minimumWidth: 100
+                        Layout.fillHeight: true
+
+                        PathBar
+                        {
+                            id: _pathBar
+
+                            anchors.centerIn: parent
+                            width: Math.min(parent.width, implicitWidth)
+                            onPathChanged: currentBrowser.openFolder(path)
+                            url: currentBrowser.currentPath
+
+                            onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
+                            onPlaceClicked:
+                            {
+                                if(path === currentBrowser.currentPath)
+                                {
+                                    openMenu()
+                                }
+                                else
+                                {
+                                    currentBrowser.openFolder(path)
+                                }
+                            }
+
+                            onPlaceRightClicked:
+                            {
+                                _pathBarmenu.path = path
+                                _pathBarmenu.show()
+                            }
+
+                            //                    onMenuClicked: openMenu()
+
+                            function openMenu()
+                            {
+                                _mainMenuLoader.item.open()
+                            }
+
+                            Maui.ContextualMenu
+                            {
+                                id: _pathBarmenu
+                                property url path
+
+                                MenuItem
+                                {
+                                    text: i18n("Bookmark")
+                                    icon.name: "bookmark-new"
+                                    onTriggered: currentBrowser.bookmarkFolder([_pathBarmenu.path])
+                                }
+
+                                MenuItem
+                                {
+                                    text: i18n("Open in new tab")
+                                    icon.name: "tab-new"
+                                    onTriggered: openTab(_pathBarmenu.path)
+                                }
+
+                                MenuItem
+                                {
+                                    visible: root.currentTab.count === 1
+                                    text: i18n("Open in split view")
+                                    icon.name: "view-split-left-right"
+                                    onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                                }
+
+                            }
+                        }
+                    }
                 }
-            }
 
-            headBar.middleContent: Item
-            {
-                Layout.fillWidth: true
-                Layout.minimumWidth: 100
-                Layout.fillHeight: true
-
-                PathBar
+                Loader
                 {
-                    id: _pathBar
+                    id: _homeViewComponent
+                    asynchronous: true
+                    visible: StackView.status === StackView.Active
+                    active: StackView.status === StackView.Active || item
 
-                    anchors.centerIn: parent
-                    width: Math.min(parent.width, implicitWidth)
-                    onPathChanged: currentBrowser.openFolder(path)
-                    url: currentBrowser.currentPath
+                    sourceComponent: HomeView {}
 
-                    onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
-                    onPlaceClicked:
+                    BusyIndicator
                     {
-                        if(path === currentBrowser.currentPath)
-                        {
-                            openMenu()
-                        }
-                        else
-                        {
-                            currentBrowser.openFolder(path)
-                        }
-                    }
-
-                    onPlaceRightClicked:
-                    {
-                        _pathBarmenu.path = path
-                        _pathBarmenu.show()
-                    }
-
-                    //                    onMenuClicked: openMenu()
-
-                    function openMenu()
-                    {
-                        _mainMenuLoader.item.open()
-                    }
-
-                    Maui.ContextualMenu
-                    {
-                        id: _pathBarmenu
-                        property url path
-
-                        MenuItem
-                        {
-                            text: i18n("Bookmark")
-                            icon.name: "bookmark-new"
-                            onTriggered: currentBrowser.bookmarkFolder([_pathBarmenu.path])
-                        }
-
-                        MenuItem
-                        {
-                            text: i18n("Open in new tab")
-                            icon.name: "tab-new"
-                            onTriggered: openTab(_pathBarmenu.path)
-                        }
-
-                        MenuItem
-                        {
-                            visible: root.currentTab.count === 1
-                            text: i18n("Open in split view")
-                            icon.name: "view-split-left-right"
-                            onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
-                        }
-
+                        running: parent.status === Loader.Loading
+                        anchors.centerIn: parent
                     }
                 }
             }
         }
-
-        Loader
-        {
-            id: _homeViewComponent
-            asynchronous: true
-            visible: StackView.status === StackView.Active
-            active: StackView.status === StackView.Active || item
-
-            sourceComponent: HomeView {}
-
-            BusyIndicator
-            {
-                running: parent.status === Loader.Loading
-                anchors.centerIn: parent
-            }
-        }
     }
-}
-}
     Component.onCompleted:
     {
         setAndroidStatusBarColor()
 
-//        if(settings.overviewStart)
-//        {
-//            root.openTab(FB.FM.homePath())
+        //        if(settings.overviewStart)
+        //        {
+        //            root.openTab(FB.FM.homePath())
 
-//            _stackView.push(_homeViewComponent)
-//            return
-//        }
+        //            _stackView.push(_homeViewComponent)
+        //            return
+        //        }
 
         if(initPaths.length)
         {

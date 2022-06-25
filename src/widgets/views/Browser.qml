@@ -158,7 +158,6 @@ Maui.SplitViewItem
                 }
             ]
 
-
             Connections
             {
                 target: _browser.dropArea
