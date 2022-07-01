@@ -72,25 +72,24 @@ Item
             flickable.header: Loader
             {
                 asynchronous: true
-                width: Math.min(parent.width, 180)
-                height: item ? item.implicitHeight : 0
+                width: parent.width
+//                height: item ? item.implicitHeight : 0
                 active: appSettings.quickSidebarSection
                 visible: active
 
-                sourceComponent: Column
+                sourceComponent: Item
                 {
-                    spacing: Maui.Style.space.medium
+                    implicitHeight: _quickSection.implicitHeight
 
                     GridLayout
                     {
                         id: _quickSection
-
+                        width: Math.min(parent.width, 180)
+                        anchors.centerIn: parent
                         rows: 3
                         columns: 3
                         columnSpacing: Maui.Style.space.small
                         rowSpacing: Maui.Style.space.small
-
-                        width: parent.width
 
                         Repeater
                         {
