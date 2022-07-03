@@ -721,13 +721,13 @@ Maui.ApplicationWindow
     {
         setAndroidStatusBarColor()
 
-        //        if(settings.overviewStart)
-        //        {
-        //            root.openTab(FB.FM.homePath())
+        if(settings.overviewStart)
+        {
+            root.openTab(FB.FM.homePath())
 
-        //            _stackView.push(_homeViewComponent)
-        //            return
-        //        }
+            _stackView.push(_homeViewComponent)
+            return
+        }
 
         if(initPaths.length)
         {
@@ -752,7 +752,7 @@ Maui.ApplicationWindow
         if(Maui.Handy.isAndroid)
         {
             Maui.Android.statusbarColor( Maui.Theme.backgroundColor, !appSettings.darkMode)
-            Maui.Android.navBarColor(headBar.visible ? headBar.Maui.Theme.backgroundColor : Maui.Theme.backgroundColor, !appSettings.darkMode)
+            Maui.Android.navBarColor( Maui.Theme.backgroundColor, !appSettings.darkMode)
         }
     }
 
