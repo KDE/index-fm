@@ -228,30 +228,27 @@ Maui.ContextualMenu
         }
     }
 
-    MenuSeparator{ visible: colorBar.visible }
+    MenuSeparator {}
 
-    MenuItem
+    ColorsBar
     {
-        height: visible ? Maui.Style.iconSizes.medium + Maui.Style.space.big : 0
+        id: colorBar
+        padding: control.padding
+        width: parent.width
         enabled: control.isDir
 
-        ColorsBar
+        Binding on folderColor {
+            value: control.item.icon
+            restoreMode: Binding.RestoreBindingOrValue
+        }
+
+        onFolderColorPicked:
         {
-            id: colorBar
-            anchors.centerIn: parent
-
-            Binding on folderColor {
-                value: control.item.icon
-                restoreMode: Binding.RestoreBindingOrValue
-            }
-
-            onFolderColorPicked:
-            {
-                _browser.currentFMList.setDirIcon(control.index, color)
-                control.close()
-            }
+            _browser.currentFMList.setDirIcon(control.index, color)
+            control.close()
         }
     }
+
 
     onClosed:
     {
