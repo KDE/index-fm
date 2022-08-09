@@ -6,8 +6,6 @@ import org.mauikit.texteditor 1.0 as TE
 TE.TextEditor
 {
     id: control
-    headBar.visible: false
-    footBar.visible: false
     body.readOnly: true
     document.enableSyntaxHighlighting: true
     fileUrl: currentUrl

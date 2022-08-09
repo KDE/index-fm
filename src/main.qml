@@ -69,7 +69,7 @@ Maui.ApplicationWindow
             FB.FMList.REMOTE_PATH,
             FB.FMList.REMOVABLE_PATH,
             FB.FMList.DRIVES_PATH]
-        property bool darkMode:  Maui.Style.styleType === Maui.Style.Dark
+        property bool darkMode: Maui.Style.styleType === Maui.Style.Dark
 
         property alias sideBarWidth : _sideBarView.sideBar.preferredWidth
     }
