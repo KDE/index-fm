@@ -91,8 +91,6 @@ Maui.SplitViewItem
         }
     }
 
-
-
     Maui.SplitView
     {
         anchors.fill: parent

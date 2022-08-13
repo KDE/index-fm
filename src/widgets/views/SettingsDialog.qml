@@ -79,11 +79,12 @@ Maui.SettingsDialog
 //                    onTriggered: appSettings.gridSize = 0
 //                }
 
-//                Action
-//                {
-//                    text: i18n("M")
-//                    onTriggered: appSettings.gridSize = 1
-//                }
+                Action
+                {
+                    text: i18n("M")
+                    checked: appSettings.gridSize === 1
+                    onTriggered: appSettings.gridSize = 1
+                }
 
                 Action
                 {
