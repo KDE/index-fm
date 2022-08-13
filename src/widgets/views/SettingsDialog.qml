@@ -71,7 +71,7 @@ Maui.SettingsDialog
                 autoExclusive: true
                 display: ToolButton.TextOnly
 
-                currentIndex: appSettings.gridSize
+//                currentIndex: appSettings.gridSize
 
 //                Action
 //                {
@@ -88,18 +88,21 @@ Maui.SettingsDialog
                 Action
                 {
                     text: i18n("L")
+                    checked: appSettings.gridSize === 2
                     onTriggered: appSettings.gridSize = 2
                 }
 
                 Action
                 {
                     text: i18n("X")
+                    checked: appSettings.gridSize === 3
                     onTriggered: appSettings.gridSize = 3
                 }
 
                 Action
                 {
                     text: i18n("XL")
+                    checked: appSettings.gridSize === 4
                     onTriggered: appSettings.gridSize = 4
                 }
             }
@@ -116,36 +119,39 @@ Maui.SettingsDialog
                 autoExclusive: true
                 display: ToolButton.TextOnly
 
-                currentIndex: appSettings.listSize
-
                 Action
                 {
                     text: i18n("S")
                     onTriggered: appSettings.listSize = 0
+                    checked: appSettings.listSize === 0
                 }
 
                 Action
                 {
                     text: i18n("M")
                     onTriggered: appSettings.listSize = 1
+                    checked: appSettings.listSize === 1
                 }
 
                 Action
                 {
                     text: i18n("L")
                     onTriggered: appSettings.listSize = 2
+                    checked: appSettings.listSize === 2
                 }
 
                 Action
                 {
                     text: i18n("X")
                     onTriggered: appSettings.listSize = 3
+                    checked: appSettings.listSize === 3
                 }
 
                 Action
                 {
                     text: i18n("XL")
                     onTriggered: appSettings.listSize = 4
+                    checked: appSettings.listSize === 4
                 }
             }
         }
