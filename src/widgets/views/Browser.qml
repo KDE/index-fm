@@ -168,24 +168,6 @@ Maui.SplitViewItem
                 }
             }
 
-            MouseArea // to support button go back and forward
-            {
-                anchors.fill: parent
-                propagateComposedEvents: true
-                acceptedButtons: Qt.BackButton | Qt.ForwardButton | Qt.LeftButton
-                //        hoverEnabled: true
-                //        onEntered: _splitView.currentIndex = control.index
-                onPressed:
-                {
-                    mouse.accepted = false
-                    _browser.keyPress(mouse);
-                    if((mouse.button == Qt.LeftButton) && (mouse.modifiers == Qt.NoModifier) && (selectionBar.count > 0) && (!Maui.Handy.isMobile))
-                    {
-                        selectionBar.clear()
-                    }
-                }
-            }
-
             onKeyPress:
             {
                 if (event.key == Qt.Key_Forward)
@@ -247,6 +229,8 @@ Maui.SplitViewItem
             {
                 const item = currentFMModel.get(index)
 
+//                handleSelectionState(item)
+
                 if(Maui.Handy.singleClick)
                 {
                     if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
@@ -262,6 +246,7 @@ Maui.SplitViewItem
             onItemDoubleClicked:
             {
                 const item = currentFMModel.get(index)
+//                handleSelectionState(item)
 
                 if(!Maui.Handy.singleClick)
                 {
@@ -279,6 +264,7 @@ Maui.SplitViewItem
             {
                 const itemIndex = _browser.currentFMModel.mappedToSource(index)
                 const item = _browser.currentFMModel.get(index)
+//                handleSelectionState(item)
 
                 if(item.path.startsWith("tags://"))
                 {
@@ -296,6 +282,15 @@ Maui.SplitViewItem
             {
                 _mainMenuLoader.item.open()
             }
+
+//            onAreaClicked:
+//            {
+//                if((mouse.button === Qt.LeftButton) && (mouse.modifiers === Qt.NoModifier) && (!Maui.Handy.isMobile))
+//                {
+//                    handleSelectionState()
+//                }
+//            }
+
         }
 
         Loader
@@ -337,6 +332,14 @@ Maui.SplitViewItem
     {
         if(terminalLoader.item && terminalVisible)
             terminalLoader.item.session.sendText("cd '" + path.replace("file://", "") + "'\n")
+    }
+
+    function handleSelectionState(item)
+    {
+        if((selectionBar.count > 0) && (!Maui.Handy.isMobile) && (!item || !selectionBar.contains(item.url)))
+        {
+            selectionBar.clear()
+        }
     }
 
     function toogleTerminal()

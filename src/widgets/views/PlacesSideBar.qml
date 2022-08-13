@@ -162,7 +162,6 @@ Item
             {
                 isCurrentItem: ListView.isCurrentItem && _stackView.depth === 1
                 width: ListView.view.width
-                template.headerSizeHint: iconSize + Maui.Style.space.small
 
                 iconSize: Maui.Style.iconSize
                 label: model.label

@@ -22,6 +22,7 @@ Maui.Dialog
     property bool showInfo: true
 
     title: _listView.currentItem.title
+    page.showTitle: true
 
     hint: 1
     maxWidth: 800
@@ -206,8 +207,6 @@ Maui.Dialog
             }
         }
     }
-
-    page.showTitle: false
 
     footBar.leftContent: Maui.ToolActions
     {

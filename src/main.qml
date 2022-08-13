@@ -491,6 +491,7 @@ Maui.ApplicationWindow
                             Maui.ContextualMenu
                             {
                                 title: i18n("Sort by")
+                                titleIconSource: "view-sort"
 
                                 Action
                                 {
