@@ -227,8 +227,8 @@ Item
     onPlaceClicked:
     {
         currentBrowser.openFolder(path)
-        if(control.collapsed)
-            control.close()
+        if(_sideBarView.sideBar.collapsed)
+            _sideBarView.sideBar.close()
 
         if(_stackView.depth === 2)
             _stackView.pop()
