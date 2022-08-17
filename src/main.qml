@@ -153,20 +153,17 @@ Maui.ApplicationWindow
     {
         id: _extractDialogComponent
 
-        Maui.Dialog
+        Maui.NewDialog
         {
             id: _extractDialog
 
             title: i18n("Extract")
             message: i18n("Extract the content of the compressed file into a new or existing subdirectory or inside the current directory.")
-            entryField: true
-            page.margins: Maui.Style.space.big
             closeButtonVisible: false
 
-            onAccepted:
+            onFinished:
             {
-                _compressedFile.extract(currentBrowser.currentPath, textEntry.text)
-                _extractDialog.close()
+                _compressedFile.extract(currentBrowser.currentPath, text)
             }
         }
     }
@@ -184,12 +181,16 @@ Maui.ApplicationWindow
             title: i18np("Compress %1 file", "Compress %1 files", urls.length)
             message: i18n("Compress selected files into a new file.")
 
-            textEntry.placeholderText: i18n("Archive name...")
-            entryField: true
+            TextField
+            {
+                id: _textEntry
+                width: parent.width
+                placeholderText: i18n("Archive name...")
+            }
 
             function clear()
             {
-                textEntry.clear()
+                _textEntry.clear()
                 compressType.currentIndex = 0
                 urls = []
                 _showCompressedFiles.checked = false
@@ -226,7 +227,7 @@ Maui.ApplicationWindow
 
             onAccepted:
             {
-                var error = _compressedFile.compress(urls, currentBrowser.currentPath, textEntry.text, compressType.currentIndex)
+                var error = _compressedFile.compress(urls, currentBrowser.currentPath, _textEntry.text, compressType.currentIndex)
 
                 if(error)
                 {
