@@ -299,7 +299,6 @@ Maui.ApplicationWindow
             anchors.fill: parent
         }
 
-
         Maui.Page
         {
             anchors.fill: parent
@@ -317,11 +316,14 @@ Maui.ApplicationWindow
             {
                 id: _stackView
                 anchors.fill: parent
+                clip: false
+
                 initialItem: BrowserView
                 {
                     id: _browserView
 
                     flickable: currentBrowser.flickable
+
                     headBar.rightContent: Loader
                     {
                         id: _mainMenuLoader
@@ -719,6 +721,7 @@ Maui.ApplicationWindow
             }
         }
     }
+
     Component.onCompleted:
     {
         setAndroidStatusBarColor()

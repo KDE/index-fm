@@ -17,6 +17,8 @@
 #include <QDebug>
 #include <QFileInfo>
 
+#include <QProcess>
+
 #include <MauiKit/Core/fmh.h>
 #include <MauiKit/FileBrowsing/fmstatic.h>
 
@@ -231,7 +233,10 @@ void Index::openNewTabAndActivate(const QUrl &url)
 
 void Index::openNewWindow(const QUrl &url)
 {
-
+    QProcess process;
+    process.setProgram("index");
+    process.setArguments({"-n", url.toString()});
+    process.startDetached();
 }
 
 /* to be called to launch index with opening different paths */

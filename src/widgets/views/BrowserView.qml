@@ -169,6 +169,16 @@ Maui.Page
 
         onNewTabClicked: openTab(currentBrowser.currentPath)
         onCloseTabClicked: closeTab(index)
+
+        menuActions: Action
+        {
+            text: i18n("Detach Tab")
+            onTriggered:
+            {
+                inx.openNewWindow(_browserList.contentModel.get(_browserList.menu.index).path)
+                closeTab(_browserList.menu.index)
+            }
+        }
     }
 
     function isUrlOpen(url : string) : bool

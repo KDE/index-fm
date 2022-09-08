@@ -77,7 +77,12 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(about);
 
+    QCommandLineOption newWindowOption(QStringList() << "n" << "new", "Open url in a new window.", "url");
+
     QCommandLineParser parser;
+
+    parser.addOption(newWindowOption);
+
     parser.setApplicationDescription(about.shortDescription());
     parser.process(app);
     about.processCommandLine(&parser);
@@ -91,7 +96,16 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
             paths << QUrl::fromUserInput(path).toString();
     }
 
+
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
+
+
+    if(parser.isSet(newWindowOption))
+    {
+        paths = QStringList() << QUrl::fromUserInput(parser.value(newWindowOption)).toString() ;
+    }else
+    {
+
     if (IndexInstance::attachToExistingInstance(QUrl::fromStringList(paths), false, false))
     {
         // Successfully attached to existing instance of Dolphin
@@ -104,6 +118,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 //        {
 //            instances.first().first->activateWindow();
 //        }
+    }
     }
 
     IndexInstance::registerService();
