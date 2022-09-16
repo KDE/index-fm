@@ -172,6 +172,7 @@ Maui.Page
 
         menuActions: Action
         {
+            enabled: Maui.Handy.isLinux
             text: i18n("Detach Tab")
             onTriggered:
             {

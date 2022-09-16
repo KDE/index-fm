@@ -183,11 +183,11 @@ Item
                     }
                 }
 
-                Maui.ScrollView
+                ScrollView
                 {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-
+				orientation: Qt.Horizontal
                     implicitWidth: contentWidth
 
                     ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
