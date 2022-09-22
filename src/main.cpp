@@ -123,7 +123,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     IndexInstance::registerService();
 #endif
-    Index *index = new Index();
+    auto index = std::make_unique<Index>();
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -131,7 +131,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                 &engine,
                 &QQmlApplicationEngine::objectCreated,
                 &app,
-                [url, index](QObject *obj, const QUrl &objUrl) {
+                [url, &index](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
 
@@ -141,7 +141,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("initPaths", paths);
 
-    engine.rootContext()->setContextProperty("inx", index);
+    engine.rootContext()->setContextProperty("inx", index.get());
     qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
     qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");
