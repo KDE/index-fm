@@ -16,6 +16,7 @@ Maui.ToolBar
         {
             autoExclusive: false
             checkable: false
+            display: ToolButton.IconOnly
 
             Action
             {
@@ -36,6 +37,7 @@ Maui.ToolBar
             autoExclusive: true
             expanded: root.isWide
             cyclic: true
+            display: ToolButton.IconOnly
 
             Action
             {
