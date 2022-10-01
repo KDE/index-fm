@@ -17,7 +17,7 @@ Item
 {
     id: control
 
-    signal placeClicked (string path)
+    signal placeClicked (string path, var mouse)
 
 
     property alias list : placesList
@@ -124,7 +124,7 @@ Item
                                             return
                                         }
 
-                                        placeClicked(modelData.path)
+                                        placeClicked(modelData.path, mouse)
                                         if(control.collapsed)
                                             control.close()
                                     }
@@ -191,7 +191,7 @@ Item
                         notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), mount)
                     }
 
-                    placeClicked(model.path)
+                    placeClicked(model.path, mouse)
                     if(control.collapsed)
                         control.close()
                 }
@@ -226,7 +226,18 @@ Item
 
     onPlaceClicked:
     {
-        currentBrowser.openFolder(path)
+        if(mouse.modifiers & Qt.ControlModifier)
+        {
+            openTab(path)
+        }else if(mouse.modifiers & Qt.AltModifier)
+        {
+            currentTab.split(path)
+        }
+        else
+        {
+            currentBrowser.openFolder(path)
+        }
+
         if(_sideBarView.sideBar.collapsed)
             _sideBarView.sideBar.close()
 
