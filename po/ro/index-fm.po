@@ -1,0 +1,759 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the index-fm package.
+# Sergiu Bivol <sergiu@cip.md>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:45+0000\n"
+"PO-Revision-Date: 2022-08-14 16:11+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Index"
+msgstr "Index"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Browse, organize and preview your files."
+msgstr "Răsfoiți, organizați și previzualizați fișiere."
+
+#: src/main.cpp:68
+#, kde-format
+msgid "© 2019-%1 Maui Development Team"
+msgstr "© 2019-%1 Echipa de dezvoltare Maui"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:70 src/main.cpp:71
+#, kde-format
+msgid "Developer"
+msgstr "Dezvoltator"
+
+#: src/main.cpp:71
+#, kde-format
+msgid "Gabriel Dominguez"
+msgstr "Gabriel Dominguez"
+
+#: src/main.qml:160 src/widgets/previewer/CompressedPreview.qml:15
+#: src/widgets/views/FileMenu.qml:209
+#, kde-format
+msgid "Extract"
+msgstr "Extrage"
+
+#: src/main.qml:161
+#, kde-format
+msgid ""
+"Extract the content of the compressed file into a new or existing "
+"subdirectory or inside the current directory."
+msgstr ""
+"Extrage conținutul fișierului comprimat într-un subdosar nou sau existent, "
+"sau în dosarul actual."
+
+#: src/main.qml:181
+#, kde-format
+msgid "Compress %1 file"
+msgid_plural "Compress %1 files"
+msgstr[0] "Comprimă %1 fișier"
+msgstr[1] "Comprimă %1 fișiere"
+msgstr[2] "Comprimă %1 de fișiere"
+
+#: src/main.qml:182
+#, kde-format
+msgid "Compress selected files into a new file."
+msgstr "Comprimă fișierele alese într-un fișier nou."
+
+#: src/main.qml:188
+#, kde-format
+msgid "Archive name..."
+msgstr "Denumirea arhivei…"
+
+#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#, kde-format
+msgid "Open folder"
+msgstr "Deschide dosarul"
+
+#: src/main.qml:275
+#, kde-format
+msgid "Extracted"
+msgstr "Extras"
+
+#: src/main.qml:276
+#, kde-format
+msgid "File was extracted"
+msgstr "Fișierul a fost extras"
+
+#: src/main.qml:339
+#, kde-format
+msgid "Forward"
+msgstr "Înainte"
+
+#: src/main.qml:346
+#, kde-format
+msgid "Search"
+msgstr "Caută"
+
+#: src/main.qml:355
+#, kde-format
+msgid "New"
+msgstr "Nou"
+
+#: src/main.qml:364 src/widgets/views/Browser.qml:53
+#, kde-format
+msgid "Edit"
+msgstr "Modifică"
+
+#: src/main.qml:369
+#, kde-format
+msgid "Paste"
+msgstr "Lipește"
+
+#: src/main.qml:379
+#, kde-format
+msgid "Select all"
+msgstr "Selectează tot"
+
+#: src/main.qml:388 src/widgets/views/SettingsDialog.qml:12
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Navigare"
+
+#: src/main.qml:397
+#, kde-format
+msgid "New tab"
+msgstr "Filă nouă"
+
+#: src/main.qml:404
+#, kde-format
+msgid "Hidden"
+msgstr "Ascuns"
+
+#: src/main.qml:412 src/widgets/views/ShortcutsDialog.qml:99
+#, kde-format
+msgid "Split"
+msgstr "Desparte"
+
+#: src/main.qml:421 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/main.qml:433
+#, kde-format
+msgid "Go to"
+msgstr "Mergi"
+
+#: src/main.qml:441
+#, kde-format
+msgid "Open terminal here"
+msgstr "Deschide un terminal aici"
+
+#: src/main.qml:454
+#, kde-format
+msgid "View"
+msgstr "Vizualizare"
+
+#: src/main.qml:459 src/widgets/views/ActionBar.qml:44
+#, kde-format
+msgid "List"
+msgstr "Listă"
+
+#: src/main.qml:477 src/widgets/views/ActionBar.qml:61
+#, kde-format
+msgid "Grid"
+msgstr "Grilă"
+
+#: src/main.qml:496
+#, kde-format
+msgid "Sort by"
+msgstr "Sortează după"
+
+#: src/main.qml:501
+#, kde-format
+msgid "Type"
+msgstr "Tip"
+
+#: src/main.qml:514
+#, kde-format
+msgid "Date"
+msgstr "Dată"
+
+#: src/main.qml:526
+#, kde-format
+msgid "Modified"
+msgstr "Modificat"
+
+#: src/main.qml:538
+#, kde-format
+msgid "Size"
+msgstr "Dimensiune"
+
+#: src/main.qml:550
+#, kde-format
+msgid "Name"
+msgstr "Denumire"
+
+#: src/main.qml:564
+#, kde-format
+msgid "Show Folders First"
+msgstr "Arată întâi dosarele"
+
+#: src/main.qml:578 src/widgets/previewer/FileProperties.qml:80
+#: src/widgets/previewer/FileProperties.qml:159
+#, kde-format
+msgid "Group"
+msgstr "Grup"
+
+#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr "Scurtături"
+
+#: src/main.qml:604
+#, kde-format
+msgid "Settings"
+msgstr "Configurări"
+
+#: src/main.qml:611
+#, kde-format
+msgid "About"
+msgstr "Despre"
+
+#: src/main.qml:629
+#, kde-format
+msgid "Toggle sidebar"
+msgstr ""
+
+#: src/main.qml:681 src/widgets/views/FileMenu.qml:177
+#, kde-format
+msgid "Bookmark"
+msgstr "Pune semn de carte"
+
+#: src/main.qml:688 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:88
+#, kde-format
+msgid "Open in new tab"
+msgstr "Deschide în filă nouă"
+
+#: src/main.qml:696 src/widgets/views/FileMenu.qml:199
+#: src/widgets/views/PlacesSideBar.qml:96
+#, kde-format
+msgid "Open in split view"
+msgstr "Deschide în vizualizare despărțită"
+
+#: src/widgets/previewer/FilePreviewer.qml:123
+#, kde-format
+msgid "Details"
+msgstr "Detalii"
+
+#: src/widgets/previewer/FilePreviewer.qml:124
+#, kde-format
+msgid "File information"
+msgstr "Informații despre fișier"
+
+#: src/widgets/previewer/FilePreviewer.qml:220
+#, kde-format
+msgid "Previous"
+msgstr "Precedent"
+
+#: src/widgets/previewer/FilePreviewer.qml:227
+#, kde-format
+msgid "Next"
+msgstr "Următor"
+
+#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#, kde-format
+msgid "Open"
+msgstr "Deschide"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#, kde-format
+msgid "Permissions"
+msgstr "Permisiuni"
+
+#: src/widgets/previewer/FileProperties.qml:45
+#: src/widgets/previewer/FileProperties.qml:148
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:49
+#: src/widgets/previewer/FileProperties.qml:152
+#, kde-format
+msgid "Owner"
+msgstr "Proprietar"
+
+#: src/widgets/previewer/FileProperties.qml:58
+#: src/widgets/previewer/FileProperties.qml:90
+#: src/widgets/previewer/FileProperties.qml:122
+#, kde-format
+msgid "Read"
+msgstr "Citire"
+
+#: src/widgets/previewer/FileProperties.qml:65
+#: src/widgets/previewer/FileProperties.qml:97
+#: src/widgets/previewer/FileProperties.qml:128
+#, kde-format
+msgid "Write"
+msgstr "Scriere"
+
+#: src/widgets/previewer/FileProperties.qml:72
+#: src/widgets/previewer/FileProperties.qml:105
+#: src/widgets/previewer/FileProperties.qml:134
+#, kde-format
+msgid "Execute"
+msgstr "Executare"
+
+#: src/widgets/previewer/FileProperties.qml:113
+#, kde-format
+msgid "Everyone"
+msgstr "Toți"
+
+#: src/widgets/previewer/FileProperties.qml:147
+#, kde-format
+msgid "Ownership"
+msgstr "Proprietar"
+
+#: src/widgets/previewer/FileProperties.qml:165
+#, kde-format
+msgid "Users"
+msgstr "Utilizatori"
+
+#: src/widgets/previewer/FileProperties.qml:174
+#, kde-format
+msgid "Groups"
+msgstr "Grupuri"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "Instalează"
+
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "Elimină"
+
+#: src/widgets/views/Browser.qml:79
+#, kde-format
+msgid "Remove '%1'"
+msgstr "Elimină „%1”"
+
+#: src/widgets/views/Browser.qml:80
+#, kde-format
+msgid "Accept"
+msgstr "Acceptă"
+
+#: src/widgets/views/Browser.qml:81
+#, kde-format
+msgid "Cancel"
+msgstr "Renunță"
+
+#: src/widgets/views/Browser.qml:83
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr ""
+"Sigur doriți să eliminați acest marcaj? Această operație nu poate fi "
+"desfăcută."
+
+#: src/widgets/views/Browser.qml:153
+#, kde-format
+msgid "Create new"
+msgstr "Creează nou"
+
+#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
+#, kde-format
+msgid "Copy"
+msgstr "Copiază"
+
+#: src/widgets/views/BrowserView.qml:99 src/widgets/views/FileMenu.qml:61
+#, kde-format
+msgid "Cut"
+msgstr "Taie"
+
+#: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/HomeView.qml:46
+#, kde-format
+msgid "Share"
+msgstr "Partajează"
+
+#: src/widgets/views/BrowserView.qml:132 src/widgets/views/FileMenu.qml:221
+#, kde-format
+msgid "Compress"
+msgstr "Comprimă"
+
+#: src/widgets/views/BrowserView.qml:144 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tags"
+msgstr "Marcaje"
+
+#: src/widgets/views/BrowserView.qml:176
+#, kde-format
+msgid "Detach Tab"
+msgstr ""
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr "Dispozitive și distant"
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr ""
+
+#: src/widgets/views/FavoritesSection.qml:22
+#, kde-format
+msgid "Favorite files"
+msgstr "Fișiere favorite"
+
+#: src/widgets/views/FavoritesSection.qml:23
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr "Fișierele marcate ca favorite"
+
+#: src/widgets/views/FileMenu.qml:41
+#, kde-format
+msgid " items"
+msgstr " elemente"
+
+#: src/widgets/views/FileMenu.qml:72
+#, kde-format
+msgid "Rename"
+msgstr "Redenumește"
+
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#, kde-format
+msgid "Select"
+msgstr "Alege"
+
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#, kde-format
+msgid "Open with"
+msgstr "Deschide cu"
+
+#: src/widgets/views/FileMenu.qml:123
+#, kde-format
+msgid "Preview and info"
+msgstr "Previzualizare și informații"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "UnFav"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "Fav"
+msgstr ""
+
+#: src/widgets/views/home/QuickCommonSection.qml:25
+#, kde-format
+msgid "Collections"
+msgstr "Colecții"
+
+#: src/widgets/views/home/QuickCommonSection.qml:27
+#, kde-format
+msgid "Quick access to common collections"
+msgstr "Acces rapid la colecții comune"
+
+#: src/widgets/views/HomeView.qml:64
+#, kde-format
+msgid "Search for files"
+msgstr "Caută fișiere"
+
+#: src/widgets/views/HomeView.qml:74
+#, kde-format
+msgid "Browser"
+msgstr "Navigator"
+
+#: src/widgets/views/PlacesSection.qml:18
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Semne de carte"
+
+#: src/widgets/views/PlacesSection.qml:19
+#, kde-format
+msgid "Quick access to most common places and bookmarks"
+msgstr ""
+
+#: src/widgets/views/PlacesSideBar.qml:42
+#, kde-format
+msgid "Bookmarks!"
+msgstr "Semne de carte!"
+
+#: src/widgets/views/PlacesSideBar.qml:43
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr ""
+
+#: src/widgets/views/PlacesSideBar.qml:235
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr ""
+
+#: src/widgets/views/RecentSection.qml:22
+#, kde-format
+msgid "Downloads, Audio & Pictures"
+msgstr ""
+
+#: src/widgets/views/RecentSection.qml:23
+#, kde-format
+msgid "Your most recent downloaded files, audio and images"
+msgstr ""
+
+#: src/widgets/views/RecentSection.qml:56
+#, kde-format
+msgid "Downloads"
+msgstr "Descărcări"
+
+#: src/widgets/views/RecentSection.qml:129
+#, kde-format
+msgid "Music"
+msgstr "Muzică"
+
+#: src/widgets/views/RecentSection.qml:196
+#, kde-format
+msgid "Pictures"
+msgstr "Fotografii"
+
+#: src/widgets/views/RecentSection.qml:253
+#, kde-format
+msgid "Camera"
+msgstr "Aparat foto"
+
+#: src/widgets/views/RecentSection.qml:309
+#, kde-format
+msgid "Screenshots"
+msgstr "Capturi de ecran"
+
+#: src/widgets/views/SettingsDialog.qml:13
+#, kde-format
+msgid "Configure the app plugins and behavior."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:17
+#, kde-format
+msgid "Thumbnails"
+msgstr "Miniaturi"
+
+#: src/widgets/views/SettingsDialog.qml:18
+#, kde-format
+msgid "Show previews of images, videos and PDF files"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:31
+#, kde-format
+msgid "Save Session"
+msgstr "Salvează sesiunea"
+
+#: src/widgets/views/SettingsDialog.qml:32
+#, kde-format
+msgid "Save and restore tabs"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:45
+#, kde-format
+msgid "Action Bar"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Extra toolbar with quick actions."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, kde-format
+msgid "Interface"
+msgstr "Interfață"
+
+#: src/widgets/views/SettingsDialog.qml:61
+#, kde-format
+msgid "Configure the app UI."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:65
+#, kde-format
+msgid "Grid Items Size"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Size of the grid view."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:84
+#: src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "M"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:91
+#: src/widgets/views/SettingsDialog.qml:139
+#, kde-format
+msgid "L"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:98
+#: src/widgets/views/SettingsDialog.qml:146
+#, kde-format
+msgid "X"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:105
+#: src/widgets/views/SettingsDialog.qml:153
+#, kde-format
+msgid "XL"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:114
+#, kde-format
+msgid "List Items Size"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:115
+#, kde-format
+msgid "Size of the list view."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:125
+#, kde-format
+msgid "S"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:162
+#, kde-format
+msgid "Overview"
+msgstr "Privire generală"
+
+#: src/widgets/views/SettingsDialog.qml:163
+#, kde-format
+msgid "Use overview mode as default on launch"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:176
+#, kde-format
+msgid "Dark Mode"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:177
+#, kde-format
+msgid "Switch between light and dark colorscheme"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:195
+#, kde-format
+msgid "Places"
+msgstr "Locuri"
+
+#: src/widgets/views/SettingsDialog.qml:196
+#, kde-format
+msgid "Toggle sidebar sections."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:200
+#, kde-format
+msgid "Quick places"
+msgstr "Locuri rapide"
+
+#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:214
+#, kde-format
+msgid "Access to standard locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:229
+#, kde-format
+msgid "Remote"
+msgstr "Distant"
+
+#: src/widgets/views/SettingsDialog.qml:230
+#, kde-format
+msgid "Access to network locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:246
+#, kde-format
+msgid "Removable"
+msgstr "Amovibil"
+
+#: src/widgets/views/SettingsDialog.qml:247
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:262
+#, kde-format
+msgid "Devices"
+msgstr "Dispozitive"
+
+#: src/widgets/views/SettingsDialog.qml:263
+#, kde-format
+msgid "Access drives."
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:20
+#, kde-format
+msgid "Browser navigation with keyboard."
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:24
+#, kde-format
+msgid "New Tab"
+msgstr "Filă nouă"
+
+#: src/widgets/views/ShortcutsDialog.qml:44
+#, kde-format
+msgid "Close Tab"
+msgstr "Închide fila"
+
+#: src/widgets/views/ShortcutsDialog.qml:64
+#, kde-format
+msgid "Path Edit"
+msgstr "Modifică calea"
+
+#: src/widgets/views/ShortcutsDialog.qml:114
+#, kde-format
+msgid "New File"
+msgstr "Fișier nou"
+
+#: src/widgets/views/ShortcutsDialog.qml:134
+#, kde-format
+msgid "Preview"
+msgstr "Previzualizare"
+
+#: src/widgets/views/ShortcutsDialog.qml:149
+#, kde-format
+msgid "Find Tab"
+msgstr "Găsește fila"
+
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr "Selectează tot"
+
+#: src/widgets/views/TagsSection.qml:22
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr ""

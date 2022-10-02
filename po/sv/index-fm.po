@@ -1,0 +1,899 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the index-fm package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:45+0000\n"
+"PO-Revision-Date: 2022-09-25 09:52+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Index"
+msgstr "Index"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Browse, organize and preview your files."
+msgstr "Bläddra bland, organisera och förhandsgranska dina filer."
+
+#: src/main.cpp:68
+#, kde-format
+msgid "© 2019-%1 Maui Development Team"
+msgstr "© 2019-%1 Maui utvecklingsgrupp"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:70 src/main.cpp:71
+#, kde-format
+msgid "Developer"
+msgstr "Utvecklare"
+
+#: src/main.cpp:71
+#, kde-format
+msgid "Gabriel Dominguez"
+msgstr "Gabriel Dominguez"
+
+#: src/main.qml:160 src/widgets/previewer/CompressedPreview.qml:15
+#: src/widgets/views/FileMenu.qml:209
+#, kde-format
+msgid "Extract"
+msgstr "Packa upp"
+
+#: src/main.qml:161
+#, kde-format
+msgid ""
+"Extract the content of the compressed file into a new or existing "
+"subdirectory or inside the current directory."
+msgstr ""
+"Packa upp innehållet i den komprimerade filen till en ny eller befintlig "
+"underkatalog eller inne i den aktuella katalogen."
+
+#: src/main.qml:181
+#, kde-format
+msgid "Compress %1 file"
+msgid_plural "Compress %1 files"
+msgstr[0] "Komprimera %1 fil"
+msgstr[1] "Komprimera %1 filer"
+
+#: src/main.qml:182
+#, kde-format
+msgid "Compress selected files into a new file."
+msgstr "Komprimera markerade filer till en ny fil."
+
+#: src/main.qml:188
+#, kde-format
+msgid "Archive name..."
+msgstr "Arkivnamn..."
+
+#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#, kde-format
+msgid "Open folder"
+msgstr "Öppna katalog"
+
+#: src/main.qml:275
+#, kde-format
+msgid "Extracted"
+msgstr "Uppackad"
+
+#: src/main.qml:276
+#, kde-format
+msgid "File was extracted"
+msgstr "Filen har packats upp"
+
+#: src/main.qml:339
+#, kde-format
+msgid "Forward"
+msgstr "Framåt"
+
+#: src/main.qml:346
+#, kde-format
+msgid "Search"
+msgstr "Sök"
+
+#: src/main.qml:355
+#, kde-format
+msgid "New"
+msgstr "Ny"
+
+#: src/main.qml:364 src/widgets/views/Browser.qml:53
+#, kde-format
+msgid "Edit"
+msgstr "Redigera"
+
+#: src/main.qml:369
+#, kde-format
+msgid "Paste"
+msgstr "Klistra in"
+
+#: src/main.qml:379
+#, kde-format
+msgid "Select all"
+msgstr "Markera alla"
+
+#: src/main.qml:388 src/widgets/views/SettingsDialog.qml:12
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Navigering"
+
+#: src/main.qml:397
+#, kde-format
+msgid "New tab"
+msgstr "Ny flik"
+
+#: src/main.qml:404
+#, kde-format
+msgid "Hidden"
+msgstr "Dold"
+
+#: src/main.qml:412 src/widgets/views/ShortcutsDialog.qml:99
+#, kde-format
+msgid "Split"
+msgstr "Dela"
+
+#: src/main.qml:421 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/main.qml:433
+#, kde-format
+msgid "Go to"
+msgstr "Gå till"
+
+#: src/main.qml:441
+#, kde-format
+msgid "Open terminal here"
+msgstr "Öppna terminal här"
+
+#: src/main.qml:454
+#, kde-format
+msgid "View"
+msgstr "Visa"
+
+#: src/main.qml:459 src/widgets/views/ActionBar.qml:44
+#, kde-format
+msgid "List"
+msgstr "Lista"
+
+#: src/main.qml:477 src/widgets/views/ActionBar.qml:61
+#, kde-format
+msgid "Grid"
+msgstr "Rutnät"
+
+#: src/main.qml:496
+#, kde-format
+msgid "Sort by"
+msgstr "Sortera enligt"
+
+#: src/main.qml:501
+#, kde-format
+msgid "Type"
+msgstr "Typ"
+
+#: src/main.qml:514
+#, kde-format
+msgid "Date"
+msgstr "Datum"
+
+#: src/main.qml:526
+#, kde-format
+msgid "Modified"
+msgstr "Ändrad"
+
+#: src/main.qml:538
+#, kde-format
+msgid "Size"
+msgstr "Storlek"
+
+#: src/main.qml:550
+#, kde-format
+msgid "Name"
+msgstr "Namn"
+
+#: src/main.qml:564
+#, kde-format
+msgid "Show Folders First"
+msgstr "Visa kataloger först"
+
+#: src/main.qml:578 src/widgets/previewer/FileProperties.qml:80
+#: src/widgets/previewer/FileProperties.qml:159
+#, kde-format
+msgid "Group"
+msgstr "Grupp"
+
+#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr "Genvägar"
+
+#: src/main.qml:604
+#, kde-format
+msgid "Settings"
+msgstr "Inställningar"
+
+#: src/main.qml:611
+#, kde-format
+msgid "About"
+msgstr "Om"
+
+#: src/main.qml:629
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "Visa eller dölj sidorad"
+
+#: src/main.qml:681 src/widgets/views/FileMenu.qml:177
+#, kde-format
+msgid "Bookmark"
+msgstr "Bokmärke"
+
+#: src/main.qml:688 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:88
+#, kde-format
+msgid "Open in new tab"
+msgstr "Öppna i ny flik"
+
+#: src/main.qml:696 src/widgets/views/FileMenu.qml:199
+#: src/widgets/views/PlacesSideBar.qml:96
+#, kde-format
+msgid "Open in split view"
+msgstr "Öppna i delad vy"
+
+#: src/widgets/previewer/FilePreviewer.qml:123
+#, kde-format
+msgid "Details"
+msgstr "Detaljinformation"
+
+#: src/widgets/previewer/FilePreviewer.qml:124
+#, kde-format
+msgid "File information"
+msgstr "Filinformation"
+
+#: src/widgets/previewer/FilePreviewer.qml:220
+#, kde-format
+msgid "Previous"
+msgstr "Föregående"
+
+#: src/widgets/previewer/FilePreviewer.qml:227
+#, kde-format
+msgid "Next"
+msgstr "Nästa"
+
+#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#, kde-format
+msgid "Open"
+msgstr "Öppna"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#, kde-format
+msgid "Permissions"
+msgstr "Rättigheter"
+
+#: src/widgets/previewer/FileProperties.qml:45
+#: src/widgets/previewer/FileProperties.qml:148
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr "Ställ in filrättigheter för att komma åt filen"
+
+#: src/widgets/previewer/FileProperties.qml:49
+#: src/widgets/previewer/FileProperties.qml:152
+#, kde-format
+msgid "Owner"
+msgstr "Ägare"
+
+#: src/widgets/previewer/FileProperties.qml:58
+#: src/widgets/previewer/FileProperties.qml:90
+#: src/widgets/previewer/FileProperties.qml:122
+#, kde-format
+msgid "Read"
+msgstr "Läs"
+
+#: src/widgets/previewer/FileProperties.qml:65
+#: src/widgets/previewer/FileProperties.qml:97
+#: src/widgets/previewer/FileProperties.qml:128
+#, kde-format
+msgid "Write"
+msgstr "Skriv"
+
+#: src/widgets/previewer/FileProperties.qml:72
+#: src/widgets/previewer/FileProperties.qml:105
+#: src/widgets/previewer/FileProperties.qml:134
+#, kde-format
+msgid "Execute"
+msgstr "Kör"
+
+#: src/widgets/previewer/FileProperties.qml:113
+#, kde-format
+msgid "Everyone"
+msgstr "Alla"
+
+#: src/widgets/previewer/FileProperties.qml:147
+#, kde-format
+msgid "Ownership"
+msgstr "Ägare"
+
+#: src/widgets/previewer/FileProperties.qml:165
+#, kde-format
+msgid "Users"
+msgstr "Användare"
+
+#: src/widgets/previewer/FileProperties.qml:174
+#, kde-format
+msgid "Groups"
+msgstr "Grupper"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "Installera"
+
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "Ta bort"
+
+#: src/widgets/views/Browser.qml:79
+#, kde-format
+msgid "Remove '%1'"
+msgstr "Ta bort '%1'"
+
+#: src/widgets/views/Browser.qml:80
+#, kde-format
+msgid "Accept"
+msgstr "Acceptera"
+
+#: src/widgets/views/Browser.qml:81
+#, kde-format
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/widgets/views/Browser.qml:83
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr ""
+"Är du säker på att du vill ta bort etiketten? Åtgärden går inte att ångra."
+
+#: src/widgets/views/Browser.qml:153
+#, kde-format
+msgid "Create new"
+msgstr "Skapa ny"
+
+#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
+#, kde-format
+msgid "Copy"
+msgstr "Kopiera"
+
+#: src/widgets/views/BrowserView.qml:99 src/widgets/views/FileMenu.qml:61
+#, kde-format
+msgid "Cut"
+msgstr "Klipp ut"
+
+#: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/HomeView.qml:46
+#, kde-format
+msgid "Share"
+msgstr "Dela"
+
+#: src/widgets/views/BrowserView.qml:132 src/widgets/views/FileMenu.qml:221
+#, kde-format
+msgid "Compress"
+msgstr "Komprimera"
+
+#: src/widgets/views/BrowserView.qml:144 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tags"
+msgstr "Etiketter"
+
+#: src/widgets/views/BrowserView.qml:176
+#, kde-format
+msgid "Detach Tab"
+msgstr "Koppla loss flik"
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr "Enheter och fjärrplatser"
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr "Fjärrplatser och enheter som diskar, telefoner och kameror"
+
+#: src/widgets/views/FavoritesSection.qml:22
+#, kde-format
+msgid "Favorite files"
+msgstr "Favoritfiler"
+
+#: src/widgets/views/FavoritesSection.qml:23
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr "Filer markerade som favoriter"
+
+#: src/widgets/views/FileMenu.qml:41
+#, kde-format
+msgid " items"
+msgstr " objekt"
+
+#: src/widgets/views/FileMenu.qml:72
+#, kde-format
+msgid "Rename"
+msgstr "Byt namn"
+
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#, kde-format
+msgid "Select"
+msgstr "Markera"
+
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#, kde-format
+msgid "Open with"
+msgstr "Öppna med"
+
+#: src/widgets/views/FileMenu.qml:123
+#, kde-format
+msgid "Preview and info"
+msgstr "Förhandsgranskning och information"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "UnFav"
+msgstr "Ej favorit"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "Fav"
+msgstr "Favorit"
+
+#: src/widgets/views/home/QuickCommonSection.qml:25
+#, kde-format
+msgid "Collections"
+msgstr "Samlingar"
+
+#: src/widgets/views/home/QuickCommonSection.qml:27
+#, kde-format
+msgid "Quick access to common collections"
+msgstr "Snabbåtkomst till vanliga samlingar"
+
+#: src/widgets/views/HomeView.qml:64
+#, kde-format
+msgid "Search for files"
+msgstr "Sök efter filer"
+
+#: src/widgets/views/HomeView.qml:74
+#, kde-format
+msgid "Browser"
+msgstr "Webbläsare"
+
+#: src/widgets/views/PlacesSection.qml:18
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Bokmärken"
+
+#: src/widgets/views/PlacesSection.qml:19
+#, kde-format
+msgid "Quick access to most common places and bookmarks"
+msgstr "Snabbåtkomst till de vanligaste platserna och bokmärken"
+
+#: src/widgets/views/PlacesSideBar.qml:42
+#, kde-format
+msgid "Bookmarks!"
+msgstr "Bokmärken."
+
+#: src/widgets/views/PlacesSideBar.qml:43
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr "Dina bokmärken listas här"
+
+#: src/widgets/views/PlacesSideBar.qml:235
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr ""
+"Enheten måste monteras innan den kan kommas åt. Vill du ställa in enheten?"
+
+#: src/widgets/views/RecentSection.qml:22
+#, kde-format
+msgid "Downloads, Audio & Pictures"
+msgstr "Nerladdningar, ljud och bilder"
+
+#: src/widgets/views/RecentSection.qml:23
+#, kde-format
+msgid "Your most recent downloaded files, audio and images"
+msgstr "De senast nerladdade filerna, ljud och bilder"
+
+#: src/widgets/views/RecentSection.qml:56
+#, kde-format
+msgid "Downloads"
+msgstr "Nerladdningar"
+
+#: src/widgets/views/RecentSection.qml:129
+#, kde-format
+msgid "Music"
+msgstr "Musik"
+
+#: src/widgets/views/RecentSection.qml:196
+#, kde-format
+msgid "Pictures"
+msgstr "Bilder"
+
+#: src/widgets/views/RecentSection.qml:253
+#, kde-format
+msgid "Camera"
+msgstr "Kamera"
+
+#: src/widgets/views/RecentSection.qml:309
+#, kde-format
+msgid "Screenshots"
+msgstr "Skärmbilder"
+
+#: src/widgets/views/SettingsDialog.qml:13
+#, kde-format
+msgid "Configure the app plugins and behavior."
+msgstr "Anpassa programmets insticksprogram och beteende."
+
+#: src/widgets/views/SettingsDialog.qml:17
+#, kde-format
+msgid "Thumbnails"
+msgstr "Miniatyrbilder"
+
+#: src/widgets/views/SettingsDialog.qml:18
+#, kde-format
+msgid "Show previews of images, videos and PDF files"
+msgstr "Visa förhandsgranskningar av bilder, videor och PDF-filer"
+
+#: src/widgets/views/SettingsDialog.qml:31
+#, kde-format
+msgid "Save Session"
+msgstr "Spara session"
+
+#: src/widgets/views/SettingsDialog.qml:32
+#, kde-format
+msgid "Save and restore tabs"
+msgstr "Spara och återställ flikar"
+
+#: src/widgets/views/SettingsDialog.qml:45
+#, kde-format
+msgid "Action Bar"
+msgstr "Åtgärdsrad"
+
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Extra toolbar with quick actions."
+msgstr "Extra verktygsrad med snabbåtgärder."
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, kde-format
+msgid "Interface"
+msgstr "Gränssnitt"
+
+#: src/widgets/views/SettingsDialog.qml:61
+#, kde-format
+msgid "Configure the app UI."
+msgstr "Anpassa programmets användargränssnitt."
+
+#: src/widgets/views/SettingsDialog.qml:65
+#, kde-format
+msgid "Grid Items Size"
+msgstr "Storlek på rutnätsobjekt"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Size of the grid view."
+msgstr "Rutnätsvyns storlek."
+
+#: src/widgets/views/SettingsDialog.qml:84
+#: src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "M"
+msgstr "M"
+
+#: src/widgets/views/SettingsDialog.qml:91
+#: src/widgets/views/SettingsDialog.qml:139
+#, kde-format
+msgid "L"
+msgstr "L"
+
+#: src/widgets/views/SettingsDialog.qml:98
+#: src/widgets/views/SettingsDialog.qml:146
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#: src/widgets/views/SettingsDialog.qml:105
+#: src/widgets/views/SettingsDialog.qml:153
+#, kde-format
+msgid "XL"
+msgstr "XL"
+
+#: src/widgets/views/SettingsDialog.qml:114
+#, kde-format
+msgid "List Items Size"
+msgstr "Storlek på listobjekt"
+
+#: src/widgets/views/SettingsDialog.qml:115
+#, kde-format
+msgid "Size of the list view."
+msgstr "Listvyns storlek."
+
+#: src/widgets/views/SettingsDialog.qml:125
+#, kde-format
+msgid "S"
+msgstr "S"
+
+#: src/widgets/views/SettingsDialog.qml:162
+#, kde-format
+msgid "Overview"
+msgstr "Översikt"
+
+#: src/widgets/views/SettingsDialog.qml:163
+#, kde-format
+msgid "Use overview mode as default on launch"
+msgstr "Använd överskrivning som förval vid start"
+
+#: src/widgets/views/SettingsDialog.qml:176
+#, kde-format
+msgid "Dark Mode"
+msgstr "Mörkt läge"
+
+#: src/widgets/views/SettingsDialog.qml:177
+#, kde-format
+msgid "Switch between light and dark colorscheme"
+msgstr "Byt mellan ljust och mörkt färgschema"
+
+#: src/widgets/views/SettingsDialog.qml:195
+#, kde-format
+msgid "Places"
+msgstr "Platser"
+
+#: src/widgets/views/SettingsDialog.qml:196
+#, kde-format
+msgid "Toggle sidebar sections."
+msgstr "Ändra sidoradsdelar."
+
+#: src/widgets/views/SettingsDialog.qml:200
+#, kde-format
+msgid "Quick places"
+msgstr "Snabbplatser"
+
+#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:214
+#, kde-format
+msgid "Access to standard locations."
+msgstr "Åtkomst till standardplatser."
+
+#: src/widgets/views/SettingsDialog.qml:229
+#, kde-format
+msgid "Remote"
+msgstr "Fjärrplatser"
+
+#: src/widgets/views/SettingsDialog.qml:230
+#, kde-format
+msgid "Access to network locations."
+msgstr "Åtkomst till nätverksplatser."
+
+#: src/widgets/views/SettingsDialog.qml:246
+#, kde-format
+msgid "Removable"
+msgstr "Flyttbara"
+
+#: src/widgets/views/SettingsDialog.qml:247
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr "Åtkomst till USB-minnen och SD-kort."
+
+#: src/widgets/views/SettingsDialog.qml:262
+#, kde-format
+msgid "Devices"
+msgstr "Enheter"
+
+#: src/widgets/views/SettingsDialog.qml:263
+#, kde-format
+msgid "Access drives."
+msgstr "Åtkomst till diskar."
+
+#: src/widgets/views/ShortcutsDialog.qml:20
+#, kde-format
+msgid "Browser navigation with keyboard."
+msgstr "Webbläsarnavigering med tangentbord."
+
+#: src/widgets/views/ShortcutsDialog.qml:24
+#, kde-format
+msgid "New Tab"
+msgstr "Ny flik"
+
+#: src/widgets/views/ShortcutsDialog.qml:44
+#, kde-format
+msgid "Close Tab"
+msgstr "Stäng flik"
+
+#: src/widgets/views/ShortcutsDialog.qml:64
+#, kde-format
+msgid "Path Edit"
+msgstr "Sökvägsredigering"
+
+#: src/widgets/views/ShortcutsDialog.qml:114
+#, kde-format
+msgid "New File"
+msgstr "Ny fil"
+
+#: src/widgets/views/ShortcutsDialog.qml:134
+#, kde-format
+msgid "Preview"
+msgstr "Förhandsgranskning"
+
+#: src/widgets/views/ShortcutsDialog.qml:149
+#, kde-format
+msgid "Find Tab"
+msgstr "Sök flik"
+
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr "Markera alla"
+
+#: src/widgets/views/TagsSection.qml:22
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr "Etiketterade filer för snabbåtkomst"
+
+#~ msgid "Split View"
+#~ msgstr "Dela vy"
+
+#~ msgid "Embedded Terminal"
+#~ msgstr "Inbäddad terminal"
+
+#~ msgid "New..."
+#~ msgstr "Ny..."
+
+#~ msgid "Remove from Favorites"
+#~ msgstr "Ta bort från favoriter"
+
+#~ msgid "Add to Favorites"
+#~ msgstr "Lägg till i favoriter"
+
+#~ msgid "Add to Bookmarks"
+#~ msgstr "Lägg till i bokmärken"
+
+#~ msgid ""
+#~ "Opens a quick preview with information of the file instead of opening it "
+#~ "with an external application"
+#~ msgstr ""
+#~ "Visa en snabb förhandsgranskning med information om filen istället för "
+#~ "att öppna den med ett externt program"
+
+#~ msgid "Search or Filter"
+#~ msgstr "Sök eller filtrera"
+
+#~ msgid "Advanced"
+#~ msgstr "Avancerat"
+
+#~ msgid "Edit path"
+#~ msgstr "Redigera sökväg"
+
+#~ msgid "%1 Directories - %2 Files"
+#~ msgstr "%1 kataloger - %2 filer"
+
+#~ msgid "Single Click"
+#~ msgstr "Enkelklick"
+
+#~ msgid "Open files with a single or double click"
+#~ msgstr "Öppna filer med ett enkel- eller dubbelklick"
+
+#~ msgid "List hidden files"
+#~ msgstr "Lista dolda filer"
+
+#~ msgid ""
+#~ "Support split views horizontally or vertically depending on the available "
+#~ "space."
+#~ msgstr ""
+#~ "Stöd delade vyer horisontellt eller vertikalt beroende på tillgängligt "
+#~ "utrymme."
+
+#~ msgid "Sorting"
+#~ msgstr "Sortering"
+
+#~ msgid "Sorting order and behavior."
+#~ msgstr "Sorteringsordning och beteende."
+
+#~ msgid "Global Sorting"
+#~ msgstr "Global sortering"
+
+#~ msgid "Use the sorting preferences globally for all the tabs and splits."
+#~ msgstr ""
+#~ "Använd sorteringsinställningarna globalt för alla flikar och delade vyer."
+
+#~ msgid "Folders first"
+#~ msgstr "Kataloger först"
+
+#~ msgid "Show folders first."
+#~ msgstr "Visa kataloger först."
+
+#~ msgid "Groups by the sort category."
+#~ msgstr "Grupperar enligt sorteringskategorin."
+
+#~ msgid "Change the sorting key."
+#~ msgstr "Ändra sorteringsbegreppet."
+
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgid "Sort order"
+#~ msgstr "Sorteringsordning"
+
+#~ msgid "Change the sorting order."
+#~ msgstr "Ändra sorteringsordningen."
+
+#~ msgid "Ascending"
+#~ msgstr "Stigande"
+
+#~ msgid "Descending"
+#~ msgstr "Fallande"
+
+#~ msgid "Built from "
+#~ msgstr "Byggd från "
+
+#~ msgid "Columns"
+#~ msgstr "Kolumner"
+
+#~ msgid "Miller Columns"
+#~ msgstr "Miller-kolumner"
+
+#~ msgid ""
+#~ "Enable the columns browsing view, as an alternative to the grid and list "
+#~ "views."
+#~ msgstr ""
+#~ "Aktivera kolumnbläddringsvy, som ett alternativ till rutnäts- och "
+#~ "listvyerna."
+
+#~ msgid "Files"
+#~ msgstr "Filer"
+
+#~ msgid "More"
+#~ msgstr "Mer"
+
+#~ msgid "Audio"
+#~ msgstr "Ljud"
+
+#~ msgid "Your most recent audio files"
+#~ msgstr "De senaste ljudfilerna"
+
+#~ msgid "Your most recent image files"
+#~ msgstr "De senaste bildfilerna"
+
+#~ msgid "Thumbnails size in the grid view"
+#~ msgstr "Miniatyrbildsstorlek i rutnätsvyn"
+
+#~ msgid "Sidebar always visible"
+#~ msgstr "Sidorad alltid synlig"
+
+#~ msgid "Keep sidebar on constrained spaces"
+#~ msgstr "Behåll sidoraden på begränsade utrymmen"
+
+#~ msgid "Stick SideBar"
+#~ msgstr "Fäst sidorad"
+
+#~ msgid "Show Status Bar"
+#~ msgstr "Visa statusrad"
+
+#~ msgid "Hide"
+#~ msgstr "Dölj"

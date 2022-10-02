@@ -1,0 +1,874 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the index-fm package.
+#
+# Stelios <sstavra@gmail.com>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:45+0000\n"
+"PO-Revision-Date: 2021-10-04 08:54+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Index"
+msgstr "Ευρετήριο"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Browse, organize and preview your files."
+msgstr "Περιήγηση, οργάνωση και προεπισκόπηση των αρχείων σας."
+
+#: src/main.cpp:68
+#, kde-format
+msgid "© 2019-%1 Maui Development Team"
+msgstr "© 2019-%1 Η ομάδα ανάπτυξης Maui"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:70 src/main.cpp:71
+#, kde-format
+msgid "Developer"
+msgstr "Προγραμματιστής"
+
+#: src/main.cpp:71
+#, kde-format
+msgid "Gabriel Dominguez"
+msgstr "Gabriel Dominguez"
+
+#: src/main.qml:160 src/widgets/previewer/CompressedPreview.qml:15
+#: src/widgets/views/FileMenu.qml:209
+#, kde-format
+msgid "Extract"
+msgstr "Εξαγωγή"
+
+#: src/main.qml:161
+#, kde-format
+msgid ""
+"Extract the content of the compressed file into a new or existing "
+"subdirectory or inside the current directory."
+msgstr ""
+"Εξαγωγή του περιεχομένου του συμπιεσμένου αρχείου σε ένα νέο ή παλιό "
+"υποκατάλογο ή μέσα στον τρέχοντα κατάλογο."
+
+#: src/main.qml:181
+#, kde-format
+msgid "Compress %1 file"
+msgid_plural "Compress %1 files"
+msgstr[0] "Συμπίεση %1 αρχείου"
+msgstr[1] "Συμπίεση %1 αρχείων"
+
+#: src/main.qml:182
+#, kde-format
+msgid "Compress selected files into a new file."
+msgstr "Συμπίεση επιλεγμένων αρχείων σε ένα νέο."
+
+#: src/main.qml:188
+#, kde-format
+msgid "Archive name..."
+msgstr "Όνομα αρχειοθήκης..."
+
+#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#, kde-format
+msgid "Open folder"
+msgstr "Άνοιγμα φακέλου"
+
+#: src/main.qml:275
+#, kde-format
+msgid "Extracted"
+msgstr "Εξήχθη"
+
+#: src/main.qml:276
+#, kde-format
+msgid "File was extracted"
+msgstr "Το αρχείο εξήχθη"
+
+#: src/main.qml:339
+#, kde-format
+msgid "Forward"
+msgstr "Προς τα εμπρός"
+
+#: src/main.qml:346
+#, kde-format
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#: src/main.qml:355
+#, kde-format
+msgid "New"
+msgstr "Νέο"
+
+#: src/main.qml:364 src/widgets/views/Browser.qml:53
+#, fuzzy, kde-format
+#| msgid "Edit..."
+msgid "Edit"
+msgstr "Επεξεργασία..."
+
+#: src/main.qml:369
+#, kde-format
+msgid "Paste"
+msgstr "Επικόλληση"
+
+#: src/main.qml:379
+#, kde-format
+msgid "Select all"
+msgstr "Επιλογή όλων"
+
+#: src/main.qml:388 src/widgets/views/SettingsDialog.qml:12
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Πλοήγηση"
+
+#: src/main.qml:397
+#, fuzzy, kde-format
+#| msgid "New Tab"
+msgid "New tab"
+msgstr "Νέα καρτέλα"
+
+#: src/main.qml:404
+#, kde-format
+msgid "Hidden"
+msgstr "Κρυμμένα"
+
+#: src/main.qml:412 src/widgets/views/ShortcutsDialog.qml:99
+#, kde-format
+msgid "Split"
+msgstr "Διαίρεση"
+
+#: src/main.qml:421 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "Τερματικό"
+
+#: src/main.qml:433
+#, kde-format
+msgid "Go to"
+msgstr "Μετάβαση"
+
+#: src/main.qml:441
+#, kde-format
+msgid "Open terminal here"
+msgstr "Άνοιγμα τερματικού εδώ"
+
+#: src/main.qml:454
+#, fuzzy, kde-format
+#| msgid "View type"
+msgid "View"
+msgstr "Τύπος προβολής"
+
+#: src/main.qml:459 src/widgets/views/ActionBar.qml:44
+#, kde-format
+msgid "List"
+msgstr "Λίστα"
+
+#: src/main.qml:477 src/widgets/views/ActionBar.qml:61
+#, kde-format
+msgid "Grid"
+msgstr "Πλέγμα"
+
+#: src/main.qml:496
+#, kde-format
+msgid "Sort by"
+msgstr "Ταξινόμηση με"
+
+#: src/main.qml:501
+#, kde-format
+msgid "Type"
+msgstr "Τύπος"
+
+#: src/main.qml:514
+#, kde-format
+msgid "Date"
+msgstr "Ημερομηνία"
+
+#: src/main.qml:526
+#, kde-format
+msgid "Modified"
+msgstr "Τροποποιήθηκε"
+
+#: src/main.qml:538
+#, kde-format
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: src/main.qml:550
+#, kde-format
+msgid "Name"
+msgstr "Όνομα"
+
+#: src/main.qml:564
+#, kde-format
+msgid "Show Folders First"
+msgstr "Εμφάνιση φακέλων πρώτα"
+
+#: src/main.qml:578 src/widgets/previewer/FileProperties.qml:80
+#: src/widgets/previewer/FileProperties.qml:159
+#, kde-format
+msgid "Group"
+msgstr "Ομάδα"
+
+#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr "Συντομεύσεις"
+
+#: src/main.qml:604
+#, kde-format
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: src/main.qml:611
+#, kde-format
+msgid "About"
+msgstr "Περίγραμμα"
+
+#: src/main.qml:629
+#, fuzzy, kde-format
+#| msgid "Toogle SideBar"
+msgid "Toggle sidebar"
+msgstr "Εναλλαγή πλευρικής γραμμής"
+
+#: src/main.qml:681 src/widgets/views/FileMenu.qml:177
+#, kde-format
+msgid "Bookmark"
+msgstr "Σελιδοδείκτης"
+
+#: src/main.qml:688 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:88
+#, kde-format
+msgid "Open in new tab"
+msgstr "Άνοιγμα σε νέα καρτέλα"
+
+#: src/main.qml:696 src/widgets/views/FileMenu.qml:199
+#: src/widgets/views/PlacesSideBar.qml:96
+#, kde-format
+msgid "Open in split view"
+msgstr "Άνοιγμα σε διαιρεμένη προβολή"
+
+#: src/widgets/previewer/FilePreviewer.qml:123
+#, kde-format
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+#: src/widgets/previewer/FilePreviewer.qml:124
+#, kde-format
+msgid "File information"
+msgstr "Πληροφορίες αρχείου"
+
+#: src/widgets/previewer/FilePreviewer.qml:220
+#, kde-format
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+#: src/widgets/previewer/FilePreviewer.qml:227
+#, kde-format
+msgid "Next"
+msgstr "Επόμενο"
+
+#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#, kde-format
+msgid "Open"
+msgstr "Άνοιγμα"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#, kde-format
+msgid "Permissions"
+msgstr "Δικαιώματα"
+
+#: src/widgets/previewer/FileProperties.qml:45
+#: src/widgets/previewer/FileProperties.qml:148
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr ""
+"Ρυθμίστε τα δικαιώματα του αρχείου για να έχετε πρόσβαση σε αυτό το αρχείο"
+
+#: src/widgets/previewer/FileProperties.qml:49
+#: src/widgets/previewer/FileProperties.qml:152
+#, kde-format
+msgid "Owner"
+msgstr "Κάτοχος"
+
+#: src/widgets/previewer/FileProperties.qml:58
+#: src/widgets/previewer/FileProperties.qml:90
+#: src/widgets/previewer/FileProperties.qml:122
+#, kde-format
+msgid "Read"
+msgstr "Ανάγνωση"
+
+#: src/widgets/previewer/FileProperties.qml:65
+#: src/widgets/previewer/FileProperties.qml:97
+#: src/widgets/previewer/FileProperties.qml:128
+#, kde-format
+msgid "Write"
+msgstr "Εγγραφή"
+
+#: src/widgets/previewer/FileProperties.qml:72
+#: src/widgets/previewer/FileProperties.qml:105
+#: src/widgets/previewer/FileProperties.qml:134
+#, kde-format
+msgid "Execute"
+msgstr "Εκτέλεση"
+
+#: src/widgets/previewer/FileProperties.qml:113
+#, kde-format
+msgid "Everyone"
+msgstr "Όλοι"
+
+#: src/widgets/previewer/FileProperties.qml:147
+#, kde-format
+msgid "Ownership"
+msgstr "Ιδιοκτησία"
+
+#: src/widgets/previewer/FileProperties.qml:165
+#, kde-format
+msgid "Users"
+msgstr "Χρήστες"
+
+#: src/widgets/previewer/FileProperties.qml:174
+#, kde-format
+msgid "Groups"
+msgstr "Ομάδες"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "Εγκατάσταση"
+
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#: src/widgets/views/Browser.qml:79
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remove '%1'"
+msgstr "Αφαίρεση"
+
+#: src/widgets/views/Browser.qml:80
+#, kde-format
+msgid "Accept"
+msgstr ""
+
+#: src/widgets/views/Browser.qml:81
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: src/widgets/views/Browser.qml:83
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr ""
+
+#: src/widgets/views/Browser.qml:153
+#, kde-format
+msgid "Create new"
+msgstr ""
+
+#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
+#, kde-format
+msgid "Copy"
+msgstr "Αντιγραφή"
+
+#: src/widgets/views/BrowserView.qml:99 src/widgets/views/FileMenu.qml:61
+#, kde-format
+msgid "Cut"
+msgstr "Αποκοπή"
+
+#: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/HomeView.qml:46
+#, kde-format
+msgid "Share"
+msgstr "Κοινή χρήση"
+
+#: src/widgets/views/BrowserView.qml:132 src/widgets/views/FileMenu.qml:221
+#, kde-format
+msgid "Compress"
+msgstr "Συμπίεση"
+
+#: src/widgets/views/BrowserView.qml:144 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tags"
+msgstr "Ετικέτες"
+
+#: src/widgets/views/BrowserView.qml:176
+#, kde-format
+msgid "Detach Tab"
+msgstr ""
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr "Συσκευές και τηλεχειριστήριο"
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr ""
+"Απομακρυσμένες τοποθεσίες και συσκευές όπως δίσκοι, τηλέφωνα και κάμερες"
+
+#: src/widgets/views/FavoritesSection.qml:22
+#, kde-format
+msgid "Favorite files"
+msgstr "Προτιμώμενα αρχεία"
+
+#: src/widgets/views/FavoritesSection.qml:23
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr "Τα αρχεία σας σημειώθηκαν ως προτιμώμενα"
+
+#: src/widgets/views/FileMenu.qml:41
+#, kde-format
+msgid " items"
+msgstr " αντικείμενα"
+
+#: src/widgets/views/FileMenu.qml:72
+#, kde-format
+msgid "Rename"
+msgstr "Μετονομασία"
+
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#, kde-format
+msgid "Select"
+msgstr "Επιλογή"
+
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#, kde-format
+msgid "Open with"
+msgstr "Άνοιγμα με"
+
+#: src/widgets/views/FileMenu.qml:123
+#, kde-format
+msgid "Preview and info"
+msgstr "Προεπισκόπηση και πληροφορίες"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "UnFav"
+msgstr "ΜηΠροτιμ"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "Fav"
+msgstr "Προτιμ"
+
+#: src/widgets/views/home/QuickCommonSection.qml:25
+#, kde-format
+msgid "Collections"
+msgstr "Συλλογές"
+
+#: src/widgets/views/home/QuickCommonSection.qml:27
+#, kde-format
+msgid "Quick access to common collections"
+msgstr "Γρήγορη πρόσβαση σε κοινές συλλογές"
+
+#: src/widgets/views/HomeView.qml:64
+#, kde-format
+msgid "Search for files"
+msgstr "Αναζήτηση για αρχεία"
+
+#: src/widgets/views/HomeView.qml:74
+#, kde-format
+msgid "Browser"
+msgstr "Περιηγητής"
+
+#: src/widgets/views/PlacesSection.qml:18
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Σελιδοδείκτες"
+
+#: src/widgets/views/PlacesSection.qml:19
+#, kde-format
+msgid "Quick access to most common places and bookmarks"
+msgstr "Γρήγορη πρόσβαση στα περισσότερα κοινά μέρη και σελιδοδείκτες"
+
+#: src/widgets/views/PlacesSideBar.qml:42
+#, kde-format
+msgid "Bookmarks!"
+msgstr "Σελιδοδείκτες!"
+
+#: src/widgets/views/PlacesSideBar.qml:43
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr "Η λίστα με τους σελιδοδείκτες σας θα βρίσκεται εδώ"
+
+#: src/widgets/views/PlacesSideBar.qml:235
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr ""
+"Αυτή η συσκευή πρέπει να προσαρτηθεί για να έχετε πρόσβαση σε αυτήν. Θέλετε "
+"να τη ρυθμίσετε;"
+
+#: src/widgets/views/RecentSection.qml:22
+#, kde-format
+msgid "Downloads, Audio & Pictures"
+msgstr "Λήψεις, ήχος και φωτογραφίες"
+
+#: src/widgets/views/RecentSection.qml:23
+#, kde-format
+msgid "Your most recent downloaded files, audio and images"
+msgstr "Τα πιο πρόσφατα αρχεία λήψεων, ήχου και φωτογραφιών"
+
+#: src/widgets/views/RecentSection.qml:56
+#, kde-format
+msgid "Downloads"
+msgstr "Λήψεις"
+
+#: src/widgets/views/RecentSection.qml:129
+#, kde-format
+msgid "Music"
+msgstr "Μουσική"
+
+#: src/widgets/views/RecentSection.qml:196
+#, kde-format
+msgid "Pictures"
+msgstr "Φωτογραφίες"
+
+#: src/widgets/views/RecentSection.qml:253
+#, kde-format
+msgid "Camera"
+msgstr "Κάμερα"
+
+#: src/widgets/views/RecentSection.qml:309
+#, kde-format
+msgid "Screenshots"
+msgstr "Στιγμιότυπα"
+
+#: src/widgets/views/SettingsDialog.qml:13
+#, kde-format
+msgid "Configure the app plugins and behavior."
+msgstr "Διαμόρφωση των προσθέτων της εφαρμογής και της συμπεριφοράς."
+
+#: src/widgets/views/SettingsDialog.qml:17
+#, kde-format
+msgid "Thumbnails"
+msgstr "Εικόνες προεπισκόπησης"
+
+#: src/widgets/views/SettingsDialog.qml:18
+#, kde-format
+msgid "Show previews of images, videos and PDF files"
+msgstr "Εμφανίζει προεπισκόπηση εικόνων, βίντεο και PDF αρχείων"
+
+#: src/widgets/views/SettingsDialog.qml:31
+#, kde-format
+msgid "Save Session"
+msgstr "Αποθήκευση συνεδρίας"
+
+#: src/widgets/views/SettingsDialog.qml:32
+#, kde-format
+msgid "Save and restore tabs"
+msgstr "Αποθήκευση και επαναφορά καρτελών"
+
+#: src/widgets/views/SettingsDialog.qml:45
+#, kde-format
+msgid "Action Bar"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Extra toolbar with quick actions."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, kde-format
+msgid "Interface"
+msgstr "Διεπαφή"
+
+#: src/widgets/views/SettingsDialog.qml:61
+#, kde-format
+msgid "Configure the app UI."
+msgstr "Διαμόρφωση του περιβάλλοντος χρήστη της εφαρμογής."
+
+#: src/widgets/views/SettingsDialog.qml:65
+#, kde-format
+msgid "Grid Items Size"
+msgstr "Το μέγεθος των αντικειμένων του πλέγματος"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Size of the grid view."
+msgstr "Το μέγεθος της προβολής πλέγματος."
+
+#: src/widgets/views/SettingsDialog.qml:84
+#: src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "M"
+msgstr "M"
+
+#: src/widgets/views/SettingsDialog.qml:91
+#: src/widgets/views/SettingsDialog.qml:139
+#, kde-format
+msgid "L"
+msgstr "L"
+
+#: src/widgets/views/SettingsDialog.qml:98
+#: src/widgets/views/SettingsDialog.qml:146
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#: src/widgets/views/SettingsDialog.qml:105
+#: src/widgets/views/SettingsDialog.qml:153
+#, kde-format
+msgid "XL"
+msgstr "XL"
+
+#: src/widgets/views/SettingsDialog.qml:114
+#, kde-format
+msgid "List Items Size"
+msgstr "Το μέγεθος των αντικειμένων της λίστας"
+
+#: src/widgets/views/SettingsDialog.qml:115
+#, kde-format
+msgid "Size of the list view."
+msgstr "Το μέγεθος της προβολής λίστας."
+
+#: src/widgets/views/SettingsDialog.qml:125
+#, kde-format
+msgid "S"
+msgstr "S"
+
+#: src/widgets/views/SettingsDialog.qml:162
+#, kde-format
+msgid "Overview"
+msgstr "Περίληψη"
+
+#: src/widgets/views/SettingsDialog.qml:163
+#, kde-format
+msgid "Use overview mode as default on launch"
+msgstr "Χρήση της συνοπτικής λειτουργίας κατά την εκτέλεση"
+
+#: src/widgets/views/SettingsDialog.qml:176
+#, kde-format
+msgid "Dark Mode"
+msgstr "Λειτουργία σε σκούρο"
+
+#: src/widgets/views/SettingsDialog.qml:177
+#, kde-format
+msgid "Switch between light and dark colorscheme"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:195
+#, kde-format
+msgid "Places"
+msgstr "Τοποθεσίες"
+
+#: src/widgets/views/SettingsDialog.qml:196
+#, kde-format
+msgid "Toggle sidebar sections."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:200
+#, kde-format
+msgid "Quick places"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:214
+#, kde-format
+msgid "Access to standard locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:229
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remote"
+msgstr "Αφαίρεση"
+
+#: src/widgets/views/SettingsDialog.qml:230
+#, kde-format
+msgid "Access to network locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:246
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Removable"
+msgstr "Αφαίρεση"
+
+#: src/widgets/views/SettingsDialog.qml:247
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:262
+#, kde-format
+msgid "Devices"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:263
+#, kde-format
+msgid "Access drives."
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:20
+#, kde-format
+msgid "Browser navigation with keyboard."
+msgstr "Πλοήγηση με τον περιηγητή με το πληκτρολόγιο."
+
+#: src/widgets/views/ShortcutsDialog.qml:24
+#, kde-format
+msgid "New Tab"
+msgstr "Νέα καρτέλα"
+
+#: src/widgets/views/ShortcutsDialog.qml:44
+#, kde-format
+msgid "Close Tab"
+msgstr "Κλείσιμο καρτέλας"
+
+#: src/widgets/views/ShortcutsDialog.qml:64
+#, kde-format
+msgid "Path Edit"
+msgstr "Επεξεργασία διαδρομής"
+
+#: src/widgets/views/ShortcutsDialog.qml:114
+#, kde-format
+msgid "New File"
+msgstr "Νέο αρχείο"
+
+#: src/widgets/views/ShortcutsDialog.qml:134
+#, kde-format
+msgid "Preview"
+msgstr "Προεπισκόπηση"
+
+#: src/widgets/views/ShortcutsDialog.qml:149
+#, kde-format
+msgid "Find Tab"
+msgstr "Εύρεση καρτέλας"
+
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr "Επιλογή όλων"
+
+#: src/widgets/views/TagsSection.qml:22
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr "Αρχεία με σήμανση για γρήγορη πρόσβαση"
+
+#~ msgid "Split View"
+#~ msgstr "Διαίρεση προβολής"
+
+#~ msgid "Embedded Terminal"
+#~ msgstr "Ενσωματωμένο τερματικό"
+
+#~ msgid "New..."
+#~ msgstr "Νέο..."
+
+#~ msgid "Remove from Favorites"
+#~ msgstr "Αφαίρεση από τα προτιμώμενα"
+
+#~ msgid "Add to Favorites"
+#~ msgstr "Προσθήκη στα προτιμώμενα"
+
+#~ msgid "Add to Bookmarks"
+#~ msgstr "Προσθήκη στους σελιδοδείκτες"
+
+#~ msgid ""
+#~ "Opens a quick preview with information of the file instead of opening it "
+#~ "with an external application"
+#~ msgstr ""
+#~ "Ανοίγει μια γρήγορη προεπισκόπηση με πληροφορίες για το αρχείο αντί για "
+#~ "άνοιγμα με εξωτερική εφαρμογή"
+
+#~ msgid "Search or Filter"
+#~ msgstr "Αναζήτηση ή φιλτράρισμα"
+
+#~ msgid "Advanced"
+#~ msgstr "Προηγμένα"
+
+#~ msgid "%1 Directories - %2 Files"
+#~ msgstr "%1 Κατάλογοι - %2 Αρχεία"
+
+#~ msgid "Single Click"
+#~ msgstr "Απλό κλικ"
+
+#~ msgid "Open files with a single or double click"
+#~ msgstr "Άνοιγμα αρχείων με απλό ή διπλό κλικ"
+
+#~ msgid "List hidden files"
+#~ msgstr "Λίστα κρυμμένων αρχείων"
+
+#~ msgid ""
+#~ "Support split views horizontally or vertically depending on the available "
+#~ "space."
+#~ msgstr ""
+#~ "Υποστηρίζει διαίρεση προβολών οριζόντια ή κατακόρυφα ανάλογα με τον "
+#~ "διαθέσιμο χώρο."
+
+#~ msgid "Sorting"
+#~ msgstr "Ταξινόμηση"
+
+#~ msgid "Sorting order and behavior."
+#~ msgstr "Σειρά ταξινόμησης και συμπεριφορά."
+
+#~ msgid "Global Sorting"
+#~ msgstr "Καθολική ταξινόμηση"
+
+#~ msgid "Use the sorting preferences globally for all the tabs and splits."
+#~ msgstr ""
+#~ "Χρήση των προτιμήσεων ταξινόμησης για όλες τις καρτέλες και τις "
+#~ "διαιρέσεις."
+
+#~ msgid "Folders first"
+#~ msgstr "Οι φάκελοι πρώτα"
+
+#~ msgid "Show folders first."
+#~ msgstr "Εμφάνιση φακέλων πρώτα."
+
+#~ msgid "Groups by the sort category."
+#~ msgstr "Ομάδες ανά κατηγορία ταξινόμησης."
+
+#~ msgid "Change the sorting key."
+#~ msgstr "Αλλαγή του κλειδιού ταξινόμησης."
+
+#~ msgid "Title"
+#~ msgstr "Τίτλος"
+
+#~ msgid "Sort order"
+#~ msgstr "Σειρά ταξινόμησης"
+
+#~ msgid "Change the sorting order."
+#~ msgstr "Αλλαγή της σειράς ταξινόμησης."
+
+#~ msgid "Ascending"
+#~ msgstr "Αύξουσα"
+
+#~ msgid "Descending"
+#~ msgstr "Φθίνουσα"
+
+#~ msgid "Columns"
+#~ msgstr "Στήλες"
+
+#, fuzzy
+#~| msgid "Columns"
+#~ msgid "Miller Columns"
+#~ msgstr "Στήλες"
+
+#~ msgid "Stick SideBar"
+#~ msgstr "Κολλημένη πλευρική γραμμή"
+
+#~ msgid "Show Status Bar"
+#~ msgstr "Εμφάνιση γραμμής κατάστασης"
+
+#~ msgid "Hide"
+#~ msgstr "Απόκρυψη"

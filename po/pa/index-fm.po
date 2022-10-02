@@ -1,0 +1,828 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the index-fm package.
+#
+# A S Alam <aalam.yellow@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:45+0000\n"
+"PO-Revision-Date: 2021-10-07 17:48-0700\n"
+"Last-Translator: A S Alam <aalam@satluj.org>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.04.3\n"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Index"
+msgstr "ਇੰਡੈਕਸ"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Browse, organize and preview your files."
+msgstr "ਤੁਹਾਡੀਆਂ ਫਾਇਲਾਂ ਨੂੰ ਫੋਲਣ, ਇੰਤਜ਼ਾਮ ਕਰਨ ਤੇ ਝਲਕ ਵੇਖਣ ਲਈ।"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "© 2019-%1 Maui Development Team"
+msgstr "© 2019-%1 Maui Development Team"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:70 src/main.cpp:71
+#, kde-format
+msgid "Developer"
+msgstr "ਡਿਵੈਲਪਰ"
+
+#: src/main.cpp:71
+#, kde-format
+msgid "Gabriel Dominguez"
+msgstr ""
+
+#: src/main.qml:160 src/widgets/previewer/CompressedPreview.qml:15
+#: src/widgets/views/FileMenu.qml:209
+#, kde-format
+msgid "Extract"
+msgstr "ਖਿਲਾਰੋ"
+
+#: src/main.qml:161
+#, kde-format
+msgid ""
+"Extract the content of the compressed file into a new or existing "
+"subdirectory or inside the current directory."
+msgstr ""
+
+#: src/main.qml:181
+#, kde-format
+msgid "Compress %1 file"
+msgid_plural "Compress %1 files"
+msgstr[0] "%1 ਫਾਇਲ ਕੰਪਰੈਸ ਕਰੋ"
+msgstr[1] "%1 ਫਾਇਲਾਂ ਕੰਪਰੈਸ ਕਰੋ"
+
+#: src/main.qml:182
+#, kde-format
+msgid "Compress selected files into a new file."
+msgstr "ਚੁਣੀਆਂ ਫ਼ਾਇਲਾਂ ਨੂੰ ਨਵੀਂ ਫਾਇਲ ਵਿੱਚ ਕੰਪਰੈਸ ਕਰੋ।"
+
+#: src/main.qml:188
+#, kde-format
+msgid "Archive name..."
+msgstr "ਅਕਾਇਵ ਦਾ ਨਾਂ..."
+
+#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#, kde-format
+msgid "Open folder"
+msgstr "ਫੋਲਡਰ ਖੋਲ੍ਹੋ"
+
+#: src/main.qml:275
+#, kde-format
+msgid "Extracted"
+msgstr "ਖਿਲਾਰੀ"
+
+#: src/main.qml:276
+#, kde-format
+msgid "File was extracted"
+msgstr "ਫਾਇਲ ਨੂੰ ਖਿਲਾਰਿਆ ਗਿਆ"
+
+#: src/main.qml:339
+#, kde-format
+msgid "Forward"
+msgstr "ਅੱਗੇ"
+
+#: src/main.qml:346
+#, kde-format
+msgid "Search"
+msgstr "ਖੋਜੋ"
+
+#: src/main.qml:355
+#, kde-format
+msgid "New"
+msgstr "ਨਵਾਂ"
+
+#: src/main.qml:364 src/widgets/views/Browser.qml:53
+#, fuzzy, kde-format
+#| msgid "Path Edit"
+msgid "Edit"
+msgstr "ਮਾਰਗ ਸੋਧੋ"
+
+#: src/main.qml:369
+#, kde-format
+msgid "Paste"
+msgstr "ਚੇਪੋ"
+
+#: src/main.qml:379
+#, kde-format
+msgid "Select all"
+msgstr "ਸਭ ਚੁਣੋ"
+
+#: src/main.qml:388 src/widgets/views/SettingsDialog.qml:12
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "ਨੇਵੀਗੇਸ਼ਨ"
+
+#: src/main.qml:397
+#, fuzzy, kde-format
+#| msgid "New Tab"
+msgid "New tab"
+msgstr "ਨਵੀਂ ਟੈਬ"
+
+#: src/main.qml:404
+#, kde-format
+msgid "Hidden"
+msgstr "ਲੁਕਵਾਂ"
+
+#: src/main.qml:412 src/widgets/views/ShortcutsDialog.qml:99
+#, kde-format
+msgid "Split"
+msgstr "ਵੰਡੋ"
+
+#: src/main.qml:421 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "ਟਰਮੀਨਲ"
+
+#: src/main.qml:433
+#, kde-format
+msgid "Go to"
+msgstr "ਜਾਓ"
+
+#: src/main.qml:441
+#, kde-format
+msgid "Open terminal here"
+msgstr "ਟਰਮੀਨਲ ਇੱਥੇ ਖੋਲ੍ਹੋ"
+
+#: src/main.qml:454
+#, fuzzy, kde-format
+#| msgid "View type"
+msgid "View"
+msgstr "ਕਿਸਮ ਵੇਖੋ"
+
+#: src/main.qml:459 src/widgets/views/ActionBar.qml:44
+#, kde-format
+msgid "List"
+msgstr "ਸੂਚੀ"
+
+#: src/main.qml:477 src/widgets/views/ActionBar.qml:61
+#, kde-format
+msgid "Grid"
+msgstr "ਗਰਿੱਡ"
+
+#: src/main.qml:496
+#, kde-format
+msgid "Sort by"
+msgstr "ਲੜੀਬੱਧ"
+
+#: src/main.qml:501
+#, kde-format
+msgid "Type"
+msgstr "ਕਿਸਮ"
+
+#: src/main.qml:514
+#, kde-format
+msgid "Date"
+msgstr "ਤਾਰੀਖ"
+
+#: src/main.qml:526
+#, kde-format
+msgid "Modified"
+msgstr "ਸੋਧਾਂ ਕੀਤੀਆਂ"
+
+#: src/main.qml:538
+#, kde-format
+msgid "Size"
+msgstr "ਆਕਾਰ"
+
+#: src/main.qml:550
+#, kde-format
+msgid "Name"
+msgstr "ਨਾਂ"
+
+#: src/main.qml:564
+#, kde-format
+msgid "Show Folders First"
+msgstr "ਫੋਲਡਰ ਪਹਿਲਾਂ ਵੇਖੋ"
+
+#: src/main.qml:578 src/widgets/previewer/FileProperties.qml:80
+#: src/widgets/previewer/FileProperties.qml:159
+#, kde-format
+msgid "Group"
+msgstr "ਗਰੁੱਪ"
+
+#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr "ਸ਼ਾਰਟਕੱਟ"
+
+#: src/main.qml:604
+#, kde-format
+msgid "Settings"
+msgstr "ਸੈਟਿੰਗਾਂ"
+
+#: src/main.qml:611
+#, kde-format
+msgid "About"
+msgstr "ਇਸ ਬਾਰੇ"
+
+#: src/main.qml:629
+#, fuzzy, kde-format
+#| msgid "Toogle SideBar"
+msgid "Toggle sidebar"
+msgstr "ਬਾਹੀ ਨੂੰ ਬਦਲੋ"
+
+#: src/main.qml:681 src/widgets/views/FileMenu.qml:177
+#, kde-format
+msgid "Bookmark"
+msgstr "ਬੁੱਕਮਾਰਕ"
+
+#: src/main.qml:688 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:88
+#, kde-format
+msgid "Open in new tab"
+msgstr "ਨਵੀਂ ਟੈਬ ਵਿੱਚ ਖੋਲ੍ਹੋ"
+
+#: src/main.qml:696 src/widgets/views/FileMenu.qml:199
+#: src/widgets/views/PlacesSideBar.qml:96
+#, kde-format
+msgid "Open in split view"
+msgstr "ਵੰਡੀ ਗਈ ਝਲਕ ਵਿੱਚ ਖੋਲ੍ਹੋ"
+
+#: src/widgets/previewer/FilePreviewer.qml:123
+#, kde-format
+msgid "Details"
+msgstr "ਵੇਰਵੇ"
+
+#: src/widgets/previewer/FilePreviewer.qml:124
+#, kde-format
+msgid "File information"
+msgstr "ਫਾਇਲ ਦੀ ਜਾਣਕਾਰੀ"
+
+#: src/widgets/previewer/FilePreviewer.qml:220
+#, kde-format
+msgid "Previous"
+msgstr "ਪਿੱਛੇ"
+
+#: src/widgets/previewer/FilePreviewer.qml:227
+#, kde-format
+msgid "Next"
+msgstr "ਅੱਗੇ"
+
+#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#, kde-format
+msgid "Open"
+msgstr "ਖੋਲ੍ਹੋ"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#, kde-format
+msgid "Permissions"
+msgstr "ਇਜਾਜ਼ਤਾਂ"
+
+#: src/widgets/previewer/FileProperties.qml:45
+#: src/widgets/previewer/FileProperties.qml:148
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr "ਇਹ ਫਾਇਲ ਵਰਤਣ ਲਈ ਫਾਇਲ ਇਜਾਜ਼ਤਾਂ ਸੈੱਟ ਕਰੋ"
+
+#: src/widgets/previewer/FileProperties.qml:49
+#: src/widgets/previewer/FileProperties.qml:152
+#, kde-format
+msgid "Owner"
+msgstr "ਮਾਲਕ"
+
+#: src/widgets/previewer/FileProperties.qml:58
+#: src/widgets/previewer/FileProperties.qml:90
+#: src/widgets/previewer/FileProperties.qml:122
+#, kde-format
+msgid "Read"
+msgstr "ਪੜ੍ਹਨ"
+
+#: src/widgets/previewer/FileProperties.qml:65
+#: src/widgets/previewer/FileProperties.qml:97
+#: src/widgets/previewer/FileProperties.qml:128
+#, kde-format
+msgid "Write"
+msgstr "ਲਿਖਣ"
+
+#: src/widgets/previewer/FileProperties.qml:72
+#: src/widgets/previewer/FileProperties.qml:105
+#: src/widgets/previewer/FileProperties.qml:134
+#, kde-format
+msgid "Execute"
+msgstr "ਚੱਲਣ"
+
+#: src/widgets/previewer/FileProperties.qml:113
+#, kde-format
+msgid "Everyone"
+msgstr "ਹਰ ਕੋਈ"
+
+#: src/widgets/previewer/FileProperties.qml:147
+#, kde-format
+msgid "Ownership"
+msgstr "ਓਨਰਸ਼ਿਪ"
+
+#: src/widgets/previewer/FileProperties.qml:165
+#, kde-format
+msgid "Users"
+msgstr "ਵਰਤੋਂਕਾਰ"
+
+#: src/widgets/previewer/FileProperties.qml:174
+#, kde-format
+msgid "Groups"
+msgstr "ਗਰੁੱਪ"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "ਇੰਸਟਾਲ ਕਰੋ"
+
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "ਹਟਾਓ"
+
+#: src/widgets/views/Browser.qml:79
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remove '%1'"
+msgstr "ਹਟਾਓ"
+
+#: src/widgets/views/Browser.qml:80
+#, kde-format
+msgid "Accept"
+msgstr ""
+
+#: src/widgets/views/Browser.qml:81
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: src/widgets/views/Browser.qml:83
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr ""
+
+#: src/widgets/views/Browser.qml:153
+#, kde-format
+msgid "Create new"
+msgstr ""
+
+#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
+#, kde-format
+msgid "Copy"
+msgstr "ਕਾਪੀ ਕਰੋ"
+
+#: src/widgets/views/BrowserView.qml:99 src/widgets/views/FileMenu.qml:61
+#, kde-format
+msgid "Cut"
+msgstr "ਕੱਟੋ"
+
+#: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/HomeView.qml:46
+#, kde-format
+msgid "Share"
+msgstr "ਸਾਂਝਾ ਕਰੋ"
+
+#: src/widgets/views/BrowserView.qml:132 src/widgets/views/FileMenu.qml:221
+#, kde-format
+msgid "Compress"
+msgstr "ਕੰਪਰੈਸ ਕਰੋ"
+
+#: src/widgets/views/BrowserView.qml:144 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tags"
+msgstr "ਟੈਗ"
+
+#: src/widgets/views/BrowserView.qml:176
+#, kde-format
+msgid "Detach Tab"
+msgstr ""
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr "ਡਿਵਾਈਸ ਤੇ ਰਿਮੋਟ"
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr "ਰਿਮੋਟ ਟਿਕਾਣੇ ਅਤੇ ਡਿਸਕਾਂ, ਫ਼ੋਨ ਤੇ ਕੈਮਰਿਆਂ ਵਰਗੇ ਡਿਵਾਈਸ"
+
+#: src/widgets/views/FavoritesSection.qml:22
+#, kde-format
+msgid "Favorite files"
+msgstr "ਪਸੰਦੀਦਾ ਫਾਇਲਾਂ"
+
+#: src/widgets/views/FavoritesSection.qml:23
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr "ਪਸੰਦ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਈਆਂ ਤੁਹਾਡੀਆਂ ਫਾਇਲਾਂ"
+
+#: src/widgets/views/FileMenu.qml:41
+#, kde-format
+msgid " items"
+msgstr "ਚੀਜ਼ਾਂ"
+
+#: src/widgets/views/FileMenu.qml:72
+#, kde-format
+msgid "Rename"
+msgstr "ਨਾਂ-ਬਦਲੋ"
+
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#, kde-format
+msgid "Select"
+msgstr "ਚੁਣੋ"
+
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#, kde-format
+msgid "Open with"
+msgstr "ਇਸ ਨਾਲ ਖੋਲ੍ਹੋ"
+
+#: src/widgets/views/FileMenu.qml:123
+#, kde-format
+msgid "Preview and info"
+msgstr "ਝਲਕ ਤੇ ਜਾਣਕਾਰੀ"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "UnFav"
+msgstr "ਨਾ-ਪਸੰਦ"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "Fav"
+msgstr "ਪਸੰਦ"
+
+#: src/widgets/views/home/QuickCommonSection.qml:25
+#, kde-format
+msgid "Collections"
+msgstr "ਭੰਡਾਰ"
+
+#: src/widgets/views/home/QuickCommonSection.qml:27
+#, kde-format
+msgid "Quick access to common collections"
+msgstr "ਆਮ ਭੰਡਾਰਾਂ ਲਈ ਫ਼ੌਰੀ ਪਹੁੰਚ"
+
+#: src/widgets/views/HomeView.qml:64
+#, kde-format
+msgid "Search for files"
+msgstr "ਫਾਇਲਾਂ ਨੂੰ ਲੱਭੋ"
+
+#: src/widgets/views/HomeView.qml:74
+#, kde-format
+msgid "Browser"
+msgstr "ਬਰਾਊਜ਼ਰ"
+
+#: src/widgets/views/PlacesSection.qml:18
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "ਬੁੱਕਮਾਰਕ"
+
+#: src/widgets/views/PlacesSection.qml:19
+#, kde-format
+msgid "Quick access to most common places and bookmarks"
+msgstr "ਬਹੁਤੀਆਂ ਆਮ ਥਾਵਾਂ ਅਤੇ ਬੁੱਕਮਾਰਕਾਂ ਲਈ ਫ਼ੌਰੀ ਪਹੁੰਚ"
+
+#: src/widgets/views/PlacesSideBar.qml:42
+#, kde-format
+msgid "Bookmarks!"
+msgstr "ਬੁੱਕਮਾਰਕ!"
+
+#: src/widgets/views/PlacesSideBar.qml:43
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr "ਤੁਹਾਡੇ ਬੁੱਕਮਾਰਕ ਇੱਥੇ ਦਿਖਾਏ ਜਾਣਗੇ"
+
+#: src/widgets/views/PlacesSideBar.qml:235
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr ""
+"ਇਸ ਡਿਵਾਈਸ ਨੂੰ ਵਰਤਣ ਤੋਂ ਪਹਿਲਾਂ ਮਾਊਂਟ ਕਰਨ ਦੀ ਲੋੜ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਹ ਡਿਵਾਈਸ ਸੈਟਅੱਪ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: src/widgets/views/RecentSection.qml:22
+#, kde-format
+msgid "Downloads, Audio & Pictures"
+msgstr "ਡਾਊਨਲੋਡ, ਆਡੀਓ ਤੇ ਤਸਵੀਰਾਂ"
+
+#: src/widgets/views/RecentSection.qml:23
+#, kde-format
+msgid "Your most recent downloaded files, audio and images"
+msgstr "ਤੁਹਾਡੀਆਂ ਹਾਲ ਵਿੱਚ ਹੀ ਡਾਊਨਲੋਡ ਕੀਤੀਆਂ ਫਾਇਲਾਂ, ਆਡੀਓ ਤੇ ਚਿੱਤਰ"
+
+#: src/widgets/views/RecentSection.qml:56
+#, kde-format
+msgid "Downloads"
+msgstr "ਡਾਊਨਲੋਡ"
+
+#: src/widgets/views/RecentSection.qml:129
+#, kde-format
+msgid "Music"
+msgstr "ਸੰਗੀਤ"
+
+#: src/widgets/views/RecentSection.qml:196
+#, kde-format
+msgid "Pictures"
+msgstr "ਤਸਵੀਰਾਂ"
+
+#: src/widgets/views/RecentSection.qml:253
+#, kde-format
+msgid "Camera"
+msgstr "ਕੈਮਰਾ"
+
+#: src/widgets/views/RecentSection.qml:309
+#, kde-format
+msgid "Screenshots"
+msgstr "ਸਕਰੀਨਸ਼ਾਟ"
+
+#: src/widgets/views/SettingsDialog.qml:13
+#, kde-format
+msgid "Configure the app plugins and behavior."
+msgstr "ਐਪ ਪਲੱਗਇਨ ਤੇ ਰਵੱਈਏ ਦੀ ਸੰਰਚਨਾ ਹੈ।"
+
+#: src/widgets/views/SettingsDialog.qml:17
+#, kde-format
+msgid "Thumbnails"
+msgstr "ਥੰਮਨੇਲ"
+
+#: src/widgets/views/SettingsDialog.qml:18
+#, kde-format
+msgid "Show previews of images, videos and PDF files"
+msgstr "ਚਿੱਤਰ, ਵੀਡੀਓ ਤੇ PDF ਫਾਇਲਾਂ ਦੀ ਝਲਕ ਵੇਖੋ।"
+
+#: src/widgets/views/SettingsDialog.qml:31
+#, kde-format
+msgid "Save Session"
+msgstr "ਸ਼ੈਸ਼ਨ ਨੂੰ ਸੰਭਾਲੋ"
+
+#: src/widgets/views/SettingsDialog.qml:32
+#, kde-format
+msgid "Save and restore tabs"
+msgstr "ਟੈਬਾਂ ਨੂੰ ਸੰਭਾਲੋ ਤੇ ਬਹਾਲ ਕਰੋ"
+
+#: src/widgets/views/SettingsDialog.qml:45
+#, kde-format
+msgid "Action Bar"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Extra toolbar with quick actions."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, kde-format
+msgid "Interface"
+msgstr "ਇੰਟਰਫੇਸ"
+
+#: src/widgets/views/SettingsDialog.qml:61
+#, kde-format
+msgid "Configure the app UI."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:65
+#, kde-format
+msgid "Grid Items Size"
+msgstr "ਗਰਿੱਡ ਆਈਟਮਾਂ ਦਾ ਆਕਾਰ"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Size of the grid view."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:84
+#: src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "M"
+msgstr "ਵੱ"
+
+#: src/widgets/views/SettingsDialog.qml:91
+#: src/widgets/views/SettingsDialog.qml:139
+#, kde-format
+msgid "L"
+msgstr "L"
+
+#: src/widgets/views/SettingsDialog.qml:98
+#: src/widgets/views/SettingsDialog.qml:146
+#, kde-format
+msgid "X"
+msgstr "ਹੋਰ-ਵੱ"
+
+#: src/widgets/views/SettingsDialog.qml:105
+#: src/widgets/views/SettingsDialog.qml:153
+#, kde-format
+msgid "XL"
+msgstr "XL"
+
+#: src/widgets/views/SettingsDialog.qml:114
+#, kde-format
+msgid "List Items Size"
+msgstr "ਚੀਜ਼ਾਂ ਦਾ ਆਕਾਰ ਦਿਖਾਓ"
+
+#: src/widgets/views/SettingsDialog.qml:115
+#, kde-format
+msgid "Size of the list view."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:125
+#, kde-format
+msgid "S"
+msgstr "ਛੋ"
+
+#: src/widgets/views/SettingsDialog.qml:162
+#, kde-format
+msgid "Overview"
+msgstr "ਸੰਖੇਪ"
+
+#: src/widgets/views/SettingsDialog.qml:163
+#, kde-format
+msgid "Use overview mode as default on launch"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:176
+#, kde-format
+msgid "Dark Mode"
+msgstr "ਗੂੜ੍ਹਾ ਰੰਗ ਦਾ ਢੰਗ"
+
+#: src/widgets/views/SettingsDialog.qml:177
+#, kde-format
+msgid "Switch between light and dark colorscheme"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:195
+#, kde-format
+msgid "Places"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:196
+#, kde-format
+msgid "Toggle sidebar sections."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:200
+#, kde-format
+msgid "Quick places"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:214
+#, kde-format
+msgid "Access to standard locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:229
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remote"
+msgstr "ਹਟਾਓ"
+
+#: src/widgets/views/SettingsDialog.qml:230
+#, kde-format
+msgid "Access to network locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:246
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Removable"
+msgstr "ਹਟਾਓ"
+
+#: src/widgets/views/SettingsDialog.qml:247
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:262
+#, kde-format
+msgid "Devices"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:263
+#, kde-format
+msgid "Access drives."
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:20
+#, kde-format
+msgid "Browser navigation with keyboard."
+msgstr "ਕੀਬੋਰਡ ਵਰਤ ਕੇ ਬਰਾਊਜ਼ਰ ਨੇਵੀਗੇਸ਼ਨ"
+
+#: src/widgets/views/ShortcutsDialog.qml:24
+#, kde-format
+msgid "New Tab"
+msgstr "ਨਵੀਂ ਟੈਬ"
+
+#: src/widgets/views/ShortcutsDialog.qml:44
+#, kde-format
+msgid "Close Tab"
+msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
+
+#: src/widgets/views/ShortcutsDialog.qml:64
+#, kde-format
+msgid "Path Edit"
+msgstr "ਮਾਰਗ ਸੋਧੋ"
+
+#: src/widgets/views/ShortcutsDialog.qml:114
+#, kde-format
+msgid "New File"
+msgstr "ਨਵੀਂ ਫਾਇਲ"
+
+#: src/widgets/views/ShortcutsDialog.qml:134
+#, kde-format
+msgid "Preview"
+msgstr "ਝਲਕ"
+
+#: src/widgets/views/ShortcutsDialog.qml:149
+#, kde-format
+msgid "Find Tab"
+msgstr "ਟੈਬ ਲੱਭੋ"
+
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr "ਸਭ ਚੁਣੋ"
+
+#: src/widgets/views/TagsSection.qml:22
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr "ਫ਼ੌਰੀ ਪਹੁੰਚ ਲਈ ਟੈਗ ਕੀਤੀਆਂ ਫਾਇਲਾਂ"
+
+#, fuzzy
+#~| msgid "Split Views"
+#~ msgid "Split View"
+#~ msgstr "ਵੰਡੀਆਂ ਝਲਕਾਂ"
+
+#, fuzzy
+#~| msgid "Favorite files"
+#~ msgid "Remove from Favorites"
+#~ msgstr "ਪਸੰਦੀਦਾ ਫਾਇਲਾਂ"
+
+#, fuzzy
+#~| msgid "Favorite files"
+#~ msgid "Add to Favorites"
+#~ msgstr "ਪਸੰਦੀਦਾ ਫਾਇਲਾਂ"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Add to Bookmarks"
+#~ msgstr "ਬੁੱਕਮਾਰਕ"
+
+#, fuzzy
+#~| msgid "Search for files"
+#~ msgid "Search or Filter"
+#~ msgstr "ਫਾਇਲਾਂ ਨੂੰ ਲੱਭੋ"
+
+#~ msgid "%1 Directories - %2 Files"
+#~ msgstr "%1 ਡਾਇਰੈਕਟਰੀਆਂ - %2 ਫਾਇਲਾਂ"
+
+#~ msgid "Single Click"
+#~ msgstr "ਇੱਕ ਵਾਰ ਕਲਿੱਕ"
+
+#~ msgid "Open files with a single or double click"
+#~ msgstr "ਇੱਕ ਜਾਂ ਦੋ ਵਾਰ ਕਲਿੱਕ ਕਰਨ ਨਾਲ ਫਾਇਲਾਂ ਖੋਲ੍ਹੋ"
+
+#~ msgid "List hidden files"
+#~ msgstr "ਲੁਕਵੀਆਂ ਫਾਇਲਾਂ ਦੀ ਸੂਚੀ"
+
+#~ msgid "Sorting"
+#~ msgstr "ਲੜੀਬੱਧ"
+
+#~ msgid "Sorting order and behavior."
+#~ msgstr "ਲੜੀਬੱਧ ਕਰਨ ਦਾ ਢੰਗ ਅਤੇ ਰਵੱਈਆ।"
+
+#~ msgid "Global Sorting"
+#~ msgstr "ਗਲੋਬਲ ਲੜੀਬੱਧ"
+
+#~ msgid "Folders first"
+#~ msgstr "ਫੋਲਡਰ ਪਹਿਲਾਂ"
+
+#~ msgid "Show folders first."
+#~ msgstr "ਫੋਲਡਰ ਪਹਿਲਾਂ ਵੇਖਾਉਂਦਾ ਹੈ।"
+
+#~ msgid "Title"
+#~ msgstr "ਟਾਈਟਲ"
+
+#~ msgid "Sort order"
+#~ msgstr "ਲੜੀਬੱਧ ਕ੍ਰਮ"
+
+#~ msgid "Change the sorting order."
+#~ msgstr "ਲੜੀਬੱਧ ਕਰਨ ਦਾ ਢੰਗ ਬਦਲੋ।"
+
+#~ msgid "Ascending"
+#~ msgstr "ਵੱਧਦਾ-ਕ੍ਰਮ"
+
+#~ msgid "Descending"
+#~ msgstr "ਘੱਟਦਾ-ਕ੍ਰਮ"

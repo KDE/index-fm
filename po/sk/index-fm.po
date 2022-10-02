@@ -1,0 +1,889 @@
+# translation of index-fm.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2020.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-02 00:45+0000\n"
+"PO-Revision-Date: 2021-01-24 12:16+0100\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Index"
+msgstr "Index"
+
+#: src/main.cpp:67
+#, fuzzy, kde-format
+#| msgid ""
+#| "Index allows you to navigate your computer and preview multimedia files."
+msgid "Browse, organize and preview your files."
+msgstr ""
+"Index vám umožňuje navigovať vo vašom počítači a prehliadať multimediálne "
+"súbory."
+
+#: src/main.cpp:68
+#, fuzzy, kde-format
+#| msgid "© 2019-%1 Nitrux Development Team"
+msgid "© 2019-%1 Maui Development Team"
+msgstr "© 2019-%1 Vývojársky tím Nitrux"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:70 src/main.cpp:71
+#, kde-format
+msgid "Developer"
+msgstr "Vývojár"
+
+#: src/main.cpp:71
+#, kde-format
+msgid "Gabriel Dominguez"
+msgstr "Gabriel Dominguez"
+
+#: src/main.qml:160 src/widgets/previewer/CompressedPreview.qml:15
+#: src/widgets/views/FileMenu.qml:209
+#, kde-format
+msgid "Extract"
+msgstr "Extrahovať"
+
+#: src/main.qml:161
+#, kde-format
+msgid ""
+"Extract the content of the compressed file into a new or existing "
+"subdirectory or inside the current directory."
+msgstr ""
+"Extrahovať obsah komprimovaného súboru do nového alebo existujúceho "
+"podadresára alebo do aktuálneho adresára."
+
+#: src/main.qml:181
+#, kde-format
+msgid "Compress %1 file"
+msgid_plural "Compress %1 files"
+msgstr[0] "Komprimovať %1 súbor"
+msgstr[1] "Komprimovať %1 súbory"
+msgstr[2] "Komprimovať %1 súborov"
+
+#: src/main.qml:182
+#, kde-format
+msgid "Compress selected files into a new file."
+msgstr "Komprimovať vybrané súbory do nového súboru."
+
+#: src/main.qml:188
+#, kde-format
+msgid "Archive name..."
+msgstr "Názov archívu..."
+
+#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#, kde-format
+msgid "Open folder"
+msgstr "Otvoriť priečinok"
+
+#: src/main.qml:275
+#, fuzzy, kde-format
+#| msgid "Extract"
+msgid "Extracted"
+msgstr "Extrahovať"
+
+#: src/main.qml:276
+#, kde-format
+msgid "File was extracted"
+msgstr ""
+
+#: src/main.qml:339
+#, kde-format
+msgid "Forward"
+msgstr ""
+
+#: src/main.qml:346
+#, kde-format
+msgid "Search"
+msgstr ""
+
+#: src/main.qml:355
+#, kde-format
+msgid "New"
+msgstr ""
+
+#: src/main.qml:364 src/widgets/views/Browser.qml:53
+#, fuzzy, kde-format
+#| msgid "Edit..."
+msgid "Edit"
+msgstr "Upraviť..."
+
+#: src/main.qml:369
+#, kde-format
+msgid "Paste"
+msgstr ""
+
+#: src/main.qml:379
+#, kde-format
+msgid "Select all"
+msgstr ""
+
+#: src/main.qml:388 src/widgets/views/SettingsDialog.qml:12
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Navigácia"
+
+#: src/main.qml:397
+#, kde-format
+msgid "New tab"
+msgstr ""
+
+#: src/main.qml:404
+#, fuzzy, kde-format
+#| msgid "Hidden Files"
+msgid "Hidden"
+msgstr "Skryté súbory"
+
+#: src/main.qml:412 src/widgets/views/ShortcutsDialog.qml:99
+#, fuzzy, kde-format
+#| msgid "Split Views"
+msgid "Split"
+msgstr "Rozdelené zobrazenia"
+
+#: src/main.qml:421 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr ""
+
+#: src/main.qml:433
+#, kde-format
+msgid "Go to"
+msgstr ""
+
+#: src/main.qml:441
+#, kde-format
+msgid "Open terminal here"
+msgstr "Otvoriť terminál tu"
+
+#: src/main.qml:454
+#, kde-format
+msgid "View"
+msgstr ""
+
+#: src/main.qml:459 src/widgets/views/ActionBar.qml:44
+#, kde-format
+msgid "List"
+msgstr "Zoznam"
+
+#: src/main.qml:477 src/widgets/views/ActionBar.qml:61
+#, kde-format
+msgid "Grid"
+msgstr "Mriežka"
+
+#: src/main.qml:496
+#, fuzzy, kde-format
+#| msgid "Sorting by"
+msgid "Sort by"
+msgstr "Triedenie podľa"
+
+#: src/main.qml:501
+#, kde-format
+msgid "Type"
+msgstr "Typ"
+
+#: src/main.qml:514
+#, kde-format
+msgid "Date"
+msgstr "Dátum"
+
+#: src/main.qml:526
+#, kde-format
+msgid "Modified"
+msgstr "Zmenené"
+
+#: src/main.qml:538
+#, kde-format
+msgid "Size"
+msgstr "Veľkosť"
+
+#: src/main.qml:550
+#, kde-format
+msgid "Name"
+msgstr "Názov"
+
+#: src/main.qml:564
+#, kde-format
+msgid "Show Folders First"
+msgstr "Zobrazovať najskôr priečinky"
+
+#: src/main.qml:578 src/widgets/previewer/FileProperties.qml:80
+#: src/widgets/previewer/FileProperties.qml:159
+#, kde-format
+msgid "Group"
+msgstr "Skupina"
+
+#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr ""
+
+#: src/main.qml:604
+#, kde-format
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: src/main.qml:611
+#, kde-format
+msgid "About"
+msgstr ""
+
+#: src/main.qml:629
+#, fuzzy, kde-format
+#| msgid "Toogle SideBar"
+msgid "Toggle sidebar"
+msgstr "Prepnúť bočný panel"
+
+#: src/main.qml:681 src/widgets/views/FileMenu.qml:177
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "Bookmark"
+msgstr "Záložky"
+
+#: src/main.qml:688 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:88
+#, kde-format
+msgid "Open in new tab"
+msgstr "Otvoriť na novej karte"
+
+#: src/main.qml:696 src/widgets/views/FileMenu.qml:199
+#: src/widgets/views/PlacesSideBar.qml:96
+#, kde-format
+msgid "Open in split view"
+msgstr "Otvoriť v rozdelenom zobrazení"
+
+#: src/widgets/previewer/FilePreviewer.qml:123
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: src/widgets/previewer/FilePreviewer.qml:124
+#, kde-format
+msgid "File information"
+msgstr ""
+
+#: src/widgets/previewer/FilePreviewer.qml:220
+#, kde-format
+msgid "Previous"
+msgstr "Predchádzajúci"
+
+#: src/widgets/previewer/FilePreviewer.qml:227
+#, kde-format
+msgid "Next"
+msgstr "Nasledujúci"
+
+#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#, kde-format
+msgid "Open"
+msgstr "Otvoriť"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#, kde-format
+msgid "Permissions"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:45
+#: src/widgets/previewer/FileProperties.qml:148
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:49
+#: src/widgets/previewer/FileProperties.qml:152
+#, kde-format
+msgid "Owner"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:58
+#: src/widgets/previewer/FileProperties.qml:90
+#: src/widgets/previewer/FileProperties.qml:122
+#, kde-format
+msgid "Read"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:65
+#: src/widgets/previewer/FileProperties.qml:97
+#: src/widgets/previewer/FileProperties.qml:128
+#, kde-format
+msgid "Write"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:72
+#: src/widgets/previewer/FileProperties.qml:105
+#: src/widgets/previewer/FileProperties.qml:134
+#, kde-format
+msgid "Execute"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:113
+#, kde-format
+msgid "Everyone"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:147
+#, kde-format
+msgid "Ownership"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:165
+#, kde-format
+msgid "Users"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:174
+#, fuzzy, kde-format
+#| msgid "Group"
+msgid "Groups"
+msgstr "Skupina"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "Inštalovať"
+
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "Odstrániť"
+
+#: src/widgets/views/Browser.qml:79
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remove '%1'"
+msgstr "Odstrániť"
+
+#: src/widgets/views/Browser.qml:80
+#, kde-format
+msgid "Accept"
+msgstr ""
+
+#: src/widgets/views/Browser.qml:81
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: src/widgets/views/Browser.qml:83
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr ""
+
+#: src/widgets/views/Browser.qml:153
+#, kde-format
+msgid "Create new"
+msgstr ""
+
+#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
+#, kde-format
+msgid "Copy"
+msgstr "Kopírovať"
+
+#: src/widgets/views/BrowserView.qml:99 src/widgets/views/FileMenu.qml:61
+#, kde-format
+msgid "Cut"
+msgstr "Vystrihnúť"
+
+#: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/HomeView.qml:46
+#, kde-format
+msgid "Share"
+msgstr "Zdieľať"
+
+#: src/widgets/views/BrowserView.qml:132 src/widgets/views/FileMenu.qml:221
+#, kde-format
+msgid "Compress"
+msgstr "Komprimovať"
+
+#: src/widgets/views/BrowserView.qml:144 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tags"
+msgstr "Značky"
+
+#: src/widgets/views/BrowserView.qml:176
+#, kde-format
+msgid "Detach Tab"
+msgstr ""
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr "Zariadenia a vzdialené"
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr "Vzdialené miesta a zariadenia, ako sú disky, telefóny a fotoaparáty"
+
+#: src/widgets/views/FavoritesSection.qml:22
+#, kde-format
+msgid "Favorite files"
+msgstr "Obľúbené súbory"
+
+#: src/widgets/views/FavoritesSection.qml:23
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr "Vaše súbory označené ako obľúbené"
+
+#: src/widgets/views/FileMenu.qml:41
+#, kde-format
+msgid " items"
+msgstr " položky"
+
+#: src/widgets/views/FileMenu.qml:72
+#, kde-format
+msgid "Rename"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#, kde-format
+msgid "Open with"
+msgstr "Otvoriť s"
+
+#: src/widgets/views/FileMenu.qml:123
+#, fuzzy, kde-format
+#| msgid "Preview Files"
+msgid "Preview and info"
+msgstr "Náhľad súborov"
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "UnFav"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "Fav"
+msgstr ""
+
+#: src/widgets/views/home/QuickCommonSection.qml:25
+#, kde-format
+msgid "Collections"
+msgstr "Zbierky"
+
+#: src/widgets/views/home/QuickCommonSection.qml:27
+#, kde-format
+msgid "Quick access to common collections"
+msgstr "Rýchly prístup k spoločným zbierkam"
+
+#: src/widgets/views/HomeView.qml:64
+#, kde-format
+msgid "Search for files"
+msgstr "Hľadať súbory"
+
+#: src/widgets/views/HomeView.qml:74
+#, kde-format
+msgid "Browser"
+msgstr "Prehliadač"
+
+#: src/widgets/views/PlacesSection.qml:18
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Záložky"
+
+#: src/widgets/views/PlacesSection.qml:19
+#, kde-format
+msgid "Quick access to most common places and bookmarks"
+msgstr "Rýchly prístup k najbežnejším miestam a záložkám"
+
+#: src/widgets/views/PlacesSideBar.qml:42
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "Bookmarks!"
+msgstr "Záložky"
+
+#: src/widgets/views/PlacesSideBar.qml:43
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr ""
+
+#: src/widgets/views/PlacesSideBar.qml:235
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr ""
+
+#: src/widgets/views/RecentSection.qml:22
+#, kde-format
+msgid "Downloads, Audio & Pictures"
+msgstr "Stiahnuté, Zvuk a Obrázky"
+
+#: src/widgets/views/RecentSection.qml:23
+#, kde-format
+msgid "Your most recent downloaded files, audio and images"
+msgstr "Vaše najnovšie stiahnuté súbory, zvuk a obrázky"
+
+#: src/widgets/views/RecentSection.qml:56
+#, kde-format
+msgid "Downloads"
+msgstr "Stiahnuté"
+
+#: src/widgets/views/RecentSection.qml:129
+#, kde-format
+msgid "Music"
+msgstr "Hudba"
+
+#: src/widgets/views/RecentSection.qml:196
+#, kde-format
+msgid "Pictures"
+msgstr "Obrázky"
+
+#: src/widgets/views/RecentSection.qml:253
+#, kde-format
+msgid "Camera"
+msgstr ""
+
+#: src/widgets/views/RecentSection.qml:309
+#, kde-format
+msgid "Screenshots"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:13
+#, kde-format
+msgid "Configure the app plugins and behavior."
+msgstr "Nastaviť doplnky aplikácie a správanie."
+
+#: src/widgets/views/SettingsDialog.qml:17
+#, kde-format
+msgid "Thumbnails"
+msgstr "Náhľady"
+
+#: src/widgets/views/SettingsDialog.qml:18
+#, kde-format
+msgid "Show previews of images, videos and PDF files"
+msgstr "Zobraziť ukážky obrázkov, videí a súborov PDF"
+
+#: src/widgets/views/SettingsDialog.qml:31
+#, kde-format
+msgid "Save Session"
+msgstr "Uložiť sedenie"
+
+#: src/widgets/views/SettingsDialog.qml:32
+#, kde-format
+msgid "Save and restore tabs"
+msgstr "Uložiť a obnoviť karty"
+
+#: src/widgets/views/SettingsDialog.qml:45
+#, kde-format
+msgid "Action Bar"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Extra toolbar with quick actions."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, kde-format
+msgid "Interface"
+msgstr "Rozhranie"
+
+#: src/widgets/views/SettingsDialog.qml:61
+#, kde-format
+msgid "Configure the app UI."
+msgstr "Nastaviť rozhranie aplikácie."
+
+#: src/widgets/views/SettingsDialog.qml:65
+#, kde-format
+msgid "Grid Items Size"
+msgstr "Veľkosť položiek mriežky"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, fuzzy, kde-format
+#| msgid "Size of the grid and list view thumbnails."
+msgid "Size of the grid view."
+msgstr "Veľkosť mriežky a miniatúr v zobrazení zoznamu."
+
+#: src/widgets/views/SettingsDialog.qml:84
+#: src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "M"
+msgstr "M"
+
+#: src/widgets/views/SettingsDialog.qml:91
+#: src/widgets/views/SettingsDialog.qml:139
+#, kde-format
+msgid "L"
+msgstr "L"
+
+#: src/widgets/views/SettingsDialog.qml:98
+#: src/widgets/views/SettingsDialog.qml:146
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#: src/widgets/views/SettingsDialog.qml:105
+#: src/widgets/views/SettingsDialog.qml:153
+#, kde-format
+msgid "XL"
+msgstr "XL"
+
+#: src/widgets/views/SettingsDialog.qml:114
+#, kde-format
+msgid "List Items Size"
+msgstr "Vypísať veľkosť položiek"
+
+#: src/widgets/views/SettingsDialog.qml:115
+#, fuzzy, kde-format
+#| msgid "Size of the grid and list view thumbnails."
+msgid "Size of the list view."
+msgstr "Veľkosť mriežky a miniatúr v zobrazení zoznamu."
+
+#: src/widgets/views/SettingsDialog.qml:125
+#, kde-format
+msgid "S"
+msgstr "S"
+
+#: src/widgets/views/SettingsDialog.qml:162
+#, kde-format
+msgid "Overview"
+msgstr "Prehľad"
+
+#: src/widgets/views/SettingsDialog.qml:163
+#, kde-format
+msgid "Use overview mode as default on launch"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:176
+#, kde-format
+msgid "Dark Mode"
+msgstr "Tmavý režim"
+
+#: src/widgets/views/SettingsDialog.qml:177
+#, kde-format
+msgid "Switch between light and dark colorscheme"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:195
+#, kde-format
+msgid "Places"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:196
+#, kde-format
+msgid "Toggle sidebar sections."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:200
+#, kde-format
+msgid "Quick places"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:214
+#, kde-format
+msgid "Access to standard locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:229
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remote"
+msgstr "Odstrániť"
+
+#: src/widgets/views/SettingsDialog.qml:230
+#, kde-format
+msgid "Access to network locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:246
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Removable"
+msgstr "Odstrániť"
+
+#: src/widgets/views/SettingsDialog.qml:247
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:262
+#, kde-format
+msgid "Devices"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:263
+#, kde-format
+msgid "Access drives."
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:20
+#, fuzzy, kde-format
+#| msgid "Navigation"
+msgid "Browser navigation with keyboard."
+msgstr "Navigácia"
+
+#: src/widgets/views/ShortcutsDialog.qml:24
+#, kde-format
+msgid "New Tab"
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:44
+#, kde-format
+msgid "Close Tab"
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:64
+#, kde-format
+msgid "Path Edit"
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:114
+#, fuzzy, kde-format
+#| msgid "Preview Files"
+msgid "New File"
+msgstr "Náhľad súborov"
+
+#: src/widgets/views/ShortcutsDialog.qml:134
+#, kde-format
+msgid "Preview"
+msgstr "Náhľad"
+
+#: src/widgets/views/ShortcutsDialog.qml:149
+#, kde-format
+msgid "Find Tab"
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr ""
+
+#: src/widgets/views/TagsSection.qml:22
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr "Označené súbory pre rýchly prístup"
+
+#, fuzzy
+#~| msgid "Split Views"
+#~ msgid "Split View"
+#~ msgstr "Rozdelené zobrazenia"
+
+#, fuzzy
+#~| msgid "Favorite files"
+#~ msgid "Remove from Favorites"
+#~ msgstr "Obľúbené súbory"
+
+#, fuzzy
+#~| msgid "Favorite files"
+#~ msgid "Add to Favorites"
+#~ msgstr "Obľúbené súbory"
+
+#, fuzzy
+#~| msgid "Bookmarks"
+#~ msgid "Add to Bookmarks"
+#~ msgstr "Záložky"
+
+#, fuzzy
+#~| msgid ""
+#~| "Opens a quick preview with information of the file instead of opening it "
+#~| "with an external application."
+#~ msgid ""
+#~ "Opens a quick preview with information of the file instead of opening it "
+#~ "with an external application"
+#~ msgstr ""
+#~ "Otvorí rýchly náhľad s informáciami o súbore namiesto jeho otvorenia v "
+#~ "externej aplikácii."
+
+#, fuzzy
+#~| msgid "Search for files"
+#~ msgid "Search or Filter"
+#~ msgstr "Hľadať súbory"
+
+#~ msgid "%1 Directories - %2 Files"
+#~ msgstr "%1 Adresáre - %2 Súbory"
+
+#~ msgid "Single Click"
+#~ msgstr "Jeden klik"
+
+#~ msgid "Open files with a single or double click"
+#~ msgstr "Otvoriť súbory jediným alebo dvojitým kliknutím"
+
+#~ msgid "List hidden files"
+#~ msgstr "Vypísať skryté súbory"
+
+#~ msgid ""
+#~ "Support split views horizontally or vertically depending on the available "
+#~ "space."
+#~ msgstr ""
+#~ "Podporuje rozdelené pohľady vodorovne alebo zvisle v závislosti od "
+#~ "dostupného priestoru."
+
+#~ msgid "Sorting"
+#~ msgstr "Triedenie"
+
+#~ msgid "Sorting order and behavior."
+#~ msgstr "Triedenie a správanie."
+
+#~ msgid "Global Sorting"
+#~ msgstr "Globálne triedenie"
+
+#~ msgid "Use the sorting preferences globally for all the tabs and splits."
+#~ msgstr ""
+#~ "Predvoľby triedenia používať globálne pre všetky karty a rozdelenia."
+
+#~ msgid "Folders first"
+#~ msgstr "Najskôr priečinky"
+
+#~ msgid "Show folders first."
+#~ msgstr "Zobrazovať najskôr priečinky."
+
+#~ msgid "Groups by the sort category."
+#~ msgstr "Zoskupiť podľa kategórie zoradenia."
+
+#~ msgid "Change the sorting key."
+#~ msgstr "Zmeňte triediaci kľúč."
+
+#~ msgid "Title"
+#~ msgstr "Názov"
+
+#~ msgid "Sort order"
+#~ msgstr "Poradie triedenia"
+
+#~ msgid "Change the sorting order."
+#~ msgstr "Zmeniť poradie triedenia."
+
+#~ msgid "Ascending"
+#~ msgstr "Vzostupne"
+
+#~ msgid "Descending"
+#~ msgstr "Zostupne"
+
+#~ msgid "Columns"
+#~ msgstr "Stĺpce"
+
+#, fuzzy
+#~| msgid "Columns"
+#~ msgid "Miller Columns"
+#~ msgstr "Stĺpce"
+
+#~ msgid "Stick SideBar"
+#~ msgstr "Prilepiť bočný panel"
+
+#~ msgid "Show Status Bar"
+#~ msgstr "Zobraziť stavový riadok"
+
+#~ msgid "Hide"
+#~ msgstr "Skryť"
