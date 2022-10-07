@@ -19,6 +19,7 @@
   <name xml:lang="hu">Index</name>
   <name xml:lang="id">Index</name>
   <name xml:lang="it">Index</name>
+  <name xml:lang="ka">ინდექსი</name>
   <name xml:lang="ko">Index</name>
   <name xml:lang="nl">Index</name>
   <name xml:lang="nn">Index</name>
@@ -49,6 +50,7 @@
   <summary xml:lang="hu">Fájlkezelő</summary>
   <summary xml:lang="id">Kelola file-file Anda</summary>
   <summary xml:lang="it">Gestisci i tuoi file</summary>
+  <summary xml:lang="ka">მართეთ თქვენი ფაილები</summary>
   <summary xml:lang="ko">내 파일 관리</summary>
   <summary xml:lang="nl">Uw bestanden beheren</summary>
   <summary xml:lang="nn">Handsam filene dine</summary>
@@ -80,6 +82,7 @@
     <p xml:lang="hu">Az Index lehetővé teszi a számítógépe böngészését, és a multimédiás fájlok előnézetének megtekintését.</p>
     <p xml:lang="id">Index memungkinkan Anda untuk menavigasi pratinjau file-file multimedia dan komputer Anda.</p>
     <p xml:lang="it">Index ti consente di navigare il tuo computer e offre un'anteprima dei file multimediali.</p>
+    <p xml:lang="ka">ინდექსი თქვენს კომპიუტერში ნავიგაციისა და მულტიმედია ფაილებზე გადახედვის საშუალებას გაძლევთ.</p>
     <p xml:lang="ko">Index 파일 관리자로 컴퓨터를 탐색하고 멀티미디어 파일을 미리 볼 수 있습니다.</p>
     <p xml:lang="nl">Index biedt u het navigeren in uw computer en multimediabestanden te bekijken.</p>
     <p xml:lang="nn">Index lèt deg bla gjennom filer på maskina og førehandsvisa multimediefiler.</p>
@@ -117,6 +120,7 @@
       <caption xml:lang="hu">Index fájlkezelő</caption>
       <caption xml:lang="id">Pengelola file indeks</caption>
       <caption xml:lang="it">Gestore dei file Index</caption>
+      <caption xml:lang="ka">ინდექსის ფაილების მმართველი</caption>
       <caption xml:lang="ko">Index 파일 관리자</caption>
       <caption xml:lang="nl">Indexbestandsbeheerder</caption>
       <caption xml:lang="nn">Index filhandsamar</caption>
