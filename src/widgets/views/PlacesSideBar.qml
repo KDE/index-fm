@@ -110,7 +110,6 @@ Loader
             }
         }
 
-
         flickable.topMargin: Maui.Style.space.medium
         flickable.bottomMargin: Maui.Style.space.medium
         flickable.header: Loader
