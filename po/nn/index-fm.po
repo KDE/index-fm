@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-25 00:43+0000\n"
+"POT-Creation-Date: 2022-10-12 00:45+0000\n"
 "PO-Revision-Date: 2021-03-21 17:55+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -244,13 +244,13 @@ msgid "Bookmark"
 msgstr ""
 
 #: src/main.qml:688 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:253
+#: src/widgets/views/PlacesSideBar.qml:88
 #, kde-format
 msgid "Open in new tab"
 msgstr "Opna i ny fane"
 
 #: src/main.qml:696 src/widgets/views/FileMenu.qml:199
-#: src/widgets/views/PlacesSideBar.qml:261
+#: src/widgets/views/PlacesSideBar.qml:96
 #, kde-format
 msgid "Open in split view"
 msgstr "Opna i delt vising"
@@ -345,7 +345,7 @@ msgid "Install"
 msgstr "Installer"
 
 #: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:271
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Remove"
 msgstr "Fjern"
@@ -495,17 +495,17 @@ msgstr "Bokmerke"
 msgid "Quick access to most common places and bookmarks"
 msgstr "Kjapp tilgang til dei vanlegaste stadane og bokmerke"
 
-#: src/widgets/views/PlacesSideBar.qml:66
+#: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
 msgid "Bookmarks!"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:67
+#: src/widgets/views/PlacesSideBar.qml:43
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:191
+#: src/widgets/views/PlacesSideBar.qml:234
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
