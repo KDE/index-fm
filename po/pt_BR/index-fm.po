@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-12 00:45+0000\n"
-"PO-Revision-Date: 2022-06-22 16:23-0300\n"
+"PO-Revision-Date: 2022-10-19 15:40-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -407,7 +407,7 @@ msgstr "Etiquetas"
 #: src/widgets/views/BrowserView.qml:176
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "Desanexar aba"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
