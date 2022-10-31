@@ -156,6 +156,7 @@ Loader
                                 label1.text: modelData.label
                                 labelsVisible: false
                                 tooltipText: modelData.label
+                                flat: false
                                 onClicked:
                                 {
                                     if(modelData.path === "overview:///")
