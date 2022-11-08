@@ -139,6 +139,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     }, Qt::QueuedConnection);
 
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
     engine.rootContext()->setContextProperty("initPaths", paths);
 
     engine.rootContext()->setContextProperty("inx", index.get());

@@ -114,6 +114,8 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
     install(FILES src/data/org.kde.index.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 endif()
 
+ki18n_install(po)
+
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
