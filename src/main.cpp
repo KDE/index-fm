@@ -62,7 +62,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     MauiApp::instance()->setIconName("qrc:/assets/index.svg");
 
-    KLocalizedString::setApplicationDomain("index");
+    KLocalizedString::setApplicationDomain("index-fm");
 
     KAboutData about(QStringLiteral("index"), i18n("Index"), INDEX_VERSION_STRING, i18n("Browse, organize and preview your files."),
                      KAboutLicense::LGPL_V3, i18n("© 2019-%1 Maui Development Team", QString::number(QDate::currentDate().year())), QString(GIT_BRANCH) + "/" + QString(GIT_COMMIT_HASH));
