@@ -371,7 +371,7 @@ msgstr "Cancel·la"
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
-"Segur que voleu eliminar esta etiqueta? Esta operació no es pot desfer."
+"Segur que voleu eliminar esta etiqueta? Esta operació no es podrà desfer."
 
 #: src/widgets/views/Browser.qml:153
 #, kde-format
