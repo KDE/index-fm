@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>assets/index.svg</file>
         <file>assets/bookmark-new.svg</file>
+        <file>assets/index.png</file>
     </qresource>
 </RCC>

@@ -60,8 +60,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     app.setOrganizationName(QStringLiteral("Maui"));
     app.setWindowIcon(QIcon(":/index.png"));
 
-    MauiApp::instance()->setIconName("qrc:/assets/index.svg");
-
     KLocalizedString::setApplicationDomain("index-fm");
 
     KAboutData about(QStringLiteral("index"), i18n("Index"), INDEX_VERSION_STRING, i18n("Browse, organize and preview your files."),
@@ -74,8 +72,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     about.setBugAddress("https://invent.kde.org/maui/index-fm/-/issues");
     about.setOrganizationDomain(INDEX_URI);
     about.setProgramLogo(app.windowIcon());
+    about.addComponent("KIO");
 
     KAboutData::setApplicationData(about);
+    MauiApp::instance()->setIconName("qrc:/assets/index.png");
 
     QCommandLineOption newWindowOption(QStringList() << "n" << "new", "Open url in a new window.", "url");
 
