@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:46+0000\n"
+"POT-Creation-Date: 2022-11-16 00:45+0000\n"
 "PO-Revision-Date: 2022-08-14 16:11+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: src/main.cpp:67
+#: src/main.cpp:65
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:67
+#: src/main.cpp:65
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Răsfoiți, organizați și previzualizați fișiere."
 
-#: src/main.cpp:68
+#: src/main.cpp:66
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
 msgstr "© 2019-%1 Echipa de dezvoltare Maui"
 
-#: src/main.cpp:70
+#: src/main.cpp:68
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:70 src/main.cpp:71
+#: src/main.cpp:68 src/main.cpp:69
 #, kde-format
 msgid "Developer"
 msgstr "Dezvoltator"
 
-#: src/main.cpp:71
+#: src/main.cpp:69
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"

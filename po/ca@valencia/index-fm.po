@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:46+0000\n"
+"POT-Creation-Date: 2022-11-16 00:45+0000\n"
 "PO-Revision-Date: 2022-09-09 12:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -20,32 +20,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: src/main.cpp:67
+#: src/main.cpp:65
 #, kde-format
 msgid "Index"
 msgstr "Índex"
 
-#: src/main.cpp:67
+#: src/main.cpp:65
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Navega, organitza i previsualitza els vostres fitxers."
 
-#: src/main.cpp:68
+#: src/main.cpp:66
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
 msgstr "© 2019-%1 L'equip de desenvolupament Maui"
 
-#: src/main.cpp:70
+#: src/main.cpp:68
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:70 src/main.cpp:71
+#: src/main.cpp:68 src/main.cpp:69
 #, kde-format
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: src/main.cpp:71
+#: src/main.cpp:69
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
