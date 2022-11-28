@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:45+0000\n"
-"PO-Revision-Date: 2022-10-06 07:57+0200\n"
+"PO-Revision-Date: 2022-11-27 22:07+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -60,6 +60,8 @@ msgid ""
 "Extract the content of the compressed file into a new or existing "
 "subdirectory or inside the current directory."
 msgstr ""
+"შეკუმშული ფაილის შემცველობის მიმდინარე საქაღალდეში უკვე არსებულ ან ახალ "
+"ქვესაქაღალდეში გახსნა."
 
 #: src/main.qml:181
 #, kde-format
@@ -132,7 +134,7 @@ msgstr "ნავიგაცია"
 #: src/main.qml:397
 #, kde-format
 msgid "New tab"
-msgstr "ახალი _დაფა"
+msgstr "ახალი ჩანართი"
 
 #: src/main.qml:404
 #, kde-format
@@ -287,7 +289,7 @@ msgstr "წვდომები"
 #: src/widgets/previewer/FileProperties.qml:148
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "ამ ფაილის წვდომების დაყენების შეცდომა"
 
 #: src/widgets/previewer/FileProperties.qml:49
 #: src/widgets/previewer/FileProperties.qml:152
@@ -367,6 +369,7 @@ msgstr "გაუქმება"
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
+"დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ჭდე? ქმედება შეუქცევადია."
 
 #: src/widgets/views/Browser.qml:153
 #, kde-format
@@ -414,6 +417,8 @@ msgstr "მოწყობილობები და დაშორებუ�
 #, kde-format
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr ""
+"დაშორებული მდებარეობები და მოწყობილობები, როგორიცაა მაგალითად დისკები, "
+"ტელეფონები და კამერები"
 
 #: src/widgets/views/FavoritesSection.qml:22
 #, kde-format
@@ -423,7 +428,7 @@ msgstr "რჩეული ფაილები"
 #: src/widgets/views/FavoritesSection.qml:23
 #, kde-format
 msgid "Your files marked as favorites"
-msgstr ""
+msgstr "ფაილები მოინიშნა, როგორც სასურველი"
 
 #: src/widgets/views/FileMenu.qml:41
 #, kde-format
@@ -468,7 +473,7 @@ msgstr "კოლექციები"
 #: src/widgets/views/home/QuickCommonSection.qml:27
 #, kde-format
 msgid "Quick access to common collections"
-msgstr ""
+msgstr "სწრაფი წვდომა ზოგად კოლექციებზე"
 
 #: src/widgets/views/HomeView.qml:64
 #, kde-format
@@ -489,7 +494,7 @@ msgstr "სანიშნები"
 #: src/widgets/views/PlacesSection.qml:19
 #, kde-format
 msgid "Quick access to most common places and bookmarks"
-msgstr ""
+msgstr "სწრაფ წვდომა ყველაზე ცნობილ ადგილებზე და სანიშნებზე"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -499,7 +504,7 @@ msgstr "სანიშნები!"
 #: src/widgets/views/PlacesSideBar.qml:43
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr ""
+msgstr "თქვენი სანიშნები აქ ჩამოითვლება"
 
 #: src/widgets/views/PlacesSideBar.qml:235
 #, kde-format
@@ -507,6 +512,8 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
+"ამ მოწყობილობასთან წვდომისთვის ჯერ მისი მიმაგრებაა საჭირო. გნებავთ, მოირგოთ "
+"ეს მოწყობილობა?"
 
 #: src/widgets/views/RecentSection.qml:22
 #, kde-format
@@ -516,7 +523,7 @@ msgstr "გადმოწერები, აუდიო და სურა�
 #: src/widgets/views/RecentSection.qml:23
 #, kde-format
 msgid "Your most recent downloaded files, audio and images"
-msgstr ""
+msgstr "უახლესი გადმოწერილი ფაილები, ხმა და სურათები"
 
 #: src/widgets/views/RecentSection.qml:56
 #, kde-format
@@ -556,7 +563,7 @@ msgstr "ესკიზები"
 #: src/widgets/views/SettingsDialog.qml:18
 #, kde-format
 msgid "Show previews of images, videos and PDF files"
-msgstr ""
+msgstr "სურათების, ვიდეოების და PDF ფაილების მინიატურების ჩვენება"
 
 #: src/widgets/views/SettingsDialog.qml:31
 #, kde-format
@@ -576,7 +583,7 @@ msgstr "ქმედების ზოლი"
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
 msgid "Extra toolbar with quick actions."
-msgstr ""
+msgstr "დამატებითი პანელი სწრაფი ქმედებებით."
 
 #: src/widgets/views/SettingsDialog.qml:60
 #, kde-format
@@ -645,7 +652,7 @@ msgstr "მიმოხილვა"
 #: src/widgets/views/SettingsDialog.qml:163
 #, kde-format
 msgid "Use overview mode as default on launch"
-msgstr ""
+msgstr "გაშვებისას გადახედვის რეჟიმის ნაგულისხმევად გამოყენება"
 
 #: src/widgets/views/SettingsDialog.qml:176
 #, kde-format
