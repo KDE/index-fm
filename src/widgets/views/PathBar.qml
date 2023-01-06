@@ -88,7 +88,7 @@ Item
         {
             implicitWidth: _rowLayout.implicitWidth
 
-            Maui.TextField
+            TextField
             {
                 id: entry
                 anchors.fill: parent

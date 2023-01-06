@@ -163,7 +163,8 @@ ColumnLayout
         Maui.SettingTemplate
         {
             label1.text: i18n("Users")
-            Maui.ComboBox
+
+            ComboBox
             {
                 model: _permissions.users
             }
@@ -172,7 +173,8 @@ ColumnLayout
         Maui.SettingTemplate
         {
             label1.text: i18n("Groups")
-            Maui.ComboBox
+
+            ComboBox
             {
                 model: _permissions.groups
             }
