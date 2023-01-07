@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# Stelios <sstavra@gmail.com>, 2020, 2021.
+# Stelios <sstavra@gmail.com>, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:45+0000\n"
-"PO-Revision-Date: 2021-10-04 08:54+0300\n"
+"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"PO-Revision-Date: 2023-01-06 17:17+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -110,10 +110,9 @@ msgid "New"
 msgstr "Νέο"
 
 #: src/main.qml:364 src/widgets/views/Browser.qml:53
-#, fuzzy, kde-format
-#| msgid "Edit..."
+#, kde-format
 msgid "Edit"
-msgstr "Επεξεργασία..."
+msgstr "Επεξεργασία"
 
 #: src/main.qml:369
 #, kde-format
@@ -132,8 +131,7 @@ msgid "Navigation"
 msgstr "Πλοήγηση"
 
 #: src/main.qml:397
-#, fuzzy, kde-format
-#| msgid "New Tab"
+#, kde-format
 msgid "New tab"
 msgstr "Νέα καρτέλα"
 
@@ -163,10 +161,9 @@ msgid "Open terminal here"
 msgstr "Άνοιγμα τερματικού εδώ"
 
 #: src/main.qml:454
-#, fuzzy, kde-format
-#| msgid "View type"
+#, kde-format
 msgid "View"
-msgstr "Τύπος προβολής"
+msgstr "Προβολή"
 
 #: src/main.qml:459 src/widgets/views/ActionBar.qml:44
 #, kde-format
@@ -235,8 +232,7 @@ msgid "About"
 msgstr "Περίγραμμα"
 
 #: src/main.qml:629
-#, fuzzy, kde-format
-#| msgid "Toogle SideBar"
+#, kde-format
 msgid "Toggle sidebar"
 msgstr "Εναλλαγή πλευρικής γραμμής"
 
@@ -337,7 +333,7 @@ msgstr "Ιδιοκτησία"
 msgid "Users"
 msgstr "Χρήστες"
 
-#: src/widgets/previewer/FileProperties.qml:174
+#: src/widgets/previewer/FileProperties.qml:175
 #, kde-format
 msgid "Groups"
 msgstr "Ομάδες"
@@ -354,31 +350,32 @@ msgid "Remove"
 msgstr "Αφαίρεση"
 
 #: src/widgets/views/Browser.qml:79
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgid "Remove '%1'"
-msgstr "Αφαίρεση"
+msgstr "Αφαίρεση του '%1'"
 
 #: src/widgets/views/Browser.qml:80
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Αποδοχή"
 
 #: src/widgets/views/Browser.qml:81
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: src/widgets/views/Browser.qml:83
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
+"Είστε βέβαιοι ότι θέλετε να αφαιρέσετε αυτήν την ετικέτα; Αυτή η λειτουργία "
+"δεν αναιρείται."
 
 #: src/widgets/views/Browser.qml:153
 #, kde-format
 msgid "Create new"
-msgstr ""
+msgstr "Δημιουργία νέας"
 
 #: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
 #, kde-format
@@ -410,7 +407,7 @@ msgstr "Ετικέτες"
 #: src/widgets/views/BrowserView.qml:176
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "Απόσπαση καρτέλας"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
@@ -581,12 +578,12 @@ msgstr "Αποθήκευση και επαναφορά καρτελών"
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Action Bar"
-msgstr ""
+msgstr "Γραμμή ενεργειών"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
 msgid "Extra toolbar with quick actions."
-msgstr ""
+msgstr "Πρόσθετη γραμμή με γρήγορες ενέργειες."
 
 #: src/widgets/views/SettingsDialog.qml:60
 #, kde-format
@@ -665,7 +662,7 @@ msgstr "Λειτουργία σε σκούρο"
 #: src/widgets/views/SettingsDialog.qml:177
 #, kde-format
 msgid "Switch between light and dark colorscheme"
-msgstr ""
+msgstr "εναλλαγή ανάμεσα σε φωτεινό και σκοτεινό σχήμα χρώματος"
 
 #: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
@@ -675,50 +672,48 @@ msgstr "Τοποθεσίες"
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
-msgstr ""
+msgstr "Εναλλαγή τμημάτων πλευρικής μπάρας."
 
 #: src/widgets/views/SettingsDialog.qml:200
 #, kde-format
 msgid "Quick places"
-msgstr ""
+msgstr "Γρήγορες τοποθεσίες"
 
 #: src/widgets/views/SettingsDialog.qml:201
 #: src/widgets/views/SettingsDialog.qml:214
 #, kde-format
 msgid "Access to standard locations."
-msgstr ""
+msgstr "Πρόσβαση σε τυπικές τοποθεσίες."
 
 #: src/widgets/views/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgid "Remote"
-msgstr "Αφαίρεση"
+msgstr "Απομακρυσμένο"
 
 #: src/widgets/views/SettingsDialog.qml:230
 #, kde-format
 msgid "Access to network locations."
-msgstr ""
+msgstr "Πρόσβαση σε δικτυακές τοποθεσίες."
 
 #: src/widgets/views/SettingsDialog.qml:246
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgid "Removable"
-msgstr "Αφαίρεση"
+msgstr "Αφαιρούμενο"
 
 #: src/widgets/views/SettingsDialog.qml:247
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr ""
+msgstr "Πρόσβαση σε USB στικάκια και SD κάρτες."
 
 #: src/widgets/views/SettingsDialog.qml:262
 #, kde-format
 msgid "Devices"
-msgstr ""
+msgstr "Συσκευές"
 
 #: src/widgets/views/SettingsDialog.qml:263
 #, kde-format
 msgid "Access drives."
-msgstr ""
+msgstr "Οδηγοί πρόσβασης."
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format

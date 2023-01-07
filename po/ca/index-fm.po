@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:45+0000\n"
+"POT-Creation-Date: 2023-01-07 00:47+0000\n"
 "PO-Revision-Date: 2022-09-09 12:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -335,7 +335,7 @@ msgstr "Propietari"
 msgid "Users"
 msgstr "Usuaris"
 
-#: src/widgets/previewer/FileProperties.qml:174
+#: src/widgets/previewer/FileProperties.qml:175
 #, kde-format
 msgid "Groups"
 msgstr "Grups"
