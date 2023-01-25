@@ -10,6 +10,7 @@ import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
+import Qt.labs.platform 1.1
 
 import org.maui.index 1.0 as Index
 
@@ -117,7 +118,89 @@ Maui.Page
 
                     sourceComponent: FavoritesSection
                     {
-                        id: _favSection
+                    }
+                }
+
+                Loader
+                {
+                    asynchronous: true
+
+                    Layout.fillWidth: true
+
+                    sourceComponent: RecentSection
+                    {
+                        id: _recentGrid
+                        title: i18n("Downloads")
+                        description: i18n("Your most recent downloaded files")
+
+                        list.url: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
+
+
+                        browser.delegate:  Item
+                        {
+                            height: GridView.view.cellHeight
+                            width: GridView.view.cellWidth
+
+                            Maui.ListBrowserDelegate
+                            {
+                                anchors.fill: parent
+                                anchors.margins: Maui.Style.space.small
+                                iconVisible: true
+                                label1.text: model.label
+                                iconSource: model.icon
+                                imageSource: model.thumbnail
+                                template.fillMode: Image.PreserveAspectFit
+                                iconSizeHint: height * 0.5
+                                checkable: selectionMode
+
+                                onClicked:
+                                {
+                                    _recentGrid.currentIndex = index
+                                    openPreview(_recentGrid.baseModel, index)
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                Loader
+                {
+                    Layout.fillWidth: true
+                    asynchronous: true
+                    sourceComponent: RecentSection
+                    {
+                        id: _recentMusic
+                        title: i18n("Music")
+                        description: i18n("Your most recent music files")
+
+                        list.url: StandardPaths.writableLocation(StandardPaths.MusicLocation)
+                        list.filters: FB.FM.nameFilters(FB.FMList.AUDIO)
+
+                        browser.delegate: Item
+                        {
+                            height: GridView.view.cellHeight
+                            width: GridView.view.cellWidth
+                            AudioCard
+                            {
+                                anchors.fill: parent
+                                anchors.margins: Maui.Style.space.small
+                                iconSource: model.icon
+                                iconSizeHint: Maui.Style.iconSizes.big
+                                imageSource: model.thumbnail
+                                player.source: model.url
+                                isCurrentItem: parent.ListView.isCurrentItem
+
+
+                                label1.text: player.metaData.title && player.metaData.title.length ? player.metaData.title :  model.name
+                                label2.text: player.metaData.albumArtist || player.metaData.albumTitle
+                                onClicked:
+                                {
+                                    _recentMusic.currentIndex = index
+                                    openPreview(_recentMusic.baseModel, index)
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -127,49 +210,40 @@ Maui.Page
                     asynchronous: true
                     sourceComponent: RecentSection
                     {
-                        id:_recentSection
-                    }
+                        id: _recentPics
+                        title: i18n("Images")
+                        description: i18n("Your most recent image files")
 
+                        browser.itemSize: 180
+                        browser.itemHeight: 180
+                        browser.implicitHeight: 180
+
+                        list.url: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
+                        list.filters: FB.FM.nameFilters(FB.FMList.IMAGE)
+
+                        //                        url: inx.screenshotsPath()
+                        //                        filters: FB.FM.nameFilters(FB.FMList.IMAGE)
+
+                        browser.delegate: Item
+                        {
+                            height: GridView.view.cellHeight
+                            width: GridView.view.cellWidth
+                            ImageCard
+                            {
+                                anchors.fill: parent
+                                anchors.margins: Maui.Style.space.small
+                                imageSource: model.thumbnail
+                                isCurrentItem: parent.ListView.isCurrentItem
+                                onClicked:
+                                {
+                                    _recentPics.currentIndex = index
+                                    openPreview(_recentPics.baseModel, index)
+                                }
+                            }
+                        }
+                    }
                 }
 
-                //            Loader
-                //            {
-                //                Layout.fillWidth: true
-                //                asynchronous: true
-                //                sourceComponent:  Maui.AlternateListItem
-                //                {
-                //                    implicitHeight: _sysInfoSection.implicitHeight + Maui.Style.space.huge
-
-                //                    SystemInfo
-                //                    {
-                //                        id: _sysInfoSection
-                //                        width: parent.width
-                //                        anchors.centerIn: parent
-
-                //                        onItemClicked:
-                //                        {
-                //                            openTab(url)
-                //                        }
-                //                    }
-                //                }
-                //            }
-
-                //            Loader
-                //            {
-                //                Layout.fillWidth: true
-                //                asynchronous: true
-                //                sourceComponent:  Maui.AlternateListItem
-                //                {
-                //                    implicitHeight: _tagsSection.implicitHeight + Maui.Style.space.huge
-
-                //                    TagsSection
-                //                    {
-                //                        id: _tagsSection
-                //                        width: parent.width
-                //                        anchors.centerIn: parent
-                //                    }
-                //                }
-                //            }
 
                 Loader
                 {

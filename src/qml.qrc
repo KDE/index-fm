@@ -34,5 +34,6 @@
         <file>widgets/views/home/AudioCard.qml</file>
         <file>widgets/previewer/FileProperties.qml</file>
         <file>widgets/views/ActionBar.qml</file>
+        <file>widgets/views/home/SectionGroup.qml</file>
     </qresource>
 </RCC>

@@ -11,62 +11,46 @@ import org.mauikit.controls 1.3 as Maui
 
 import org.mauikit.filebrowsing 1.0 as FB
 
-Maui.SettingsSection
+import "home"
+
+SectionGroup
 {
     id: control
-    property alias listModel : _model
-    property alias currentIndex : _favsGrid.currentIndex
-
-    signal itemClicked(url url)
 
     title: i18n("Favorite files")
     description: i18n("Your files marked as favorites")
 
-    Maui.GridView
+    browser.implicitHeight: 220
+    browser.itemSize: 220
+    browser.itemHeight: 70
+
+    baseModel.list: FB.FMList
     {
-        id: _favsGrid
-        verticalScrollBarPolicy: ScrollBar.AlwaysOff
-                        horizontalScrollBarPolicy:  ScrollBar.AsNeeded
-        currentIndex: -1
-        Layout.fillWidth: true
-        Layout.preferredHeight: 220
-        flickable.flow: GridView.FlowTopToBottom
-        itemSize: 220
-        itemHeight: 70
-        adaptContent: false
+        path: "tags:///fav"
+    }
 
-        model: Maui.BaseModel
+    browser.delegate: Item
+    {
+        height: GridView.view.cellHeight
+        width: GridView.view.cellWidth
+
+        Maui.ListBrowserDelegate
         {
-            id: _model
-            list: FB.FMList
+            anchors.fill: parent
+            anchors.margins: Maui.Style.space.small
+            iconVisible: true
+
+            label1.text: model.label
+            iconSource: model.icon
+            imageSource: model.thumbnail
+            template.fillMode: Image.PreserveAspectFit
+            checkable: selectionMode
+            isCurrentItem : ListView.isCurrentItem
+
+            onClicked:
             {
-                path: "tags:///fav"
-            }
-        }
-
-        delegate: Item
-        {
-            height: GridView.view.cellHeight
-            width: GridView.view.cellWidth
-
-            Maui.ListBrowserDelegate
-            {
-                anchors.fill: parent
-                anchors.margins: Maui.Style.space.small
-                iconVisible: true
-
-                label1.text: model.label
-                iconSource: model.icon
-                imageSource: model.thumbnail
-                template.fillMode: Image.PreserveAspectFit
-                checkable: selectionMode
-                isCurrentItem : ListView.isCurrentItem
-
-                onClicked:
-                {
-                    _favsGrid.currentIndex = index
-                    openPreview(listModel, currentIndex)
-                }
+                control.currentIndex = index
+                openPreview(control.baseModel, currentIndex)
             }
         }
     }
