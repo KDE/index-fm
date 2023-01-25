@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-10-18 12:25+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -79,7 +79,7 @@ msgstr "Seçilmiş faylı yeni faylda sıxlaşdırın."
 msgid "Archive name..."
 msgstr "Arxivin adı..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Qovluğu açın"
@@ -274,7 +274,7 @@ msgid "Next"
 msgstr "Sonrakı"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Açın"
@@ -386,7 +386,7 @@ msgid "Cut"
 msgstr "Kəsmək"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Paylaşmaq"
@@ -417,12 +417,12 @@ msgstr "Cihazlar və uzaqdan idarə"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "Disklər, telefonlar və kameralar kimi uzaq yerlər və cihazlar"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Fərqləndirilmiş fayllar"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Fayllarınız fərqlənmişlər kimi işarələndi"
@@ -442,7 +442,7 @@ msgstr "Adını dəyişin"
 msgid "Select"
 msgstr "Seçin"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Bununla açın"
@@ -472,26 +472,75 @@ msgstr "Kolleksiyalar"
 msgid "Quick access to common collections"
 msgstr "Ümumi kolleksiyalar sürətli giriş"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Fayllar üzrə axtarış"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Bələdçi"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Əlfəcinlər"
+msgid "Downloads"
+msgstr "Endirmələr"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "Ən son yüklənmiş fayllarınız, audiolarınız və şəkilləriniz"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Musiqi"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "Ən son yüklənmiş fayllarınız, audiolarınız və şəkilləriniz"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Dah çox ümumi yerlərə və əlfəcinlərə sürətli giriş"
+msgid "Places"
+msgstr "Girişlər"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Ümumi kolleksiyalar sürətli giriş"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -511,41 +560,6 @@ msgid ""
 msgstr ""
 "Bu cihaza giriş üçün öncə onu qoşmaq lazımdır. Bu cihazı ayarlamaq "
 "istəyirsiniz?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Endirmələr, Audiolar və Şəkillər"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Ən son yüklənmiş fayllarınız, audiolarınız və şəkilləriniz"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Endirmələr"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Musiqi"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Şəkillər"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Kamera"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Ekran şəkilləri"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -661,11 +675,6 @@ msgstr "Qaranlıq rejim"
 msgid "Switch between light and dark colorscheme"
 msgstr "İşıqlı və qaranlıq rəng sxemləri arası keçid"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Girişlər"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -681,6 +690,11 @@ msgstr "Cəld girişlər"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Standart məkanlara giriş."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Əlfəcinlər"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -756,3 +770,18 @@ msgstr "Hamısını seçin"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fayllara cəld giriş üçün işarələndi"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Dah çox ümumi yerlərə və əlfəcinlərə sürətli giriş"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Endirmələr, Audiolar və Şəkillər"
+
+#~ msgid "Pictures"
+#~ msgstr "Şəkillər"
+
+#~ msgid "Camera"
+#~ msgstr "Kamera"
+
+#~ msgid "Screenshots"
+#~ msgstr "Ekran şəkilləri"

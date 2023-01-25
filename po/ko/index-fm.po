@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-07-13 15:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -78,7 +78,7 @@ msgstr "선택한 파일을 새 파일로 압축합니다."
 msgid "Archive name..."
 msgstr "압축 파일 이름..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "폴더 열기"
@@ -273,7 +273,7 @@ msgid "Next"
 msgstr "다음"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "열기"
@@ -384,7 +384,7 @@ msgid "Cut"
 msgstr "잘라내기"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "공유"
@@ -415,12 +415,12 @@ msgstr "장치와 원격"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "디스크, 휴대폰, 카메라 등 원격 위치와 장치"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "즐겨찾는 파일"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "책갈피에 등록된 파일"
@@ -440,7 +440,7 @@ msgstr "이름 바꾸기"
 msgid "Select"
 msgstr "선택"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "다음으로 열기"
@@ -470,26 +470,75 @@ msgstr "모음집"
 msgid "Quick access to common collections"
 msgstr "공통 모음집에 빨리 접근하기"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "파일 찾기"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "탐색기"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "책갈피"
+msgid "Downloads"
+msgstr "다운로드"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "최근에 다운로드한 파일, 오디오, 사진"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "음악"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "최근에 다운로드한 파일, 오디오, 사진"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "자주 사용하는 장소와 책갈피에 빨리 접근하기"
+msgid "Places"
+msgstr "위치"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "공통 모음집에 빨리 접근하기"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -507,41 +556,6 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr "이 장치에 접근하려면 마운트해야 합니다. 장치를 설정하시겠습니까?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "다운로드, 오디오, 사진"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "최근에 다운로드한 파일, 오디오, 사진"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "다운로드"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "음악"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "사진"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "카메라"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "스크린샷"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -657,11 +671,6 @@ msgstr "어두운 모드"
 msgid "Switch between light and dark colorscheme"
 msgstr "밝은 색상과 어두운 색상 전환"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "위치"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -677,6 +686,11 @@ msgstr "빠른 위치"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "표준 위치에 접근합니다."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "책갈피"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -752,6 +766,21 @@ msgstr "모두 선택"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "빨리 접근할 수 있도록 태그된 파일"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "자주 사용하는 장소와 책갈피에 빨리 접근하기"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "다운로드, 오디오, 사진"
+
+#~ msgid "Pictures"
+#~ msgstr "사진"
+
+#~ msgid "Camera"
+#~ msgstr "카메라"
+
+#~ msgid "Screenshots"
+#~ msgstr "스크린샷"
 
 #~ msgid "Split View"
 #~ msgstr "보기 나누기"

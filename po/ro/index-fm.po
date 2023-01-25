@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-08-14 16:11+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -81,7 +81,7 @@ msgstr "Comprimă fișierele alese într-un fișier nou."
 msgid "Archive name..."
 msgstr "Denumirea arhivei…"
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Deschide dosarul"
@@ -276,7 +276,7 @@ msgid "Next"
 msgstr "Următor"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Deschide"
@@ -389,7 +389,7 @@ msgid "Cut"
 msgstr "Taie"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Partajează"
@@ -420,12 +420,12 @@ msgstr "Dispozitive și distant"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr ""
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Fișiere favorite"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Fișierele marcate ca favorite"
@@ -445,7 +445,7 @@ msgstr "Redenumește"
 msgid "Select"
 msgstr "Alege"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Deschide cu"
@@ -475,25 +475,72 @@ msgstr "Colecții"
 msgid "Quick access to common collections"
 msgstr "Acces rapid la colecții comune"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Caută fișiere"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Navigator"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Semne de carte"
+msgid "Downloads"
+msgstr "Descărcări"
+
+#: src/widgets/views/HomeView.qml:134
+#, kde-format
+msgid "Your most recent downloaded files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Muzică"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, kde-format
+msgid "Your most recent image files"
+msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
+msgid "Places"
+msgstr "Locuri"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Acces rapid la colecții comune"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
 msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
@@ -512,41 +559,6 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr ""
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr ""
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Descărcări"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Muzică"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Fotografii"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Aparat foto"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Capturi de ecran"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -662,11 +674,6 @@ msgstr ""
 msgid "Switch between light and dark colorscheme"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Locuri"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -682,6 +689,11 @@ msgstr "Locuri rapide"
 #, kde-format
 msgid "Access to standard locations."
 msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Semne de carte"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -757,3 +769,12 @@ msgstr "Selectează tot"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
+
+#~ msgid "Pictures"
+#~ msgstr "Fotografii"
+
+#~ msgid "Camera"
+#~ msgstr "Aparat foto"
+
+#~ msgid "Screenshots"
+#~ msgstr "Capturi de ecran"

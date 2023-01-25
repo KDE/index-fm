@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-10-18 18:05+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -81,7 +81,7 @@ msgstr "Spakuj zaznaczone pliki do nowego pliku."
 msgid "Archive name..."
 msgstr "Nazwa archiwum..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Otwórz katalog"
@@ -276,7 +276,7 @@ msgid "Next"
 msgstr "Następny"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Otwórz"
@@ -388,7 +388,7 @@ msgid "Cut"
 msgstr "Wytnij"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Udostępnij"
@@ -419,12 +419,12 @@ msgstr "Urządzenia i zdalne"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "Zdalne miejsca takie jak dyski, telefony, czy aparaty"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Ulubione pliki"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Twoje pliki oznaczone jako ulubione"
@@ -444,7 +444,7 @@ msgstr "Zmień nazwę"
 msgid "Select"
 msgstr "Zaznacz"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Otwórz w"
@@ -474,26 +474,75 @@ msgstr "Zbiory"
 msgid "Quick access to common collections"
 msgstr "Szybki dostęp do często używanych zbiorów"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Szukaj plików"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Przeglądarka"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Zakładki"
+msgid "Downloads"
+msgstr "Pobierane"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "Twoje ostatnio pobrane pliki, pliki dźwiękowe oraz obrazy"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Muzyka"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "Twoje ostatnio pobrane pliki, pliki dźwiękowe oraz obrazy"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Szybki dostęp do najczęściej odwiedzanych miejsc i zakładek"
+msgid "Places"
+msgstr "Miejsca"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Szybki dostęp do często używanych zbiorów"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -512,41 +561,6 @@ msgid ""
 "this device?"
 msgstr ""
 "Aby uzyskać dostęp do urządzenia, podepnij je. Czy ustawić to urządzenie?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Pobrane, dźwięki i zdjęcia"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Twoje ostatnio pobrane pliki, pliki dźwiękowe oraz obrazy"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Pobierane"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Muzyka"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Zdjęcia"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Aparat"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Zrzuty ekranu"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -662,11 +676,6 @@ msgstr "Tryb ciemny"
 msgid "Switch between light and dark colorscheme"
 msgstr "Przełącz pomiędzy trybem jasnym i ciemnym"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Miejsca"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -682,6 +691,11 @@ msgstr "Szybkie miejsca"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Dostęp do miejsc zwyczajnych."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Zakładki"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -757,6 +771,21 @@ msgstr "Zaznacz wszystko"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Pliki oznaczone do szybkiego dostępu"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Szybki dostęp do najczęściej odwiedzanych miejsc i zakładek"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Pobrane, dźwięki i zdjęcia"
+
+#~ msgid "Pictures"
+#~ msgstr "Zdjęcia"
+
+#~ msgid "Camera"
+#~ msgstr "Aparat"
+
+#~ msgid "Screenshots"
+#~ msgstr "Zrzuty ekranu"
 
 #~ msgid "Split View"
 #~ msgstr "Podziel widok"

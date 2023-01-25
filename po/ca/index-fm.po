@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-09-09 12:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -82,7 +82,7 @@ msgstr "Comprimeix els fitxers seleccionats en un fitxer nou."
 msgid "Archive name..."
 msgstr "Nom de l'arxiu..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Obre una carpeta"
@@ -277,7 +277,7 @@ msgid "Next"
 msgstr "Següent"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Obre"
@@ -390,7 +390,7 @@ msgid "Cut"
 msgstr "Retalla"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Comparteix"
@@ -421,12 +421,12 @@ msgstr "Dispositius i remot"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "Ubicacions i dispositius remots com discos, telèfons i càmeres"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Fitxers preferits"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Els vostres fitxers marcats com a preferits"
@@ -446,7 +446,7 @@ msgstr "Reanomena"
 msgid "Select"
 msgstr "Selecciona"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Obre amb"
@@ -476,26 +476,75 @@ msgstr "Col·leccions"
 msgid "Quick access to common collections"
 msgstr "Accés ràpid a les col·leccions habituals"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Cerca per a fitxers"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Navegador"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Adreces d'interès"
+msgid "Downloads"
+msgstr "Baixades"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "Els fitxers baixats més recents, d'àudio i imatges"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Música"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "Els fitxers baixats més recents, d'àudio i imatges"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Accés ràpid als llocs i adreces d'interès més habituals"
+msgid "Places"
+msgstr "Llocs"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Accés ràpid a les col·leccions habituals"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -514,41 +563,6 @@ msgid ""
 "this device?"
 msgstr ""
 "Aquest dispositiu ha d'estar muntat abans d'accedir-hi. Voleu configurar-ho?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Baixades, àudio i imatges"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Els fitxers baixats més recents, d'àudio i imatges"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Baixades"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Música"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Imatges"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Càmera"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Captures de pantalla"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -664,11 +678,6 @@ msgstr "Mode fosc"
 msgid "Switch between light and dark colorscheme"
 msgstr "Alterna entre els esquemes de color clar i fosc"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Llocs"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -684,6 +693,11 @@ msgstr "Llocs ràpids"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Accés a les ubicacions estàndard."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Adreces d'interès"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -759,3 +773,18 @@ msgstr "Selecciona-ho tot"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxers etiquetats per a un accés ràpid"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Accés ràpid als llocs i adreces d'interès més habituals"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Baixades, àudio i imatges"
+
+#~ msgid "Pictures"
+#~ msgstr "Imatges"
+
+#~ msgid "Camera"
+#~ msgstr "Càmera"
+
+#~ msgid "Screenshots"
+#~ msgstr "Captures de pantalla"

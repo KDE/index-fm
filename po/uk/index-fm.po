@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-09-09 13:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -84,7 +84,7 @@ msgstr "Стиснути позначені файли до нового фай�
 msgid "Archive name..."
 msgstr "Назва архіву…"
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Відкрити теку"
@@ -279,7 +279,7 @@ msgid "Next"
 msgstr "Далі"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Відкрити"
@@ -390,7 +390,7 @@ msgid "Cut"
 msgstr "Вирізати"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Оприлюднити"
@@ -421,12 +421,12 @@ msgstr "Пристрої і віддалені місця"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "Віддалені місця і пристрої, зокрема диски, телефони і камери"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Вибрані файли"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Ваші файли, позначені як улюблені"
@@ -446,7 +446,7 @@ msgstr "Перейменувати"
 msgid "Select"
 msgstr "Позначити"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Відкрити за допомогою"
@@ -476,26 +476,75 @@ msgstr "Збірки"
 msgid "Quick access to common collections"
 msgstr "Швидкий доступ до типових збірок"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Пошук файлів"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Навігатор"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Закладки"
+msgid "Downloads"
+msgstr "Завантаження"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent audio files"
+msgid "Your most recent downloaded files"
+msgstr "Ваші найсвіжіші звукові файли"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Музика"
+
+#: src/widgets/views/HomeView.qml:175
+#, fuzzy, kde-format
+#| msgid "Your most recent audio files"
+msgid "Your most recent music files"
+msgstr "Ваші найсвіжіші звукові файли"
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, kde-format
+msgid "Your most recent image files"
+msgstr "Ваші найсвіжіші файли зображень"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Швидкий доступ до найтиповіших місць і закладок"
+msgid "Places"
+msgstr "Місця"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Швидкий доступ до типових збірок"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr "Більше"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -515,41 +564,6 @@ msgid ""
 msgstr ""
 "Перш ніж можна буде отримати доступ до цього пристрою, його слід змонтувати. "
 "Хочете налаштувати монтування цього пристрою?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Завантаження, звук і зображення"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Ваші найсвіжіші отримані файли, звукові дані та зображення"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Завантаження"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Музика"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Картинки"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Камера"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Знімки вікон"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -665,11 +679,6 @@ msgstr "Темний режим"
 msgid "Switch between light and dark colorscheme"
 msgstr "Перемкнутися між світлою і темною схемою кольорів"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Місця"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -685,6 +694,11 @@ msgstr "Швидкий доступ"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Доступ до стандартних місць."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Закладки"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -760,6 +774,24 @@ msgstr "Позначити все"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Позначені файли для швидкого доступу"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Швидкий доступ до найтиповіших місць і закладок"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Завантаження, звук і зображення"
+
+#~ msgid "Your most recent downloaded files, audio and images"
+#~ msgstr "Ваші найсвіжіші отримані файли, звукові дані та зображення"
+
+#~ msgid "Pictures"
+#~ msgstr "Картинки"
+
+#~ msgid "Camera"
+#~ msgstr "Камера"
+
+#~ msgid "Screenshots"
+#~ msgstr "Знімки вікон"
 
 #~ msgid "Split View"
 #~ msgstr "Розділити перегляд"
@@ -871,17 +903,8 @@ msgstr "Позначені файли для швидкого доступу"
 #~ msgid "Files"
 #~ msgstr "Файли"
 
-#~ msgid "More"
-#~ msgstr "Більше"
-
 #~ msgid "Audio"
 #~ msgstr "Звук"
-
-#~ msgid "Your most recent audio files"
-#~ msgstr "Ваші найсвіжіші звукові файли"
-
-#~ msgid "Your most recent image files"
-#~ msgstr "Ваші найсвіжіші файли зображень"
 
 #~ msgid "Thumbnails size in the grid view"
 #~ msgstr "Розмір мініатюр у табличному перегляді"

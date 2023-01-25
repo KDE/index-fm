@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2021-01-24 12:16+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -84,7 +84,7 @@ msgstr "Komprimovať vybrané súbory do nového súboru."
 msgid "Archive name..."
 msgstr "Názov archívu..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Otvoriť priečinok"
@@ -286,7 +286,7 @@ msgid "Next"
 msgstr "Nasledujúci"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Otvoriť"
@@ -399,7 +399,7 @@ msgid "Cut"
 msgstr "Vystrihnúť"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Zdieľať"
@@ -430,12 +430,12 @@ msgstr "Zariadenia a vzdialené"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "Vzdialené miesta a zariadenia, ako sú disky, telefóny a fotoaparáty"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Obľúbené súbory"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Vaše súbory označené ako obľúbené"
@@ -455,7 +455,7 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Otvoriť s"
@@ -486,26 +486,75 @@ msgstr "Zbierky"
 msgid "Quick access to common collections"
 msgstr "Rýchly prístup k spoločným zbierkam"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Hľadať súbory"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Prehliadač"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Záložky"
+msgid "Downloads"
+msgstr "Stiahnuté"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "Vaše najnovšie stiahnuté súbory, zvuk a obrázky"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Hudba"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "Vaše najnovšie stiahnuté súbory, zvuk a obrázky"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Rýchly prístup k najbežnejším miestam a záložkám"
+msgid "Places"
+msgstr ""
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Rýchly prístup k spoločným zbierkam"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, fuzzy, kde-format
@@ -523,41 +572,6 @@ msgstr ""
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
-msgstr ""
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Stiahnuté, Zvuk a Obrázky"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Vaše najnovšie stiahnuté súbory, zvuk a obrázky"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Stiahnuté"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Hudba"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Obrázky"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr ""
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:13
@@ -676,11 +690,6 @@ msgstr "Tmavý režim"
 msgid "Switch between light and dark colorscheme"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr ""
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -696,6 +705,11 @@ msgstr ""
 #, kde-format
 msgid "Access to standard locations."
 msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Záložky"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, fuzzy, kde-format
@@ -775,6 +789,15 @@ msgstr ""
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označené súbory pre rýchly prístup"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Rýchly prístup k najbežnejším miestam a záložkám"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Stiahnuté, Zvuk a Obrázky"
+
+#~ msgid "Pictures"
+#~ msgstr "Obrázky"
 
 #, fuzzy
 #~| msgid "Split Views"

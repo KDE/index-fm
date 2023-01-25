@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-09-10 07:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -82,7 +82,7 @@ msgstr "Stisni izbrane datoteke v novo datoteko."
 msgid "Archive name..."
 msgstr "Ime arhiva ..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Odpri mapo"
@@ -277,7 +277,7 @@ msgid "Next"
 msgstr "Naslednja"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Odpri"
@@ -390,7 +390,7 @@ msgid "Cut"
 msgstr "Izreži"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Deli"
@@ -421,12 +421,12 @@ msgstr "Naprave in oddaljeno"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "Oddaljena mesta in naprave kot so diski, telefoni in kamere"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Priljubljene datoteke"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Vaše datoteke označene kot priljubljene"
@@ -446,7 +446,7 @@ msgstr "Preimenuj"
 msgid "Select"
 msgstr "Izberi"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Odpri z"
@@ -476,26 +476,75 @@ msgstr "Zbirke"
 msgid "Quick access to common collections"
 msgstr "Hitri dostop do skupnih zbirk"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Išči datoteke"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Brskalnik"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Zaznamki"
+msgid "Downloads"
+msgstr "Prenosi"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "Zadnje prenesene datoteke, zvoki in slike"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Glasba"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "Zadnje prenesene datoteke, zvoki in slike"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Hiter dostop do najpogostejših mest in zaznamkov"
+msgid "Places"
+msgstr "Mesta"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Hitri dostop do skupnih zbirk"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -515,41 +564,6 @@ msgid ""
 msgstr ""
 "To napravo je treba priklopiti pred dostopom do nje. Ali želite nastaviti to "
 "napravo?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Prenosi, zvok in slike"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Zadnje prenesene datoteke, zvoki in slike"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Prenosi"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Glasba"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Slike"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Kamera"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Zajemi zaslona"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -665,11 +679,6 @@ msgstr "Temni način"
 msgid "Switch between light and dark colorscheme"
 msgstr "Preklop med svetlo in temno barvno shemo"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Mesta"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -685,6 +694,11 @@ msgstr "Hitre lokacije"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Dostop do standardnih lokacij."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Zaznamki"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -760,3 +774,18 @@ msgstr "Izberi vse"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označene datoteke za hitri dostop"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Hiter dostop do najpogostejših mest in zaznamkov"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Prenosi, zvok in slike"
+
+#~ msgid "Pictures"
+#~ msgstr "Slike"
+
+#~ msgid "Camera"
+#~ msgstr "Kamera"
+
+#~ msgid "Screenshots"
+#~ msgstr "Zajemi zaslona"

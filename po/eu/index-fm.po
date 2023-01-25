@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-09-10 13:21+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -82,7 +82,7 @@ msgstr "Konprimatu hautatutako fitxategiak fitxategi berri batean."
 msgid "Archive name..."
 msgstr "Artxibo-izena..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Ireki karpeta"
@@ -277,7 +277,7 @@ msgid "Next"
 msgstr "Hurrengoa"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Ireki"
@@ -389,7 +389,7 @@ msgid "Cut"
 msgstr "Ebaki"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Partekatu"
@@ -421,12 +421,12 @@ msgid "Remote locations and devices like disks, phones and cameras"
 msgstr ""
 "Urrutiko kokalekuak eta diskoak, telefonoak eta kamerak bezalako gailuak"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Gogoko fitxategiak"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Gogoko gisa markatutako zure fitxategiak"
@@ -446,7 +446,7 @@ msgstr "Berrizendatu"
 msgid "Select"
 msgstr "Hautatu"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Ireki honekin"
@@ -476,26 +476,75 @@ msgstr "Bildumak"
 msgid "Quick access to common collections"
 msgstr "Sarbide bizkorra ohiko bildumetara"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Bilatu fitxategiak"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Arakatzailea"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Laster-markak"
+msgid "Downloads"
+msgstr "Jaitsitakoak"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "Zama-jaitsitako azken fitxategi, audio eta irudiak"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Musika"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "Zama-jaitsitako azken fitxategi, audio eta irudiak"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Leku eta Laster-marka ohikoenetara sarbide bizkorra"
+msgid "Places"
+msgstr "Lekuak"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Sarbide bizkorra ohiko bildumetara"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -515,41 +564,6 @@ msgid ""
 msgstr ""
 "Gailua hau muntatu egin behar da berau atzitu aurretik. Gailu hau ezarri "
 "nahi duzu?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Jaitsitakoak, Audio eta irudiak"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Zama-jaitsitako azken fitxategi, audio eta irudiak"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Jaitsitakoak"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Musika"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Irudiak"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Kamera"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Pantaila-argazkiak"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -665,11 +679,6 @@ msgstr "Modu iluna"
 msgid "Switch between light and dark colorscheme"
 msgstr "Aldatu kolore-antolaera argi eta ilunaren artean"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Lekuak"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -685,6 +694,11 @@ msgstr "Toki azkarrak"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Leku estandarretarako sarbidea."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Laster-markak"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -760,6 +774,21 @@ msgstr "Hautatu denak"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxategi etiketatuak atzipen bizkorrerako"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Leku eta Laster-marka ohikoenetara sarbide bizkorra"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Jaitsitakoak, Audio eta irudiak"
+
+#~ msgid "Pictures"
+#~ msgstr "Irudiak"
+
+#~ msgid "Camera"
+#~ msgstr "Kamera"
+
+#~ msgid "Screenshots"
+#~ msgstr "Pantaila-argazkiak"
 
 #~ msgid "Split View"
 #~ msgstr "Zatitu ikuspegia"

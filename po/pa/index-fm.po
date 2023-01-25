@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2021-10-07 17:48-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -77,7 +77,7 @@ msgstr "ਚੁਣੀਆਂ ਫ਼ਾਇਲਾਂ ਨੂੰ ਨਵੀਂ ਫਾ�
 msgid "Archive name..."
 msgstr "ਅਕਾਇਵ ਦਾ ਨਾਂ..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "ਫੋਲਡਰ ਖੋਲ੍ਹੋ"
@@ -276,7 +276,7 @@ msgid "Next"
 msgstr "ਅੱਗੇ"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
@@ -388,7 +388,7 @@ msgid "Cut"
 msgstr "ਕੱਟੋ"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "ਸਾਂਝਾ ਕਰੋ"
@@ -419,12 +419,12 @@ msgstr "ਡਿਵਾਈਸ ਤੇ ਰਿਮੋਟ"
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr "ਰਿਮੋਟ ਟਿਕਾਣੇ ਅਤੇ ਡਿਸਕਾਂ, ਫ਼ੋਨ ਤੇ ਕੈਮਰਿਆਂ ਵਰਗੇ ਡਿਵਾਈਸ"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "ਪਸੰਦੀਦਾ ਫਾਇਲਾਂ"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "ਪਸੰਦ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਈਆਂ ਤੁਹਾਡੀਆਂ ਫਾਇਲਾਂ"
@@ -444,7 +444,7 @@ msgstr "ਨਾਂ-ਬਦਲੋ"
 msgid "Select"
 msgstr "ਚੁਣੋ"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "ਇਸ ਨਾਲ ਖੋਲ੍ਹੋ"
@@ -474,26 +474,75 @@ msgstr "ਭੰਡਾਰ"
 msgid "Quick access to common collections"
 msgstr "ਆਮ ਭੰਡਾਰਾਂ ਲਈ ਫ਼ੌਰੀ ਪਹੁੰਚ"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "ਫਾਇਲਾਂ ਨੂੰ ਲੱਭੋ"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "ਬਰਾਊਜ਼ਰ"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "ਬੁੱਕਮਾਰਕ"
+msgid "Downloads"
+msgstr "ਡਾਊਨਲੋਡ"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "ਤੁਹਾਡੀਆਂ ਹਾਲ ਵਿੱਚ ਹੀ ਡਾਊਨਲੋਡ ਕੀਤੀਆਂ ਫਾਇਲਾਂ, ਆਡੀਓ ਤੇ ਚਿੱਤਰ"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "ਸੰਗੀਤ"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "ਤੁਹਾਡੀਆਂ ਹਾਲ ਵਿੱਚ ਹੀ ਡਾਊਨਲੋਡ ਕੀਤੀਆਂ ਫਾਇਲਾਂ, ਆਡੀਓ ਤੇ ਚਿੱਤਰ"
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "ਬਹੁਤੀਆਂ ਆਮ ਥਾਵਾਂ ਅਤੇ ਬੁੱਕਮਾਰਕਾਂ ਲਈ ਫ਼ੌਰੀ ਪਹੁੰਚ"
+msgid "Places"
+msgstr ""
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "ਆਮ ਭੰਡਾਰਾਂ ਲਈ ਫ਼ੌਰੀ ਪਹੁੰਚ"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -512,41 +561,6 @@ msgid ""
 "this device?"
 msgstr ""
 "ਇਸ ਡਿਵਾਈਸ ਨੂੰ ਵਰਤਣ ਤੋਂ ਪਹਿਲਾਂ ਮਾਊਂਟ ਕਰਨ ਦੀ ਲੋੜ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਹ ਡਿਵਾਈਸ ਸੈਟਅੱਪ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "ਡਾਊਨਲੋਡ, ਆਡੀਓ ਤੇ ਤਸਵੀਰਾਂ"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "ਤੁਹਾਡੀਆਂ ਹਾਲ ਵਿੱਚ ਹੀ ਡਾਊਨਲੋਡ ਕੀਤੀਆਂ ਫਾਇਲਾਂ, ਆਡੀਓ ਤੇ ਚਿੱਤਰ"
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "ਡਾਊਨਲੋਡ"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "ਸੰਗੀਤ"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "ਤਸਵੀਰਾਂ"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "ਕੈਮਰਾ"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "ਸਕਰੀਨਸ਼ਾਟ"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -662,11 +676,6 @@ msgstr "ਗੂੜ੍ਹਾ ਰੰਗ ਦਾ ਢੰਗ"
 msgid "Switch between light and dark colorscheme"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr ""
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -682,6 +691,11 @@ msgstr ""
 #, kde-format
 msgid "Access to standard locations."
 msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "ਬੁੱਕਮਾਰਕ"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, fuzzy, kde-format
@@ -759,6 +773,21 @@ msgstr "ਸਭ ਚੁਣੋ"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "ਫ਼ੌਰੀ ਪਹੁੰਚ ਲਈ ਟੈਗ ਕੀਤੀਆਂ ਫਾਇਲਾਂ"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "ਬਹੁਤੀਆਂ ਆਮ ਥਾਵਾਂ ਅਤੇ ਬੁੱਕਮਾਰਕਾਂ ਲਈ ਫ਼ੌਰੀ ਪਹੁੰਚ"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "ਡਾਊਨਲੋਡ, ਆਡੀਓ ਤੇ ਤਸਵੀਰਾਂ"
+
+#~ msgid "Pictures"
+#~ msgstr "ਤਸਵੀਰਾਂ"
+
+#~ msgid "Camera"
+#~ msgstr "ਕੈਮਰਾ"
+
+#~ msgid "Screenshots"
+#~ msgstr "ਸਕਰੀਨਸ਼ਾਟ"
 
 #, fuzzy
 #~| msgid "Split Views"

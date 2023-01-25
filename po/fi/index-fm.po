@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:47+0000\n"
+"POT-Creation-Date: 2023-01-25 00:57+0000\n"
 "PO-Revision-Date: 2022-07-13 17:57+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -79,7 +79,7 @@ msgstr "Pakkaa valitut tiedostoon uudeksi tiedostoksi."
 msgid "Archive name..."
 msgstr "Arkiston nimi…"
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:52
+#: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Avaa kansio"
@@ -274,7 +274,7 @@ msgid "Next"
 msgstr "Seuraava"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:34
+#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Avaa"
@@ -386,7 +386,7 @@ msgid "Cut"
 msgstr "Leikkaa"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
-#: src/widgets/views/HomeView.qml:46
+#: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Jaa"
@@ -418,12 +418,12 @@ msgid "Remote locations and devices like disks, phones and cameras"
 msgstr ""
 "Etäsijainnit sekä levyasemien, puhelinten ja kameroiden tapaiset laitteet"
 
-#: src/widgets/views/FavoritesSection.qml:22
+#: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
 msgstr "Suosikkitiedostot"
 
-#: src/widgets/views/FavoritesSection.qml:23
+#: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
 msgstr "Suosikeiksi merkityt tiedostot"
@@ -443,7 +443,7 @@ msgstr "Muuta nimeä"
 msgid "Select"
 msgstr "Valitse"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:40
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Avaa ohjelmalla"
@@ -473,26 +473,75 @@ msgstr "Kokoelmat"
 msgid "Quick access to common collections"
 msgstr "Nopea pääsy yleisiin kokoelmiin"
 
-#: src/widgets/views/HomeView.qml:64
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
 msgstr "Etsi tiedostoja"
 
-#: src/widgets/views/HomeView.qml:74
+#: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
 msgstr "Selain"
 
-#: src/widgets/views/PlacesSection.qml:18
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
-msgid "Bookmarks"
-msgstr "Kirjanmerkit"
+msgid "Downloads"
+msgstr "Lataukset"
+
+#: src/widgets/views/HomeView.qml:134
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent downloaded files"
+msgstr "Äskettäin ladatut tiedostot sekä ääni ja kuvat "
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Music"
+msgstr "Musiikki"
+
+#: src/widgets/views/HomeView.qml:175
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:215
+#, fuzzy, kde-format
+#| msgid "Your most recent downloaded files, audio and images"
+msgid "Your most recent image files"
+msgstr "Äskettäin ladatut tiedostot sekä ääni ja kuvat "
 
 #: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
-msgid "Quick access to most common places and bookmarks"
-msgstr "Nopea pääsy yleisimpiin sijainteihin ja kirjanmerkkeihin"
+msgid "Places"
+msgstr "Sijainnit"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, fuzzy, kde-format
+#| msgid "Quick access to common collections"
+msgid "Quick access to common places."
+msgstr "Nopea pääsy yleisiin kokoelmiin"
+
+#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/RecentSection.qml:31
+#, kde-format
+msgid "More"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -511,41 +560,6 @@ msgid ""
 "this device?"
 msgstr ""
 "Laite on liitettävä ennen sen käyttöä. Haluatko asettaa tämän laitteen?"
-
-#: src/widgets/views/RecentSection.qml:22
-#, kde-format
-msgid "Downloads, Audio & Pictures"
-msgstr "Lataukset, ääni ja kuvat"
-
-#: src/widgets/views/RecentSection.qml:23
-#, kde-format
-msgid "Your most recent downloaded files, audio and images"
-msgstr "Äskettäin ladatut tiedostot sekä ääni ja kuvat "
-
-#: src/widgets/views/RecentSection.qml:56
-#, kde-format
-msgid "Downloads"
-msgstr "Lataukset"
-
-#: src/widgets/views/RecentSection.qml:129
-#, kde-format
-msgid "Music"
-msgstr "Musiikki"
-
-#: src/widgets/views/RecentSection.qml:196
-#, kde-format
-msgid "Pictures"
-msgstr "Kuvat"
-
-#: src/widgets/views/RecentSection.qml:253
-#, kde-format
-msgid "Camera"
-msgstr "Kamera"
-
-#: src/widgets/views/RecentSection.qml:309
-#, kde-format
-msgid "Screenshots"
-msgstr "Ruutukaappaukset"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
@@ -661,11 +675,6 @@ msgstr "Tumma tila"
 msgid "Switch between light and dark colorscheme"
 msgstr "Vaihda vaalean ja tumman värimallin välillä"
 
-#: src/widgets/views/SettingsDialog.qml:195
-#, kde-format
-msgid "Places"
-msgstr "Sijainnit"
-
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
@@ -681,6 +690,11 @@ msgstr "Pikasijainnit"
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Pääsy vakiosijainteihin."
+
+#: src/widgets/views/SettingsDialog.qml:213
+#, kde-format
+msgid "Bookmarks"
+msgstr "Kirjanmerkit"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
@@ -756,6 +770,21 @@ msgstr "Valitse kaikki"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Pikaista käyttöä varten luokitellut tiedostot"
+
+#~ msgid "Quick access to most common places and bookmarks"
+#~ msgstr "Nopea pääsy yleisimpiin sijainteihin ja kirjanmerkkeihin"
+
+#~ msgid "Downloads, Audio & Pictures"
+#~ msgstr "Lataukset, ääni ja kuvat"
+
+#~ msgid "Pictures"
+#~ msgstr "Kuvat"
+
+#~ msgid "Camera"
+#~ msgstr "Kamera"
+
+#~ msgid "Screenshots"
+#~ msgstr "Ruutukaappaukset"
 
 #~ msgid "Split View"
 #~ msgstr "Jaettu näkymä"
