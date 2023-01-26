@@ -520,7 +520,7 @@ msgstr ""
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Imagens"
 
 #: src/widgets/views/HomeView.qml:215
 #, fuzzy, kde-format
@@ -545,7 +545,7 @@ msgstr "Acesso rápido às colecções comuns"
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Mais"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format

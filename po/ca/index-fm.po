@@ -1,16 +1,16 @@
 # Translation of index-fm.po to Catalan
-# Copyright (C) 2020-2022 This_file_is_part_of_KDE
+# Copyright (C) 2020-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2020, 2021, 2022.
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:57+0000\n"
-"PO-Revision-Date: 2022-09-09 12:30+0200\n"
+"PO-Revision-Date: 2023-01-25 09:22+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -479,12 +479,12 @@ msgstr "Accés ràpid a les col·leccions habituals"
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Aquí encara no hi ha res."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Comproveu-ho més tard."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -502,10 +502,9 @@ msgid "Downloads"
 msgstr "Baixades"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "Els fitxers baixats més recents, d'àudio i imatges"
+msgstr "Els fitxers baixats més recents"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -515,18 +514,17 @@ msgstr "Música"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Els fitxers de música més recents"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Imatges"
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "Els fitxers baixats més recents, d'àudio i imatges"
+msgstr "Els fitxers d'imatge més recents"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:195
@@ -535,16 +533,15 @@ msgid "Places"
 msgstr "Llocs"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Accés ràpid a les col·leccions habituals"
+msgstr "Accés ràpid als llocs habituals."
 
 #: src/widgets/views/PlacesSection.qml:38
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Més"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -773,18 +770,3 @@ msgstr "Selecciona-ho tot"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxers etiquetats per a un accés ràpid"
-
-#~ msgid "Quick access to most common places and bookmarks"
-#~ msgstr "Accés ràpid als llocs i adreces d'interès més habituals"
-
-#~ msgid "Downloads, Audio & Pictures"
-#~ msgstr "Baixades, àudio i imatges"
-
-#~ msgid "Pictures"
-#~ msgstr "Imatges"
-
-#~ msgid "Camera"
-#~ msgstr "Càmera"
-
-#~ msgid "Screenshots"
-#~ msgstr "Captures de pantalla"

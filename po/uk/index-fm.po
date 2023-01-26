@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:57+0000\n"
-"PO-Revision-Date: 2022-09-09 13:34+0300\n"
+"PO-Revision-Date: 2023-01-25 09:10+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -479,12 +479,12 @@ msgstr "Швидкий доступ до типових збірок"
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Тут ще нічого немає."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Перевірте пізніше."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -502,10 +502,9 @@ msgid "Downloads"
 msgstr "Завантаження"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent audio files"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "Ваші найсвіжіші звукові файли"
+msgstr "Ваші найсвіжіші отримані файли"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -513,15 +512,14 @@ msgid "Music"
 msgstr "Музика"
 
 #: src/widgets/views/HomeView.qml:175
-#, fuzzy, kde-format
-#| msgid "Your most recent audio files"
+#, kde-format
 msgid "Your most recent music files"
-msgstr "Ваші найсвіжіші звукові файли"
+msgstr "Ваші найсвіжіші музичні файли"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Зображення"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
@@ -535,10 +533,9 @@ msgid "Places"
 msgstr "Місця"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Швидкий доступ до типових збірок"
+msgstr "Швидкий доступ до типових місць."
 
 #: src/widgets/views/PlacesSection.qml:38
 #: src/widgets/views/RecentSection.qml:31

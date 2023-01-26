@@ -522,10 +522,9 @@ msgid "Images"
 msgstr ""
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "Vos fichiers, vos audios et vos images les plus récemment téléchargés"
+msgstr "Vos fichiers d'images les plus récents"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:195
@@ -543,7 +542,7 @@ msgstr "Accès rapide aux collections fréquentes."
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Plus"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format

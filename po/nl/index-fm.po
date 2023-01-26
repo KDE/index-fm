@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2020, 2021, 2022.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:57+0000\n"
-"PO-Revision-Date: 2022-09-09 10:28+0200\n"
+"PO-Revision-Date: 2023-01-25 11:27+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -475,12 +475,12 @@ msgstr "Snelle toegang tot algemene verzamelingen"
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Er is hier nog niets."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Kom later terug."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -498,10 +498,9 @@ msgid "Downloads"
 msgstr "Downloads"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent audio files"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "Uw meest recente audio-bestanden"
+msgstr "Uw meest recent gedownloade bestanden"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -509,15 +508,14 @@ msgid "Music"
 msgstr "Muziek"
 
 #: src/widgets/views/HomeView.qml:175
-#, fuzzy, kde-format
-#| msgid "Your most recent audio files"
+#, kde-format
 msgid "Your most recent music files"
-msgstr "Uw meest recente audio-bestanden"
+msgstr "Uw meest recente muziekbestanden"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Afbeeldingen"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
@@ -531,10 +529,9 @@ msgid "Places"
 msgstr "Plaatsen"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Snelle toegang tot algemene verzamelingen"
+msgstr "Snelle toegang tot algemene plaatsen."
 
 #: src/widgets/views/PlacesSection.qml:38
 #: src/widgets/views/RecentSection.qml:31

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:57+0000\n"
-"PO-Revision-Date: 2022-11-27 22:07+0100\n"
+"PO-Revision-Date: 2023-01-25 06:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -478,12 +478,12 @@ msgstr "სწრაფი წვდომა ზოგად კოლექც
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "აქ ჯერ არაფერია."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "მოგვიანებით გადაამოწმეთ."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -501,10 +501,9 @@ msgid "Downloads"
 msgstr "გადმოწერები"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "უახლესი გადმოწერილი ფაილები, ხმა და სურათები"
+msgstr "თქვენი უახლესი გადმოწერილი ფაილები"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -514,18 +513,17 @@ msgstr "მუსიკა"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "მუსიკის უახლესი ფაილები"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "გამოსახულებები"
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "უახლესი გადმოწერილი ფაილები, ხმა და სურათები"
+msgstr "თქვენი უახლესი გამოსახულების ფაილები"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:195
@@ -534,16 +532,15 @@ msgid "Places"
 msgstr "ადგილები"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "სწრაფი წვდომა ზოგად კოლექციებზე"
+msgstr "სწრაფი წვდომა საერთო ადგილებზე."
 
 #: src/widgets/views/PlacesSection.qml:38
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "მეტი"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
