@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2020, 2021, 2022.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:57+0000\n"
-"PO-Revision-Date: 2022-09-09 18:33+0200\n"
+"PO-Revision-Date: 2023-01-25 13:22+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -476,12 +476,12 @@ msgstr "Accesso rapido alle raccolte comuni"
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Non c'è ancora niente qui."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Controlla più tardi."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -499,10 +499,9 @@ msgid "Downloads"
 msgstr "Scaricamenti"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "I tuoi file, audio e immagini scaricati più di recente"
+msgstr "I file scaricati più di recente"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -512,18 +511,17 @@ msgstr "Musica"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "I tuoi file musicali più recenti"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Immagini"
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "I tuoi file, audio e immagini scaricati più di recente"
+msgstr "Le tue immagini più recenti"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:195
@@ -532,16 +530,15 @@ msgid "Places"
 msgstr "Risorse"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Accesso rapido alle raccolte comuni"
+msgstr "Accesso rapido alle risorse comuni."
 
 #: src/widgets/views/PlacesSection.qml:38
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Altro"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
