@@ -12,13 +12,13 @@ import org.mauikit.controls 1.3 as Maui
 
 import org.mauikit.filebrowsing 1.0 as FB
 
-Maui.SettingsSection
+Maui.SectionGroup
 {
     id: control
     title: i18n("Devices and Remote")
     description: i18n("Remote locations and devices like disks, phones and cameras")
 
-    Maui.GridView
+    Maui.GridBrowser
     {
         id: _othersGrid
         Layout.fillWidth: true

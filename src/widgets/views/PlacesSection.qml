@@ -19,7 +19,6 @@ SectionGroup
     title: i18n("Places")
     description: i18n("Quick access to common places.")
 
-
     browser.itemSize: 220
     browser.itemHeight: 70
     browser.implicitHeight: 140

@@ -43,13 +43,15 @@ Item
     {
         anchors.centerIn: parent
         width: Math.min(parent.width, 200)
-        height: Math.min(400, parent.height)
-        spacing: Maui.Style.space.big
+        spacing: Maui.Style.space.medium
 
         Item
         {
             Layout.fillWidth: true
             Layout.fillHeight: true
+
+            Layout.preferredHeight: 200
+            Layout.preferredWidth: 200
 
             Maui.IconItem
             {
@@ -65,10 +67,8 @@ Item
         {
             Layout.fillWidth: true
             label1.text:  player.metaData.title
-            label1.font.pointSize: Maui.Style.fontSizes.huge
-            label2.font.pointSize: Maui.Style.fontSizes.big
-            label1.horizontalAlignment:Qt.AlignHCenter
-            label2.horizontalAlignment:Qt.AlignHCenter
+            label1.font.weight: Font.DemiBold
+            label1.font.pointSize: Maui.Style.fontSizes.big
 
             label2.text: player.metaData.albumArtist || player.metaData.albumTitle
         }

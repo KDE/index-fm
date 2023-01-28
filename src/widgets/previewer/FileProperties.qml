@@ -38,13 +38,13 @@ ColumnLayout
         user: Index.Permission.OTHER
     }
 
-    Maui.SettingsSection
+    Maui.SectionGroup
     {
         Layout.fillWidth: true
         title: i18n("Permissions")
         description: i18n("Set file permissions to access this file")
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Owner")
 
@@ -75,7 +75,7 @@ ColumnLayout
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Group")
 
@@ -108,7 +108,7 @@ ColumnLayout
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Everyone")
 
@@ -140,27 +140,27 @@ ColumnLayout
 
     }
 
-    Maui.SettingsSection
+    Maui.SectionGroup
     {
         Layout.fillWidth: true
 
         title: i18n("Ownership")
         description: i18n("Set file permissions to access this file")
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Owner")
             label2.text: _permissions.owner
 
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Group")
             label2.text: _permissions.group
 
         }
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Users")
 
@@ -170,7 +170,7 @@ ColumnLayout
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Groups")
 

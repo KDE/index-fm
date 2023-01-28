@@ -7,12 +7,12 @@ import org.mauikit.filebrowsing 1.3 as FB
 
 Maui.SettingsDialog
 {
-    Maui.SettingsSection
+    Maui.SectionGroup
     {
         title: i18n("Navigation")
         description: i18n("Configure the app plugins and behavior.")
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Thumbnails")
             label2.text: i18n("Show previews of images, videos and PDF files")
@@ -26,7 +26,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text:  i18n("Save Session")
             label2.text: i18n("Save and restore tabs")
@@ -40,7 +40,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text:  i18n("Action Bar")
             label2.text: i18n("Extra toolbar with quick actions.")
@@ -55,12 +55,12 @@ Maui.SettingsDialog
         }
     }
 
-    Maui.SettingsSection
+    Maui.SectionGroup
     {
         title: i18n("Interface")
         description: i18n("Configure the app UI.")
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Grid Items Size")
             label2.text: i18n("Size of the grid view.")
@@ -109,7 +109,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("List Items Size")
             label2.text: i18n("Size of the list view.")
@@ -157,7 +157,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Overview")
             label2.text: i18n("Use overview mode as default on launch")
@@ -170,7 +170,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             visible: Maui.Handy.isAndroid
             label1.text: i18n("Dark Mode")
@@ -190,12 +190,12 @@ Maui.SettingsDialog
     }
 
 
-    Maui.SettingsSection
+    Maui.SectionGroup
     {
         title: i18n("Places")
         description: i18n("Toggle sidebar sections.")
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Quick places")
             label2.text: i18n("Access to standard locations.")
@@ -208,7 +208,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Bookmarks")
             label2.text: i18n("Access to standard locations.")
@@ -224,7 +224,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Remote")
             label2.text: i18n("Access to network locations.")
@@ -241,7 +241,7 @@ Maui.SettingsDialog
 
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Removable")
             label2.text: i18n("Access to USB sticks and SD Cards.")
@@ -257,7 +257,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Devices")
             label2.text: i18n("Access drives.")

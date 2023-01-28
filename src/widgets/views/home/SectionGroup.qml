@@ -10,7 +10,7 @@ import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.3 as Maui
 
-Maui.SettingsSection
+Maui.SectionGroup
 {
     id: control
     Maui.Theme.colorSet: Maui.Theme.Window
@@ -28,7 +28,7 @@ Maui.SettingsSection
         radius: Maui.Style.radiusV
     }
 
-    Maui.GridView
+    Maui.GridBrowser
     {
         id: _gridView
         clip: true
@@ -37,7 +37,7 @@ Maui.SettingsSection
         horizontalScrollBarPolicy:  ScrollBar.AsNeeded
         currentIndex: -1
         Layout.fillWidth: true
-        Layout.preferredHeight: visible ? implicitHeight : 0
+        Layout.preferredHeight: implicitHeight + topPadding + bottomPadding
         Layout.fillHeight: true
         flickable.flow: GridView.FlowTopToBottom
         scrollView.orientation: Qt.Horizontal
@@ -54,6 +54,5 @@ Maui.SettingsSection
         {
             id: _baseModel
         }
-
     }
 }

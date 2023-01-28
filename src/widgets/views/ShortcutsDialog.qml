@@ -14,12 +14,12 @@ hint: 0.8
     page.showTitle: false
     headBar.visible: false
 
-    Maui.SettingsSection
+    Maui.SectionGroup
     {
         title: i18n("Navigation")
         description: i18n("Browser navigation with keyboard.")
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("New Tab")
 
@@ -39,7 +39,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Close Tab")
 
@@ -59,7 +59,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Path Edit")
 
@@ -79,7 +79,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Terminal")
 
@@ -94,7 +94,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Split")
 
@@ -109,7 +109,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("New File")
 
@@ -129,7 +129,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Preview")
 
@@ -144,7 +144,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Find Tab")
 
@@ -164,7 +164,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Select All")
 
@@ -184,7 +184,7 @@ hint: 0.8
             }
         }
 
-        Maui.SettingTemplate
+        Maui.SectionItem
         {
             label1.text: i18n("Select")
 

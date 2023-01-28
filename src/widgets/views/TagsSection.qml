@@ -14,7 +14,7 @@ ColumnLayout
 {
     id: control
 
-    Maui.SectionDropDown
+    Maui.SectionHeader
     {
         id: _dropDown
         Layout.fillWidth: true
@@ -30,7 +30,7 @@ ColumnLayout
         Layout.fillWidth: true
         asynchronous: true
 
-        sourceComponent: Maui.GridView
+        sourceComponent: Maui.GridBrowser
         {
             id: _tagsGrid
             itemSize: 140

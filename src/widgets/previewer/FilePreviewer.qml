@@ -86,7 +86,7 @@ Maui.Dialog
                     contentHeight: _layout.implicitHeight
                     contentWidth: availableWidth
                     clip: true
-                    padding: Maui.Style.space.big
+                    padding: Maui.Style.contentMargins
                     background: null
 
                     Flickable
@@ -116,7 +116,7 @@ Maui.Dialog
                                 }
                             }
 
-                            Maui.SettingsSection
+                            Maui.SectionGroup
                             {
                                 Layout.fillWidth: true
 
@@ -125,7 +125,7 @@ Maui.Dialog
                                 Repeater
                                 {
                                     model: infoModel
-                                    delegate:  Maui.SettingTemplate
+                                    delegate:  Maui.SectionItem
                                     {
                                         visible:  model.value ? true : false
                                         Layout.fillWidth: true
@@ -139,7 +139,6 @@ Maui.Dialog
                             FileProperties
                             {
                                 Layout.fillWidth: true
-                                Layout.maximumWidth: 600
                                 Layout.alignment: Qt.AlignCenter
                                 url: control.currentUrl
                                 spacing: parent.spacing
@@ -214,6 +213,7 @@ Maui.Dialog
         expanded: true
         autoExclusive: false
         checkable: false
+        display: ToolButton.IconOnly
 
         Action
         {
