@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2022-09-25 09:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -462,16 +462,6 @@ msgstr "Ej favorit"
 msgid "Fav"
 msgstr "Favorit"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Samlingar"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Snabbåtkomst till vanliga samlingar"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -536,7 +526,7 @@ msgstr "Platser"
 msgid "Quick access to common places."
 msgstr "Snabbåtkomst till vanliga samlingar"
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -769,6 +759,12 @@ msgstr "Markera alla"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Etiketterade filer för snabbåtkomst"
+
+#~ msgid "Collections"
+#~ msgstr "Samlingar"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "Snabbåtkomst till vanliga samlingar"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "Snabbåtkomst till de vanligaste platserna och bokmärken"

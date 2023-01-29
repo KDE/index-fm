@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2021-10-08 14:37+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -460,16 +460,6 @@ msgstr ""
 msgid "Fav"
 msgstr ""
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Sbírky"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Rychlý přístup ke společným sbírkám"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -532,7 +522,7 @@ msgstr "Místa"
 msgid "Quick access to common places."
 msgstr "Rychlý přístup ke společným sbírkám"
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -764,6 +754,12 @@ msgstr "Vybrat vše"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
+
+#~ msgid "Collections"
+#~ msgstr "Sbírky"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "Rychlý přístup ke společným sbírkám"
 
 #~ msgid "Pictures"
 #~ msgstr "Obrázky"

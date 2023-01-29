@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2022-07-13 15:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -460,16 +460,6 @@ msgstr "책갈피 해제"
 msgid "Fav"
 msgstr "책갈피"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "모음집"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "공통 모음집에 빨리 접근하기"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -534,7 +524,7 @@ msgstr "위치"
 msgid "Quick access to common places."
 msgstr "공통 모음집에 빨리 접근하기"
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -766,6 +756,12 @@ msgstr "모두 선택"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "빨리 접근할 수 있도록 태그된 파일"
+
+#~ msgid "Collections"
+#~ msgstr "모음집"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "공통 모음집에 빨리 접근하기"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "자주 사용하는 장소와 책갈피에 빨리 접근하기"

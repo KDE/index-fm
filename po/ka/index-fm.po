@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2023-01-25 06:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -465,16 +465,6 @@ msgstr "რჩეულებიდანამოღება"
 msgid "Fav"
 msgstr "რჩეულებში"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "კოლექციები"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "სწრაფი წვდომა ზოგად კოლექციებზე"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -536,7 +526,7 @@ msgstr "ადგილები"
 msgid "Quick access to common places."
 msgstr "სწრაფი წვდომა საერთო ადგილებზე."
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -770,6 +760,12 @@ msgstr "ყველას მონიშვნა"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "სწრაფი წვდომისთვის მონიშნული ფაილები"
+
+#~ msgid "Collections"
+#~ msgstr "კოლექციები"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "სწრაფი წვდომა ზოგად კოლექციებზე"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "სწრაფ წვდომა ყველაზე ცნობილ ადგილებზე და სანიშნებზე"

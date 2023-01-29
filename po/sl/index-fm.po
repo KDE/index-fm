@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2023-01-26 10:30+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -466,16 +466,6 @@ msgstr "Iz priljubljenih"
 msgid "Fav"
 msgstr "Med priljubljene"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Zbirke"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Hitri dostop do skupnih zbirk"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -537,7 +527,7 @@ msgstr "Mesta"
 msgid "Quick access to common places."
 msgstr "Hitri dostop do skupnih lokacij."
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -771,6 +761,12 @@ msgstr "Izberi vse"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označene datoteke za hitri dostop"
+
+#~ msgid "Collections"
+#~ msgstr "Zbirke"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "Hitri dostop do skupnih zbirk"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "Hiter dostop do najpogostejših mest in zaznamkov"

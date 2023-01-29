@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2022-10-18 12:25+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -462,16 +462,6 @@ msgstr "Fərqlənmənin ləğvi"
 msgid "Fav"
 msgstr "Fərqləndirin"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Kolleksiyalar"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Ümumi kolleksiyalar sürətli giriş"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -536,7 +526,7 @@ msgstr "Girişlər"
 msgid "Quick access to common places."
 msgstr "Ümumi kolleksiyalar sürətli giriş"
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -770,6 +760,12 @@ msgstr "Hamısını seçin"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fayllara cəld giriş üçün işarələndi"
+
+#~ msgid "Collections"
+#~ msgstr "Kolleksiyalar"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "Ümumi kolleksiyalar sürətli giriş"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "Dah çox ümumi yerlərə və əlfəcinlərə sürətli giriş"

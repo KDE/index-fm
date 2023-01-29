@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2023-01-25 11:27+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -462,16 +462,6 @@ msgstr "Fav. opheffen"
 msgid "Fav"
 msgstr "Fav"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Verzamelingen"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Snelle toegang tot algemene verzamelingen"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -533,7 +523,7 @@ msgstr "Plaatsen"
 msgid "Quick access to common places."
 msgstr "Snelle toegang tot algemene plaatsen."
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -767,6 +757,12 @@ msgstr "Alles selecteren"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Bestanden met tags voor snelle toegang"
+
+#~ msgid "Collections"
+#~ msgstr "Verzamelingen"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "Snelle toegang tot algemene verzamelingen"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "Snelle toegang tot de meeste algemene plaatsen en bladwijzers"

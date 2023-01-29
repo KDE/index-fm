@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2022-09-10 10:54+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -462,16 +462,6 @@ msgstr "UnFav"
 msgid "Fav"
 msgstr "Fav"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Collections"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Quick access to common collections"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -536,7 +526,7 @@ msgstr "Places"
 msgid "Quick access to common places."
 msgstr "Quick access to common collections"
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -770,6 +760,12 @@ msgstr "Select All"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Tagged files for quick access"
+
+#~ msgid "Collections"
+#~ msgstr "Collections"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "Quick access to common collections"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "Quick access to most common places and bookmarks"

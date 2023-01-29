@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
 "PO-Revision-Date: 2023-01-27 21:59+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -466,16 +466,6 @@ msgstr "EzGog"
 msgid "Fav"
 msgstr "Gog"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Bildumak"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Sarbide bizkorra ohiko bildumetara"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
@@ -537,7 +527,7 @@ msgstr "Lekuak"
 msgid "Quick access to common places."
 msgstr "Sarbide bizkorra ohiko lekuetara."
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
@@ -771,6 +761,12 @@ msgstr "Hautatu denak"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxategi etiketatuak atzipen bizkorrerako"
+
+#~ msgid "Collections"
+#~ msgstr "Bildumak"
+
+#~ msgid "Quick access to common collections"
+#~ msgstr "Sarbide bizkorra ohiko bildumetara"
 
 #~ msgid "Quick access to most common places and bookmarks"
 #~ msgstr "Leku eta Laster-marka ohikoenetara sarbide bizkorra"
