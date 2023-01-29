@@ -138,18 +138,15 @@ Loader
                     {
                         model: inx.quickPaths()
 
-                        delegate: Item
-                        {
-                            Layout.preferredHeight: Math.min(50, width)
-                            Layout.preferredWidth: 50
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
-
-                            Maui.GridBrowserDelegate
+                        delegate:  Maui.GridBrowserDelegate
                             {
+                                Layout.preferredHeight: Math.min(50, width)
+                                Layout.preferredWidth: 50
+                                Layout.fillWidth: true
+                                Layout.fillHeight: true
+                                Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
+
                                 isCurrentItem: modelData.path === "overview:///" ? _stackView.depth === 2 : (currentBrowser.currentPath === modelData.path && _stackView.depth === 1)
-                                anchors.fill: parent
                                 iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
                                 iconSizeHint: Maui.Style.iconSize
                                 template.isMask: true
@@ -185,7 +182,6 @@ Loader
                                     _menu.show()
                                 }
                             }
-                        }
                     }
                 }
             }
