@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the index-fm package.
 #
 # Automatically generated, 2020.
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2020, 2021, 2022, %Y.
+# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2020, 2021, 2022, 2023, %Y.
 # Eloy Cuadra <ecuadra@eloihr.net>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:57+0000\n"
-"PO-Revision-Date: 2022-09-10 17:59+0200\n"
+"POT-Creation-Date: 2023-01-29 00:56+0000\n"
+"PO-Revision-Date: 2023-01-28 16:58+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -466,25 +466,15 @@ msgstr "Desmarcar como favorito"
 msgid "Fav"
 msgstr "Marcar como favorito"
 
-#: src/widgets/views/home/QuickCommonSection.qml:25
-#, kde-format
-msgid "Collections"
-msgstr "Colecciones"
-
-#: src/widgets/views/home/QuickCommonSection.qml:27
-#, kde-format
-msgid "Quick access to common collections"
-msgstr "Acceso rápido a las colecciones comunes"
-
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Nada aquí de momento."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Compruebe más adelante."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -502,10 +492,9 @@ msgid "Downloads"
 msgstr "Descargas"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "Sus archivos descargados más recientes, audio e imágenes"
+msgstr "Sus archivos descargados más recientes"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -515,18 +504,17 @@ msgstr "Música"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Sus archivos de música más recientes"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Imágenes"
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "Sus archivos descargados más recientes, audio e imágenes"
+msgstr "Sus archivos de imagen más recientes"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:195
@@ -535,16 +523,15 @@ msgid "Places"
 msgstr "Lugares"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Acceso rápido a las colecciones comunes"
+msgstr "Acceso rápido a lugares comunes"
 
-#: src/widgets/views/PlacesSection.qml:38
+#: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Más"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -775,17 +762,8 @@ msgstr "Seleccionar todo"
 msgid "Tagged files for quick access"
 msgstr "Archivos etiquetados para acceso rápido"
 
-#~ msgid "Quick access to most common places and bookmarks"
-#~ msgstr "Acceso rápido a los lugares más comunes y marcadores"
+#~ msgid "Collections"
+#~ msgstr "Colecciones"
 
-#~ msgid "Downloads, Audio & Pictures"
-#~ msgstr "Descargas, audio e imágenes"
-
-#~ msgid "Pictures"
-#~ msgstr "Imágenes"
-
-#~ msgid "Camera"
-#~ msgstr "Cámara"
-
-#~ msgid "Screenshots"
-#~ msgstr "Capturas de pantalla"
+#~ msgid "Quick access to common collections"
+#~ msgstr "Acceso rápido a las colecciones comunes"
