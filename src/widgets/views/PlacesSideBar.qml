@@ -110,8 +110,8 @@ Loader
             }
         }
 
-        flickable.topMargin: Maui.Style.space.medium
-        flickable.bottomMargin: Maui.Style.space.medium
+        flickable.topMargin: Maui.Style.contentMargins
+        flickable.bottomMargin: Maui.Style.contentMargins
         flickable.header: Loader
         {
             asynchronous: true
