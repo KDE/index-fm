@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Vit Pelcak <vit@pelcak.org>, 2020, 2021.
+# Vit Pelcak <vit@pelcak.org>, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-29 00:56+0000\n"
-"PO-Revision-Date: 2021-10-08 14:37+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-02-03 10:49+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -233,7 +233,7 @@ msgstr "O aplikaci"
 #: src/main.qml:629
 #, kde-format
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "Přepnout postranní panel"
 
 #: src/main.qml:681 src/widgets/views/FileMenu.qml:177
 #, kde-format
@@ -287,7 +287,7 @@ msgstr "Oprávnění"
 #: src/widgets/previewer/FileProperties.qml:148
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "Nastavte práva k přístupu k tomuto souboru"
 
 #: src/widgets/previewer/FileProperties.qml:49
 #: src/widgets/previewer/FileProperties.qml:152
@@ -366,7 +366,7 @@ msgstr "Zrušit"
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
-msgstr ""
+msgstr "Opravdu si přejete odstranit tuto značku? Tento krok nejde vrátit."
 
 #: src/widgets/views/Browser.qml:153
 #, kde-format
@@ -423,12 +423,12 @@ msgstr "Oblíbené soubory"
 #: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
-msgstr ""
+msgstr "Vaše soubory označené jako oblíbené"
 
 #: src/widgets/views/FileMenu.qml:41
 #, kde-format
 msgid " items"
-msgstr ""
+msgstr "položky"
 
 #: src/widgets/views/FileMenu.qml:72
 #, kde-format
@@ -448,7 +448,7 @@ msgstr "Otevřít pomocí"
 #: src/widgets/views/FileMenu.qml:123
 #, kde-format
 msgid "Preview and info"
-msgstr ""
+msgstr "Náhled a informace"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
@@ -463,12 +463,12 @@ msgstr ""
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Zde zatím nic není."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Zkuste to později."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -488,7 +488,7 @@ msgstr "Stahování"
 #: src/widgets/views/HomeView.qml:134
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr ""
+msgstr "Vaše nejnovější stažené soubory"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -498,17 +498,17 @@ msgstr "Hudba"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Vaše nejnovější hudební soubory"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Obrázky"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr ""
+msgstr "Vaše nejnovější soubory obrázků"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:195
@@ -517,16 +517,15 @@ msgid "Places"
 msgstr "Místa"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Rychlý přístup ke společným sbírkám"
+msgstr "Rychlý přístup ke společným místům."
 
 #: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -548,7 +547,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
 msgid "Configure the app plugins and behavior."
-msgstr ""
+msgstr "Nastavení modulů a chování aplikace."
 
 #: src/widgets/views/SettingsDialog.qml:17
 #, kde-format
@@ -573,7 +572,7 @@ msgstr "Uložit a obnovit karty"
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Action Bar"
-msgstr ""
+msgstr "Panel činností"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -593,7 +592,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:65
 #, kde-format
 msgid "Grid Items Size"
-msgstr ""
+msgstr "Velikost mřížky položky"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
@@ -647,7 +646,7 @@ msgstr "Přehled"
 #: src/widgets/views/SettingsDialog.qml:163
 #, kde-format
 msgid "Use overview mode as default on launch"
-msgstr ""
+msgstr "Použít režim přehledu jako výchozí při spuštění"
 
 #: src/widgets/views/SettingsDialog.qml:176
 #, kde-format
@@ -657,23 +656,23 @@ msgstr "Tmavý režim"
 #: src/widgets/views/SettingsDialog.qml:177
 #, kde-format
 msgid "Switch between light and dark colorscheme"
-msgstr ""
+msgstr "Přepínač mezi světlým a tmavým barevným schématem"
 
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
-msgstr ""
+msgstr "Přepnout sekce postranní lišty"
 
 #: src/widgets/views/SettingsDialog.qml:200
 #, kde-format
 msgid "Quick places"
-msgstr ""
+msgstr "Rychlá místa"
 
 #: src/widgets/views/SettingsDialog.qml:201
 #: src/widgets/views/SettingsDialog.qml:214
 #, kde-format
 msgid "Access to standard locations."
-msgstr ""
+msgstr "Přístup ke standardním místům."
 
 #: src/widgets/views/SettingsDialog.qml:213
 #, kde-format
@@ -688,7 +687,7 @@ msgstr "Vzdálené"
 #: src/widgets/views/SettingsDialog.qml:230
 #, kde-format
 msgid "Access to network locations."
-msgstr ""
+msgstr "Přístup k místům v síti."
 
 #: src/widgets/views/SettingsDialog.qml:246
 #, kde-format
@@ -698,7 +697,7 @@ msgstr "Vyměnitelné"
 #: src/widgets/views/SettingsDialog.qml:247
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr ""
+msgstr "Přístup k USB diskům a kartám SD."
 
 #: src/widgets/views/SettingsDialog.qml:262
 #, kde-format
@@ -708,7 +707,7 @@ msgstr "Zařízení"
 #: src/widgets/views/SettingsDialog.qml:263
 #, kde-format
 msgid "Access drives."
-msgstr ""
+msgstr "Přístup k diskům."
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format
@@ -754,18 +753,3 @@ msgstr "Vybrat vše"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
-
-#~ msgid "Collections"
-#~ msgstr "Sbírky"
-
-#~ msgid "Quick access to common collections"
-#~ msgstr "Rychlý přístup ke společným sbírkám"
-
-#~ msgid "Pictures"
-#~ msgstr "Obrázky"
-
-#~ msgid "Camera"
-#~ msgstr "Fotoaparát"
-
-#~ msgid "Screenshots"
-#~ msgstr "Obrázky"
