@@ -2,754 +2,755 @@
 # index-fm 套件的正體中文翻譯.
 # Copyright (C) 2022 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Automatically generated, 2022.
 #
+# Automatically generated, 2022.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-29 00:56+0000\n"
-"PO-Revision-Date: 2022-06-15 00:45+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-02-08 00:09+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #: src/main.cpp:65
 #, kde-format
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: src/main.cpp:65
 #, kde-format
 msgid "Browse, organize and preview your files."
-msgstr ""
+msgstr "瀏覽、管理並預覽您的檔案。"
 
 #: src/main.cpp:66
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
-msgstr ""
+msgstr "© 2019-%1 Maui 開發團隊"
 
 #: src/main.cpp:68
 #, kde-format
 msgid "Camilo Higuita"
-msgstr ""
+msgstr "Camilo Higuita"
 
 #: src/main.cpp:68 src/main.cpp:69
 #, kde-format
 msgid "Developer"
-msgstr ""
+msgstr "開發者"
 
 #: src/main.cpp:69
 #, kde-format
 msgid "Gabriel Dominguez"
-msgstr ""
+msgstr "Gabriel Dominguez"
 
 #: src/main.qml:160 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:209
 #, kde-format
 msgid "Extract"
-msgstr ""
+msgstr "解開"
 
 #: src/main.qml:161
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
 "subdirectory or inside the current directory."
-msgstr ""
+msgstr "解開壓縮檔的內容到新的子目錄、現有的子目錄或目前目錄中。"
 
 #: src/main.qml:181
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "壓縮 %1 個檔案"
 
 #: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
-msgstr ""
+msgstr "將已選檔案壓縮到新檔案裡。"
 
 #: src/main.qml:188
 #, kde-format
 msgid "Archive name..."
-msgstr ""
+msgstr "封存名稱…"
 
 #: src/main.qml:266 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
-msgstr ""
+msgstr "開啟資料夾"
 
 #: src/main.qml:275
 #, kde-format
 msgid "Extracted"
-msgstr ""
+msgstr "已解壓縮"
 
 #: src/main.qml:276
 #, kde-format
 msgid "File was extracted"
-msgstr ""
+msgstr "已解壓縮檔案"
 
 #: src/main.qml:339
 #, kde-format
 msgid "Forward"
-msgstr ""
+msgstr "往前"
 
 #: src/main.qml:346
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: src/main.qml:355
 #, kde-format
 msgid "New"
-msgstr ""
+msgstr "新增"
 
 #: src/main.qml:364 src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: src/main.qml:369
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "貼上"
 
 #: src/main.qml:379
 #, kde-format
 msgid "Select all"
-msgstr ""
+msgstr "全部選取"
 
 #: src/main.qml:388 src/widgets/views/SettingsDialog.qml:12
 #: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Navigation"
-msgstr ""
+msgstr "導覽"
 
 #: src/main.qml:397
 #, kde-format
 msgid "New tab"
-msgstr ""
+msgstr "新增分頁"
 
 #: src/main.qml:404
 #, kde-format
 msgid "Hidden"
-msgstr ""
+msgstr "隱藏"
 
 #: src/main.qml:412 src/widgets/views/ShortcutsDialog.qml:99
 #, kde-format
 msgid "Split"
-msgstr ""
+msgstr "分割"
 
 #: src/main.qml:421 src/widgets/views/ShortcutsDialog.qml:84
 #, kde-format
 msgid "Terminal"
-msgstr ""
+msgstr "終端機"
 
 #: src/main.qml:433
 #, kde-format
 msgid "Go to"
-msgstr ""
+msgstr "跳到"
 
 #: src/main.qml:441
 #, kde-format
 msgid "Open terminal here"
-msgstr ""
+msgstr "在此開啟終端機"
 
 #: src/main.qml:454
 #, kde-format
 msgid "View"
-msgstr ""
+msgstr "檢視"
 
 #: src/main.qml:459 src/widgets/views/ActionBar.qml:44
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "列表"
 
 #: src/main.qml:477 src/widgets/views/ActionBar.qml:61
 #, kde-format
 msgid "Grid"
-msgstr ""
+msgstr "格線"
 
 #: src/main.qml:496
 #, kde-format
 msgid "Sort by"
-msgstr ""
+msgstr "排序依據"
 
 #: src/main.qml:501
 #, kde-format
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 #: src/main.qml:514
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: src/main.qml:526
 #, kde-format
 msgid "Modified"
-msgstr ""
+msgstr "修改時間"
 
 #: src/main.qml:538
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: src/main.qml:550
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: src/main.qml:564
 #, kde-format
 msgid "Show Folders First"
-msgstr ""
+msgstr "先顯示資料夾"
 
 #: src/main.qml:578 src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:159
 #, kde-format
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
-msgstr ""
+msgstr "快捷鍵"
 
 #: src/main.qml:604
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: src/main.qml:611
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "關於"
 
 #: src/main.qml:629
 #, kde-format
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "切換側邊欄"
 
 #: src/main.qml:681 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "書籤"
 
 #: src/main.qml:688 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:88
 #, kde-format
 msgid "Open in new tab"
-msgstr ""
+msgstr "在新分頁開啟"
 
 #: src/main.qml:696 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:96
 #, kde-format
 msgid "Open in split view"
-msgstr ""
+msgstr "用分隔檢視開啟"
 
 #: src/widgets/previewer/FilePreviewer.qml:123
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "詳細資料"
 
 #: src/widgets/previewer/FilePreviewer.qml:124
 #, kde-format
 msgid "File information"
-msgstr ""
+msgstr "檔案資訊"
 
 #: src/widgets/previewer/FilePreviewer.qml:220
 #, kde-format
 msgid "Previous"
-msgstr ""
+msgstr "上一個"
 
 #: src/widgets/previewer/FilePreviewer.qml:227
 #, kde-format
 msgid "Next"
-msgstr ""
+msgstr "下一個"
 
 #: src/widgets/previewer/FilePreviewer.qml:235
 #: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
-msgstr ""
+msgstr "開啟"
 
 #: src/widgets/previewer/FileProperties.qml:44
 #, kde-format
 msgid "Permissions"
-msgstr ""
+msgstr "權限"
 
 #: src/widgets/previewer/FileProperties.qml:45
 #: src/widgets/previewer/FileProperties.qml:148
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "設定這個檔案的存取權限"
 
 #: src/widgets/previewer/FileProperties.qml:49
 #: src/widgets/previewer/FileProperties.qml:152
 #, kde-format
 msgid "Owner"
-msgstr ""
+msgstr "擁有者"
 
 #: src/widgets/previewer/FileProperties.qml:58
 #: src/widgets/previewer/FileProperties.qml:90
 #: src/widgets/previewer/FileProperties.qml:122
 #, kde-format
 msgid "Read"
-msgstr ""
+msgstr "讀取"
 
 #: src/widgets/previewer/FileProperties.qml:65
 #: src/widgets/previewer/FileProperties.qml:97
 #: src/widgets/previewer/FileProperties.qml:128
 #, kde-format
 msgid "Write"
-msgstr ""
+msgstr "寫入"
 
 #: src/widgets/previewer/FileProperties.qml:72
 #: src/widgets/previewer/FileProperties.qml:105
 #: src/widgets/previewer/FileProperties.qml:134
 #, kde-format
 msgid "Execute"
-msgstr ""
+msgstr "執行"
 
 #: src/widgets/previewer/FileProperties.qml:113
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "所有人"
 
 #: src/widgets/previewer/FileProperties.qml:147
 #, kde-format
 msgid "Ownership"
-msgstr ""
+msgstr "擁有權"
 
 #: src/widgets/previewer/FileProperties.qml:165
 #, kde-format
 msgid "Users"
-msgstr ""
+msgstr "使用者"
 
 #: src/widgets/previewer/FileProperties.qml:175
 #, kde-format
 msgid "Groups"
-msgstr ""
+msgstr "群組"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "安裝"
 
 #: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid "Remove '%1'"
-msgstr ""
+msgstr "移除 '%1'"
 
 #: src/widgets/views/Browser.qml:80
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "接受"
 
 #: src/widgets/views/Browser.qml:81
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: src/widgets/views/Browser.qml:83
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
-msgstr ""
+msgstr "您確定要移除這個標籤嗎？這個動作無法復原。"
 
 #: src/widgets/views/Browser.qml:153
 #, kde-format
 msgid "Create new"
-msgstr ""
+msgstr "建立新的"
 
 #: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #: src/widgets/views/BrowserView.qml:99 src/widgets/views/FileMenu.qml:61
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "剪下"
 
 #: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: src/widgets/views/BrowserView.qml:132 src/widgets/views/FileMenu.qml:221
 #, kde-format
 msgid "Compress"
-msgstr ""
+msgstr "壓縮"
 
 #: src/widgets/views/BrowserView.qml:144 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "標籤"
 
 #: src/widgets/views/BrowserView.qml:176
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "分離分頁"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
 msgid "Devices and Remote"
-msgstr ""
+msgstr "裝置與遠端"
 
 #: src/widgets/views/DisksSection.qml:19
 #, kde-format
 msgid "Remote locations and devices like disks, phones and cameras"
-msgstr ""
+msgstr "裝置與遠端位置像是硬碟、手機或相機"
 
 #: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
-msgstr ""
+msgstr "最愛的檔案"
 
 #: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
-msgstr ""
+msgstr "您標記為最愛的檔案"
 
 #: src/widgets/views/FileMenu.qml:41
 #, kde-format
 msgid " items"
-msgstr ""
+msgstr " 個項目"
 
 #: src/widgets/views/FileMenu.qml:72
 #, kde-format
 msgid "Rename"
-msgstr ""
+msgstr "重新命名"
 
 #: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
 #, kde-format
 msgid "Select"
-msgstr ""
+msgstr "選取"
 
 #: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
-msgstr ""
+msgstr "開啟方式"
 
 #: src/widgets/views/FileMenu.qml:123
 #, kde-format
 msgid "Preview and info"
-msgstr ""
+msgstr "預覽與資訊"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
 msgid "UnFav"
-msgstr ""
+msgstr "從最愛中移除"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "加到最愛"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "這裡還什麼都沒有。"
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "請之後再回來看看。"
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
-msgstr ""
+msgstr "搜尋檔案"
 
 #: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
-msgstr ""
+msgstr "瀏覽器"
 
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Downloads"
-msgstr ""
+msgstr "下載"
 
 #: src/widgets/views/HomeView.qml:134
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr ""
+msgstr "您最近下載的檔案"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Music"
-msgstr ""
+msgstr "音樂"
 
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "您最近的音樂檔案"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "影像"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr ""
+msgstr "您最近的影像檔案"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
 msgid "Places"
-msgstr ""
+msgstr "快速存取"
 
 #: src/widgets/views/PlacesSection.qml:20
 #, kde-format
 msgid "Quick access to common places."
-msgstr ""
+msgstr "常用地點的快速存取。"
 
 #: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "更多"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
 msgid "Bookmarks!"
-msgstr ""
+msgstr "書籤！"
 
 #: src/widgets/views/PlacesSideBar.qml:43
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr ""
+msgstr "您的書籤將會列於此處"
 
 #: src/widgets/views/PlacesSideBar.qml:235
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
-msgstr ""
+msgstr "此裝置必須在存取前先進行掛載。您要將此裝置設定好嗎？"
 
 #: src/widgets/views/SettingsDialog.qml:13
 #, kde-format
 msgid "Configure the app plugins and behavior."
-msgstr ""
+msgstr "設定應用程式外掛與行為。"
 
 #: src/widgets/views/SettingsDialog.qml:17
 #, kde-format
 msgid "Thumbnails"
-msgstr ""
+msgstr "縮圖"
 
 #: src/widgets/views/SettingsDialog.qml:18
 #, kde-format
 msgid "Show previews of images, videos and PDF files"
-msgstr ""
+msgstr "顯示影像、影片與 PDF 檔案的預覽"
 
 #: src/widgets/views/SettingsDialog.qml:31
 #, kde-format
 msgid "Save Session"
-msgstr ""
+msgstr "儲存工作階段"
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save and restore tabs"
-msgstr ""
+msgstr "儲存並回復分頁"
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Action Bar"
-msgstr ""
+msgstr "動作列"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
 msgid "Extra toolbar with quick actions."
-msgstr ""
+msgstr "包含快速動作的額外工具列。"
 
 #: src/widgets/views/SettingsDialog.qml:60
 #, kde-format
 msgid "Interface"
-msgstr ""
+msgstr "介面"
 
 #: src/widgets/views/SettingsDialog.qml:61
 #, kde-format
 msgid "Configure the app UI."
-msgstr ""
+msgstr "設定應用程式 UI。"
 
 #: src/widgets/views/SettingsDialog.qml:65
 #, kde-format
 msgid "Grid Items Size"
-msgstr ""
+msgstr "格線項目大小"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
 msgid "Size of the grid view."
-msgstr ""
+msgstr "格線檢視的大小。"
 
 #: src/widgets/views/SettingsDialog.qml:84
 #: src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "M"
-msgstr ""
+msgstr "中"
 
 #: src/widgets/views/SettingsDialog.qml:91
 #: src/widgets/views/SettingsDialog.qml:139
 #, kde-format
 msgid "L"
-msgstr ""
+msgstr "大"
 
 #: src/widgets/views/SettingsDialog.qml:98
 #: src/widgets/views/SettingsDialog.qml:146
 #, kde-format
 msgid "X"
-msgstr ""
+msgstr "巨大"
 
 #: src/widgets/views/SettingsDialog.qml:105
 #: src/widgets/views/SettingsDialog.qml:153
 #, kde-format
 msgid "XL"
-msgstr ""
+msgstr "非常大"
 
 #: src/widgets/views/SettingsDialog.qml:114
 #, kde-format
 msgid "List Items Size"
-msgstr ""
+msgstr "列表項目大小"
 
 #: src/widgets/views/SettingsDialog.qml:115
 #, kde-format
 msgid "Size of the list view."
-msgstr ""
+msgstr "列表檢視的大小。"
 
 #: src/widgets/views/SettingsDialog.qml:125
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "小"
 
 #: src/widgets/views/SettingsDialog.qml:162
 #, kde-format
 msgid "Overview"
-msgstr ""
+msgstr "總覽"
 
 #: src/widgets/views/SettingsDialog.qml:163
 #, kde-format
 msgid "Use overview mode as default on launch"
-msgstr ""
+msgstr "啟動時使用總覽模式作為預設"
 
 #: src/widgets/views/SettingsDialog.qml:176
 #, kde-format
 msgid "Dark Mode"
-msgstr ""
+msgstr "暗色模式"
 
 #: src/widgets/views/SettingsDialog.qml:177
 #, kde-format
 msgid "Switch between light and dark colorscheme"
-msgstr ""
+msgstr "在明亮和暗色配色方案間切換"
 
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Toggle sidebar sections."
-msgstr ""
+msgstr "切換側邊欄區塊。"
 
 #: src/widgets/views/SettingsDialog.qml:200
 #, kde-format
 msgid "Quick places"
-msgstr ""
+msgstr "快速地點"
 
 #: src/widgets/views/SettingsDialog.qml:201
 #: src/widgets/views/SettingsDialog.qml:214
 #, kde-format
 msgid "Access to standard locations."
-msgstr ""
+msgstr "標準位置的存取。"
 
 #: src/widgets/views/SettingsDialog.qml:213
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "書籤"
 
 #: src/widgets/views/SettingsDialog.qml:229
 #, kde-format
 msgid "Remote"
-msgstr ""
+msgstr "遠端"
 
 #: src/widgets/views/SettingsDialog.qml:230
 #, kde-format
 msgid "Access to network locations."
-msgstr ""
+msgstr "網路位置的存取。"
 
 #: src/widgets/views/SettingsDialog.qml:246
 #, kde-format
 msgid "Removable"
-msgstr ""
+msgstr "可移除"
 
 #: src/widgets/views/SettingsDialog.qml:247
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr ""
+msgstr "USB 隨身碟和 SD 卡的存取。"
 
 #: src/widgets/views/SettingsDialog.qml:262
 #, kde-format
 msgid "Devices"
-msgstr ""
+msgstr "裝置"
 
 #: src/widgets/views/SettingsDialog.qml:263
 #, kde-format
 msgid "Access drives."
-msgstr ""
+msgstr "存取硬碟。"
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format
 msgid "Browser navigation with keyboard."
-msgstr ""
+msgstr "使用鍵盤的瀏覽器導覽。"
 
 #: src/widgets/views/ShortcutsDialog.qml:24
 #, kde-format
 msgid "New Tab"
-msgstr ""
+msgstr "新增分頁"
 
 #: src/widgets/views/ShortcutsDialog.qml:44
 #, kde-format
 msgid "Close Tab"
-msgstr ""
+msgstr "關閉分頁"
 
 #: src/widgets/views/ShortcutsDialog.qml:64
 #, kde-format
 msgid "Path Edit"
-msgstr ""
+msgstr "路徑編輯"
 
 #: src/widgets/views/ShortcutsDialog.qml:114
 #, kde-format
 msgid "New File"
-msgstr ""
+msgstr "建立檔案"
 
 #: src/widgets/views/ShortcutsDialog.qml:134
 #, kde-format
 msgid "Preview"
-msgstr ""
+msgstr "預覽"
 
 #: src/widgets/views/ShortcutsDialog.qml:149
 #, kde-format
 msgid "Find Tab"
-msgstr ""
+msgstr "尋找分頁"
 
 #: src/widgets/views/ShortcutsDialog.qml:169
 #, kde-format
 msgid "Select All"
-msgstr ""
+msgstr "全部選取"
 
 #: src/widgets/views/TagsSection.qml:22
 #, kde-format
 msgid "Tagged files for quick access"
-msgstr ""
+msgstr "快速存取用的已加標籤檔案"
