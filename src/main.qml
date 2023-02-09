@@ -59,7 +59,7 @@ Maui.ApplicationWindow
 
         property int viewType : FB.FMList.LIST_VIEW
         property int listSize : 0 // s-m-l-x-xl
-        property int gridSize : 1 // s-m-l-x-xl
+        property int gridSize : 2 // s-m-l-x-xl
 
         property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
