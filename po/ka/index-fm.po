@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:56+0000\n"
+"POT-Creation-Date: 2023-02-10 00:57+0000\n"
 "PO-Revision-Date: 2023-01-25 06:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -542,7 +542,7 @@ msgstr "სანიშნები!"
 msgid "Your bookmarks will be listed here"
 msgstr "თქვენი სანიშნები აქ ჩამოითვლება"
 
-#: src/widgets/views/PlacesSideBar.qml:235
+#: src/widgets/views/PlacesSideBar.qml:231
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "

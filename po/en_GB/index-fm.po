@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-29 00:56+0000\n"
+"POT-Creation-Date: 2023-02-10 00:57+0000\n"
 "PO-Revision-Date: 2022-09-10 10:54+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -542,7 +542,7 @@ msgstr "Bookmarks!"
 msgid "Your bookmarks will be listed here"
 msgstr "Your bookmarks will be listed here"
 
-#: src/widgets/views/PlacesSideBar.qml:235
+#: src/widgets/views/PlacesSideBar.qml:231
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
