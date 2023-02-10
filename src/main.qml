@@ -59,7 +59,7 @@ Maui.ApplicationWindow
 
         property int viewType : FB.FMList.LIST_VIEW
         property int listSize : 0 // s-m-l-x-xl
-        property int gridSize : 2 // s-m-l-x-xl
+        property int gridSize : 3 // s-m-l-x-xl
 
         property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
         property int lastTabIndex : 0
@@ -290,9 +290,9 @@ Maui.ApplicationWindow
     {
         id: _sideBarView
         anchors.fill: parent
-        sideBar.preferredWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows || Maui.Handy.isAndroid ? 13 : 11)
+        sideBar.preferredWidth: 200
 
-        sideBar.minimumWidth: Maui.Style.units.gridUnit * (Maui.Handy.isWindows || Maui.Handy.isAndroid ? 13 : 11)
+        sideBar.minimumWidth: 200
         sideBarContent: PlacesSideBar
         {
             id: placesSidebar
