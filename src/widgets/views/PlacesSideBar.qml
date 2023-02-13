@@ -67,6 +67,9 @@ Loader
 
             if(_stackView.depth === 2)
                 _stackView.pop()
+
+            if(control.collapsed)
+                control.close()
         }
 
         //    onContentDropped:
@@ -114,7 +117,7 @@ Loader
         flickable.bottomMargin: Maui.Style.contentMargins
         flickable.header: Loader
         {
-            asynchronous: true
+//            asynchronous: true
             width: parent.width
             //                height: item ? item.implicitHeight : 0
             active: appSettings.quickSidebarSection
@@ -158,16 +161,13 @@ Loader
                                 {
                                     if(modelData.path === "overview:///")
                                     {
+                                        _stackView.push(_homeViewComponent)
                                         if(control.collapsed)
                                             control.close()
-
-                                        _stackView.push(_homeViewComponent)
                                         return
                                     }
 
                                     placeClicked(modelData.path, mouse)
-                                    if(control.collapsed)
-                                        control.close()
                                 }
 
                                 onRightClicked:
@@ -232,8 +232,6 @@ Loader
                 }
 
                 placeClicked(model.path, mouse)
-                if(control.collapsed)
-                    control.close()
             }
 
             onRightClicked:
