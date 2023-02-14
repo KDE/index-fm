@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-10 00:57+0000\n"
+"POT-Creation-Date: 2023-02-14 00:57+0000\n"
 "PO-Revision-Date: 2021-10-07 17:48-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -244,13 +244,13 @@ msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
 #: src/main.qml:688 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:88
+#: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in new tab"
 msgstr "ਨਵੀਂ ਟੈਬ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 
 #: src/main.qml:696 src/widgets/views/FileMenu.qml:199
-#: src/widgets/views/PlacesSideBar.qml:96
+#: src/widgets/views/PlacesSideBar.qml:99
 #, kde-format
 msgid "Open in split view"
 msgstr "ਵੰਡੀ ਗਈ ਝਲਕ ਵਿੱਚ ਖੋਲ੍ਹੋ"
@@ -345,7 +345,7 @@ msgid "Install"
 msgstr "ਇੰਸਟਾਲ ਕਰੋ"
 
 #: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:109
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
