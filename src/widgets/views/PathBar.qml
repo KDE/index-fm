@@ -30,7 +30,7 @@ Item
 {
     id: control
 
-    property int preferredWidth: visible ? (item ?  pathEntry ? Math.max(500, item.implicitWidth) : item.implicitWidth : 500) : 0
+    property int preferredWidth: visible ? (item ?  (pathEntry ? Math.max(500, item.implicitWidth) : item.implicitWidth): 500) : 0
 
     Behavior on preferredWidth
     {
@@ -187,8 +187,8 @@ Item
                 {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-				orientation: Qt.Horizontal
-                    implicitWidth: contentWidth
+                    orientation: Qt.Horizontal
+                    implicitWidth: contentWidth + leftPadding + rightPadding
 
                     ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
                     ScrollBar.vertical.policy: ScrollBar.AlwaysOff
