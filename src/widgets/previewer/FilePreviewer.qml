@@ -81,69 +81,52 @@ Maui.Dialog
                 active: _delegate.isCurrentItem
                 asynchronous: true
 
-                sourceComponent: ScrollView
+                sourceComponent: Maui.ScrollColumn
                 {
-                    contentHeight: _layout.implicitHeight
-                    contentWidth: availableWidth
-                    clip: true
-                    padding: Maui.Style.contentMargins
-                    background: null
+                    spacing: Maui.Style.space.huge
 
-                    Flickable
+                    Item
                     {
-                        boundsBehavior: Flickable.StopAtBounds
-                        boundsMovement: Flickable.StopAtBounds
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 150
 
-                        ColumnLayout
+                        Maui.IconItem
                         {
-                            id: _layout
-                            width: parent.width
-                            spacing: Maui.Style.space.huge
+                            height: parent.height * 0.9
+                            width: height
+                            anchors.centerIn: parent
+                            iconSource: iteminfo.icon
+                            imageSource: iteminfo.thumbnail
+                            iconSizeHint: Maui.Style.iconSizes.large
+                        }
+                    }
 
-                            Item
+                    Maui.SectionGroup
+                    {
+                        Layout.fillWidth: true
+
+                        title: i18n("Details")
+                        description: i18n("File information")
+                        Repeater
+                        {
+                            model: infoModel
+                            delegate:  Maui.SectionItem
                             {
+                                visible:  model.value ? true : false
                                 Layout.fillWidth: true
-                                Layout.preferredHeight: 150
-
-                                Maui.IconItem
-                                {
-                                    height: parent.height * 0.9
-                                    width: height
-                                    anchors.centerIn: parent
-                                    iconSource: iteminfo.icon
-                                    imageSource: iteminfo.thumbnail
-                                    iconSizeHint: Maui.Style.iconSizes.large
-                                }
-                            }
-
-                            Maui.SectionGroup
-                            {
-                                Layout.fillWidth: true
-
-                                title: i18n("Details")
-                                description: i18n("File information")
-                                Repeater
-                                {
-                                    model: infoModel
-                                    delegate:  Maui.SectionItem
-                                    {
-                                        visible:  model.value ? true : false
-                                        Layout.fillWidth: true
-                                        label1.text: model.key
-                                        label2.text: model.value
-                                        label2.wrapMode: Text.Wrap
-                                    }
-                                }
-                            }
-
-                            FileProperties
-                            {
-                                Layout.fillWidth: true
-                                Layout.alignment: Qt.AlignCenter
-                                url: control.currentUrl
-                                spacing: parent.spacing
+                                label1.text: model.key
+                                label2.text: model.value
+                                label2.wrapMode: Text.Wrap
                             }
                         }
+                    }
+
+                    FileProperties
+                    {
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignCenter
+                        url: control.currentUrl
+                        spacing: parent.spacing
                     }
                 }
             }
