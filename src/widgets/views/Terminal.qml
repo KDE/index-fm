@@ -21,11 +21,14 @@ Term.Terminal
         description: i18n("Follows the system color scheme.")
         backgroundColor: Maui.Theme.backgroundColor
         foregroundColor: Maui.Theme.textColor
-        color2: Maui.Theme.alternateColor
-        color3: Maui.Theme.negativeTextColor
-        color4: Maui.Theme.positiveTextColor
-        color5: Maui.Theme.neutralTextColor
+        color2: Maui.Theme.highlightColor
+        color3: Maui.Theme.negativeBackgroundColor
+        color4: Maui.Theme.positiveBackgroundColor
+        color5: Maui.Theme.hoverColor
         color6: Maui.Theme.highlightColor
+        color7: Maui.Theme.linkColor
+        color8: Maui.Theme.neutralBackgroundColor
+        color9: Maui.Theme.textColor
     }
 
     onUrlsDropped:
