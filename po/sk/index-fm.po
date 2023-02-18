@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:57+0000\n"
+"POT-Creation-Date: 2023-02-18 00:57+0000\n"
 "PO-Revision-Date: 2021-01-24 12:16+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -265,27 +265,27 @@ msgstr "Otvoriť na novej karte"
 msgid "Open in split view"
 msgstr "Otvoriť v rozdelenom zobrazení"
 
-#: src/widgets/previewer/FilePreviewer.qml:123
+#: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: src/widgets/previewer/FilePreviewer.qml:124
+#: src/widgets/previewer/FilePreviewer.qml:109
 #, kde-format
 msgid "File information"
 msgstr ""
 
-#: src/widgets/previewer/FilePreviewer.qml:220
+#: src/widgets/previewer/FilePreviewer.qml:203
 #, kde-format
 msgid "Previous"
 msgstr "Predchádzajúci"
 
-#: src/widgets/previewer/FilePreviewer.qml:227
+#: src/widgets/previewer/FilePreviewer.qml:210
 #, kde-format
 msgid "Next"
 msgstr "Nasledujúci"
 
-#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/previewer/FilePreviewer.qml:218
 #: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -779,6 +779,11 @@ msgstr ""
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označené súbory pre rýchly prístup"
+
+#: src/widgets/views/Terminal.qml:21
+#, kde-format
+msgid "Follows the system color scheme."
+msgstr ""
 
 #~ msgid "Collections"
 #~ msgstr "Zbierky"

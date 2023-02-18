@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:57+0000\n"
+"POT-Creation-Date: 2023-02-18 00:57+0000\n"
 "PO-Revision-Date: 2022-07-13 17:57+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -253,27 +253,27 @@ msgstr "Avaa uuteen välilehteen"
 msgid "Open in split view"
 msgstr "Avaa jaettuun näkymään"
 
-#: src/widgets/previewer/FilePreviewer.qml:123
+#: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
 msgid "Details"
 msgstr "Tiedot"
 
-#: src/widgets/previewer/FilePreviewer.qml:124
+#: src/widgets/previewer/FilePreviewer.qml:109
 #, kde-format
 msgid "File information"
 msgstr "Tiedoston tiedot"
 
-#: src/widgets/previewer/FilePreviewer.qml:220
+#: src/widgets/previewer/FilePreviewer.qml:203
 #, kde-format
 msgid "Previous"
 msgstr "Edellinen"
 
-#: src/widgets/previewer/FilePreviewer.qml:227
+#: src/widgets/previewer/FilePreviewer.qml:210
 #, kde-format
 msgid "Next"
 msgstr "Seuraava"
 
-#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/previewer/FilePreviewer.qml:218
 #: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -760,6 +760,11 @@ msgstr "Valitse kaikki"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Pikaista käyttöä varten luokitellut tiedostot"
+
+#: src/widgets/views/Terminal.qml:21
+#, kde-format
+msgid "Follows the system color scheme."
+msgstr ""
 
 #~ msgid "Collections"
 #~ msgstr "Kokoelmat"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:57+0000\n"
+"POT-Creation-Date: 2023-02-18 00:57+0000\n"
 "PO-Revision-Date: 2022-07-13 15:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -252,27 +252,27 @@ msgstr "새 탭으로 열기"
 msgid "Open in split view"
 msgstr "분할 보기로 열기"
 
-#: src/widgets/previewer/FilePreviewer.qml:123
+#: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
 msgid "Details"
 msgstr "자세히"
 
-#: src/widgets/previewer/FilePreviewer.qml:124
+#: src/widgets/previewer/FilePreviewer.qml:109
 #, kde-format
 msgid "File information"
 msgstr "파일 정보"
 
-#: src/widgets/previewer/FilePreviewer.qml:220
+#: src/widgets/previewer/FilePreviewer.qml:203
 #, kde-format
 msgid "Previous"
 msgstr "이전"
 
-#: src/widgets/previewer/FilePreviewer.qml:227
+#: src/widgets/previewer/FilePreviewer.qml:210
 #, kde-format
 msgid "Next"
 msgstr "다음"
 
-#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/previewer/FilePreviewer.qml:218
 #: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -756,6 +756,11 @@ msgstr "모두 선택"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "빨리 접근할 수 있도록 태그된 파일"
+
+#: src/widgets/views/Terminal.qml:21
+#, kde-format
+msgid "Follows the system color scheme."
+msgstr ""
 
 #~ msgid "Collections"
 #~ msgstr "모음집"

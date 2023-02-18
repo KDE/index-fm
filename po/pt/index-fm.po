@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:57+0000\n"
+"POT-Creation-Date: 2023-02-18 00:57+0000\n"
 "PO-Revision-Date: 2023-02-15 15:20+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -253,27 +253,27 @@ msgstr "Abrir numa nova página"
 msgid "Open in split view"
 msgstr "Abrir numa área dividida"
 
-#: src/widgets/previewer/FilePreviewer.qml:123
+#: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
 msgid "Details"
 msgstr "Detalhes"
 
-#: src/widgets/previewer/FilePreviewer.qml:124
+#: src/widgets/previewer/FilePreviewer.qml:109
 #, kde-format
 msgid "File information"
 msgstr "Informação do ficheiro"
 
-#: src/widgets/previewer/FilePreviewer.qml:220
+#: src/widgets/previewer/FilePreviewer.qml:203
 #, kde-format
 msgid "Previous"
 msgstr "Anterior"
 
-#: src/widgets/previewer/FilePreviewer.qml:227
+#: src/widgets/previewer/FilePreviewer.qml:210
 #, kde-format
 msgid "Next"
 msgstr "Seguinte"
 
-#: src/widgets/previewer/FilePreviewer.qml:235
+#: src/widgets/previewer/FilePreviewer.qml:218
 #: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -760,3 +760,8 @@ msgstr "Seleccionar Tudo"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Ficheiros marcados para acesso rápido"
+
+#: src/widgets/views/Terminal.qml:21
+#, kde-format
+msgid "Follows the system color scheme."
+msgstr ""
