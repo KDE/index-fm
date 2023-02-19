@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 00:57+0000\n"
-"PO-Revision-Date: 2023-01-25 09:10+0200\n"
+"PO-Revision-Date: 2023-02-18 09:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -765,7 +765,7 @@ msgstr "Позначені файли для швидкого доступу"
 #: src/widgets/views/Terminal.qml:21
 #, kde-format
 msgid "Follows the system color scheme."
-msgstr ""
+msgstr "Використовувати загальносистемну схему кольорів."
 
 #~ msgid "Collections"
 #~ msgstr "Збірки"

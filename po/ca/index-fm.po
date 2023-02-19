@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 00:57+0000\n"
-"PO-Revision-Date: 2023-01-25 09:22+0100\n"
+"PO-Revision-Date: 2023-02-18 11:01+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -764,10 +764,4 @@ msgstr "Fitxers etiquetats per a un accés ràpid"
 #: src/widgets/views/Terminal.qml:21
 #, kde-format
 msgid "Follows the system color scheme."
-msgstr ""
-
-#~ msgid "Collections"
-#~ msgstr "Col·leccions"
-
-#~ msgid "Quick access to common collections"
-#~ msgstr "Accés ràpid a les col·leccions habituals"
+msgstr "Segueix l'esquema de colors del sistema."

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 00:57+0000\n"
-"PO-Revision-Date: 2023-01-25 06:47+0100\n"
+"PO-Revision-Date: 2023-02-18 07:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -764,7 +764,7 @@ msgstr "სწრაფი წვდომისთვის მონიშნ�
 #: src/widgets/views/Terminal.qml:21
 #, kde-format
 msgid "Follows the system color scheme."
-msgstr ""
+msgstr "სისტემური ფერების სქემის მიყოლა."
 
 #~ msgid "Collections"
 #~ msgstr "კოლექციები"
