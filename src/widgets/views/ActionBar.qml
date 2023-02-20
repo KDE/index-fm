@@ -79,13 +79,6 @@ Maui.ToolBar
 
     rightContent: [
 
-        ToolButton
-        {
-            icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-            checked: currentTab.count === 2
-            checkable: true
-            onClicked: toogleSplitView()
-        },
 
         ToolButton
         {
@@ -107,11 +100,99 @@ Maui.ToolBar
             onClicked: currentBrowser.toggleSearchBar()
         },
 
-        ToolButton
+        Maui.ToolButtonMenu
         {
-            icon.name: "list-add"
-            //                    text: i18n("New")
-            onClicked: currentBrowser.newItem()
+            icon.name: "view-sort"
+
+                Action
+                {
+                    text: i18n("Type")
+                    checked: currentBrowser.settings.sortBy === FB.FMList.MIME
+                    checkable: true
+
+                    onTriggered:
+                    {
+                        currentBrowser.settings.sortBy = FB.FMList.MIME
+                        sortSettings.sortBy = FB.FMList.MIME
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Date")
+                    checked: currentBrowser.settings.sortBy === FB.FMList.DATE
+                    checkable: true
+                    onTriggered:
+                    {
+                        currentBrowser.settings.sortBy = FB.FMList.DATE
+                        sortSettings.sortBy = FB.FMList.DATE
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Modified")
+                    checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
+                    checkable: true
+                    onTriggered:
+                    {
+                        currentBrowser.settings.sortBy = FB.FMList.MODIFIED
+                        sortSettings.sortBy = FB.FMList.MODIFIED
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Size")
+                    checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
+                    checkable: true
+                    onTriggered:
+                    {
+                        currentBrowser.settings.sortBy = FB.FMList.SIZE
+                        sortSettings.sortBy = FB.FMList.SIZE
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Name")
+                    checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
+                    checkable: true
+                    onTriggered:
+                    {
+                        currentBrowser.settings.sortBy = FB.FMList.LABEL
+                        sortSettings.sortBy = FB.FMList.LABEL
+                    }
+                }
+
+                MenuSeparator{}
+
+                MenuItem
+                {
+                    text: i18n("Show Folders First")
+                    checked: currentBrowser.settings.foldersFirst
+                    checkable: true
+
+                    onTriggered:
+                    {
+                        currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
+                        sortSettings.foldersFirst =  !sortSettings.foldersFirst
+                    }
+                }
+
+                MenuItem
+                {
+                    id: groupAction
+                    text: i18n("Group")
+                    checkable: true
+                    checked: currentBrowser.settings.group
+                    onTriggered:
+                    {
+                        currentBrowser.settings.group = !currentBrowser.settings.group
+                        sortSettings.group = !sortSettings.group
+                    }
+                }
+
         }
     ]
 }

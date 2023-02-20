@@ -86,7 +86,7 @@ Item
         asynchronous: true
         sourceComponent: Item
         {
-            implicitWidth: _rowLayout.implicitWidth
+            implicitWidth: _layout.implicitWidth
 
             TextField
             {
@@ -134,156 +134,99 @@ Item
                 Keys.onEscapePressed: control.pathEntry = false
             }
 
-            RowLayout
+            ScrollView
             {
-                id: _rowLayout
-                spacing: 2
+                id: _layout
                 visible: !pathEntry
                 anchors.fill: parent
 
-                AbstractButton
+                orientation: Qt.Horizontal
+                implicitWidth: contentWidth + leftPadding + rightPadding
+
+                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+                ScrollBar.vertical.policy: ScrollBar.AlwaysOff
+
+                contentHeight: availableHeight
+                //                    padding: 2
+
+                leftPadding: 8
+
+                background: Rectangle
                 {
-                    id: _backButton
-                    Maui.Theme.colorSet: Maui.Theme.Button
-                    Maui.Theme.inherit: false
+                    radius: Maui.Style.radiusV
+                    color : Maui.Theme.alternateBackgroundColor
 
-                    visible: !appSettings.actionBar
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: height * 1.4
-                    hoverEnabled: true
-                    onClicked : currentBrowser.goBack()
-
-                    contentItem: Item
-                    {
-                        Maui.Icon
-                        {
-                            anchors.centerIn: parent
-                            source: "go-previous"
-                            width: Maui.Style.iconSizes.small
-                            height: width
-                            color: Maui.Theme.textColor
-                        }
-                    }
-
-                    background : Maui.ShadowedRectangle
-                    {
-                        color: _backButton.checked ? Maui.Theme.highlightColor : (_backButton.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
-                        corners
-                        {
-                            topLeftRadius: Maui.Style.radiusV
-                            topRightRadius: 0
-                            bottomLeftRadius: Maui.Style.radiusV
-                            bottomRightRadius: 0
-                        }
-
-                        Behavior on color
-                        {
-                            Maui.ColorTransition{}
-                        }
-                    }
                 }
 
-                ScrollView
+                ListView
                 {
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-                    orientation: Qt.Horizontal
-                    implicitWidth: contentWidth + leftPadding + rightPadding
+                    id: _listView
 
-                    ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-                    ScrollBar.vertical.policy: ScrollBar.AlwaysOff
+                    Maui.Theme.colorSet: control.Maui.Theme.colorSet
+                    Maui.Theme.inherit: false
 
-                    contentHeight: availableHeight
+                    orientation: ListView.Horizontal
+                    clip: true
+                    spacing: -6
+                    currentIndex: _pathList.count - 1
+                    focus: true
+                    interactive: Maui.Handy.isTouch
+                    highlightFollowsCurrentItem: true
+                    snapMode: ListView.NoSnap
 
-                    background: null
+                    boundsBehavior: Flickable.StopAtBounds
+                    boundsMovement :Flickable.StopAtBounds
 
-                    ListView
+                    ListView.onAdd: _listView.positionViewAtEnd()
+                    ListView.onRemove: _listView.positionViewAtEnd()
+
+
+                    footer: ToolButton
                     {
-                        id: _listView
+                        height: parent.height
+                        //                            width: height
+                        flat: true
+                        icon.name: "edit-entry"
+                        onClicked:  pathBar.showEntryBar()
+                    }
 
-                        Maui.Theme.colorSet: control.Maui.Theme.colorSet
-                        Maui.Theme.inherit: false
-
-                        orientation: ListView.Horizontal
-                        clip: true
-                        spacing: 2
-                        currentIndex: _pathList.count - 1
-                        focus: true
-                        interactive: Maui.Handy.isTouch
-                        highlightFollowsCurrentItem: true
-                        snapMode: ListView.NoSnap
-
-                        boundsBehavior: Flickable.StopAtBounds
-                        boundsMovement :Flickable.StopAtBounds
-
-                        ListView.onAdd: _listView.positionViewAtEnd()
-                        ListView.onRemove: _listView.positionViewAtEnd()
-
-                        model: Maui.BaseModel
+                    model: Maui.BaseModel
+                    {
+                        id: _pathModel
+                        list: Index.PathList
                         {
-                            id: _pathModel
-                            list: Index.PathList
-                            {
-                                id: _pathList
-                                path: control.url
-                            }
+                            id: _pathList
+                            path: control.url
+                        }
+                    }
+
+                    delegate: PathBarDelegate
+                    {
+                        id: delegate
+
+                        lastOne: index === ListView.view.count-1
+                        firstOne: index === 0 && appSettings.actionBar
+                        height: ListView.view.height
+                        width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
+
+                        onClicked:
+                        {
+                            control.placeClicked(model.path)
                         }
 
-                        Maui.EdgeShadow
+                        onRightClicked:
                         {
-                            visible: !_listView.atXBeginning
-                            z: 999
-                            edge: Qt.LeftEdge
-
-                            anchors
-                            {
-                                left: parent.left
-                                top: parent.top
-                                bottom: parent.bottom
-                            }
+                            control.placeRightClicked(model.path)
                         }
 
-                        Maui.EdgeShadow
+                        onPressAndHold:
                         {
-                            visible: !_listView.atXEnd
-                            z: 999
-                            edge: Qt.RightEdge
-
-                            anchors
-                            {
-                                right: parent.right
-                                top: parent.top
-                                bottom: parent.bottom
-                            }
-                        }
-
-                        delegate: PathBarDelegate
-                        {
-                            id: delegate
-
-                            lastOne: index === ListView.view.count-1
-                            firstOne: index === 0 && appSettings.actionBar
-                            height: ListView.view.height
-                            width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
-
-                            onClicked:
-                            {
-                                control.placeClicked(model.path)
-                            }
-
-                            onRightClicked:
-                            {
-                                control.placeRightClicked(model.path)
-                            }
-
-                            onPressAndHold:
-                            {
-                                control.placeRightClicked(model.path)
-                            }
+                            control.placeRightClicked(model.path)
                         }
                     }
                 }
             }
+
         }
     }
 

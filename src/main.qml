@@ -55,7 +55,6 @@ Maui.ApplicationWindow
         property bool previewFiles : Maui.Handy.isMobile
         property bool restoreSession:  false
         property bool overviewStart : false
-        property bool actionBar: false
 
         property int viewType : FB.FMList.LIST_VIEW
         property int listSize : 0 // s-m-l-x-xl
@@ -307,7 +306,6 @@ Maui.ApplicationWindow
             {
                 width: parent.width
                 asynchronous: true
-                active: settings.actionBar
                 visible: active && !_homeViewComponent.visible
                 sourceComponent:  ActionBar {}
             }
@@ -330,32 +328,8 @@ Maui.ApplicationWindow
                         asynchronous: true
                         sourceComponent: Maui.ToolButtonMenu
                         {
-                            icon.name: settings.actionBar ? "overflow-menu" : (currentBrowser.settings.viewType === FB.FMList.LIST_VIEW ? "view-list-details" : "view-list-icons")
-                            Maui.MenuItemActionRow
-                            {
-                                Action
-                                {
-                                    icon.name: "go-next"
-                                    text: i18n("Forward")
-                                    onTriggered: currentBrowser.goForward()
-                                }
+                            icon.name:  "overflow-menu"
 
-                                Action
-                                {
-                                    icon.name: "edit-find"
-                                    text: i18n("Search")
-                                    checked: currentBrowser.headBar.visible
-                                    checkable: true
-                                    onTriggered: currentBrowser.toggleSearchBar()
-                                }
-
-                                Action
-                                {
-                                    icon.name: "list-add"
-                                    text: i18n("New")
-                                    onTriggered: currentBrowser.newItem()
-                                }
-                            }
 
                             Maui.LabelDelegate
                             {
@@ -376,10 +350,18 @@ Maui.ApplicationWindow
 
                             MenuItem
                             {
-                                text: i18n("Select all")
+                                text: i18n("Select All")
                                 icon.name: "edit-select-all"
                                 onTriggered: currentBrowser.selectAll()
                             }
+
+                            MenuItem
+                            {
+                                text: i18n("New Item")
+                                icon.name: "folder-new"
+                                onTriggered: currentBrowser.newItem()
+                            }
+
 
                             Maui.LabelDelegate
                             {
@@ -401,7 +383,7 @@ Maui.ApplicationWindow
                                 Action
                                 {
                                     icon.name: "view-hidden"
-                                    text: i18n("Hidden")
+                                    text: i18n("View Hidden")
                                     checkable: true
                                     checked: settings.showHiddenFiles
                                     onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
@@ -409,180 +391,23 @@ Maui.ApplicationWindow
 
                                 Action
                                 {
-                                    text: i18n("Split")
+                                    text: i18n("Split View")
                                     icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
                                     checked: currentTab.count === 2
                                     checkable: true
                                     onTriggered: toogleSplitView()
                                 }
-
-                                Action
-                                {
-                                    text: i18n("Terminal")
-                                    enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                                    icon.name: "dialog-scripts"
-                                    checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-                                    checkable: true
-
-                                    onTriggered: currentTab.currentItem.toogleTerminal()
-                                }
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Go to")
-                                icon.name: "edit-entry"
-                                onTriggered: pathBar.showEntryBar()
                             }
 
                             MenuItem
                             {
                                 enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
-                                text: i18n("Open terminal here")
+                                text: i18n("Open Terminal Here")
                                 id: openTerminal
                                 icon.name: "dialog-scripts"
                                 onTriggered:
                                 {
                                     inx.openTerminal(currentBrowser.currentPath)
-                                }
-                            }
-
-                            Maui.LabelDelegate
-                            {
-                                width: parent.width
-                                isSection: true
-                                label: i18n("View")
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("List")
-                                icon.name: "view-list-details"
-                                checked: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
-                                checkable: true
-                                autoExclusive: true
-                                onTriggered:
-                                {
-                                    if(currentBrowser)
-                                    {
-                                        currentBrowser.settings.viewType = FB.FMList.LIST_VIEW
-                                    }
-
-                                    settings.viewType = FB.FMList.LIST_VIEW
-                                }
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Grid")
-                                icon.name: "view-list-icons"
-                                checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
-                                checkable: true
-                                autoExclusive: true
-
-                                onTriggered:
-                                {
-                                    if(currentBrowser)
-                                    {
-                                        currentBrowser.settings.viewType = FB.FMList.ICON_VIEW
-                                    }
-
-                                    settings.viewType = FB.FMList.ICON_VIEW
-                                }
-                            }
-
-                            Maui.ContextualMenu
-                            {
-                                title: i18n("Sort by")
-                                titleIconSource: "view-sort"
-
-                                Action
-                                {
-                                    text: i18n("Type")
-                                    checked: currentBrowser.settings.sortBy === FB.FMList.MIME
-                                    checkable: true
-
-                                    onTriggered:
-                                    {
-                                        currentBrowser.settings.sortBy = FB.FMList.MIME
-                                        sortSettings.sortBy = FB.FMList.MIME
-                                    }
-                                }
-
-                                Action
-                                {
-                                    text: i18n("Date")
-                                    checked: currentBrowser.settings.sortBy === FB.FMList.DATE
-                                    checkable: true
-                                    onTriggered:
-                                    {
-                                        currentBrowser.settings.sortBy = FB.FMList.DATE
-                                        sortSettings.sortBy = FB.FMList.DATE
-                                    }
-                                }
-
-                                Action
-                                {
-                                    text: i18n("Modified")
-                                    checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
-                                    checkable: true
-                                    onTriggered:
-                                    {
-                                        currentBrowser.settings.sortBy = FB.FMList.MODIFIED
-                                        sortSettings.sortBy = FB.FMList.MODIFIED
-                                    }
-                                }
-
-                                Action
-                                {
-                                    text: i18n("Size")
-                                    checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
-                                    checkable: true
-                                    onTriggered:
-                                    {
-                                        currentBrowser.settings.sortBy = FB.FMList.SIZE
-                                        sortSettings.sortBy = FB.FMList.SIZE
-                                    }
-                                }
-
-                                Action
-                                {
-                                    text: i18n("Name")
-                                    checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
-                                    checkable: true
-                                    onTriggered:
-                                    {
-                                        currentBrowser.settings.sortBy = FB.FMList.LABEL
-                                        sortSettings.sortBy = FB.FMList.LABEL
-                                    }
-                                }
-
-                                MenuSeparator{}
-
-                                MenuItem
-                                {
-                                    text: i18n("Show Folders First")
-                                    checked: currentBrowser.settings.foldersFirst
-                                    checkable: true
-
-                                    onTriggered:
-                                    {
-                                        currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
-                                        sortSettings.foldersFirst =  !sortSettings.foldersFirst
-                                    }
-                                }
-
-                                MenuItem
-                                {
-                                    id: groupAction
-                                    text: i18n("Group")
-                                    checkable: true
-                                    checked: currentBrowser.settings.group
-                                    onTriggered:
-                                    {
-                                        currentBrowser.settings.group = !currentBrowser.settings.group
-                                        sortSettings.group = !sortSettings.group
-                                    }
                                 }
                             }
 

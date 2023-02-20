@@ -53,17 +53,11 @@ T.Control
       */
     signal pressAndHold()
 
-    background: Maui.ShadowedRectangle
+    background: Maui.Arrow
     {
         color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
 
-        corners
-        {
-            topLeftRadius: control.firstOne ? Maui.Style.radiusV : 0
-            topRightRadius: control.lastOne ? Maui.Style.radiusV : 0
-            bottomLeftRadius: control.firstOne ? Maui.Style.radiusV : 0
-            bottomRightRadius: control.lastOne ? Maui.Style.radiusV : 0
-        }
+       arrowWidth: 8
 
         Behavior on color
         {
@@ -99,7 +93,8 @@ T.Control
             verticalAlignment:  Qt.AlignVCenter
             elide: Qt.ElideRight
             wrapMode: Text.NoWrap
-            font.bold: control.checked
+            opacity: control.checked ? 1 : 0.8
+            font.weight: control.checked ? Font.DemiBold : Font.Normal
             color: control.checked ? Maui.Theme.highlightedTextColor : Maui.Theme.textColor
         }
     }

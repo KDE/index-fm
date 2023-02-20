@@ -2,11 +2,13 @@ import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
-import org.mauikit.controls 1.2 as Maui
+import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.3 as FB
 
 Maui.SettingsDialog
 {
+    id: control
+
     Maui.SectionGroup
     {
         title: i18n("Navigation")
@@ -39,20 +41,6 @@ Maui.SettingsDialog
                 onToggled: settings.restoreSession = !settings.restoreSession
             }
         }
-
-        Maui.SectionItem
-        {
-            label1.text:  i18n("Action Bar")
-            label2.text: i18n("Extra toolbar with quick actions.")
-
-            Switch
-            {
-                Layout.fillHeight: true
-                checkable: true
-                checked:  settings.actionBar
-                onToggled: settings.actionBar = !settings.actionBar
-            }
-        }
     }
 
     Maui.SectionGroup
@@ -71,13 +59,13 @@ Maui.SettingsDialog
                 autoExclusive: true
                 display: ToolButton.TextOnly
 
-//                currentIndex: appSettings.gridSize
+                //                currentIndex: appSettings.gridSize
 
-//                Action
-//                {
-//                    text: i18n("S")
-//                    onTriggered: appSettings.gridSize = 0
-//                }
+                //                Action
+                //                {
+                //                    text: i18n("S")
+                //                    onTriggered: appSettings.gridSize = 0
+                //                }
 
                 Action
                 {
@@ -168,6 +156,12 @@ Maui.SettingsDialog
                 checked:  appSettings.overviewStart
                 onToggled: appSettings.overviewStart = !appSettings.overviewStart
             }
+
+
+            Button
+            {
+                text: "test"
+            }
         }
 
         Maui.SectionItem
@@ -182,93 +176,114 @@ Maui.SettingsDialog
                 checked: appSettings.darkMode
                 onToggled:
                 {
-                   appSettings.darkMode = !appSettings.darkMode
+                    appSettings.darkMode = !appSettings.darkMode
                     setAndroidStatusBarColor()
                 }
             }
         }
     }
 
-
-    Maui.SectionGroup
+    Maui.SectionItem
     {
-        title: i18n("Places")
-        description: i18n("Toggle sidebar sections.")
+        label1.text: i18n("Quick places")
+        label2.text: i18n("Access to standard locations.")
 
-        Maui.SectionItem
+        ToolButton
         {
-            label1.text: i18n("Quick places")
-            label2.text: i18n("Access to standard locations.")
-
-            Switch
-            {
-                checkable: true
-                checked: appSettings.quickSidebarSection
-                onToggled: appSettings.quickSidebarSection = !appSettings.quickSidebarSection
-            }
+            checkable: true
+            icon.name: "go-next"
+            onToggled: control.addPage(_sidebarPlacesComponent)
         }
+    }
 
-        Maui.SectionItem
+    Component
+    {
+        id: _sidebarPlacesComponent
+
+
+        Maui.ScrollColumn
         {
-            label1.text: i18n("Bookmarks")
-            label2.text: i18n("Access to standard locations.")
-
-            Switch
+            Maui.SectionGroup
             {
-                checkable: true
-                checked: appSettings.sidebarSections.indexOf(FB.FMList.BOOKMARKS_PATH) >= 0
-                onToggled:
+                title: i18n("Places")
+                description: i18n("Toggle sidebar sections.")
+
+                Maui.SectionItem
                 {
-                    toggleSection(FB.FMList.BOOKMARKS_PATH)
+                    label1.text: i18n("Quick places")
+                    label2.text: i18n("Access to standard locations.")
+
+                    Switch
+                    {
+                        checkable: true
+                        checked: appSettings.quickSidebarSection
+                        onToggled: appSettings.quickSidebarSection = !appSettings.quickSidebarSection
+                    }
                 }
-            }
-        }
 
-        Maui.SectionItem
-        {
-            label1.text: i18n("Remote")
-            label2.text: i18n("Access to network locations.")
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOTE_PATH)>= 0
-                onToggled:
+                Maui.SectionItem
                 {
-                    toggleSection(FB.FMList.REMOTE_PATH)
+                    label1.text: i18n("Bookmarks")
+                    label2.text: i18n("Access to standard locations.")
+
+                    Switch
+                    {
+                        checkable: true
+                        checked: appSettings.sidebarSections.indexOf(FB.FMList.BOOKMARKS_PATH) >= 0
+                        onToggled:
+                        {
+                            toggleSection(FB.FMList.BOOKMARKS_PATH)
+                        }
+                    }
                 }
-            }
 
-        }
-
-        Maui.SectionItem
-        {
-            label1.text: i18n("Removable")
-            label2.text: i18n("Access to USB sticks and SD Cards.")
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOVABLE_PATH)>= 0
-                onToggled:
+                Maui.SectionItem
                 {
-                    toggleSection(FB.FMList.REMOVABLE_PATH)
+                    label1.text: i18n("Remote")
+                    label2.text: i18n("Access to network locations.")
+
+                    Switch
+                    {
+                        checkable: true
+                        checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOTE_PATH)>= 0
+                        onToggled:
+                        {
+                            toggleSection(FB.FMList.REMOTE_PATH)
+                        }
+                    }
+
                 }
-            }
-        }
 
-        Maui.SectionItem
-        {
-            label1.text: i18n("Devices")
-            label2.text: i18n("Access drives.")
-
-            Switch
-            {
-                checkable: true
-                checked: placesSidebar.list.groups.indexOf(FB.FMList.DRIVES_PATH)>= 0
-                onToggled:
+                Maui.SectionItem
                 {
-                    toggleSection(FB.FMList.DRIVES_PATH)
+                    label1.text: i18n("Removable")
+                    label2.text: i18n("Access to USB sticks and SD Cards.")
+
+                    Switch
+                    {
+                        checkable: true
+                        checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOVABLE_PATH)>= 0
+                        onToggled:
+                        {
+                            toggleSection(FB.FMList.REMOVABLE_PATH)
+                        }
+                    }
+                }
+
+                Maui.SectionItem
+                {
+                    label1.text: i18n("Devices")
+                    label2.text: i18n("Access drives.")
+
+                    Switch
+                    {
+                        checkable: true
+                        checked: placesSidebar.list.groups.indexOf(FB.FMList.DRIVES_PATH)>= 0
+                        onToggled:
+                        {
+                            toggleSection(FB.FMList.DRIVES_PATH)
+                        }
+                    }
                 }
             }
         }
