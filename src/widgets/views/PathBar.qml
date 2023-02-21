@@ -30,7 +30,7 @@ Item
 {
     id: control
 
-    property int preferredWidth: visible ? (item ?  (pathEntry ? Math.max(500, item.implicitWidth) : item.implicitWidth): 500) : 0
+    property int preferredWidth: visible ?  Math.max(500, item.implicitWidth): 0
 
     Behavior on preferredWidth
     {
@@ -155,7 +155,11 @@ Item
                 {
                     radius: Maui.Style.radiusV
                     color : Maui.Theme.alternateBackgroundColor
-
+                    MouseArea
+                    {
+                        anchors.fill: parent
+                        onClicked:  pathBar.showEntryBar()
+                    }
                 }
 
                 ListView
@@ -180,13 +184,12 @@ Item
                     ListView.onAdd: _listView.positionViewAtEnd()
                     ListView.onRemove: _listView.positionViewAtEnd()
 
-
+                    footerPositioning: ListView.OverlayFooter
                     footer: ToolButton
                     {
                         height: parent.height
-                        //                            width: height
                         flat: true
-                        icon.name: "edit-entry"
+                        icon.name: "filename-space-amarok"
                         onClicked:  pathBar.showEntryBar()
                     }
 
@@ -205,7 +208,7 @@ Item
                         id: delegate
 
                         lastOne: index === ListView.view.count-1
-                        firstOne: index === 0 && appSettings.actionBar
+                        firstOne: index === 0
                         height: ListView.view.height
                         width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
 

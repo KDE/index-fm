@@ -286,7 +286,7 @@ QVariantList Index::quickPaths()
 {
     FMH::MODEL_LIST paths;
 
-    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "overview:///"}, {FMH::MODEL_KEY::ICON, "start-here"}, {FMH::MODEL_KEY::LABEL, "Overview"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
+    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "overview:///"}, {FMH::MODEL_KEY::ICON, "folder-recent"}, {FMH::MODEL_KEY::LABEL, "Overview"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
 
     paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, FMStatic::PATHTYPE_URI[FMStatic::PATHTYPE_KEY::TAGS_PATH] + "fav"}, {FMH::MODEL_KEY::ICON, "love"}, {FMH::MODEL_KEY::LABEL, "Favorite"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
 

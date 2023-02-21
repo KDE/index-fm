@@ -156,12 +156,6 @@ Maui.SettingsDialog
                 checked:  appSettings.overviewStart
                 onToggled: appSettings.overviewStart = !appSettings.overviewStart
             }
-
-
-            Button
-            {
-                text: "test"
-            }
         }
 
         Maui.SectionItem

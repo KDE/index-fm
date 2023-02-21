@@ -55,14 +55,14 @@ T.Control
 
     background: Maui.Arrow
     {
-        color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
+        color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : (control.firstOne? "transparent": Maui.Theme.backgroundColor))
 
        arrowWidth: 8
 
-        Behavior on color
-        {
-            Maui.ColorTransition{}
-        }
+//        Behavior on color
+//        {
+//            Maui.ColorTransition{}
+//        }
     }
 
     contentItem: MouseArea
