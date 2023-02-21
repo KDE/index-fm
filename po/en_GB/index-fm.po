@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 00:57+0000\n"
+"POT-Creation-Date: 2023-02-21 00:58+0000\n"
 "PO-Revision-Date: 2022-09-10 10:54+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -47,13 +47,13 @@ msgstr "Developer"
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:160 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:159 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:209
 #, kde-format
 msgid "Extract"
 msgstr "Extract"
 
-#: src/main.qml:161
+#: src/main.qml:160
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -62,192 +62,119 @@ msgstr ""
 "Extract the content of the compressed file into a new or existing "
 "subdirectory or inside the current directory."
 
-#: src/main.qml:181
+#: src/main.qml:180
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "Compress %1 file"
 msgstr[1] "Compress %1 files"
 
-#: src/main.qml:182
+#: src/main.qml:181
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Compress selected files into a new file."
 
-#: src/main.qml:188
+#: src/main.qml:187
 #, kde-format
 msgid "Archive name..."
 msgstr "Archive name..."
 
-#: src/main.qml:266 src/widgets/views/HomeView.qml:53
+#: src/main.qml:265 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Open folder"
 
-#: src/main.qml:275
+#: src/main.qml:274
 #, kde-format
 msgid "Extracted"
 msgstr "Extracted"
 
-#: src/main.qml:276
+#: src/main.qml:275
 #, kde-format
 msgid "File was extracted"
 msgstr "File was extracted"
 
-#: src/main.qml:339
-#, kde-format
-msgid "Forward"
-msgstr "Forward"
-
-#: src/main.qml:346
-#, kde-format
-msgid "Search"
-msgstr "Search"
-
-#: src/main.qml:355
-#, kde-format
-msgid "New"
-msgstr "New"
-
-#: src/main.qml:364 src/widgets/views/Browser.qml:53
+#: src/main.qml:338 src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
 msgstr "Edit"
 
-#: src/main.qml:369
+#: src/main.qml:343
 #, kde-format
 msgid "Paste"
 msgstr "Paste"
 
-#: src/main.qml:379
+#: src/main.qml:353 src/widgets/views/ShortcutsDialog.qml:169
 #, kde-format
-msgid "Select all"
-msgstr "Select all"
+msgid "Select All"
+msgstr "Select All"
 
-#: src/main.qml:388 src/widgets/views/SettingsDialog.qml:12
+#: src/main.qml:360
+#, fuzzy, kde-format
+#| msgid "New tab"
+msgid "New Item"
+msgstr "New tab"
+
+#: src/main.qml:370 src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Navigation"
 msgstr "Navigation"
 
-#: src/main.qml:397
+#: src/main.qml:379
 #, kde-format
 msgid "New tab"
 msgstr "New tab"
 
-#: src/main.qml:404
-#, kde-format
-msgid "Hidden"
+#: src/main.qml:386
+#, fuzzy, kde-format
+#| msgid "Hidden"
+msgid "View Hidden"
 msgstr "Hidden"
 
-#: src/main.qml:412 src/widgets/views/ShortcutsDialog.qml:99
+#: src/main.qml:394
 #, kde-format
-msgid "Split"
-msgstr "Split"
+msgid "Split View"
+msgstr "Split View"
 
-#: src/main.qml:421 src/widgets/views/ShortcutsDialog.qml:84
-#, kde-format
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/main.qml:433
-#, kde-format
-msgid "Go to"
-msgstr "Go to"
-
-#: src/main.qml:441
-#, kde-format
-msgid "Open terminal here"
+#: src/main.qml:405
+#, fuzzy, kde-format
+#| msgid "Open terminal here"
+msgid "Open Terminal Here"
 msgstr "Open terminal here"
 
-#: src/main.qml:454
-#, kde-format
-msgid "View"
-msgstr "View"
-
-#: src/main.qml:459 src/widgets/views/ActionBar.qml:44
-#, kde-format
-msgid "List"
-msgstr "List"
-
-#: src/main.qml:477 src/widgets/views/ActionBar.qml:61
-#, kde-format
-msgid "Grid"
-msgstr "Grid"
-
-#: src/main.qml:496
-#, kde-format
-msgid "Sort by"
-msgstr "Sort by"
-
-#: src/main.qml:501
-#, kde-format
-msgid "Type"
-msgstr "Type"
-
-#: src/main.qml:514
-#, kde-format
-msgid "Date"
-msgstr "Date"
-
-#: src/main.qml:526
-#, kde-format
-msgid "Modified"
-msgstr "Modified"
-
-#: src/main.qml:538
-#, kde-format
-msgid "Size"
-msgstr "Size"
-
-#: src/main.qml:550
-#, kde-format
-msgid "Name"
-msgstr "Name"
-
-#: src/main.qml:564
-#, kde-format
-msgid "Show Folders First"
-msgstr "Show Folders First"
-
-#: src/main.qml:578 src/widgets/previewer/FileProperties.qml:80
-#: src/widgets/previewer/FileProperties.qml:159
-#, kde-format
-msgid "Group"
-msgstr "Group"
-
-#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:12
+#: src/main.qml:418 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
 msgstr "Shortcuts"
 
-#: src/main.qml:604
+#: src/main.qml:429
 #, kde-format
 msgid "Settings"
 msgstr "Settings"
 
-#: src/main.qml:611
+#: src/main.qml:436
 #, kde-format
 msgid "About"
 msgstr "About"
 
-#: src/main.qml:629
+#: src/main.qml:454
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Toggle sidebar"
 
-#: src/main.qml:681 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:506 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Bookmark"
 
-#: src/main.qml:688 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:513 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in new tab"
 msgstr "Open in new tab"
 
-#: src/main.qml:696 src/widgets/views/FileMenu.qml:199
+#: src/main.qml:521 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
 #, kde-format
 msgid "Open in split view"
@@ -317,6 +244,13 @@ msgstr "Write"
 msgid "Execute"
 msgstr "Execute"
 
+#: src/widgets/previewer/FileProperties.qml:80
+#: src/widgets/previewer/FileProperties.qml:159
+#: src/widgets/views/ActionBar.qml:186
+#, kde-format
+msgid "Group"
+msgstr "Group"
+
 #: src/widgets/previewer/FileProperties.qml:113
 #, kde-format
 msgid "Everyone"
@@ -341,6 +275,46 @@ msgstr "Groups"
 #, kde-format
 msgid "Install"
 msgstr "Install"
+
+#: src/widgets/views/ActionBar.qml:44
+#, kde-format
+msgid "List"
+msgstr "List"
+
+#: src/widgets/views/ActionBar.qml:61
+#, kde-format
+msgid "Grid"
+msgstr "Grid"
+
+#: src/widgets/views/ActionBar.qml:109
+#, kde-format
+msgid "Type"
+msgstr "Type"
+
+#: src/widgets/views/ActionBar.qml:122
+#, kde-format
+msgid "Date"
+msgstr "Date"
+
+#: src/widgets/views/ActionBar.qml:134
+#, kde-format
+msgid "Modified"
+msgstr "Modified"
+
+#: src/widgets/views/ActionBar.qml:146
+#, kde-format
+msgid "Size"
+msgstr "Size"
+
+#: src/widgets/views/ActionBar.qml:158
+#, kde-format
+msgid "Name"
+msgstr "Name"
+
+#: src/widgets/views/ActionBar.qml:172
+#, kde-format
+msgid "Show Folders First"
+msgstr "Show Folders First"
 
 #: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:109
@@ -515,7 +489,7 @@ msgid "Your most recent image files"
 msgstr "Your most recent downloaded files, audio and images"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:195
+#: src/widgets/views/SettingsDialog.qml:208
 #, kde-format
 msgid "Places"
 msgstr "Places"
@@ -551,167 +525,159 @@ msgstr ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 
-#: src/widgets/views/SettingsDialog.qml:13
+#: src/widgets/views/SettingsDialog.qml:15
 #, kde-format
 msgid "Configure the app plugins and behavior."
 msgstr "Configure the app plugins and behaviour."
 
-#: src/widgets/views/SettingsDialog.qml:17
+#: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
 msgid "Thumbnails"
 msgstr "Thumbnails"
 
-#: src/widgets/views/SettingsDialog.qml:18
+#: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Show previews of images, videos and PDF files"
 msgstr "Show previews of images, videos and PDF files"
 
-#: src/widgets/views/SettingsDialog.qml:31
+#: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid "Save Session"
 msgstr "Save Session"
 
-#: src/widgets/views/SettingsDialog.qml:32
+#: src/widgets/views/SettingsDialog.qml:34
 #, kde-format
 msgid "Save and restore tabs"
 msgstr "Save and restore tabs"
 
-#: src/widgets/views/SettingsDialog.qml:45
-#, kde-format
-msgid "Action Bar"
-msgstr "Action Bar"
-
-#: src/widgets/views/SettingsDialog.qml:46
-#, kde-format
-msgid "Extra toolbar with quick actions."
-msgstr "Extra toolbar with quick actions."
-
-#: src/widgets/views/SettingsDialog.qml:60
+#: src/widgets/views/SettingsDialog.qml:48
 #, kde-format
 msgid "Interface"
 msgstr "Interface"
 
-#: src/widgets/views/SettingsDialog.qml:61
+#: src/widgets/views/SettingsDialog.qml:49
 #, kde-format
 msgid "Configure the app UI."
 msgstr "Configure the app UI."
 
-#: src/widgets/views/SettingsDialog.qml:65
+#: src/widgets/views/SettingsDialog.qml:53
 #, kde-format
 msgid "Grid Items Size"
 msgstr "Grid Items Size"
 
-#: src/widgets/views/SettingsDialog.qml:66
+#: src/widgets/views/SettingsDialog.qml:54
 #, kde-format
 msgid "Size of the grid view."
 msgstr "Size of the grid view."
 
-#: src/widgets/views/SettingsDialog.qml:84
-#: src/widgets/views/SettingsDialog.qml:132
+#: src/widgets/views/SettingsDialog.qml:72
+#: src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "M"
 msgstr "M"
 
-#: src/widgets/views/SettingsDialog.qml:91
-#: src/widgets/views/SettingsDialog.qml:139
+#: src/widgets/views/SettingsDialog.qml:79
+#: src/widgets/views/SettingsDialog.qml:127
 #, kde-format
 msgid "L"
 msgstr "L"
 
-#: src/widgets/views/SettingsDialog.qml:98
-#: src/widgets/views/SettingsDialog.qml:146
+#: src/widgets/views/SettingsDialog.qml:86
+#: src/widgets/views/SettingsDialog.qml:134
 #, kde-format
 msgid "X"
 msgstr "X"
 
-#: src/widgets/views/SettingsDialog.qml:105
-#: src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/SettingsDialog.qml:93
+#: src/widgets/views/SettingsDialog.qml:141
 #, kde-format
 msgid "XL"
 msgstr "XL"
 
-#: src/widgets/views/SettingsDialog.qml:114
+#: src/widgets/views/SettingsDialog.qml:102
 #, kde-format
 msgid "List Items Size"
 msgstr "List Items Size"
 
-#: src/widgets/views/SettingsDialog.qml:115
+#: src/widgets/views/SettingsDialog.qml:103
 #, kde-format
 msgid "Size of the list view."
 msgstr "Size of the list view."
 
-#: src/widgets/views/SettingsDialog.qml:125
+#: src/widgets/views/SettingsDialog.qml:113
 #, kde-format
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:162
+#: src/widgets/views/SettingsDialog.qml:150
 #, kde-format
 msgid "Overview"
 msgstr "Overview"
 
-#: src/widgets/views/SettingsDialog.qml:163
+#: src/widgets/views/SettingsDialog.qml:151
 #, kde-format
 msgid "Use overview mode as default on launch"
 msgstr "Use overview mode as default on launch"
 
-#: src/widgets/views/SettingsDialog.qml:176
+#: src/widgets/views/SettingsDialog.qml:170
 #, kde-format
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/widgets/views/SettingsDialog.qml:177
+#: src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Switch between light and dark colorscheme"
 msgstr "Switch between light and dark colour schemes"
 
-#: src/widgets/views/SettingsDialog.qml:196
-#, kde-format
-msgid "Toggle sidebar sections."
-msgstr "Toggle sidebar sections."
-
-#: src/widgets/views/SettingsDialog.qml:200
+#: src/widgets/views/SettingsDialog.qml:188
+#: src/widgets/views/SettingsDialog.qml:213
 #, kde-format
 msgid "Quick places"
 msgstr "Quick places"
 
-#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:189
 #: src/widgets/views/SettingsDialog.qml:214
+#: src/widgets/views/SettingsDialog.qml:227
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Access to standard locations."
 
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/SettingsDialog.qml:209
+#, kde-format
+msgid "Toggle sidebar sections."
+msgstr "Toggle sidebar sections."
+
+#: src/widgets/views/SettingsDialog.qml:226
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bookmarks"
 
-#: src/widgets/views/SettingsDialog.qml:229
+#: src/widgets/views/SettingsDialog.qml:242
 #, kde-format
 msgid "Remote"
 msgstr "Remote"
 
-#: src/widgets/views/SettingsDialog.qml:230
+#: src/widgets/views/SettingsDialog.qml:243
 #, kde-format
 msgid "Access to network locations."
 msgstr "Access to network locations."
 
-#: src/widgets/views/SettingsDialog.qml:246
+#: src/widgets/views/SettingsDialog.qml:259
 #, kde-format
 msgid "Removable"
 msgstr "Removable"
 
-#: src/widgets/views/SettingsDialog.qml:247
+#: src/widgets/views/SettingsDialog.qml:260
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Access to USB sticks and SD Cards."
 
-#: src/widgets/views/SettingsDialog.qml:262
+#: src/widgets/views/SettingsDialog.qml:275
 #, kde-format
 msgid "Devices"
 msgstr "Devices"
 
-#: src/widgets/views/SettingsDialog.qml:263
+#: src/widgets/views/SettingsDialog.qml:276
 #, kde-format
 msgid "Access drives."
 msgstr "Access drives."
@@ -736,6 +702,16 @@ msgstr "Close Tab"
 msgid "Path Edit"
 msgstr "Path Edit"
 
+#: src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/widgets/views/ShortcutsDialog.qml:99
+#, kde-format
+msgid "Split"
+msgstr "Split"
+
 #: src/widgets/views/ShortcutsDialog.qml:114
 #, kde-format
 msgid "New File"
@@ -751,11 +727,6 @@ msgstr "Preview"
 msgid "Find Tab"
 msgstr "Find Tab"
 
-#: src/widgets/views/ShortcutsDialog.qml:169
-#, kde-format
-msgid "Select All"
-msgstr "Select All"
-
 #: src/widgets/views/TagsSection.qml:22
 #, kde-format
 msgid "Tagged files for quick access"
@@ -765,6 +736,33 @@ msgstr "Tagged files for quick access"
 #, kde-format
 msgid "Follows the system color scheme."
 msgstr ""
+
+#~ msgid "Forward"
+#~ msgstr "Forward"
+
+#~ msgid "Search"
+#~ msgstr "Search"
+
+#~ msgid "New"
+#~ msgstr "New"
+
+#~ msgid "Select all"
+#~ msgstr "Select all"
+
+#~ msgid "Go to"
+#~ msgstr "Go to"
+
+#~ msgid "View"
+#~ msgstr "View"
+
+#~ msgid "Sort by"
+#~ msgstr "Sort by"
+
+#~ msgid "Action Bar"
+#~ msgstr "Action Bar"
+
+#~ msgid "Extra toolbar with quick actions."
+#~ msgstr "Extra toolbar with quick actions."
 
 #~ msgid "Collections"
 #~ msgstr "Collections"
@@ -786,9 +784,6 @@ msgstr ""
 
 #~ msgid "Screenshots"
 #~ msgstr "Screenshots"
-
-#~ msgid "Split View"
-#~ msgstr "Split View"
 
 #~ msgid "Embedded Terminal"
 #~ msgstr "Embedded Terminal"
