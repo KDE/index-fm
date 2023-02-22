@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:58+0000\n"
+"POT-Creation-Date: 2023-02-22 00:57+0000\n"
 "PO-Revision-Date: 2023-02-12 09:52+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -489,7 +489,7 @@ msgid "Your most recent image files"
 msgstr "Twoje ostatnie pliki obrazów"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:202
 #, kde-format
 msgid "Places"
 msgstr "Miejsca"
@@ -617,65 +617,65 @@ msgstr "Przegląd"
 msgid "Use overview mode as default on launch"
 msgstr "Użyj trybu przeglądu jako domyślnego po uruchomieniu"
 
-#: src/widgets/views/SettingsDialog.qml:170
+#: src/widgets/views/SettingsDialog.qml:164
 #, kde-format
 msgid "Dark Mode"
 msgstr "Tryb ciemny"
 
-#: src/widgets/views/SettingsDialog.qml:171
+#: src/widgets/views/SettingsDialog.qml:165
 #, kde-format
 msgid "Switch between light and dark colorscheme"
 msgstr "Przełącz pomiędzy trybem jasnym i ciemnym"
 
-#: src/widgets/views/SettingsDialog.qml:188
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/SettingsDialog.qml:182
+#: src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Quick places"
 msgstr "Szybkie miejsca"
 
-#: src/widgets/views/SettingsDialog.qml:189
-#: src/widgets/views/SettingsDialog.qml:214
-#: src/widgets/views/SettingsDialog.qml:227
+#: src/widgets/views/SettingsDialog.qml:183
+#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:221
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Dostęp do miejsc zwyczajnych."
 
-#: src/widgets/views/SettingsDialog.qml:209
+#: src/widgets/views/SettingsDialog.qml:203
 #, kde-format
 msgid "Toggle sidebar sections."
 msgstr "Przełącz obszary paska bocznego."
 
-#: src/widgets/views/SettingsDialog.qml:226
+#: src/widgets/views/SettingsDialog.qml:220
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zakładki"
 
-#: src/widgets/views/SettingsDialog.qml:242
+#: src/widgets/views/SettingsDialog.qml:236
 #, kde-format
 msgid "Remote"
 msgstr "Zdalne"
 
-#: src/widgets/views/SettingsDialog.qml:243
+#: src/widgets/views/SettingsDialog.qml:237
 #, kde-format
 msgid "Access to network locations."
 msgstr "Dostęp do miejsc sieciowych."
 
-#: src/widgets/views/SettingsDialog.qml:259
+#: src/widgets/views/SettingsDialog.qml:253
 #, kde-format
 msgid "Removable"
 msgstr "Wymienny"
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:254
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Dostęp do nośników USB i kart SD."
 
-#: src/widgets/views/SettingsDialog.qml:275
+#: src/widgets/views/SettingsDialog.qml:269
 #, kde-format
 msgid "Devices"
 msgstr "Urządzenia"
 
-#: src/widgets/views/SettingsDialog.qml:276
+#: src/widgets/views/SettingsDialog.qml:270
 #, kde-format
 msgid "Access drives."
 msgstr "Dostęp do napędów."

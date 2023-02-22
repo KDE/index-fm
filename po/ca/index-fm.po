@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:58+0000\n"
-"PO-Revision-Date: 2023-02-18 11:01+0100\n"
+"POT-Creation-Date: 2023-02-22 00:57+0000\n"
+"PO-Revision-Date: 2023-02-21 09:17+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -113,10 +113,9 @@ msgid "Select All"
 msgstr "Selecciona-ho tot"
 
 #: src/main.qml:360
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Pestanya nova"
+msgstr "Element nou"
 
 #: src/main.qml:370 src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -130,20 +129,17 @@ msgid "New tab"
 msgstr "Pestanya nova"
 
 #: src/main.qml:386
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Oculta"
+msgstr "Mostra els ocults"
 
 #: src/main.qml:394
-#, fuzzy, kde-format
-#| msgid "Split"
+#, kde-format
 msgid "Split View"
-msgstr "Divideix"
+msgstr "Divideix la vista"
 
 #: src/main.qml:405
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Obre un terminal aquí"
 
@@ -492,7 +488,7 @@ msgid "Your most recent image files"
 msgstr "Els fitxers d'imatge més recents"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:202
 #, kde-format
 msgid "Places"
 msgstr "Llocs"
@@ -620,65 +616,65 @@ msgstr "Resum"
 msgid "Use overview mode as default on launch"
 msgstr "Usa el mode de resum com a predeterminat durant el llançament"
 
-#: src/widgets/views/SettingsDialog.qml:170
+#: src/widgets/views/SettingsDialog.qml:164
 #, kde-format
 msgid "Dark Mode"
 msgstr "Mode fosc"
 
-#: src/widgets/views/SettingsDialog.qml:171
+#: src/widgets/views/SettingsDialog.qml:165
 #, kde-format
 msgid "Switch between light and dark colorscheme"
 msgstr "Alterna entre els esquemes de color clar i fosc"
 
-#: src/widgets/views/SettingsDialog.qml:188
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/SettingsDialog.qml:182
+#: src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Quick places"
 msgstr "Llocs ràpids"
 
-#: src/widgets/views/SettingsDialog.qml:189
-#: src/widgets/views/SettingsDialog.qml:214
-#: src/widgets/views/SettingsDialog.qml:227
+#: src/widgets/views/SettingsDialog.qml:183
+#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:221
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Accés a les ubicacions estàndard."
 
-#: src/widgets/views/SettingsDialog.qml:209
+#: src/widgets/views/SettingsDialog.qml:203
 #, kde-format
 msgid "Toggle sidebar sections."
 msgstr "Mostra o oculta les seccions de la barra lateral."
 
-#: src/widgets/views/SettingsDialog.qml:226
+#: src/widgets/views/SettingsDialog.qml:220
 #, kde-format
 msgid "Bookmarks"
 msgstr "Adreces d'interès"
 
-#: src/widgets/views/SettingsDialog.qml:242
+#: src/widgets/views/SettingsDialog.qml:236
 #, kde-format
 msgid "Remote"
 msgstr "Remot"
 
-#: src/widgets/views/SettingsDialog.qml:243
+#: src/widgets/views/SettingsDialog.qml:237
 #, kde-format
 msgid "Access to network locations."
 msgstr "Accés a les ubicacions de xarxa."
 
-#: src/widgets/views/SettingsDialog.qml:259
+#: src/widgets/views/SettingsDialog.qml:253
 #, kde-format
 msgid "Removable"
 msgstr "Extraïble"
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:254
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Accés a memòries USB i targetes SD."
 
-#: src/widgets/views/SettingsDialog.qml:275
+#: src/widgets/views/SettingsDialog.qml:269
 #, kde-format
 msgid "Devices"
 msgstr "Dispositius"
 
-#: src/widgets/views/SettingsDialog.qml:276
+#: src/widgets/views/SettingsDialog.qml:270
 #, kde-format
 msgid "Access drives."
 msgstr "Accés a unitats."
@@ -737,30 +733,3 @@ msgstr "Fitxers etiquetats per a un accés ràpid"
 #, kde-format
 msgid "Follows the system color scheme."
 msgstr "Segueix l'esquema de colors del sistema."
-
-#~ msgid "Forward"
-#~ msgstr "Endavant"
-
-#~ msgid "Search"
-#~ msgstr "Cerca"
-
-#~ msgid "New"
-#~ msgstr "Nova"
-
-#~ msgid "Select all"
-#~ msgstr "Selecciona-ho tot"
-
-#~ msgid "Go to"
-#~ msgstr "Ves a"
-
-#~ msgid "View"
-#~ msgstr "Vista"
-
-#~ msgid "Sort by"
-#~ msgstr "Ordena per"
-
-#~ msgid "Action Bar"
-#~ msgstr "Barra d'accions"
-
-#~ msgid "Extra toolbar with quick actions."
-#~ msgstr "Barra d'eines extra amb accions ràpides."

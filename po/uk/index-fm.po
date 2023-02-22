@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:58+0000\n"
-"PO-Revision-Date: 2023-02-18 09:01+0200\n"
+"POT-Creation-Date: 2023-02-22 00:57+0000\n"
+"PO-Revision-Date: 2023-02-21 07:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -115,10 +115,9 @@ msgid "Select All"
 msgstr "Позначити все"
 
 #: src/main.qml:360
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Створити вкладку"
+msgstr "Створити запис"
 
 #: src/main.qml:370 src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -132,10 +131,9 @@ msgid "New tab"
 msgstr "Створити вкладку"
 
 #: src/main.qml:386
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Прихований"
+msgstr "Переглянути приховані"
 
 #: src/main.qml:394
 #, kde-format
@@ -143,8 +141,7 @@ msgid "Split View"
 msgstr "Розділити перегляд"
 
 #: src/main.qml:405
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Відкрити термінал тут"
 
@@ -491,7 +488,7 @@ msgid "Your most recent image files"
 msgstr "Ваші найсвіжіші файли зображень"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:202
 #, kde-format
 msgid "Places"
 msgstr "Місця"
@@ -620,65 +617,65 @@ msgstr "Огляд"
 msgid "Use overview mode as default on launch"
 msgstr "Використовувати режим огляду як типовий після запуску"
 
-#: src/widgets/views/SettingsDialog.qml:170
+#: src/widgets/views/SettingsDialog.qml:164
 #, kde-format
 msgid "Dark Mode"
 msgstr "Темний режим"
 
-#: src/widgets/views/SettingsDialog.qml:171
+#: src/widgets/views/SettingsDialog.qml:165
 #, kde-format
 msgid "Switch between light and dark colorscheme"
 msgstr "Перемкнутися між світлою і темною схемою кольорів"
 
-#: src/widgets/views/SettingsDialog.qml:188
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/SettingsDialog.qml:182
+#: src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Quick places"
 msgstr "Швидкий доступ"
 
-#: src/widgets/views/SettingsDialog.qml:189
-#: src/widgets/views/SettingsDialog.qml:214
-#: src/widgets/views/SettingsDialog.qml:227
+#: src/widgets/views/SettingsDialog.qml:183
+#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:221
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Доступ до стандартних місць."
 
-#: src/widgets/views/SettingsDialog.qml:209
+#: src/widgets/views/SettingsDialog.qml:203
 #, kde-format
 msgid "Toggle sidebar sections."
 msgstr "Перемикання розділів бічної панелі."
 
-#: src/widgets/views/SettingsDialog.qml:226
+#: src/widgets/views/SettingsDialog.qml:220
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: src/widgets/views/SettingsDialog.qml:242
+#: src/widgets/views/SettingsDialog.qml:236
 #, kde-format
 msgid "Remote"
 msgstr "Віддалений"
 
-#: src/widgets/views/SettingsDialog.qml:243
+#: src/widgets/views/SettingsDialog.qml:237
 #, kde-format
 msgid "Access to network locations."
 msgstr "Доступ до місць у мережі."
 
-#: src/widgets/views/SettingsDialog.qml:259
+#: src/widgets/views/SettingsDialog.qml:253
 #, kde-format
 msgid "Removable"
 msgstr "Портативний"
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:254
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Доступ до флешок USB та SD-карток."
 
-#: src/widgets/views/SettingsDialog.qml:275
+#: src/widgets/views/SettingsDialog.qml:269
 #, kde-format
 msgid "Devices"
 msgstr "Пристрої"
 
-#: src/widgets/views/SettingsDialog.qml:276
+#: src/widgets/views/SettingsDialog.qml:270
 #, kde-format
 msgid "Access drives."
 msgstr "Доступ до дисків."

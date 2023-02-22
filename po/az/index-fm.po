@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 00:58+0000\n"
+"POT-Creation-Date: 2023-02-22 00:57+0000\n"
 "PO-Revision-Date: 2022-10-18 12:25+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -490,7 +490,7 @@ msgid "Your most recent image files"
 msgstr "Ən son yüklənmiş fayllarınız, audiolarınız və şəkilləriniz"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:202
 #, kde-format
 msgid "Places"
 msgstr "Girişlər"
@@ -620,65 +620,65 @@ msgstr "Ümumi baxış"
 msgid "Use overview mode as default on launch"
 msgstr "Açıldıqda ilkin olaraq ümumu baxış rejimindən istifadə edin"
 
-#: src/widgets/views/SettingsDialog.qml:170
+#: src/widgets/views/SettingsDialog.qml:164
 #, kde-format
 msgid "Dark Mode"
 msgstr "Qaranlıq rejim"
 
-#: src/widgets/views/SettingsDialog.qml:171
+#: src/widgets/views/SettingsDialog.qml:165
 #, kde-format
 msgid "Switch between light and dark colorscheme"
 msgstr "İşıqlı və qaranlıq rəng sxemləri arası keçid"
 
-#: src/widgets/views/SettingsDialog.qml:188
-#: src/widgets/views/SettingsDialog.qml:213
+#: src/widgets/views/SettingsDialog.qml:182
+#: src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Quick places"
 msgstr "Cəld girişlər"
 
-#: src/widgets/views/SettingsDialog.qml:189
-#: src/widgets/views/SettingsDialog.qml:214
-#: src/widgets/views/SettingsDialog.qml:227
+#: src/widgets/views/SettingsDialog.qml:183
+#: src/widgets/views/SettingsDialog.qml:208
+#: src/widgets/views/SettingsDialog.qml:221
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Standart məkanlara giriş."
 
-#: src/widgets/views/SettingsDialog.qml:209
+#: src/widgets/views/SettingsDialog.qml:203
 #, kde-format
 msgid "Toggle sidebar sections."
 msgstr "Yan panel bölmələrinə keçid"
 
-#: src/widgets/views/SettingsDialog.qml:226
+#: src/widgets/views/SettingsDialog.qml:220
 #, kde-format
 msgid "Bookmarks"
 msgstr "Əlfəcinlər"
 
-#: src/widgets/views/SettingsDialog.qml:242
+#: src/widgets/views/SettingsDialog.qml:236
 #, kde-format
 msgid "Remote"
 msgstr "Uzaqdakı"
 
-#: src/widgets/views/SettingsDialog.qml:243
+#: src/widgets/views/SettingsDialog.qml:237
 #, kde-format
 msgid "Access to network locations."
 msgstr "Şəbəkə üzərindəki yerlərə giriş."
 
-#: src/widgets/views/SettingsDialog.qml:259
+#: src/widgets/views/SettingsDialog.qml:253
 #, kde-format
 msgid "Removable"
 msgstr "Daşınabilən"
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:254
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "USB cihazlarına və SD kartlara giriş."
 
-#: src/widgets/views/SettingsDialog.qml:275
+#: src/widgets/views/SettingsDialog.qml:269
 #, kde-format
 msgid "Devices"
 msgstr "Cihazlar"
 
-#: src/widgets/views/SettingsDialog.qml:276
+#: src/widgets/views/SettingsDialog.qml:270
 #, kde-format
 msgid "Access drives."
 msgstr "Disklərə giriş."
