@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-22 00:57+0000\n"
-"PO-Revision-Date: 2023-02-03 10:49+0100\n"
+"PO-Revision-Date: 2023-02-22 14:12+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -109,10 +109,9 @@ msgid "Select All"
 msgstr "Vybrat vše"
 
 #: src/main.qml:360
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Nová karta"
+msgstr "Nová položka"
 
 #: src/main.qml:370 src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -126,20 +125,17 @@ msgid "New tab"
 msgstr "Nová karta"
 
 #: src/main.qml:386
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Skryté"
+msgstr "Zobrazit skryté"
 
 #: src/main.qml:394
-#, fuzzy, kde-format
-#| msgid "Split"
+#, kde-format
 msgid "Split View"
-msgstr "Rozdělit"
+msgstr "Rozdělit pohled"
 
 #: src/main.qml:405
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Zde otevřít terminál"
 
@@ -729,28 +725,4 @@ msgstr ""
 #: src/widgets/views/Terminal.qml:21
 #, kde-format
 msgid "Follows the system color scheme."
-msgstr ""
-
-#~ msgid "Forward"
-#~ msgstr "Vpřed"
-
-#~ msgid "Search"
-#~ msgstr "Hledat"
-
-#~ msgid "New"
-#~ msgstr "Nový"
-
-#~ msgid "Select all"
-#~ msgstr "Vybrat vše"
-
-#~ msgid "Go to"
-#~ msgstr "Přejít na"
-
-#~ msgid "View"
-#~ msgstr "Pohled"
-
-#~ msgid "Sort by"
-#~ msgstr "Řadit dle"
-
-#~ msgid "Action Bar"
-#~ msgstr "Panel činností"
+msgstr "Následuje barevné schéma systému."

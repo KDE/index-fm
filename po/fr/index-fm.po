@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-22 00:57+0000\n"
-"PO-Revision-Date: 2023-02-19 09:11+0100\n"
+"PO-Revision-Date: 2023-02-22 10:35+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -111,10 +111,9 @@ msgid "Select All"
 msgstr "Tout sélectionner"
 
 #: src/main.qml:360
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Nouvel onglet"
+msgstr "Nouvel élément"
 
 #: src/main.qml:370 src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -128,10 +127,9 @@ msgid "New tab"
 msgstr "Nouvel onglet"
 
 #: src/main.qml:386
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Masqué"
+msgstr "Afficher les éléments masqués"
 
 #: src/main.qml:394
 #, kde-format
@@ -139,8 +137,7 @@ msgid "Split View"
 msgstr "Scinder l'affichage"
 
 #: src/main.qml:405
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Ouvrir un terminal ici"
 
