@@ -21,11 +21,6 @@ Maui.Page
 
     floatingFooter: true
 
-    headBar.forceCenterMiddleContent: root.isWide
-    altHeader: Maui.Handy.isMobile
-    showCSDControls: true
-    flickable: currentBrowser.flickable
-
     footer: Maui.SelectionBar
     {
         id: _selectionBar

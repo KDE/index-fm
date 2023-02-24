@@ -322,6 +322,10 @@ Maui.ApplicationWindow
 
                     flickable: currentBrowser.flickable
 
+                    headBar.forceCenterMiddleContent: width > 1000
+                    altHeader: Maui.Handy.isMobile
+                    showCSDControls: true
+
                     headBar.rightContent: Loader
                     {
                         id: _mainMenuLoader
@@ -443,8 +447,10 @@ Maui.ApplicationWindow
                     headBar.farLeftContent: Loader
                     {
                         asynchronous: true
+                         active: _sideBarView.sideBar.collapsed
+                         visible: active
                         sourceComponent: ToolButton
-                        {
+                        {                           
                             icon.name: _sideBarView.sideBar.visible ? "sidebar-collapse" : "sidebar-expand"
                             onClicked: _sideBarView.sideBar.toggle()
                             checked: _sideBarView.sideBar.visible
