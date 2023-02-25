@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-22 00:57+0000\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
 "PO-Revision-Date: 2023-02-21 07:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -99,84 +99,84 @@ msgstr "Видобуто"
 msgid "File was extracted"
 msgstr "Файл видобуто"
 
-#: src/main.qml:338 src/widgets/views/Browser.qml:53
+#: src/main.qml:342 src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
 
-#: src/main.qml:343
+#: src/main.qml:347
 #, kde-format
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/main.qml:353 src/widgets/views/ShortcutsDialog.qml:169
+#: src/main.qml:357 src/widgets/views/ShortcutsDialog.qml:169
 #, kde-format
 msgid "Select All"
 msgstr "Позначити все"
 
-#: src/main.qml:360
+#: src/main.qml:364
 #, kde-format
 msgid "New Item"
 msgstr "Створити запис"
 
-#: src/main.qml:370 src/widgets/views/SettingsDialog.qml:14
+#: src/main.qml:374 src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Navigation"
 msgstr "Навігація"
 
-#: src/main.qml:379
+#: src/main.qml:383
 #, kde-format
 msgid "New tab"
 msgstr "Створити вкладку"
 
-#: src/main.qml:386
+#: src/main.qml:390
 #, kde-format
 msgid "View Hidden"
 msgstr "Переглянути приховані"
 
-#: src/main.qml:394
+#: src/main.qml:398
 #, kde-format
 msgid "Split View"
 msgstr "Розділити перегляд"
 
-#: src/main.qml:405
+#: src/main.qml:409
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Відкрити термінал тут"
 
-#: src/main.qml:418 src/widgets/views/ShortcutsDialog.qml:12
+#: src/main.qml:422 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
 msgstr "Скорочення"
 
-#: src/main.qml:429
+#: src/main.qml:433
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
-#: src/main.qml:436
+#: src/main.qml:440
 #, kde-format
 msgid "About"
 msgstr "Про програму"
 
-#: src/main.qml:454
+#: src/main.qml:460
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Увімкнути/Вимкнути бічну панель"
 
-#: src/main.qml:506 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:512 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: src/main.qml:513 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:519 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in new tab"
 msgstr "Відкрити в новій вкладці"
 
-#: src/main.qml:521 src/widgets/views/FileMenu.qml:199
+#: src/main.qml:527 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
 #, kde-format
 msgid "Open in split view"
@@ -203,7 +203,7 @@ msgid "Next"
 msgstr "Далі"
 
 #: src/widgets/previewer/FilePreviewer.qml:218
-#: src/widgets/views/BrowserView.qml:121 src/widgets/views/HomeView.qml:35
+#: src/widgets/views/BrowserView.qml:116 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Відкрити"
@@ -318,7 +318,7 @@ msgstr "Назва"
 msgid "Show Folders First"
 msgstr "Показувати теки першими"
 
-#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:154
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:149
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:109
 #, kde-format
 msgid "Remove"
@@ -350,34 +350,34 @@ msgstr "Ви справді хочете вилучити цю мітку? Ск�
 msgid "Create new"
 msgstr "Створити"
 
-#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:50
+#: src/widgets/views/BrowserView.qml:83 src/widgets/views/FileMenu.qml:50
 #, kde-format
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/widgets/views/BrowserView.qml:99 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "Вирізати"
 
-#: src/widgets/views/BrowserView.qml:110 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:105 src/widgets/views/FileMenu.qml:166
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Оприлюднити"
 
-#: src/widgets/views/BrowserView.qml:132 src/widgets/views/FileMenu.qml:221
+#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:221
 #, kde-format
 msgid "Compress"
 msgstr "Стиснути"
 
-#: src/widgets/views/BrowserView.qml:144 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:139 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tags"
 msgstr "Мітки"
 
-#: src/widgets/views/BrowserView.qml:176
+#: src/widgets/views/BrowserView.qml:171
 #, kde-format
 msgid "Detach Tab"
 msgstr "Від'єднати вкладку"
