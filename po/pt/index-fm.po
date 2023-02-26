@@ -110,10 +110,9 @@ msgid "Select All"
 msgstr "Seleccionar Tudo"
 
 #: src/main.qml:364
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Nova página"
+msgstr "Novo Item"
 
 #: src/main.qml:374 src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -133,16 +132,14 @@ msgid "View Hidden"
 msgstr "Escondido"
 
 #: src/main.qml:398
-#, fuzzy, kde-format
-#| msgid "Split"
+#, kde-format
 msgid "Split View"
-msgstr "Dividir"
+msgstr "Dividir a Área"
 
 #: src/main.qml:409
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
-msgstr "Abrir aqui o terminal"
+msgstr "Abrir o Terminal Aqui"
 
 #: src/main.qml:422 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
