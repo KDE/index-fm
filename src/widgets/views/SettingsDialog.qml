@@ -17,7 +17,7 @@ Maui.SettingsDialog
         Maui.SectionItem
         {
             label1.text: i18n("Thumbnails")
-            label2.text: i18n("Show previews of images, videos and PDF files")
+            label2.text: i18n("Show previews of images, videos and PDF files.")
 
             Switch
             {
@@ -31,7 +31,7 @@ Maui.SettingsDialog
         Maui.SectionItem
         {
             label1.text:  i18n("Save Session")
-            label2.text: i18n("Save and restore tabs")
+            label2.text: i18n("Save and restore tabs.")
 
             Switch
             {
@@ -148,7 +148,7 @@ Maui.SettingsDialog
         Maui.SectionItem
         {
             label1.text: i18n("Overview")
-            label2.text: i18n("Use overview mode as default on launch")
+            label2.text: i18n("Use overview mode as default on launch.")
 
             Switch
             {
@@ -162,7 +162,7 @@ Maui.SettingsDialog
         {
             visible: Maui.Handy.isAndroid
             label1.text: i18n("Dark Mode")
-            label2.text: i18n("Switch between light and dark colorscheme")
+            label2.text: i18n("Switch between light and dark colorscheme.")
 
             Switch
             {

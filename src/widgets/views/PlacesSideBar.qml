@@ -88,7 +88,7 @@ Loader
 
             MenuItem
             {
-                text: i18n("Open in new tab")
+                text: i18n("Open in New Tab")
                 icon.name: "tab-new"
                 onTriggered: openTab(_menu.path)
             }
@@ -96,7 +96,7 @@ Loader
             MenuItem
             {
                 visible: root.currentTab.count === 1
-                text: i18n("Open in split view")
+                text: i18n("Open in Split View")
                 icon.name: "view-split-left-right"
                 onTriggered: currentTab.split(_menu.path, Qt.Horizontal)
             }

@@ -120,7 +120,7 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: !control.isExec
-        text: i18n("Preview and info")
+        text: i18n("Preview and Info")
         icon.name: "view-preview"
         onTriggered:
         {
@@ -188,7 +188,7 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: control.isDir
-        text: i18n("Open in new tab")
+        text: i18n("Open in New Tab")
         icon.name: "tab-new"
         onTriggered: root.openTab(control.item.path)
     }
@@ -196,7 +196,7 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: control.isDir && root.currentTab.count === 1
-        text: i18n("Open in split view")
+        text: i18n("Open in Split View")
         icon.name: "view-split-left-right"
         onTriggered: root.currentTab.split(control.item.path, Qt.Horizontal)
     }
