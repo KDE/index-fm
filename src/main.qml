@@ -60,7 +60,7 @@ Maui.ApplicationWindow
         property int listSize : 0 // s-m-l-x-xl
         property int gridSize : 3 // s-m-l-x-xl
 
-        property var lastSession : [[({'path': FB.FM.homePath(), 'viewType': 1})]]
+        property var lastSession : [[({'path': FB.FM.homePath()})]]
         property int lastTabIndex : 0
         property bool quickSidebarSection : true
         property var sidebarSections : [
@@ -71,6 +71,8 @@ Maui.ApplicationWindow
         property bool darkMode: Maui.Style.styleType === Maui.Style.Dark
 
         property alias sideBarWidth : _sideBarView.sideBar.preferredWidth
+
+        property bool dirConf : true
     }
 
     Settings
@@ -96,10 +98,10 @@ Maui.ApplicationWindow
             for(var j = 0; j < tab.model.count; j++)
             {
                 const browser = tab.model.get(j)
-                const tabMap = {'path': browser.currentPath, 'viewType': browser.settings.viewType}
+                const tabMap = {'path': browser.currentPath}
                 tabPaths.push(tabMap)
 
-                console.log("saving tabs", browser.currentPath, browser.settings.viewType)
+                console.log("saving tabs", browser.currentPath)
 
             }
 

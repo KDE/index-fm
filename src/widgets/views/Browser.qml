@@ -23,11 +23,8 @@ Maui.SplitViewItem
     property alias currentPath: _browser.currentPath
     property alias settings : _browser.settings
     property alias title : _browser.title
-    //    property alias dirConf : _dirConf
 
-    //    property alias viewType : _dirConf.viewType
-
-    property bool terminalVisible : false
+    property alias terminalVisible : _dirConf.terminalVisible
     readonly property bool supportsTerminal : terminalLoader.item
 
     onCurrentPathChanged:
@@ -102,6 +99,9 @@ Maui.SplitViewItem
         {
             id: _browser
 
+            property alias viewType : _dirConf.viewType
+            property alias sortBy : _dirConf.sortKey
+
             SplitView.fillWidth: true
             SplitView.fillHeight: true
 
@@ -136,16 +136,21 @@ Maui.SplitViewItem
 
             settings.showHiddenFiles: appSettings.showHiddenFiles
             settings.showThumbnails: appSettings.showThumbnails
-//            settings.foldersFirst: sortSettings.foldersFirst
-//            settings.sortBy: sortSettings.sortBy
-//            settings.group: sortSettings.group
-            settings.viewType: appSettings.viewType
+                        settings.foldersFirst: sortSettings.foldersFirst
+                        settings.group: sortSettings.group
 
-            //            Index.FolderConfig
-            //            {
-            //                id:  _dirConf
-            //                path: control.currentPath
-            //            }
+            settings.sortBy:  _dirConf.sortKey
+            settings.viewType: _dirConf.viewType
+
+            Index.FolderConfig
+            {
+                id:  _dirConf
+                path: control.currentPath
+                enabled: appSettings.dirConf
+                fallbackSortKey: sortSettings.sortBy
+                fallbackViewType: appSettings.viewType
+            }
+
 
             browser.holder.actions: [
                 Action
@@ -227,7 +232,7 @@ Maui.SplitViewItem
             {
                 const item = currentFMModel.get(index)
 
-//                handleSelectionState(item)
+                //                handleSelectionState(item)
 
                 if(Maui.Handy.singleClick)
                 {
@@ -244,7 +249,7 @@ Maui.SplitViewItem
             onItemDoubleClicked:
             {
                 const item = currentFMModel.get(index)
-//                handleSelectionState(item)
+                //                handleSelectionState(item)
 
                 if(!Maui.Handy.singleClick)
                 {
@@ -262,7 +267,7 @@ Maui.SplitViewItem
             {
                 const itemIndex = _browser.currentFMModel.mappedToSource(index)
                 const item = _browser.currentFMModel.get(index)
-//                handleSelectionState(item)
+                //                handleSelectionState(item)
 
                 if(item.path.startsWith("tags://"))
                 {
@@ -281,13 +286,13 @@ Maui.SplitViewItem
                 _mainMenuLoader.item.open()
             }
 
-//            onAreaClicked:
-//            {
-//                if((mouse.button === Qt.LeftButton) && (mouse.modifiers === Qt.NoModifier) && (!Maui.Handy.isMobile))
-//                {
-//                    handleSelectionState()
-//                }
-//            }
+            //            onAreaClicked:
+            //            {
+            //                if((mouse.button === Qt.LeftButton) && (mouse.modifiers === Qt.NoModifier) && (!Maui.Handy.isMobile))
+            //                {
+            //                    handleSelectionState()
+            //                }
+            //            }
 
         }
 
@@ -303,6 +308,7 @@ Maui.SplitViewItem
             active: Maui.Handy.isLinux
             source: "Terminal.qml"
 
+            onLoaded: syncTerminal(control.currentPath)
             onVisibleChanged:
             {
                 syncTerminal(control.currentPath)
@@ -317,7 +323,7 @@ Maui.SplitViewItem
     Component.onCompleted:
     {
         //set these values in here to avoid global binding them, so each view can have different sorting settings
-        settings.sortBy = sortSettings.sortBy
+//        settings.sortBy = sortSettings.sortBy
         settings.foldersFirst = sortSettings.foldersFirst
         settings.group = sortSettings.group
 

@@ -21,7 +21,6 @@ Maui.SettingsDialog
 
             Switch
             {
-                Layout.fillHeight: true
                 checkable: true
                 checked:  settings.showThumbnails
                 onToggled: settings.showThumbnails = ! settings.showThumbnails
@@ -35,12 +34,157 @@ Maui.SettingsDialog
 
             Switch
             {
-                Layout.fillHeight: true
                 checkable: true
                 checked:  settings.restoreSession
                 onToggled: settings.restoreSession = !settings.restoreSession
             }
         }
+
+        Maui.SectionItem
+        {
+            label1.text:  i18n("Dynamic Preferences")
+            label2.text: i18n("Save preferences per directory.")
+
+            Switch
+            {
+                checkable: true
+                checked:  settings.dirConf
+                onToggled: settings.dirConf = !settings.dirConf
+            }
+        }
+
+        Maui.SectionItem
+        {
+            label1.text:  i18n("View Type")
+            label2.text: i18n("Default view type.")
+
+            Maui.ToolActions
+            {
+                autoExclusive: true
+                expanded: true
+                display: ToolButton.IconOnly
+
+                Action
+                {
+                    text: i18n("List")
+                    icon.name: "view-list-details"
+                    checked: appSettings.viewType === FB.FMList.LIST_VIEW
+                    checkable: true
+                    onTriggered:
+                    {
+                        appSettings.viewType = FB.FMList.LIST_VIEW
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Grid")
+                    icon.name: "view-list-icons"
+                    checked:  appSettings.viewType === FB.FMList.ICON_VIEW
+                    checkable: true
+
+                    onTriggered:
+                    {
+                        appSettings.viewType = FB.FMList.ICON_VIEW
+                    }
+                }
+            }
+        }
+
+        Maui.SectionItem
+        {
+            label1.text:  i18n("Sort")
+            label2.text: i18n("Default sorting value.")
+
+            Maui.ToolButtonMenu
+            {
+                icon.name: "view-sort"
+
+                Action
+                {
+                    text: i18n("Type")
+                    checked: sortSettings.sortBy === FB.FMList.MIME
+                    checkable: true
+
+                    onTriggered:
+                    {
+                        sortSettings.sortBy = FB.FMList.MIME
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Date")
+                    checked: sortSettings.sortBy === FB.FMList.DATE
+                    checkable: true
+                    onTriggered:
+                    {
+                        sortSettings.sortBy = FB.FMList.DATE
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Modified")
+                    checked: sortSettings.sortBy === FB.FMList.MODIFIED
+                    checkable: true
+                    onTriggered:
+                    {
+                        sortSettings.sortBy = FB.FMList.MODIFIED
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Size")
+                    checked: sortSettings.sortBy === FB.FMList.SIZE
+                    checkable: true
+                    onTriggered:
+                    {
+                        sortSettings.sortBy = FB.FMList.SIZE
+                    }
+                }
+
+                Action
+                {
+                    text: i18n("Name")
+                    checked:  sortSettings.sortBy === FB.FMList.LABEL
+                    checkable: true
+                    onTriggered:
+                    {
+                        sortSettings.sortBy = FB.FMList.LABEL
+                    }
+                }
+
+                MenuSeparator{}
+
+                MenuItem
+                {
+                    text: i18n("Show Folders First")
+                    checked:   sortSettings.foldersFirst
+                    checkable: true
+
+                    onTriggered:
+                    {
+                    sortSettings.foldersFirst =  !sortSettings.foldersFirst
+
+                    }
+                }
+
+                MenuItem
+                {
+                    id: groupAction
+                    text: i18n("Group")
+                    checkable: true
+                    checked: sortSettings.group
+                    onTriggered:
+                    {
+                        sortSettings.group = !sortSettings.group
+                    }
+                }
+            }
+        }
+
     }
 
     Maui.SectionGroup
@@ -152,7 +296,6 @@ Maui.SettingsDialog
 
             Switch
             {
-                Layout.fillHeight: true
                 checked:  appSettings.overviewStart
                 onToggled: appSettings.overviewStart = !appSettings.overviewStart
             }
@@ -166,7 +309,6 @@ Maui.SettingsDialog
 
             Switch
             {
-                Layout.fillHeight: true
                 checked: appSettings.darkMode
                 onToggled:
                 {

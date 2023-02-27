@@ -1,32 +1,20 @@
 #include "folderconfig.h"
-
-#if(defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
-#include <KConfig>
-#else
 #include <QSettings>
-#endif
 
 #include <QDebug>
 
 FolderConfig::FolderConfig(QObject *parent) : QObject(parent)
+  ,m_settings(nullptr)
 {      
-    connect(this, &FolderConfig::pathChanged, [this](QUrl path)
+
+}
+
+FolderConfig::~FolderConfig()
+{
+    if(m_settings)
     {
-        const auto conf = dirConf(path.toString()+"/.directory");
-
-        if(conf.isEmpty())
-        {
-            return;
-        }
-
-        this->m_terminalVisible = conf[FMH::MODEL_NAME[FMH::MODEL_KEY::SHOWTERMINAL]].toBool();
-        this->m_sortKey = static_cast<FMList::SORTBY>(conf[FMH::MODEL_NAME[FMH::MODEL_KEY::SORTBY]].toInt());
-        this->m_viewType = static_cast<FMList::VIEW_TYPE>(conf[FMH::MODEL_NAME[FMH::MODEL_KEY::VIEWTYPE]].toInt());
-
-        emit terminalVisibleChanged();
-        emit sortKeyChanged();
-        emit viewTypeChanged(m_viewType);
-    });
+        m_settings->deleteLater();
+    }
 }
 
 void FolderConfig::setSortKey(const FMList::SORTBY &value)
@@ -38,7 +26,11 @@ void FolderConfig::setSortKey(const FMList::SORTBY &value)
 
     m_sortKey = value;
     emit sortKeyChanged();
-    FMStatic::setDirConf(m_path.toString() + "/.directory", "MAUIFM", "SortBy", this->m_sortKey);
+
+    if(m_enabled)
+    {
+        setDirConf("SortBy", this->m_sortKey);
+    }
 }
 
 FMList::SORTBY FolderConfig::sortKey() const
@@ -56,7 +48,10 @@ void FolderConfig::setTerminalVisible(const bool &value)
     m_terminalVisible = value;
     emit terminalVisibleChanged();
 
-    FMStatic::setDirConf(m_path.toString() + "/.directory", "MAUIFM", "ShowTerminal", this->m_terminalVisible);
+    if(m_enabled)
+    {
+        setDirConf("ShowTerminal", this->m_terminalVisible);
+    }
 }
 
 bool FolderConfig::terminalVisible() const
@@ -83,6 +78,16 @@ FMList::VIEW_TYPE FolderConfig::viewType() const
     return m_viewType;
 }
 
+FMList::SORTBY FolderConfig::fallbackSortKey() const
+{
+    return m_fallbackSortKey;
+}
+
+FMList::VIEW_TYPE FolderConfig::fallbackViewType() const
+{
+    return m_fallbackViewType;
+}
+
 void FolderConfig::setViewType(FMList::VIEW_TYPE viewType)
 {
     if (m_viewType == viewType)
@@ -91,51 +96,145 @@ void FolderConfig::setViewType(FMList::VIEW_TYPE viewType)
     m_viewType = viewType;
     emit viewTypeChanged(m_viewType);
 
-    FMStatic::setDirConf(m_path.toString() + "/.directory", "MAUIFM", "ViewType", this->m_viewType);
+    if(m_enabled)
+    {
+        setDirConf( "ViewType", this->m_viewType);
+    }
 }
 
-const QVariantMap FolderConfig::dirConf(const QUrl &path)
+void FolderConfig::setFallbackSortKey(FMList::SORTBY fallbackSortKey)
 {
-    if (!path.isLocalFile()) {
-        qWarning() << "URL recived is not a local file" << path;
-        return QVariantMap();
+    if (m_fallbackSortKey == fallbackSortKey)
+        return;
+
+    m_fallbackSortKey = fallbackSortKey;
+    emit fallbackSortKeyChanged();
+}
+
+void FolderConfig::setFallbackViewType(FMList::VIEW_TYPE fallbackViewType)
+{
+    if (m_fallbackViewType == fallbackViewType)
+        return;
+
+    m_fallbackViewType = fallbackViewType;
+    emit fallbackViewTypeChanged();
+}
+
+void FolderConfig::setEnabled(bool enabled)
+{
+    if (m_enabled == enabled)
+        return;
+
+    m_enabled = enabled;
+    emit enabledChanged();
+}
+
+void FolderConfig::setDirConf(const QString &key, const QVariant &value)
+{
+    if(!m_settings)
+        return;
+    qDebug() << "Setting dir conf" << key, value;
+    m_settings->beginGroup("Index");
+    m_settings->setValue(key, value);
+    m_settings->endGroup();
+    m_settings->sync();
+}
+
+void FolderConfig::setValues()
+{
+    if(!m_enabled)
+        return;
+
+    if (!m_path.isValid() || !m_path.isLocalFile() || !FMH::fileExists(m_path))
+    {
+        qWarning() << "URL recived is not a local file" << m_path;
+        return;
     }
 
-    if (!FMH::fileExists(path))
-        return QVariantMap();
+    bool showterminal = false;
+    uint sortby = m_fallbackSortKey;
+    uint viewType = m_fallbackViewType;
 
-    QString showterminal;
-    uint sortby = FMList::SORTBY::MODIFIED;
-    uint viewType = FMList::VIEW_TYPE::ICON_VIEW;
+    auto configUrl = QUrl(m_path.toString()+"/.directory");
+     m_settings = new QSettings(configUrl.toLocalFile(), QSettings::Format::IniFormat);
 
-#if defined Q_OS_ANDROID || defined Q_OS_WIN || defined Q_OS_MACOS || defined Q_OS_IOS
-    QSettings file(path.toLocalFile(), QSettings::Format::NativeFormat);
+    if (FMH::fileExists(configUrl) && configUrl.isLocalFile())
+    {
+        m_settings->beginGroup("Index");
 
-    file.beginGroup(QString("MAUIFM"));
-    showterminal = file.value("ShowTerminal").toString();
+        showterminal = m_settings->value("ShowTerminal", false).toBool();
+        sortby= m_settings->value("SortBy", m_fallbackSortKey).toUInt();
+        viewType = m_settings->value("ViewType", m_fallbackViewType).toUInt();
+        m_settings->endGroup();
+    }
 
-    const auto sortValue = file.value("SortBy");
-    sortby = sortValue.isValid() ? sortValue.toInt() : m_sortKey;
+    this->m_terminalVisible = showterminal;
+    this->m_sortKey = static_cast<FMList::SORTBY>(sortby);
+    this->m_viewType = static_cast<FMList::VIEW_TYPE>(viewType);
 
-    const auto viewTypeValue = file.value("ViewType");
-    sortby = viewTypeValue.isValid() ? viewTypeValue.toInt() : m_viewType;
+    Q_EMIT terminalVisibleChanged();
+    Q_EMIT sortKeyChanged();
+    Q_EMIT viewTypeChanged(m_viewType);
+}
 
-    file.endGroup();
-#else
-    KConfig file(path.toLocalFile());
-    showterminal = file.entryMap(QString("MAUIFM")).value("ShowTerminal");
+void FolderConfig::resetToFallbackValues()
+{
+    this->m_terminalVisible = false;
+    this->m_sortKey = m_fallbackSortKey;
+    this->m_viewType = m_fallbackViewType;
 
-    const auto sortValue = file.entryMap(QString("MAUIFM")).value("SortBy");
-    sortby = !sortValue.isEmpty() ? sortValue.toInt() : FMList::SORTBY::LABEL;
+    Q_EMIT terminalVisibleChanged();
+    Q_EMIT sortKeyChanged();
+    Q_EMIT viewTypeChanged(m_viewType);
+}
 
-    const auto viewTypeValue =  file.entryMap(QString("MAUIFM")).value("ViewType");
-    viewType = !viewTypeValue.isEmpty() ? viewTypeValue.toInt() : FMList::VIEW_TYPE::ICON_VIEW;
+void FolderConfig::classBegin()
+{
+}
 
-#endif
+void FolderConfig::componentComplete()
+{
+    m_sortKey = m_fallbackSortKey;
+    m_viewType = m_fallbackViewType;
 
-    return QVariantMap({
-                           {FMH::MODEL_NAME[FMH::MODEL_KEY::SHOWTERMINAL], showterminal.isEmpty() ? "false" : showterminal},
-                           {FMH::MODEL_NAME[FMH::MODEL_KEY::VIEWTYPE], viewType},
-                        {FMH::MODEL_NAME[FMH::MODEL_KEY::SORTBY], sortby}});
+    connect(this, &FolderConfig::pathChanged, [this](QUrl)
+    {
+        setValues();
+    });
 
+    connect(this, &FolderConfig::fallbackViewTypeChanged, [this]()
+    {
+        if(!m_enabled)
+        {
+            this->m_viewType = m_fallbackViewType;
+            Q_EMIT viewTypeChanged(m_viewType);
+        }
+    });
+
+    connect(this, &FolderConfig::fallbackSortKeyChanged, [this]()
+    {
+        if(!m_enabled)
+        {
+            this->m_sortKey = m_fallbackSortKey;
+            Q_EMIT sortKeyChanged();
+        }
+    });
+
+    connect(this, &FolderConfig::enabledChanged, [this]()
+    {
+        if(!m_enabled)
+        {
+            resetToFallbackValues();
+        }else
+        {
+            setValues();
+        }
+    });
+
+    setValues();
+}
+
+bool FolderConfig::enabled() const
+{
+    return m_enabled;
 }

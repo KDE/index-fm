@@ -43,16 +43,14 @@ Maui.ToolBar
             {
                 text: i18n("List")
                 icon.name: "view-list-details"
-                checked: currentBrowser.settings.viewType === FB.FMList.LIST_VIEW
+                checked: currentBrowser.viewType === FB.FMList.LIST_VIEW
                 checkable: true
                 onTriggered:
                 {
                     if(currentBrowser)
                     {
-                        currentBrowser.settings.viewType = FB.FMList.LIST_VIEW
+                        currentBrowser.viewType = FB.FMList.LIST_VIEW
                     }
-
-                    settings.viewType = FB.FMList.LIST_VIEW
                 }
             }
 
@@ -60,17 +58,15 @@ Maui.ToolBar
             {
                 text: i18n("Grid")
                 icon.name: "view-list-icons"
-                checked:  currentBrowser.settings.viewType === FB.FMList.ICON_VIEW
+                checked:  currentBrowser.viewType === FB.FMList.ICON_VIEW
                 checkable: true
 
                 onTriggered:
                 {
                     if(currentBrowser)
                     {
-                        currentBrowser.settings.viewType = FB.FMList.ICON_VIEW
+                        currentBrowser.viewType = FB.FMList.ICON_VIEW
                     }
-
-                    settings.viewType = FB.FMList.ICON_VIEW
                 }
             }
         }
@@ -107,91 +103,58 @@ Maui.ToolBar
                 Action
                 {
                     text: i18n("Type")
-                    checked: currentBrowser.settings.sortBy === FB.FMList.MIME
+                    checked: currentBrowser.sortBy === FB.FMList.MIME
                     checkable: true
 
                     onTriggered:
                     {
-                        currentBrowser.settings.sortBy = FB.FMList.MIME
-                        sortSettings.sortBy = FB.FMList.MIME
+                        currentBrowser.sortBy = FB.FMList.MIME
                     }
                 }
 
                 Action
                 {
                     text: i18n("Date")
-                    checked: currentBrowser.settings.sortBy === FB.FMList.DATE
+                    checked: currentBrowser.sortBy === FB.FMList.DATE
                     checkable: true
                     onTriggered:
                     {
-                        currentBrowser.settings.sortBy = FB.FMList.DATE
-                        sortSettings.sortBy = FB.FMList.DATE
+                        currentBrowser.sortBy = FB.FMList.DATE
                     }
                 }
 
                 Action
                 {
                     text: i18n("Modified")
-                    checked: currentBrowser.settings.sortBy === FB.FMList.MODIFIED
+                    checked: currentBrowser.sortBy === FB.FMList.MODIFIED
                     checkable: true
                     onTriggered:
                     {
-                        currentBrowser.settings.sortBy = FB.FMList.MODIFIED
-                        sortSettings.sortBy = FB.FMList.MODIFIED
+                        currentBrowser.sortBy = FB.FMList.MODIFIED
                     }
                 }
 
                 Action
                 {
                     text: i18n("Size")
-                    checked: currentBrowser.settings.sortBy === FB.FMList.SIZE
+                    checked: currentBrowser.sortBy === FB.FMList.SIZE
                     checkable: true
                     onTriggered:
                     {
-                        currentBrowser.settings.sortBy = FB.FMList.SIZE
-                        sortSettings.sortBy = FB.FMList.SIZE
+                        currentBrowser.sortBy = FB.FMList.SIZE
                     }
                 }
 
                 Action
                 {
                     text: i18n("Name")
-                    checked:  currentBrowser.settings.sortBy === FB.FMList.LABEL
+                    checked:  currentBrowser.sortBy === FB.FMList.LABEL
                     checkable: true
                     onTriggered:
                     {
-                        currentBrowser.settings.sortBy = FB.FMList.LABEL
-                        sortSettings.sortBy = FB.FMList.LABEL
+                        currentBrowser.sortBy = FB.FMList.LABEL
                     }
-                }
-
-                MenuSeparator{}
-
-                MenuItem
-                {
-                    text: i18n("Show Folders First")
-                    checked: currentBrowser.settings.foldersFirst
-                    checkable: true
-
-                    onTriggered:
-                    {
-                        currentBrowser.settings.foldersFirst = !currentBrowser.settings.foldersFirst
-                        sortSettings.foldersFirst =  !sortSettings.foldersFirst
-                    }
-                }
-
-                MenuItem
-                {
-                    id: groupAction
-                    text: i18n("Group")
-                    checkable: true
-                    checked: currentBrowser.settings.group
-                    onTriggered:
-                    {
-                        currentBrowser.settings.group = !currentBrowser.settings.group
-                        sortSettings.group = !sortSettings.group
-                    }
-                }
+                }            
 
         }
     ]

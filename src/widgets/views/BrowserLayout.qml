@@ -60,11 +60,11 @@ Item
             return
         }
 
-        splitView.addSplit(_browserComponent, {'browser.currentPath': path, 'browser.settings.viewType': settings.viewType})
+        splitView.addSplit(_browserComponent, {'browser.currentPath': path})
 
         if(path2.toString().length > 0 && splitView.count === 1)
         {
-            splitView.addSplit(_browserComponent, {'browser.currentPath': path2, 'browser.settings.viewType': settings.viewType})
+            splitView.addSplit(_browserComponent, {'browser.currentPath': path2})
         }
     }
 
