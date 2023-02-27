@@ -450,7 +450,7 @@ Maui.ApplicationWindow
                          active: _sideBarView.sideBar.collapsed
                          visible: active
                         sourceComponent: ToolButton
-                        {                           
+                        {
                             icon.name: _sideBarView.sideBar.visible ? "sidebar-collapse" : "sidebar-expand"
                             onClicked: _sideBarView.sideBar.toggle()
                             checked: _sideBarView.sideBar.visible
@@ -617,14 +617,15 @@ Maui.ApplicationWindow
             root.openTab(path)
     }
 
-    function openTab(path)
+    function openTab(path, path2 = "")
     {
         if(path)
         {
             if(_stackView.depth === 2)
                 _stackView.pop()
 
-            _browserView.browserList.addTab(_browserComponent, {'path': path})
+
+            _browserView.browserList.addTab(_browserComponent, {'path': path, 'path2': path2}, true)
         }
     }
 
@@ -688,14 +689,13 @@ Maui.ApplicationWindow
         {
             const tab = tabs[i]
 
-            root.openTab(tab[0].path)
-            currentBrowser.settings.viewType = tab[0].viewType
-
             if(tab.length === 2)
             {
-                currentTab.split(tab[1].path, Qt.Horizontal)
-                currentBrowser.settings.viewType = tab[1].viewType
-            }
+                 root.openTab(tab[0].path, tab[1].path)
+            }else
+                {
+                     root.openTab(tab[0].path)
+                }
         }
 
         currentTabIndex = settings.lastTabIndex

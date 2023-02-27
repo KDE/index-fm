@@ -95,7 +95,7 @@ Loader
 
             MenuItem
             {
-                visible: root.currentTab.count === 1
+                enabled: root.currentTab.count === 1
                 text: i18n("Open in Split View")
                 icon.name: "view-split-left-right"
                 onTriggered: currentTab.split(_menu.path, Qt.Horizontal)

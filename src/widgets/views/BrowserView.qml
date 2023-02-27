@@ -161,7 +161,7 @@ Maui.Page
     {
         id: _browserList
         anchors.fill: parent
-
+currentIndex : -1
         onNewTabClicked: openTab(currentBrowser.currentPath)
         onCloseTabClicked: closeTab(index)
 

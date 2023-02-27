@@ -195,8 +195,9 @@ Maui.SettingsDialog
         id: _sidebarPlacesComponent
 
 
-        Maui.ScrollColumn
+        Maui.SettingsPage
         {
+            title: i18n("Places")
             Maui.SectionGroup
             {
                 title: i18n("Places")
