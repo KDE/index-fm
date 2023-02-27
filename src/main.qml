@@ -625,7 +625,7 @@ Maui.ApplicationWindow
                 _stackView.pop()
 
 
-            _browserView.browserList.addTab(_browserComponent, {'path': path, 'path2': path2}, true)
+            _browserView.browserList.addTab(_browserComponent, {'path': path, 'path2': path2}, false)
         }
     }
 
