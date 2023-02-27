@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-02-27 00:59+0000\n"
 "PO-Revision-Date: 2023-02-21 16:56+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -167,14 +167,16 @@ msgstr "Bladwijzer"
 
 #: src/main.qml:519 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, kde-format
-msgid "Open in new tab"
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgid "Open in New Tab"
 msgstr "In nieuw tabblad openen"
 
 #: src/main.qml:527 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, kde-format
-msgid "Open in split view"
+#, fuzzy, kde-format
+#| msgid "Open in split view"
+msgid "Open in Split View"
 msgstr "In gesplitste weergave openen"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
@@ -419,8 +421,9 @@ msgid "Open with"
 msgstr "Openen met"
 
 #: src/widgets/views/FileMenu.qml:123
-#, kde-format
-msgid "Preview and info"
+#, fuzzy, kde-format
+#| msgid "Preview and info"
+msgid "Preview and Info"
 msgstr "Voorbeeld en informatie"
 
 #: src/widgets/views/FileMenu.qml:137
@@ -530,8 +533,9 @@ msgid "Thumbnails"
 msgstr "Miniaturen"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files"
+#, fuzzy, kde-format
+#| msgid "Show previews of images, videos and PDF files"
+msgid "Show previews of images, videos and PDF files."
 msgstr "Voorbeelden van afbeeldingen, video's en PDF bestanden tonen"
 
 #: src/widgets/views/SettingsDialog.qml:33
@@ -540,8 +544,9 @@ msgid "Save Session"
 msgstr "Sessie opslaan"
 
 #: src/widgets/views/SettingsDialog.qml:34
-#, kde-format
-msgid "Save and restore tabs"
+#, fuzzy, kde-format
+#| msgid "Save and restore tabs"
+msgid "Save and restore tabs."
 msgstr "Tabbladen opslaan en herstellen"
 
 #: src/widgets/views/SettingsDialog.qml:48
@@ -609,8 +614,9 @@ msgid "Overview"
 msgstr "Overzicht"
 
 #: src/widgets/views/SettingsDialog.qml:151
-#, kde-format
-msgid "Use overview mode as default on launch"
+#, fuzzy, kde-format
+#| msgid "Use overview mode as default on launch"
+msgid "Use overview mode as default on launch."
 msgstr "Modus overzicht als standaard gebruiken bij starten"
 
 #: src/widgets/views/SettingsDialog.qml:164
@@ -619,8 +625,9 @@ msgid "Dark Mode"
 msgstr "Donkere modus"
 
 #: src/widgets/views/SettingsDialog.qml:165
-#, kde-format
-msgid "Switch between light and dark colorscheme"
+#, fuzzy, kde-format
+#| msgid "Switch between light and dark colorscheme"
+msgid "Switch between light and dark colorscheme."
 msgstr "Tussen licht en donker kleurenschema wisselen"
 
 #: src/widgets/views/SettingsDialog.qml:182

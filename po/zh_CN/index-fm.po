@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-02-27 00:59+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -164,14 +164,16 @@ msgstr "书签"
 
 #: src/main.qml:519 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, kde-format
-msgid "Open in new tab"
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgid "Open in New Tab"
 msgstr "在新标签页中打开"
 
 #: src/main.qml:527 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, kde-format
-msgid "Open in split view"
+#, fuzzy, kde-format
+#| msgid "Open in split view"
+msgid "Open in Split View"
 msgstr "在拆分视图中打开"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
@@ -415,8 +417,9 @@ msgid "Open with"
 msgstr "打开方式"
 
 #: src/widgets/views/FileMenu.qml:123
-#, kde-format
-msgid "Preview and info"
+#, fuzzy, kde-format
+#| msgid "Preview and info"
+msgid "Preview and Info"
 msgstr "预览图和信息"
 
 #: src/widgets/views/FileMenu.qml:137
@@ -524,8 +527,9 @@ msgid "Thumbnails"
 msgstr "缩略图"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files"
+#, fuzzy, kde-format
+#| msgid "Show previews of images, videos and PDF files"
+msgid "Show previews of images, videos and PDF files."
 msgstr "显示图像、视频和 PDF 文件的预览"
 
 #: src/widgets/views/SettingsDialog.qml:33
@@ -534,8 +538,9 @@ msgid "Save Session"
 msgstr "保存会话"
 
 #: src/widgets/views/SettingsDialog.qml:34
-#, kde-format
-msgid "Save and restore tabs"
+#, fuzzy, kde-format
+#| msgid "Save and restore tabs"
+msgid "Save and restore tabs."
 msgstr "保存和还原标签"
 
 #: src/widgets/views/SettingsDialog.qml:48
@@ -603,8 +608,9 @@ msgid "Overview"
 msgstr "概览"
 
 #: src/widgets/views/SettingsDialog.qml:151
-#, kde-format
-msgid "Use overview mode as default on launch"
+#, fuzzy, kde-format
+#| msgid "Use overview mode as default on launch"
+msgid "Use overview mode as default on launch."
 msgstr "启动时默认使用概览模式"
 
 #: src/widgets/views/SettingsDialog.qml:164
@@ -613,8 +619,9 @@ msgid "Dark Mode"
 msgstr "深色模式"
 
 #: src/widgets/views/SettingsDialog.qml:165
-#, kde-format
-msgid "Switch between light and dark colorscheme"
+#, fuzzy, kde-format
+#| msgid "Switch between light and dark colorscheme"
+msgid "Switch between light and dark colorscheme."
 msgstr "切换浅色/深色模式"
 
 #: src/widgets/views/SettingsDialog.qml:182

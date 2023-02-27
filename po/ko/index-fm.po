@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-02-27 00:59+0000\n"
 "PO-Revision-Date: 2022-07-13 15:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -169,14 +169,16 @@ msgstr "책갈피"
 
 #: src/main.qml:519 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, kde-format
-msgid "Open in new tab"
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgid "Open in New Tab"
 msgstr "새 탭으로 열기"
 
 #: src/main.qml:527 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, kde-format
-msgid "Open in split view"
+#, fuzzy, kde-format
+#| msgid "Open in split view"
+msgid "Open in Split View"
 msgstr "분할 보기로 열기"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
@@ -420,8 +422,9 @@ msgid "Open with"
 msgstr "다음으로 열기"
 
 #: src/widgets/views/FileMenu.qml:123
-#, kde-format
-msgid "Preview and info"
+#, fuzzy, kde-format
+#| msgid "Preview and info"
+msgid "Preview and Info"
 msgstr "미리 보기와 정보"
 
 #: src/widgets/views/FileMenu.qml:137
@@ -532,8 +535,9 @@ msgid "Thumbnails"
 msgstr "축소판"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files"
+#, fuzzy, kde-format
+#| msgid "Show previews of images, videos and PDF files"
+msgid "Show previews of images, videos and PDF files."
 msgstr "사진, 동영상, PDF 파일의 미리 보기 표시"
 
 #: src/widgets/views/SettingsDialog.qml:33
@@ -542,8 +546,9 @@ msgid "Save Session"
 msgstr "세션 저장"
 
 #: src/widgets/views/SettingsDialog.qml:34
-#, kde-format
-msgid "Save and restore tabs"
+#, fuzzy, kde-format
+#| msgid "Save and restore tabs"
+msgid "Save and restore tabs."
 msgstr "탭 저장하고 복원하기"
 
 #: src/widgets/views/SettingsDialog.qml:48
@@ -611,8 +616,9 @@ msgid "Overview"
 msgstr "요약"
 
 #: src/widgets/views/SettingsDialog.qml:151
-#, kde-format
-msgid "Use overview mode as default on launch"
+#, fuzzy, kde-format
+#| msgid "Use overview mode as default on launch"
+msgid "Use overview mode as default on launch."
 msgstr "실행할 때 기본값으로 요약 보기 사용"
 
 #: src/widgets/views/SettingsDialog.qml:164
@@ -621,8 +627,9 @@ msgid "Dark Mode"
 msgstr "어두운 모드"
 
 #: src/widgets/views/SettingsDialog.qml:165
-#, kde-format
-msgid "Switch between light and dark colorscheme"
+#, fuzzy, kde-format
+#| msgid "Switch between light and dark colorscheme"
+msgid "Switch between light and dark colorscheme."
 msgstr "밝은 색상과 어두운 색상 전환"
 
 #: src/widgets/views/SettingsDialog.qml:182

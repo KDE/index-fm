@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-02-27 00:59+0000\n"
 "PO-Revision-Date: 2023-02-25 09:28+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: src/main.cpp:65
@@ -170,14 +170,16 @@ msgstr "Zaznamek"
 
 #: src/main.qml:519 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, kde-format
-msgid "Open in new tab"
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
 #: src/main.qml:527 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, kde-format
-msgid "Open in split view"
+#, fuzzy, kde-format
+#| msgid "Open in split view"
+msgid "Open in Split View"
 msgstr "Odpri v deljenem pogledu"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
@@ -423,8 +425,9 @@ msgid "Open with"
 msgstr "Odpri z"
 
 #: src/widgets/views/FileMenu.qml:123
-#, kde-format
-msgid "Preview and info"
+#, fuzzy, kde-format
+#| msgid "Preview and info"
+msgid "Preview and Info"
 msgstr "Predogled in informacije"
 
 #: src/widgets/views/FileMenu.qml:137
@@ -534,8 +537,9 @@ msgid "Thumbnails"
 msgstr "Predogledne sličice"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files"
+#, fuzzy, kde-format
+#| msgid "Show previews of images, videos and PDF files"
+msgid "Show previews of images, videos and PDF files."
 msgstr "Pokaži predoglede slik, videov in datotek PDF"
 
 #: src/widgets/views/SettingsDialog.qml:33
@@ -544,8 +548,9 @@ msgid "Save Session"
 msgstr "Shrani sejo"
 
 #: src/widgets/views/SettingsDialog.qml:34
-#, kde-format
-msgid "Save and restore tabs"
+#, fuzzy, kde-format
+#| msgid "Save and restore tabs"
+msgid "Save and restore tabs."
 msgstr "Shrani in obnovi zavihke"
 
 #: src/widgets/views/SettingsDialog.qml:48
@@ -613,8 +618,9 @@ msgid "Overview"
 msgstr "Predogled"
 
 #: src/widgets/views/SettingsDialog.qml:151
-#, kde-format
-msgid "Use overview mode as default on launch"
+#, fuzzy, kde-format
+#| msgid "Use overview mode as default on launch"
+msgid "Use overview mode as default on launch."
 msgstr "Ob zagonu privzeto uporabi predogledni način"
 
 #: src/widgets/views/SettingsDialog.qml:164
@@ -623,8 +629,9 @@ msgid "Dark Mode"
 msgstr "Temni način"
 
 #: src/widgets/views/SettingsDialog.qml:165
-#, kde-format
-msgid "Switch between light and dark colorscheme"
+#, fuzzy, kde-format
+#| msgid "Switch between light and dark colorscheme"
+msgid "Switch between light and dark colorscheme."
 msgstr "Preklop med svetlo in temno barvno shemo"
 
 #: src/widgets/views/SettingsDialog.qml:182

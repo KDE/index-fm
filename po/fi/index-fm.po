@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-02-27 00:59+0000\n"
 "PO-Revision-Date: 2022-07-13 17:57+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -170,14 +170,16 @@ msgstr "Kirjanmerkki"
 
 #: src/main.qml:519 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, kde-format
-msgid "Open in new tab"
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgid "Open in New Tab"
 msgstr "Avaa uuteen välilehteen"
 
 #: src/main.qml:527 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, kde-format
-msgid "Open in split view"
+#, fuzzy, kde-format
+#| msgid "Open in split view"
+msgid "Open in Split View"
 msgstr "Avaa jaettuun näkymään"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
@@ -423,8 +425,9 @@ msgid "Open with"
 msgstr "Avaa ohjelmalla"
 
 #: src/widgets/views/FileMenu.qml:123
-#, kde-format
-msgid "Preview and info"
+#, fuzzy, kde-format
+#| msgid "Preview and info"
+msgid "Preview and Info"
 msgstr "Esikatselu ja tiedot"
 
 #: src/widgets/views/FileMenu.qml:137
@@ -536,8 +539,9 @@ msgid "Thumbnails"
 msgstr "Pienoiskuvat"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files"
+#, fuzzy, kde-format
+#| msgid "Show previews of images, videos and PDF files"
+msgid "Show previews of images, videos and PDF files."
 msgstr "Näyttää kuvista, videoista ja PDF-tiedostoista esikatselut"
 
 #: src/widgets/views/SettingsDialog.qml:33
@@ -546,8 +550,9 @@ msgid "Save Session"
 msgstr "Tallenna istunto"
 
 #: src/widgets/views/SettingsDialog.qml:34
-#, kde-format
-msgid "Save and restore tabs"
+#, fuzzy, kde-format
+#| msgid "Save and restore tabs"
+msgid "Save and restore tabs."
 msgstr "Tallenna ja palauta välilehdet"
 
 #: src/widgets/views/SettingsDialog.qml:48
@@ -615,8 +620,9 @@ msgid "Overview"
 msgstr "Yleiskuva"
 
 #: src/widgets/views/SettingsDialog.qml:151
-#, kde-format
-msgid "Use overview mode as default on launch"
+#, fuzzy, kde-format
+#| msgid "Use overview mode as default on launch"
+msgid "Use overview mode as default on launch."
 msgstr "Käynnistä oletuksena yleisnäkymään"
 
 #: src/widgets/views/SettingsDialog.qml:164
@@ -625,8 +631,9 @@ msgid "Dark Mode"
 msgstr "Tumma tila"
 
 #: src/widgets/views/SettingsDialog.qml:165
-#, kde-format
-msgid "Switch between light and dark colorscheme"
+#, fuzzy, kde-format
+#| msgid "Switch between light and dark colorscheme"
+msgid "Switch between light and dark colorscheme."
 msgstr "Vaihda vaalean ja tumman värimallin välillä"
 
 #: src/widgets/views/SettingsDialog.qml:182

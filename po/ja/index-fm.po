@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-02-27 00:59+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -163,13 +163,13 @@ msgstr ""
 #: src/main.qml:519 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
-msgid "Open in new tab"
+msgid "Open in New Tab"
 msgstr ""
 
 #: src/main.qml:527 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
 #, kde-format
-msgid "Open in split view"
+msgid "Open in Split View"
 msgstr ""
 
 #: src/widgets/previewer/FilePreviewer.qml:108
@@ -414,7 +414,7 @@ msgstr ""
 
 #: src/widgets/views/FileMenu.qml:123
 #, kde-format
-msgid "Preview and info"
+msgid "Preview and Info"
 msgstr ""
 
 #: src/widgets/views/FileMenu.qml:137
@@ -523,7 +523,7 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
-msgid "Show previews of images, videos and PDF files"
+msgid "Show previews of images, videos and PDF files."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:33
@@ -533,7 +533,7 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:34
 #, kde-format
-msgid "Save and restore tabs"
+msgid "Save and restore tabs."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:48
@@ -602,7 +602,7 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:151
 #, kde-format
-msgid "Use overview mode as default on launch"
+msgid "Use overview mode as default on launch."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:164
@@ -612,7 +612,7 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:165
 #, kde-format
-msgid "Switch between light and dark colorscheme"
+msgid "Switch between light and dark colorscheme."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:182
