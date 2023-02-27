@@ -334,14 +334,6 @@ Maui.ApplicationWindow
                         {
                             icon.name:  "overflow-menu"
 
-
-                            Maui.LabelDelegate
-                            {
-                                width: parent.width
-                                isSection: true
-                                label: i18n("Edit")
-                            }
-
                             MenuItem
                             {
                                 text: i18n("Paste")
@@ -367,12 +359,7 @@ Maui.ApplicationWindow
                             }
 
 
-                            Maui.LabelDelegate
-                            {
-                                width: parent.width
-                                isSection: true
-                                label: i18n("Navigation")
-                            }
+                            MenuSeparator {}
 
                             Maui.MenuItemActionRow
                             {
