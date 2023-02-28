@@ -43,7 +43,7 @@ Maui.SettingsDialog
         Maui.SectionItem
         {
             label1.text:  i18n("Dynamic Preferences")
-            label2.text: i18n("Custom preferences per directory. Preferences as the view type, the sort order and wether the embedded terminal is visible or not, will be saved for each directory. If this option is off, then the default preferences will be used for all the directories.")
+            label2.text: i18n("Custom preferences per directory. Preferences as the view type, the sort order and whether the embedded terminal is visible or not, will be saved for each directory. If this option is off, then the default preferences will be used for all the directories.")
 
             Switch
             {
