@@ -87,7 +87,6 @@ Maui.ToolBar
             onClicked: currentTab.currentItem.toogleTerminal()
         },
 
-
         ToolButton
         {
             icon.name: "edit-find"
@@ -100,62 +99,69 @@ Maui.ToolBar
         {
             icon.name: "view-sort"
 
-                Action
+            MenuItem
+            {
+                text: i18n("Type")
+                checked: currentBrowser.sortBy === FB.FMList.MIME
+                checkable: true
+                autoExclusive: true
+                onTriggered:
                 {
-                    text: i18n("Type")
-                    checked: currentBrowser.sortBy === FB.FMList.MIME
-                    checkable: true
-
-                    onTriggered:
-                    {
-                        currentBrowser.sortBy = FB.FMList.MIME
-                    }
+                    currentBrowser.sortBy = FB.FMList.MIME
                 }
+            }
 
-                Action
+            MenuItem
+            {
+                text: i18n("Date")
+                checked: currentBrowser.sortBy === FB.FMList.DATE
+                checkable: true
+                autoExclusive: true
+
+                onTriggered:
                 {
-                    text: i18n("Date")
-                    checked: currentBrowser.sortBy === FB.FMList.DATE
-                    checkable: true
-                    onTriggered:
-                    {
-                        currentBrowser.sortBy = FB.FMList.DATE
-                    }
+                    currentBrowser.sortBy = FB.FMList.DATE
                 }
+            }
 
-                Action
+            MenuItem
+            {
+                text: i18n("Modified")
+                checked: currentBrowser.sortBy === FB.FMList.MODIFIED
+                checkable: true
+                autoExclusive: true
+
+                onTriggered:
                 {
-                    text: i18n("Modified")
-                    checked: currentBrowser.sortBy === FB.FMList.MODIFIED
-                    checkable: true
-                    onTriggered:
-                    {
-                        currentBrowser.sortBy = FB.FMList.MODIFIED
-                    }
+                    currentBrowser.sortBy = FB.FMList.MODIFIED
                 }
+            }
 
-                Action
+            MenuItem
+            {
+                text: i18n("Size")
+                checked: currentBrowser.sortBy === FB.FMList.SIZE
+                checkable: true
+                autoExclusive: true
+
+                onTriggered:
                 {
-                    text: i18n("Size")
-                    checked: currentBrowser.sortBy === FB.FMList.SIZE
-                    checkable: true
-                    onTriggered:
-                    {
-                        currentBrowser.sortBy = FB.FMList.SIZE
-                    }
+                    currentBrowser.sortBy = FB.FMList.SIZE
                 }
+            }
 
-                Action
+            MenuItem
+            {
+                text: i18n("Name")
+                checked:  currentBrowser.sortBy === FB.FMList.LABEL
+                checkable: true
+                autoExclusive: true
+
+                onTriggered:
                 {
-                    text: i18n("Name")
-                    checked:  currentBrowser.sortBy === FB.FMList.LABEL
-                    checkable: true
-                    onTriggered:
-                    {
-                        currentBrowser.sortBy = FB.FMList.LABEL
-                    }
-                }            
-
+                    currentBrowser.sortBy = FB.FMList.LABEL
+                }
+            }
         }
     ]
 }

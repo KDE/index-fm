@@ -323,7 +323,6 @@ Maui.SplitViewItem
     Component.onCompleted:
     {
         //set these values in here to avoid global binding them, so each view can have different sorting settings
-//        settings.sortBy = sortSettings.sortBy
         settings.foldersFirst = sortSettings.foldersFirst
         settings.group = sortSettings.group
 

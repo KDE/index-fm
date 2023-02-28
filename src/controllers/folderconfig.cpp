@@ -133,7 +133,13 @@ void FolderConfig::setDirConf(const QString &key, const QVariant &value)
 {
     if(!m_settings)
         return;
-    qDebug() << "Setting dir conf" << key, value;
+
+    if (!m_path.isValid() || !m_path.isLocalFile() || !FMH::fileExists(m_path))
+    {
+        qWarning() << "URL recived is not a local file" << m_path;
+        return;
+    }
+
     m_settings->beginGroup("Index");
     m_settings->setValue(key, value);
     m_settings->endGroup();
@@ -156,7 +162,7 @@ void FolderConfig::setValues()
     uint viewType = m_fallbackViewType;
 
     auto configUrl = QUrl(m_path.toString()+"/.directory");
-     m_settings = new QSettings(configUrl.toLocalFile(), QSettings::Format::IniFormat);
+     m_settings = new QSettings(configUrl.toLocalFile(), QSettings::Format::NativeFormat);
 
     if (FMH::fileExists(configUrl) && configUrl.isLocalFile())
     {
