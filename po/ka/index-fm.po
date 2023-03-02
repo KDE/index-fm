@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-28 00:57+0000\n"
-"PO-Revision-Date: 2023-02-27 06:43+0100\n"
+"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"PO-Revision-Date: 2023-02-28 07:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -546,38 +546,45 @@ msgstr "შეინახეთ და აღადგინეთ ჩანა
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "დინამიკური პარამეტრები"
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Custom preferences per directory. Preferences as the view type, the sort "
+#| "order and wether the embedded terminal is visible or not, will be saved "
+#| "for each directory. If this option is off, then the default preferences "
+#| "will be used for all the directories."
 msgid ""
 "Custom preferences per directory. Preferences as the view type, the sort "
-"order and wether the embedded terminal is visible or not, will be saved for "
+"order and whether the embedded terminal is visible or not, will be saved for "
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"მორგებული პარამეტრები თითოეული საქაღალდისთვის. ისეთი პარამეტრები, როგორიცაა "
+"ხედის ტიპი, დალაგების მიმდევრობა და ხილულია თუ არა ჩაშენებული ტერმინალი, "
+"თითოეულ საქაღალდეში იქნება შენახული. თუ ეს პარამეტრი გამორთულია, ყველა "
+"საქაღალდისთვის ერთი და იგივე პარამეტრები იქნება გამოყენებული."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "ტიპით"
+msgstr "ხედის ტიპი"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "ნაგულისხმები ხედის ტიპი."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
 msgstr "დალაგება"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "დალაგების ნაგულისხმები მნიშვნელობა."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format

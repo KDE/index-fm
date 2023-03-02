@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-28 00:57+0000\n"
-"PO-Revision-Date: 2023-02-22 10:35+0100\n"
+"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"PO-Revision-Date: 2023-02-27 19:20+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -157,15 +157,13 @@ msgstr "Ajouter aux signets"
 
 #: src/main.qml:508 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
 msgstr "Ouvrir dans un nouvel onglet"
 
 #: src/main.qml:516 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
 msgstr "Ouvrir dans un affichage scindé"
 
@@ -414,8 +412,7 @@ msgid "Open with"
 msgstr "Ouvrir avec"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "Aperçu et informations"
 
@@ -533,10 +530,9 @@ msgid "Thumbnails"
 msgstr "Vignettes"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Afficher les aperçus des fichiers d'images, de vidéos et « PDF »."
+msgstr "Afficher les aperçus de fichiers d'images, de vidéos et « PDF »."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -544,10 +540,9 @@ msgid "Save Session"
 msgstr "Enregistrer une session"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "Enregistrer et restaurer les onglets"
+msgstr "Enregistrer et restaurer les onglets."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
@@ -558,7 +553,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Custom preferences per directory. Preferences as the view type, the sort "
-"order and wether the embedded terminal is visible or not, will be saved for "
+"order and whether the embedded terminal is visible or not, will be saved for "
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
@@ -655,8 +650,7 @@ msgid "Overview"
 msgstr "Aperçu"
 
 #: src/widgets/views/SettingsDialog.qml:298
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
 msgstr "Utiliser le mode d'aperçu par défaut au démarrage."
 
@@ -666,10 +660,9 @@ msgid "Dark Mode"
 msgstr "Mode sombre"
 
 #: src/widgets/views/SettingsDialog.qml:311
-#, fuzzy, kde-format
-#| msgid "Switch between light and dark colorscheme"
+#, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "Basculer entre les thèmes de couleurs clair et sombre"
+msgstr "Basculer entre les thèmes clair et sombre de couleurs."
 
 #: src/widgets/views/SettingsDialog.qml:327
 #: src/widgets/views/SettingsDialog.qml:353
