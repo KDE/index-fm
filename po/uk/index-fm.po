@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-28 08:47+0200\n"
+"PO-Revision-Date: 2023-03-02 13:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -550,12 +550,7 @@ msgid "Dynamic Preferences"
 msgstr "Динамічні налаштування"
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid ""
-#| "Custom preferences per directory. Preferences as the view type, the sort "
-#| "order and wether the embedded terminal is visible or not, will be saved "
-#| "for each directory. If this option is off, then the default preferences "
-#| "will be used for all the directories."
+#, kde-format
 msgid ""
 "Custom preferences per directory. Preferences as the view type, the sort "
 "order and whether the embedded terminal is visible or not, will be saved for "

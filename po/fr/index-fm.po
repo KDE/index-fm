@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-27 19:20+0100\n"
+"PO-Revision-Date: 2023-03-01 07:08+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -547,7 +547,7 @@ msgstr "Enregistrer et restaurer les onglets."
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Préférences dynamiques"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -559,26 +559,24 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Type"
+msgstr "Type de vues"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Type de vue par défaut."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Trier par"
+msgstr "Trier"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Valeur de tri par défaut."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format

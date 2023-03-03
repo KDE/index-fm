@@ -574,10 +574,9 @@ msgid "Default view type."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Ordenar por"
+msgstr "Ordenar"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format

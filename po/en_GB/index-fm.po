@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-27 20:23+0000\n"
+"PO-Revision-Date: 2023-03-02 22:04+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -543,7 +543,7 @@ msgstr "Save and restore tabs."
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dynamic Preferences"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -553,28 +553,30 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Custom preferences per directory. Preferences as the view type, the sort "
+"order and whether the embedded terminal is visible or not, will be saved for "
+"each directory. If this option is off, then the default preferences will be "
+"used for all the directories."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Type"
+msgstr "View Type"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Default view type."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Sort by"
+msgstr "Sort"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Default sorting value."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
