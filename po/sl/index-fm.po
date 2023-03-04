@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-28 08:51+0100\n"
+"PO-Revision-Date: 2023-03-03 11:38+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -550,12 +550,7 @@ msgid "Dynamic Preferences"
 msgstr "Dinamične preference"
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid ""
-#| "Custom preferences per directory. Preferences as the view type, the sort "
-#| "order and wether the embedded terminal is visible or not, will be saved "
-#| "for each directory. If this option is off, then the default preferences "
-#| "will be used for all the directories."
+#, kde-format
 msgid ""
 "Custom preferences per directory. Preferences as the view type, the sort "
 "order and whether the embedded terminal is visible or not, will be saved for "
@@ -565,7 +560,7 @@ msgstr ""
 "Preference po meri po imeniku. Preference kot so vrsta pogleda, smer "
 "razvrščanja in ali je vgrajen terminal je viden ali ne, bodo shranjene za "
 "vsak imenik posebej. Če je ta možnost izklopljena, bodo privzete preference "
-"uporabljene se za vse imenike skupaj."
+"skupno uporabljene se za vse imenike."
 
 #: src/widgets/views/SettingsDialog.qml:58
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-24 17:19-0300\n"
+"PO-Revision-Date: 2023-03-03 09:52-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -157,15 +157,13 @@ msgstr "Favoritos"
 
 #: src/main.qml:508 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
 msgstr "Abrir em nova aba"
 
 #: src/main.qml:516 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
 msgstr "Abrir em visualização dividida"
 
@@ -413,8 +411,7 @@ msgid "Open with"
 msgstr "Abrir com"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "Pré-visualização e informações"
 
@@ -532,10 +529,9 @@ msgid "Thumbnails"
 msgstr "Miniaturas"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Exibe miniaturas de imagens, vídeos e arquivos PDF"
+msgstr "Exibe miniaturas de imagens, vídeos e arquivos PDF."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -543,10 +539,9 @@ msgid "Save Session"
 msgstr "Salvar sessão"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "Salva e restaura abas"
+msgstr "Salva e restaura abas."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
@@ -574,10 +569,9 @@ msgid "Default view type."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Ordenar por"
+msgstr "Ordenar"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
@@ -654,10 +648,9 @@ msgid "Overview"
 msgstr "Visão geral"
 
 #: src/widgets/views/SettingsDialog.qml:298
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Define o modo Visão geral como padrão ao lançar o aplicativo"
+msgstr "Define o modo Visão geral como padrão ao lançar o aplicativo."
 
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
@@ -665,10 +658,9 @@ msgid "Dark Mode"
 msgstr "Modo escuro"
 
 #: src/widgets/views/SettingsDialog.qml:311
-#, fuzzy, kde-format
-#| msgid "Switch between light and dark colorscheme"
+#, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "Alternar entre o esquema de cores claro e escuro"
+msgstr "Alternar entre o esquema de cores claro e escuro."
 
 #: src/widgets/views/SettingsDialog.qml:327
 #: src/widgets/views/SettingsDialog.qml:353
