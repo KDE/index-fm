@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-27 18:54+0100\n"
+"PO-Revision-Date: 2023-03-04 17:40+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 20.04.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -547,7 +547,7 @@ msgstr "Guardar y restaurar pestañas."
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Preferencias dinámicas"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -557,27 +557,30 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Preferencias personalizadas por directorio. Preferencias como el tipo de "
+"vista, el tipo de orden y si el terminal incrustable es visible o no, serán "
+"guardadas por directorio. Si esta opción no está activada, las preferencias "
+"por omisión se usarán en todos los directorios."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Tipo"
+msgstr "Tipo de vista"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Tipo de vista por omisión."
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
 msgid "Sort"
-msgstr ""
+msgstr "Orden"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Tipo de orden por omisión."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
