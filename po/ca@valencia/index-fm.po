@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-27 09:18+0100\n"
+"PO-Revision-Date: 2023-03-02 10:58+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -545,7 +545,7 @@ msgstr "Guarda i restaura les pestanyes."
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Preferències dinàmiques"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -555,27 +555,30 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Preferències personalitzades per directori. Les preferències com el tipus de "
+"vista, el criteri d'ordenació i si el terminal incrustat és visible o no, es "
+"guardaran per a cada directori. Si esta opció està desactivada, "
+"s'utilitzaran les preferències predeterminades per a tots els directoris."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Tipus"
+msgstr "Tipus de vista"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Tipus de vista predeterminada"
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
 msgid "Sort"
-msgstr ""
+msgstr "Ordenació"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Valor predeterminat d'ordenació."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
