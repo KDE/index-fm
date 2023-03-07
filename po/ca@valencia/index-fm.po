@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-03-02 10:58+0100\n"
+"PO-Revision-Date: 2023-03-05 19:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -568,7 +568,7 @@ msgstr "Tipus de vista"
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr "Tipus de vista predeterminada"
+msgstr "Tipus de vista predeterminada."
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format

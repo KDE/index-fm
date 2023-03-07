@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-15 15:20+0000\n"
+"PO-Revision-Date: 2023-03-06 15:57+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -115,10 +115,9 @@ msgid "New tab"
 msgstr "Nova página"
 
 #: src/main.qml:379
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Escondido"
+msgstr "Ver os Escondidos"
 
 #: src/main.qml:387
 #, kde-format
@@ -163,10 +162,9 @@ msgstr "Abrir numa Página Nova"
 
 #: src/main.qml:516 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
-msgstr "Abrir numa área dividida"
+msgstr "Abrir numa Área Dividida"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
@@ -413,10 +411,9 @@ msgid "Open with"
 msgstr "Abrir com"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
-msgstr "Antevisão e informações"
+msgstr "Antevisão e Informações"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
@@ -532,10 +529,9 @@ msgid "Thumbnails"
 msgstr "Miniaturas"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Mostrar antevisões das imagens, vídeos e ficheiros PDF"
+msgstr "Mostrar antevisões das imagens, vídeos e ficheiros PDF."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -543,15 +539,14 @@ msgid "Save Session"
 msgstr "Gravar a Sessão"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "Gravar e repor páginas"
+msgstr "Gravar e repor páginas."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Preferências Dinâmicas"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -561,17 +556,21 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Preferências personalizadas por pasta. Algumas definições, como o tipo de "
+"visualização, o sentido da ordenação ou se o terminal incorporado está "
+"visível ou não, serão gravados para cada pasta. Se esta opção estiver "
+"desligada, então as preferências predefinidas serão usadas para todas as "
+"pastas."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Tipo"
+msgstr "Tipo de Visualização"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "O tipo de visualização predefinido."
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
@@ -581,7 +580,7 @@ msgstr "Ordenar"
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "O critério de ordenação predefinido."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
@@ -653,10 +652,9 @@ msgid "Overview"
 msgstr "Introdução"
 
 #: src/widgets/views/SettingsDialog.qml:298
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Usar o modo de visão geral por omissão no arranque"
+msgstr "Usar o modo de visão geral por omissão no arranque."
 
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
@@ -774,28 +772,4 @@ msgstr "Ficheiros marcados para acesso rápido"
 #: src/widgets/views/Terminal.qml:21
 #, kde-format
 msgid "Follows the system color scheme."
-msgstr ""
-
-#~ msgid "Forward"
-#~ msgstr "Avançar"
-
-#~ msgid "Search"
-#~ msgstr "Procurar"
-
-#~ msgid "New"
-#~ msgstr "Novo"
-
-#~ msgid "Select all"
-#~ msgstr "Seleccionar tudo"
-
-#~ msgid "Go to"
-#~ msgstr "Ir para"
-
-#~ msgid "View"
-#~ msgstr "Ver"
-
-#~ msgid "Action Bar"
-#~ msgstr "Barra de Acções"
-
-#~ msgid "Extra toolbar with quick actions."
-#~ msgstr "Barra de ferramentas extra com acções rápidas."
+msgstr "Segue o esquema de cores do sistema."
