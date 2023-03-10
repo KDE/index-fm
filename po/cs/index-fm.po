@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-02-27 14:48+0100\n"
+"PO-Revision-Date: 2023-03-01 16:25+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -539,7 +539,7 @@ msgstr "Uložit a obnovit karty."
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dynamické předvolby"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -551,25 +551,24 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Typ"
+msgstr "Typ pohledu"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Výchozí typ zobrazení."
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
 msgid "Sort"
-msgstr ""
+msgstr "Seřadit"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Výchozí hodnota řazení."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
