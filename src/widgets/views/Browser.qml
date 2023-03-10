@@ -308,7 +308,15 @@ Maui.SplitViewItem
             active: Maui.Handy.isLinux
             source: "Terminal.qml"
 
-            onLoaded: syncTerminal(control.currentPath)
+            onLoaded:
+            {
+                    if(item && item.visible)
+                    {
+                        syncTerminal(control.currentPath)
+                        item.forceActiveFocus()
+                    }
+            }
+
             onVisibleChanged:
             {
                 syncTerminal(control.currentPath)

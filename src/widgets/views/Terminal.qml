@@ -10,26 +10,10 @@ import org.mauikit.terminal 1.0 as Term
 Term.Terminal
 {
     id: control
-    kterminal.colorScheme: _customCS.path
+    Maui.Theme.colorSet: Maui.Theme.Window
+    Maui.Theme.inherit: false
 
-    Term.CustomColorScheme
-    {
-        id: _customCS
-        Maui.Theme.colorSet: Maui.Theme.Window
-        Maui.Theme.inherit: false
-        name: "Adaptive"
-        description: i18n("Follows the system color scheme.")
-        backgroundColor: Maui.Theme.backgroundColor
-        foregroundColor: Maui.Theme.textColor
-        color2: Maui.Theme.disabledTextColor
-        color3: Maui.Theme.negativeBackgroundColor
-        color4: Maui.Theme.positiveBackgroundColor
-        color5: Maui.Theme.neutralBackgroundColor
-        color6: Maui.Theme.highlightColor
-        color7: Maui.Theme.linkColor
-        color8: Maui.Theme.highlightColor
-        color9: Maui.Theme.textColor
-    }
+    kterminal.colorScheme: "Adaptive"
 
     onUrlsDropped:
     {
