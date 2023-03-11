@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
 "PO-Revision-Date: 2023-03-03 09:52-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -765,10 +765,8 @@ msgstr "Localizar aba"
 msgid "Tagged files for quick access"
 msgstr "Acesso rápido a arquivos com etiqueta"
 
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
-msgstr "Seguir o esquema de cor do sistema."
+#~ msgid "Follows the system color scheme."
+#~ msgstr "Seguir o esquema de cor do sistema."
 
 #~ msgid "Forward"
 #~ msgstr "Avançar"

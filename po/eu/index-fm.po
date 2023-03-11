@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
 "PO-Revision-Date: 2023-02-27 21:44+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -767,10 +767,8 @@ msgstr "Bilatu fitxa"
 msgid "Tagged files for quick access"
 msgstr "Fitxategi etiketatuak atzipen bizkorrerako"
 
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
-msgstr "Sistemaren kolore-antolaerari jarraitzen dio."
+#~ msgid "Follows the system color scheme."
+#~ msgstr "Sistemaren kolore-antolaerari jarraitzen dio."
 
 #~ msgid "Forward"
 #~ msgstr "Aurrera"

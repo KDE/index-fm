@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
 "PO-Revision-Date: 2023-03-05 08:59+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -773,11 +773,6 @@ msgstr "Karta wyszukiwania"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Pliki oznaczone do szybkiego dostępu"
-
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
-msgstr ""
 
 #~ msgid "Forward"
 #~ msgstr "Naprzód"

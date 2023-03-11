@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -751,9 +751,4 @@ msgstr ""
 #: src/widgets/views/TagsSection.qml:22
 #, kde-format
 msgid "Tagged files for quick access"
-msgstr ""
-
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
 msgstr ""

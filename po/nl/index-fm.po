@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
 "PO-Revision-Date: 2023-03-02 12:47+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -765,10 +765,8 @@ msgstr "Tabblad zoeken"
 msgid "Tagged files for quick access"
 msgstr "Bestanden met tags voor snelle toegang"
 
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
-msgstr "Volgt het kleurenschema van het systeem"
+#~ msgid "Follows the system color scheme."
+#~ msgstr "Volgt het kleurenschema van het systeem"
 
 #~ msgid "Forward"
 #~ msgstr "Vooruit"

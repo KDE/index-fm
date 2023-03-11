@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
 "PO-Revision-Date: 2021-10-07 17:48-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -776,11 +776,6 @@ msgstr "ਟੈਬ ਲੱਭੋ"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "ਫ਼ੌਰੀ ਪਹੁੰਚ ਲਈ ਟੈਗ ਕੀਤੀਆਂ ਫਾਇਲਾਂ"
-
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
-msgstr ""
 
 #~ msgid "Forward"
 #~ msgstr "ਅੱਗੇ"

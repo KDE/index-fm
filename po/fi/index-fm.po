@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2022-07-13 17:57+0300\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
+"PO-Revision-Date: 2023-03-05 22:03+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -105,10 +105,9 @@ msgid "Select All"
 msgstr "Valitse kaikki"
 
 #: src/main.qml:358
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Uusi välilehti"
+msgstr "Uusi kohde"
 
 #: src/main.qml:372
 #, kde-format
@@ -116,10 +115,9 @@ msgid "New tab"
 msgstr "Uusi välilehti"
 
 #: src/main.qml:379
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Piilotettu"
+msgstr "Näytä piilotetut"
 
 #: src/main.qml:387
 #, kde-format
@@ -127,8 +125,7 @@ msgid "Split View"
 msgstr "Jaettu näkymä"
 
 #: src/main.qml:398
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Avaa pääte tähän"
 
@@ -159,15 +156,13 @@ msgstr "Kirjanmerkki"
 
 #: src/main.qml:508 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
 msgstr "Avaa uuteen välilehteen"
 
 #: src/main.qml:516 src/widgets/views/FileMenu.qml:199
 #: src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
 msgstr "Avaa jaettuun näkymään"
 
@@ -370,7 +365,7 @@ msgstr "Tunnisteet"
 #: src/widgets/views/BrowserView.qml:171
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "Irrota välilehti"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
@@ -414,8 +409,7 @@ msgid "Open with"
 msgstr "Avaa ohjelmalla"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "Esikatselu ja tiedot"
 
@@ -432,12 +426,12 @@ msgstr "Suosikki"
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Ei mitään täällä vielä."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Tarkista myöhemmin."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -455,10 +449,9 @@ msgid "Downloads"
 msgstr "Lataukset"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "Äskettäin ladatut tiedostot sekä ääni ja kuvat "
+msgstr "Viimeisimmät ladatut tiedostot"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -468,18 +461,17 @@ msgstr "Musiikki"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Viimeisimmät musiikkitiedostot"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Kuvat"
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "Äskettäin ladatut tiedostot sekä ääni ja kuvat "
+msgstr "Viimeisimmät kuvatiedostot"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:345
@@ -489,16 +481,15 @@ msgid "Places"
 msgstr "Sijainnit"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Nopea pääsy yleisiin kokoelmiin"
+msgstr "Pikapääsy yleissijainteihin."
 
 #: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Lisää"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -535,10 +526,9 @@ msgid "Thumbnails"
 msgstr "Pienoiskuvat"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Näyttää kuvista, videoista ja PDF-tiedostoista esikatselut"
+msgstr "Näytä esikatselut kuvista, videoista ja PDF-tiedostoista"
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -546,15 +536,14 @@ msgid "Save Session"
 msgstr "Tallenna istunto"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "Tallenna ja palauta välilehdet"
+msgstr "Tallenna ja palauta välilehdet."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dynaamiset valinnat"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -564,28 +553,29 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Kansion mukautetut valinnat kuten näkymä, lajittelu ja onko upotettu pääte "
+"näkyvissä vai ei tallennetaan kuhunkin kansioon. Jos ei ole valittu, "
+"kaikkiin kansioihin käytetään oletusvalintoja."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Tyyppi"
+msgstr "Näkymä"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Oletusnäkymä."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Lajittelu"
+msgstr "Lajittele"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Oletuslajittelu."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
@@ -657,10 +647,9 @@ msgid "Overview"
 msgstr "Yleiskuva"
 
 #: src/widgets/views/SettingsDialog.qml:298
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Käynnistä oletuksena yleisnäkymään"
+msgstr "Käynnistä oletuksena yleisnäkymään."
 
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
@@ -668,10 +657,9 @@ msgid "Dark Mode"
 msgstr "Tumma tila"
 
 #: src/widgets/views/SettingsDialog.qml:311
-#, fuzzy, kde-format
-#| msgid "Switch between light and dark colorscheme"
+#, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "Vaihda vaalean ja tumman värimallin välillä"
+msgstr "Vaihda vaalean ja tumman väriteeman välillä."
 
 #: src/widgets/views/SettingsDialog.qml:327
 #: src/widgets/views/SettingsDialog.qml:353
@@ -776,10 +764,8 @@ msgstr "Etsi välilehti"
 msgid "Tagged files for quick access"
 msgstr "Pikaista käyttöä varten luokitellut tiedostot"
 
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
-msgstr ""
+#~ msgid "Follows the system color scheme."
+#~ msgstr "Seuraa järjestelmän väriteemaa."
 
 #~ msgid "Forward"
 #~ msgstr "Eteenpäin"

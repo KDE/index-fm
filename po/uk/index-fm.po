@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-03-11 00:47+0000\n"
 "PO-Revision-Date: 2023-03-02 13:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -769,10 +769,8 @@ msgstr "Знайти вкладку"
 msgid "Tagged files for quick access"
 msgstr "Позначені файли для швидкого доступу"
 
-#: src/widgets/views/Terminal.qml:21
-#, kde-format
-msgid "Follows the system color scheme."
-msgstr "Використовувати загальносистемну схему кольорів."
+#~ msgid "Follows the system color scheme."
+#~ msgstr "Використовувати загальносистемну схему кольорів."
 
 #~ msgid "Forward"
 #~ msgstr "Вперед"
