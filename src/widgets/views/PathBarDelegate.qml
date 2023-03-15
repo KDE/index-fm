@@ -93,7 +93,7 @@ T.Control
             verticalAlignment:  Qt.AlignVCenter
             elide: Qt.ElideRight
             wrapMode: Text.NoWrap
-            opacity: control.checked ? 1 : 0.8
+            opacity: control.checked ? 1 : 0.6
             font.weight: control.checked ? Font.DemiBold : Font.Normal
             color: control.checked ? Maui.Theme.highlightedTextColor : Maui.Theme.textColor
         }
