@@ -95,6 +95,14 @@ Loader
 
             MenuItem
             {
+                enabled: control.isDir && Maui.Handy.isLinux
+                text: i18n("Open in New Window")
+                icon.name: "window-new"
+                onTriggered: inx.openNewWindow(_menu.path)
+            }
+
+            MenuItem
+            {
                 enabled: root.currentTab.count === 1
                 text: i18n("Open in Split View")
                 icon.name: "view-split-left-right"

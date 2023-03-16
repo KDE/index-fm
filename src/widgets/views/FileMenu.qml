@@ -195,6 +195,14 @@ Maui.ContextualMenu
 
     MenuItem
     {
+        enabled: control.isDir && Maui.Handy.isLinux
+        text: i18n("Open in New Window")
+        icon.name: "window-new"
+        onTriggered: inx.openNewWindow(control.item.path)
+    }
+
+    MenuItem
+    {
         enabled: control.isDir && root.currentTab.count === 1
         text: i18n("Open in Split View")
         icon.name: "view-split-left-right"
