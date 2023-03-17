@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:47+0000\n"
+"POT-Creation-Date: 2023-03-17 00:56+0000\n"
 "PO-Revision-Date: 2023-01-06 17:17+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -48,7 +48,7 @@ msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
 #: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
-#: src/widgets/views/FileMenu.qml:209
+#: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Εξαγωγή"
@@ -164,8 +164,8 @@ msgstr "Σελιδοδείκτης"
 msgid "Open in New Tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
-#: src/main.qml:516 src/widgets/views/FileMenu.qml:199
-#: src/widgets/views/PlacesSideBar.qml:99
+#: src/main.qml:516 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:107
 #, fuzzy, kde-format
 #| msgid "Open in split view"
 msgid "Open in Split View"
@@ -309,7 +309,7 @@ msgid "Edit"
 msgstr "Επεξεργασία"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:149
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:109
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
 msgstr "Αφαίρεση"
@@ -358,7 +358,7 @@ msgstr "Αποκοπή"
 msgid "Share"
 msgstr "Κοινή χρήση"
 
-#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:221
+#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Συμπίεση"
@@ -430,6 +430,12 @@ msgstr "ΜηΠροτιμ"
 #, kde-format
 msgid "Fav"
 msgstr "Προτιμ"
+
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgid "Open in New Window"
+msgstr "Άνοιγμα σε νέα καρτέλα"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
@@ -512,7 +518,7 @@ msgstr "Σελιδοδείκτες!"
 msgid "Your bookmarks will be listed here"
 msgstr "Η λίστα με τους σελιδοδείκτες σας θα βρίσκεται εδώ"
 
-#: src/widgets/views/PlacesSideBar.qml:231
+#: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "

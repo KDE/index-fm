@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:47+0000\n"
+"POT-Creation-Date: 2023-03-17 00:56+0000\n"
 "PO-Revision-Date: 2023-03-03 07:08+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -49,7 +49,7 @@ msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
 #: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
-#: src/widgets/views/FileMenu.qml:209
+#: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Extraire"
@@ -161,8 +161,8 @@ msgstr "Ajouter aux signets"
 msgid "Open in New Tab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: src/main.qml:516 src/widgets/views/FileMenu.qml:199
-#: src/widgets/views/PlacesSideBar.qml:99
+#: src/main.qml:516 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
 msgstr "Ouvrir dans un affichage scindé"
@@ -304,7 +304,7 @@ msgid "Edit"
 msgstr "Modifier"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:149
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:109
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
 msgstr "Supprimer"
@@ -353,7 +353,7 @@ msgstr "Couper"
 msgid "Share"
 msgstr "Partager"
 
-#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:221
+#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Compresser"
@@ -425,6 +425,12 @@ msgstr "Retirer des signets"
 #, kde-format
 msgid "Fav"
 msgstr "Ajouter aux signets"
+
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in New Window"
+msgstr "Ouvrir dans un nouvel onglet"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
@@ -504,7 +510,7 @@ msgstr "Signets !"
 msgid "Your bookmarks will be listed here"
 msgstr "Vos signets seront listés ici."
 
-#: src/widgets/views/PlacesSideBar.qml:231
+#: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "

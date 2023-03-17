@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:47+0000\n"
+"POT-Creation-Date: 2023-03-17 00:56+0000\n"
 "PO-Revision-Date: 2023-03-01 16:25+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,7 @@ msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
 #: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
-#: src/widgets/views/FileMenu.qml:209
+#: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Rozbalit"
@@ -159,8 +159,8 @@ msgstr "Záložka"
 msgid "Open in New Tab"
 msgstr "Otevřít v nové kartě"
 
-#: src/main.qml:516 src/widgets/views/FileMenu.qml:199
-#: src/widgets/views/PlacesSideBar.qml:99
+#: src/main.qml:516 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
 msgstr "Otevřít v rozděleném pohledu"
@@ -302,7 +302,7 @@ msgid "Edit"
 msgstr "Upravit"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:149
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:109
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
 msgstr "Odstranit"
@@ -349,7 +349,7 @@ msgstr "Vyjmout"
 msgid "Share"
 msgstr "Sdílet"
 
-#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:221
+#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Zkomprimovat"
@@ -419,6 +419,12 @@ msgstr ""
 #, kde-format
 msgid "Fav"
 msgstr ""
+
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#, fuzzy, kde-format
+#| msgid "Open in New Tab"
+msgid "Open in New Window"
+msgstr "Otevřít v nové kartě"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
@@ -498,7 +504,7 @@ msgstr "Záložky"
 msgid "Your bookmarks will be listed here"
 msgstr "Zde budou vypsány vaše záložky"
 
-#: src/widgets/views/PlacesSideBar.qml:231
+#: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
