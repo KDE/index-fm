@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-17 00:56+0000\n"
-"PO-Revision-Date: 2023-03-02 13:56+0200\n"
+"PO-Revision-Date: 2023-03-17 08:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -427,10 +427,9 @@ msgid "Fav"
 msgstr "Улюбл."
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Відкрити у новій вкладці"
+msgstr "Відкрити у новому вікні"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
