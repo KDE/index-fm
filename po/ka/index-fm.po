@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-17 00:56+0000\n"
-"PO-Revision-Date: 2023-03-03 06:19+0100\n"
+"PO-Revision-Date: 2023-03-19 05:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -426,10 +426,9 @@ msgid "Fav"
 msgstr "რჩეულებში"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "ახალ ჩანართში გახსნა"
+msgstr "ახალ ფანჯარაში გახსნა"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format

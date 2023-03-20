@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-17 00:56+0000\n"
-"PO-Revision-Date: 2023-03-03 07:08+0100\n"
+"PO-Revision-Date: 2023-03-18 07:51+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -427,10 +427,9 @@ msgid "Fav"
 msgstr "Ajouter aux signets"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Ouvrir dans un nouvel onglet"
+msgstr "Ouvrir dans une nouvelle fenêtre"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
