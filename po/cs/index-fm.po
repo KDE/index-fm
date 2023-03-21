@@ -421,10 +421,9 @@ msgid "Fav"
 msgstr ""
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Otevřít v nové kartě"
+msgstr "Otevřít v novém okně"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
@@ -762,6 +761,3 @@ msgstr "Najít kartu"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
-
-#~ msgid "Follows the system color scheme."
-#~ msgstr "Následuje barevné schéma systému."

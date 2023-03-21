@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-17 00:56+0000\n"
-"PO-Revision-Date: 2023-03-05 19:52+0100\n"
+"PO-Revision-Date: 2023-03-17 13:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -426,10 +426,9 @@ msgid "Fav"
 msgstr "Preferit"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Obri en una pestanya nova"
+msgstr "Obri en una finestra nova"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
@@ -772,6 +771,3 @@ msgstr "Busca la pestanya"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxers etiquetats per a un accés ràpid"
-
-#~ msgid "Follows the system color scheme."
-#~ msgstr "Seguix l'esquema de colors del sistema."

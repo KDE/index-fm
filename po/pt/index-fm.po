@@ -426,10 +426,9 @@ msgid "Fav"
 msgstr "Fav"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in New Tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Abrir numa Página Nova"
+msgstr "Abrir numa Nova Janela"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
