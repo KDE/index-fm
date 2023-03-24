@@ -454,7 +454,7 @@ Maui.ApplicationWindow
                     {
                         Layout.fillWidth: true
                         Layout.minimumWidth: 100
-                        Layout.fillHeight: true
+                        implicitHeight: _pathBar.implicitHeight
 
                         PathBar
                         {

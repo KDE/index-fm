@@ -40,7 +40,7 @@ Item
         }
     }
 
-    implicitHeight: Maui.Style.rowHeight
+    implicitHeight: _loader.item.implicitHeight
     implicitWidth: preferredWidth
     /**
       * url : string
@@ -87,6 +87,7 @@ Item
         sourceComponent: Item
         {
             implicitWidth: _layout.implicitWidth
+            implicitHeight: _layout.implicitHeight
 
             TextField
             {
@@ -146,9 +147,8 @@ Item
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
                 ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
+                implicitHeight: _listView.currentItem.implicitHeight + topPadding + bottomPadding
                 contentHeight: availableHeight
-                //                    padding: 2
-
                 leftPadding: 8
 
                 background: Rectangle
@@ -209,7 +209,7 @@ Item
 
                         lastOne: index === ListView.view.count-1
                         firstOne: index === 0
-                        height: ListView.view.height
+//                        height: ListView.view.height
                         width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
 
                         onClicked:

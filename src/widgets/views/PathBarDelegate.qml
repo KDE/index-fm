@@ -13,6 +13,8 @@ T.Control
     Maui.Theme.inherit: false
 
     implicitWidth: _label.implicitWidth + rightPadding + leftPadding
+    implicitHeight: Math.max(Maui.Style.rowHeight, _label.implicitHeight + topPadding + bottomPadding)
+
     rightPadding: Maui.Style.space.big
     leftPadding: rightPadding
     /**
@@ -91,9 +93,11 @@ T.Control
 
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment:  Qt.AlignVCenter
+
             elide: Qt.ElideRight
             wrapMode: Text.NoWrap
             opacity: control.checked ? 1 : 0.6
+
             font.weight: control.checked ? Font.DemiBold : Font.Normal
             color: control.checked ? Maui.Theme.highlightedTextColor : Maui.Theme.textColor
         }
