@@ -84,7 +84,6 @@ Maui.Page
             icon.name: "edit-copy"
             onTriggered:
             {
-                _selectionBar.animate()
                 currentBrowser.copy(_selectionBar.uris)
             }
         }
@@ -95,7 +94,6 @@ Maui.Page
             icon.name: "edit-cut"
             onTriggered:
             {
-                _selectionBar.animate()
                 currentBrowser.cut(_selectionBar.uris)
             }
         }

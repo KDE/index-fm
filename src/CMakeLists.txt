@@ -12,6 +12,7 @@ set(index_SRCS
     controllers/folderconfig.cpp
     controllers/sessionmanager.cpp
     controllers/fileproperties.cpp
+    controllers/patharrowbackground.cpp
     models/recentfilesmodel.cpp
     models/pathlist.cpp
     index_assets.qrc

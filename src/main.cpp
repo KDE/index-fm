@@ -32,6 +32,7 @@
 #include "controllers/dirinfo.h"
 #include "controllers/folderconfig.h"
 #include "controllers/fileproperties.h"
+#include "controllers/patharrowbackground.h"
 
 #include "index.h"
 
@@ -152,6 +153,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<FolderConfig>(INDEX_URI, 1, 0, "FolderConfig");
     qmlRegisterType<FileProperties>(INDEX_URI, 1, 0, "FileProperties");
     qmlRegisterType<Permission>(INDEX_URI, 1, 0, "Permission");
+    qmlRegisterType<PathArrowBackground>(INDEX_URI, 1, 0, "PathArrowBackground");
 
     engine.load(url);
 

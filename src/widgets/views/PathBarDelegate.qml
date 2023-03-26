@@ -2,6 +2,7 @@ import QtQuick 2.14
 import QtQuick.Controls 2.14
 
 import org.mauikit.controls 1.3 as Maui
+import org.maui.index 1.0 as Index
 
 import QtQuick.Templates 2.15 as T
 
@@ -55,7 +56,7 @@ T.Control
       */
     signal pressAndHold()
 
-    background: Maui.Arrow
+    background: Index.PathArrowBackground
     {
         color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : (control.firstOne? "transparent": Maui.Theme.backgroundColor))
 
