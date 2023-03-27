@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-17 00:56+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2021-10-07 17:48-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.04.3\n"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Index"
 msgstr "ਇੰਡੈਕਸ"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "ਤੁਹਾਡੀਆਂ ਫਾਇਲਾਂ ਨੂੰ ਫੋਲਣ, ਇੰਤਜ਼ਾਮ ਕਰਨ ਤੇ ਝਲਕ ਵੇਖਣ ਲਈ।"
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
 msgstr "© 2019-%1 Maui Development Team"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:68 src/main.cpp:69
+#: src/main.cpp:69 src/main.cpp:70
 #, kde-format
 msgid "Developer"
 msgstr "ਡਿਵੈਲਪਰ"
 
-#: src/main.cpp:69
+#: src/main.cpp:70
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr ""
@@ -193,7 +193,7 @@ msgid "Next"
 msgstr "ਅੱਗੇ"
 
 #: src/widgets/previewer/FilePreviewer.qml:218
-#: src/widgets/views/BrowserView.qml:116 src/widgets/views/HomeView.qml:35
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "ਖੋਲ੍ਹੋ"
@@ -309,7 +309,7 @@ msgstr "ਨਾਂ"
 msgid "Edit"
 msgstr "ਮਾਰਗ ਸੋਧੋ"
 
-#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:149
+#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
@@ -347,29 +347,29 @@ msgstr ""
 msgid "Copy"
 msgstr "ਕਾਪੀ ਕਰੋ"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:93 src/widgets/views/FileMenu.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "ਕੱਟੋ"
 
-#: src/widgets/views/BrowserView.qml:105 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:103 src/widgets/views/FileMenu.qml:166
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "ਸਾਂਝਾ ਕਰੋ"
 
-#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:229
+#: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "ਕੰਪਰੈਸ ਕਰੋ"
 
-#: src/widgets/views/BrowserView.qml:139 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tags"
 msgstr "ਟੈਗ"
 
-#: src/widgets/views/BrowserView.qml:171
+#: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
 msgstr ""

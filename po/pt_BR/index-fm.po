@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-17 00:56+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2023-03-21 09:45-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Navegue, organize e visualize seus arquivos."
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
 msgstr "© 2019-%1 Equipe de desenvolvimento do Maui"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:68 src/main.cpp:69
+#: src/main.cpp:69 src/main.cpp:70
 #, kde-format
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: src/main.cpp:69
+#: src/main.cpp:70
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -188,7 +188,7 @@ msgid "Next"
 msgstr "Próximo"
 
 #: src/widgets/previewer/FilePreviewer.qml:218
-#: src/widgets/views/BrowserView.qml:116 src/widgets/views/HomeView.qml:35
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Abrir"
@@ -303,7 +303,7 @@ msgstr "Nome"
 msgid "Edit"
 msgstr "Editar"
 
-#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:149
+#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
@@ -342,29 +342,29 @@ msgstr "Criar novo"
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:93 src/widgets/views/FileMenu.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "Recortar"
 
-#: src/widgets/views/BrowserView.qml:105 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:103 src/widgets/views/FileMenu.qml:166
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Compartilhar"
 
-#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:229
+#: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Compactar"
 
-#: src/widgets/views/BrowserView.qml:139 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: src/widgets/views/BrowserView.qml:171
+#: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
 msgstr "Desanexar aba"

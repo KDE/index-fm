@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-17 00:56+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2023-02-09 02:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -20,32 +20,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.03.70\n"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "瀏覽、管理並預覽您的檔案。"
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
 msgstr "© 2019-%1 Maui 開發團隊"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:68 src/main.cpp:69
+#: src/main.cpp:69 src/main.cpp:70
 #, kde-format
 msgid "Developer"
 msgstr "開發者"
 
-#: src/main.cpp:69
+#: src/main.cpp:70
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -193,7 +193,7 @@ msgid "Next"
 msgstr "下一個"
 
 #: src/widgets/previewer/FilePreviewer.qml:218
-#: src/widgets/views/BrowserView.qml:116 src/widgets/views/HomeView.qml:35
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "開啟"
@@ -308,7 +308,7 @@ msgstr "名稱"
 msgid "Edit"
 msgstr "編輯"
 
-#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:149
+#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
@@ -345,29 +345,29 @@ msgstr "建立新的"
 msgid "Copy"
 msgstr "複製"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:93 src/widgets/views/FileMenu.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "剪下"
 
-#: src/widgets/views/BrowserView.qml:105 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:103 src/widgets/views/FileMenu.qml:166
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "分享"
 
-#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:229
+#: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "壓縮"
 
-#: src/widgets/views/BrowserView.qml:139 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tags"
 msgstr "標籤"
 
-#: src/widgets/views/BrowserView.qml:171
+#: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
 msgstr "分離分頁"

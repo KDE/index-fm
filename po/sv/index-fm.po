@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-17 00:56+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2022-09-25 09:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:65
+#: src/main.cpp:66
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Bläddra bland, organisera och förhandsgranska dina filer."
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
 msgstr "© 2019-%1 Maui utvecklingsgrupp"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:68 src/main.cpp:69
+#: src/main.cpp:69 src/main.cpp:70
 #, kde-format
 msgid "Developer"
 msgstr "Utvecklare"
 
-#: src/main.cpp:69
+#: src/main.cpp:70
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -192,7 +192,7 @@ msgid "Next"
 msgstr "Nästa"
 
 #: src/widgets/previewer/FilePreviewer.qml:218
-#: src/widgets/views/BrowserView.qml:116 src/widgets/views/HomeView.qml:35
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Öppna"
@@ -307,7 +307,7 @@ msgstr "Namn"
 msgid "Edit"
 msgstr "Redigera"
 
-#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:149
+#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
@@ -345,29 +345,29 @@ msgstr "Skapa ny"
 msgid "Copy"
 msgstr "Kopiera"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:93 src/widgets/views/FileMenu.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "Klipp ut"
 
-#: src/widgets/views/BrowserView.qml:105 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:103 src/widgets/views/FileMenu.qml:166
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Dela"
 
-#: src/widgets/views/BrowserView.qml:127 src/widgets/views/FileMenu.qml:229
+#: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Komprimera"
 
-#: src/widgets/views/BrowserView.qml:139 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tags"
 msgstr "Etiketter"
 
-#: src/widgets/views/BrowserView.qml:171
+#: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
 msgstr "Koppla loss flik"
