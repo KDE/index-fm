@@ -13,9 +13,8 @@ import org.mauikit.filebrowsing 1.0 as FB
 Item
 {
     id: control
-    height: ListView.view.height
-      width:  ListView.view.width
-      focus: true
+
+    focus: true
     property url path
     property url path2
 
@@ -33,7 +32,7 @@ Item
     Maui.TabViewInfo.tabTitle: title
     Maui.TabViewInfo.tabToolTipText: browser.currentPath
 
-     Maui.SplitView
+    Maui.SplitView
     {
         id: _splitView
         anchors.fill: parent
