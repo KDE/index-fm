@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:48+0000\n"
-"PO-Revision-Date: 2023-03-21 09:45-0300\n"
+"PO-Revision-Date: 2023-04-05 09:59-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -551,7 +551,7 @@ msgstr "Salva e restaura abas."
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Preferências dinâmicas"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -561,6 +561,10 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Preferências personalizadas por pasta. Preferências como o tipo de "
+"visualização, a ordem de classificação e se o terminal embutido está visível "
+"ou não, serão salvas para cada pasta. Se esta opção estiver desativada, as "
+"preferências padrão serão usadas para todas as pastas."
 
 #: src/widgets/views/SettingsDialog.qml:58
 #, kde-format
@@ -580,7 +584,7 @@ msgstr "Ordenar"
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Valor de ordenação padrão."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
