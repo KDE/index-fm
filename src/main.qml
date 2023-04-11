@@ -160,7 +160,10 @@ Maui.ApplicationWindow
 
             title: i18n("Extract")
             message: i18n("Extract the content of the compressed file into a new or existing subdirectory or inside the current directory.")
+
             headBar.visible: false
+            scrollView.padding: Maui.Style.space.big
+
             onFinished:
             {
                 _compressedFile.extract(currentBrowser.currentPath, text)
@@ -180,6 +183,7 @@ Maui.ApplicationWindow
             message: i18n("Compress selected files into a new file.")
 
             headBar.visible: false
+            scrollView.padding: Maui.Style.space.big
 
             TextField
             {
@@ -284,7 +288,6 @@ Maui.ApplicationWindow
     {
         id: dialogLoader
     }
-
 
     Maui.SideBarView
     {
