@@ -283,7 +283,7 @@ Maui.SplitViewItem
 
             onRightClicked:
             {
-                _mainMenuLoader.item.open()
+                _actionBarLoader.item.openMainMenu()
             }
 
             //            onAreaClicked:

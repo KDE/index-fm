@@ -308,6 +308,7 @@ Maui.ApplicationWindow
             headBar.visible: false
             footer: Loader
             {
+                id: _actionBarLoader
                 width: parent.width
                 asynchronous: true
                 visible: active && !_homeViewComponent.visible
@@ -330,115 +331,12 @@ Maui.ApplicationWindow
                     altHeader: Maui.Handy.isMobile
                     showCSDControls: true
 
-                    headBar.rightContent: Loader
-                    {
-                        id: _mainMenuLoader
-                        asynchronous: true
-                        sourceComponent: Maui.ToolButtonMenu
-                        {
-                            icon.name:  "overflow-menu"
-
-                            MenuItem
-                            {
-                                text: i18n("Paste")
-                                //         enabled: _optionsButton.enabled
-
-                                icon.name: "edit-paste"
-                                // 		enabled: control.clipboardItems.length > 0
-                                onTriggered: currentBrowser.paste()
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Select All")
-                                icon.name: "edit-select-all"
-                                onTriggered: currentBrowser.selectAll()
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("New Item")
-                                icon.name: "folder-new"
-                                onTriggered: currentBrowser.newItem()
-                            }
-
-                            MenuSeparator {}
-
-                            Maui.MenuItemActionRow
-                            {
-
-                                Action
-                                {
-                                    icon.name: "tab-new"
-                                    text: i18n("New tab")
-                                    onTriggered: root.openTab(currentBrowser.currentPath)
-                                }
-
-                                Action
-                                {
-                                    icon.name: "view-hidden"
-                                    text: i18n("View Hidden")
-                                    checkable: true
-                                    checked: settings.showHiddenFiles
-                                    onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
-                                }
-
-                                Action
-                                {
-                                    text: i18n("Split View")
-                                    icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                                    checked: currentTab.count === 2
-                                    checkable: true
-                                    onTriggered: toogleSplitView()
-                                }
-                            }
-
-                            MenuItem
-                            {
-                                enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
-                                text: i18n("Open Terminal Here")
-                                id: openTerminal
-                                icon.name: "dialog-scripts"
-                                onTriggered:
-                                {
-                                    inx.openTerminal(currentBrowser.currentPath)
-                                }
-                            }
-
-                            MenuSeparator {}
-
-                            MenuItem
-                            {
-                                text: i18n("Shortcuts")
-                                icon.name: "configure-shortcuts"
-                                onTriggered:
-                                {
-                                    dialogLoader.sourceComponent = _shortcutsDialogComponent
-                                    dialog.open()
-                                }
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("Settings")
-                                icon.name: "settings-configure"
-                                onTriggered: openConfigDialog()
-                            }
-
-                            MenuItem
-                            {
-                                text: i18n("About")
-                                icon.name: "documentinfo"
-                                onTriggered: root.about()
-                            }
-                        }
-                    }
-
                     headBar.farLeftContent: Loader
                     {
                         asynchronous: true
                          active: _sideBarView.sideBar.collapsed
                          visible: active
+
                         sourceComponent: ToolButton
                         {
                             icon.name: _sideBarView.sideBar.visible ? "sidebar-collapse" : "sidebar-expand"
@@ -485,11 +383,9 @@ Maui.ApplicationWindow
                                 _pathBarmenu.show()
                             }
 
-                            //                    onMenuClicked: openMenu()
-
                             function openMenu()
                             {
-                                _mainMenuLoader.item.open()
+                              _actionBarLoader.item.openMainMenu()
                             }
 
                             Maui.ContextualMenu

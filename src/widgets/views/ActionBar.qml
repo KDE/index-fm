@@ -75,18 +75,6 @@ Maui.ToolBar
 
     rightContent: [
 
-
-        ToolButton
-        {
-            visible: !Maui.Handy.isAndroid
-            enabled: currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-            icon.name: "dialog-scripts"
-            checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-            checkable: true
-
-            onClicked: currentTab.currentItem.toogleTerminal()
-        },
-
         ToolButton
         {
             icon.name: "edit-find"
@@ -162,6 +150,125 @@ Maui.ToolBar
                     currentBrowser.sortBy = FB.FMList.LABEL
                 }
             }
+        },
+
+        Loader
+        {
+            id: _mainMenuLoader
+            asynchronous: true
+            sourceComponent: Maui.ToolButtonMenu
+            {
+                icon.name:  "overflow-menu"
+
+                MenuItem
+                {
+                    text: i18n("Paste")
+                    //         enabled: _optionsButton.enabled
+
+                    icon.name: "edit-paste"
+                    // 		enabled: control.clipboardItems.length > 0
+                    onTriggered: currentBrowser.paste()
+                }
+
+                MenuItem
+                {
+                    text: i18n("Select All")
+                    icon.name: "edit-select-all"
+                    onTriggered: currentBrowser.selectAll()
+                }
+
+                MenuItem
+                {
+                    text: i18n("New Item")
+                    icon.name: "folder-new"
+                    onTriggered: currentBrowser.newItem()
+                }
+
+                MenuSeparator {}
+
+                Maui.MenuItemActionRow
+                {
+
+                    Action
+                    {
+                        icon.name: "tab-new"
+                        text: i18n("New tab")
+                        onTriggered: root.openTab(currentBrowser.currentPath)
+                    }
+
+                    Action
+                    {
+                        icon.name: "view-hidden"
+                        text: i18n("View Hidden")
+                        checkable: true
+                        checked: settings.showHiddenFiles
+                        onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
+                    }
+
+                    Action
+                    {
+                        text: i18n("Split View")
+                        icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+                        checked: currentTab.count === 2
+                        checkable: true
+                        onTriggered: toogleSplitView()
+                    }
+
+                    Action
+                    {
+                            enabled: !Maui.Handy.isAndroid && currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+                            icon.name: "dialog-scripts"
+                            checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+                            checkable: true
+
+                            onTriggered: currentTab.currentItem.toogleTerminal()
+                    }
+                }
+
+                MenuItem
+                {
+                    enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
+                    text: i18n("Open Terminal Here")
+                    id: openTerminal
+                    icon.name: "dialog-scripts"
+                    onTriggered:
+                    {
+                        inx.openTerminal(currentBrowser.currentPath)
+                    }
+                }
+
+                MenuSeparator {}
+
+                MenuItem
+                {
+                    text: i18n("Shortcuts")
+                    icon.name: "configure-shortcuts"
+                    onTriggered:
+                    {
+                        dialogLoader.sourceComponent = _shortcutsDialogComponent
+                        dialog.open()
+                    }
+                }
+
+                MenuItem
+                {
+                    text: i18n("Settings")
+                    icon.name: "settings-configure"
+                    onTriggered: openConfigDialog()
+                }
+
+                MenuItem
+                {
+                    text: i18n("About")
+                    icon.name: "documentinfo"
+                    onTriggered: root.about()
+                }
+            }
         }
     ]
+
+    function openMainMenu()
+    {
+        _mainMenuLoader.item.open()
+    }
 }
