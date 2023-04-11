@@ -236,7 +236,7 @@ Loader
             {
                 if( placesList.isDevice(index) && placesList.setupNeeded(index))
                 {
-                    notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), mount)
+                    notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), mount, i18n("Mount"))
                 }
 
                 placeClicked(model.path, mouse)

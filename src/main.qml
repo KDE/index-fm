@@ -360,7 +360,6 @@ Maui.ApplicationWindow
                                 onTriggered: currentBrowser.newItem()
                             }
 
-
                             MenuSeparator {}
 
                             Maui.MenuItemActionRow
