@@ -216,12 +216,13 @@ Maui.ToolBar
 
                     Action
                     {
-                            enabled: !Maui.Handy.isAndroid && currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                            icon.name: "dialog-scripts"
-                            checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-                            checkable: true
+                        text: i18n("Terminal")
+                        enabled: !Maui.Handy.isAndroid && currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+                        icon.name: "dialog-scripts"
+                        checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+                        checkable: true
 
-                            onTriggered: currentTab.currentItem.toogleTerminal()
+                        onTriggered: currentTab.currentItem.toogleTerminal()
                     }
                 }
 
