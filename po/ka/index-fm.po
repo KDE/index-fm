@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"POT-Creation-Date: 2023-04-12 00:48+0000\n"
 "PO-Revision-Date: 2023-03-19 05:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -75,93 +75,43 @@ msgstr[1] "%1 ფაილის შეკუმშვა"
 msgid "Compress selected files into a new file."
 msgstr "მონიშნული ფაილების ახალ არქივში შეკუმშვა."
 
-#: src/main.qml:189
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "არქივის სახელი..."
 
-#: src/main.qml:267 src/widgets/views/HomeView.qml:53
+#: src/main.qml:270 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "საქაღალდის გახსნა"
 
-#: src/main.qml:276
+#: src/main.qml:279
 #, kde-format
 msgid "Extracted"
 msgstr "გამოშლილი"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "File was extracted"
 msgstr "ფაილი გამოღებულია"
 
-#: src/main.qml:341
-#, kde-format
-msgid "Paste"
-msgstr "ჩასმა"
-
-#: src/main.qml:351 src/widgets/views/ShortcutsDialog.qml:169
-#, kde-format
-msgid "Select All"
-msgstr "ყველას მონიშვნა"
-
-#: src/main.qml:358
-#, kde-format
-msgid "New Item"
-msgstr "ახალი ელემენტი"
-
-#: src/main.qml:372
-#, kde-format
-msgid "New tab"
-msgstr "ახალი ჩანართი"
-
-#: src/main.qml:379
-#, kde-format
-msgid "View Hidden"
-msgstr "დამალულის ნახვა"
-
-#: src/main.qml:387
-#, kde-format
-msgid "Split View"
-msgstr "ხედის გაყოფა"
-
-#: src/main.qml:398
-#, kde-format
-msgid "Open Terminal Here"
-msgstr "ტერმინალის გახსნა აქ"
-
-#: src/main.qml:411 src/widgets/views/ShortcutsDialog.qml:12
-#, kde-format
-msgid "Shortcuts"
-msgstr "მალსახმობები"
-
-#: src/main.qml:422
-#, kde-format
-msgid "Settings"
-msgstr "პარამეტრები"
-
-#: src/main.qml:429
-#, kde-format
-msgid "About"
-msgstr "შესახებ"
-
-#: src/main.qml:449
+#: src/main.qml:348
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "გვერდითი ზოლის ჩართ/გამორთ"
 
-#: src/main.qml:501 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: src/main.qml:508 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
 msgstr "ახალ ჩანართში გახსნა"
 
-#: src/main.qml:516 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
@@ -273,30 +223,81 @@ msgstr "სია"
 msgid "Grid"
 msgstr "ბადე"
 
-#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:92 src/widgets/views/SettingsDialog.qml:108
 #, kde-format
 msgid "Type"
 msgstr "ტიპით"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "Date"
 msgstr "თარიღი"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:117 src/widgets/views/SettingsDialog.qml:131
 #, kde-format
 msgid "Modified"
 msgstr "შეცვლილია"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:130 src/widgets/views/SettingsDialog.qml:142
 #, kde-format
 msgid "Size"
 msgstr "ზომა"
 
-#: src/widgets/views/ActionBar.qml:155 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:143 src/widgets/views/SettingsDialog.qml:153
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
+
+#: src/widgets/views/ActionBar.qml:165
+#, kde-format
+msgid "Paste"
+msgstr "ჩასმა"
+
+#: src/widgets/views/ActionBar.qml:175
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr "ყველას მონიშვნა"
+
+#: src/widgets/views/ActionBar.qml:182
+#, kde-format
+msgid "New Item"
+msgstr "ახალი ელემენტი"
+
+#: src/widgets/views/ActionBar.qml:195
+#, kde-format
+msgid "New tab"
+msgstr "ახალი ჩანართი"
+
+#: src/widgets/views/ActionBar.qml:202
+#, kde-format
+msgid "View Hidden"
+msgstr "დამალულის ნახვა"
+
+#: src/widgets/views/ActionBar.qml:210
+#, kde-format
+msgid "Split View"
+msgstr "ხედის გაყოფა"
+
+#: src/widgets/views/ActionBar.qml:231
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "ტერმინალის გახსნა აქ"
+
+#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr "მალსახმობები"
+
+#: src/widgets/views/ActionBar.qml:255
+#, kde-format
+msgid "Settings"
+msgstr "პარამეტრები"
+
+#: src/widgets/views/ActionBar.qml:262
+#, kde-format
+msgid "About"
+msgstr "შესახებ"
 
 #: src/widgets/views/Browser.qml:50
 #, kde-format
@@ -516,6 +517,11 @@ msgid ""
 msgstr ""
 "ამ მოწყობილობასთან წვდომისთვის ჯერ მისი მიმაგრებაა საჭირო. გნებავთ, მოირგოთ "
 "ეს მოწყობილობა?"
+
+#: src/widgets/views/PlacesSideBar.qml:239
+#, kde-format
+msgid "Mount"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19

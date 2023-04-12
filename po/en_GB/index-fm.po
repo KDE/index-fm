@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"POT-Creation-Date: 2023-04-12 00:48+0000\n"
 "PO-Revision-Date: 2023-03-26 14:29+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -74,93 +74,43 @@ msgstr[1] "Compress %1 files"
 msgid "Compress selected files into a new file."
 msgstr "Compress selected files into a new file."
 
-#: src/main.qml:189
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "Archive name..."
 
-#: src/main.qml:267 src/widgets/views/HomeView.qml:53
+#: src/main.qml:270 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Open folder"
 
-#: src/main.qml:276
+#: src/main.qml:279
 #, kde-format
 msgid "Extracted"
 msgstr "Extracted"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "File was extracted"
 msgstr "File was extracted"
 
-#: src/main.qml:341
-#, kde-format
-msgid "Paste"
-msgstr "Paste"
-
-#: src/main.qml:351 src/widgets/views/ShortcutsDialog.qml:169
-#, kde-format
-msgid "Select All"
-msgstr "Select All"
-
-#: src/main.qml:358
-#, kde-format
-msgid "New Item"
-msgstr "New Item"
-
-#: src/main.qml:372
-#, kde-format
-msgid "New tab"
-msgstr "New tab"
-
-#: src/main.qml:379
-#, kde-format
-msgid "View Hidden"
-msgstr "View Hidden"
-
-#: src/main.qml:387
-#, kde-format
-msgid "Split View"
-msgstr "Split View"
-
-#: src/main.qml:398
-#, kde-format
-msgid "Open Terminal Here"
-msgstr "Open Terminal Here"
-
-#: src/main.qml:411 src/widgets/views/ShortcutsDialog.qml:12
-#, kde-format
-msgid "Shortcuts"
-msgstr "Shortcuts"
-
-#: src/main.qml:422
-#, kde-format
-msgid "Settings"
-msgstr "Settings"
-
-#: src/main.qml:429
-#, kde-format
-msgid "About"
-msgstr "About"
-
-#: src/main.qml:449
+#: src/main.qml:348
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Toggle sidebar"
 
-#: src/main.qml:501 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Bookmark"
 
-#: src/main.qml:508 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Open in New Tab"
 
-#: src/main.qml:516 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
@@ -272,30 +222,81 @@ msgstr "List"
 msgid "Grid"
 msgstr "Grid"
 
-#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:92 src/widgets/views/SettingsDialog.qml:108
 #, kde-format
 msgid "Type"
 msgstr "Type"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "Date"
 msgstr "Date"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:117 src/widgets/views/SettingsDialog.qml:131
 #, kde-format
 msgid "Modified"
 msgstr "Modified"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:130 src/widgets/views/SettingsDialog.qml:142
 #, kde-format
 msgid "Size"
 msgstr "Size"
 
-#: src/widgets/views/ActionBar.qml:155 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:143 src/widgets/views/SettingsDialog.qml:153
 #, kde-format
 msgid "Name"
 msgstr "Name"
+
+#: src/widgets/views/ActionBar.qml:165
+#, kde-format
+msgid "Paste"
+msgstr "Paste"
+
+#: src/widgets/views/ActionBar.qml:175
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr "Select All"
+
+#: src/widgets/views/ActionBar.qml:182
+#, kde-format
+msgid "New Item"
+msgstr "New Item"
+
+#: src/widgets/views/ActionBar.qml:195
+#, kde-format
+msgid "New tab"
+msgstr "New tab"
+
+#: src/widgets/views/ActionBar.qml:202
+#, kde-format
+msgid "View Hidden"
+msgstr "View Hidden"
+
+#: src/widgets/views/ActionBar.qml:210
+#, kde-format
+msgid "Split View"
+msgstr "Split View"
+
+#: src/widgets/views/ActionBar.qml:231
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Open Terminal Here"
+
+#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr "Shortcuts"
+
+#: src/widgets/views/ActionBar.qml:255
+#, kde-format
+msgid "Settings"
+msgstr "Settings"
+
+#: src/widgets/views/ActionBar.qml:262
+#, kde-format
+msgid "About"
+msgstr "About"
 
 #: src/widgets/views/Browser.qml:50
 #, kde-format
@@ -513,6 +514,11 @@ msgid ""
 msgstr ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
+
+#: src/widgets/views/PlacesSideBar.qml:239
+#, kde-format
+msgid "Mount"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19

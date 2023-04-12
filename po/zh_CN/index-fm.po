@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"POT-Creation-Date: 2023-04-12 00:48+0000\n"
 "PO-Revision-Date: 2023-04-10 14:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -71,93 +71,43 @@ msgstr[0] "压缩 %1 个文件"
 msgid "Compress selected files into a new file."
 msgstr "压缩选中的文件为新压缩包文件。"
 
-#: src/main.qml:189
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "压缩包名称..."
 
-#: src/main.qml:267 src/widgets/views/HomeView.qml:53
+#: src/main.qml:270 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "打开文件夹"
 
-#: src/main.qml:276
+#: src/main.qml:279
 #, kde-format
 msgid "Extracted"
 msgstr "已解压"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "File was extracted"
 msgstr "文件已被解压"
 
-#: src/main.qml:341
-#, kde-format
-msgid "Paste"
-msgstr "粘贴"
-
-#: src/main.qml:351 src/widgets/views/ShortcutsDialog.qml:169
-#, kde-format
-msgid "Select All"
-msgstr "全部选择"
-
-#: src/main.qml:358
-#, kde-format
-msgid "New Item"
-msgstr ""
-
-#: src/main.qml:372
-#, kde-format
-msgid "New tab"
-msgstr ""
-
-#: src/main.qml:379
-#, kde-format
-msgid "View Hidden"
-msgstr ""
-
-#: src/main.qml:387
-#, kde-format
-msgid "Split View"
-msgstr ""
-
-#: src/main.qml:398
-#, kde-format
-msgid "Open Terminal Here"
-msgstr ""
-
-#: src/main.qml:411 src/widgets/views/ShortcutsDialog.qml:12
-#, kde-format
-msgid "Shortcuts"
-msgstr "快捷键"
-
-#: src/main.qml:422
-#, kde-format
-msgid "Settings"
-msgstr "设置"
-
-#: src/main.qml:429
-#, kde-format
-msgid "About"
-msgstr "关于"
-
-#: src/main.qml:449
+#: src/main.qml:348
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "显示/隐藏侧边栏"
 
-#: src/main.qml:501 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "书签"
 
-#: src/main.qml:508 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
 msgstr ""
 
-#: src/main.qml:516 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
@@ -269,30 +219,81 @@ msgstr "列表"
 msgid "Grid"
 msgstr "网格"
 
-#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:92 src/widgets/views/SettingsDialog.qml:108
 #, kde-format
 msgid "Type"
 msgstr "类型"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "Date"
 msgstr "日期"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:117 src/widgets/views/SettingsDialog.qml:131
 #, kde-format
 msgid "Modified"
 msgstr "修改日期"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:130 src/widgets/views/SettingsDialog.qml:142
 #, kde-format
 msgid "Size"
 msgstr "大小"
 
-#: src/widgets/views/ActionBar.qml:155 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:143 src/widgets/views/SettingsDialog.qml:153
 #, kde-format
 msgid "Name"
 msgstr "名称"
+
+#: src/widgets/views/ActionBar.qml:165
+#, kde-format
+msgid "Paste"
+msgstr "粘贴"
+
+#: src/widgets/views/ActionBar.qml:175
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr "全部选择"
+
+#: src/widgets/views/ActionBar.qml:182
+#, kde-format
+msgid "New Item"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:195
+#, kde-format
+msgid "New tab"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:202
+#, kde-format
+msgid "View Hidden"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:210
+#, kde-format
+msgid "Split View"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:231
+#, kde-format
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr "快捷键"
+
+#: src/widgets/views/ActionBar.qml:255
+#, kde-format
+msgid "Settings"
+msgstr "设置"
+
+#: src/widgets/views/ActionBar.qml:262
+#, kde-format
+msgid "About"
+msgstr "关于"
 
 #: src/widgets/views/Browser.qml:50
 #, kde-format
@@ -507,6 +508,11 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr "此设备需要先进行挂载才能访问。您想要安装此设备吗？"
+
+#: src/widgets/views/PlacesSideBar.qml:239
+#, kde-format
+msgid "Mount"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19

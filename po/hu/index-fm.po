@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"POT-Creation-Date: 2023-04-12 00:48+0000\n"
 "PO-Revision-Date: 2021-01-10 13:12+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -79,100 +79,46 @@ msgstr[1] "%1 fájl tömörítése"
 msgid "Compress selected files into a new file."
 msgstr "A kijelölt fájlok tömörítése egy új fájlba."
 
-#: src/main.qml:189
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "Archívumnév…"
 
-#: src/main.qml:267 src/widgets/views/HomeView.qml:53
+#: src/main.qml:270 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr ""
 
-#: src/main.qml:276
+#: src/main.qml:279
 #, fuzzy, kde-format
 #| msgid "Extract"
 msgid "Extracted"
 msgstr "Kibontás"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "File was extracted"
 msgstr ""
 
-#: src/main.qml:341
-#, kde-format
-msgid "Paste"
-msgstr ""
-
-#: src/main.qml:351 src/widgets/views/ShortcutsDialog.qml:169
-#, kde-format
-msgid "Select All"
-msgstr ""
-
-#: src/main.qml:358
-#, fuzzy, kde-format
-#| msgid "Preview Files"
-msgid "New Item"
-msgstr "Fájlok előnézete"
-
-#: src/main.qml:372
-#, kde-format
-msgid "New tab"
-msgstr ""
-
-#: src/main.qml:379
-#, fuzzy, kde-format
-#| msgid "Hidden Files"
-msgid "View Hidden"
-msgstr "Rejtett fájlok"
-
-#: src/main.qml:387
-#, fuzzy, kde-format
-#| msgid "Split Views"
-msgid "Split View"
-msgstr "Osztott nézet"
-
-#: src/main.qml:398
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
-msgid "Open Terminal Here"
-msgstr "Terminál megnyitása itt"
-
-#: src/main.qml:411 src/widgets/views/ShortcutsDialog.qml:12
-#, kde-format
-msgid "Shortcuts"
-msgstr ""
-
-#: src/main.qml:422
-#, kde-format
-msgid "Settings"
-msgstr "Beállítások"
-
-#: src/main.qml:429
-#, kde-format
-msgid "About"
-msgstr ""
-
-#: src/main.qml:449
+#: src/main.qml:348
 #, fuzzy, kde-format
 #| msgid "Toogle SideBar"
 msgid "Toggle sidebar"
 msgstr "Oldalsáv be/ki"
 
-#: src/main.qml:501 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: src/main.qml:508 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "Megnyitás új lapon"
 
-#: src/main.qml:516 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, fuzzy, kde-format
 #| msgid "Open in split view"
@@ -286,30 +232,85 @@ msgstr "Lista"
 msgid "Grid"
 msgstr "Rács"
 
-#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:92 src/widgets/views/SettingsDialog.qml:108
 #, kde-format
 msgid "Type"
 msgstr "Típus"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "Date"
 msgstr "Dátum"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:117 src/widgets/views/SettingsDialog.qml:131
 #, kde-format
 msgid "Modified"
 msgstr "Módosítva"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:130 src/widgets/views/SettingsDialog.qml:142
 #, kde-format
 msgid "Size"
 msgstr "Méret"
 
-#: src/widgets/views/ActionBar.qml:155 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:143 src/widgets/views/SettingsDialog.qml:153
 #, kde-format
 msgid "Name"
 msgstr "Név"
+
+#: src/widgets/views/ActionBar.qml:165
+#, kde-format
+msgid "Paste"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:175
+#: src/widgets/views/ShortcutsDialog.qml:169
+#, kde-format
+msgid "Select All"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:182
+#, fuzzy, kde-format
+#| msgid "Preview Files"
+msgid "New Item"
+msgstr "Fájlok előnézete"
+
+#: src/widgets/views/ActionBar.qml:195
+#, kde-format
+msgid "New tab"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:202
+#, fuzzy, kde-format
+#| msgid "Hidden Files"
+msgid "View Hidden"
+msgstr "Rejtett fájlok"
+
+#: src/widgets/views/ActionBar.qml:210
+#, fuzzy, kde-format
+#| msgid "Split Views"
+msgid "Split View"
+msgstr "Osztott nézet"
+
+#: src/widgets/views/ActionBar.qml:231
+#, fuzzy, kde-format
+#| msgid "Open terminal here"
+msgid "Open Terminal Here"
+msgstr "Terminál megnyitása itt"
+
+#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#, kde-format
+msgid "Shortcuts"
+msgstr ""
+
+#: src/widgets/views/ActionBar.qml:255
+#, kde-format
+msgid "Settings"
+msgstr "Beállítások"
+
+#: src/widgets/views/ActionBar.qml:262
+#, kde-format
+msgid "About"
+msgstr ""
 
 #: src/widgets/views/Browser.qml:50
 #, kde-format
@@ -526,6 +527,11 @@ msgstr ""
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
+msgstr ""
+
+#: src/widgets/views/PlacesSideBar.qml:239
+#, kde-format
+msgid "Mount"
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:14
