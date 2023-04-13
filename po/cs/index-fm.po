@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:48+0000\n"
+"POT-Creation-Date: 2023-04-13 00:48+0000\n"
 "PO-Revision-Date: 2023-03-01 16:25+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -60,7 +60,7 @@ msgid ""
 "subdirectory or inside the current directory."
 msgstr ""
 
-#: src/main.qml:182
+#: src/main.qml:181
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
@@ -68,48 +68,48 @@ msgstr[0] "Komprimovat %1 soubor"
 msgstr[1] "Komprimovat %1 soubory"
 msgstr[2] "Komprimovat %1 souborů"
 
-#: src/main.qml:183
+#: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Zkomprimovat vybrané soubory do nového souboru."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "Název archivu..."
 
-#: src/main.qml:270 src/widgets/views/HomeView.qml:53
+#: src/main.qml:268 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Otevřít složku"
 
-#: src/main.qml:279
+#: src/main.qml:277
 #, kde-format
 msgid "Extracted"
 msgstr "Rozbaleno"
 
-#: src/main.qml:280
+#: src/main.qml:278
 #, kde-format
 msgid "File was extracted"
 msgstr "Soubor byl rozbalen"
 
-#: src/main.qml:348
+#: src/main.qml:346
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Přepnout postranní panel"
 
-#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Záložka"
 
-#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Otevřít v nové kartě"
 
-#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
@@ -277,22 +277,27 @@ msgstr "Zobrazit skryté"
 msgid "Split View"
 msgstr "Rozdělit pohled"
 
-#: src/widgets/views/ActionBar.qml:231
+#: src/widgets/views/ActionBar.qml:219 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "Terminál"
+
+#: src/widgets/views/ActionBar.qml:232
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Zde otevřít terminál"
 
-#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:245 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
 msgstr "Zkratky"
 
-#: src/widgets/views/ActionBar.qml:255
+#: src/widgets/views/ActionBar.qml:256
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
 
-#: src/widgets/views/ActionBar.qml:262
+#: src/widgets/views/ActionBar.qml:263
 #, kde-format
 msgid "About"
 msgstr "O aplikaci"
@@ -737,11 +742,6 @@ msgstr "Zavřít kartu"
 #, kde-format
 msgid "Path Edit"
 msgstr "Úprava cesty"
-
-#: src/widgets/views/ShortcutsDialog.qml:84
-#, kde-format
-msgid "Terminal"
-msgstr "Terminál"
 
 #: src/widgets/views/ShortcutsDialog.qml:99
 #, kde-format

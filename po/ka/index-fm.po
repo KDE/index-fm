@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:48+0000\n"
+"POT-Creation-Date: 2023-04-13 00:48+0000\n"
 "PO-Revision-Date: 2023-03-19 05:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -63,55 +63,55 @@ msgstr ""
 "შეკუმშული ფაილის შემცველობის მიმდინარე საქაღალდეში უკვე არსებულ ან ახალ "
 "ქვესაქაღალდეში გახსნა."
 
-#: src/main.qml:182
+#: src/main.qml:181
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "%1 ფაილის შეკუმშვა"
 msgstr[1] "%1 ფაილის შეკუმშვა"
 
-#: src/main.qml:183
+#: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "მონიშნული ფაილების ახალ არქივში შეკუმშვა."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "არქივის სახელი..."
 
-#: src/main.qml:270 src/widgets/views/HomeView.qml:53
+#: src/main.qml:268 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "საქაღალდის გახსნა"
 
-#: src/main.qml:279
+#: src/main.qml:277
 #, kde-format
 msgid "Extracted"
 msgstr "გამოშლილი"
 
-#: src/main.qml:280
+#: src/main.qml:278
 #, kde-format
 msgid "File was extracted"
 msgstr "ფაილი გამოღებულია"
 
-#: src/main.qml:348
+#: src/main.qml:346
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "გვერდითი ზოლის ჩართ/გამორთ"
 
-#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
 msgstr "ახალ ჩანართში გახსნა"
 
-#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
@@ -279,22 +279,27 @@ msgstr "დამალულის ნახვა"
 msgid "Split View"
 msgstr "ხედის გაყოფა"
 
-#: src/widgets/views/ActionBar.qml:231
+#: src/widgets/views/ActionBar.qml:219 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "ტერმინალი"
+
+#: src/widgets/views/ActionBar.qml:232
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "ტერმინალის გახსნა აქ"
 
-#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:245 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
 msgstr "მალსახმობები"
 
-#: src/widgets/views/ActionBar.qml:255
+#: src/widgets/views/ActionBar.qml:256
 #, kde-format
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: src/widgets/views/ActionBar.qml:262
+#: src/widgets/views/ActionBar.qml:263
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
@@ -748,11 +753,6 @@ msgstr "ჩანართის დახურვა"
 #, kde-format
 msgid "Path Edit"
 msgstr "ბილიკის ჩასწორება"
-
-#: src/widgets/views/ShortcutsDialog.qml:84
-#, kde-format
-msgid "Terminal"
-msgstr "ტერმინალი"
 
 #: src/widgets/views/ShortcutsDialog.qml:99
 #, kde-format

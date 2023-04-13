@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:48+0000\n"
+"POT-Creation-Date: 2023-04-13 00:48+0000\n"
 "PO-Revision-Date: 2023-03-26 14:29+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -62,55 +62,55 @@ msgstr ""
 "Extract the content of the compressed file into a new or existing "
 "subdirectory or inside the current directory."
 
-#: src/main.qml:182
+#: src/main.qml:181
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "Compress %1 file"
 msgstr[1] "Compress %1 files"
 
-#: src/main.qml:183
+#: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Compress selected files into a new file."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "Archive name..."
 
-#: src/main.qml:270 src/widgets/views/HomeView.qml:53
+#: src/main.qml:268 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Open folder"
 
-#: src/main.qml:279
+#: src/main.qml:277
 #, kde-format
 msgid "Extracted"
 msgstr "Extracted"
 
-#: src/main.qml:280
+#: src/main.qml:278
 #, kde-format
 msgid "File was extracted"
 msgstr "File was extracted"
 
-#: src/main.qml:348
+#: src/main.qml:346
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Toggle sidebar"
 
-#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Bookmark"
 
-#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Open in New Tab"
 
-#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
@@ -278,22 +278,27 @@ msgstr "View Hidden"
 msgid "Split View"
 msgstr "Split View"
 
-#: src/widgets/views/ActionBar.qml:231
+#: src/widgets/views/ActionBar.qml:219 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/widgets/views/ActionBar.qml:232
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Open Terminal Here"
 
-#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:245 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
 msgstr "Shortcuts"
 
-#: src/widgets/views/ActionBar.qml:255
+#: src/widgets/views/ActionBar.qml:256
 #, kde-format
 msgid "Settings"
 msgstr "Settings"
 
-#: src/widgets/views/ActionBar.qml:262
+#: src/widgets/views/ActionBar.qml:263
 #, kde-format
 msgid "About"
 msgstr "About"
@@ -745,11 +750,6 @@ msgstr "Close Tab"
 #, kde-format
 msgid "Path Edit"
 msgstr "Path Edit"
-
-#: src/widgets/views/ShortcutsDialog.qml:84
-#, kde-format
-msgid "Terminal"
-msgstr "Terminal"
 
 #: src/widgets/views/ShortcutsDialog.qml:99
 #, kde-format

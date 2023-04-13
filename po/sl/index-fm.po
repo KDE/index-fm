@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:48+0000\n"
+"POT-Creation-Date: 2023-04-13 00:48+0000\n"
 "PO-Revision-Date: 2023-03-31 11:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -63,7 +63,7 @@ msgstr ""
 "Izvlecite vsebino stisnjene datoteke v novo ali obstoječo podmapo ali "
 "znotraj trenutne mape."
 
-#: src/main.qml:182
+#: src/main.qml:181
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
@@ -72,48 +72,48 @@ msgstr[1] "Stisni %1 datoteki"
 msgstr[2] "Stisni %1 datoteke"
 msgstr[3] "Stisni %1 datotek"
 
-#: src/main.qml:183
+#: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Stisni izbrane datoteke v novo datoteko."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "Ime arhiva ..."
 
-#: src/main.qml:270 src/widgets/views/HomeView.qml:53
+#: src/main.qml:268 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Odpri mapo"
 
-#: src/main.qml:279
+#: src/main.qml:277
 #, kde-format
 msgid "Extracted"
 msgstr "Izvlečeno"
 
-#: src/main.qml:280
+#: src/main.qml:278
 #, kde-format
 msgid "File was extracted"
 msgstr "Pridobili smo izvleček datoteke"
 
-#: src/main.qml:348
+#: src/main.qml:346
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Preklopi stransko vrstico"
 
-#: src/main.qml:398 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:405 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:413 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
@@ -281,22 +281,27 @@ msgstr "Pogled skrit"
 msgid "Split View"
 msgstr "Razdeli pogled"
 
-#: src/widgets/views/ActionBar.qml:231
+#: src/widgets/views/ActionBar.qml:219 src/widgets/views/ShortcutsDialog.qml:84
+#, kde-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/widgets/views/ActionBar.qml:232
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Odpri terminal tukaj"
 
-#: src/widgets/views/ActionBar.qml:244 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:245 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
 msgstr "Bližnjice"
 
-#: src/widgets/views/ActionBar.qml:255
+#: src/widgets/views/ActionBar.qml:256
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/widgets/views/ActionBar.qml:262
+#: src/widgets/views/ActionBar.qml:263
 #, kde-format
 msgid "About"
 msgstr "O programu"
@@ -749,11 +754,6 @@ msgstr "Zapri zavihek"
 #, kde-format
 msgid "Path Edit"
 msgstr "Urejanje poti"
-
-#: src/widgets/views/ShortcutsDialog.qml:84
-#, kde-format
-msgid "Terminal"
-msgstr "Terminal"
 
 #: src/widgets/views/ShortcutsDialog.qml:99
 #, kde-format
