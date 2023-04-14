@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-19 05:13+0100\n"
+"PO-Revision-Date: 2023-04-13 06:10+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -526,7 +526,7 @@ msgstr ""
 #: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "მიმაგრება"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
