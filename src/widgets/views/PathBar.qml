@@ -30,13 +30,13 @@ Item
 {
     id: control
 
-    property int preferredWidth: visible ?  Math.max(500, item.implicitWidth): 0
+    property int preferredWidth: visible ? Math.max(500, item.implicitWidth): 0
 
     Behavior on preferredWidth
     {
         NumberAnimation
         {
-            duration: 100
+            duration: Maui.Style.units.shortDuration
         }
     }
 

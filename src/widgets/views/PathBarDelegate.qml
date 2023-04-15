@@ -14,8 +14,9 @@ T.Control
     Maui.Theme.inherit: false
 
     implicitWidth: _label.implicitWidth + rightPadding + leftPadding
-    implicitHeight: Math.max(Maui.Style.rowHeight, _label.implicitHeight + topPadding + bottomPadding)
+    implicitHeight: _label.implicitHeight + topPadding + bottomPadding
 
+    padding: Maui.Style.defaultPadding
     rightPadding: Maui.Style.space.big
     leftPadding: rightPadding
     /**
