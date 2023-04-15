@@ -17,6 +17,7 @@
   <name xml:lang="fr">Index</name>
   <name xml:lang="hi">निर्देशिका (Index)</name>
   <name xml:lang="hu">Index</name>
+  <name xml:lang="ia">Indice</name>
   <name xml:lang="id">Index</name>
   <name xml:lang="it">Index</name>
   <name xml:lang="ka">ინდექსი</name>
@@ -49,6 +50,7 @@
   <summary xml:lang="fr">Gérer vos fichiers</summary>
   <summary xml:lang="hi">फ़ाइलों का प्रबंधन करें</summary>
   <summary xml:lang="hu">Fájlkezelő</summary>
+  <summary xml:lang="ia">Gere tu files</summary>
   <summary xml:lang="id">Kelola file-file Anda</summary>
   <summary xml:lang="it">Gestisci i tuoi file</summary>
   <summary xml:lang="ka">მართეთ თქვენი ფაილები</summary>
@@ -121,6 +123,7 @@
       <caption xml:lang="fr">Gestionnaire de fichiers Index</caption>
       <caption xml:lang="hi">निर्देशिका (Index) फ़ाइल प्रबंधक</caption>
       <caption xml:lang="hu">Index fájlkezelő</caption>
+      <caption xml:lang="ia">Gerente de File de Indice</caption>
       <caption xml:lang="id">Pengelola file indeks</caption>
       <caption xml:lang="it">Gestore dei file Index</caption>
       <caption xml:lang="ka">ინდექსის ფაილების მმართველი</caption>
