@@ -1,26 +1,26 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Vit Pelcak <vit@pelcak.org>, 2020, 2021, 2023.
 #
+# giovanni <g.sora@tiscali.it>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-01 16:25+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
-"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
-"Language: cs\n"
+"PO-Revision-Date: 2023-04-14 22:56+0200\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.03.90\n"
 
 #: src/main.cpp:66
 #, kde-format
 msgid "Index"
-msgstr "Rejstřík"
+msgstr "Indice"
 
 #: src/main.cpp:66
 #, kde-format
@@ -30,7 +30,7 @@ msgstr ""
 #: src/main.cpp:67
 #, kde-format
 msgid "© 2019-%1 Maui Development Team"
-msgstr "© 2019-%1 Vývojový tým Maui"
+msgstr "© 2019-%1 Equipa de disveloppamento de Maui"
 
 #: src/main.cpp:69
 #, kde-format
@@ -40,7 +40,7 @@ msgstr "Camilo Higuita"
 #: src/main.cpp:69 src/main.cpp:70
 #, kde-format
 msgid "Developer"
-msgstr "Vývojář"
+msgstr "Disveloppator"
 
 #: src/main.cpp:70
 #, kde-format
@@ -51,7 +51,7 @@ msgstr "Gabriel Dominguez"
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
-msgstr "Rozbalit"
+msgstr "Extrahe"
 
 #: src/main.qml:162
 #, kde-format
@@ -64,317 +64,316 @@ msgstr ""
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
-msgstr[0] "Komprimovat %1 soubor"
-msgstr[1] "Komprimovat %1 soubory"
-msgstr[2] "Komprimovat %1 souborů"
+msgstr[0] "Comprime %1 file"
+msgstr[1] "Comprime %1 files"
 
 #: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
-msgstr "Zkomprimovat vybrané soubory do nového souboru."
+msgstr ""
 
 #: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
-msgstr "Název archivu..."
+msgstr "Nomine de archivo..."
 
 #: src/main.qml:268 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
-msgstr "Otevřít složku"
+msgstr "Aperi dossier"
 
 #: src/main.qml:277
 #, kde-format
 msgid "Extracted"
-msgstr "Rozbaleno"
+msgstr "Extrahite"
 
 #: src/main.qml:278
 #, kde-format
 msgid "File was extracted"
-msgstr "Soubor byl rozbalen"
+msgstr ""
 
 #: src/main.qml:346
 #, kde-format
 msgid "Toggle sidebar"
-msgstr "Přepnout postranní panel"
+msgstr ""
 
 #: src/main.qml:396 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
-msgstr "Záložka"
+msgstr "Marcator de libro"
 
 #: src/main.qml:403 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
 #, kde-format
 msgid "Open in New Tab"
-msgstr "Otevřít v nové kartě"
+msgstr "Aperi in nove scheda"
 
 #: src/main.qml:411 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Open in Split View"
-msgstr "Otevřít v rozděleném pohledu"
+msgstr ""
 
 #: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
 msgid "Details"
-msgstr "Podrobnosti"
+msgstr "Detalios"
 
 #: src/widgets/previewer/FilePreviewer.qml:109
 #, kde-format
 msgid "File information"
-msgstr "Informace o souboru"
+msgstr "Information de file"
 
 #: src/widgets/previewer/FilePreviewer.qml:203
 #, kde-format
 msgid "Previous"
-msgstr "Předchozí"
+msgstr "Precedente"
 
 #: src/widgets/previewer/FilePreviewer.qml:210
 #, kde-format
 msgid "Next"
-msgstr "Následující"
+msgstr "Proxime"
 
 #: src/widgets/previewer/FilePreviewer.qml:218
 #: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
-msgstr "Otevřít"
+msgstr "Aperi"
 
 #: src/widgets/previewer/FileProperties.qml:44
 #, kde-format
 msgid "Permissions"
-msgstr "Oprávnění"
+msgstr "Permissiones"
 
 #: src/widgets/previewer/FileProperties.qml:45
 #: src/widgets/previewer/FileProperties.qml:148
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr "Nastavte práva k přístupu k tomuto souboru"
+msgstr ""
 
 #: src/widgets/previewer/FileProperties.qml:49
 #: src/widgets/previewer/FileProperties.qml:152
 #, kde-format
 msgid "Owner"
-msgstr "Vlastník"
+msgstr "Proprietario"
 
 #: src/widgets/previewer/FileProperties.qml:58
 #: src/widgets/previewer/FileProperties.qml:90
 #: src/widgets/previewer/FileProperties.qml:122
 #, kde-format
 msgid "Read"
-msgstr "Čtení"
+msgstr "Lege"
 
 #: src/widgets/previewer/FileProperties.qml:65
 #: src/widgets/previewer/FileProperties.qml:97
 #: src/widgets/previewer/FileProperties.qml:128
 #, kde-format
 msgid "Write"
-msgstr "Zápis"
+msgstr "Scribe"
 
 #: src/widgets/previewer/FileProperties.qml:72
 #: src/widgets/previewer/FileProperties.qml:105
 #: src/widgets/previewer/FileProperties.qml:134
 #, kde-format
 msgid "Execute"
-msgstr "Spustit"
+msgstr "Executa"
 
 #: src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:159
 #: src/widgets/views/SettingsDialog.qml:180
 #, kde-format
 msgid "Group"
-msgstr "Skupina"
+msgstr "Gruppo"
 
 #: src/widgets/previewer/FileProperties.qml:113
 #, kde-format
 msgid "Everyone"
-msgstr "Všichni"
+msgstr "Totos"
 
 #: src/widgets/previewer/FileProperties.qml:147
 #, kde-format
 msgid "Ownership"
-msgstr "Vlastnictví"
+msgstr "Proprietate"
 
 #: src/widgets/previewer/FileProperties.qml:165
 #, kde-format
 msgid "Users"
-msgstr "Uživatelé"
+msgstr "Usatores"
 
 #: src/widgets/previewer/FileProperties.qml:175
 #, kde-format
 msgid "Groups"
-msgstr "Skupiny"
+msgstr "Gruppos"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
 msgid "Install"
-msgstr "Instalovat"
+msgstr "Installa"
 
 #: src/widgets/views/ActionBar.qml:44 src/widgets/views/SettingsDialog.qml:69
 #, kde-format
 msgid "List"
-msgstr "Seznam"
+msgstr "Lista"
 
 #: src/widgets/views/ActionBar.qml:59 src/widgets/views/SettingsDialog.qml:81
 #, kde-format
 msgid "Grid"
-msgstr "Mřížka"
+msgstr "Grillia"
 
 #: src/widgets/views/ActionBar.qml:92 src/widgets/views/SettingsDialog.qml:108
 #, kde-format
 msgid "Type"
-msgstr "Typ"
+msgstr "Typo"
 
 #: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "Date"
-msgstr "Datum"
+msgstr "Data"
 
 #: src/widgets/views/ActionBar.qml:117 src/widgets/views/SettingsDialog.qml:131
 #, kde-format
 msgid "Modified"
-msgstr "Změněno"
+msgstr "Modificate"
 
 #: src/widgets/views/ActionBar.qml:130 src/widgets/views/SettingsDialog.qml:142
 #, kde-format
 msgid "Size"
-msgstr "Velikost"
+msgstr "Dimension"
 
 #: src/widgets/views/ActionBar.qml:143 src/widgets/views/SettingsDialog.qml:153
 #, kde-format
 msgid "Name"
-msgstr "Název"
+msgstr "Nomine"
 
 #: src/widgets/views/ActionBar.qml:165
 #, kde-format
 msgid "Paste"
-msgstr "Vložit"
+msgstr "Colla"
 
 #: src/widgets/views/ActionBar.qml:175
 #: src/widgets/views/ShortcutsDialog.qml:169
 #, kde-format
 msgid "Select All"
-msgstr "Vybrat vše"
+msgstr "Selige toto"
 
 #: src/widgets/views/ActionBar.qml:182
 #, kde-format
 msgid "New Item"
-msgstr "Nová položka"
+msgstr "Nove elemento"
 
 #: src/widgets/views/ActionBar.qml:195
 #, kde-format
 msgid "New tab"
-msgstr "Nová karta"
+msgstr "Nove scheda"
 
 #: src/widgets/views/ActionBar.qml:202
 #, kde-format
 msgid "View Hidden"
-msgstr "Zobrazit skryté"
+msgstr "Vide celate"
 
 #: src/widgets/views/ActionBar.qml:210
 #, kde-format
 msgid "Split View"
-msgstr "Rozdělit pohled"
+msgstr "Scinde Vista"
 
 #: src/widgets/views/ActionBar.qml:219 src/widgets/views/ShortcutsDialog.qml:84
 #, kde-format
 msgid "Terminal"
-msgstr "Terminál"
+msgstr "Terminal"
 
 #: src/widgets/views/ActionBar.qml:232
 #, kde-format
 msgid "Open Terminal Here"
-msgstr "Zde otevřít terminál"
+msgstr "Aperi le terminal ci"
 
 #: src/widgets/views/ActionBar.qml:245 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
-msgstr "Zkratky"
+msgstr "Vias breve"
 
 #: src/widgets/views/ActionBar.qml:256
 #, kde-format
 msgid "Settings"
-msgstr "Nastavení"
+msgstr "Preferentias"
 
 #: src/widgets/views/ActionBar.qml:263
 #, kde-format
 msgid "About"
-msgstr "O aplikaci"
+msgstr "A proposito"
 
 #: src/widgets/views/Browser.qml:50
 #, kde-format
 msgid "Edit"
-msgstr "Upravit"
+msgstr "Modifica"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
 #, kde-format
 msgid "Remove"
-msgstr "Odstranit"
+msgstr "Remove"
 
 #: src/widgets/views/Browser.qml:76
 #, kde-format
 msgid "Remove '%1'"
-msgstr "Odstranit '%1'"
+msgstr "Remove '%1'"
 
 #: src/widgets/views/Browser.qml:77
 #, kde-format
 msgid "Accept"
-msgstr "Přijmout"
+msgstr "Accepta"
 
 #: src/widgets/views/Browser.qml:78
 #, kde-format
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr "Cancella"
 
 #: src/widgets/views/Browser.qml:80
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
-msgstr "Opravdu si přejete odstranit tuto značku? Tento krok nejde vrátit."
+msgstr ""
 
 #: src/widgets/views/Browser.qml:158
 #, kde-format
 msgid "Create new"
-msgstr "Vytvořit nový"
+msgstr "Crea nove"
 
 #: src/widgets/views/BrowserView.qml:83 src/widgets/views/FileMenu.qml:50
 #, kde-format
 msgid "Copy"
-msgstr "Kopírovat"
+msgstr "Copia"
 
 #: src/widgets/views/BrowserView.qml:93 src/widgets/views/FileMenu.qml:61
 #, kde-format
 msgid "Cut"
-msgstr "Vyjmout"
+msgstr "Talia"
 
 #: src/widgets/views/BrowserView.qml:103 src/widgets/views/FileMenu.qml:166
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
-msgstr "Sdílet"
+msgstr "Comparti"
 
 #: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
-msgstr "Zkomprimovat"
+msgstr "Comprime"
 
 #: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tags"
-msgstr "Značky"
+msgstr "Etiquettas"
 
 #: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
-msgstr "Vytrhnout kartu"
+msgstr "Distacca scheda"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
 msgid "Devices and Remote"
-msgstr "Zařízení a vzdálené ovládání"
+msgstr ""
 
 #: src/widgets/views/DisksSection.qml:19
 #, kde-format
@@ -384,37 +383,37 @@ msgstr ""
 #: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
-msgstr "Oblíbené soubory"
+msgstr "Files favorite"
 
 #: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
-msgstr "Vaše soubory označené jako oblíbené"
+msgstr ""
 
 #: src/widgets/views/FileMenu.qml:41
 #, kde-format
 msgid " items"
-msgstr "položky"
+msgstr "elementos"
 
 #: src/widgets/views/FileMenu.qml:72
 #, kde-format
 msgid "Rename"
-msgstr "Přejmenovat"
+msgstr "Renomina"
 
 #: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
 #, kde-format
 msgid "Select"
-msgstr "Vybrat"
+msgstr "Selige"
 
 #: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
-msgstr "Otevřít pomocí"
+msgstr "Aperi con"
 
 #: src/widgets/views/FileMenu.qml:123
 #, kde-format
 msgid "Preview and Info"
-msgstr "Náhled a informace"
+msgstr ""
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
@@ -429,85 +428,85 @@ msgstr ""
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
 #, kde-format
 msgid "Open in New Window"
-msgstr "Otevřít v novém okně"
+msgstr "Aperi in nove fenestra"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr "Zde zatím nic není."
+msgstr ""
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr "Zkuste to později."
+msgstr ""
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
-msgstr "Hledat soubory"
+msgstr "Cerca files..."
 
 #: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
-msgstr "Prohlížeč"
+msgstr "Navigator"
 
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Downloads"
-msgstr "Stahování"
+msgstr "Discargamentos"
 
 #: src/widgets/views/HomeView.qml:134
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr "Vaše nejnovější stažené soubory"
+msgstr ""
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Music"
-msgstr "Hudba"
+msgstr "Musica"
 
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr "Vaše nejnovější hudební soubory"
+msgstr ""
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr "Obrázky"
+msgstr "Imagines"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr "Vaše nejnovější soubory obrázků"
+msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:345
 #: src/widgets/views/SettingsDialog.qml:348
 #, kde-format
 msgid "Places"
-msgstr "Místa"
+msgstr "Placias"
 
 #: src/widgets/views/PlacesSection.qml:20
 #, kde-format
 msgid "Quick access to common places."
-msgstr "Rychlý přístup ke společným místům."
+msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr "Více"
+msgstr "Plus"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
 msgid "Bookmarks!"
-msgstr "Záložky"
+msgstr "Marcatores de libro!"
 
 #: src/widgets/views/PlacesSideBar.qml:43
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr "Zde budou vypsány vaše záložky"
+msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
@@ -519,43 +518,43 @@ msgstr ""
 #: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
 msgid "Mount"
-msgstr "Připojit"
+msgstr "Monta"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Navigation"
-msgstr "Navigace"
+msgstr "Navigation"
 
 #: src/widgets/views/SettingsDialog.qml:15
 #, kde-format
 msgid "Configure the app plugins and behavior."
-msgstr "Nastavení modulů a chování aplikace."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
 msgid "Thumbnails"
-msgstr "Miniatury"
+msgstr "Miniaturas"
 
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Zobrazit náhledy obrázků, videí a souborů PDF."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save Session"
-msgstr "Uložit sezení"
+msgstr "Salveguarda session"
 
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid "Save and restore tabs."
-msgstr "Uložit a obnovit karty."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr "Dynamické předvolby"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -569,32 +568,32 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:58
 #, kde-format
 msgid "View Type"
-msgstr "Typ pohledu"
+msgstr "Vide typo"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr "Výchozí typ zobrazení."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
 msgid "Sort"
-msgstr "Seřadit"
+msgstr "Ordina"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr "Výchozí hodnota řazení."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
 msgid "Show Folders First"
-msgstr "Zobrazovat nejdříve složky"
+msgstr "Monstra dossieres per prime"
 
 #: src/widgets/views/SettingsDialog.qml:195
 #, kde-format
 msgid "Interface"
-msgstr "Rozhraní"
+msgstr "Interfacie"
 
 #: src/widgets/views/SettingsDialog.qml:196
 #, kde-format
@@ -604,7 +603,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:200
 #, kde-format
 msgid "Grid Items Size"
-msgstr "Velikost mřížky položky"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:201
 #, kde-format
@@ -653,115 +652,115 @@ msgstr "S"
 #: src/widgets/views/SettingsDialog.qml:297
 #, kde-format
 msgid "Overview"
-msgstr "Přehled"
+msgstr "Vista de insimul"
 
 #: src/widgets/views/SettingsDialog.qml:298
 #, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Použít režim přehledu jako výchozí při spuštění."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
 msgid "Dark Mode"
-msgstr "Tmavý režim"
+msgstr "Modo obscur"
 
 #: src/widgets/views/SettingsDialog.qml:311
 #, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "Přepínač mezi světlým a tmavým barevným schématem."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:327
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
 msgid "Quick places"
-msgstr "Rychlá místa"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:328
 #: src/widgets/views/SettingsDialog.qml:354
 #: src/widgets/views/SettingsDialog.qml:367
 #, kde-format
 msgid "Access to standard locations."
-msgstr "Přístup ke standardním místům."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:349
 #, kde-format
 msgid "Toggle sidebar sections."
-msgstr "Přepnout sekce postranní lišty"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Bookmarks"
-msgstr "Záložky"
+msgstr "Marcatores de libro"
 
 #: src/widgets/views/SettingsDialog.qml:382
 #, kde-format
 msgid "Remote"
-msgstr "Vzdálené"
+msgstr "Remote"
 
 #: src/widgets/views/SettingsDialog.qml:383
 #, kde-format
 msgid "Access to network locations."
-msgstr "Přístup k místům v síti."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:399
 #, kde-format
 msgid "Removable"
-msgstr "Vyměnitelné"
+msgstr "Removibile"
 
 #: src/widgets/views/SettingsDialog.qml:400
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr "Přístup k USB diskům a kartám SD."
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:415
 #, kde-format
 msgid "Devices"
-msgstr "Zařízení"
+msgstr "Dispositivos"
 
 #: src/widgets/views/SettingsDialog.qml:416
 #, kde-format
 msgid "Access drives."
-msgstr "Přístup k diskům."
+msgstr ""
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format
 msgid "Browser navigation with keyboard."
-msgstr "Procházení v prohlížeči pomocí klávesnice."
+msgstr ""
 
 #: src/widgets/views/ShortcutsDialog.qml:24
 #, kde-format
 msgid "New Tab"
-msgstr "Nová karta"
+msgstr "Nove scheda"
 
 #: src/widgets/views/ShortcutsDialog.qml:44
 #, kde-format
 msgid "Close Tab"
-msgstr "Zavřít kartu"
+msgstr "Claude scheda"
 
 #: src/widgets/views/ShortcutsDialog.qml:64
 #, kde-format
 msgid "Path Edit"
-msgstr "Úprava cesty"
+msgstr "Modifica de percurso"
 
 #: src/widgets/views/ShortcutsDialog.qml:99
 #, kde-format
 msgid "Split"
-msgstr "Rozdělit"
+msgstr "Scinde"
 
 #: src/widgets/views/ShortcutsDialog.qml:114
 #, kde-format
 msgid "New File"
-msgstr "Nový soubor"
+msgstr "Nove file"
 
 #: src/widgets/views/ShortcutsDialog.qml:134
 #, kde-format
 msgid "Preview"
-msgstr "Náhled"
+msgstr "Vista preliminar"
 
 #: src/widgets/views/ShortcutsDialog.qml:149
 #, kde-format
 msgid "Find Tab"
-msgstr "Najít kartu"
+msgstr "Trova scheda"
 
 #: src/widgets/views/TagsSection.qml:22
 #, kde-format
