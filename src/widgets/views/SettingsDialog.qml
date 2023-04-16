@@ -282,13 +282,6 @@ Maui.SettingsDialog
                     onTriggered: appSettings.listSize = 3
                     checked: appSettings.listSize === 3
                 }
-
-                Action
-                {
-                    text: i18n("XL")
-                    onTriggered: appSettings.listSize = 4
-                    checked: appSettings.listSize === 4
-                }
             }
         }
 
