@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:48+0000\n"
+"POT-Creation-Date: 2023-04-17 00:47+0000\n"
 "PO-Revision-Date: 2023-02-27 21:44+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -489,8 +489,8 @@ msgid "Your most recent image files"
 msgstr "Zure irudi fitxategi berrienak"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:345
-#: src/widgets/views/SettingsDialog.qml:348
+#: src/widgets/views/SettingsDialog.qml:338
+#: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Places"
 msgstr "Lekuak"
@@ -641,7 +641,6 @@ msgid "X"
 msgstr "X"
 
 #: src/widgets/views/SettingsDialog.qml:240
-#: src/widgets/views/SettingsDialog.qml:288
 #, kde-format
 msgid "XL"
 msgstr "XL"
@@ -661,75 +660,75 @@ msgstr "Zerrenda ikuspegiaren neurria."
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:297
+#: src/widgets/views/SettingsDialog.qml:290
 #, kde-format
 msgid "Overview"
 msgstr "Ikuspegi orokorra"
 
-#: src/widgets/views/SettingsDialog.qml:298
+#: src/widgets/views/SettingsDialog.qml:291
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr "Erabili ikuspegi-orokor modua lehenetsi gisa abiaraztean."
 
-#: src/widgets/views/SettingsDialog.qml:310
+#: src/widgets/views/SettingsDialog.qml:303
 #, kde-format
 msgid "Dark Mode"
 msgstr "Modu iluna"
 
-#: src/widgets/views/SettingsDialog.qml:311
+#: src/widgets/views/SettingsDialog.qml:304
 #, kde-format
 msgid "Switch between light and dark colorscheme."
 msgstr "Aldatu kolore-antolaera argi eta ilunaren artean."
 
-#: src/widgets/views/SettingsDialog.qml:327
-#: src/widgets/views/SettingsDialog.qml:353
+#: src/widgets/views/SettingsDialog.qml:320
+#: src/widgets/views/SettingsDialog.qml:346
 #, kde-format
 msgid "Quick places"
 msgstr "Toki azkarrak"
 
-#: src/widgets/views/SettingsDialog.qml:328
-#: src/widgets/views/SettingsDialog.qml:354
-#: src/widgets/views/SettingsDialog.qml:367
+#: src/widgets/views/SettingsDialog.qml:321
+#: src/widgets/views/SettingsDialog.qml:347
+#: src/widgets/views/SettingsDialog.qml:360
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Leku estandarretarako sarbidea."
 
-#: src/widgets/views/SettingsDialog.qml:349
+#: src/widgets/views/SettingsDialog.qml:342
 #, kde-format
 msgid "Toggle sidebar sections."
 msgstr "Txandakatu alboko-barrako atalak."
 
-#: src/widgets/views/SettingsDialog.qml:366
+#: src/widgets/views/SettingsDialog.qml:359
 #, kde-format
 msgid "Bookmarks"
 msgstr "Laster-markak"
 
-#: src/widgets/views/SettingsDialog.qml:382
+#: src/widgets/views/SettingsDialog.qml:375
 #, kde-format
 msgid "Remote"
 msgstr "Urrutikoa"
 
-#: src/widgets/views/SettingsDialog.qml:383
+#: src/widgets/views/SettingsDialog.qml:376
 #, kde-format
 msgid "Access to network locations."
 msgstr "Sareko lekuetarako sarbidea."
 
-#: src/widgets/views/SettingsDialog.qml:399
+#: src/widgets/views/SettingsDialog.qml:392
 #, kde-format
 msgid "Removable"
 msgstr "Aldagarria"
 
-#: src/widgets/views/SettingsDialog.qml:400
+#: src/widgets/views/SettingsDialog.qml:393
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "USB makila eta SD txarteletara sarbidea."
 
-#: src/widgets/views/SettingsDialog.qml:415
+#: src/widgets/views/SettingsDialog.qml:408
 #, kde-format
 msgid "Devices"
 msgstr "Gailuak"
 
-#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:409
 #, kde-format
 msgid "Access drives."
 msgstr "Unitatetara sarbidea."
