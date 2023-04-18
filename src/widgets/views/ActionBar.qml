@@ -28,7 +28,6 @@ Maui.ToolBar
             {
                 icon.name: "go-next"
                 onTriggered : currentBrowser.goForward()
-
             }
         },
 
@@ -158,15 +157,18 @@ Maui.ToolBar
             asynchronous: true
             sourceComponent: Maui.ToolButtonMenu
             {
+                id: _mainMenu
                 icon.name:  "overflow-menu"
+
+                property bool canPaste: false
+                menu.onOpened: canPaste = currentBrowser.currentFMList.clipboardHasContent()
 
                 MenuItem
                 {
                     text: i18n("Paste")
-                    //         enabled: _optionsButton.enabled
+                    enabled: _mainMenu.canPaste
 
                     icon.name: "edit-paste"
-                    // 		enabled: control.clipboardItems.length > 0
                     onTriggered: currentBrowser.paste()
                 }
 
@@ -271,5 +273,10 @@ Maui.ToolBar
     function openMainMenu()
     {
         _mainMenuLoader.item.open()
+    }
+
+    function popupMainMenu()
+    {
+        _mainMenuLoader.item.popup()
     }
 }

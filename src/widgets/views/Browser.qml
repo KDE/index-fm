@@ -283,16 +283,8 @@ Maui.SplitViewItem
 
             onRightClicked:
             {
-                _actionBarLoader.item.openMainMenu()
+                _actionBarLoader.item.popupMainMenu()
             }
-
-            //            onAreaClicked:
-            //            {
-            //                if((mouse.button === Qt.LeftButton) && (mouse.modifiers === Qt.NoModifier) && (!Maui.Handy.isMobile))
-            //                {
-            //                    handleSelectionState()
-            //                }
-            //            }
 
         }
 
