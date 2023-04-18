@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-17 00:47+0000\n"
-"PO-Revision-Date: 2023-03-18 17:07+0100\n"
+"PO-Revision-Date: 2023-04-15 17:46+0200\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -527,7 +527,7 @@ msgstr ""
 #: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
