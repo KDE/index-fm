@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-17 00:47+0000\n"
+"POT-Creation-Date: 2023-04-19 00:48+0000\n"
 "PO-Revision-Date: 2023-04-14 22:56+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -210,93 +210,93 @@ msgstr "Gruppos"
 msgid "Install"
 msgstr "Installa"
 
-#: src/widgets/views/ActionBar.qml:44 src/widgets/views/SettingsDialog.qml:69
+#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:69
 #, kde-format
 msgid "List"
 msgstr "Lista"
 
-#: src/widgets/views/ActionBar.qml:59 src/widgets/views/SettingsDialog.qml:81
+#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:81
 #, kde-format
 msgid "Grid"
 msgstr "Grillia"
 
-#: src/widgets/views/ActionBar.qml:92 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:108
 #, kde-format
 msgid "Type"
 msgstr "Typo"
 
-#: src/widgets/views/ActionBar.qml:104 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "Date"
 msgstr "Data"
 
-#: src/widgets/views/ActionBar.qml:117 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:131
 #, kde-format
 msgid "Modified"
 msgstr "Modificate"
 
-#: src/widgets/views/ActionBar.qml:130 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:142
 #, kde-format
 msgid "Size"
 msgstr "Dimension"
 
-#: src/widgets/views/ActionBar.qml:143 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:153
 #, kde-format
 msgid "Name"
 msgstr "Nomine"
 
-#: src/widgets/views/ActionBar.qml:165
+#: src/widgets/views/ActionBar.qml:168
 #, kde-format
 msgid "Paste"
 msgstr "Colla"
 
-#: src/widgets/views/ActionBar.qml:175
+#: src/widgets/views/ActionBar.qml:177
 #: src/widgets/views/ShortcutsDialog.qml:169
 #, kde-format
 msgid "Select All"
 msgstr "Selige toto"
 
-#: src/widgets/views/ActionBar.qml:182
+#: src/widgets/views/ActionBar.qml:184
 #, kde-format
 msgid "New Item"
 msgstr "Nove elemento"
 
-#: src/widgets/views/ActionBar.qml:195
+#: src/widgets/views/ActionBar.qml:197
 #, kde-format
 msgid "New tab"
 msgstr "Nove scheda"
 
-#: src/widgets/views/ActionBar.qml:202
+#: src/widgets/views/ActionBar.qml:204
 #, kde-format
 msgid "View Hidden"
 msgstr "Vide celate"
 
-#: src/widgets/views/ActionBar.qml:210
+#: src/widgets/views/ActionBar.qml:212
 #, kde-format
 msgid "Split View"
 msgstr "Scinde Vista"
 
-#: src/widgets/views/ActionBar.qml:219 src/widgets/views/ShortcutsDialog.qml:84
+#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:84
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/widgets/views/ActionBar.qml:232
+#: src/widgets/views/ActionBar.qml:234
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Aperi le terminal ci"
 
-#: src/widgets/views/ActionBar.qml:245 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
 msgstr "Vias breve"
 
-#: src/widgets/views/ActionBar.qml:256
+#: src/widgets/views/ActionBar.qml:258
 #, kde-format
 msgid "Settings"
 msgstr "Preferentias"
 
-#: src/widgets/views/ActionBar.qml:263
+#: src/widgets/views/ActionBar.qml:265
 #, kde-format
 msgid "About"
 msgstr "A proposito"
