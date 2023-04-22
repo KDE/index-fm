@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Shinjo Park <kde@peremen.name>, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-19 00:48+0000\n"
-"PO-Revision-Date: 2022-07-13 15:14+0200\n"
+"PO-Revision-Date: 2023-04-21 23:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -105,15 +105,13 @@ msgstr "책갈피"
 
 #: src/main.qml:403 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:91
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
 msgstr "새 탭으로 열기"
 
 #: src/main.qml:411 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:107
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
 msgstr "분할 보기로 열기"
 
@@ -260,10 +258,9 @@ msgid "Select All"
 msgstr "모두 선택"
 
 #: src/widgets/views/ActionBar.qml:184
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "새 탭"
+msgstr "새 항목"
 
 #: src/widgets/views/ActionBar.qml:197
 #, kde-format
@@ -271,10 +268,9 @@ msgid "New tab"
 msgstr "새 탭"
 
 #: src/widgets/views/ActionBar.qml:204
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "숨겨짐"
+msgstr "숨김 항목 표시"
 
 #: src/widgets/views/ActionBar.qml:212
 #, kde-format
@@ -287,8 +283,7 @@ msgid "Terminal"
 msgstr "터미널"
 
 #: src/widgets/views/ActionBar.qml:234
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "여기에서 터미널 열기"
 
@@ -374,7 +369,7 @@ msgstr "태그"
 #: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "탭 떼내기"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
@@ -417,8 +412,7 @@ msgid "Open with"
 msgstr "다음으로 열기"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "미리 보기와 정보"
 
@@ -433,20 +427,19 @@ msgid "Fav"
 msgstr "책갈피"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "새 탭으로 열기"
+msgstr "새 창으로 열기"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "아무것도 없습니다."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "나중에 다시 확인하십시오."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -464,10 +457,9 @@ msgid "Downloads"
 msgstr "다운로드"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "최근에 다운로드한 파일, 오디오, 사진"
+msgstr "최근에 다운로드한 파일"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -477,18 +469,17 @@ msgstr "음악"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "최근에 사용한 음악 파일"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "그림"
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "최근에 다운로드한 파일, 오디오, 사진"
+msgstr "최근에 사용한 그림 파일"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:338
@@ -498,16 +489,15 @@ msgid "Places"
 msgstr "위치"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "공통 모음집에 빨리 접근하기"
+msgstr "자주 사용하는 장소에 빠르게 접근합니다."
 
 #: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "더 보기"
 
 #: src/widgets/views/PlacesSideBar.qml:42
 #, kde-format
@@ -529,7 +519,7 @@ msgstr "이 장치에 접근하려면 마운트해야 합니다. 장치를 설�
 #: src/widgets/views/PlacesSideBar.qml:239
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "마운트"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -548,10 +538,9 @@ msgid "Thumbnails"
 msgstr "축소판"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "사진, 동영상, PDF 파일의 미리 보기 표시"
+msgstr "사진, 동영상, PDF 파일의 미리 보기를 표시합니다."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -559,15 +548,14 @@ msgid "Save Session"
 msgstr "세션 저장"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "탭 저장하고 복원하기"
+msgstr "탭을 저장하고 복원합니다."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "동적 설정"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -577,28 +565,29 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"디렉터리별 동적 설정입니다. 보기 형식, 정렬 순서, 내장된 터미널 표시 여부 등"
+"의 설정을 디렉터리별로 저장합니다. 이 옵션을 사용하지 않으면 모든 디렉터리에 "
+"기본 설정을 사용합니다."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "형식"
+msgstr "보기 형식"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "기본 보기 형식입니다."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "정렬 순서"
+msgstr "정렬"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "기본 정렬 값입니다."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
@@ -669,10 +658,9 @@ msgid "Overview"
 msgstr "요약"
 
 #: src/widgets/views/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "실행할 때 기본값으로 요약 보기 사용"
+msgstr "실행할 때 기본값으로 요약 보기를 사용합니다."
 
 #: src/widgets/views/SettingsDialog.qml:303
 #, kde-format
@@ -680,10 +668,9 @@ msgid "Dark Mode"
 msgstr "어두운 모드"
 
 #: src/widgets/views/SettingsDialog.qml:304
-#, fuzzy, kde-format
-#| msgid "Switch between light and dark colorscheme"
+#, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "밝은 색상과 어두운 색상 전환"
+msgstr "밝은 색상과 어두운 색상을 전환합니다."
 
 #: src/widgets/views/SettingsDialog.qml:320
 #: src/widgets/views/SettingsDialog.qml:346
