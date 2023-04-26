@@ -234,7 +234,7 @@ Maui.SplitViewItem
 
                 //                handleSelectionState(item)
 
-                if(Qt.styleHints.singleClickActivation)
+                if(Maui.Handy.singleClick)
                 {
                     if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                     {
@@ -251,7 +251,7 @@ Maui.SplitViewItem
                 const item = currentFMModel.get(index)
                 //                handleSelectionState(item)
 
-                if(!Qt.styleHints.singleClickActivation)
+                if(!Maui.Handy.singleClick)
                 {
                     if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                     {

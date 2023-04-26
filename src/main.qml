@@ -193,7 +193,7 @@ Maui.ApplicationWindow
             function clear()
             {
                 _textEntry.clear()
-                compressType.currentIndex = 0
+                compressType.type = "zip"
                 urls = []
                 _showCompressedFiles.checked = false
             }
@@ -203,21 +203,24 @@ Maui.ApplicationWindow
                 id: compressType
                 autoExclusive: true
                 expanded: true
-                currentIndex: 0
+                property string type: "zip"
 
                 Action
                 {
                     text: ".ZIP"
+                    checked: compressType.type === "zip"
                 }
 
                 Action
                 {
                     text: ".TAR"
+                    checked: compressType.type === "tar"
                 }
 
                 Action
                 {
                     text: ".7ZIP"
+                    checked: compressType.type === "7zip"
                 }
             }
 
@@ -294,6 +297,7 @@ Maui.ApplicationWindow
         sideBar.preferredWidth: 200
 
         sideBar.minimumWidth: 200
+        sideBar.autoShow: true
         sideBarContent: PlacesSideBar
         {
             id: placesSidebar

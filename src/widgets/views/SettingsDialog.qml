@@ -378,7 +378,7 @@ Maui.SettingsDialog
                     Switch
                     {
                         checkable: true
-                        checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOTE_PATH)>= 0
+                        checked: appSettings.sidebarSections.indexOf(FB.FMList.REMOTE_PATH)>= 0
                         onToggled:
                         {
                             toggleSection(FB.FMList.REMOTE_PATH)
@@ -395,7 +395,7 @@ Maui.SettingsDialog
                     Switch
                     {
                         checkable: true
-                        checked: placesSidebar.list.groups.indexOf(FB.FMList.REMOVABLE_PATH)>= 0
+                        checked: appSettings.sidebarSections.indexOf(FB.FMList.REMOVABLE_PATH)>= 0
                         onToggled:
                         {
                             toggleSection(FB.FMList.REMOVABLE_PATH)
@@ -411,7 +411,7 @@ Maui.SettingsDialog
                     Switch
                     {
                         checkable: true
-                        checked: placesSidebar.list.groups.indexOf(FB.FMList.DRIVES_PATH)>= 0
+                        checked: appSettings.sidebarSections.indexOf(FB.FMList.DRIVES_PATH)>= 0
                         onToggled:
                         {
                             toggleSection(FB.FMList.DRIVES_PATH)

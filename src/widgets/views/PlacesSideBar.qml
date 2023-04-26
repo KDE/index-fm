@@ -20,14 +20,7 @@ Loader
     asynchronous: true
     active: (control.enabled && control.visible) || item
 
-    property alias list : placesList
-
-    FB.PlacesList
-    {
-        id: placesList
-        groups: appSettings.sidebarSections
-    }
-
+    property var list: item.list
 
     sourceComponent: Maui.ListBrowser
     {
@@ -37,6 +30,8 @@ Loader
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
         signal placeClicked (string path, var mouse)
+        property alias list : placesList
+
 
         holder.visible: count === 0
         holder.title: i18n("Bookmarks!")
@@ -125,7 +120,7 @@ Loader
         flickable.bottomMargin: Maui.Style.contentMargins
         flickable.header: Loader
         {
-//            asynchronous: true
+            //            asynchronous: true
             width: parent.width
             //                height: item ? item.implicitHeight : 0
             active: appSettings.quickSidebarSection
@@ -150,46 +145,46 @@ Loader
                         model: inx.quickPaths()
 
                         delegate:  Maui.GridBrowserDelegate
+                        {
+                            Layout.preferredHeight: Math.min(50, width)
+                            Layout.preferredWidth: 50
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
+
+                            isCurrentItem: modelData.path === "overview:///" ? _stackView.depth === 2 : (currentBrowser.currentPath === modelData.path && _stackView.depth === 1)
+                            iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
+                            iconSizeHint: Maui.Style.iconSize
+                            template.isMask: true
+                            label1.text: modelData.label
+                            labelsVisible: false
+                            tooltipText: modelData.label
+                            flat: false
+                            onClicked:
                             {
-                                Layout.preferredHeight: Math.min(50, width)
-                                Layout.preferredWidth: 50
-                                Layout.fillWidth: true
-                                Layout.fillHeight: true
-                                Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
-
-                                isCurrentItem: modelData.path === "overview:///" ? _stackView.depth === 2 : (currentBrowser.currentPath === modelData.path && _stackView.depth === 1)
-                                iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
-                                iconSizeHint: Maui.Style.iconSize
-                                template.isMask: true
-                                label1.text: modelData.label
-                                labelsVisible: false
-                                tooltipText: modelData.label
-                                flat: false
-                                onClicked:
+                                if(modelData.path === "overview:///")
                                 {
-                                    if(modelData.path === "overview:///")
-                                    {
-                                        _stackView.push(_homeViewComponent)
-                                        if(control.collapsed)
-                                            control.close()
-                                        return
-                                    }
-
-                                    placeClicked(modelData.path, mouse)
+                                    _stackView.push(_homeViewComponent)
+                                    if(control.collapsed)
+                                        control.close()
+                                    return
                                 }
 
-                                onRightClicked:
-                                {
-                                    _menu.path = modelData.path
-                                    _menu.show()
-                                }
-
-                                onPressAndHold:
-                                {
-                                    _menu.path = modelData.path
-                                    _menu.show()
-                                }
+                                placeClicked(modelData.path, mouse)
                             }
+
+                            onRightClicked:
+                            {
+                                _menu.path = modelData.path
+                                _menu.show()
+                            }
+
+                            onPressAndHold:
+                            {
+                                _menu.path = modelData.path
+                                _menu.show()
+                            }
+                        }
                     }
                 }
             }
@@ -198,7 +193,11 @@ Loader
         model: Maui.BaseModel
         {
             id: placesModel
-            list: placesList
+            list: FB.PlacesList
+            {
+                id: placesList
+                groups: appSettings.sidebarSections
+            }
         }
 
         Component.onCompleted:
