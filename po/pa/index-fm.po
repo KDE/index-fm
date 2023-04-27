@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:48+0000\n"
+"POT-Creation-Date: 2023-04-27 00:47+0000\n"
 "PO-Revision-Date: 2021-10-07 17:48-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -77,41 +77,41 @@ msgstr "ਚੁਣੀਆਂ ਫ਼ਾਇਲਾਂ ਨੂੰ ਨਵੀਂ ਫਾ�
 msgid "Archive name..."
 msgstr "ਅਕਾਇਵ ਦਾ ਨਾਂ..."
 
-#: src/main.qml:268 src/widgets/views/HomeView.qml:53
+#: src/main.qml:271 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "ਫੋਲਡਰ ਖੋਲ੍ਹੋ"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "Extracted"
 msgstr "ਖਿਲਾਰੀ"
 
-#: src/main.qml:278
+#: src/main.qml:281
 #, kde-format
 msgid "File was extracted"
 msgstr "ਫਾਇਲ ਨੂੰ ਖਿਲਾਰਿਆ ਗਿਆ"
 
-#: src/main.qml:346
+#: src/main.qml:350
 #, fuzzy, kde-format
 #| msgid "Toogle SideBar"
 msgid "Toggle sidebar"
 msgstr "ਬਾਹੀ ਨੂੰ ਬਦਲੋ"
 
-#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:400 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:91
+#: src/main.qml:407 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:86
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "ਨਵੀਂ ਟੈਬ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:107
+#: src/main.qml:415 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:102
 #, fuzzy, kde-format
 #| msgid "Open in split view"
 msgid "Open in Split View"
@@ -316,7 +316,7 @@ msgid "Edit"
 msgstr "ਮਾਰਗ ਸੋਧੋ"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
@@ -436,7 +436,7 @@ msgstr "ਨਾ-ਪਸੰਦ"
 msgid "Fav"
 msgstr "ਪਸੰਦ"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Window"
@@ -513,17 +513,17 @@ msgstr "ਆਮ ਭੰਡਾਰਾਂ ਲਈ ਫ਼ੌਰੀ ਪਹੁੰਚ"
 msgid "More"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:42
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Bookmarks!"
 msgstr "ਬੁੱਕਮਾਰਕ!"
 
-#: src/widgets/views/PlacesSideBar.qml:43
+#: src/widgets/views/PlacesSideBar.qml:38
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "ਤੁਹਾਡੇ ਬੁੱਕਮਾਰਕ ਇੱਥੇ ਦਿਖਾਏ ਜਾਣਗੇ"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -531,7 +531,7 @@ msgid ""
 msgstr ""
 "ਇਸ ਡਿਵਾਈਸ ਨੂੰ ਵਰਤਣ ਤੋਂ ਪਹਿਲਾਂ ਮਾਊਂਟ ਕਰਨ ਦੀ ਲੋੜ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਹ ਡਿਵਾਈਸ ਸੈਟਅੱਪ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
 msgstr ""

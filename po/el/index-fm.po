@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:48+0000\n"
+"POT-Creation-Date: 2023-04-27 00:47+0000\n"
 "PO-Revision-Date: 2023-01-06 17:17+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -79,40 +79,40 @@ msgstr "Συμπίεση επιλεγμένων αρχείων σε ένα νέ�
 msgid "Archive name..."
 msgstr "Όνομα αρχειοθήκης..."
 
-#: src/main.qml:268 src/widgets/views/HomeView.qml:53
+#: src/main.qml:271 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Άνοιγμα φακέλου"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "Extracted"
 msgstr "Εξήχθη"
 
-#: src/main.qml:278
+#: src/main.qml:281
 #, kde-format
 msgid "File was extracted"
 msgstr "Το αρχείο εξήχθη"
 
-#: src/main.qml:346
+#: src/main.qml:350
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Εναλλαγή πλευρικής γραμμής"
 
-#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:400 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Σελιδοδείκτης"
 
-#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:91
+#: src/main.qml:407 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:86
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:107
+#: src/main.qml:415 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:102
 #, fuzzy, kde-format
 #| msgid "Open in split view"
 msgid "Open in Split View"
@@ -315,7 +315,7 @@ msgid "Edit"
 msgstr "Επεξεργασία"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
 #, kde-format
 msgid "Remove"
 msgstr "Αφαίρεση"
@@ -437,7 +437,7 @@ msgstr "ΜηΠροτιμ"
 msgid "Fav"
 msgstr "Προτιμ"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Window"
@@ -514,17 +514,17 @@ msgstr "Γρήγορη πρόσβαση σε κοινές συλλογές"
 msgid "More"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:42
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Bookmarks!"
 msgstr "Σελιδοδείκτες!"
 
-#: src/widgets/views/PlacesSideBar.qml:43
+#: src/widgets/views/PlacesSideBar.qml:38
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Η λίστα με τους σελιδοδείκτες σας θα βρίσκεται εδώ"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -533,7 +533,7 @@ msgstr ""
 "Αυτή η συσκευή πρέπει να προσαρτηθεί για να έχετε πρόσβαση σε αυτήν. Θέλετε "
 "να τη ρυθμίσετε;"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
 msgstr ""

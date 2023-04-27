@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:48+0000\n"
+"POT-Creation-Date: 2023-04-27 00:47+0000\n"
 "PO-Revision-Date: 2023-04-20 10:38+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -79,39 +79,39 @@ msgstr "Pakkaa valitut tiedostoon uudeksi tiedostoksi."
 msgid "Archive name..."
 msgstr "Arkiston nimi…"
 
-#: src/main.qml:268 src/widgets/views/HomeView.qml:53
+#: src/main.qml:271 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Avaa kansio"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "Extracted"
 msgstr "Purettu"
 
-#: src/main.qml:278
+#: src/main.qml:281
 #, kde-format
 msgid "File was extracted"
 msgstr "Purettiin tiedosto"
 
-#: src/main.qml:346
+#: src/main.qml:350
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Näytä tai piilota sivupaneeli"
 
-#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:400 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
-#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:91
+#: src/main.qml:407 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Avaa uuteen välilehteen"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:107
+#: src/main.qml:415 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "Avaa jaettuun näkymään"
@@ -309,7 +309,7 @@ msgid "Edit"
 msgstr "Muokkaa"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
 #, kde-format
 msgid "Remove"
 msgstr "Poista"
@@ -429,7 +429,7 @@ msgstr "Poista suosikeista"
 msgid "Fav"
 msgstr "Suosikki"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
 #, kde-format
 msgid "Open in New Window"
 msgstr "Avaa uuteen ikkunaan"
@@ -502,17 +502,17 @@ msgstr "Pikapääsy yleissijainteihin."
 msgid "More"
 msgstr "Lisää"
 
-#: src/widgets/views/PlacesSideBar.qml:42
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Bookmarks!"
 msgstr "Kirjanmerkit!"
 
-#: src/widgets/views/PlacesSideBar.qml:43
+#: src/widgets/views/PlacesSideBar.qml:38
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Kirjanmerkkisi tulevat tähän"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -520,7 +520,7 @@ msgid ""
 msgstr ""
 "Laite on liitettävä ennen sen käyttöä. Haluatko asettaa tämän laitteen?"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
 msgstr "Liitä"

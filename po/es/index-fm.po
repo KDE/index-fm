@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:48+0000\n"
+"POT-Creation-Date: 2023-04-27 00:47+0000\n"
 "PO-Revision-Date: 2023-04-15 17:46+0200\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -82,39 +82,39 @@ msgstr "Comprimir los archivos seleccionados en un nuevo archivo."
 msgid "Archive name..."
 msgstr "Nombre del archivo..."
 
-#: src/main.qml:268 src/widgets/views/HomeView.qml:53
+#: src/main.qml:271 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Carpeta abierta"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "Extracted"
 msgstr "Extraído"
 
-#: src/main.qml:278
+#: src/main.qml:281
 #, kde-format
 msgid "File was extracted"
 msgstr "El archivo fue extraído"
 
-#: src/main.qml:346
+#: src/main.qml:350
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Alternar barra lateral"
 
-#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:400 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Marcador"
 
-#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:91
+#: src/main.qml:407 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Abrir en nueva pestaña"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:107
+#: src/main.qml:415 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "Abrir en vista partida"
@@ -312,7 +312,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
 #, kde-format
 msgid "Remove"
 msgstr "Eliminar"
@@ -432,7 +432,7 @@ msgstr "Desmarcar como favorito"
 msgid "Fav"
 msgstr "Marcar como favorito"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
 #, kde-format
 msgid "Open in New Window"
 msgstr "Abrir en nueva ventana"
@@ -505,17 +505,17 @@ msgstr "Acceso rápido a lugares comunes"
 msgid "More"
 msgstr "Más"
 
-#: src/widgets/views/PlacesSideBar.qml:42
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Bookmarks!"
 msgstr "¡Marcadores!"
 
-#: src/widgets/views/PlacesSideBar.qml:43
+#: src/widgets/views/PlacesSideBar.qml:38
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Sus marcadores se mostrarán aquí"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -524,7 +524,7 @@ msgstr ""
 "El dispositivo debe ser montado antes de acceder a él. ¿Quiere configurar "
 "este dispositivo?"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
 msgstr "Montar"

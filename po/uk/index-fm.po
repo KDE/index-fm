@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:48+0000\n"
+"POT-Creation-Date: 2023-04-27 00:47+0000\n"
 "PO-Revision-Date: 2023-04-12 07:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -84,39 +84,39 @@ msgstr "Стиснути позначені файли до нового фай�
 msgid "Archive name..."
 msgstr "Назва архіву…"
 
-#: src/main.qml:268 src/widgets/views/HomeView.qml:53
+#: src/main.qml:271 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Відкрити теку"
 
-#: src/main.qml:277
+#: src/main.qml:280
 #, kde-format
 msgid "Extracted"
 msgstr "Видобуто"
 
-#: src/main.qml:278
+#: src/main.qml:281
 #, kde-format
 msgid "File was extracted"
 msgstr "Файл видобуто"
 
-#: src/main.qml:346
+#: src/main.qml:350
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Увімкнути/Вимкнути бічну панель"
 
-#: src/main.qml:396 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:400 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: src/main.qml:403 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:91
+#: src/main.qml:407 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Відкрити у новій вкладці"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:107
+#: src/main.qml:415 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "Відкрити у розділеному перегляді"
@@ -314,7 +314,7 @@ msgid "Edit"
 msgstr "Змінити"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:117
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
 #, kde-format
 msgid "Remove"
 msgstr "Вилучити"
@@ -432,7 +432,7 @@ msgstr "Не улюбл."
 msgid "Fav"
 msgstr "Улюбл."
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:99
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
 #, kde-format
 msgid "Open in New Window"
 msgstr "Відкрити у новому вікні"
@@ -505,17 +505,17 @@ msgstr "Швидкий доступ до типових місць."
 msgid "More"
 msgstr "Більше"
 
-#: src/widgets/views/PlacesSideBar.qml:42
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Bookmarks!"
 msgstr "Закладки!"
 
-#: src/widgets/views/PlacesSideBar.qml:43
+#: src/widgets/views/PlacesSideBar.qml:38
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Тут буде наведено список ваших закладок"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -524,7 +524,7 @@ msgstr ""
 "Перш ніж можна буде отримати доступ до цього пристрою, його слід змонтувати. "
 "Хочете налаштувати монтування цього пристрою?"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
 msgstr "Змонтувати"
