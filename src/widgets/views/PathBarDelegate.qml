@@ -19,14 +19,7 @@ T.Control
     padding: Maui.Style.defaultPadding
     rightPadding: Maui.Style.space.big
     leftPadding: rightPadding
-    /**
-      *
-      */
-    //    property alias hovered: _mouseArea.containsMouse
 
-    /**
-      *
-      */
     property bool checked :  ListView.isCurrentItem
     property bool lastOne : false
     property bool firstOne : false
@@ -59,14 +52,10 @@ T.Control
 
     background: Index.PathArrowBackground
     {
+      id: _arrowBG
         color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : (control.firstOne? "transparent": Maui.Theme.backgroundColor))
 
        arrowWidth: 8
-
-//        Behavior on color
-//        {
-//            Maui.ColorTransition{}
-//        }
     }
 
     contentItem: MouseArea
@@ -86,6 +75,8 @@ T.Control
 
         onDoubleClicked: control.doubleClicked()
         onPressAndHold : control.pressAndHold()
+
+        containmentMask:_arrowBG
 
         Label
         {
