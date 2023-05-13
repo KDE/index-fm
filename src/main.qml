@@ -186,7 +186,7 @@ Maui.ApplicationWindow
             TextField
             {
                 id: _textEntry
-                width: parent.width
+                Layout.fillWidth: true
                 placeholderText: i18n("Archive name...")
             }
 
@@ -298,6 +298,7 @@ Maui.ApplicationWindow
 
         sideBar.minimumWidth: 200
         sideBar.autoShow: true
+        sideBar.autoHide: true
         sideBarContent: PlacesSideBar
         {
             id: placesSidebar
