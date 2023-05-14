@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:46+0000\n"
 "PO-Revision-Date: 2023-04-12 07:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -99,23 +99,23 @@ msgstr "Видобуто"
 msgid "File was extracted"
 msgstr "Файл видобуто"
 
-#: src/main.qml:350
+#: src/main.qml:351
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Увімкнути/Вимкнути бічну панель"
 
-#: src/main.qml:400 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:401 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: src/main.qml:407 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:408 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Відкрити у новій вкладці"
 
-#: src/main.qml:415 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:416 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"

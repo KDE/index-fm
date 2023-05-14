@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:46+0000\n"
 "PO-Revision-Date: 2023-04-15 17:46+0200\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -97,23 +97,23 @@ msgstr "Extraído"
 msgid "File was extracted"
 msgstr "El archivo fue extraído"
 
-#: src/main.qml:350
+#: src/main.qml:351
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Alternar barra lateral"
 
-#: src/main.qml:400 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:401 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Marcador"
 
-#: src/main.qml:407 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:408 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Abrir en nueva pestaña"
 
-#: src/main.qml:415 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:416 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
