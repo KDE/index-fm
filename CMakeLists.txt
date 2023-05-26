@@ -20,6 +20,7 @@ project(index VERSION ${INDEX_VERSION})
 
 set(REQUIRED_QT_VERSION 5.15.0)
 set(REQUIRED_KF5_VERSION 5.77.0)
+set(REQUIRED_MAUI_VERSION 3.0.0)
 
 if(ANDROID)
     set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
@@ -68,8 +69,8 @@ if(QUICK_COMPILER)
         )
 endif()
 
-find_package(MauiKit REQUIRED)
-find_package(MauiKit REQUIRED COMPONENTS FileBrowsing)
+find_package(MauiKit ${REQUIRED_MAUI_VERSION} REQUIRED)
+find_package(MauiKit ${REQUIRED_MAUI_VERSION} REQUIRED COMPONENTS FileBrowsing)
 
 #ecm_find_qmlmodule(org.mauikit.filebrowsing)
 #ecm_find_qmlmodule(org.mauikit.controls)
