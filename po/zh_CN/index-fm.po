@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-14 00:46+0000\n"
-"PO-Revision-Date: 2023-05-22 14:00\n"
+"PO-Revision-Date: 2023-06-17 04:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -69,12 +69,12 @@ msgstr[0] "压缩 %1 个文件"
 #: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
-msgstr "压缩选中的文件为新压缩包文件。"
+msgstr "压缩选中的文件为新的压缩文件。"
 
 #: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
-msgstr "压缩包名称..."
+msgstr "压缩文件名称..."
 
 #: src/main.qml:271 src/widgets/views/HomeView.qml:53
 #, kde-format
