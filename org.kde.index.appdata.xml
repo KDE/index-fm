@@ -11,6 +11,7 @@
   <name xml:lang="de">Index</name>
   <name xml:lang="el">Δείκτης</name>
   <name xml:lang="en-GB">Index</name>
+  <name xml:lang="eo">Index</name>
   <name xml:lang="es">Index</name>
   <name xml:lang="eu">Index</name>
   <name xml:lang="fi">Index</name>
@@ -45,6 +46,7 @@
   <summary xml:lang="de">Verwalten Sie Ihre Dateien</summary>
   <summary xml:lang="el">Διαχειριστείτε τα αρχεία σας</summary>
   <summary xml:lang="en-GB">Manage your files</summary>
+  <summary xml:lang="eo">Mastrumu viajn dosierojn</summary>
   <summary xml:lang="es">Administre sus archivos</summary>
   <summary xml:lang="eu">Kudeatu zure fitxategiak</summary>
   <summary xml:lang="fi">Hallitse tiedostojasi</summary>
@@ -120,6 +122,7 @@
       <caption xml:lang="de">Index-Dateiverwaltung</caption>
       <caption xml:lang="el">Index διαχειριστής αρχείων</caption>
       <caption xml:lang="en-GB">Index file manager</caption>
+      <caption xml:lang="eo">Index dosieradministranto</caption>
       <caption xml:lang="es">Administrador de archivos Index</caption>
       <caption xml:lang="eu">Index fitxategi-kudeatzailea</caption>
       <caption xml:lang="fi">Index-tiedostonhallinta</caption>
