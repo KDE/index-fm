@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-14 00:46+0000\n"
-"PO-Revision-Date: 2023-04-14 22:56+0200\n"
+"PO-Revision-Date: 2023-07-06 12:08+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.90\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/main.cpp:66
 #, kde-format
 msgid "Index"
-msgstr "Indice"
+msgstr "Index (Indice)"
 
 #: src/main.cpp:66
 #, kde-format
 msgid "Browse, organize and preview your files."
-msgstr ""
+msgstr "Naviga, organisa e vide preliminarmente tu files."
 
 #: src/main.cpp:67
 #, kde-format
@@ -70,7 +70,7 @@ msgstr[1] "Comprime %1 files"
 #: src/main.qml:182
 #, kde-format
 msgid "Compress selected files into a new file."
-msgstr ""
+msgstr "Comprime files seligite in un nove file."
 
 #: src/main.qml:190
 #, kde-format
@@ -90,12 +90,12 @@ msgstr "Extrahite"
 #: src/main.qml:281
 #, kde-format
 msgid "File was extracted"
-msgstr ""
+msgstr "File esseva exctrahite"
 
 #: src/main.qml:351
 #, kde-format
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "Commuta barra lateral"
 
 #: src/main.qml:401 src/widgets/views/FileMenu.qml:177
 #, kde-format
@@ -112,7 +112,7 @@ msgstr "Aperi in nove scheda"
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
-msgstr ""
+msgstr "Aperi in Vista scindite"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
@@ -149,7 +149,7 @@ msgstr "Permissiones"
 #: src/widgets/previewer/FileProperties.qml:148
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "Assigna permissiones de file per acceder a iste file"
 
 #: src/widgets/previewer/FileProperties.qml:49
 #: src/widgets/previewer/FileProperties.qml:152
@@ -332,6 +332,8 @@ msgstr "Cancella"
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
+"Tu es secur que tu vole remover iste etiquetta? Iste operation non pote "
+"esser annullate."
 
 #: src/widgets/views/Browser.qml:158
 #, kde-format
@@ -373,12 +375,12 @@ msgstr "Distacca scheda"
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
 msgid "Devices and Remote"
-msgstr ""
+msgstr "Dispositivos e Remote"
 
 #: src/widgets/views/DisksSection.qml:19
 #, kde-format
 msgid "Remote locations and devices like disks, phones and cameras"
-msgstr ""
+msgstr "Locationes remote e dispositivos como discos, telephonos e cameras"
 
 #: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
@@ -388,7 +390,7 @@ msgstr "Files favorite"
 #: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
-msgstr ""
+msgstr "Tu files marcate como favorite"
 
 #: src/widgets/views/FileMenu.qml:41
 #, kde-format
@@ -413,7 +415,7 @@ msgstr "Aperi con"
 #: src/widgets/views/FileMenu.qml:123
 #, kde-format
 msgid "Preview and Info"
-msgstr ""
+msgstr "Vista preliminar e Info"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
@@ -423,7 +425,7 @@ msgstr ""
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Fav"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
 #, kde-format
@@ -433,7 +435,7 @@ msgstr "Aperi in nove fenestra"
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Ancora nulle cosa hic."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
@@ -529,7 +531,7 @@ msgstr "Navigation"
 #: src/widgets/views/SettingsDialog.qml:15
 #, kde-format
 msgid "Configure the app plugins and behavior."
-msgstr ""
+msgstr "Configura le pliugins e comportamento de de app."
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -539,7 +541,7 @@ msgstr "Miniaturas"
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr ""
+msgstr "Monstra vista preliminar de imagines, videos e files PDF."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -549,7 +551,7 @@ msgstr "Salveguarda session"
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid "Save and restore tabs."
-msgstr ""
+msgstr "Salveguarda e restabili schedas."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
