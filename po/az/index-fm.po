@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2022.
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-14 00:46+0000\n"
-"PO-Revision-Date: 2022-10-18 12:25+0400\n"
+"PO-Revision-Date: 2023-07-07 14:54+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -106,15 +106,13 @@ msgstr "Əlfəcin"
 
 #: src/main.qml:408 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
 msgstr "Yeni vərəqdə açın"
 
 #: src/main.qml:416 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
 msgstr "Bölünmüş pəncərədə açın"
 
@@ -261,10 +259,9 @@ msgid "Select All"
 msgstr "Hamısını seçin"
 
 #: src/widgets/views/ActionBar.qml:184
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Yeni vərəq"
+msgstr "Yeni element"
 
 #: src/widgets/views/ActionBar.qml:197
 #, kde-format
@@ -272,16 +269,14 @@ msgid "New tab"
 msgstr "Yeni vərəq"
 
 #: src/widgets/views/ActionBar.qml:204
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Gizli"
+msgstr "Gizli olanı göstərmək"
 
 #: src/widgets/views/ActionBar.qml:212
-#, fuzzy, kde-format
-#| msgid "Split"
+#, kde-format
 msgid "Split View"
-msgstr "Bölün"
+msgstr "Bölünmüş görünüş"
 
 #: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:84
 #, kde-format
@@ -289,8 +284,7 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/widgets/views/ActionBar.qml:234
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Terminalı burada açın"
 
@@ -420,8 +414,7 @@ msgid "Open with"
 msgstr "Bununla açın"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "Öncədən baxış və məlumat"
 
@@ -436,20 +429,19 @@ msgid "Fav"
 msgstr "Fərqləndirin"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Yeni vərəqdə açın"
+msgstr "Yeni pəncərədə açın"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Burada hələlik heç nə yoxdur."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Daha sonra yoxlayın."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -467,10 +459,9 @@ msgid "Downloads"
 msgstr "Endirmələr"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "Ən son yüklənmiş fayllarınız, audiolarınız və şəkilləriniz"
+msgstr "Ən son endirilmiş fayllarınız"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -480,18 +471,17 @@ msgstr "Musiqi"
 #: src/widgets/views/HomeView.qml:175
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Ən son musiqi fayllarınız"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Şəkillər"
 
 #: src/widgets/views/HomeView.qml:215
-#, fuzzy, kde-format
-#| msgid "Your most recent downloaded files, audio and images"
+#, kde-format
 msgid "Your most recent image files"
-msgstr "Ən son yüklənmiş fayllarınız, audiolarınız və şəkilləriniz"
+msgstr "Ən sonuncu şəkilləriniz"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:338
@@ -501,16 +491,15 @@ msgid "Places"
 msgstr "Girişlər"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Ümumi kolleksiyalar sürətli giriş"
+msgstr "Ümumi kolleksiyalar sürətli giriş."
 
 #: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Daha çox"
 
 #: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
@@ -534,7 +523,7 @@ msgstr ""
 #: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "Qoşun"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -553,10 +542,9 @@ msgid "Thumbnails"
 msgstr "Eskizlər"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Şəkillərin, videoların və PDF faylların önbaxışlarını göstərmək"
+msgstr "Şəkillərin, videoların və PDF faylların önbaxışlarını göstərmək."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -564,15 +552,14 @@ msgid "Save Session"
 msgstr "Sessiyanı saxlayın"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "Vərəqləri saxlayın və bərpa edin"
+msgstr "Vərəqləri saxlayın və bərpa edin."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dinamik tərcihlər"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -582,28 +569,30 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Hər kataloq üçün xüsusi tərcihlər. Görünüş növü, çeşidləmə sırası, daxili "
+"terminalın görünüb görünməməsi kimi tərcihlər hər kataloq üçün üçün "
+"saxlanılacaqdır. Əgər bu parametr söndürülərsə o zaman bütün kataloqlar üçün "
+"standart tərcihlərdən istifadə olunacaqdır."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Növ"
+msgstr "Görünüş növü"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Standart görünüş növü."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Çeşidləmə"
+msgstr "Çeşidləmək"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Standart çeşidləmə dəyəri."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
@@ -674,10 +663,9 @@ msgid "Overview"
 msgstr "Ümumi baxış"
 
 #: src/widgets/views/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Açıldıqda ilkin olaraq ümumu baxış rejimindən istifadə edin"
+msgstr "Açıldıqda ilkin olaraq ümumu baxış rejimindən istifadə edin."
 
 #: src/widgets/views/SettingsDialog.qml:303
 #, kde-format
@@ -685,10 +673,9 @@ msgid "Dark Mode"
 msgstr "Qaranlıq rejim"
 
 #: src/widgets/views/SettingsDialog.qml:304
-#, fuzzy, kde-format
-#| msgid "Switch between light and dark colorscheme"
+#, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "İşıqlı və qaranlıq rəng sxemləri arası keçid"
+msgstr "İşıqlı və qaranlıq rəng sxemləri arası keçid."
 
 #: src/widgets/views/SettingsDialog.qml:320
 #: src/widgets/views/SettingsDialog.qml:346
