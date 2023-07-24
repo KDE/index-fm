@@ -535,7 +535,7 @@ msgstr "앱 플러그인과 행동을 설정합니다."
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
 msgid "Thumbnails"
-msgstr "축소판"
+msgstr "섬네일"
 
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
