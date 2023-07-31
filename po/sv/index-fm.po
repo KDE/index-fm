@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-14 00:46+0000\n"
-"PO-Revision-Date: 2022-09-25 09:52+0200\n"
+"PO-Revision-Date: 2023-07-30 17:24+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -106,15 +106,13 @@ msgstr "Bokmärke"
 
 #: src/main.qml:408 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
-msgstr "Öppna i ny flik"
+msgstr "Öppna under ny flik"
 
 #: src/main.qml:416 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
 msgstr "Öppna i delad vy"
 
@@ -261,10 +259,9 @@ msgid "Select All"
 msgstr "Markera alla"
 
 #: src/widgets/views/ActionBar.qml:184
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Ny flik"
+msgstr "Nytt objekt"
 
 #: src/widgets/views/ActionBar.qml:197
 #, kde-format
@@ -272,10 +269,9 @@ msgid "New tab"
 msgstr "Ny flik"
 
 #: src/widgets/views/ActionBar.qml:204
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Dold"
+msgstr "Visa dolda"
 
 #: src/widgets/views/ActionBar.qml:212
 #, kde-format
@@ -288,8 +284,7 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/widgets/views/ActionBar.qml:234
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Öppna terminal här"
 
@@ -419,8 +414,7 @@ msgid "Open with"
 msgstr "Öppna med"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "Förhandsgranskning och information"
 
@@ -435,20 +429,19 @@ msgid "Fav"
 msgstr "Favorit"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Öppna i ny flik"
+msgstr "Öppna i nytt fönster"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Ingenting här ännu."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Kontrollera senare."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -466,10 +459,9 @@ msgid "Downloads"
 msgstr "Nerladdningar"
 
 #: src/widgets/views/HomeView.qml:134
-#, fuzzy, kde-format
-#| msgid "Your most recent audio files"
+#, kde-format
 msgid "Your most recent downloaded files"
-msgstr "De senaste ljudfilerna"
+msgstr "De senast nerladdade filerna"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
@@ -477,15 +469,14 @@ msgid "Music"
 msgstr "Musik"
 
 #: src/widgets/views/HomeView.qml:175
-#, fuzzy, kde-format
-#| msgid "Your most recent audio files"
+#, kde-format
 msgid "Your most recent music files"
-msgstr "De senaste ljudfilerna"
+msgstr "De senaste musikfilerna"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Bilder"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
@@ -500,10 +491,9 @@ msgid "Places"
 msgstr "Platser"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Snabbåtkomst till vanliga samlingar"
+msgstr "Snabbåtkomst till vanliga platser."
 
 #: src/widgets/views/PlacesSection.qml:37
 #: src/widgets/views/RecentSection.qml:31
@@ -532,7 +522,7 @@ msgstr ""
 #: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "Montera"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -551,10 +541,9 @@ msgid "Thumbnails"
 msgstr "Miniatyrbilder"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Visa förhandsgranskningar av bilder, videor och PDF-filer"
+msgstr "Visa förhandsgranskningar av bilder, videor och PDF-filer."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -562,15 +551,14 @@ msgid "Save Session"
 msgstr "Spara session"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "Spara och återställ flikar"
+msgstr "Spara och återställ flikar."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dynamiska inställningar"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -580,28 +568,30 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Egna inställningar per katalog. Inställningar som vytyp, sorteringsordning "
+"och om den inbäddade terminalen är synlig eller inte, sparas för varje "
+"katalog. Om alternativet är av, används standardinställningarna för alla "
+"kataloger."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Typ"
+msgstr "Vytyp"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Standardvytyp."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Sortera enligt"
+msgstr "Sortera"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Standardsorteringsvärde."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
@@ -672,10 +662,9 @@ msgid "Overview"
 msgstr "Översikt"
 
 #: src/widgets/views/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Använd överskrivning som förval vid start"
+msgstr "Använd överskrivning som förval vid start."
 
 #: src/widgets/views/SettingsDialog.qml:303
 #, kde-format
@@ -683,10 +672,9 @@ msgid "Dark Mode"
 msgstr "Mörkt läge"
 
 #: src/widgets/views/SettingsDialog.qml:304
-#, fuzzy, kde-format
-#| msgid "Switch between light and dark colorscheme"
+#, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "Byt mellan ljust och mörkt färgschema"
+msgstr "Byt mellan ljust och mörkt färgschema."
 
 #: src/widgets/views/SettingsDialog.qml:320
 #: src/widgets/views/SettingsDialog.qml:346
