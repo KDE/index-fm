@@ -1,12 +1,12 @@
 # Translation of index-fm to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021.
+# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-14 00:46+0000\n"
-"PO-Revision-Date: 2021-03-21 17:55+0100\n"
+"PO-Revision-Date: 2023-07-31 21:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -104,29 +104,29 @@ msgstr ""
 #: src/main.qml:401 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Bokmerke"
 
 #: src/main.qml:408 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
-msgstr ""
+msgstr "Opna i ny fane"
 
 #: src/main.qml:416 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
-msgstr ""
+msgstr "Opna i delt vising"
 
 #: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Detaljar"
 
 #: src/widgets/previewer/FilePreviewer.qml:109
 #, kde-format
 msgid "File information"
-msgstr ""
+msgstr "Filinformasjon"
 
 #: src/widgets/previewer/FilePreviewer.qml:203
 #, kde-format
@@ -147,7 +147,7 @@ msgstr "Opna"
 #: src/widgets/previewer/FileProperties.qml:44
 #, kde-format
 msgid "Permissions"
-msgstr ""
+msgstr "Løyve"
 
 #: src/widgets/previewer/FileProperties.qml:45
 #: src/widgets/previewer/FileProperties.qml:148
@@ -159,28 +159,28 @@ msgstr ""
 #: src/widgets/previewer/FileProperties.qml:152
 #, kde-format
 msgid "Owner"
-msgstr ""
+msgstr "Eigar"
 
 #: src/widgets/previewer/FileProperties.qml:58
 #: src/widgets/previewer/FileProperties.qml:90
 #: src/widgets/previewer/FileProperties.qml:122
 #, kde-format
 msgid "Read"
-msgstr ""
+msgstr "Lesing"
 
 #: src/widgets/previewer/FileProperties.qml:65
 #: src/widgets/previewer/FileProperties.qml:97
 #: src/widgets/previewer/FileProperties.qml:128
 #, kde-format
 msgid "Write"
-msgstr ""
+msgstr "Skriving"
 
 #: src/widgets/previewer/FileProperties.qml:72
 #: src/widgets/previewer/FileProperties.qml:105
 #: src/widgets/previewer/FileProperties.qml:134
 #, kde-format
 msgid "Execute"
-msgstr ""
+msgstr "Køyring"
 
 #: src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:159
@@ -192,22 +192,22 @@ msgstr "Gruppe"
 #: src/widgets/previewer/FileProperties.qml:113
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "Alle"
 
 #: src/widgets/previewer/FileProperties.qml:147
 #, kde-format
 msgid "Ownership"
-msgstr ""
+msgstr "Eigarskap"
 
 #: src/widgets/previewer/FileProperties.qml:165
 #, kde-format
 msgid "Users"
-msgstr ""
+msgstr "Brukarar"
 
 #: src/widgets/previewer/FileProperties.qml:175
 #, kde-format
 msgid "Groups"
-msgstr ""
+msgstr "Grupper"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
@@ -252,7 +252,7 @@ msgstr "Namn"
 #: src/widgets/views/ActionBar.qml:168
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Lim inn"
 
 #: src/widgets/views/ActionBar.qml:177
 #: src/widgets/views/ShortcutsDialog.qml:169
@@ -263,37 +263,37 @@ msgstr ""
 #: src/widgets/views/ActionBar.qml:184
 #, kde-format
 msgid "New Item"
-msgstr ""
+msgstr "Nytt element"
 
 #: src/widgets/views/ActionBar.qml:197
 #, kde-format
 msgid "New tab"
-msgstr ""
+msgstr "Ny fane"
 
 #: src/widgets/views/ActionBar.qml:204
 #, kde-format
 msgid "View Hidden"
-msgstr ""
+msgstr "Vis gøymde"
 
 #: src/widgets/views/ActionBar.qml:212
 #, kde-format
 msgid "Split View"
-msgstr ""
+msgstr "Delt vising"
 
 #: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:84
 #, kde-format
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: src/widgets/views/ActionBar.qml:234
 #, kde-format
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Opna terminal her"
 
 #: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:12
 #, kde-format
 msgid "Shortcuts"
-msgstr ""
+msgstr "Snarvegar"
 
 #: src/widgets/views/ActionBar.qml:258
 #, kde-format
@@ -303,12 +303,12 @@ msgstr "Innstillingar"
 #: src/widgets/views/ActionBar.qml:265
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #: src/widgets/views/Browser.qml:50
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
@@ -319,17 +319,17 @@ msgstr "Fjern"
 #: src/widgets/views/Browser.qml:76
 #, kde-format
 msgid "Remove '%1'"
-msgstr ""
+msgstr "Fjern «%1»"
 
 #: src/widgets/views/Browser.qml:77
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Godta"
 
 #: src/widgets/views/Browser.qml:78
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: src/widgets/views/Browser.qml:80
 #, kde-format
@@ -340,7 +340,7 @@ msgstr ""
 #: src/widgets/views/Browser.qml:158
 #, kde-format
 msgid "Create new"
-msgstr ""
+msgstr "Lag ny"
 
 #: src/widgets/views/BrowserView.qml:83 src/widgets/views/FileMenu.qml:50
 #, kde-format
@@ -372,7 +372,7 @@ msgstr "Merkelappar"
 #: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "Kopla frå fane"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
@@ -403,12 +403,12 @@ msgstr " element"
 #: src/widgets/views/FileMenu.qml:72
 #, kde-format
 msgid "Rename"
-msgstr ""
+msgstr "Endra namn"
 
 #: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
 #, kde-format
 msgid "Select"
-msgstr ""
+msgstr "Vel"
 
 #: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
 #, kde-format
@@ -418,32 +418,32 @@ msgstr "Opna med"
 #: src/widgets/views/FileMenu.qml:123
 #, kde-format
 msgid "Preview and Info"
-msgstr ""
+msgstr "Førehandsvising og info"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
 msgid "UnFav"
-msgstr ""
+msgstr "Avfav"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Fav"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
 #, kde-format
 msgid "Open in New Window"
-msgstr ""
+msgstr "Opna i nytt vindauge"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Ingenting her enno."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Kom tilbake seinare."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -478,7 +478,7 @@ msgstr ""
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Bilete"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
@@ -490,7 +490,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Places"
-msgstr ""
+msgstr "Stadar"
 
 #: src/widgets/views/PlacesSection.qml:20
 #, kde-format
@@ -501,7 +501,7 @@ msgstr ""
 #: src/widgets/views/RecentSection.qml:31
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Meir"
 
 #: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
@@ -525,7 +525,7 @@ msgstr ""
 #: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "Monter"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -546,7 +546,7 @@ msgstr "Miniatyrbilete"
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr ""
+msgstr "Vis førehandsvising av bilete, videoar og PDF-filer."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
@@ -556,12 +556,12 @@ msgstr "Lagra økta"
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid "Save and restore tabs."
-msgstr ""
+msgstr "Lagra og gjenopprett faner."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dynamiske innstillingar"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -585,7 +585,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
 msgid "Sort"
-msgstr ""
+msgstr "Sorter"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
