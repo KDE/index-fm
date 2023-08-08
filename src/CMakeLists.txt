@@ -16,8 +16,7 @@ set(index_SRCS
     models/recentfilesmodel.cpp
     models/pathlist.cpp
     index_assets.qrc
-    data/data.qrc
-    )
+    data/data.qrc)
 
 if(QUICK_COMPILER)
     qtquick_compiler_add_resources(index_QML_QRC qml.qrc)
@@ -63,8 +62,8 @@ target_compile_definitions(${PROJECT_NAME}
     PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
 target_link_libraries(${PROJECT_NAME}
-    MauiKit
-    MauiKit::FileBrowsing
+    MauiKit3
+    MauiKit3::FileBrowsing
     Qt5::Quick
     Qt5::Qml
     KF5::Archive

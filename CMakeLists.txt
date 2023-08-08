@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-set(INDEX_VERSION 3.0.0)
+set(INDEX_VERSION 3.0.1)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -69,8 +69,8 @@ if(QUICK_COMPILER)
         )
 endif()
 
-find_package(MauiKit ${REQUIRED_MAUI_VERSION} REQUIRED)
-find_package(MauiKit ${REQUIRED_MAUI_VERSION} REQUIRED COMPONENTS FileBrowsing)
+find_package(MauiKit3 ${REQUIRED_MAUI_VERSION} REQUIRED)
+find_package(MauiKit3 ${REQUIRED_MAUI_VERSION} REQUIRED COMPONENTS FileBrowsing)
 
 #ecm_find_qmlmodule(org.mauikit.filebrowsing)
 #ecm_find_qmlmodule(org.mauikit.controls)
@@ -84,16 +84,14 @@ if(ECM_SOURCE_UNDER_VERSION_CONTROL)
         COMMAND git rev-parse --abbrev-ref HEAD
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         OUTPUT_VARIABLE GIT_BRANCH
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
+        OUTPUT_STRIP_TRAILING_WHITESPACE)
 
     # Get the latest abbreviated commit hash of the working branch
     execute_process(
         COMMAND git log -1 --format=%h
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         OUTPUT_VARIABLE GIT_COMMIT_HASH
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
+        OUTPUT_STRIP_TRAILING_WHITESPACE)
 
     add_definitions(-DGIT_COMMIT_HASH="${GIT_COMMIT_HASH}")
     add_definitions(-DGIT_BRANCH="${GIT_BRANCH}")
@@ -105,8 +103,7 @@ endif()
 
 ecm_setup_version(${INDEX_VERSION}
     VARIABLE_PREFIX INDEX
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/index_version.h"
-    )
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/index_version.h")
 
 add_subdirectory(src)
 

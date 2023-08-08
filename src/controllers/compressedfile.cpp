@@ -14,7 +14,7 @@
 #include <QDirIterator>
 #include <QDebug>
 
-#include <MauiKit/FileBrowsing/fmstatic.h>
+#include <MauiKit3/FileBrowsing/fmstatic.h>
 
 
 CompressedFile::CompressedFile(QObject *parent)

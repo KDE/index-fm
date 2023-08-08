@@ -11,16 +11,16 @@
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
-#include <MauiKit/Core/mauiandroid.h>
+#include <MauiKit3/Core/mauiandroid.h>
 #else
 #include <QApplication>
 #endif
 
 #ifdef Q_OS_MACOS
-#include <MauiKit/Core/mauimacos.h>
+#include <MauiKit3/Core/mauimacos.h>
 #endif
 
-#include <MauiKit/Core/mauiapp.h>
+#include <MauiKit3/Core/mauiapp.h>
 
 #include <KAboutData>
 #include <KI18n/KLocalizedString>

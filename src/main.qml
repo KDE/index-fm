@@ -154,14 +154,12 @@ Maui.ApplicationWindow
     {
         id: _extractDialogComponent
 
-        Maui.NewDialog
+        Maui.InputDialog
         {
             id: _extractDialog
 
             title: i18n("Extract")
             message: i18n("Extract the content of the compressed file into a new or existing subdirectory or inside the current directory.")
-
-            headBar.visible: false
 
             onFinished:
             {
@@ -180,8 +178,6 @@ Maui.ApplicationWindow
 
             title: i18np("Compress %1 file", "Compress %1 files", urls.length)
             message: i18n("Compress selected files into a new file.")
-
-            headBar.visible: false
 
             TextField
             {

@@ -19,7 +19,7 @@
 #ifndef PATHLIST_H
 #define PATHLIST_H
 
-#include <MauiKit/Core/mauilist.h>
+#include <MauiKit3/Core/mauilist.h>
 
 /**
  * @brief The PathList class
