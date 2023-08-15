@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-14 00:46+0000\n"
+"POT-Creation-Date: 2023-08-15 00:44+0000\n"
 "PO-Revision-Date: 2023-04-24 09:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -63,7 +63,7 @@ msgstr ""
 "Izvlecite vsebino stisnjene datoteke v novo ali obstoječo podmapo ali "
 "znotraj trenutne mape."
 
-#: src/main.qml:181
+#: src/main.qml:179
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
@@ -72,74 +72,74 @@ msgstr[1] "Stisni %1 datoteki"
 msgstr[2] "Stisni %1 datoteke"
 msgstr[3] "Stisni %1 datotek"
 
-#: src/main.qml:182
+#: src/main.qml:180
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Stisni izbrane datoteke v novo datoteko."
 
-#: src/main.qml:190
+#: src/main.qml:186
 #, kde-format
 msgid "Archive name..."
 msgstr "Ime arhiva ..."
 
-#: src/main.qml:271 src/widgets/views/HomeView.qml:53
+#: src/main.qml:267 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Odpri mapo"
 
-#: src/main.qml:280
+#: src/main.qml:276
 #, kde-format
 msgid "Extracted"
 msgstr "Izvlečeno"
 
-#: src/main.qml:281
+#: src/main.qml:277
 #, kde-format
 msgid "File was extracted"
 msgstr "Pridobili smo izvleček datoteke"
 
-#: src/main.qml:351
+#: src/main.qml:347
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Preklopi stransko vrstico"
 
-#: src/main.qml:401 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:397 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:408 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:404 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:416 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:412 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "Odpri v razcepljenem pogledu"
 
-#: src/widgets/previewer/FilePreviewer.qml:108
+#: src/widgets/previewer/FilePreviewer.qml:107
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: src/widgets/previewer/FilePreviewer.qml:109
+#: src/widgets/previewer/FilePreviewer.qml:108
 #, kde-format
 msgid "File information"
 msgstr "Informacije o datoteki"
 
-#: src/widgets/previewer/FilePreviewer.qml:203
+#: src/widgets/previewer/FilePreviewer.qml:202
 #, kde-format
 msgid "Previous"
 msgstr "Prejšnja"
 
-#: src/widgets/previewer/FilePreviewer.qml:210
+#: src/widgets/previewer/FilePreviewer.qml:209
 #, kde-format
 msgid "Next"
 msgstr "Naslednja"
 
-#: src/widgets/previewer/FilePreviewer.qml:218
+#: src/widgets/previewer/FilePreviewer.qml:217
 #: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -322,16 +322,8 @@ msgstr "Odstrani"
 msgid "Remove '%1'"
 msgstr "Odstrani '%1'"
 
-#: src/widgets/views/Browser.qml:77
-#, kde-format
-msgid "Accept"
-msgstr "Sprejmi"
-
-#: src/widgets/views/Browser.qml:78
-#, kde-format
-msgid "Cancel"
-msgstr "Prekliči"
-
+#. i18n("Accept")
+#. rejectButton.text: i18n("Cancel")
 #: src/widgets/views/Browser.qml:80
 #, kde-format
 msgid ""
@@ -778,6 +770,12 @@ msgstr "Poišči zavihek"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označene datoteke za hitri dostop"
+
+#~ msgid "Accept"
+#~ msgstr "Sprejmi"
+
+#~ msgid "Cancel"
+#~ msgstr "Prekliči"
 
 #~ msgid "Follows the system color scheme."
 #~ msgstr "Sledi sistemski barvni shemi."
