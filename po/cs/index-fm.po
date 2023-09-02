@@ -758,9 +758,3 @@ msgstr "Najít kartu"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
-
-#~ msgid "Accept"
-#~ msgstr "Přijmout"
-
-#~ msgid "Cancel"
-#~ msgstr "Zrušit"
