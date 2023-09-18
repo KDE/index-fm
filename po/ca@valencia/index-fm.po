@@ -768,9 +768,3 @@ msgstr "Busca la pestanya"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxers etiquetats per a un accés ràpid"
-
-#~ msgid "Accept"
-#~ msgstr "Accepta"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
