@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-05 08:59+0100\n"
+"PO-Revision-Date: 2023-10-22 10:42+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -108,17 +108,15 @@ msgstr "Zakładka"
 
 #: src/main.qml:404 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
 msgstr "Otwórz w nowej karcie"
 
 #: src/main.qml:412 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
-msgstr "Otwórz w podzielonym widoku"
+msgstr "Otwórz w widoku podzielonym"
 
 #: src/widgets/previewer/FilePreviewer.qml:107
 #, kde-format
@@ -263,10 +261,9 @@ msgid "Select All"
 msgstr "Zaznacz wszystko"
 
 #: src/widgets/views/ActionBar.qml:184
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Nowa karta"
+msgstr "Nowa rzecz"
 
 #: src/widgets/views/ActionBar.qml:197
 #, kde-format
@@ -274,10 +271,9 @@ msgid "New tab"
 msgstr "Nowa karta"
 
 #: src/widgets/views/ActionBar.qml:204
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Ukryty"
+msgstr "Widok ukryty"
 
 #: src/widgets/views/ActionBar.qml:212
 #, kde-format
@@ -290,8 +286,7 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/widgets/views/ActionBar.qml:234
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Otwórz tutaj terminal"
 
@@ -413,8 +408,7 @@ msgid "Open with"
 msgstr "Otwórz w"
 
 #: src/widgets/views/FileMenu.qml:123
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "Podgląd i szczegóły"
 
@@ -429,10 +423,9 @@ msgid "Fav"
 msgstr "Ulubione"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Otwórz w nowej karcie"
+msgstr "Otwórz w nowym oknie"
 
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
@@ -523,7 +516,7 @@ msgstr ""
 #: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "Podepnij"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #: src/widgets/views/ShortcutsDialog.qml:19
@@ -542,26 +535,24 @@ msgid "Thumbnails"
 msgstr "Miniatury"
 
 #: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
+#, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr "Pokaż podglądy obrazów, filmów oraz plików PDF"
+msgstr "Pokaż podglądy obrazów, filmów oraz plików PDF."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save Session"
-msgstr "Zapisz sesję"
+msgstr "Zapisywanie posiedzenia"
 
 #: src/widgets/views/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Save and restore tabs"
+#, kde-format
 msgid "Save and restore tabs."
-msgstr "Zapisz i przywróć karty"
+msgstr "Zapisz i przywróć karty."
 
 #: src/widgets/views/SettingsDialog.qml:45
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Ustawienia dynamiczne"
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -571,28 +562,30 @@ msgid ""
 "each directory. If this option is off, then the default preferences will be "
 "used for all the directories."
 msgstr ""
+"Własne ustawienia na katalog. Ustawienia takie jak rodzaj widoku, porządek "
+"szeregowania oraz to, czy widoczny jest osadzony terminal czy nie, będą "
+"zapisywane dla każdego katalogu osobno. Gdy to ustawienie jest wyłączone, to "
+"dla każdego katalogu będą używane ustawienia domyślne."
 
 #: src/widgets/views/SettingsDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "View Type"
-msgstr "Rodzaj"
+msgstr "Rodzaj widoku"
 
 #: src/widgets/views/SettingsDialog.qml:59
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Domyślny rodzaj widoku."
 
 #: src/widgets/views/SettingsDialog.qml:96
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Uszereguj wg"
+msgstr "Uszereguj"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Domyślna wartość szeregowania."
 
 #: src/widgets/views/SettingsDialog.qml:166
 #, kde-format
@@ -663,10 +656,9 @@ msgid "Overview"
 msgstr "Przegląd"
 
 #: src/widgets/views/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Use overview mode as default on launch"
+#, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Użyj trybu przeglądu jako domyślnego po uruchomieniu"
+msgstr "Użyj trybu przeglądu jako domyślnego po uruchomieniu."
 
 #: src/widgets/views/SettingsDialog.qml:303
 #, kde-format
@@ -674,10 +666,9 @@ msgid "Dark Mode"
 msgstr "Tryb ciemny"
 
 #: src/widgets/views/SettingsDialog.qml:304
-#, fuzzy, kde-format
-#| msgid "Switch between light and dark colorscheme"
+#, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr "Przełącz pomiędzy trybem jasnym i ciemnym"
+msgstr "Przełącz pomiędzy trybem jasnym i ciemnym."
 
 #: src/widgets/views/SettingsDialog.qml:320
 #: src/widgets/views/SettingsDialog.qml:346
