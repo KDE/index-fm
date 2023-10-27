@@ -28,7 +28,7 @@ Term.Terminal
     {
         if(event.key == Qt.Key_F4)
         {
-            toogleTerminal()
+            toggleTerminal()
         }
     }
 }

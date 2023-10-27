@@ -50,6 +50,7 @@ Maui.ApplicationWindow
     {
         id: settings
         category: "Browser"
+
         property bool showHiddenFiles: false
         property bool showThumbnails: true
         property bool previewFiles : Maui.Handy.isMobile
@@ -62,17 +63,20 @@ Maui.ApplicationWindow
 
         property var lastSession : [[({'path': FB.FM.homePath()})]]
         property int lastTabIndex : 0
-        property bool quickSidebarSection : true
+
+        property bool quickSidebarSection : true        
         property var sidebarSections : [
             FB.FMList.BOOKMARKS_PATH,
             FB.FMList.REMOTE_PATH,
             FB.FMList.REMOVABLE_PATH,
             FB.FMList.DRIVES_PATH]
+
         property bool darkMode: Maui.Style.styleType === Maui.Style.Dark
 
         property alias sideBarWidth : _sideBarView.sideBar.preferredWidth
 
         property bool dirConf : true
+        property bool syncTerminal: true
     }
 
     Settings

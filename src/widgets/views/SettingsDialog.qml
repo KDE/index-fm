@@ -11,21 +11,8 @@ Maui.SettingsDialog
 
     Maui.SectionGroup
     {
-        title: i18n("Navigation")
-        description: i18n("Configure the app plugins and behavior.")
-
-        Maui.SectionItem
-        {
-            label1.text: i18n("Thumbnails")
-            label2.text: i18n("Show previews of images, videos and PDF files.")
-
-            Switch
-            {
-                checkable: true
-                checked:  settings.showThumbnails
-                onToggled: settings.showThumbnails = ! settings.showThumbnails
-            }
-        }
+        title: i18n("Behaviour")
+//        description: i18n("Configure the app plugins and behavior.")      
 
         Maui.SectionItem
         {
@@ -43,13 +30,45 @@ Maui.SettingsDialog
         Maui.SectionItem
         {
             label1.text:  i18n("Dynamic Preferences")
-            label2.text: i18n("Custom preferences per directory. Preferences as the view type, the sort order and whether the embedded terminal is visible or not, will be saved for each directory. If this option is off, then the default preferences will be used for all the directories.")
+            label2.text: i18n("Save custom preferences per directory, otherwise use the default preferences for all the directories.")
 
             Switch
             {
                 checkable: true
                 checked:  settings.dirConf
                 onToggled: settings.dirConf = !settings.dirConf
+            }
+        }
+
+        Maui.SectionItem
+        {
+            enabled: Maui.Handy.isLinux
+            label1.text:  i18n("Sync Terminal")
+            label2.text: i18n("Sync the terminal to the browser current working directory.")
+
+            Switch
+            {
+                checkable: true
+                checked:  settings.syncTerminal
+                onToggled: settings.restoreSession = !settings.syncTerminal
+            }
+        }
+    }
+
+    Maui.SectionGroup
+    {
+        title: i18n("Browsing & Navigation")
+
+        Maui.SectionItem
+        {
+            label1.text: i18n("Thumbnails")
+            label2.text: i18n("Show previews of images, videos and PDF files.")
+
+            Switch
+            {
+                checkable: true
+                checked:  settings.showThumbnails
+                onToggled: settings.showThumbnails = ! settings.showThumbnails
             }
         }
 
@@ -188,12 +207,13 @@ Maui.SettingsDialog
             }
         }
 
+
     }
 
     Maui.SectionGroup
     {
         title: i18n("Interface")
-        description: i18n("Configure the app UI.")
+//        description: i18n("Configure the app UI.")
 
         Maui.SectionItem
         {
@@ -332,14 +352,14 @@ Maui.SettingsDialog
     {
         id: _sidebarPlacesComponent
 
-
         Maui.SettingsPage
         {
             title: i18n("Places")
+
             Maui.SectionGroup
             {
                 title: i18n("Places")
-                description: i18n("Toggle sidebar sections.")
+//                description: i18n("Toggle sidebar sections.")
 
                 Maui.SectionItem
                 {

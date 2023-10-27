@@ -74,8 +74,7 @@ Maui.SplitViewItem
             property string tag
 
             title: i18n("Remove '%1'", tag)
-//            acceptButton.text: i18n("Accept")
-//            rejectButton.text: i18n("Cancel")
+            standardButtons: Dialog.Yes | Dialog.Cancel
 
             message: i18n("Are you sure you want to remove this tag? This operation can not be undone.")
             onAccepted:
@@ -298,25 +297,6 @@ Maui.SplitViewItem
             visible: control.terminalVisible
             asynchronous: true
             active: Maui.Handy.isLinux
-            source: "Terminal.qml"
-
-            onLoaded:
-            {
-                    if(item && item.visible)
-                    {
-                        syncTerminal(control.currentPath)
-                        item.forceActiveFocus()
-                    }
-            }
-
-            onVisibleChanged:
-            {
-                syncTerminal(control.currentPath)
-                if(item && item.visible)
-                {
-                    item.forceActiveFocus()
-                }
-            }
         }
     }
 
@@ -326,15 +306,15 @@ Maui.SplitViewItem
         settings.foldersFirst = sortSettings.foldersFirst
         settings.group = sortSettings.group
 
-        syncTerminal(control.currentPath)
+        terminalLoader.setSource("Terminal.qml", ({'session.initialWorkingDirectory': control.currentPath.replace("file://", "")}))
     }
 
     Component.onDestruction: console.log("Destroyed browsers!!!!!!!!")
 
     function syncTerminal(path)
     {
-        if(terminalLoader.item && terminalVisible)
-            terminalLoader.item.session.sendText("cd '" + path.replace("file://", "") + "'\n")
+        if(terminalLoader.item && appSettings.syncTerminal)
+            terminalLoader.item.session.changeDir(path.replace("file://", ""))
     }
 
     function handleSelectionState(item)
@@ -348,6 +328,14 @@ Maui.SplitViewItem
     function toogleTerminal()
     {
         terminalVisible = !terminalVisible
+
+        if(terminalVisible)
+        {
+            terminalLoader.item.forceActiveFocus()
+        }else
+        {
+            control.forceActiveFocus()
+        }
     }
 
     function forceActiveFocus()

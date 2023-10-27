@@ -1,9 +1,8 @@
-// Copyright 2018-2020 Camilo Higuita <milo.h@aol.com>
-// Copyright 2018-2020 Nitrux Latinoamericana S.C.
+// Copyright 2018-2023 Camilo Higuita <milo.h@aol.com>
+// Copyright 2018-2023 Nitrux Latinoamericana S.C.
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QCommandLineParser>
-#include <QDate>
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -63,8 +62,13 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("index-fm");
 
-    KAboutData about(QStringLiteral("index"), i18n("Index"), INDEX_VERSION_STRING, i18n("Browse, organize and preview your files."),
-                     KAboutLicense::LGPL_V3, i18n("© 2019-%1 Maui Development Team", QString::number(QDate::currentDate().year())), QString(GIT_BRANCH) + "/" + QString(GIT_COMMIT_HASH));
+    KAboutData about(QStringLiteral("index"),
+                     i18n("Index"),
+                     INDEX_VERSION_STRING,
+                     i18n("Browse, organize and preview your files."),
+                     KAboutLicense::LGPL_V3,
+                     i18n("© 2019-2023 Maui Development Team"),
+                     QString(GIT_BRANCH) + "/" + QString(GIT_COMMIT_HASH));
 
     about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
     about.addAuthor(i18n("Gabriel Dominguez"), i18n("Developer"), QStringLiteral("gabriel@gabrieldominguez.es"));
