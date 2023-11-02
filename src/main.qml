@@ -220,25 +220,32 @@ Maui.ApplicationWindow
                 }
             }
 
-            onRejected:
+            actions:
+                [
+            Action
             {
-                //                _compressDialog.clear()
-                _compressDialog.close()
-            }
+               text: i18n("Close")
+               onTriggered:  _compressDialog.close()
+            },
 
-            onAccepted:
+            Action
             {
-                var error = _compressedFile.compress(urls, currentBrowser.currentPath, _textEntry.text, compressType.currentIndex)
+                text: i18n("Compress")
+                onTriggered:
+                {
+                    var error = _compressedFile.compress(urls, currentBrowser.currentPath, _textEntry.text, compressType.currentIndex)
 
-                if(error)
-                {
-                    root.notify("","Compress Error", "Some error occurs. Maybe current user does not have permission for writing in this directory.")
-                }
-                else
-                {
-                    _compressDialog.close()
+                    if(error)
+                    {
+                        root.notify("","Compress Error", "Some error occurs. Maybe current user does not have permission for writing in this directory.")
+                    }
+                    else
+                    {
+                        _compressDialog.close()
+                    }
                 }
             }
+            ]
         }
     }
 
