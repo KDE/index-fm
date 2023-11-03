@@ -52,7 +52,17 @@ showTitle: true
         }
     }
 
-    footBar.rightContent: Button
+    footBar.rightContent: [
+        ToolButton
+        {
+            icon.name: "love"
+        },
+        
+        ToolButton
+        {
+            icon.name: "edit-share"
+        },
+        Button
     {
         text: i18n("Open")
         icon.name: "document-open"
@@ -62,6 +72,7 @@ showTitle: true
             FB.FM.openUrl(_previewer.currentUrl)
         }
     }
+    ]
 
     headBar.rightContent: ToolButton
     {

@@ -18,8 +18,9 @@ Maui.Page
         anchors.fill: parent
         source: currentUrl
         autoLoad: true
-        autoPlay: true
+        autoPlay: appSettings.autoPlayPreviews
         loops: 3
+        flushMode: VideoOutput.FirstFrame
         property string codec : player.metaData.videoCodec
 
         onCodecChanged:
@@ -83,6 +84,17 @@ Maui.Page
     footBar.visible: true
     footBar.background: null   
 
+    footBar.leftContent: ToolButton
+                        {
+                            icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
+                            onClicked: 
+                            {
+                                if(player.playbackState === MediaPlayer.PlayingState)
+                                    player.pause()
+                                    else
+                                        player.play()
+                            }
+                        }
     footBar.middleContent : Slider
     {
         id: _slider

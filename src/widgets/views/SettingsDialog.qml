@@ -30,7 +30,7 @@ Maui.SettingsDialog
         Maui.SectionItem
         {
             label1.text:  i18n("Dynamic Preferences")
-            label2.text: i18n("Save custom preferences per directory, otherwise use the default preferences for all the directories.")
+            label2.text: i18n("Save custom preferences per directory, otherwise use the default preferences.")
 
             Switch
             {
@@ -44,13 +44,59 @@ Maui.SettingsDialog
         {
             enabled: Maui.Handy.isLinux
             label1.text:  i18n("Sync Terminal")
-            label2.text: i18n("Sync the terminal to the browser current working directory.")
+            label2.text: i18n("Sync the terminal current working directory to the browser location.")
 
             Switch
             {
                 checkable: true
                 checked:  settings.syncTerminal
-                onToggled: settings.restoreSession = !settings.syncTerminal
+                onToggled: settings.syncTerminal = !settings.syncTerminal
+            }
+        }
+    }    
+    
+    Maui.SectionGroup
+    {
+        title: i18n("Previews")
+//        description: i18n("Configure the app plugins and behavior.")      
+
+        Maui.SectionItem
+        {
+            enabled: Maui.Handy.isLinux && !Maui.Handy.islinux
+            label1.text: i18n("Open in Window")
+            label2.text: i18n("Show the file previews in a new window.")
+
+            Switch
+            {
+                checkable: true
+                checked:  appSettings.previewerWindow
+                onToggled: appSettings.previewerWindow = !appSettings.previewerWindow
+            }
+        }
+
+        Maui.SectionItem
+        {
+            label1.text:  i18n("Autoplay")
+            label2.text: i18n("Auto start playing audio and video file previews.")
+
+            Switch
+            {
+                checkable: true
+                checked:  appSettings.autoPlayPreviews
+                onToggled: appSettings.autoPlayPreviews = !appSettings.autoPlayPreviews
+            }
+        }
+
+        Maui.SectionItem
+        {
+            label1.text:  i18n("Prefer Preview")
+            label2.text: i18n("Open files in a preview mode instead of opening them in a dedicated application.")
+
+            Switch
+            {
+                checkable: true
+                checked:  appSettings.previewFiles
+                onToggled: appSettings.previewFiles = !appSettings.previewFiles
             }
         }
     }

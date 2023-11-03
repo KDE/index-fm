@@ -76,11 +76,9 @@ Maui.ApplicationWindow
         property alias sideBarWidth : _sideBarView.sideBar.preferredWidth
 
         property bool dirConf : true
-<<<<<<< HEAD
         property bool syncTerminal: true
-=======
         property bool previewerWindow: Maui.Handy.isLinux && !Maui.Handy.isMobile
->>>>>>> bdbc618 (add optional previewer window)
+        property bool autoPlayPreviews: true
     }
 
     Settings

@@ -17,7 +17,7 @@ Item
         id: player
         source: currentUrl
         autoLoad: true
-        autoPlay: true
+        autoPlay: appSettings.autoPlayPreviews
         property string title : player.metaData.title
 
         onTitleChanged:
@@ -73,6 +73,21 @@ Item
             label2.text: player.metaData.albumArtist || player.metaData.albumTitle
         }
 
+        RowLayout
+        {
+                        Layout.fillWidth: true
+
+                        ToolButton
+                        {
+                            icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
+                            onClicked: 
+                            {
+                                if(player.playbackState === MediaPlayer.PlayingState)
+                                    player.pause()
+                                    else
+                                        player.play()
+                            }
+                        }
         Slider
         {
             id: _slider
@@ -83,8 +98,8 @@ Item
             value: (1000 * player.position) / player.duration
             onMoved: player.seek((_slider.value / 1000) * player.duration)
         }
+        }
     }
-
 }
 
 
