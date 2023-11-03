@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:44+0000\n"
+"POT-Creation-Date: 2023-11-03 00:41+0000\n"
 "PO-Revision-Date: 2023-05-31 14:19-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -80,38 +80,50 @@ msgstr "Compactar os arquivos selecionados para um novo arquivo."
 msgid "Archive name..."
 msgstr "Nome do arquivo compactado..."
 
-#: src/main.qml:267 src/widgets/views/HomeView.qml:53
+#: src/main.qml:227
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgid "Close"
+msgstr "Fechar aba"
+
+#: src/main.qml:233 src/widgets/views/BrowserView.qml:125
+#: src/widgets/views/FileMenu.qml:229
+#, kde-format
+msgid "Compress"
+msgstr "Compactar"
+
+#: src/main.qml:274 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Abrir pasta"
 
-#: src/main.qml:276
+#: src/main.qml:283
 #, kde-format
 msgid "Extracted"
 msgstr "Extraído"
 
-#: src/main.qml:277
+#: src/main.qml:284
 #, kde-format
 msgid "File was extracted"
 msgstr "O arquivo foi extraído"
 
-#: src/main.qml:347
+#: src/main.qml:354
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Alternar barra lateral"
 
-#: src/main.qml:397 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:404 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Favoritos"
 
-#: src/main.qml:404 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:411 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Abrir em nova aba"
 
-#: src/main.qml:412 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:419 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
@@ -350,11 +362,6 @@ msgstr "Recortar"
 #, kde-format
 msgid "Share"
 msgstr "Compartilhar"
-
-#: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
-#, kde-format
-msgid "Compress"
-msgstr "Compactar"
 
 #: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21

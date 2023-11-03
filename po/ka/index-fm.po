@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:44+0000\n"
+"POT-Creation-Date: 2023-11-03 00:41+0000\n"
 "PO-Revision-Date: 2023-04-13 06:10+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -80,38 +80,50 @@ msgstr "მონიშნული ფაილების ახალ არ
 msgid "Archive name..."
 msgstr "არქივის სახელი..."
 
-#: src/main.qml:267 src/widgets/views/HomeView.qml:53
+#: src/main.qml:227
+#, fuzzy, kde-format
+#| msgid "Close Tab"
+msgid "Close"
+msgstr "ჩანართის დახურვა"
+
+#: src/main.qml:233 src/widgets/views/BrowserView.qml:125
+#: src/widgets/views/FileMenu.qml:229
+#, kde-format
+msgid "Compress"
+msgstr "შეკუმშვა"
+
+#: src/main.qml:274 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "საქაღალდის გახსნა"
 
-#: src/main.qml:276
+#: src/main.qml:283
 #, kde-format
 msgid "Extracted"
 msgstr "გამოშლილი"
 
-#: src/main.qml:277
+#: src/main.qml:284
 #, kde-format
 msgid "File was extracted"
 msgstr "ფაილი გამოღებულია"
 
-#: src/main.qml:347
+#: src/main.qml:354
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "გვერდითი ზოლის ჩართ/გამორთ"
 
-#: src/main.qml:397 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:404 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: src/main.qml:404 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:411 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "ახალ ჩანართში გახსნა"
 
-#: src/main.qml:412 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:419 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
@@ -349,11 +361,6 @@ msgstr "ამოჭრა"
 #, kde-format
 msgid "Share"
 msgstr "გაზიარება"
-
-#: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
-#, kde-format
-msgid "Compress"
-msgstr "შეკუმშვა"
 
 #: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
