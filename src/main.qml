@@ -76,7 +76,11 @@ Maui.ApplicationWindow
         property alias sideBarWidth : _sideBarView.sideBar.preferredWidth
 
         property bool dirConf : true
+<<<<<<< HEAD
         property bool syncTerminal: true
+=======
+        property bool previewerWindow: Maui.Handy.isLinux && !Maui.Handy.isMobile
+>>>>>>> bdbc618 (add optional previewer window)
     }
 
     Settings
@@ -257,12 +261,21 @@ Maui.ApplicationWindow
     {
         id: _previewerComponent
 
-        FilePreviewer
+        PreviewerDialog
         {
             onClosed:
             {
                 dialogLoader.sourceComponent = null
             }
+        }
+    }    
+    
+    Component
+    {
+        id: _previewerWindowComponent
+        PreviewerWindow
+        {
+            onClosing: destroy()
         }
     }
 
@@ -570,13 +583,21 @@ Maui.ApplicationWindow
 
         Maui.Platform.shareFiles(urls)
     }
-
+    
     function openPreview(model, index)
     {
+        if(appSettings.previewerWindow)
+        {
+        var previewer = _previewerWindowComponent.createObject(root)
+         previewer.previewer.model = model
+        previewer.previewer.currentIndex = index
+        }else
+        {
         dialogLoader.sourceComponent = _previewerComponent
-        dialog.model = model
-        dialog.currentIndex = index
+        dialog.previewer.model = model
+        dialog.previewer.currentIndex = index
         dialog.open()
+        }
     }
 
     function restoreSession(tabs)

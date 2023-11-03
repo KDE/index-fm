@@ -9,6 +9,8 @@
         <file>widgets/previewer/DefaultPreview.qml</file>
         <file>widgets/previewer/DocumentPreview.qml</file>
         <file>widgets/previewer/FilePreviewer.qml</file>
+        <file>widgets/previewer/PreviewerDialog.qml</file>
+        <file>widgets/previewer/PreviewerWindow.qml</file>
         <file>widgets/previewer/ImagePreview.qml</file>
         <file>widgets/previewer/TextPreview.qml</file>
         <file>widgets/previewer/VideoPreview.qml</file>

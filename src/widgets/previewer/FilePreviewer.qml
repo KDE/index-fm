@@ -6,33 +6,28 @@ import org.mauikit.controls 1.3 as Maui
 
 import org.mauikit.filebrowsing 1.3 as FB
 
-Maui.PopupPage
+Item
 {
     id: control
+    
     implicitHeight: 1000
     property url currentUrl: ""
 
-    property alias listView : _listView
+    readonly property alias listView : _listView
     property alias model : _listView.model
     property alias currentIndex: _listView.currentIndex
     ListModel { id: infoModel }
+
+    readonly property string title :  _listView.currentItem.title
 
     property bool isFav : false
     property bool isDir : false
     property bool showInfo: true
 
-    title: _listView.currentItem.title
-    page.showTitle: true
-
-    hint: 1
-    maxWidth: 800
-    maxHeight: implicitHeight
-
-    stack: ListView
+    ListView
     {
         id: _listView
-        Layout.fillHeight: true
-        Layout.fillWidth: true
+        anchors.fill: parent
         orientation: ListView.Horizontal
         currentIndex: -1
         focus: true
@@ -189,45 +184,18 @@ Maui.PopupPage
         }
     }
 
-    footBar.leftContent: Maui.ToolActions
-    {
-        visible: !Maui.Handy.isMobile
-        expanded: true
-        autoExclusive: false
-        checkable: false
-        display: ToolButton.IconOnly
-
-        Action
-        {
-            text: i18n("Previous")
-            icon.name: "go-previous"
-            onTriggered :  _listView.decrementCurrentIndex()
-        }
-
-        Action
-        {
-            text: i18n("Next")
-            icon.name: "go-next"
-            onTriggered: _listView.incrementCurrentIndex()
-        }
-    }
-
-    footBar.rightContent: Button
-    {
-        text: i18n("Open")
-        icon.name: "document-open"
-        //        flat: true
-        onClicked:
-        {
-            currentBrowser.openFile(control.currentUrl)
-        }
-    }
-
-    headBar.rightContent: ToolButton
-    {
-        icon.name: "documentinfo"
-        checkable: true
-        checked: control.showInfo
-        onClicked: control.showInfo = !control.showInfo
-    }
+   function goPrevious()
+   {
+       _listView.decrementCurrentIndex()
+   }
+   
+   function goNext()
+   {
+       _listView.incrementCurrentIndex()
+   }
+   
+   function toggleInfo()
+   {
+       control.showInfo = !control.showInfo
+   }
 }
