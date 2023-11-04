@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-11-03 07:33+0100\n"
+"PO-Revision-Date: 2023-11-04 08:43+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && "
+"n%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4\n"
 
 #: src/main.cpp:66
@@ -29,10 +29,9 @@ msgid "Browse, organize and preview your files."
 msgstr "Brskajte, organizirajte in ogledujte vaše datoteke."
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 Maui Development Team"
+msgstr "© 2019-2023 Razvojna ekipa Maui"
 
 #: src/main.cpp:73
 #, kde-format
@@ -532,7 +531,7 @@ msgstr "Priklopi"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Obnašanje"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -554,50 +553,47 @@ msgstr "Dinamične preference"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Shrani preference po meri za vsak imenik, sicer uporabi privzete preference."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Terminal"
+msgstr "Sinhroniziraj terminal"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
-msgstr ""
+msgstr "Sinhroniziraj trenutni delovni imenik terminala z lokacijo brskalnika."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Predogled"
+msgstr "Predogledi"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Odpri v novem oknu"
+msgstr "Odpri v oknu"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Prikaži predoglede datotek v novem oknu."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Samodejno predvajaj"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Samodejno začni predvajanje zvočnih in video predogledov."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Predogled"
+msgstr "Raje predogled"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
@@ -605,12 +601,12 @@ msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
+"Odpri datoteke v načinu predogleda, namesto odprtja v namenski aplikaciji."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "Krmarjenje"
+msgstr "Brskanje in krmarjenje"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format

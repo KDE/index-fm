@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-04-13 06:10+0200\n"
+"PO-Revision-Date: 2023-11-04 06:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -29,10 +29,9 @@ msgid "Browse, organize and preview your files."
 msgstr "დაათვალიერეთ, დაალაგეთ და გადახედეთ თქვენს ფაილებს."
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019- %1 Maui განვითარების გუნდი"
+msgstr "© 2019-2023 Maui განვითარების გუნდი"
 
 #: src/main.cpp:73
 #, kde-format
@@ -82,10 +81,9 @@ msgid "Archive name..."
 msgstr "არქივის სახელი..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "ჩანართის დახურვა"
+msgstr "დახურვა"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -532,7 +530,7 @@ msgstr "მიმაგრება"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "ქცევა"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -554,50 +552,50 @@ msgstr "დინამიკური პარამეტრები"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"პარამეტრების შენახვა თითოეული საქაღალდისთვის. წინააღმდეგ შემთხვევაში "
+"გამოყენებული იქნება ნაგულისხმევი პარამეტრები."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "ტერმინალი"
+msgstr "ტერმინალის სინქრონიზაცია"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
+"ტერმინალის მიმდინარე სამუშაო საქაღალდის სინქრონიზაცია ბრაუზერის "
+"მდებარეობასთან."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "მინიატურა"
+msgstr "მინიატურები"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "ახალ ფანჯარაში გახსნა"
+msgstr "ფანჯარაში გახსნა"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "ახალ ფაჯარაში ფაილის მინიატურების ჩვენება."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "ავტომატური დაკვრა"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "აუდიო და ფაილის მინიატურების დაკვრის ავტომატური დაწყება."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "მინიატურა"
+msgstr "სასურველი მინიატურა"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
@@ -605,12 +603,12 @@ msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
+"ფაილების გახსნა მინატურის რეჟიმში, მათი ცალკე პროგრამაში გახსნის მაგიერ."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "ნავიგაცია"
+msgstr "დათვალიერება & ნავიგაცია"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
