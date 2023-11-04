@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 00:41+0000\n"
+"POT-Creation-Date: 2023-11-04 00:41+0000\n"
 "PO-Revision-Date: 2023-04-21 23:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -22,38 +22,39 @@ msgstr ""
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:66
+#: src/main.cpp:68
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "파일 탐색, 정리, 미리 보기입니다."
 
-#: src/main.cpp:67
-#, kde-format
-msgid "© 2019-%1 Maui Development Team"
+#: src/main.cpp:70
+#, fuzzy, kde-format
+#| msgid "© 2019-%1 Maui Development Team"
+msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-%1 Maui Development Team"
 
-#: src/main.cpp:69
+#: src/main.cpp:73
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:69 src/main.cpp:70
+#: src/main.cpp:73 src/main.cpp:74
 #, kde-format
 msgid "Developer"
 msgstr "개발자"
 
-#: src/main.cpp:70
+#: src/main.cpp:74
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "압축 풀기"
 
-#: src/main.qml:162
+#: src/main.qml:168
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -62,96 +63,80 @@ msgstr ""
 "압축 파일의 내용을 새 디렉터리, 기존 하위 디렉터리, 현재 디렉터리 내에 풉니"
 "다."
 
-#: src/main.qml:179
+#: src/main.qml:185
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "파일 %1개 압축"
 
-#: src/main.qml:180
+#: src/main.qml:186
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "선택한 파일을 새 파일로 압축합니다."
 
-#: src/main.qml:186
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "압축 파일 이름..."
 
-#: src/main.qml:227
+#: src/main.qml:233
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgid "Close"
 msgstr "탭 닫기"
 
-#: src/main.qml:233 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "압축"
 
-#: src/main.qml:274 src/widgets/views/HomeView.qml:53
+#: src/main.qml:289 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "폴더 열기"
 
-#: src/main.qml:283
+#: src/main.qml:298
 #, kde-format
 msgid "Extracted"
 msgstr "압축 풀림"
 
-#: src/main.qml:284
+#: src/main.qml:299
 #, kde-format
 msgid "File was extracted"
 msgstr "파일 압축이 풀림"
 
-#: src/main.qml:354
+#: src/main.qml:369
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "사이드바 전환"
 
-#: src/main.qml:404 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "책갈피"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "새 탭으로 열기"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "분할 보기로 열기"
 
-#: src/widgets/previewer/FilePreviewer.qml:107
+#: src/widgets/previewer/FilePreviewer.qml:102
 #, kde-format
 msgid "Details"
 msgstr "자세히"
 
-#: src/widgets/previewer/FilePreviewer.qml:108
+#: src/widgets/previewer/FilePreviewer.qml:103
 #, kde-format
 msgid "File information"
 msgstr "파일 정보"
-
-#: src/widgets/previewer/FilePreviewer.qml:202
-#, kde-format
-msgid "Previous"
-msgstr "이전"
-
-#: src/widgets/previewer/FilePreviewer.qml:209
-#, kde-format
-msgid "Next"
-msgstr "다음"
-
-#: src/widgets/previewer/FilePreviewer.qml:217
-#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
-#, kde-format
-msgid "Open"
-msgstr "열기"
 
 #: src/widgets/previewer/FileProperties.qml:44
 #, kde-format
@@ -193,7 +178,7 @@ msgstr "실행"
 
 #: src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:159
-#: src/widgets/views/SettingsDialog.qml:180
+#: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "그룹"
@@ -223,37 +208,56 @@ msgstr "그룹"
 msgid "Install"
 msgstr "설치"
 
-#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:69
+#: src/widgets/previewer/PreviewerDialog.qml:34
+#: src/widgets/previewer/PreviewerWindow.qml:42
+#, kde-format
+msgid "Previous"
+msgstr "이전"
+
+#: src/widgets/previewer/PreviewerDialog.qml:41
+#: src/widgets/previewer/PreviewerWindow.qml:49
+#, kde-format
+msgid "Next"
+msgstr "다음"
+
+#: src/widgets/previewer/PreviewerDialog.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:67
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "열기"
+
+#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:134
 #, kde-format
 msgid "List"
 msgstr "목록"
 
-#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:81
+#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:146
 #, kde-format
 msgid "Grid"
 msgstr "격자"
 
-#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:173
 #, kde-format
 msgid "Type"
 msgstr "형식"
 
-#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:185
 #, kde-format
 msgid "Date"
 msgstr "날짜"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Modified"
 msgstr "수정됨"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Size"
 msgstr "크기"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:218
 #, kde-format
 msgid "Name"
 msgstr "이름"
@@ -330,15 +334,13 @@ msgstr "삭제"
 msgid "Remove '%1'"
 msgstr "'%1' 삭제"
 
-#. i18n("Accept")
-#. rejectButton.text: i18n("Cancel")
-#: src/widgets/views/Browser.qml:80
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr "이 태그를 삭제하시겠습니까? 실행 취소할 수 없습니다."
 
-#: src/widgets/views/Browser.qml:158
+#: src/widgets/views/Browser.qml:157
 #, kde-format
 msgid "Create new"
 msgstr "새로 만들기"
@@ -481,8 +483,8 @@ msgid "Your most recent image files"
 msgstr "최근에 사용한 그림 파일"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:338
-#: src/widgets/views/SettingsDialog.qml:341
+#: src/widgets/views/SettingsDialog.qml:403
+#: src/widgets/views/SettingsDialog.qml:407
 #, kde-format
 msgid "Places"
 msgstr "위치"
@@ -521,208 +523,251 @@ msgid "Mount"
 msgstr "마운트"
 
 #: src/widgets/views/SettingsDialog.qml:14
-#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
-msgid "Navigation"
-msgstr "탐색"
-
-#: src/widgets/views/SettingsDialog.qml:15
-#, kde-format
-msgid "Configure the app plugins and behavior."
-msgstr "앱 플러그인과 행동을 설정합니다."
+msgid "Behaviour"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:19
-#, kde-format
-msgid "Thumbnails"
-msgstr "섬네일"
-
-#: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files."
-msgstr "사진, 동영상, PDF 파일의 미리 보기를 표시합니다."
-
-#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save Session"
 msgstr "세션 저장"
 
-#: src/widgets/views/SettingsDialog.qml:33
+#: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Save and restore tabs."
 msgstr "탭을 저장하고 복원합니다."
 
-#: src/widgets/views/SettingsDialog.qml:45
+#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
 msgstr "동적 설정"
 
-#: src/widgets/views/SettingsDialog.qml:46
+#: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
-"Custom preferences per directory. Preferences as the view type, the sort "
-"order and whether the embedded terminal is visible or not, will be saved for "
-"each directory. If this option is off, then the default preferences will be "
-"used for all the directories."
+"Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
-"디렉터리별 동적 설정입니다. 보기 형식, 정렬 순서, 내장된 터미널 표시 여부 등"
-"의 설정을 디렉터리별로 저장합니다. 이 옵션을 사용하지 않으면 모든 디렉터리에 "
-"기본 설정을 사용합니다."
 
-#: src/widgets/views/SettingsDialog.qml:58
+#: src/widgets/views/SettingsDialog.qml:46
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgid "Sync Terminal"
+msgstr "터미널"
+
+#: src/widgets/views/SettingsDialog.qml:47
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Previews"
+msgstr "미리 보기"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, fuzzy, kde-format
+#| msgid "Open in New Window"
+msgid "Open in Window"
+msgstr "새 창으로 열기"
+
+#: src/widgets/views/SettingsDialog.qml:67
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid "Autoplay"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:80
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:92
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Prefer Preview"
+msgstr "미리 보기"
+
+#: src/widgets/views/SettingsDialog.qml:93
+#, fuzzy, kde-format
+#| msgid ""
+#| "Opens a quick preview with information of the file instead of opening it "
+#| "with an external application"
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr "파일을 외부 프로그램으로 열지 않고 파일 정보를 빠르게 미리 봅니다"
+
+#: src/widgets/views/SettingsDialog.qml:106
+#, fuzzy, kde-format
+#| msgid "Navigation"
+msgid "Browsing & Navigation"
+msgstr "탐색"
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "Thumbnails"
+msgstr "섬네일"
+
+#: src/widgets/views/SettingsDialog.qml:111
+#, kde-format
+msgid "Show previews of images, videos and PDF files."
+msgstr "사진, 동영상, PDF 파일의 미리 보기를 표시합니다."
+
+#: src/widgets/views/SettingsDialog.qml:123
 #, kde-format
 msgid "View Type"
 msgstr "보기 형식"
 
-#: src/widgets/views/SettingsDialog.qml:59
+#: src/widgets/views/SettingsDialog.qml:124
 #, kde-format
 msgid "Default view type."
 msgstr "기본 보기 형식입니다."
 
-#: src/widgets/views/SettingsDialog.qml:96
+#: src/widgets/views/SettingsDialog.qml:161
 #, kde-format
 msgid "Sort"
 msgstr "정렬"
 
-#: src/widgets/views/SettingsDialog.qml:97
+#: src/widgets/views/SettingsDialog.qml:162
 #, kde-format
 msgid "Default sorting value."
 msgstr "기본 정렬 값입니다."
 
-#: src/widgets/views/SettingsDialog.qml:166
+#: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Show Folders First"
 msgstr "폴더 먼저 표시"
 
-#: src/widgets/views/SettingsDialog.qml:195
+#: src/widgets/views/SettingsDialog.qml:261
 #, kde-format
 msgid "Interface"
 msgstr "인터페이스"
 
-#: src/widgets/views/SettingsDialog.qml:196
-#, kde-format
-msgid "Configure the app UI."
-msgstr "앱 UI를 설정합니다."
-
-#: src/widgets/views/SettingsDialog.qml:200
+#: src/widgets/views/SettingsDialog.qml:266
 #, kde-format
 msgid "Grid Items Size"
 msgstr "격자 항목 크기"
 
-#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:267
 #, kde-format
 msgid "Size of the grid view."
 msgstr "격자 보기 크기입니다."
 
-#: src/widgets/views/SettingsDialog.qml:219
-#: src/widgets/views/SettingsDialog.qml:267
+#: src/widgets/views/SettingsDialog.qml:285
+#: src/widgets/views/SettingsDialog.qml:333
 #, kde-format
 msgid "M"
 msgstr "M"
 
-#: src/widgets/views/SettingsDialog.qml:226
-#: src/widgets/views/SettingsDialog.qml:274
+#: src/widgets/views/SettingsDialog.qml:292
+#: src/widgets/views/SettingsDialog.qml:340
 #, kde-format
 msgid "L"
 msgstr "L"
 
-#: src/widgets/views/SettingsDialog.qml:233
-#: src/widgets/views/SettingsDialog.qml:281
+#: src/widgets/views/SettingsDialog.qml:299
+#: src/widgets/views/SettingsDialog.qml:347
 #, kde-format
 msgid "X"
 msgstr "X"
 
-#: src/widgets/views/SettingsDialog.qml:240
+#: src/widgets/views/SettingsDialog.qml:306
 #, kde-format
 msgid "XL"
 msgstr "XL"
 
-#: src/widgets/views/SettingsDialog.qml:249
+#: src/widgets/views/SettingsDialog.qml:315
 #, kde-format
 msgid "List Items Size"
 msgstr "목록 항목 크기"
 
-#: src/widgets/views/SettingsDialog.qml:250
+#: src/widgets/views/SettingsDialog.qml:316
 #, kde-format
 msgid "Size of the list view."
 msgstr "목록 보기 크기입니다."
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:326
 #, kde-format
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:290
+#: src/widgets/views/SettingsDialog.qml:356
 #, kde-format
 msgid "Overview"
 msgstr "요약"
 
-#: src/widgets/views/SettingsDialog.qml:291
+#: src/widgets/views/SettingsDialog.qml:357
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr "실행할 때 기본값으로 요약 보기를 사용합니다."
 
-#: src/widgets/views/SettingsDialog.qml:303
+#: src/widgets/views/SettingsDialog.qml:369
 #, kde-format
 msgid "Dark Mode"
 msgstr "어두운 모드"
 
-#: src/widgets/views/SettingsDialog.qml:304
+#: src/widgets/views/SettingsDialog.qml:370
 #, kde-format
 msgid "Switch between light and dark colorscheme."
 msgstr "밝은 색상과 어두운 색상을 전환합니다."
 
-#: src/widgets/views/SettingsDialog.qml:320
-#: src/widgets/views/SettingsDialog.qml:346
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:412
 #, kde-format
 msgid "Quick places"
 msgstr "빠른 위치"
 
-#: src/widgets/views/SettingsDialog.qml:321
-#: src/widgets/views/SettingsDialog.qml:347
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:387
+#: src/widgets/views/SettingsDialog.qml:413
+#: src/widgets/views/SettingsDialog.qml:426
 #, kde-format
 msgid "Access to standard locations."
 msgstr "표준 위치에 접근합니다."
 
-#: src/widgets/views/SettingsDialog.qml:342
-#, kde-format
-msgid "Toggle sidebar sections."
-msgstr "사이드바 섹션을 편집합니다."
-
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Bookmarks"
 msgstr "책갈피"
 
-#: src/widgets/views/SettingsDialog.qml:375
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Remote"
 msgstr "원격"
 
-#: src/widgets/views/SettingsDialog.qml:376
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to network locations."
 msgstr "네트워크 위치에 접근합니다."
 
-#: src/widgets/views/SettingsDialog.qml:392
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Removable"
 msgstr "제거 가능"
 
-#: src/widgets/views/SettingsDialog.qml:393
+#: src/widgets/views/SettingsDialog.qml:459
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "USB 메모리와 SD 카드에 접근합니다."
 
-#: src/widgets/views/SettingsDialog.qml:408
+#: src/widgets/views/SettingsDialog.qml:474
 #, kde-format
 msgid "Devices"
 msgstr "장치"
 
-#: src/widgets/views/SettingsDialog.qml:409
+#: src/widgets/views/SettingsDialog.qml:475
 #, kde-format
 msgid "Access drives."
 msgstr "드라이브에 접근합니다."
+
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "탐색"
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format
@@ -768,6 +813,25 @@ msgstr "탭 찾기"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "빨리 접근할 수 있도록 태그된 파일"
+
+#~ msgid "Configure the app plugins and behavior."
+#~ msgstr "앱 플러그인과 행동을 설정합니다."
+
+#~ msgid ""
+#~ "Custom preferences per directory. Preferences as the view type, the sort "
+#~ "order and whether the embedded terminal is visible or not, will be saved "
+#~ "for each directory. If this option is off, then the default preferences "
+#~ "will be used for all the directories."
+#~ msgstr ""
+#~ "디렉터리별 동적 설정입니다. 보기 형식, 정렬 순서, 내장된 터미널 표시 여부 "
+#~ "등의 설정을 디렉터리별로 저장합니다. 이 옵션을 사용하지 않으면 모든 디렉터"
+#~ "리에 기본 설정을 사용합니다."
+
+#~ msgid "Configure the app UI."
+#~ msgstr "앱 UI를 설정합니다."
+
+#~ msgid "Toggle sidebar sections."
+#~ msgstr "사이드바 섹션을 편집합니다."
 
 #~ msgid "Accept"
 #~ msgstr "수락"
@@ -831,11 +895,6 @@ msgstr "빨리 접근할 수 있도록 태그된 파일"
 
 #~ msgid "Add to Bookmarks"
 #~ msgstr "책갈피에 추가"
-
-#~ msgid ""
-#~ "Opens a quick preview with information of the file instead of opening it "
-#~ "with an external application"
-#~ msgstr "파일을 외부 프로그램으로 열지 않고 파일 정보를 빠르게 미리 봅니다"
 
 #~ msgid "Search or Filter"
 #~ msgstr "검색 및 필터"

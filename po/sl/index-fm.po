@@ -6,55 +6,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 00:41+0000\n"
-"PO-Revision-Date: 2023-04-24 09:42+0200\n"
+"POT-Creation-Date: 2023-11-04 00:41+0000\n"
+"PO-Revision-Date: 2023-11-03 07:33+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.4\n"
 
 #: src/main.cpp:66
 #, kde-format
 msgid "Index"
 msgstr "Indeks"
 
-#: src/main.cpp:66
+#: src/main.cpp:68
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Brskajte, organizirajte in ogledujte vaše datoteke."
 
-#: src/main.cpp:67
-#, kde-format
-msgid "© 2019-%1 Maui Development Team"
+#: src/main.cpp:70
+#, fuzzy, kde-format
+#| msgid "© 2019-%1 Maui Development Team"
+msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-%1 Maui Development Team"
 
-#: src/main.cpp:69
+#: src/main.cpp:73
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:69 src/main.cpp:70
+#: src/main.cpp:73 src/main.cpp:74
 #, kde-format
 msgid "Developer"
 msgstr "Razvijalec"
 
-#: src/main.cpp:70
+#: src/main.cpp:74
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Izvleci"
 
-#: src/main.qml:162
+#: src/main.qml:168
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -63,7 +64,7 @@ msgstr ""
 "Izvlecite vsebino stisnjene datoteke v novo ali obstoječo podmapo ali "
 "znotraj trenutne mape."
 
-#: src/main.qml:179
+#: src/main.qml:185
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
@@ -72,90 +73,73 @@ msgstr[1] "Stisni %1 datoteki"
 msgstr[2] "Stisni %1 datoteke"
 msgstr[3] "Stisni %1 datotek"
 
-#: src/main.qml:180
+#: src/main.qml:186
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Stisni izbrane datoteke v novo datoteko."
 
-#: src/main.qml:186
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "Ime arhiva ..."
 
-#: src/main.qml:227
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#: src/main.qml:233
+#, kde-format
 msgid "Close"
-msgstr "Zapri zavihek"
+msgstr "Zapri"
 
-#: src/main.qml:233 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Stisni"
 
-#: src/main.qml:274 src/widgets/views/HomeView.qml:53
+#: src/main.qml:289 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Odpri mapo"
 
-#: src/main.qml:283
+#: src/main.qml:298
 #, kde-format
 msgid "Extracted"
 msgstr "Izvlečeno"
 
-#: src/main.qml:284
+#: src/main.qml:299
 #, kde-format
 msgid "File was extracted"
 msgstr "Pridobili smo izvleček datoteke"
 
-#: src/main.qml:354
+#: src/main.qml:369
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Preklopi stransko vrstico"
 
-#: src/main.qml:404 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "Odpri v razcepljenem pogledu"
 
-#: src/widgets/previewer/FilePreviewer.qml:107
+#: src/widgets/previewer/FilePreviewer.qml:102
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: src/widgets/previewer/FilePreviewer.qml:108
+#: src/widgets/previewer/FilePreviewer.qml:103
 #, kde-format
 msgid "File information"
 msgstr "Informacije o datoteki"
-
-#: src/widgets/previewer/FilePreviewer.qml:202
-#, kde-format
-msgid "Previous"
-msgstr "Prejšnja"
-
-#: src/widgets/previewer/FilePreviewer.qml:209
-#, kde-format
-msgid "Next"
-msgstr "Naslednja"
-
-#: src/widgets/previewer/FilePreviewer.qml:217
-#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
-#, kde-format
-msgid "Open"
-msgstr "Odpri"
 
 #: src/widgets/previewer/FileProperties.qml:44
 #, kde-format
@@ -197,7 +181,7 @@ msgstr "Izvajanje"
 
 #: src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:159
-#: src/widgets/views/SettingsDialog.qml:180
+#: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "Skupina"
@@ -227,37 +211,56 @@ msgstr "Skupine"
 msgid "Install"
 msgstr "Namesti"
 
-#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:69
+#: src/widgets/previewer/PreviewerDialog.qml:34
+#: src/widgets/previewer/PreviewerWindow.qml:42
+#, kde-format
+msgid "Previous"
+msgstr "Prejšnja"
+
+#: src/widgets/previewer/PreviewerDialog.qml:41
+#: src/widgets/previewer/PreviewerWindow.qml:49
+#, kde-format
+msgid "Next"
+msgstr "Naslednja"
+
+#: src/widgets/previewer/PreviewerDialog.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:67
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "Odpri"
+
+#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:134
 #, kde-format
 msgid "List"
 msgstr "Seznam"
 
-#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:81
+#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:146
 #, kde-format
 msgid "Grid"
 msgstr "Mreža"
 
-#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:173
 #, kde-format
 msgid "Type"
 msgstr "Vrsta"
 
-#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:185
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Modified"
 msgstr "Spremenjeno"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:218
 #, kde-format
 msgid "Name"
 msgstr "Ime"
@@ -334,9 +337,7 @@ msgstr "Odstrani"
 msgid "Remove '%1'"
 msgstr "Odstrani '%1'"
 
-#. i18n("Accept")
-#. rejectButton.text: i18n("Cancel")
-#: src/widgets/views/Browser.qml:80
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
@@ -344,7 +345,7 @@ msgstr ""
 "Ali ste prepričani, da želite odstraniti to oznako? Te operacije ni mogoče "
 "povrniti."
 
-#: src/widgets/views/Browser.qml:158
+#: src/widgets/views/Browser.qml:157
 #, kde-format
 msgid "Create new"
 msgstr "Ustvari novo"
@@ -487,8 +488,8 @@ msgid "Your most recent image files"
 msgstr "Zadnje nedavno prenesene datoteke slik"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:338
-#: src/widgets/views/SettingsDialog.qml:341
+#: src/widgets/views/SettingsDialog.qml:403
+#: src/widgets/views/SettingsDialog.qml:407
 #, kde-format
 msgid "Places"
 msgstr "Mesta"
@@ -529,209 +530,248 @@ msgid "Mount"
 msgstr "Priklopi"
 
 #: src/widgets/views/SettingsDialog.qml:14
-#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
-msgid "Navigation"
-msgstr "Krmarjenje"
-
-#: src/widgets/views/SettingsDialog.qml:15
-#, kde-format
-msgid "Configure the app plugins and behavior."
-msgstr "Nastavi vtičnike in obnašanje."
+msgid "Behaviour"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:19
-#, kde-format
-msgid "Thumbnails"
-msgstr "Predogledne sličice"
-
-#: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files."
-msgstr "Pokaži predoglede slik, videov in datotek PDF."
-
-#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save Session"
 msgstr "Shrani sejo"
 
-#: src/widgets/views/SettingsDialog.qml:33
+#: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Save and restore tabs."
 msgstr "Shrani in obnovi zavihke."
 
-#: src/widgets/views/SettingsDialog.qml:45
+#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
 msgstr "Dinamične preference"
 
-#: src/widgets/views/SettingsDialog.qml:46
+#: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
-"Custom preferences per directory. Preferences as the view type, the sort "
-"order and whether the embedded terminal is visible or not, will be saved for "
-"each directory. If this option is off, then the default preferences will be "
-"used for all the directories."
+"Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
-"Preference po meri po imeniku. Preference kot so vrsta pogleda, smer "
-"razvrščanja in ali je vgrajen terminal je viden ali ne, bodo shranjene za "
-"vsak imenik posebej. Če je ta možnost izklopljena, bodo privzete preference "
-"skupno uporabljene se za vse imenike."
 
-#: src/widgets/views/SettingsDialog.qml:58
+#: src/widgets/views/SettingsDialog.qml:46
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgid "Sync Terminal"
+msgstr "Terminal"
+
+#: src/widgets/views/SettingsDialog.qml:47
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Previews"
+msgstr "Predogled"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, fuzzy, kde-format
+#| msgid "Open in New Window"
+msgid "Open in Window"
+msgstr "Odpri v novem oknu"
+
+#: src/widgets/views/SettingsDialog.qml:67
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid "Autoplay"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:80
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:92
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Prefer Preview"
+msgstr "Predogled"
+
+#: src/widgets/views/SettingsDialog.qml:93
+#, kde-format
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:106
+#, fuzzy, kde-format
+#| msgid "Navigation"
+msgid "Browsing & Navigation"
+msgstr "Krmarjenje"
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "Thumbnails"
+msgstr "Predogledne sličice"
+
+#: src/widgets/views/SettingsDialog.qml:111
+#, kde-format
+msgid "Show previews of images, videos and PDF files."
+msgstr "Pokaži predoglede slik, videov in datotek PDF."
+
+#: src/widgets/views/SettingsDialog.qml:123
 #, kde-format
 msgid "View Type"
 msgstr "Vrsta pogleda"
 
-#: src/widgets/views/SettingsDialog.qml:59
+#: src/widgets/views/SettingsDialog.qml:124
 #, kde-format
 msgid "Default view type."
 msgstr "Privzeta vrsta pogleda."
 
-#: src/widgets/views/SettingsDialog.qml:96
+#: src/widgets/views/SettingsDialog.qml:161
 #, kde-format
 msgid "Sort"
 msgstr "Razvrsti"
 
-#: src/widgets/views/SettingsDialog.qml:97
+#: src/widgets/views/SettingsDialog.qml:162
 #, kde-format
 msgid "Default sorting value."
 msgstr "Privzeta vrednost razvrščanja."
 
-#: src/widgets/views/SettingsDialog.qml:166
+#: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Show Folders First"
 msgstr "Najprej prikaži mape"
 
-#: src/widgets/views/SettingsDialog.qml:195
+#: src/widgets/views/SettingsDialog.qml:261
 #, kde-format
 msgid "Interface"
 msgstr "Vmesnik"
 
-#: src/widgets/views/SettingsDialog.qml:196
-#, kde-format
-msgid "Configure the app UI."
-msgstr "Nastavi uporabniški vmesnik."
-
-#: src/widgets/views/SettingsDialog.qml:200
+#: src/widgets/views/SettingsDialog.qml:266
 #, kde-format
 msgid "Grid Items Size"
 msgstr "Velikost elementa mreže"
 
-#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:267
 #, kde-format
 msgid "Size of the grid view."
 msgstr "Velikost elementov mreže."
 
-#: src/widgets/views/SettingsDialog.qml:219
-#: src/widgets/views/SettingsDialog.qml:267
+#: src/widgets/views/SettingsDialog.qml:285
+#: src/widgets/views/SettingsDialog.qml:333
 #, kde-format
 msgid "M"
 msgstr "M"
 
-#: src/widgets/views/SettingsDialog.qml:226
-#: src/widgets/views/SettingsDialog.qml:274
+#: src/widgets/views/SettingsDialog.qml:292
+#: src/widgets/views/SettingsDialog.qml:340
 #, kde-format
 msgid "L"
 msgstr "L"
 
-#: src/widgets/views/SettingsDialog.qml:233
-#: src/widgets/views/SettingsDialog.qml:281
+#: src/widgets/views/SettingsDialog.qml:299
+#: src/widgets/views/SettingsDialog.qml:347
 #, kde-format
 msgid "X"
 msgstr "X"
 
-#: src/widgets/views/SettingsDialog.qml:240
+#: src/widgets/views/SettingsDialog.qml:306
 #, kde-format
 msgid "XL"
 msgstr "XL"
 
-#: src/widgets/views/SettingsDialog.qml:249
+#: src/widgets/views/SettingsDialog.qml:315
 #, kde-format
 msgid "List Items Size"
 msgstr "Seznam velikosti predmetov"
 
-#: src/widgets/views/SettingsDialog.qml:250
+#: src/widgets/views/SettingsDialog.qml:316
 #, kde-format
 msgid "Size of the list view."
 msgstr "Velikost seznama sličic."
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:326
 #, kde-format
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:290
+#: src/widgets/views/SettingsDialog.qml:356
 #, kde-format
 msgid "Overview"
 msgstr "Predogled"
 
-#: src/widgets/views/SettingsDialog.qml:291
+#: src/widgets/views/SettingsDialog.qml:357
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr "Ob zagonu privzeto uporabi predogledni način."
 
-#: src/widgets/views/SettingsDialog.qml:303
+#: src/widgets/views/SettingsDialog.qml:369
 #, kde-format
 msgid "Dark Mode"
 msgstr "Temni način"
 
-#: src/widgets/views/SettingsDialog.qml:304
+#: src/widgets/views/SettingsDialog.qml:370
 #, kde-format
 msgid "Switch between light and dark colorscheme."
 msgstr "Preklop med svetlo in temno barvno shemo."
 
-#: src/widgets/views/SettingsDialog.qml:320
-#: src/widgets/views/SettingsDialog.qml:346
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:412
 #, kde-format
 msgid "Quick places"
 msgstr "Hitre lokacije"
 
-#: src/widgets/views/SettingsDialog.qml:321
-#: src/widgets/views/SettingsDialog.qml:347
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:387
+#: src/widgets/views/SettingsDialog.qml:413
+#: src/widgets/views/SettingsDialog.qml:426
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Dostop do standardnih lokacij."
 
-#: src/widgets/views/SettingsDialog.qml:342
-#, kde-format
-msgid "Toggle sidebar sections."
-msgstr "Preklopi odseke stranske vrstice."
-
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zaznamki"
 
-#: src/widgets/views/SettingsDialog.qml:375
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Remote"
 msgstr "Oddaljena"
 
-#: src/widgets/views/SettingsDialog.qml:376
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to network locations."
 msgstr "Dostop do omrežnih lokacij."
 
-#: src/widgets/views/SettingsDialog.qml:392
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Removable"
 msgstr "Je možno odstraniti"
 
-#: src/widgets/views/SettingsDialog.qml:393
+#: src/widgets/views/SettingsDialog.qml:459
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Dostop do ključkov USB in kartic SD."
 
-#: src/widgets/views/SettingsDialog.qml:408
+#: src/widgets/views/SettingsDialog.qml:474
 #, kde-format
 msgid "Devices"
 msgstr "Naprave"
 
-#: src/widgets/views/SettingsDialog.qml:409
+#: src/widgets/views/SettingsDialog.qml:475
 #, kde-format
 msgid "Access drives."
 msgstr "Dostop do naprav."
+
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Krmarjenje"
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format
@@ -777,6 +817,26 @@ msgstr "Poišči zavihek"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označene datoteke za hitri dostop"
+
+#~ msgid "Configure the app plugins and behavior."
+#~ msgstr "Nastavi vtičnike in obnašanje."
+
+#~ msgid ""
+#~ "Custom preferences per directory. Preferences as the view type, the sort "
+#~ "order and whether the embedded terminal is visible or not, will be saved "
+#~ "for each directory. If this option is off, then the default preferences "
+#~ "will be used for all the directories."
+#~ msgstr ""
+#~ "Preference po meri po imeniku. Preference kot so vrsta pogleda, smer "
+#~ "razvrščanja in ali je vgrajen terminal je viden ali ne, bodo shranjene za "
+#~ "vsak imenik posebej. Če je ta možnost izklopljena, bodo privzete "
+#~ "preference skupno uporabljene se za vse imenike."
+
+#~ msgid "Configure the app UI."
+#~ msgstr "Nastavi uporabniški vmesnik."
+
+#~ msgid "Toggle sidebar sections."
+#~ msgstr "Preklopi odseke stranske vrstice."
 
 #~ msgid "Accept"
 #~ msgstr "Sprejmi"

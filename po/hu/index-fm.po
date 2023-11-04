@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 00:41+0000\n"
+"POT-Creation-Date: 2023-11-04 00:41+0000\n"
 "PO-Revision-Date: 2021-01-10 13:12+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:66
+#: src/main.cpp:68
 #, fuzzy, kde-format
 #| msgid ""
 #| "Index allows you to navigate your computer and preview multimedia files."
@@ -31,34 +31,34 @@ msgstr ""
 "Az Index lehetővé teszi a számítógépe böngészését, és a multimédiás fájlok "
 "előnézetének megtekintését."
 
-#: src/main.cpp:67
+#: src/main.cpp:70
 #, fuzzy, kde-format
 #| msgid "© 2019-2020 Nitrux Development Team"
-msgid "© 2019-%1 Maui Development Team"
+msgid "© 2019-2023 Maui Development Team"
 msgstr "© A Nitrux fejlesztői, 2019-2020."
 
-#: src/main.cpp:69
+#: src/main.cpp:73
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:69 src/main.cpp:70
+#: src/main.cpp:73 src/main.cpp:74
 #, kde-format
 msgid "Developer"
 msgstr "Fejlesztő"
 
-#: src/main.cpp:70
+#: src/main.cpp:74
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Kibontás"
 
-#: src/main.qml:162
+#: src/main.qml:168
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -67,100 +67,84 @@ msgstr ""
 "A tömörített fájl tartalmának kibontása egy új vagy meglévő almappába, vagy "
 "a jelenlegi mappába."
 
-#: src/main.qml:179
+#: src/main.qml:185
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "%1 fájl tömörítése"
 msgstr[1] "%1 fájl tömörítése"
 
-#: src/main.qml:180
+#: src/main.qml:186
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "A kijelölt fájlok tömörítése egy új fájlba."
 
-#: src/main.qml:186
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "Archívumnév…"
 
-#: src/main.qml:227
+#: src/main.qml:233
 #, kde-format
 msgid "Close"
 msgstr ""
 
-#: src/main.qml:233 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Tömörítés"
 
-#: src/main.qml:274 src/widgets/views/HomeView.qml:53
+#: src/main.qml:289 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr ""
 
-#: src/main.qml:283
+#: src/main.qml:298
 #, fuzzy, kde-format
 #| msgid "Extract"
 msgid "Extracted"
 msgstr "Kibontás"
 
-#: src/main.qml:284
+#: src/main.qml:299
 #, kde-format
 msgid "File was extracted"
 msgstr ""
 
-#: src/main.qml:354
+#: src/main.qml:369
 #, fuzzy, kde-format
 #| msgid "Toogle SideBar"
 msgid "Toggle sidebar"
 msgstr "Oldalsáv be/ki"
 
-#: src/main.qml:404 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "Megnyitás új lapon"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, fuzzy, kde-format
 #| msgid "Open in split view"
 msgid "Open in Split View"
 msgstr "Megnyitás osztott nézetben"
 
-#: src/widgets/previewer/FilePreviewer.qml:107
+#: src/widgets/previewer/FilePreviewer.qml:102
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: src/widgets/previewer/FilePreviewer.qml:108
+#: src/widgets/previewer/FilePreviewer.qml:103
 #, kde-format
 msgid "File information"
 msgstr ""
-
-#: src/widgets/previewer/FilePreviewer.qml:202
-#, kde-format
-msgid "Previous"
-msgstr "Előző"
-
-#: src/widgets/previewer/FilePreviewer.qml:209
-#, kde-format
-msgid "Next"
-msgstr "Következő"
-
-#: src/widgets/previewer/FilePreviewer.qml:217
-#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
-#, kde-format
-msgid "Open"
-msgstr "Megnyitás"
 
 #: src/widgets/previewer/FileProperties.qml:44
 #, kde-format
@@ -202,7 +186,7 @@ msgstr ""
 
 #: src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:159
-#: src/widgets/views/SettingsDialog.qml:180
+#: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "Csoport"
@@ -233,37 +217,56 @@ msgstr "Csoport"
 msgid "Install"
 msgstr "Telepítés"
 
-#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:69
+#: src/widgets/previewer/PreviewerDialog.qml:34
+#: src/widgets/previewer/PreviewerWindow.qml:42
+#, kde-format
+msgid "Previous"
+msgstr "Előző"
+
+#: src/widgets/previewer/PreviewerDialog.qml:41
+#: src/widgets/previewer/PreviewerWindow.qml:49
+#, kde-format
+msgid "Next"
+msgstr "Következő"
+
+#: src/widgets/previewer/PreviewerDialog.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:67
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "Megnyitás"
+
+#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:134
 #, kde-format
 msgid "List"
 msgstr "Lista"
 
-#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:81
+#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:146
 #, kde-format
 msgid "Grid"
 msgstr "Rács"
 
-#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:173
 #, kde-format
 msgid "Type"
 msgstr "Típus"
 
-#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:185
 #, kde-format
 msgid "Date"
 msgstr "Dátum"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Modified"
 msgstr "Módosítva"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Size"
 msgstr "Méret"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:218
 #, kde-format
 msgid "Name"
 msgstr "Név"
@@ -345,15 +348,13 @@ msgstr "Eltávolítás"
 msgid "Remove '%1'"
 msgstr "Eltávolítás"
 
-#. i18n("Accept")
-#. rejectButton.text: i18n("Cancel")
-#: src/widgets/views/Browser.qml:80
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
 
-#: src/widgets/views/Browser.qml:158
+#: src/widgets/views/Browser.qml:157
 #, kde-format
 msgid "Create new"
 msgstr ""
@@ -498,8 +499,8 @@ msgid "Your most recent image files"
 msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:338
-#: src/widgets/views/SettingsDialog.qml:341
+#: src/widgets/views/SettingsDialog.qml:403
+#: src/widgets/views/SettingsDialog.qml:407
 #, kde-format
 msgid "Places"
 msgstr ""
@@ -538,215 +539,263 @@ msgid "Mount"
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:14
-#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
-msgid "Navigation"
-msgstr "Navigáció"
-
-#: src/widgets/views/SettingsDialog.qml:15
-#, kde-format
-msgid "Configure the app plugins and behavior."
-msgstr "Az alkalmazás bővítményeinek és működésének beállítása."
+msgid "Behaviour"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:19
-#, kde-format
-msgid "Thumbnails"
-msgstr "Bélyegképek"
-
-#: src/widgets/views/SettingsDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "Show previews of images, videos and PDF files"
-msgid "Show previews of images, videos and PDF files."
-msgstr "Képek, videók és PDF-fájlok előnézetének megjelenítése"
-
-#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save Session"
 msgstr "Munkamenet mentése"
 
-#: src/widgets/views/SettingsDialog.qml:33
+#: src/widgets/views/SettingsDialog.qml:20
 #, fuzzy, kde-format
 #| msgid "Save and restore tabs"
 msgid "Save and restore tabs."
 msgstr "Lapok mentése és visszaállítása"
 
-#: src/widgets/views/SettingsDialog.qml:45
+#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:46
+#: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
-"Custom preferences per directory. Preferences as the view type, the sort "
-"order and whether the embedded terminal is visible or not, will be saved for "
-"each directory. If this option is off, then the default preferences will be "
-"used for all the directories."
+"Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:58
+#: src/widgets/views/SettingsDialog.qml:46
+#, fuzzy, kde-format
+#| msgid "Open terminal here"
+msgid "Sync Terminal"
+msgstr "Terminál megnyitása itt"
+
+#: src/widgets/views/SettingsDialog.qml:47
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Previews"
+msgstr "Előnézet"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, fuzzy, kde-format
+#| msgid "Open in new tab"
+msgid "Open in Window"
+msgstr "Megnyitás új lapon"
+
+#: src/widgets/views/SettingsDialog.qml:67
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid "Autoplay"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:80
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:92
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Prefer Preview"
+msgstr "Előnézet"
+
+#: src/widgets/views/SettingsDialog.qml:93
+#, fuzzy, kde-format
+#| msgid ""
+#| "Opens a quick preview with information of the file instead of opening it "
+#| "with an external application."
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr ""
+"Gyors előnézet megnyitása a fájl jellemzőivel egy külső alkalmazással "
+"megnyitás helyett."
+
+#: src/widgets/views/SettingsDialog.qml:106
+#, fuzzy, kde-format
+#| msgid "Navigation"
+msgid "Browsing & Navigation"
+msgstr "Navigáció"
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "Thumbnails"
+msgstr "Bélyegképek"
+
+#: src/widgets/views/SettingsDialog.qml:111
+#, fuzzy, kde-format
+#| msgid "Show previews of images, videos and PDF files"
+msgid "Show previews of images, videos and PDF files."
+msgstr "Képek, videók és PDF-fájlok előnézetének megjelenítése"
+
+#: src/widgets/views/SettingsDialog.qml:123
 #, fuzzy, kde-format
 #| msgid "Type"
 msgid "View Type"
 msgstr "Típus"
 
-#: src/widgets/views/SettingsDialog.qml:59
+#: src/widgets/views/SettingsDialog.qml:124
 #, kde-format
 msgid "Default view type."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:96
+#: src/widgets/views/SettingsDialog.qml:161
 #, fuzzy, kde-format
 #| msgid "Sorting by"
 msgid "Sort"
 msgstr "Rendezés eszerint:"
 
-#: src/widgets/views/SettingsDialog.qml:97
+#: src/widgets/views/SettingsDialog.qml:162
 #, kde-format
 msgid "Default sorting value."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:166
+#: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Show Folders First"
 msgstr "A mappák előre"
 
-#: src/widgets/views/SettingsDialog.qml:195
+#: src/widgets/views/SettingsDialog.qml:261
 #, kde-format
 msgid "Interface"
 msgstr "Felület"
 
-#: src/widgets/views/SettingsDialog.qml:196
-#, kde-format
-msgid "Configure the app UI."
-msgstr "Az alkalmazás felületének beállítása."
-
-#: src/widgets/views/SettingsDialog.qml:200
+#: src/widgets/views/SettingsDialog.qml:266
 #, kde-format
 msgid "Grid Items Size"
 msgstr "Rácselemek mérete"
 
-#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:267
 #, fuzzy, kde-format
 #| msgid "Size of the grid and list view thumbnails."
 msgid "Size of the grid view."
 msgstr "A rács- és listanézet bélyegképeinek mérete."
 
-#: src/widgets/views/SettingsDialog.qml:219
-#: src/widgets/views/SettingsDialog.qml:267
+#: src/widgets/views/SettingsDialog.qml:285
+#: src/widgets/views/SettingsDialog.qml:333
 #, kde-format
 msgid "M"
 msgstr "M"
 
-#: src/widgets/views/SettingsDialog.qml:226
-#: src/widgets/views/SettingsDialog.qml:274
+#: src/widgets/views/SettingsDialog.qml:292
+#: src/widgets/views/SettingsDialog.qml:340
 #, fuzzy, kde-format
 #| msgid "XL"
 msgid "L"
 msgstr "XL"
 
-#: src/widgets/views/SettingsDialog.qml:233
-#: src/widgets/views/SettingsDialog.qml:281
+#: src/widgets/views/SettingsDialog.qml:299
+#: src/widgets/views/SettingsDialog.qml:347
 #, kde-format
 msgid "X"
 msgstr "X"
 
-#: src/widgets/views/SettingsDialog.qml:240
+#: src/widgets/views/SettingsDialog.qml:306
 #, kde-format
 msgid "XL"
 msgstr "XL"
 
-#: src/widgets/views/SettingsDialog.qml:249
+#: src/widgets/views/SettingsDialog.qml:315
 #, kde-format
 msgid "List Items Size"
 msgstr "Listaelemek mérete"
 
-#: src/widgets/views/SettingsDialog.qml:250
+#: src/widgets/views/SettingsDialog.qml:316
 #, fuzzy, kde-format
 #| msgid "Size of the grid and list view thumbnails."
 msgid "Size of the list view."
 msgstr "A rács- és listanézet bélyegképeinek mérete."
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:326
 #, kde-format
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:290
+#: src/widgets/views/SettingsDialog.qml:356
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgid "Overview"
 msgstr "Előnézet"
 
-#: src/widgets/views/SettingsDialog.qml:291
+#: src/widgets/views/SettingsDialog.qml:357
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:303
+#: src/widgets/views/SettingsDialog.qml:369
 #, kde-format
 msgid "Dark Mode"
 msgstr "Sötét mód"
 
-#: src/widgets/views/SettingsDialog.qml:304
+#: src/widgets/views/SettingsDialog.qml:370
 #, kde-format
 msgid "Switch between light and dark colorscheme."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:320
-#: src/widgets/views/SettingsDialog.qml:346
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:412
 #, kde-format
 msgid "Quick places"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:321
-#: src/widgets/views/SettingsDialog.qml:347
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:387
+#: src/widgets/views/SettingsDialog.qml:413
+#: src/widgets/views/SettingsDialog.qml:426
 #, kde-format
 msgid "Access to standard locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:342
-#, kde-format
-msgid "Toggle sidebar sections."
-msgstr ""
-
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:375
+#: src/widgets/views/SettingsDialog.qml:441
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remote"
 msgstr "Eltávolítás"
 
-#: src/widgets/views/SettingsDialog.qml:376
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to network locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:392
+#: src/widgets/views/SettingsDialog.qml:458
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Removable"
 msgstr "Eltávolítás"
 
-#: src/widgets/views/SettingsDialog.qml:393
+#: src/widgets/views/SettingsDialog.qml:459
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:408
+#: src/widgets/views/SettingsDialog.qml:474
 #, kde-format
 msgid "Devices"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:409
+#: src/widgets/views/SettingsDialog.qml:475
 #, kde-format
 msgid "Access drives."
 msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Navigáció"
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, fuzzy, kde-format
@@ -796,16 +845,11 @@ msgstr ""
 msgid "Tagged files for quick access"
 msgstr ""
 
-#, fuzzy
-#~| msgid ""
-#~| "Opens a quick preview with information of the file instead of opening it "
-#~| "with an external application."
-#~ msgid ""
-#~ "Opens a quick preview with information of the file instead of opening it "
-#~ "with an external application"
-#~ msgstr ""
-#~ "Gyors előnézet megnyitása a fájl jellemzőivel egy külső alkalmazással "
-#~ "megnyitás helyett."
+#~ msgid "Configure the app plugins and behavior."
+#~ msgstr "Az alkalmazás bővítményeinek és működésének beállítása."
+
+#~ msgid "Configure the app UI."
+#~ msgstr "Az alkalmazás felületének beállítása."
 
 #~ msgid "Single Click"
 #~ msgstr "Egyszeres kattintás"

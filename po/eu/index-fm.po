@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 00:41+0000\n"
+"POT-Creation-Date: 2023-11-04 00:41+0000\n"
 "PO-Revision-Date: 2023-07-21 12:08+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -25,38 +25,39 @@ msgstr ""
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:66
+#: src/main.cpp:68
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Arakatu, antolatu eta aurreikusi zure fitxategiak."
 
-#: src/main.cpp:67
-#, kde-format
-msgid "© 2019-%1 Maui Development Team"
+#: src/main.cpp:70
+#, fuzzy, kde-format
+#| msgid "© 2019-%1 Maui Development Team"
+msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-%1 Nitrux garapen taldea"
 
-#: src/main.cpp:69
+#: src/main.cpp:73
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:69 src/main.cpp:70
+#: src/main.cpp:73 src/main.cpp:74
 #, kde-format
 msgid "Developer"
 msgstr "Garatzailea"
 
-#: src/main.cpp:70
+#: src/main.cpp:74
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Erauzi"
 
-#: src/main.qml:162
+#: src/main.qml:168
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -65,97 +66,81 @@ msgstr ""
 "Erauzi konprimatutako fitxategiaren edukia azpidirektorio berri batean, "
 "aurretik dagoen beste batean edo uneko direktorioan."
 
-#: src/main.qml:179
+#: src/main.qml:185
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "Konprimatu fitxategi %1"
 msgstr[1] "Konprimatu %1 fitxategi"
 
-#: src/main.qml:180
+#: src/main.qml:186
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Konprimatu hautatutako fitxategiak fitxategi berri batean."
 
-#: src/main.qml:186
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "Artxibo-izena..."
 
-#: src/main.qml:227
+#: src/main.qml:233
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgid "Close"
 msgstr "Itxi fitxa"
 
-#: src/main.qml:233 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Konprimatu"
 
-#: src/main.qml:274 src/widgets/views/HomeView.qml:53
+#: src/main.qml:289 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Ireki karpeta"
 
-#: src/main.qml:283
+#: src/main.qml:298
 #, kde-format
 msgid "Extracted"
 msgstr "Erauzita"
 
-#: src/main.qml:284
+#: src/main.qml:299
 #, kde-format
 msgid "File was extracted"
 msgstr "Fitxategia erauzi du"
 
-#: src/main.qml:354
+#: src/main.qml:369
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Txandakatu alboko-barra"
 
-#: src/main.qml:404 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Laster-markak"
 
-#: src/main.qml:411 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Ireki fitxa berrian"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "Ireki ikuspegi zatituan"
 
-#: src/widgets/previewer/FilePreviewer.qml:107
+#: src/widgets/previewer/FilePreviewer.qml:102
 #, kde-format
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: src/widgets/previewer/FilePreviewer.qml:108
+#: src/widgets/previewer/FilePreviewer.qml:103
 #, kde-format
 msgid "File information"
 msgstr "Fitxategi-informazioa"
-
-#: src/widgets/previewer/FilePreviewer.qml:202
-#, kde-format
-msgid "Previous"
-msgstr "Aurrekoa"
-
-#: src/widgets/previewer/FilePreviewer.qml:209
-#, kde-format
-msgid "Next"
-msgstr "Hurrengoa"
-
-#: src/widgets/previewer/FilePreviewer.qml:217
-#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
-#, kde-format
-msgid "Open"
-msgstr "Ireki"
 
 #: src/widgets/previewer/FileProperties.qml:44
 #, kde-format
@@ -197,7 +182,7 @@ msgstr "Exekutatu"
 
 #: src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:159
-#: src/widgets/views/SettingsDialog.qml:180
+#: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "Taldea"
@@ -227,37 +212,56 @@ msgstr "Taldeak"
 msgid "Install"
 msgstr "Instalatu"
 
-#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:69
+#: src/widgets/previewer/PreviewerDialog.qml:34
+#: src/widgets/previewer/PreviewerWindow.qml:42
+#, kde-format
+msgid "Previous"
+msgstr "Aurrekoa"
+
+#: src/widgets/previewer/PreviewerDialog.qml:41
+#: src/widgets/previewer/PreviewerWindow.qml:49
+#, kde-format
+msgid "Next"
+msgstr "Hurrengoa"
+
+#: src/widgets/previewer/PreviewerDialog.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:67
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "Ireki"
+
+#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:134
 #, kde-format
 msgid "List"
 msgstr "Zerrenda"
 
-#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:81
+#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:146
 #, kde-format
 msgid "Grid"
 msgstr "Sareta"
 
-#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:173
 #, kde-format
 msgid "Type"
 msgstr "Mota"
 
-#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:185
 #, kde-format
 msgid "Date"
 msgstr "Data"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Modified"
 msgstr "Aldatuta"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Size"
 msgstr "Neurria"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:218
 #, kde-format
 msgid "Name"
 msgstr "Izena"
@@ -334,16 +338,14 @@ msgstr "Kendu"
 msgid "Remove '%1'"
 msgstr "Kendu '%1'"
 
-#. i18n("Accept")
-#. rejectButton.text: i18n("Cancel")
-#: src/widgets/views/Browser.qml:80
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
 "Ziur zaude etiketa hau kendu nahi duzula? Eragiketa hau ezin da desegin."
 
-#: src/widgets/views/Browser.qml:158
+#: src/widgets/views/Browser.qml:157
 #, kde-format
 msgid "Create new"
 msgstr "Sortu berria"
@@ -487,8 +489,8 @@ msgid "Your most recent image files"
 msgstr "Zure irudi fitxategi berrienak"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:338
-#: src/widgets/views/SettingsDialog.qml:341
+#: src/widgets/views/SettingsDialog.qml:403
+#: src/widgets/views/SettingsDialog.qml:407
 #, kde-format
 msgid "Places"
 msgstr "Lekuak"
@@ -529,209 +531,253 @@ msgid "Mount"
 msgstr "Muntatu"
 
 #: src/widgets/views/SettingsDialog.qml:14
-#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
-msgid "Navigation"
-msgstr "Nabigatzea"
-
-#: src/widgets/views/SettingsDialog.qml:15
-#, kde-format
-msgid "Configure the app plugins and behavior."
-msgstr "Konfiguratu aplikazioaren pluginak eta jokabidea."
+msgid "Behaviour"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:19
-#, kde-format
-msgid "Thumbnails"
-msgstr "Koadro-txikiak"
-
-#: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files."
-msgstr "Erakutsi irudi, bideo eta PDF fitxategien aurre-ikuspegiak."
-
-#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save Session"
 msgstr "Gorde saioa"
 
-#: src/widgets/views/SettingsDialog.qml:33
+#: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Save and restore tabs."
 msgstr "Fitxak gorde eta lehengoratu."
 
-#: src/widgets/views/SettingsDialog.qml:45
+#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
 msgstr "Hobespen dinamikoak"
 
-#: src/widgets/views/SettingsDialog.qml:46
+#: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
-"Custom preferences per directory. Preferences as the view type, the sort "
-"order and whether the embedded terminal is visible or not, will be saved for "
-"each directory. If this option is off, then the default preferences will be "
-"used for all the directories."
+"Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
-"Neurrira ipinitako hobespenak direktorioko. Ikuspegi mota, sailkapen "
-"hurrenkera eta txertatutako terminala ikusgai egon behar duen edo ez gisako "
-"hobespenak gordeko dira direktorio bakoitzeko. Aukera hau itzalita badago, "
-"lehenetsitako aukerak direktorio guztietarako erabiliko dira."
 
-#: src/widgets/views/SettingsDialog.qml:58
+#: src/widgets/views/SettingsDialog.qml:46
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgid "Sync Terminal"
+msgstr "Terminala"
+
+#: src/widgets/views/SettingsDialog.qml:47
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Previews"
+msgstr "Aurreikusi"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, fuzzy, kde-format
+#| msgid "Open in New Window"
+msgid "Open in Window"
+msgstr "Ireki leiho berrian"
+
+#: src/widgets/views/SettingsDialog.qml:67
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid "Autoplay"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:80
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:92
+#, fuzzy, kde-format
+#| msgid "Preview"
+msgid "Prefer Preview"
+msgstr "Aurreikusi"
+
+#: src/widgets/views/SettingsDialog.qml:93
+#, fuzzy, kde-format
+#| msgid ""
+#| "Opens a quick preview with information of the file instead of opening it "
+#| "with an external application"
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr ""
+"Fitxategiaren informazioa duen aurre-ikuspegi azkar bat irekitzen du, "
+"kanpoko aplikazio batekin ireki ordez"
+
+#: src/widgets/views/SettingsDialog.qml:106
+#, fuzzy, kde-format
+#| msgid "Navigation"
+msgid "Browsing & Navigation"
+msgstr "Nabigatzea"
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "Thumbnails"
+msgstr "Koadro-txikiak"
+
+#: src/widgets/views/SettingsDialog.qml:111
+#, kde-format
+msgid "Show previews of images, videos and PDF files."
+msgstr "Erakutsi irudi, bideo eta PDF fitxategien aurre-ikuspegiak."
+
+#: src/widgets/views/SettingsDialog.qml:123
 #, kde-format
 msgid "View Type"
 msgstr "Ikuspegi mota"
 
-#: src/widgets/views/SettingsDialog.qml:59
+#: src/widgets/views/SettingsDialog.qml:124
 #, kde-format
 msgid "Default view type."
 msgstr "Ikuspegi modu lehenetsia."
 
-#: src/widgets/views/SettingsDialog.qml:96
+#: src/widgets/views/SettingsDialog.qml:161
 #, kde-format
 msgid "Sort"
 msgstr "Sailkatu"
 
-#: src/widgets/views/SettingsDialog.qml:97
+#: src/widgets/views/SettingsDialog.qml:162
 #, kde-format
 msgid "Default sorting value."
 msgstr "Sailkatzeko balio lehenetsia."
 
-#: src/widgets/views/SettingsDialog.qml:166
+#: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Show Folders First"
 msgstr "Erakutsi karpetak lehenengo"
 
-#: src/widgets/views/SettingsDialog.qml:195
+#: src/widgets/views/SettingsDialog.qml:261
 #, kde-format
 msgid "Interface"
 msgstr "Interfazea"
 
-#: src/widgets/views/SettingsDialog.qml:196
-#, kde-format
-msgid "Configure the app UI."
-msgstr "Konfiguratu aplikazioaren erabiltzailearen interfazea."
-
-#: src/widgets/views/SettingsDialog.qml:200
+#: src/widgets/views/SettingsDialog.qml:266
 #, kde-format
 msgid "Grid Items Size"
 msgstr "Saretako elementuen neurria"
 
-#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:267
 #, kde-format
 msgid "Size of the grid view."
 msgstr "Sareta ikuspegiaren neurria."
 
-#: src/widgets/views/SettingsDialog.qml:219
-#: src/widgets/views/SettingsDialog.qml:267
+#: src/widgets/views/SettingsDialog.qml:285
+#: src/widgets/views/SettingsDialog.qml:333
 #, kde-format
 msgid "M"
 msgstr "M"
 
-#: src/widgets/views/SettingsDialog.qml:226
-#: src/widgets/views/SettingsDialog.qml:274
+#: src/widgets/views/SettingsDialog.qml:292
+#: src/widgets/views/SettingsDialog.qml:340
 #, kde-format
 msgid "L"
 msgstr "L"
 
-#: src/widgets/views/SettingsDialog.qml:233
-#: src/widgets/views/SettingsDialog.qml:281
+#: src/widgets/views/SettingsDialog.qml:299
+#: src/widgets/views/SettingsDialog.qml:347
 #, kde-format
 msgid "X"
 msgstr "X"
 
-#: src/widgets/views/SettingsDialog.qml:240
+#: src/widgets/views/SettingsDialog.qml:306
 #, kde-format
 msgid "XL"
 msgstr "XL"
 
-#: src/widgets/views/SettingsDialog.qml:249
+#: src/widgets/views/SettingsDialog.qml:315
 #, kde-format
 msgid "List Items Size"
 msgstr "Zerrenda-elementuen neurria"
 
-#: src/widgets/views/SettingsDialog.qml:250
+#: src/widgets/views/SettingsDialog.qml:316
 #, kde-format
 msgid "Size of the list view."
 msgstr "Zerrenda ikuspegiaren neurria."
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:326
 #, kde-format
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:290
+#: src/widgets/views/SettingsDialog.qml:356
 #, kde-format
 msgid "Overview"
 msgstr "Ikuspegi orokorra"
 
-#: src/widgets/views/SettingsDialog.qml:291
+#: src/widgets/views/SettingsDialog.qml:357
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr "Erabili ikuspegi-orokor modua lehenetsi gisa abiaraztean."
 
-#: src/widgets/views/SettingsDialog.qml:303
+#: src/widgets/views/SettingsDialog.qml:369
 #, kde-format
 msgid "Dark Mode"
 msgstr "Modu iluna"
 
-#: src/widgets/views/SettingsDialog.qml:304
+#: src/widgets/views/SettingsDialog.qml:370
 #, kde-format
 msgid "Switch between light and dark colorscheme."
 msgstr "Aldatu kolore-antolaera argi eta ilunaren artean."
 
-#: src/widgets/views/SettingsDialog.qml:320
-#: src/widgets/views/SettingsDialog.qml:346
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:412
 #, kde-format
 msgid "Quick places"
 msgstr "Toki azkarrak"
 
-#: src/widgets/views/SettingsDialog.qml:321
-#: src/widgets/views/SettingsDialog.qml:347
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:387
+#: src/widgets/views/SettingsDialog.qml:413
+#: src/widgets/views/SettingsDialog.qml:426
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Leku estandarretarako sarbidea."
 
-#: src/widgets/views/SettingsDialog.qml:342
-#, kde-format
-msgid "Toggle sidebar sections."
-msgstr "Txandakatu alboko-barrako atalak."
-
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Bookmarks"
 msgstr "Laster-markak"
 
-#: src/widgets/views/SettingsDialog.qml:375
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Remote"
 msgstr "Urrutikoa"
 
-#: src/widgets/views/SettingsDialog.qml:376
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to network locations."
 msgstr "Sareko lekuetarako sarbidea."
 
-#: src/widgets/views/SettingsDialog.qml:392
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Removable"
 msgstr "Aldagarria"
 
-#: src/widgets/views/SettingsDialog.qml:393
+#: src/widgets/views/SettingsDialog.qml:459
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "USB makila eta SD txarteletara sarbidea."
 
-#: src/widgets/views/SettingsDialog.qml:408
+#: src/widgets/views/SettingsDialog.qml:474
 #, kde-format
 msgid "Devices"
 msgstr "Gailuak"
 
-#: src/widgets/views/SettingsDialog.qml:409
+#: src/widgets/views/SettingsDialog.qml:475
 #, kde-format
 msgid "Access drives."
 msgstr "Unitatetara sarbidea."
+
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Nabigatzea"
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format
@@ -777,6 +823,26 @@ msgstr "Bilatu fitxa"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxategi etiketatuak atzipen bizkorrerako"
+
+#~ msgid "Configure the app plugins and behavior."
+#~ msgstr "Konfiguratu aplikazioaren pluginak eta jokabidea."
+
+#~ msgid ""
+#~ "Custom preferences per directory. Preferences as the view type, the sort "
+#~ "order and whether the embedded terminal is visible or not, will be saved "
+#~ "for each directory. If this option is off, then the default preferences "
+#~ "will be used for all the directories."
+#~ msgstr ""
+#~ "Neurrira ipinitako hobespenak direktorioko. Ikuspegi mota, sailkapen "
+#~ "hurrenkera eta txertatutako terminala ikusgai egon behar duen edo ez "
+#~ "gisako hobespenak gordeko dira direktorio bakoitzeko. Aukera hau itzalita "
+#~ "badago, lehenetsitako aukerak direktorio guztietarako erabiliko dira."
+
+#~ msgid "Configure the app UI."
+#~ msgstr "Konfiguratu aplikazioaren erabiltzailearen interfazea."
+
+#~ msgid "Toggle sidebar sections."
+#~ msgstr "Txandakatu alboko-barrako atalak."
 
 #~ msgid "Accept"
 #~ msgstr "Onartu"
@@ -846,13 +912,6 @@ msgstr "Fitxategi etiketatuak atzipen bizkorrerako"
 
 #~ msgid "Add to Bookmarks"
 #~ msgstr "Gehitu laster-marketara"
-
-#~ msgid ""
-#~ "Opens a quick preview with information of the file instead of opening it "
-#~ "with an external application"
-#~ msgstr ""
-#~ "Fitxategiaren informazioa duen aurre-ikuspegi azkar bat irekitzen du, "
-#~ "kanpoko aplikazio batekin ireki ordez"
 
 #~ msgid "Search or Filter"
 #~ msgstr "Bilatu edo iragazi"
