@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-10-22 10:42+0200\n"
+"PO-Revision-Date: 2023-11-04 12:49+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
 #: src/main.cpp:66
@@ -29,10 +29,10 @@ msgid "Browse, organize and preview your files."
 msgstr "Przeglądaj, porządkuj i podglądaj swoje pliki."
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "© 2019-%1 Maui Development Team"
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 Zespół programistów Maui"
+msgstr "© 2019-2023 Zespół programistów Maui"
 
 #: src/main.cpp:73
 #, kde-format
@@ -83,10 +83,10 @@ msgid "Archive name..."
 msgstr "Nazwa archiwum..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Close Tab"
 msgid "Close"
-msgstr "Zamknij kartę"
+msgstr "Zamknij"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -530,7 +530,7 @@ msgstr "Podepnij"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Zachowanie"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -552,66 +552,71 @@ msgstr "Ustawienia dynamiczne"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Zapisz własne ustawienia na katalog, w przeciwny razie użyj domyślnych"
+" ustawień."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Terminal"
 msgid "Sync Terminal"
-msgstr "Terminal"
+msgstr "Synchronizacja terminala"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
+"Zsynchronizuj bieżący katalog pracy terminalu z miejscem, w którym znajduje"
+" się przeglądarka."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Preview"
 msgid "Previews"
-msgstr "Podgląd"
+msgstr "Podglądy"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Open in New Window"
 msgid "Open in Window"
-msgstr "Otwórz w nowym oknie"
+msgstr "Otwórz w oknie"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Pokaż podglądy plików w nowym oknie."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Sam zacznij odtwarzać"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Sam zacznij odtwarzanie podglądów plików dźwiękowych i filmów."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Preview"
 msgid "Prefer Preview"
-msgstr "Podgląd"
+msgstr "Skłaniaj się ku podglądom"
 
 #: src/widgets/views/SettingsDialog.qml:93
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Opens a quick preview with information of the file instead of opening it "
 #| "with an external application"
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
-msgstr "Otwiera szybki podgląd z danymi zamiast otwierać zewnętrzną aplikację"
+msgstr ""
+"Otwórz plik w trybie podglądu, zamiast otwierać go w osobnej aplikacji."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Navigation"
 msgid "Browsing & Navigation"
-msgstr "Poruszanie się"
+msgstr "Przeglądanie i przemieszczanie się"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
