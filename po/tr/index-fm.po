@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-11-03 13:19+0300\n"
+"PO-Revision-Date: 2023-11-05 11:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -28,10 +28,10 @@ msgid "Browse, organize and preview your files."
 msgstr "Dosyalarınıza göz atın, onları organize edin ve önizleyin."
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "© 2019-%1 Maui Development Team"
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 Maui Geliştirme Takımı"
+msgstr "© 2019-2023 Maui Geliştirme Takımı"
 
 #: src/main.cpp:73
 #, kde-format
@@ -527,7 +527,7 @@ msgstr "Bağla"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Davranış"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -549,63 +549,65 @@ msgstr "Devingen Tercihler"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Özel tercihleri dizin başına kaydedin, aksi takdirde öntanımlı tercihleri"
+" kullanın."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Terminal"
 msgid "Sync Terminal"
-msgstr "Uçbirim"
+msgstr "Uçbirimi Eşzamanla"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
-msgstr ""
+msgstr "Uçbirim geçerli çalışma dizinini tarayıcı konumuna eşzamanlayın."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Preview"
 msgid "Previews"
-msgstr "Önizle"
+msgstr "Önizlemeler"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Open in New Window"
 msgid "Open in Window"
-msgstr "Yeni Pencerede Aç"
+msgstr "Pencerede Aç"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Dosya önizlemelerini yeni bir pencerede gösterin."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Kendiliğinden çal/oynat"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Ses ve video dosyaları önizlemelerini kendiliğinden çalın/oynatın."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Preview"
 msgid "Prefer Preview"
-msgstr "Önizle"
+msgstr "Önizlemeyi Tercih Et"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
-msgstr ""
+msgstr "Dosyaları özel bir uygulama yerine onları önizleme kipinde açın."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Navigation"
 msgid "Browsing & Navigation"
-msgstr "Dolaşım"
+msgstr "Tarama ve Dolaşım"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
@@ -886,3 +888,4 @@ msgstr "Hızlı erişim için etiketlenen dosyalar"
 
 #~ msgid "Screenshots"
 #~ msgstr "Ekran Görüntüleri"
+
