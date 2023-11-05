@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-11-05 12:29+0000\n"
 "PO-Revision-Date: 2023-11-04 08:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -32,7 +32,6 @@ msgstr "Навігація файлами, їхнє упорядковуванн
 
 #: src/main.cpp:70
 #, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© Команда розробників Maui, 2019–2023"
 
@@ -87,7 +86,6 @@ msgstr "Назва архіву…"
 
 #: src/main.qml:233
 #, kde-format
-#| msgid "Close Tab"
 msgid "Close"
 msgstr "Закрити"
 
@@ -555,12 +553,11 @@ msgstr "Динамічні налаштування"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
-"Зберігати нетипові налаштування для окремих каталогів. Якщо таких немає,"
-" використовувати типові налаштування."
+"Зберігати нетипові налаштування для окремих каталогів. Якщо таких немає, "
+"використовувати типові налаштування."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
-#| msgid "Terminal"
 msgid "Sync Terminal"
 msgstr "Синхронізувати термінал"
 
@@ -572,13 +569,11 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:60
 #, kde-format
-#| msgid "Preview"
 msgid "Previews"
 msgstr "Перегляд"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
-#| msgid "Open in New Window"
 msgid "Open in Window"
 msgstr "Відкривати у вікні"
 
@@ -600,25 +595,20 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
-#| msgid "Preview"
 msgid "Prefer Preview"
 msgstr "Пріоритет перегляду"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
-"Відкривати файли у режимі перегляду, а не у відповідній спеціалізованій"
-" програмі."
+"Відкривати файли у режимі перегляду, а не у відповідній спеціалізованій "
+"програмі."
 
 #: src/widgets/views/SettingsDialog.qml:106
 #, kde-format
-#| msgid "Navigation"
 msgid "Browsing & Navigation"
 msgstr "Навігація"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-11-05 12:29+0000\n"
 "PO-Revision-Date: 2023-11-04 10:08+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -29,7 +29,6 @@ msgstr "Uw bestanden doorbladeren, organiseren en bekijken."
 
 #: src/main.cpp:70
 #, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-2023 Ontwikkelteam van Maui"
 
@@ -337,11 +336,9 @@ msgstr "'%1' verwijderen"
 #: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid ""
-"Are you sure you want to remove this tag? This operation can not be"
-" undone."
+"Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
-"Wilt u deze tag verwijderen? Deze bewerking kan niet ongedaan worden"
-" gemaakt."
+"Wilt u deze tag verwijderen? Deze bewerking kan niet ongedaan worden gemaakt."
 
 #: src/widgets/views/Browser.qml:157
 #, kde-format
@@ -383,8 +380,7 @@ msgstr "Apparaten en op afstand"
 #: src/widgets/views/DisksSection.qml:19
 #, kde-format
 msgid "Remote locations and devices like disks, phones and cameras"
-msgstr ""
-"Locaties op afstand en apparaten zoals schijven, telefoons en camera's"
+msgstr "Locaties op afstand en apparaten zoals schijven, telefoons en camera's"
 
 #: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
@@ -517,12 +513,10 @@ msgstr "Uw bladwijzers komen hier"
 #: src/widgets/views/PlacesSideBar.qml:238
 #, kde-format
 msgid ""
-"This device needs to be mounted before accessing it. Do you want to set"
-" up "
+"This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
-"Dit apparaat moet aangekoppeld worden voordat er toegang toe is. Wilt u"
-" dit "
+"Dit apparaat moet aangekoppeld worden voordat er toegang toe is. Wilt u dit "
 "apparaat instellen?"
 
 #: src/widgets/views/PlacesSideBar.qml:238
@@ -553,35 +547,30 @@ msgstr "Dynamische voorkeuren"
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
-"Save custom preferences per directory, otherwise use the default"
-" preferences."
+"Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
 "Aangepaste voorkeuren per map opslaan, gebruik anders de standaard "
 "voorkeuren."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
-#| msgid "Terminal"
 msgid "Sync Terminal"
 msgstr "Terminal synchroniseren"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
-msgid ""
-"Sync the terminal current working directory to the browser location."
+msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 "De huidige werkmap van de terminal synchroniseren met de locatie van de "
 "browser."
 
 #: src/widgets/views/SettingsDialog.qml:60
 #, kde-format
-#| msgid "Preview"
 msgid "Previews"
 msgstr "Voorbeelden"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
-#| msgid "Open in New Window"
 msgid "Open in Window"
 msgstr "In venster openen"
 
@@ -603,15 +592,11 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
-#| msgid "Preview"
 msgid "Prefer Preview"
 msgstr "Voorkeur voor voorbeeld"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
@@ -621,7 +606,6 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:106
 #, kde-format
-#| msgid "Navigation"
 msgid "Browsing & Navigation"
 msgstr "Bladeren & navigatie"
 
@@ -1030,4 +1014,3 @@ msgstr "Bestanden met tags voor snelle toegang"
 
 #~ msgid "Hide"
 #~ msgstr "Verbergen"
-

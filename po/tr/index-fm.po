@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-11-05 12:29+0000\n"
 "PO-Revision-Date: 2023-11-05 11:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -29,7 +29,6 @@ msgstr "Dosyalarınıza göz atın, onları organize edin ve önizleyin."
 
 #: src/main.cpp:70
 #, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-2023 Maui Geliştirme Takımı"
 
@@ -549,12 +548,11 @@ msgstr "Devingen Tercihler"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
-"Özel tercihleri dizin başına kaydedin, aksi takdirde öntanımlı tercihleri"
-" kullanın."
+"Özel tercihleri dizin başına kaydedin, aksi takdirde öntanımlı tercihleri "
+"kullanın."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
-#| msgid "Terminal"
 msgid "Sync Terminal"
 msgstr "Uçbirimi Eşzamanla"
 
@@ -565,13 +563,11 @@ msgstr "Uçbirim geçerli çalışma dizinini tarayıcı konumuna eşzamanlayın
 
 #: src/widgets/views/SettingsDialog.qml:60
 #, kde-format
-#| msgid "Preview"
 msgid "Previews"
 msgstr "Önizlemeler"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
-#| msgid "Open in New Window"
 msgid "Open in Window"
 msgstr "Pencerede Aç"
 
@@ -592,7 +588,6 @@ msgstr "Ses ve video dosyaları önizlemelerini kendiliğinden çalın/oynatın.
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
-#| msgid "Preview"
 msgid "Prefer Preview"
 msgstr "Önizlemeyi Tercih Et"
 
@@ -605,7 +600,6 @@ msgstr "Dosyaları özel bir uygulama yerine onları önizleme kipinde açın."
 
 #: src/widgets/views/SettingsDialog.qml:106
 #, kde-format
-#| msgid "Navigation"
 msgid "Browsing & Navigation"
 msgstr "Tarama ve Dolaşım"
 
@@ -888,4 +882,3 @@ msgstr "Hızlı erişim için etiketlenen dosyalar"
 
 #~ msgid "Screenshots"
 #~ msgstr "Ekran Görüntüleri"
-

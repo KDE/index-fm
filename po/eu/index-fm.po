@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-11-05 12:29+0000\n"
 "PO-Revision-Date: 2023-11-04 19:46+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -32,7 +32,6 @@ msgstr "Arakatu, antolatu eta aurreikusi zure fitxategiak."
 
 #: src/main.cpp:70
 #, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-2023 Maui garapen taldea"
 
@@ -85,7 +84,6 @@ msgstr "Artxibo-izena..."
 
 #: src/main.qml:233
 #, kde-format
-#| msgid "Close Tab"
 msgid "Close"
 msgstr "Itxi"
 
@@ -555,12 +553,11 @@ msgstr "Hobespen dinamikoak"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
-"Gorde neurrira ipinitako hobespenak direktorioko, bestela erabili hobespen"
-" lehenetsiak."
+"Gorde neurrira ipinitako hobespenak direktorioko, bestela erabili hobespen "
+"lehenetsiak."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
-#| msgid "Terminal"
 msgid "Sync Terminal"
 msgstr "Sinkronizatu Terminala"
 
@@ -572,13 +569,11 @@ msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:60
 #, kde-format
-#| msgid "Preview"
 msgid "Previews"
 msgstr "Aurre-ikuspegiak"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
-#| msgid "Open in New Window"
 msgid "Open in Window"
 msgstr "Ireki Leihoan"
 
@@ -599,25 +594,20 @@ msgstr "Hasi audio- eta bideo-fitxategi aurre-ikuspegiak automatikoki jotzen."
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
-#| msgid "Preview"
 msgid "Prefer Preview"
 msgstr "Hobetsi Aurre-ikustea"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
-"Ireki fitxategiak aurre-ikuspegi moduan, berariaz irekitako aplikazio "
-"batean ireki ordez."
+"Ireki fitxategiak aurre-ikuspegi moduan, berariaz irekitako aplikazio batean "
+"ireki ordez."
 
 #: src/widgets/views/SettingsDialog.qml:106
 #, kde-format
-#| msgid "Navigation"
 msgid "Browsing & Navigation"
 msgstr "Arakatzea eta Nabigatzea"
 
@@ -990,4 +980,3 @@ msgstr "Fitxategi etiketatuak atzipen bizkorrerako"
 
 #~ msgid "Keep sidebar on constrained spaces"
 #~ msgstr "Mantendu alboko barra mugatutako espazioetan"
-
