@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:29+0000\n"
-"PO-Revision-Date: 2023-11-03 09:27+0100\n"
+"PO-Revision-Date: 2023-11-04 10:03+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -31,10 +31,9 @@ msgid "Browse, organize and preview your files."
 msgstr "Navega, organitza i previsualitza els vostres fitxers."
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 L'equip de desenvolupament Maui"
+msgstr "© 2019-2023 L'equip de desenvolupament Maui"
 
 #: src/main.cpp:73
 #, kde-format
@@ -531,7 +530,7 @@ msgstr "Munta"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Comportament"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -553,50 +552,52 @@ msgstr "Preferències dinàmiques"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Desa les preferències personalitzades per directori, en cas contrari "
+"utilitza les preferències predeterminades."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Terminal"
+msgstr "Sincronitza el terminal"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
+"Sincronitza el directori de treball actual del terminal a la ubicació del "
+"navegador."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Vista prèvia"
+msgstr "Vistes prèvies"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Obre en una finestra nova"
+msgstr "Obre en una finestra"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Mostra les vistes prèvies de fitxer en una finestra nova."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Reproducció automàtica"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
 msgstr ""
+"Comença automàticament la reproducció de previsualitzacions de fitxers "
+"d'àudio i vídeo."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Vista prèvia"
+msgstr "Prefereix la vista prèvia"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
@@ -604,12 +605,13 @@ msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
+"Obre els fitxers en mode de vista prèvia en lloc d'obrir-los en una "
+"aplicació dedicada."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "Navegació"
+msgstr "Exploració i navegació"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
@@ -816,23 +818,3 @@ msgstr "Cerca la pestanya"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxers etiquetats per a un accés ràpid"
-
-#~ msgid "Configure the app plugins and behavior."
-#~ msgstr "Configura els connectors i el comportament de l'aplicació."
-
-#~ msgid ""
-#~ "Custom preferences per directory. Preferences as the view type, the sort "
-#~ "order and whether the embedded terminal is visible or not, will be saved "
-#~ "for each directory. If this option is off, then the default preferences "
-#~ "will be used for all the directories."
-#~ msgstr ""
-#~ "Preferències personalitzades per directori. Les preferències com el tipus "
-#~ "de vista, el criteri d'ordenació i si el terminal incrustat és visible o "
-#~ "no, es desaran per a cada directori. Si aquesta opció està desactivada, "
-#~ "s'utilitzaran les preferències predeterminades per a tots els directoris."
-
-#~ msgid "Configure the app UI."
-#~ msgstr "Configura la IU de l'app."
-
-#~ msgid "Toggle sidebar sections."
-#~ msgstr "Mostra o oculta les seccions de la barra lateral."
