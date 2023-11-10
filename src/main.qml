@@ -64,7 +64,7 @@ Maui.ApplicationWindow
         property var lastSession : [[({'path': FB.FM.homePath()})]]
         property int lastTabIndex : 0
 
-        property bool quickSidebarSection : true        
+        property bool quickSidebarSection : true
         property var sidebarSections : [
             FB.FMList.BOOKMARKS_PATH,
             FB.FMList.REMOTE_PATH,
@@ -228,29 +228,29 @@ Maui.ApplicationWindow
 
             actions:
                 [
-            Action
-            {
-               text: i18n("Close")
-               onTriggered:  _compressDialog.close()
-            },
-
-            Action
-            {
-                text: i18n("Compress")
-                onTriggered:
+                Action
                 {
-                    var error = _compressedFile.compress(urls, currentBrowser.currentPath, _textEntry.text, compressType.currentIndex)
+                    text: i18n("Close")
+                    onTriggered:  _compressDialog.close()
+                },
 
-                    if(error)
+                Action
+                {
+                    text: i18n("Compress")
+                    onTriggered:
                     {
-                        root.notify("","Compress Error", "Some error occurs. Maybe current user does not have permission for writing in this directory.")
-                    }
-                    else
-                    {
-                        _compressDialog.close()
+                        var error = _compressedFile.compress(urls, currentBrowser.currentPath, _textEntry.text, compressType.currentIndex)
+
+                        if(error)
+                        {
+                            root.notify("","Compress Error", "Some error occurs. Maybe current user does not have permission for writing in this directory.")
+                        }
+                        else
+                        {
+                            _compressDialog.close()
+                        }
                     }
                 }
-            }
             ]
         }
     }
@@ -266,8 +266,8 @@ Maui.ApplicationWindow
                 dialogLoader.sourceComponent = null
             }
         }
-    }    
-    
+    }
+
     Component
     {
         id: _previewerWindowComponent
@@ -355,8 +355,8 @@ Maui.ApplicationWindow
                     headBar.farLeftContent: Loader
                     {
                         asynchronous: true
-                         active: _sideBarView.sideBar.collapsed
-                         visible: active
+                        active: _sideBarView.sideBar.collapsed
+                        visible: active
 
                         sourceComponent: ToolButton
                         {
@@ -406,7 +406,7 @@ Maui.ApplicationWindow
 
                             function openMenu()
                             {
-                              _actionBarLoader.item.openMainMenu()
+                                _actionBarLoader.item.openMainMenu()
                             }
 
                             Maui.ContextualMenu
@@ -581,20 +581,18 @@ Maui.ApplicationWindow
 
         Maui.Platform.shareFiles(urls)
     }
-    
+
     function openPreview(model, index)
     {
         if(appSettings.previewerWindow)
         {
-        var previewer = _previewerWindowComponent.createObject(root)
-         previewer.previewer.model = model
-        previewer.previewer.currentIndex = index
+            var previewer = _previewerWindowComponent.createObject(root)
+            previewer.previewer.setData(model, index)
         }else
         {
-        dialogLoader.sourceComponent = _previewerComponent
-        dialog.previewer.model = model
-        dialog.previewer.currentIndex = index
-        dialog.open()
+            dialogLoader.sourceComponent = _previewerComponent
+            dialog.previewer.setData(model, index)
+            dialog.open()
         }
     }
 
@@ -606,11 +604,11 @@ Maui.ApplicationWindow
 
             if(tab.length === 2)
             {
-                 root.openTab(tab[0].path, tab[1].path)
+                root.openTab(tab[0].path, tab[1].path)
             }else
-                {
-                     root.openTab(tab[0].path)
-                }
+            {
+                root.openTab(tab[0].path)
+            }
         }
 
         currentTabIndex = settings.lastTabIndex

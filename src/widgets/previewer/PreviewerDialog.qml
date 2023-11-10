@@ -10,7 +10,7 @@ import org.mauikit.filebrowsing 1.3 as FB
 Maui.PopupPage
 {
     title: _previewer.title
-readonly property alias previewer : _previewer
+    readonly property alias previewer : _previewer
     hint: 1
     maxWidth: 800
     maxHeight: implicitHeight
@@ -21,7 +21,7 @@ readonly property alias previewer : _previewer
         Layout.fillHeight: true
     }
     
-     footBar.leftContent: Maui.ToolActions
+    footBar.leftContent: Maui.ToolActions
     {
         visible: !Maui.Handy.isMobile
         expanded: true
@@ -62,4 +62,4 @@ readonly property alias previewer : _previewer
         checked: _previewer.showInfo
         onClicked: _previewer.toggleInfo()
     }
-    }
+}

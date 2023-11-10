@@ -9,13 +9,15 @@ import org.mauikit.filebrowsing 1.3 as FB
 Item
 {
     id: control
-    
+
     implicitHeight: 1000
     property url currentUrl: ""
 
     readonly property alias listView : _listView
-    property alias model : _listView.model
+    readonly property alias model : _model
+    readonly property alias list: _list
     property alias currentIndex: _listView.currentIndex
+
     ListModel { id: infoModel }
 
     readonly property string title :  _listView.currentItem.title
@@ -23,6 +25,9 @@ Item
     property bool isFav : false
     property bool isDir : false
     property bool showInfo: true
+
+    readonly property bool ready : list.status.code === FB.PathStatus.READY
+
 
     ListView
     {
@@ -33,6 +38,15 @@ Item
         focus: true
         spacing: 0
 
+model: Maui.BaseModel
+{
+    id: _model
+    list: FB.FMList
+    {
+        id: _list
+
+    }
+}
         interactive: Maui.Handy.hasTransientTouchInput
         boundsBehavior: Flickable.StopAtBounds
         boundsMovement: Flickable.StopAtBounds
@@ -40,6 +54,7 @@ Item
         highlightFollowsCurrentItem: true
         highlightMoveDuration: 0
         highlightResizeDuration : 0
+
         snapMode: ListView.SnapOneItem
         cacheBuffer: width
         keyNavigationEnabled : true
@@ -53,10 +68,12 @@ Item
             height: ListView.view.height
             width: ListView.view.width
 
-            property bool isCurrentItem : ListView.isCurrentItem
-            property url currentUrl: model.path
-            property var iteminfo : model
-            readonly property string title: model.label
+            readonly property bool isCurrentItem : ListView.isCurrentItem
+
+           property url currentUrl: model.path
+           property var iteminfo : model
+
+           readonly property string title: model.label
 
             Loader
             {
@@ -127,6 +144,7 @@ Item
 
             function show(path)
             {
+                console.log("ASKIGN TO PREVIEW FILE <<", path, iteminfo.mime)
                 initModel()
 
                 control.isDir = model.isdir == "true"
@@ -162,7 +180,7 @@ Item
 
                 console.log("previe mime", iteminfo.mime)
                 previewLoader.source = source
-                control.showInfo = source === "DefaultPreview.qml"
+                control.showInfo = (source === "DefaultPreview.qml")
             }
 
             function initModel()
@@ -188,14 +206,41 @@ Item
    {
        _listView.decrementCurrentIndex()
    }
-   
+
    function goNext()
    {
        _listView.incrementCurrentIndex()
    }
-   
+
    function toggleInfo()
    {
        control.showInfo = !control.showInfo
    }
+
+   property int _index
+
+   function setData(model, index)
+   {
+       control.list.path = model.list.path
+       control.list.hidden = model.list.hidden
+       control.list.onlyDirs = model.list.onlyDirs
+       control.list.foldersFirst = model.list.foldersFirst
+       control.list.filters = model.list.filters
+       control.list.filterType = model.list.filterType
+       control.list.sortBy = model.list.sortBy
+       control._index = index
+_timer.start()
+
+}
+
+Timer
+{
+ id: _timer
+interval: 1500
+triggeredOnStart : false
+ onTriggered:
+ {
+     control.currentIndex= control._index
+ }
+}
 }

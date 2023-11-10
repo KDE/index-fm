@@ -23,7 +23,6 @@ ColumnLayout
         user: Index.Permission.OWNER
     }
 
-
     Index.Permission
     {
         id: _groupPermissions
@@ -47,6 +46,7 @@ ColumnLayout
         Maui.SectionItem
         {
             label1.text: i18n("Owner")
+            columns: 1
 
             Maui.ToolActions
             {
@@ -78,6 +78,7 @@ ColumnLayout
         Maui.SectionItem
         {
             label1.text: i18n("Group")
+            columns: 1
 
             Maui.ToolActions
             {
@@ -111,6 +112,7 @@ ColumnLayout
         Maui.SectionItem
         {
             label1.text: i18n("Everyone")
+            columns: 1
 
             Maui.ToolActions
             {
