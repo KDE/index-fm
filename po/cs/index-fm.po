@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Vit Pelcak <vit@pelcak.org>, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2023 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
-"PO-Revision-Date: 2023-03-01 16:25+0100\n"
+"POT-Creation-Date: 2023-11-11 00:41+0000\n"
+"PO-Revision-Date: 2023-11-08 14:25+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -28,10 +28,9 @@ msgid "Browse, organize and preview your files."
 msgstr ""
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 Vývojový tým Maui"
+msgstr "© 2019-2023 Vývojový tým Maui"
 
 #: src/main.cpp:73
 #, kde-format
@@ -80,10 +79,9 @@ msgid "Archive name..."
 msgstr "Název archivu..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "Zavřít kartu"
+msgstr "Zavřít"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -128,77 +126,77 @@ msgstr "Otevřít v nové kartě"
 msgid "Open in Split View"
 msgstr "Otevřít v rozděleném pohledu"
 
-#: src/widgets/previewer/FilePreviewer.qml:102
+#: src/widgets/previewer/FilePreviewer.qml:119
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: src/widgets/previewer/FilePreviewer.qml:103
+#: src/widgets/previewer/FilePreviewer.qml:120
 #, kde-format
 msgid "File information"
 msgstr "Informace o souboru"
 
-#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:43
 #, kde-format
 msgid "Permissions"
 msgstr "Oprávnění"
 
-#: src/widgets/previewer/FileProperties.qml:45
-#: src/widgets/previewer/FileProperties.qml:148
+#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:150
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr "Nastavte práva k přístupu k tomuto souboru"
 
-#: src/widgets/previewer/FileProperties.qml:49
-#: src/widgets/previewer/FileProperties.qml:152
+#: src/widgets/previewer/FileProperties.qml:48
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Owner"
 msgstr "Vlastník"
 
 #: src/widgets/previewer/FileProperties.qml:58
-#: src/widgets/previewer/FileProperties.qml:90
-#: src/widgets/previewer/FileProperties.qml:122
+#: src/widgets/previewer/FileProperties.qml:91
+#: src/widgets/previewer/FileProperties.qml:124
 #, kde-format
 msgid "Read"
 msgstr "Čtení"
 
 #: src/widgets/previewer/FileProperties.qml:65
-#: src/widgets/previewer/FileProperties.qml:97
-#: src/widgets/previewer/FileProperties.qml:128
+#: src/widgets/previewer/FileProperties.qml:98
+#: src/widgets/previewer/FileProperties.qml:130
 #, kde-format
 msgid "Write"
 msgstr "Zápis"
 
 #: src/widgets/previewer/FileProperties.qml:72
-#: src/widgets/previewer/FileProperties.qml:105
-#: src/widgets/previewer/FileProperties.qml:134
+#: src/widgets/previewer/FileProperties.qml:106
+#: src/widgets/previewer/FileProperties.qml:136
 #, kde-format
 msgid "Execute"
 msgstr "Spustit"
 
 #: src/widgets/previewer/FileProperties.qml:80
-#: src/widgets/previewer/FileProperties.qml:159
+#: src/widgets/previewer/FileProperties.qml:161
 #: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "Skupina"
 
-#: src/widgets/previewer/FileProperties.qml:113
+#: src/widgets/previewer/FileProperties.qml:114
 #, kde-format
 msgid "Everyone"
 msgstr "Všichni"
 
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:149
 #, kde-format
 msgid "Ownership"
 msgstr "Vlastnictví"
 
-#: src/widgets/previewer/FileProperties.qml:165
+#: src/widgets/previewer/FileProperties.qml:167
 #, kde-format
 msgid "Users"
 msgstr "Uživatelé"
 
-#: src/widgets/previewer/FileProperties.qml:175
+#: src/widgets/previewer/FileProperties.qml:177
 #, kde-format
 msgid "Groups"
 msgstr "Skupiny"
@@ -209,19 +207,19 @@ msgid "Install"
 msgstr "Instalovat"
 
 #: src/widgets/previewer/PreviewerDialog.qml:34
-#: src/widgets/previewer/PreviewerWindow.qml:42
+#: src/widgets/previewer/PreviewerWindow.qml:43
 #, kde-format
 msgid "Previous"
 msgstr "Předchozí"
 
 #: src/widgets/previewer/PreviewerDialog.qml:41
-#: src/widgets/previewer/PreviewerWindow.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:50
 #, kde-format
 msgid "Next"
 msgstr "Následující"
 
 #: src/widgets/previewer/PreviewerDialog.qml:49
-#: src/widgets/previewer/PreviewerWindow.qml:67
+#: src/widgets/previewer/PreviewerWindow.qml:68
 #: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -525,7 +523,7 @@ msgstr "Připojit"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Chování"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -549,10 +547,9 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Terminál"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
@@ -560,16 +557,14 @@ msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Náhled"
+msgstr "Náhledy"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Otevřít v novém okně"
+msgstr "Otevřít v okně"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
@@ -579,7 +574,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Automaticky přehrát"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
@@ -587,10 +582,9 @@ msgid "Auto start playing audio and video file previews."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Náhled"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
@@ -600,10 +594,9 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "Navigace"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
@@ -810,9 +803,3 @@ msgstr "Najít kartu"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
-
-#~ msgid "Configure the app plugins and behavior."
-#~ msgstr "Nastavení modulů a chování aplikace."
-
-#~ msgid "Toggle sidebar sections."
-#~ msgstr "Přepnout sekce postranní lišty"

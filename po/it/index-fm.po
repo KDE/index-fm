@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
-"PO-Revision-Date: 2023-04-13 10:47+0200\n"
+"POT-Creation-Date: 2023-11-11 00:41+0000\n"
+"PO-Revision-Date: 2023-11-08 10:07+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -28,10 +28,9 @@ msgid "Browse, organize and preview your files."
 msgstr "Sfoglia, organizza e visualizza anteprime dei tuoi file."
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 La squadra di sviluppo Maui"
+msgstr "© 2019-2023 La squadra di sviluppo di Maui"
 
 #: src/main.cpp:73
 #, kde-format
@@ -81,10 +80,9 @@ msgid "Archive name..."
 msgstr "Nome dell'archivio..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "Chiudi scheda"
+msgstr "Chiudi"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -129,77 +127,77 @@ msgstr "Apri in nuova scheda"
 msgid "Open in Split View"
 msgstr "Apri nella vista divisa"
 
-#: src/widgets/previewer/FilePreviewer.qml:102
+#: src/widgets/previewer/FilePreviewer.qml:119
 #, kde-format
 msgid "Details"
 msgstr "Dettagli"
 
-#: src/widgets/previewer/FilePreviewer.qml:103
+#: src/widgets/previewer/FilePreviewer.qml:120
 #, kde-format
 msgid "File information"
 msgstr "Informazioni sul file"
 
-#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:43
 #, kde-format
 msgid "Permissions"
 msgstr "Permessi"
 
-#: src/widgets/previewer/FileProperties.qml:45
-#: src/widgets/previewer/FileProperties.qml:148
+#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:150
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr "Imposta i permessi per accedere a questo file"
 
-#: src/widgets/previewer/FileProperties.qml:49
-#: src/widgets/previewer/FileProperties.qml:152
+#: src/widgets/previewer/FileProperties.qml:48
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Owner"
 msgstr "Proprietario"
 
 #: src/widgets/previewer/FileProperties.qml:58
-#: src/widgets/previewer/FileProperties.qml:90
-#: src/widgets/previewer/FileProperties.qml:122
+#: src/widgets/previewer/FileProperties.qml:91
+#: src/widgets/previewer/FileProperties.qml:124
 #, kde-format
 msgid "Read"
 msgstr "Lettura"
 
 #: src/widgets/previewer/FileProperties.qml:65
-#: src/widgets/previewer/FileProperties.qml:97
-#: src/widgets/previewer/FileProperties.qml:128
+#: src/widgets/previewer/FileProperties.qml:98
+#: src/widgets/previewer/FileProperties.qml:130
 #, kde-format
 msgid "Write"
 msgstr "Scrittura"
 
 #: src/widgets/previewer/FileProperties.qml:72
-#: src/widgets/previewer/FileProperties.qml:105
-#: src/widgets/previewer/FileProperties.qml:134
+#: src/widgets/previewer/FileProperties.qml:106
+#: src/widgets/previewer/FileProperties.qml:136
 #, kde-format
 msgid "Execute"
 msgstr "Esecuzione"
 
 #: src/widgets/previewer/FileProperties.qml:80
-#: src/widgets/previewer/FileProperties.qml:159
+#: src/widgets/previewer/FileProperties.qml:161
 #: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "Gruppo"
 
-#: src/widgets/previewer/FileProperties.qml:113
+#: src/widgets/previewer/FileProperties.qml:114
 #, kde-format
 msgid "Everyone"
 msgstr "Tutti"
 
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:149
 #, kde-format
 msgid "Ownership"
 msgstr "Proprietà"
 
-#: src/widgets/previewer/FileProperties.qml:165
+#: src/widgets/previewer/FileProperties.qml:167
 #, kde-format
 msgid "Users"
 msgstr "Utenti"
 
-#: src/widgets/previewer/FileProperties.qml:175
+#: src/widgets/previewer/FileProperties.qml:177
 #, kde-format
 msgid "Groups"
 msgstr "Gruppi"
@@ -210,19 +208,19 @@ msgid "Install"
 msgstr "Installa"
 
 #: src/widgets/previewer/PreviewerDialog.qml:34
-#: src/widgets/previewer/PreviewerWindow.qml:42
+#: src/widgets/previewer/PreviewerWindow.qml:43
 #, kde-format
 msgid "Previous"
 msgstr "Precedente"
 
 #: src/widgets/previewer/PreviewerDialog.qml:41
-#: src/widgets/previewer/PreviewerWindow.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:50
 #, kde-format
 msgid "Next"
 msgstr "Successivo"
 
 #: src/widgets/previewer/PreviewerDialog.qml:49
-#: src/widgets/previewer/PreviewerWindow.qml:67
+#: src/widgets/previewer/PreviewerWindow.qml:68
 #: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -530,7 +528,7 @@ msgstr "Monta"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Comportamento"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -552,66 +550,63 @@ msgstr "Preferenze dinamiche"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Salva le preferenze personalizzate per cartella, altrimenti utilizza le "
+"preferenze predefinite."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Terminale"
+msgstr "Sincronizza terminale"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
+"Sincronizza la cartella di lavoro attuale del terminale con la posizione del "
+"browser."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Anteprima"
+msgstr "Anteprime"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Apri in una nuova finestra"
+msgstr "Apri in una finestra"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Mostra le anteprime dei file in una nuova finestra."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Riproduzione automatica"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
 msgstr ""
+"Avvia automatico la riproduzione delle anteprime di file audio e video."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Anteprima"
+msgstr "Preferisci l'anteprima"
 
 #: src/widgets/views/SettingsDialog.qml:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
+#, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
-"Apre una rapida anteprima con le informazioni del file invece di aprirlo con "
-"un'applicazione esterna"
+"Apri i file in modalità anteprima invece di aprirli in un'applicazione "
+"dedicata."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
 msgstr "Navigazione"
 

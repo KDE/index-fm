@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
+"POT-Creation-Date: 2023-11-11 00:41+0000\n"
 "PO-Revision-Date: 2023-02-09 02:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -131,77 +131,77 @@ msgstr "在新分頁開啟"
 msgid "Open in Split View"
 msgstr "用分割檢視開啟"
 
-#: src/widgets/previewer/FilePreviewer.qml:102
+#: src/widgets/previewer/FilePreviewer.qml:119
 #, kde-format
 msgid "Details"
 msgstr "詳細資料"
 
-#: src/widgets/previewer/FilePreviewer.qml:103
+#: src/widgets/previewer/FilePreviewer.qml:120
 #, kde-format
 msgid "File information"
 msgstr "檔案資訊"
 
-#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:43
 #, kde-format
 msgid "Permissions"
 msgstr "權限"
 
-#: src/widgets/previewer/FileProperties.qml:45
-#: src/widgets/previewer/FileProperties.qml:148
+#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:150
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr "設定這個檔案的存取權限"
 
-#: src/widgets/previewer/FileProperties.qml:49
-#: src/widgets/previewer/FileProperties.qml:152
+#: src/widgets/previewer/FileProperties.qml:48
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Owner"
 msgstr "擁有者"
 
 #: src/widgets/previewer/FileProperties.qml:58
-#: src/widgets/previewer/FileProperties.qml:90
-#: src/widgets/previewer/FileProperties.qml:122
+#: src/widgets/previewer/FileProperties.qml:91
+#: src/widgets/previewer/FileProperties.qml:124
 #, kde-format
 msgid "Read"
 msgstr "讀取"
 
 #: src/widgets/previewer/FileProperties.qml:65
-#: src/widgets/previewer/FileProperties.qml:97
-#: src/widgets/previewer/FileProperties.qml:128
+#: src/widgets/previewer/FileProperties.qml:98
+#: src/widgets/previewer/FileProperties.qml:130
 #, kde-format
 msgid "Write"
 msgstr "寫入"
 
 #: src/widgets/previewer/FileProperties.qml:72
-#: src/widgets/previewer/FileProperties.qml:105
-#: src/widgets/previewer/FileProperties.qml:134
+#: src/widgets/previewer/FileProperties.qml:106
+#: src/widgets/previewer/FileProperties.qml:136
 #, kde-format
 msgid "Execute"
 msgstr "執行"
 
 #: src/widgets/previewer/FileProperties.qml:80
-#: src/widgets/previewer/FileProperties.qml:159
+#: src/widgets/previewer/FileProperties.qml:161
 #: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "群組"
 
-#: src/widgets/previewer/FileProperties.qml:113
+#: src/widgets/previewer/FileProperties.qml:114
 #, kde-format
 msgid "Everyone"
 msgstr "所有人"
 
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:149
 #, kde-format
 msgid "Ownership"
 msgstr "擁有權"
 
-#: src/widgets/previewer/FileProperties.qml:165
+#: src/widgets/previewer/FileProperties.qml:167
 #, kde-format
 msgid "Users"
 msgstr "使用者"
 
-#: src/widgets/previewer/FileProperties.qml:175
+#: src/widgets/previewer/FileProperties.qml:177
 #, kde-format
 msgid "Groups"
 msgstr "群組"
@@ -212,19 +212,19 @@ msgid "Install"
 msgstr "安裝"
 
 #: src/widgets/previewer/PreviewerDialog.qml:34
-#: src/widgets/previewer/PreviewerWindow.qml:42
+#: src/widgets/previewer/PreviewerWindow.qml:43
 #, kde-format
 msgid "Previous"
 msgstr "上一個"
 
 #: src/widgets/previewer/PreviewerDialog.qml:41
-#: src/widgets/previewer/PreviewerWindow.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:50
 #, kde-format
 msgid "Next"
 msgstr "下一個"
 
 #: src/widgets/previewer/PreviewerDialog.qml:49
-#: src/widgets/previewer/PreviewerWindow.qml:67
+#: src/widgets/previewer/PreviewerWindow.qml:68
 #: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
