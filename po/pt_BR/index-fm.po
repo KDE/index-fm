@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 00:41+0000\n"
-"PO-Revision-Date: 2023-05-31 14:19-0300\n"
+"PO-Revision-Date: 2023-11-14 11:49-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -29,10 +29,9 @@ msgid "Browse, organize and preview your files."
 msgstr "Navegue, organize e visualize seus arquivos."
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 Equipe de desenvolvimento do Maui"
+msgstr "© 2019-2023 Equipe de desenvolvimento do Maui"
 
 #: src/main.cpp:73
 #, kde-format
@@ -82,10 +81,9 @@ msgid "Archive name..."
 msgstr "Nome do arquivo compactado..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "Fechar aba"
+msgstr "Fechar"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -532,7 +530,7 @@ msgstr "Montar"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Comportamento"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -554,66 +552,64 @@ msgstr "Preferências dinâmicas"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Salvar preferências personalizadas por pasta; caso contrário, utilizar as "
+"preferências predefinidas."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Terminal"
+msgstr "Sincronizar terminal"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
+"Sincroniza a pasta de trabalho atual do terminal com a localização do "
+"navegador."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Pré-visualização"
+msgstr "Visualizações"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Abrir em nova janela"
+msgstr "Abrir na janela"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Mostra as visualizações do arquivo em uma nova janela."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Reprodução automática"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
 msgstr ""
+"Comece automaticamente a reproduzir as visualizações de arquivos de áudio e "
+"vídeo."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Pré-visualização"
+msgstr "Preferir visualização"
 
 #: src/widgets/views/SettingsDialog.qml:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
+#, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
-"Abre uma pré-visualização curta com informações do arquivo ao invés de abrir "
-"por meio de aplicativo externo"
+"Abrir arquivos no modo de visualização ao invés de abri-los em um aplicativo "
+"dedicado."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
 msgstr "Navegação"
 
