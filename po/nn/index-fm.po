@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:44+0000\n"
+"POT-Creation-Date: 2023-11-11 00:41+0000\n"
 "PO-Revision-Date: 2023-07-31 21:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -24,38 +24,38 @@ msgstr ""
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:66
+#: src/main.cpp:68
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr ""
 
-#: src/main.cpp:67
+#: src/main.cpp:70
 #, kde-format
-msgid "© 2019-%1 Maui Development Team"
+msgid "© 2019-2023 Maui Development Team"
 msgstr ""
 
-#: src/main.cpp:69
+#: src/main.cpp:73
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:69 src/main.cpp:70
+#: src/main.cpp:73 src/main.cpp:74
 #, kde-format
 msgid "Developer"
 msgstr "Utviklar"
 
-#: src/main.cpp:70
+#: src/main.cpp:74
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:161 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Pakk ut"
 
-#: src/main.qml:162
+#: src/main.qml:168
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -64,147 +64,142 @@ msgstr ""
 "Pakk ut innhaldet i komprimerte filer til ei ny eller gammal mappe, eller "
 "gjeldande mappe."
 
-#: src/main.qml:179
+#: src/main.qml:185
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "Komprimerer %1 fil"
 msgstr[1] "Komprimerer %1 filer"
 
-#: src/main.qml:180
+#: src/main.qml:186
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Komprimer merkte filer til ny fil."
 
-#: src/main.qml:186
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "Arkivnamn …"
 
-#: src/main.qml:267 src/widgets/views/HomeView.qml:53
+#: src/main.qml:233
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
+#: src/widgets/views/FileMenu.qml:229
+#, kde-format
+msgid "Compress"
+msgstr "Komprimer"
+
+#: src/main.qml:289 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Opna mappe"
 
-#: src/main.qml:276
+#: src/main.qml:298
 #, kde-format
 msgid "Extracted"
 msgstr ""
 
-#: src/main.qml:277
+#: src/main.qml:299
 #, kde-format
 msgid "File was extracted"
 msgstr ""
 
-#: src/main.qml:347
+#: src/main.qml:369
 #, kde-format
 msgid "Toggle sidebar"
 msgstr ""
 
-#: src/main.qml:397 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Bokmerke"
 
-#: src/main.qml:404 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:86
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Opna i ny fane"
 
-#: src/main.qml:412 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in Split View"
 msgstr "Opna i delt vising"
 
-#: src/widgets/previewer/FilePreviewer.qml:107
+#: src/widgets/previewer/FilePreviewer.qml:119
 #, kde-format
 msgid "Details"
 msgstr "Detaljar"
 
-#: src/widgets/previewer/FilePreviewer.qml:108
+#: src/widgets/previewer/FilePreviewer.qml:120
 #, kde-format
 msgid "File information"
 msgstr "Filinformasjon"
 
-#: src/widgets/previewer/FilePreviewer.qml:202
-#, kde-format
-msgid "Previous"
-msgstr "Førre"
-
-#: src/widgets/previewer/FilePreviewer.qml:209
-#, kde-format
-msgid "Next"
-msgstr "Neste"
-
-#: src/widgets/previewer/FilePreviewer.qml:217
-#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
-#, kde-format
-msgid "Open"
-msgstr "Opna"
-
-#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:43
 #, kde-format
 msgid "Permissions"
 msgstr "Løyve"
 
-#: src/widgets/previewer/FileProperties.qml:45
-#: src/widgets/previewer/FileProperties.qml:148
+#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:150
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr ""
 
-#: src/widgets/previewer/FileProperties.qml:49
-#: src/widgets/previewer/FileProperties.qml:152
+#: src/widgets/previewer/FileProperties.qml:48
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Owner"
 msgstr "Eigar"
 
 #: src/widgets/previewer/FileProperties.qml:58
-#: src/widgets/previewer/FileProperties.qml:90
-#: src/widgets/previewer/FileProperties.qml:122
+#: src/widgets/previewer/FileProperties.qml:91
+#: src/widgets/previewer/FileProperties.qml:124
 #, kde-format
 msgid "Read"
 msgstr "Lesing"
 
 #: src/widgets/previewer/FileProperties.qml:65
-#: src/widgets/previewer/FileProperties.qml:97
-#: src/widgets/previewer/FileProperties.qml:128
+#: src/widgets/previewer/FileProperties.qml:98
+#: src/widgets/previewer/FileProperties.qml:130
 #, kde-format
 msgid "Write"
 msgstr "Skriving"
 
 #: src/widgets/previewer/FileProperties.qml:72
-#: src/widgets/previewer/FileProperties.qml:105
-#: src/widgets/previewer/FileProperties.qml:134
+#: src/widgets/previewer/FileProperties.qml:106
+#: src/widgets/previewer/FileProperties.qml:136
 #, kde-format
 msgid "Execute"
 msgstr "Køyring"
 
 #: src/widgets/previewer/FileProperties.qml:80
-#: src/widgets/previewer/FileProperties.qml:159
-#: src/widgets/views/SettingsDialog.qml:180
+#: src/widgets/previewer/FileProperties.qml:161
+#: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Group"
 msgstr "Gruppe"
 
-#: src/widgets/previewer/FileProperties.qml:113
+#: src/widgets/previewer/FileProperties.qml:114
 #, kde-format
 msgid "Everyone"
 msgstr "Alle"
 
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:149
 #, kde-format
 msgid "Ownership"
 msgstr "Eigarskap"
 
-#: src/widgets/previewer/FileProperties.qml:165
+#: src/widgets/previewer/FileProperties.qml:167
 #, kde-format
 msgid "Users"
 msgstr "Brukarar"
 
-#: src/widgets/previewer/FileProperties.qml:175
+#: src/widgets/previewer/FileProperties.qml:177
 #, kde-format
 msgid "Groups"
 msgstr "Grupper"
@@ -214,37 +209,56 @@ msgstr "Grupper"
 msgid "Install"
 msgstr "Installer"
 
-#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:69
+#: src/widgets/previewer/PreviewerDialog.qml:34
+#: src/widgets/previewer/PreviewerWindow.qml:43
+#, kde-format
+msgid "Previous"
+msgstr "Førre"
+
+#: src/widgets/previewer/PreviewerDialog.qml:41
+#: src/widgets/previewer/PreviewerWindow.qml:50
+#, kde-format
+msgid "Next"
+msgstr "Neste"
+
+#: src/widgets/previewer/PreviewerDialog.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:68
+#: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "Opna"
+
+#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:134
 #, kde-format
 msgid "List"
 msgstr "Liste"
 
-#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:81
+#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:146
 #, kde-format
 msgid "Grid"
 msgstr "Rutenett"
 
-#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:108
+#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:173
 #, kde-format
 msgid "Type"
 msgstr "Type"
 
-#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:120
+#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:185
 #, kde-format
 msgid "Date"
 msgstr "Dato"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:131
+#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:196
 #, kde-format
 msgid "Modified"
 msgstr "Endra"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:142
+#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:207
 #, kde-format
 msgid "Size"
 msgstr "Storleik"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:153
+#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:218
 #, kde-format
 msgid "Name"
 msgstr "Namn"
@@ -321,15 +335,13 @@ msgstr "Fjern"
 msgid "Remove '%1'"
 msgstr "Fjern «%1»"
 
-#. i18n("Accept")
-#. rejectButton.text: i18n("Cancel")
-#: src/widgets/views/Browser.qml:80
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
 
-#: src/widgets/views/Browser.qml:158
+#: src/widgets/views/Browser.qml:157
 #, kde-format
 msgid "Create new"
 msgstr "Lag ny"
@@ -349,11 +361,6 @@ msgstr "Klipp ut"
 #, kde-format
 msgid "Share"
 msgstr "Del"
-
-#: src/widgets/views/BrowserView.qml:125 src/widgets/views/FileMenu.qml:229
-#, kde-format
-msgid "Compress"
-msgstr "Komprimer"
 
 #: src/widgets/views/BrowserView.qml:137 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:21
@@ -478,8 +485,8 @@ msgid "Your most recent image files"
 msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:338
-#: src/widgets/views/SettingsDialog.qml:341
+#: src/widgets/views/SettingsDialog.qml:403
+#: src/widgets/views/SettingsDialog.qml:407
 #, kde-format
 msgid "Places"
 msgstr "Stadar"
@@ -520,205 +527,243 @@ msgid "Mount"
 msgstr "Monter"
 
 #: src/widgets/views/SettingsDialog.qml:14
-#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
-msgid "Navigation"
-msgstr "Navigering"
-
-#: src/widgets/views/SettingsDialog.qml:15
-#, kde-format
-msgid "Configure the app plugins and behavior."
-msgstr "Sett opp programtillegg og åtferd for appen."
+msgid "Behaviour"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:19
-#, kde-format
-msgid "Thumbnails"
-msgstr "Miniatyrbilete"
-
-#: src/widgets/views/SettingsDialog.qml:20
-#, kde-format
-msgid "Show previews of images, videos and PDF files."
-msgstr "Vis førehandsvising av bilete, videoar og PDF-filer."
-
-#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Save Session"
 msgstr "Lagra økta"
 
-#: src/widgets/views/SettingsDialog.qml:33
+#: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Save and restore tabs."
 msgstr "Lagra og gjenopprett faner."
 
-#: src/widgets/views/SettingsDialog.qml:45
+#: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
 msgstr "Dynamiske innstillingar"
 
-#: src/widgets/views/SettingsDialog.qml:46
+#: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
-"Custom preferences per directory. Preferences as the view type, the sort "
-"order and whether the embedded terminal is visible or not, will be saved for "
-"each directory. If this option is off, then the default preferences will be "
-"used for all the directories."
+"Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:58
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Sync Terminal"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:47
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:60
+#, kde-format
+msgid "Previews"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Open in Window"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:67
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid "Autoplay"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:80
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:92
+#, kde-format
+msgid "Prefer Preview"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:93
+#, kde-format
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:106
+#, kde-format
+msgid "Browsing & Navigation"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "Thumbnails"
+msgstr "Miniatyrbilete"
+
+#: src/widgets/views/SettingsDialog.qml:111
+#, kde-format
+msgid "Show previews of images, videos and PDF files."
+msgstr "Vis førehandsvising av bilete, videoar og PDF-filer."
+
+#: src/widgets/views/SettingsDialog.qml:123
 #, kde-format
 msgid "View Type"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:59
+#: src/widgets/views/SettingsDialog.qml:124
 #, kde-format
 msgid "Default view type."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:96
+#: src/widgets/views/SettingsDialog.qml:161
 #, kde-format
 msgid "Sort"
 msgstr "Sorter"
 
-#: src/widgets/views/SettingsDialog.qml:97
+#: src/widgets/views/SettingsDialog.qml:162
 #, kde-format
 msgid "Default sorting value."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:166
+#: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Show Folders First"
 msgstr "Vis mapper først"
 
-#: src/widgets/views/SettingsDialog.qml:195
+#: src/widgets/views/SettingsDialog.qml:261
 #, kde-format
 msgid "Interface"
 msgstr "Grensesnitt"
 
-#: src/widgets/views/SettingsDialog.qml:196
-#, kde-format
-msgid "Configure the app UI."
-msgstr "Set opp brukarflate."
-
-#: src/widgets/views/SettingsDialog.qml:200
+#: src/widgets/views/SettingsDialog.qml:266
 #, kde-format
 msgid "Grid Items Size"
 msgstr "Storleik i rutenett"
 
-#: src/widgets/views/SettingsDialog.qml:201
+#: src/widgets/views/SettingsDialog.qml:267
 #, kde-format
 msgid "Size of the grid view."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:219
-#: src/widgets/views/SettingsDialog.qml:267
+#: src/widgets/views/SettingsDialog.qml:285
+#: src/widgets/views/SettingsDialog.qml:333
 #, kde-format
 msgid "M"
 msgstr "M"
 
-#: src/widgets/views/SettingsDialog.qml:226
-#: src/widgets/views/SettingsDialog.qml:274
+#: src/widgets/views/SettingsDialog.qml:292
+#: src/widgets/views/SettingsDialog.qml:340
 #, kde-format
 msgid "L"
 msgstr "L"
 
-#: src/widgets/views/SettingsDialog.qml:233
-#: src/widgets/views/SettingsDialog.qml:281
+#: src/widgets/views/SettingsDialog.qml:299
+#: src/widgets/views/SettingsDialog.qml:347
 #, kde-format
 msgid "X"
 msgstr "X"
 
-#: src/widgets/views/SettingsDialog.qml:240
+#: src/widgets/views/SettingsDialog.qml:306
 #, kde-format
 msgid "XL"
 msgstr "XL"
 
-#: src/widgets/views/SettingsDialog.qml:249
+#: src/widgets/views/SettingsDialog.qml:315
 #, kde-format
 msgid "List Items Size"
 msgstr "Storleik i lister"
 
-#: src/widgets/views/SettingsDialog.qml:250
+#: src/widgets/views/SettingsDialog.qml:316
 #, kde-format
 msgid "Size of the list view."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:260
+#: src/widgets/views/SettingsDialog.qml:326
 #, kde-format
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:290
+#: src/widgets/views/SettingsDialog.qml:356
 #, kde-format
 msgid "Overview"
 msgstr "Oversikt"
 
-#: src/widgets/views/SettingsDialog.qml:291
+#: src/widgets/views/SettingsDialog.qml:357
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:303
+#: src/widgets/views/SettingsDialog.qml:369
 #, kde-format
 msgid "Dark Mode"
 msgstr "Mørk modus"
 
-#: src/widgets/views/SettingsDialog.qml:304
+#: src/widgets/views/SettingsDialog.qml:370
 #, kde-format
 msgid "Switch between light and dark colorscheme."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:320
-#: src/widgets/views/SettingsDialog.qml:346
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:412
 #, kde-format
 msgid "Quick places"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:321
-#: src/widgets/views/SettingsDialog.qml:347
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:387
+#: src/widgets/views/SettingsDialog.qml:413
+#: src/widgets/views/SettingsDialog.qml:426
 #, kde-format
 msgid "Access to standard locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:342
-#, kde-format
-msgid "Toggle sidebar sections."
-msgstr ""
-
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bokmerke"
 
-#: src/widgets/views/SettingsDialog.qml:375
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Remote"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:376
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to network locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:392
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Removable"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:393
+#: src/widgets/views/SettingsDialog.qml:459
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:408
+#: src/widgets/views/SettingsDialog.qml:474
 #, kde-format
 msgid "Devices"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:409
+#: src/widgets/views/SettingsDialog.qml:475
 #, kde-format
 msgid "Access drives."
 msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Navigation"
+msgstr "Navigering"
 
 #: src/widgets/views/ShortcutsDialog.qml:20
 #, kde-format
