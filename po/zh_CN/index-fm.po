@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 00:41+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"PO-Revision-Date: 2023-11-19 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -28,10 +28,9 @@ msgid "Browse, organize and preview your files."
 msgstr "浏览、组织和预览您的文件。"
 
 #: src/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 Maui Development Team"
+msgstr ""
 
 #: src/main.cpp:73
 #, kde-format
@@ -78,10 +77,9 @@ msgid "Archive name..."
 msgstr "压缩文件名称..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "关闭标签页"
+msgstr ""
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -547,10 +545,9 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "终端"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
@@ -558,10 +555,9 @@ msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "预览"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
@@ -584,10 +580,9 @@ msgid "Auto start playing audio and video file previews."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "预览"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
@@ -597,10 +592,9 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "导航"
+msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
@@ -807,12 +801,3 @@ msgstr "查找标签页"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "带标签文件供快速访问"
-
-#~ msgid "Configure the app plugins and behavior."
-#~ msgstr "配置应用的插件和行为。"
-
-#~ msgid "Configure the app UI."
-#~ msgstr "配置应用界面。"
-
-#~ msgid "Toggle sidebar sections."
-#~ msgstr "显示/隐藏侧边栏。"
