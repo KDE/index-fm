@@ -11,6 +11,7 @@ Maui.ApplicationWindow
 {
     id: control
     readonly property alias previewer : _previewer
+    flags: Maui.App.controls.enableCSD ? (Qt.FramelessWindowHint | Qt.Dialog ): (Qt.Dialog & ~Qt.FramelessWindowHint)
 
     title: _previewer.title
     width: 700
