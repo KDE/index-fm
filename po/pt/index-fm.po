@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 00:41+0000\n"
+"POT-Creation-Date: 2023-11-23 00:41+0000\n"
 "PO-Revision-Date: 2023-04-17 16:11+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -210,19 +210,19 @@ msgid "Install"
 msgstr "Instalar"
 
 #: src/widgets/previewer/PreviewerDialog.qml:34
-#: src/widgets/previewer/PreviewerWindow.qml:43
+#: src/widgets/previewer/PreviewerWindow.qml:44
 #, kde-format
 msgid "Previous"
 msgstr "Anterior"
 
 #: src/widgets/previewer/PreviewerDialog.qml:41
-#: src/widgets/previewer/PreviewerWindow.qml:50
+#: src/widgets/previewer/PreviewerWindow.qml:51
 #, kde-format
 msgid "Next"
 msgstr "Seguinte"
 
 #: src/widgets/previewer/PreviewerDialog.qml:49
-#: src/widgets/previewer/PreviewerWindow.qml:68
+#: src/widgets/previewer/PreviewerWindow.qml:69
 #: src/widgets/views/BrowserView.qml:114 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
