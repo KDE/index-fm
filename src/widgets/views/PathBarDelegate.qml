@@ -21,8 +21,6 @@ T.Control
     leftPadding: rightPadding
 
     property bool checked :  ListView.isCurrentItem
-    property bool lastOne : false
-    property bool firstOne : false
 
     ToolTip.delay: 1000
     ToolTip.timeout: 5000
@@ -52,10 +50,10 @@ T.Control
 
     background: Index.PathArrowBackground
     {
-      id: _arrowBG
+        id: _arrowBG
         color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : (control.firstOne? "transparent": Maui.Theme.backgroundColor))
 
-       arrowWidth: 8
+        arrowWidth: 8
     }
 
     contentItem: MouseArea

@@ -19,13 +19,13 @@ Maui.SplitViewItem
 {
     id: control
 
-    property alias browser : _browser
-    property alias currentPath: _browser.currentPath
-    property alias settings : _browser.settings
-    property alias title : _browser.title
-
-    property alias terminalVisible : _dirConf.terminalVisible
+    readonly property alias browser : _browser
+    readonly property alias settings : _browser.settings
+    readonly property alias title : _browser.title
     readonly property bool supportsTerminal : terminalLoader.item
+
+    property alias currentPath: _browser.currentPath
+    property alias terminalVisible : _dirConf.terminalVisible
 
     onCurrentPathChanged:
     {
@@ -135,8 +135,8 @@ Maui.SplitViewItem
 
             settings.showHiddenFiles: appSettings.showHiddenFiles
             settings.showThumbnails: appSettings.showThumbnails
-                        settings.foldersFirst: sortSettings.foldersFirst
-                        settings.group: sortSettings.group
+            settings.foldersFirst: sortSettings.foldersFirst
+            settings.group: sortSettings.group
 
             settings.sortBy:  _dirConf.sortKey
             settings.viewType: _dirConf.viewType
@@ -149,7 +149,6 @@ Maui.SplitViewItem
                 fallbackSortKey: sortSettings.sortBy
                 fallbackViewType: appSettings.viewType
             }
-
 
             browser.holder.actions: [
                 Action
@@ -170,7 +169,7 @@ Maui.SplitViewItem
                 }
             }
 
-            onKeyPress:
+            onKeyPress: (event) =>
             {
                 if (event.key == Qt.Key_Forward)
                 {
@@ -194,7 +193,7 @@ Maui.SplitViewItem
 
                 if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
                 {
-                    pathBar.showEntryBar()
+                    pathBar.pathBar.showEntryBar()
                     event.accepted = true
                 }
 
@@ -224,10 +223,9 @@ Maui.SplitViewItem
                     }
                     event.accepted = true
                 }
-
             }
 
-            onItemClicked:
+            onItemClicked: (index) =>
             {
                 const item = currentFMModel.get(index)
 
@@ -245,7 +243,7 @@ Maui.SplitViewItem
                 }
             }
 
-            onItemDoubleClicked:
+            onItemDoubleClicked: (index) =>
             {
                 const item = currentFMModel.get(index)
                 //                handleSelectionState(item)
@@ -262,7 +260,7 @@ Maui.SplitViewItem
                 }
             }
 
-            onItemRightClicked:
+            onItemRightClicked: (index) =>
             {
                 const itemIndex = _browser.currentFMModel.mappedToSource(index)
                 const item = _browser.currentFMModel.get(index)
@@ -284,7 +282,6 @@ Maui.SplitViewItem
             {
                 _actionBarLoader.item.popupMainMenu()
             }
-
         }
 
         Loader
@@ -308,8 +305,6 @@ Maui.SplitViewItem
 
         terminalLoader.setSource("Terminal.qml", ({'session.initialWorkingDirectory': control.currentPath.replace("file://", "")}))
     }
-
-    Component.onDestruction: console.log("Destroyed browsers!!!!!!!!")
 
     function syncTerminal(path)
     {

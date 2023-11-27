@@ -1,6 +1,4 @@
-#ifndef RECENTFILESMODEL_H
-#define RECENTFILESMODEL_H
-
+#pragma once
 #include <MauiKit3/Core/mauilist.h>
 
 #include <QObject>
@@ -30,17 +28,10 @@ public:
 
     QStringList urls() const;
 
-public slots:
+public Q_SLOTS:
     void setUrl(QUrl url);
 
     void setFilters(QStringList filters);
-
-signals:
-    void urlChanged(QUrl url);
-
-    void filtersChanged(QStringList filters);
-
-    void urlsChanged();
 
 private:
     FMH::MODEL_LIST m_list;
@@ -50,7 +41,12 @@ private:
 
     QUrl m_url;
     QStringList m_filters;
-    QStringList m_urls;
-};
+    QStringList m_urls;    
 
-#endif // RECENTFILESMODEL_H
+Q_SIGNALS:
+    void urlChanged(QUrl url);
+
+    void filtersChanged(QStringList filters);
+
+    void urlsChanged();
+};

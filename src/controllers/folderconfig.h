@@ -45,7 +45,7 @@ public:
 
     FMList::VIEW_TYPE fallbackViewType() const;
 
-public slots:
+public Q_SLOTS:
     void setViewType(FMList::VIEW_TYPE viewType);
 
     void setFallbackSortKey(FMList::SORTBY fallbackSortKey);
@@ -71,11 +71,9 @@ private:
     FMList::VIEW_TYPE m_fallbackViewType;
     FMList::VIEW_TYPE m_viewType;
 
-
     bool m_enabled = false;
 
-signals:
-
+Q_SIGNALS:
     void sortKeyChanged();
     void terminalVisibleChanged();
     void pathChanged(QUrl path);

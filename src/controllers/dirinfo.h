@@ -1,5 +1,4 @@
-#ifndef DIRINFO_H
-#define DIRINFO_H
+#pragma once
 
 #include <QObject>
 #include <QUrl>
@@ -44,7 +43,7 @@ public:
 
     QString totalSpaceString() const;
 
-public slots:
+public Q_SLOTS:
     void setUrl(QUrl url);
 
 private:
@@ -59,7 +58,7 @@ private:
 
     quint64 m_totalSpace = 0;
 
-signals:
+Q_SIGNALS:
     void urlChanged(QUrl url);
     void sizeChanged(quint64 size);
     void dirsCountChanged(quint64 dirCount);
@@ -68,5 +67,3 @@ signals:
     void avaliableSpaceChanged(quint64 avaliableSpace);
     void totalSpaceChanged(quint64 totalSpace);
 };
-
-#endif // DIRINFO_H

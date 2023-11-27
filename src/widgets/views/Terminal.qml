@@ -15,7 +15,7 @@ Term.Terminal
 
     kterminal.colorScheme: "Adaptive"
 
-    onUrlsDropped:
+    onUrlsDropped: (urls) =>
     {
         var str = ""
         for(var i in urls)
@@ -24,7 +24,7 @@ Term.Terminal
         control.session.sendText(str)
     }
 
-    onKeyPressed:
+    onKeyPressed: (event) =>
     {
         if(event.key == Qt.Key_F4)
         {

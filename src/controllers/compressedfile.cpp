@@ -47,7 +47,7 @@ void CompressedFileModel::setUrl(const QUrl &url)
   assert(kArch->isOpen() == true);
   if (kArch->isOpen())
     {
-      emit this->preListChanged();
+      Q_EMIT this->preListChanged();
       m_list.clear();
 
       qDebug() << "@gadominguez File:fm.cpp Funcion: getEntries  Entries:" << kArch->directory()->entries();
@@ -60,8 +60,8 @@ void CompressedFileModel::setUrl(const QUrl &url)
 
         }
 
-      emit this->postListChanged();
-      emit this->countChanged ();
+      Q_EMIT this->postListChanged();
+      Q_EMIT this->countChanged ();
     }
 }
 
@@ -84,7 +84,7 @@ void CompressedFile::extract(const QUrl &where, const QString &directory)
     {
       if(kArch->directory()->copyTo(where_, true))
         {
-          emit this->extractionFinished (where);
+          Q_EMIT this->extractionFinished (where);
         }
 
       kArch->close ();
@@ -364,7 +364,7 @@ void CompressedFile::setUrl(const QUrl &url)
     return;
 
   m_url = url;
-  emit this->urlChanged();
+  Q_EMIT this->urlChanged();
 
   m_model->setUrl(m_url);
 }

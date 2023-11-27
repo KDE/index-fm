@@ -19,8 +19,8 @@ DirInfo::DirInfo(QObject *parent) : QObject(parent)
         m_totalSpace = size;
         m_avaliableSpace = available;
 
-        emit this->avaliableSpaceChanged(m_avaliableSpace);
-        emit this->totalSpaceChanged(m_totalSpace);
+        Q_EMIT this->avaliableSpaceChanged(m_avaliableSpace);
+        Q_EMIT this->totalSpaceChanged(m_totalSpace);
 
         m_free->deleteLater();
 
@@ -83,7 +83,7 @@ void DirInfo::setUrl(QUrl url)
 
     m_url = url;
     this->getSize();
-    emit urlChanged(m_url);
+    Q_EMIT urlChanged(m_url);
 }
 
 void DirInfo::getSize()
@@ -112,9 +112,9 @@ void DirInfo::getSize()
         m_filesCount = m_job->totalFiles();
         m_dirCount = m_job->totalSubdirs();
 
-        emit this->sizeChanged(m_size);
-        emit this->filesCountChanged(m_filesCount);
-        emit this->dirsCountChanged(m_dirCount);
+        Q_EMIT this->sizeChanged(m_size);
+        Q_EMIT this->filesCountChanged(m_filesCount);
+        Q_EMIT this->dirsCountChanged(m_dirCount);
 
     });
 

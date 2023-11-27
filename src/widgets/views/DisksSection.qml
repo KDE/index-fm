@@ -22,6 +22,7 @@ Maui.SectionGroup
     {
         id: _othersGrid
         Layout.fillWidth: true
+
         itemSize: Math.min(width * 0.3, 180)
         itemHeight: 180
 

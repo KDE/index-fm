@@ -11,14 +11,14 @@ class PathArrowBackground : public QQuickPaintedItem
 public:
     PathArrowBackground(QQuickItem *parent = 0);
 
-Q_SIGNALS:
-    void colorChanged();
-    void arrowWidthChanged();
-
 protected:
     void paint(QPainter *painter) override;
 
 private:
     QColor m_color;
-    int m_arrowWidth;
+    int m_arrowWidth;    
+
+Q_SIGNALS:
+    void colorChanged();
+    void arrowWidthChanged();
 };

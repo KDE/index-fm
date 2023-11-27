@@ -3,30 +3,29 @@ import QtQuick.Controls 2.14
 
 import org.mauikit.controls 1.3 as Maui
 
+Loader
+{
+    asynchronous: true
+    sourceComponent: iteminfo.mime === "image/gif" || iteminfo.mime === "image/avif" ? _animatedImgComponent : _imgComponent
 
-    Loader
+    Component
     {
-        asynchronous: true
-        sourceComponent: iteminfo.mime === "image/gif" || iteminfo.mime === "image/avif" ? _animatedImgComponent : _imgComponent
-
-        Component
+        id: _animatedImgComponent
+        Maui.AnimatedImageViewer
         {
-            id: _animatedImgComponent
-            Maui.AnimatedImageViewer
-            {
-                source: currentUrl
-            }
-        }
-
-        Component
-        {
-            id: _imgComponent
-            Maui.ImageViewer
-            {
-                source: currentUrl
-            }
+            source: currentUrl
         }
     }
+
+    Component
+    {
+        id: _imgComponent
+        Maui.ImageViewer
+        {
+            source: currentUrl
+        }
+    }
+}
 
 
 

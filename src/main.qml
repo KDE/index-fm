@@ -26,17 +26,17 @@ Maui.ApplicationWindow
     Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
     Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
 
-    property alias dialog : dialogLoader.item
-    property alias selectionBar : _browserView.selectionBar
-    property alias currentTabIndex : _browserView.currentTabIndex
-    property alias pathBar: _pathBar
+    readonly property alias dialog : dialogLoader.item
+    readonly property alias selectionBar : _browserView.selectionBar
+    readonly property alias pathBar: _pathBarLoader.item
 
-    property alias currentTab : _browserView.currentTab
-    property alias currentSplit : _browserView.currentSplit
+    readonly property alias currentTab : _browserView.currentTab
+    readonly property alias currentSplit : _browserView.currentSplit
     readonly property FB.FileBrowser currentBrowser : currentSplit.browser
 
-    property alias appSettings : settings
+    readonly property alias appSettings : settings
 
+    property alias currentTabIndex : _browserView.currentTabIndex
     property bool selectionMode: false
 
     Maui.Notify
@@ -333,7 +333,7 @@ Maui.ApplicationWindow
                 width: parent.width
                 asynchronous: true
                 visible: active && !_homeViewComponent.visible
-                sourceComponent:  ActionBar {}
+                sourceComponent: ActionBar {}
             }
 
             StackView
@@ -370,72 +370,81 @@ Maui.ApplicationWindow
                         }
                     }
 
-                    headBar.middleContent: Item
+                    headBar.middleContent: Loader
                     {
+                        id: _pathBarLoader
+
+                        asynchronous: true
+
                         Layout.fillWidth: true
                         Layout.minimumWidth: 100
-                        implicitHeight: _pathBar.implicitHeight
 
-                        PathBar
+                        sourceComponent: Item
                         {
-                            id: _pathBar
+                            implicitHeight: _pathBar.implicitHeight
+                            readonly property alias pathBar: _pathBar
 
-                            anchors.centerIn: parent
-                            width: Math.min(parent.width, implicitWidth)
-                            onPathChanged: currentBrowser.openFolder(path)
-                            url: currentBrowser.currentPath
-
-                            onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
-                            onPlaceClicked:
+                            PathBar
                             {
-                                if(path === currentBrowser.currentPath)
+                                id: _pathBar
+                                anchors.centerIn: parent
+                                width: Math.min(parent.width, implicitWidth)
+
+                                url: currentBrowser.currentPath
+                                onPathChanged: (path) => currentBrowser.openFolder(path)
+
+                                onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
+                                onPlaceClicked: (path) =>
                                 {
-                                    openMenu()
-                                }
-                                else
-                                {
-                                    currentBrowser.openFolder(path)
-                                }
-                            }
-
-                            onPlaceRightClicked:
-                            {
-                                _pathBarmenu.path = path
-                                _pathBarmenu.show()
-                            }
-
-                            function openMenu()
-                            {
-                                _actionBarLoader.item.openMainMenu()
-                            }
-
-                            Maui.ContextualMenu
-                            {
-                                id: _pathBarmenu
-                                property url path
-
-                                MenuItem
-                                {
-                                    text: i18n("Bookmark")
-                                    icon.name: "bookmark-new"
-                                    onTriggered: currentBrowser.bookmarkFolder([_pathBarmenu.path])
+                                    if(path === currentBrowser.currentPath)
+                                    {
+                                        openMenu()
+                                    }
+                                    else
+                                    {
+                                        currentBrowser.openFolder(path)
+                                    }
                                 }
 
-                                MenuItem
+                                onPlaceRightClicked: (path) =>
                                 {
-                                    text: i18n("Open in New Tab")
-                                    icon.name: "tab-new"
-                                    onTriggered: openTab(_pathBarmenu.path)
+                                    _pathBarmenu.path = path
+                                    _pathBarmenu.show()
                                 }
 
-                                MenuItem
+                                function openMenu()
                                 {
-                                    visible: root.currentTab.count === 1
-                                    text: i18n("Open in Split View")
-                                    icon.name: "view-split-left-right"
-                                    onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                                    _actionBarLoader.item.openMainMenu()
                                 }
 
+                                Maui.ContextualMenu
+                                {
+                                    id: _pathBarmenu
+                                    property url path
+
+                                    MenuItem
+                                    {
+                                        text: i18n("Bookmark")
+                                        icon.name: "bookmark-new"
+                                        onTriggered: currentBrowser.bookmarkFolder([_pathBarmenu.path])
+                                    }
+
+                                    MenuItem
+                                    {
+                                        text: i18n("Open in New Tab")
+                                        icon.name: "tab-new"
+                                        onTriggered: openTab(_pathBarmenu.path)
+                                    }
+
+                                    MenuItem
+                                    {
+                                        visible: root.currentTab.count === 1
+                                        text: i18n("Open in Split View")
+                                        icon.name: "view-split-left-right"
+                                        onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
+                                    }
+
+                                }
                             }
                         }
                     }

@@ -25,7 +25,7 @@ void FolderConfig::setSortKey(const FMList::SORTBY &value)
     }
 
     m_sortKey = value;
-    emit sortKeyChanged();
+    Q_EMIT sortKeyChanged();
 
     if(m_enabled)
     {
@@ -46,7 +46,7 @@ void FolderConfig::setTerminalVisible(const bool &value)
     }
 
     m_terminalVisible = value;
-    emit terminalVisibleChanged();
+    Q_EMIT terminalVisibleChanged();
 
     if(m_enabled)
     {
@@ -70,7 +70,7 @@ void FolderConfig::setPath(QUrl path)
         return;
 
     m_path = path;
-    emit pathChanged(m_path);
+    Q_EMIT pathChanged(m_path);
 }
 
 FMList::VIEW_TYPE FolderConfig::viewType() const
@@ -94,7 +94,7 @@ void FolderConfig::setViewType(FMList::VIEW_TYPE viewType)
         return;
 
     m_viewType = viewType;
-    emit viewTypeChanged(m_viewType);
+    Q_EMIT viewTypeChanged(m_viewType);
 
     if(m_enabled)
     {
@@ -108,7 +108,7 @@ void FolderConfig::setFallbackSortKey(FMList::SORTBY fallbackSortKey)
         return;
 
     m_fallbackSortKey = fallbackSortKey;
-    emit fallbackSortKeyChanged();
+    Q_EMIT fallbackSortKeyChanged();
 }
 
 void FolderConfig::setFallbackViewType(FMList::VIEW_TYPE fallbackViewType)
@@ -117,7 +117,7 @@ void FolderConfig::setFallbackViewType(FMList::VIEW_TYPE fallbackViewType)
         return;
 
     m_fallbackViewType = fallbackViewType;
-    emit fallbackViewTypeChanged();
+    Q_EMIT fallbackViewTypeChanged();
 }
 
 void FolderConfig::setEnabled(bool enabled)
@@ -126,7 +126,7 @@ void FolderConfig::setEnabled(bool enabled)
         return;
 
     m_enabled = enabled;
-    emit enabledChanged();
+    Q_EMIT enabledChanged();
 }
 
 void FolderConfig::setDirConf(const QString &key, const QVariant &value)

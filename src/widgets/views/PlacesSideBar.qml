@@ -13,14 +13,13 @@ import QtQuick.Layouts 1.12
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.0 as FB
 
-
 Loader
 {
     id: control
     asynchronous: true
     active: (control.enabled && control.visible) || item
 
-    property var list: item.list
+    readonly property var list: item.list
 
     sourceComponent: Maui.ListBrowser
     {
@@ -29,9 +28,9 @@ Loader
         bottomPadding: 0
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
 
-        signal placeClicked (string path, var mouse)
-        property alias list : placesList
+        readonly property alias list : placesList
 
+        signal placeClicked (string path, var mouse)
 
         holder.visible: count === 0
         holder.title: i18n("Bookmarks!")
@@ -43,76 +42,82 @@ Loader
             restoreMode: Binding.RestoreBindingOrValue
         }
 
-        onPlaceClicked:
-        {
-            if(mouse.modifiers & Qt.ControlModifier)
-            {
-                openTab(path)
-            }else if(mouse.modifiers & Qt.AltModifier)
-            {
-                currentTab.split(path)
-            }
-            else
-            {
-                currentBrowser.openFolder(path)
-            }
+        onPlaceClicked: (path, mouse) =>
+                        {
+                            if(mouse.modifiers & Qt.ControlModifier)
+                            {
+                                openTab(path)
+                            }else if(mouse.modifiers & Qt.AltModifier)
+                            {
+                                currentTab.split(path)
+                            }
+                            else
+                            {
+                                currentBrowser.openFolder(path)
+                            }
 
-            if(_sideBarView.sideBar.collapsed)
-                _sideBarView.sideBar.close()
+                            if(_sideBarView.sideBar.collapsed)
+                            _sideBarView.sideBar.close()
 
-            if(_stackView.depth === 2)
-                _stackView.pop()
+                            if(_stackView.depth === 2)
+                            _stackView.pop()
 
-            if(control.collapsed)
-                control.close()
-        }
+                            if(control.collapsed)
+                            control.close()
+                        }
 
         //    onContentDropped:
         //    {
         //        placesList.addPlace(drop.text)
         //    }
 
-        Maui.ContextualMenu
+        Loader
         {
-            id: _menu
+            id: _menuLoader
 
-            property string path
-            property int bookmarkIndex : -1
-
-            onClosed: _menu.bookmarkIndex = -1
-
-            MenuItem
+            asynchronous: true
+            sourceComponent: Maui.ContextualMenu
             {
-                text: i18n("Open in New Tab")
-                icon.name: "tab-new"
-                onTriggered: openTab(_menu.path)
-            }
+                id: _menu
 
-            MenuItem
-            {
-                enabled: control.isDir && Maui.Handy.isLinux
-                text: i18n("Open in New Window")
-                icon.name: "window-new"
-                onTriggered: inx.openNewWindow(_menu.path)
-            }
+                property string path
+                property int bookmarkIndex : -1
 
-            MenuItem
-            {
-                enabled: root.currentTab.count === 1
-                text: i18n("Open in Split View")
-                icon.name: "view-split-left-right"
-                onTriggered: currentTab.split(_menu.path, Qt.Horizontal)
-            }
+                onClosed: _menu.bookmarkIndex = -1
 
-            MenuSeparator{}
+                MenuItem
+                {
+                    text: i18n("Open in New Tab")
+                    icon.name: "tab-new"
+                    onTriggered: openTab(_menu.path)
+                }
 
-            MenuItem
-            {
-                enabled: _menu.bookmarkIndex >= 0
-                text: i18n("Remove")
-                icon.name: "edit-delete"
-                Maui.Theme.textColor: Maui.Theme.negativeTextColor
-                onTriggered: placesList.removePlace(_menu.bookmarkIndex)
+                MenuItem
+                {
+                    enabled: control.isDir && Maui.Handy.isLinux
+                    text: i18n("Open in New Window")
+                    icon.name: "window-new"
+                    onTriggered: inx.openNewWindow(_menu.path)
+                }
+
+                MenuItem
+                {
+                    enabled: root.currentTab.count === 1
+                    text: i18n("Open in Split View")
+                    icon.name: "view-split-left-right"
+                    onTriggered: currentTab.split(_menu.path, Qt.Horizontal)
+                }
+
+                MenuSeparator{}
+
+                MenuItem
+                {
+                    enabled: _menu.bookmarkIndex >= 0
+                    text: i18n("Remove")
+                    icon.name: "edit-delete"
+                    Maui.Theme.textColor: Maui.Theme.negativeTextColor
+                    onTriggered: placesList.removePlace(_menu.bookmarkIndex)
+                }
             }
         }
 
@@ -144,7 +149,7 @@ Loader
                     {
                         model: inx.quickPaths()
 
-                        delegate:  Maui.GridBrowserDelegate
+                        delegate: Maui.GridBrowserDelegate
                         {
                             Layout.preferredHeight: Math.min(50, width)
                             Layout.preferredWidth: 50
@@ -175,14 +180,14 @@ Loader
 
                             onRightClicked:
                             {
-                                _menu.path = modelData.path
-                                _menu.show()
+                                _menuLoader.item.path = modelData.path
+                                _menuLoader.item.show()
                             }
 
                             onPressAndHold:
                             {
-                                _menu.path = modelData.path
-                                _menu.show()
+                                _menuLoader.item.path = modelData.path
+                                _menuLoader.item.show()
                             }
                         }
                     }
@@ -243,16 +248,16 @@ Loader
 
             onRightClicked:
             {
-                _menu.path = model.path
-                _menu.bookmarkIndex = index
-                _menu.show()
+                _menuLoader.item.path = model.path
+                _menuLoader.item.bookmarkIndex = index
+                _menuLoader.item.show()
             }
 
             onPressAndHold:
             {
-                _menu.path = model.path
-                _menu.bookmarkIndex = index
-                _menu.show()
+                _menuLoader.item.path = model.path
+                _menuLoader.item.bookmarkIndex = index
+                _menuLoader.item.show()
             }
         }
 
@@ -266,7 +271,6 @@ Loader
             //                height: Maui.Style.toolBarHeightAlt
         }
     }
-
 }
 
 

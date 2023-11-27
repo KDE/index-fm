@@ -3,8 +3,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#ifndef INDEX_H
-#define INDEX_H
+#pragma once
 
 #include <QObject>
 #include <QUrl>
@@ -30,18 +29,12 @@ class Index : public QObject
     Q_CLASSINFO("D-Bus Interface", "org.kde.index.Actions")
     //#endif
 
-private:
-    QObject* m_qmlObject = nullptr;
 public:
     explicit Index(QObject *parent = nullptr);
     Q_INVOKABLE void openPaths(const QStringList &paths);
     void setQmlObject(QObject  *object);
 
-signals:
-    void openPath(QStringList paths);
-    void activate();
-
-public slots:
+public Q_SLOTS:
     static QUrl cameraPath();
     static QUrl screenshotsPath();
 
@@ -126,8 +119,14 @@ public slots:
      */
     static void openTerminal(const QUrl &url);
 
-    static QVariantList quickPaths();
+    static QVariantList quickPaths();    
+
+private:
+    QObject* m_qmlObject = nullptr;
+
+Q_SIGNALS:
+    void openPath(QStringList paths);
+    void activate();
 };
 
 
-#endif // INDEX_H

@@ -43,11 +43,11 @@ void PathList::setList()
 {
   const auto paths = PathList::splitPath(m_path);
 
-  emit this->preListChanged();
+  Q_EMIT this->preListChanged();
   this->list = paths;
-  emit this->postListChanged();
+  Q_EMIT this->postListChanged();
 
-  emit this->countChanged();
+  Q_EMIT this->countChanged();
 }
 
 void PathList::setPath(const QString &path)
@@ -56,7 +56,7 @@ void PathList::setPath(const QString &path)
     return;
 
   this->m_path = path;
-  emit this->pathChanged();
+  Q_EMIT this->pathChanged();
 }
 
 FMH::MODEL_LIST PathList::splitPath(const QString &path)

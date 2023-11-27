@@ -2,13 +2,12 @@ import QtQuick.Controls 2.14
 
 import org.mauikit.controls 1.3 as Maui
 
-
 Maui.SettingsDialog
 {
     id: control
     maxWidth: 400
     maxHeight: 400
-hint: 0.8
+    hint: 0.8
     title: i18n("Shortcuts")
     persistent: false
     page.showTitle: false

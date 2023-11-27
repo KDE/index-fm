@@ -158,7 +158,7 @@ Item
                     MouseArea
                     {
                         anchors.fill: parent
-                        onClicked:  pathBar.showEntryBar()
+                        onClicked:  control.showEntryBar()
                     }
                 }
 
@@ -190,7 +190,7 @@ Item
                         height: parent.height
                         flat: true
                         icon.name: "filename-space-amarok"
-                        onClicked:  pathBar.showEntryBar()
+                        onClicked:  control.showEntryBar()
                     }
 
                     model: Maui.BaseModel
@@ -207,8 +207,6 @@ Item
                     {
                         id: delegate
 
-                        lastOne: index === ListView.view.count-1
-                        firstOne: index === 0
 //                        height: ListView.view.height
                         width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
 
@@ -229,10 +227,8 @@ Item
                     }
                 }
             }
-
         }
     }
-
 
     /**
       *

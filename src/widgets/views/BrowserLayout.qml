@@ -15,6 +15,7 @@ Item
     id: control
 
     focus: true
+
     property url path
     property url path2
 

@@ -13,27 +13,27 @@ Maui.ColorsRow
     property string folderColor : "folder"
 
     currentColor : switch(control.folderColor)
-               {
-               case "folder-red": "#f21b51"; break;
-               case "folder-orange": "#f9a32b"; break;
-               case "folder-green": "#3eb881"; break;
-               case "folder-grey": "#b2b9bd"; break;
-               case "folder-black": "#474747"; break;
-               default : return control.Maui.Theme.backgroundColor;
-               }
+                   {
+                   case "folder-red": "#f21b51"; break;
+                   case "folder-orange": "#f9a32b"; break;
+                   case "folder-green": "#3eb881"; break;
+                   case "folder-grey": "#b2b9bd"; break;
+                   case "folder-black": "#474747"; break;
+                   default : return control.Maui.Theme.backgroundColor;
+                   }
 
-    onColorPicked:
-    {
-        switch(color)
-        {
-        case "#f21b51" : folderColor = "folder-red"; break;
-        case "#f9a32b" : folderColor = "folder-orange"; break;
-        case "#3eb881" : folderColor = "folder-green"; break;
-        case "#b2b9bd" : folderColor = "folder-grey"; break;
-        case "#474747" : folderColor = "folder-black"; break;
-        default : folderColor = "folder";
-        }
+    onColorPicked: (color) =>
+                   {
+                       switch(color)
+                       {
+                           case "#f21b51" : folderColor = "folder-red"; break;
+                           case "#f9a32b" : folderColor = "folder-orange"; break;
+                           case "#3eb881" : folderColor = "folder-green"; break;
+                           case "#b2b9bd" : folderColor = "folder-grey"; break;
+                           case "#474747" : folderColor = "folder-black"; break;
+                           default : folderColor = "folder";
+                       }
 
-        control.folderColorPicked(folderColor)
-    }
+                       control.folderColorPicked(folderColor)
+                   }
 }

@@ -20,7 +20,10 @@
 #endif
 
 #include <MauiKit3/Core/mauiapp.h>
+#include <MauiKit3/Core/moduleinfo.h>
+#include <MauiKit3/FileBrowsing/moduleinfo.h>
 
+#include <KIO/kio_version.h>
 #include <KAboutData>
 #include <KI18n/KLocalizedString>
 
@@ -77,7 +80,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     about.setBugAddress("https://invent.kde.org/maui/index-fm/-/issues");
     about.setOrganizationDomain(INDEX_URI);
     about.setProgramLogo(app.windowIcon());
-    about.addComponent("KIO");
+    about.addComponent("KIO", "", KIO_VERSION_STRING);
+
+    const auto FBData = MauiKitFileBrowsing::aboutData();
+    about.addComponent(FBData.name(), MauiKitFileBrowsing::buildVersion(), FBData.version(), FBData.webAddress());
 
     KAboutData::setApplicationData(about);
     MauiApp::instance()->setIconName("qrc:/assets/index.png");

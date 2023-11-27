@@ -110,7 +110,6 @@ Maui.Page
                     }
                 }
 
-
                 Loader
                 {
                     Layout.fillWidth: true
@@ -153,7 +152,7 @@ Maui.Page
                                 iconSizeHint: height * 0.5
                                 checkable: selectionMode
 
-                                onClicked:
+                                onClicked: (index) =>
                                 {
                                     _recentGrid.currentIndex = index
                                     openPreview(_recentGrid.baseModel, index)
@@ -181,6 +180,7 @@ Maui.Page
                         {
                             height: GridView.view.cellHeight
                             width: GridView.view.cellWidth
+
                             AudioCard
                             {
                                 anchors.fill: parent
@@ -194,7 +194,7 @@ Maui.Page
 
                                 label1.text: player.metaData.title && player.metaData.title.length ? player.metaData.title :  model.name
                                 label2.text: player.metaData.albumArtist || player.metaData.albumTitle
-                                onClicked:
+                                onClicked: (index) =>
                                 {
                                     _recentMusic.currentIndex = index
                                     openPreview(_recentMusic.baseModel, index)
@@ -228,13 +228,14 @@ Maui.Page
                         {
                             height: GridView.view.cellHeight
                             width: GridView.view.cellWidth
+
                             ImageCard
                             {
                                 anchors.fill: parent
                                 anchors.margins: Maui.Style.space.small
                                 imageSource: model.thumbnail
                                 isCurrentItem: parent.ListView.isCurrentItem
-                                onClicked:
+                                onClicked: (index) =>
                                 {
                                     _recentPics.currentIndex = index
                                     openPreview(_recentPics.baseModel, index)
@@ -244,7 +245,6 @@ Maui.Page
                     }
                 }
 
-
                 Loader
                 {
                     Layout.fillWidth: true
@@ -253,7 +253,6 @@ Maui.Page
                     {
                         id: _disksSection
                     }
-
                 }
             }
         }

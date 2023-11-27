@@ -39,17 +39,17 @@ Maui.Page
             }
         }
 
-        onUrisDropped:
-        {
-            for(var i in uris)
-            {
-                if(!FB.FM.fileExists(uris[i]))
-                    continue;
+        onUrisDropped: (uris) =>
+                       {
+                           for(var i in uris)
+                           {
+                               if(!FB.FM.fileExists(uris[i]))
+                               continue;
 
-                const item = FB.FM.getFileInfo(uris[i])
-                _selectionBar.append(item.path, item)
-            }
-        }
+                               const item = FB.FM.getFileInfo(uris[i])
+                               _selectionBar.append(item.path, item)
+                           }
+                       }
 
         onExitClicked: clear()
 
@@ -70,12 +70,12 @@ Maui.Page
             iconSizeHint: Maui.Style.iconSizes.big
             onToggled: _selectionBar.removeAtIndex(index)
             background: Item {}
-            onClicked:
-            {
-                _selectionBar.selectionList.currentIndex = index
-            }
+            onClicked: (index) =>
+                       {
+                           _selectionBar.selectionList.currentIndex = index
+                       }
 
-            onPressAndHold: removeAtIndex(index)
+            onPressAndHold: (index) => removeAtIndex(index)
         }
 
         Action
@@ -161,7 +161,7 @@ Maui.Page
         anchors.fill: parent
         currentIndex : -1
         onNewTabClicked: openTab(currentBrowser.currentPath)
-        onCloseTabClicked: closeTab(index)
+        onCloseTabClicked: (index) => closeTab(index)
 
         menuActions: Action
         {
@@ -189,10 +189,10 @@ Maui.Page
                 {
                     return true;
                 }
-                }
-                }
+            }
+        }
 
-                    return false;
-                }
-                }
+        return false;
+    }
+}
 

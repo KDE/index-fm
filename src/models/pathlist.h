@@ -16,8 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PATHLIST_H
-#define PATHLIST_H
+#pragma once
 
 #include <MauiKit3/Core/mauilist.h>
 
@@ -56,11 +55,9 @@ private:
     static FMH::MODEL_LIST splitPath(const QString &path);
     void setList();
 
-signals:
+Q_SIGNALS:
     /**
      * @brief pathChanged
      */
     void pathChanged();
 };
-
-#endif // PATHLIST_H

@@ -30,8 +30,7 @@ SectionGroup
         groups: [FB.FMList.PLACES_PATH]
     }
 
-
-    template.template.content:  Button
+    template.template.content: Button
     {
         icon.name: "list-add"
         text: i18n("More")
@@ -60,7 +59,7 @@ SectionGroup
                 text: model.count
             }
 
-            onClicked:
+            onClicked: (index) =>
             {
                 control.currentIndex = index
                 model.count = 0

@@ -1,5 +1,4 @@
-#ifndef COMPRESSEDFILE_H
-#define COMPRESSEDFILE_H
+#pragma once
 
 #include <QObject>
 
@@ -36,18 +35,16 @@ public:
 
     CompressedFileModel *model() const;
 
+public Q_SLOTS:
+    void extract(const QUrl &where, const QString &directory = QString());
+    bool compress(const QVariantList &files, const QUrl &where, const QString &fileName, const int &compressTypeSelected);
+
 private:
     QUrl m_url;
     CompressedFileModel *m_model;
 
-public slots:
-    void extract(const QUrl &where, const QString &directory = QString());
-    bool compress(const QVariantList &files, const QUrl &where, const QString &fileName, const int &compressTypeSelected);
-
-signals:
+Q_SIGNALS:
     void urlChanged();
     void extractionFinished(QUrl url);
     void compressionFinished(QUrl url);
 };
-
-#endif // COMPRESSEDFILE_H
