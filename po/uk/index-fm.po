@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 00:41+0000\n"
+"POT-Creation-Date: 2023-11-28 00:40+0000\n"
 "PO-Revision-Date: 2023-11-04 08:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -20,32 +20,32 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Навігація файлами, їхнє упорядковування та перегляд."
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© Команда розробників Maui, 2019–2023"
 
-#: src/main.cpp:73
+#: src/main.cpp:76
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:76 src/main.cpp:77
 #, kde-format
 msgid "Developer"
 msgstr "Розробник"
 
-#: src/main.cpp:74
+#: src/main.cpp:77
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -115,19 +115,19 @@ msgstr "Файл видобуто"
 msgid "Toggle sidebar"
 msgstr "Увімкнути/Вимкнути бічну панель"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:86
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Відкрити у новій вкладці"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:102
+#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
 msgstr "Відкрити у розділеному перегляді"
@@ -272,7 +272,7 @@ msgid "Paste"
 msgstr "Вставити"
 
 #: src/widgets/views/ActionBar.qml:177
-#: src/widgets/views/ShortcutsDialog.qml:169
+#: src/widgets/views/ShortcutsDialog.qml:168
 #, kde-format
 msgid "Select All"
 msgstr "Позначити все"
@@ -297,7 +297,7 @@ msgstr "Переглянути приховані"
 msgid "Split View"
 msgstr "Розділити перегляд"
 
-#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:84
+#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:83
 #, kde-format
 msgid "Terminal"
 msgstr "Термінал"
@@ -307,7 +307,7 @@ msgstr "Термінал"
 msgid "Open Terminal Here"
 msgstr "Відкрити термінал тут"
 
-#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:11
 #, kde-format
 msgid "Shortcuts"
 msgstr "Скорочення"
@@ -328,7 +328,7 @@ msgid "Edit"
 msgstr "Змінити"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
 #, kde-format
 msgid "Remove"
 msgstr "Вилучити"
@@ -344,7 +344,7 @@ msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr "Ви справді хочете вилучити цю мітку? Скасувати таку дію неможливо."
 
-#: src/widgets/views/Browser.qml:157
+#: src/widgets/views/Browser.qml:156
 #, kde-format
 msgid "Create new"
 msgstr "Створити"
@@ -406,7 +406,7 @@ msgstr " об'єктів"
 msgid "Rename"
 msgstr "Перейменувати"
 
-#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:188
 #, kde-format
 msgid "Select"
 msgstr "Позначити"
@@ -431,7 +431,7 @@ msgstr "Не улюбл."
 msgid "Fav"
 msgstr "Улюбл."
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Window"
 msgstr "Відкрити у новому вікні"
@@ -456,22 +456,22 @@ msgstr "Пошук файлів"
 msgid "Browser"
 msgstr "Навігатор"
 
-#: src/widgets/views/HomeView.qml:133
+#: src/widgets/views/HomeView.qml:132
 #, kde-format
 msgid "Downloads"
 msgstr "Завантаження"
 
-#: src/widgets/views/HomeView.qml:134
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
 msgstr "Ваші найсвіжіші отримані файли"
 
-#: src/widgets/views/HomeView.qml:174
+#: src/widgets/views/HomeView.qml:173
 #, kde-format
 msgid "Music"
 msgstr "Музика"
 
-#: src/widgets/views/HomeView.qml:175
+#: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
 msgstr "Ваші найсвіжіші музичні файли"
@@ -498,23 +498,23 @@ msgstr "Місця"
 msgid "Quick access to common places."
 msgstr "Швидкий доступ до типових місць."
 
-#: src/widgets/views/PlacesSection.qml:37
-#: src/widgets/views/RecentSection.qml:31
+#: src/widgets/views/PlacesSection.qml:36
+#: src/widgets/views/RecentSection.qml:27
 #, kde-format
 msgid "More"
 msgstr "Більше"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:36
 #, kde-format
 msgid "Bookmarks!"
 msgstr "Закладки!"
 
-#: src/widgets/views/PlacesSideBar.qml:38
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Тут буде наведено список ваших закладок"
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -523,7 +523,7 @@ msgstr ""
 "Перш ніж можна буде отримати доступ до цього пристрою, його слід змонтувати. "
 "Хочете налаштувати монтування цього пристрою?"
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid "Mount"
 msgstr "Змонтувати"
@@ -768,47 +768,47 @@ msgstr "Пристрої"
 msgid "Access drives."
 msgstr "Доступ до дисків."
 
-#: src/widgets/views/ShortcutsDialog.qml:19
+#: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
 msgid "Navigation"
 msgstr "Навігація"
 
-#: src/widgets/views/ShortcutsDialog.qml:20
+#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Browser navigation with keyboard."
 msgstr "Навігація у браузері за допомогою клавіатури."
 
-#: src/widgets/views/ShortcutsDialog.qml:24
+#: src/widgets/views/ShortcutsDialog.qml:23
 #, kde-format
 msgid "New Tab"
 msgstr "Створити вкладку"
 
-#: src/widgets/views/ShortcutsDialog.qml:44
+#: src/widgets/views/ShortcutsDialog.qml:43
 #, kde-format
 msgid "Close Tab"
 msgstr "Закрити вкладку"
 
-#: src/widgets/views/ShortcutsDialog.qml:64
+#: src/widgets/views/ShortcutsDialog.qml:63
 #, kde-format
 msgid "Path Edit"
 msgstr "Редагування шляху"
 
-#: src/widgets/views/ShortcutsDialog.qml:99
+#: src/widgets/views/ShortcutsDialog.qml:98
 #, kde-format
 msgid "Split"
 msgstr "Розділити"
 
-#: src/widgets/views/ShortcutsDialog.qml:114
+#: src/widgets/views/ShortcutsDialog.qml:113
 #, kde-format
 msgid "New File"
 msgstr "Новий файл"
 
-#: src/widgets/views/ShortcutsDialog.qml:134
+#: src/widgets/views/ShortcutsDialog.qml:133
 #, kde-format
 msgid "Preview"
 msgstr "Перегляд"
 
-#: src/widgets/views/ShortcutsDialog.qml:149
+#: src/widgets/views/ShortcutsDialog.qml:148
 #, kde-format
 msgid "Find Tab"
 msgstr "Знайти вкладку"

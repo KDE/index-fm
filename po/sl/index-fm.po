@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 00:41+0000\n"
+"POT-Creation-Date: 2023-11-28 00:40+0000\n"
 "PO-Revision-Date: 2023-11-04 14:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Index"
 msgstr "Indeks"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Brskajte, organizirajte in ogledujte vaše datoteke."
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-2023 Razvojna ekipa Maui"
 
-#: src/main.cpp:73
+#: src/main.cpp:76
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:76 src/main.cpp:77
 #, kde-format
 msgid "Developer"
 msgstr "Razvijalec"
 
-#: src/main.cpp:74
+#: src/main.cpp:77
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -113,19 +113,19 @@ msgstr "Pridobili smo izvleček datoteke"
 msgid "Toggle sidebar"
 msgstr "Preklopi stransko vrstico"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:86
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:102
+#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
 msgstr "Odpri v razcepljenem pogledu"
@@ -270,7 +270,7 @@ msgid "Paste"
 msgstr "Prilepi"
 
 #: src/widgets/views/ActionBar.qml:177
-#: src/widgets/views/ShortcutsDialog.qml:169
+#: src/widgets/views/ShortcutsDialog.qml:168
 #, kde-format
 msgid "Select All"
 msgstr "Izberi vse"
@@ -295,7 +295,7 @@ msgstr "Pogled skrit"
 msgid "Split View"
 msgstr "Razdeli pogled"
 
-#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:84
+#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:83
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
@@ -305,7 +305,7 @@ msgstr "Terminal"
 msgid "Open Terminal Here"
 msgstr "Odpri terminal tukaj"
 
-#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:11
 #, kde-format
 msgid "Shortcuts"
 msgstr "Bližnjice"
@@ -326,7 +326,7 @@ msgid "Edit"
 msgstr "Uredi"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
@@ -344,7 +344,7 @@ msgstr ""
 "Ali ste prepričani, da želite odstraniti to oznako? Te operacije ni mogoče "
 "povrniti."
 
-#: src/widgets/views/Browser.qml:157
+#: src/widgets/views/Browser.qml:156
 #, kde-format
 msgid "Create new"
 msgstr "Ustvari novo"
@@ -406,7 +406,7 @@ msgstr " postavke"
 msgid "Rename"
 msgstr "Preimenuj"
 
-#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:188
 #, kde-format
 msgid "Select"
 msgstr "Izberi"
@@ -431,7 +431,7 @@ msgstr "Iz priljubljenih"
 msgid "Fav"
 msgstr "Med priljubljene"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Window"
 msgstr "Odpri v novem oknu"
@@ -456,22 +456,22 @@ msgstr "Išči datoteke"
 msgid "Browser"
 msgstr "Brskalnik"
 
-#: src/widgets/views/HomeView.qml:133
+#: src/widgets/views/HomeView.qml:132
 #, kde-format
 msgid "Downloads"
 msgstr "Prejemi"
 
-#: src/widgets/views/HomeView.qml:134
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
 msgstr "Zadnje nedavno prenesene datoteke"
 
-#: src/widgets/views/HomeView.qml:174
+#: src/widgets/views/HomeView.qml:173
 #, kde-format
 msgid "Music"
 msgstr "Glasba"
 
-#: src/widgets/views/HomeView.qml:175
+#: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
 msgstr "Zadnje nedavno prenesene glasbene datoteke"
@@ -498,23 +498,23 @@ msgstr "Mesta"
 msgid "Quick access to common places."
 msgstr "Hitri dostop do skupnih lokacij."
 
-#: src/widgets/views/PlacesSection.qml:37
-#: src/widgets/views/RecentSection.qml:31
+#: src/widgets/views/PlacesSection.qml:36
+#: src/widgets/views/RecentSection.qml:27
 #, kde-format
 msgid "More"
 msgstr "Več"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:36
 #, kde-format
 msgid "Bookmarks!"
 msgstr "Zaznamki!"
 
-#: src/widgets/views/PlacesSideBar.qml:38
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Vaši zaznamki bodo prikazani tukaj"
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -523,7 +523,7 @@ msgstr ""
 "To napravo je treba priklopiti pred dostopom do nje. Ali želite nastaviti to "
 "napravo?"
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid "Mount"
 msgstr "Priklopi"
@@ -764,47 +764,47 @@ msgstr "Naprave"
 msgid "Access drives."
 msgstr "Dostop do naprav."
 
-#: src/widgets/views/ShortcutsDialog.qml:19
+#: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
 msgid "Navigation"
 msgstr "Krmarjenje"
 
-#: src/widgets/views/ShortcutsDialog.qml:20
+#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Browser navigation with keyboard."
 msgstr "Krmarjenje v brskalniku s tipkovnico."
 
-#: src/widgets/views/ShortcutsDialog.qml:24
+#: src/widgets/views/ShortcutsDialog.qml:23
 #, kde-format
 msgid "New Tab"
 msgstr "Nov zavihek"
 
-#: src/widgets/views/ShortcutsDialog.qml:44
+#: src/widgets/views/ShortcutsDialog.qml:43
 #, kde-format
 msgid "Close Tab"
 msgstr "Zapri zavihek"
 
-#: src/widgets/views/ShortcutsDialog.qml:64
+#: src/widgets/views/ShortcutsDialog.qml:63
 #, kde-format
 msgid "Path Edit"
 msgstr "Urejanje poti"
 
-#: src/widgets/views/ShortcutsDialog.qml:99
+#: src/widgets/views/ShortcutsDialog.qml:98
 #, kde-format
 msgid "Split"
 msgstr "Razdeli"
 
-#: src/widgets/views/ShortcutsDialog.qml:114
+#: src/widgets/views/ShortcutsDialog.qml:113
 #, kde-format
 msgid "New File"
 msgstr "Nova datoteka"
 
-#: src/widgets/views/ShortcutsDialog.qml:134
+#: src/widgets/views/ShortcutsDialog.qml:133
 #, kde-format
 msgid "Preview"
 msgstr "Predogled"
 
-#: src/widgets/views/ShortcutsDialog.qml:149
+#: src/widgets/views/ShortcutsDialog.qml:148
 #, kde-format
 msgid "Find Tab"
 msgstr "Poišči zavihek"

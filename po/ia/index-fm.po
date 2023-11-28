@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 00:41+0000\n"
+"POT-Creation-Date: 2023-11-28 00:40+0000\n"
 "PO-Revision-Date: 2023-07-06 12:08+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -17,33 +17,33 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Index"
 msgstr "Index (Indice)"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Naviga, organisa e vide preliminarmente tu files."
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, fuzzy, kde-format
 #| msgid "© 2019-%1 Maui Development Team"
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-%1 Equipa de disveloppamento de Maui"
 
-#: src/main.cpp:73
+#: src/main.cpp:76
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:76 src/main.cpp:77
 #, kde-format
 msgid "Developer"
 msgstr "Disveloppator"
 
-#: src/main.cpp:74
+#: src/main.cpp:77
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -110,19 +110,19 @@ msgstr "File esseva exctrahite"
 msgid "Toggle sidebar"
 msgstr "Commuta barra lateral"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Marcator de libro"
 
-#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:86
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Aperi in nove scheda"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:102
+#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
 msgstr "Aperi in Vista scindite"
@@ -267,7 +267,7 @@ msgid "Paste"
 msgstr "Colla"
 
 #: src/widgets/views/ActionBar.qml:177
-#: src/widgets/views/ShortcutsDialog.qml:169
+#: src/widgets/views/ShortcutsDialog.qml:168
 #, kde-format
 msgid "Select All"
 msgstr "Selige toto"
@@ -292,7 +292,7 @@ msgstr "Vide celate"
 msgid "Split View"
 msgstr "Scinde Vista"
 
-#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:84
+#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:83
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
@@ -302,7 +302,7 @@ msgstr "Terminal"
 msgid "Open Terminal Here"
 msgstr "Aperi le terminal ci"
 
-#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:11
 #, kde-format
 msgid "Shortcuts"
 msgstr "Vias breve"
@@ -323,7 +323,7 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
 #, kde-format
 msgid "Remove"
 msgstr "Remove"
@@ -341,7 +341,7 @@ msgstr ""
 "Tu es secur que tu vole remover iste etiquetta? Iste operation non pote "
 "esser annullate."
 
-#: src/widgets/views/Browser.qml:157
+#: src/widgets/views/Browser.qml:156
 #, kde-format
 msgid "Create new"
 msgstr "Crea nove"
@@ -403,7 +403,7 @@ msgstr "elementos"
 msgid "Rename"
 msgstr "Renomina"
 
-#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:188
 #, kde-format
 msgid "Select"
 msgstr "Selige"
@@ -428,7 +428,7 @@ msgstr ""
 msgid "Fav"
 msgstr "Fav"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Window"
 msgstr "Aperi in nove fenestra"
@@ -453,22 +453,22 @@ msgstr "Cerca files..."
 msgid "Browser"
 msgstr "Navigator"
 
-#: src/widgets/views/HomeView.qml:133
+#: src/widgets/views/HomeView.qml:132
 #, kde-format
 msgid "Downloads"
 msgstr "Discargamentos"
 
-#: src/widgets/views/HomeView.qml:134
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
 msgstr ""
 
-#: src/widgets/views/HomeView.qml:174
+#: src/widgets/views/HomeView.qml:173
 #, kde-format
 msgid "Music"
 msgstr "Musica"
 
-#: src/widgets/views/HomeView.qml:175
+#: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
 msgstr ""
@@ -495,30 +495,30 @@ msgstr "Placias"
 msgid "Quick access to common places."
 msgstr ""
 
-#: src/widgets/views/PlacesSection.qml:37
-#: src/widgets/views/RecentSection.qml:31
+#: src/widgets/views/PlacesSection.qml:36
+#: src/widgets/views/RecentSection.qml:27
 #, kde-format
 msgid "More"
 msgstr "Plus"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:36
 #, kde-format
 msgid "Bookmarks!"
 msgstr "Marcatores de libro!"
 
-#: src/widgets/views/PlacesSideBar.qml:38
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid "Mount"
 msgstr "Monta"
@@ -762,47 +762,47 @@ msgstr "Dispositivos"
 msgid "Access drives."
 msgstr ""
 
-#: src/widgets/views/ShortcutsDialog.qml:19
+#: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
 msgid "Navigation"
 msgstr "Navigation"
 
-#: src/widgets/views/ShortcutsDialog.qml:20
+#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Browser navigation with keyboard."
 msgstr ""
 
-#: src/widgets/views/ShortcutsDialog.qml:24
+#: src/widgets/views/ShortcutsDialog.qml:23
 #, kde-format
 msgid "New Tab"
 msgstr "Nove scheda"
 
-#: src/widgets/views/ShortcutsDialog.qml:44
+#: src/widgets/views/ShortcutsDialog.qml:43
 #, kde-format
 msgid "Close Tab"
 msgstr "Claude scheda"
 
-#: src/widgets/views/ShortcutsDialog.qml:64
+#: src/widgets/views/ShortcutsDialog.qml:63
 #, kde-format
 msgid "Path Edit"
 msgstr "Modifica de percurso"
 
-#: src/widgets/views/ShortcutsDialog.qml:99
+#: src/widgets/views/ShortcutsDialog.qml:98
 #, kde-format
 msgid "Split"
 msgstr "Scinde"
 
-#: src/widgets/views/ShortcutsDialog.qml:114
+#: src/widgets/views/ShortcutsDialog.qml:113
 #, kde-format
 msgid "New File"
 msgstr "Nove file"
 
-#: src/widgets/views/ShortcutsDialog.qml:134
+#: src/widgets/views/ShortcutsDialog.qml:133
 #, kde-format
 msgid "Preview"
 msgstr "Vista preliminar"
 
-#: src/widgets/views/ShortcutsDialog.qml:149
+#: src/widgets/views/ShortcutsDialog.qml:148
 #, kde-format
 msgid "Find Tab"
 msgstr "Trova scheda"

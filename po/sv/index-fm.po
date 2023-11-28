@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-23 00:41+0000\n"
+"POT-Creation-Date: 2023-11-28 00:40+0000\n"
 "PO-Revision-Date: 2023-11-06 21:06+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:68
+#: src/main.cpp:71
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Bläddra bland, organisera och förhandsgranska dina filer."
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "© 2019-2023 Maui Development Team"
 msgstr "© 2019-2023 Maui utvecklingsgrupp"
 
-#: src/main.cpp:73
+#: src/main.cpp:76
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:76 src/main.cpp:77
 #, kde-format
 msgid "Developer"
 msgstr "Utvecklare"
 
-#: src/main.cpp:74
+#: src/main.cpp:77
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -110,19 +110,19 @@ msgstr "Filen har packats upp"
 msgid "Toggle sidebar"
 msgstr "Visa eller dölj sidorad"
 
-#: src/main.qml:419 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Bokmärke"
 
-#: src/main.qml:426 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:86
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Öppna under ny flik"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:102
+#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
 msgstr "Öppna i delad vy"
@@ -267,7 +267,7 @@ msgid "Paste"
 msgstr "Klistra in"
 
 #: src/widgets/views/ActionBar.qml:177
-#: src/widgets/views/ShortcutsDialog.qml:169
+#: src/widgets/views/ShortcutsDialog.qml:168
 #, kde-format
 msgid "Select All"
 msgstr "Markera alla"
@@ -292,7 +292,7 @@ msgstr "Visa dolda"
 msgid "Split View"
 msgstr "Dela vy"
 
-#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:84
+#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:83
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
@@ -302,7 +302,7 @@ msgstr "Terminal"
 msgid "Open Terminal Here"
 msgstr "Öppna terminal här"
 
-#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:12
+#: src/widgets/views/ActionBar.qml:247 src/widgets/views/ShortcutsDialog.qml:11
 #, kde-format
 msgid "Shortcuts"
 msgstr "Genvägar"
@@ -323,7 +323,7 @@ msgid "Edit"
 msgstr "Redigera"
 
 #: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:112
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
 #, kde-format
 msgid "Remove"
 msgstr "Ta bort"
@@ -340,7 +340,7 @@ msgid ""
 msgstr ""
 "Är du säker på att du vill ta bort etiketten? Åtgärden går inte att ångra."
 
-#: src/widgets/views/Browser.qml:157
+#: src/widgets/views/Browser.qml:156
 #, kde-format
 msgid "Create new"
 msgstr "Skapa ny"
@@ -402,7 +402,7 @@ msgstr " objekt"
 msgid "Rename"
 msgstr "Byt namn"
 
-#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:189
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:188
 #, kde-format
 msgid "Select"
 msgstr "Markera"
@@ -427,7 +427,7 @@ msgstr "Ej favorit"
 msgid "Fav"
 msgstr "Favorit"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:94
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Window"
 msgstr "Öppna i nytt fönster"
@@ -452,22 +452,22 @@ msgstr "Sök efter filer"
 msgid "Browser"
 msgstr "Webbläsare"
 
-#: src/widgets/views/HomeView.qml:133
+#: src/widgets/views/HomeView.qml:132
 #, kde-format
 msgid "Downloads"
 msgstr "Nerladdningar"
 
-#: src/widgets/views/HomeView.qml:134
+#: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
 msgstr "De senast nerladdade filerna"
 
-#: src/widgets/views/HomeView.qml:174
+#: src/widgets/views/HomeView.qml:173
 #, kde-format
 msgid "Music"
 msgstr "Musik"
 
-#: src/widgets/views/HomeView.qml:175
+#: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
 msgstr "De senaste musikfilerna"
@@ -494,23 +494,23 @@ msgstr "Platser"
 msgid "Quick access to common places."
 msgstr "Snabbåtkomst till vanliga platser."
 
-#: src/widgets/views/PlacesSection.qml:37
-#: src/widgets/views/RecentSection.qml:31
+#: src/widgets/views/PlacesSection.qml:36
+#: src/widgets/views/RecentSection.qml:27
 #, kde-format
 msgid "More"
 msgstr "Mer"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:36
 #, kde-format
 msgid "Bookmarks!"
 msgstr "Bokmärken."
 
-#: src/widgets/views/PlacesSideBar.qml:38
+#: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Dina bokmärken listas här"
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -518,7 +518,7 @@ msgid ""
 msgstr ""
 "Enheten måste monteras innan den kan kommas åt. Vill du ställa in enheten?"
 
-#: src/widgets/views/PlacesSideBar.qml:238
+#: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
 msgid "Mount"
 msgstr "Montera"
@@ -761,47 +761,47 @@ msgstr "Enheter"
 msgid "Access drives."
 msgstr "Åtkomst till diskar."
 
-#: src/widgets/views/ShortcutsDialog.qml:19
+#: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
 msgid "Navigation"
 msgstr "Navigering"
 
-#: src/widgets/views/ShortcutsDialog.qml:20
+#: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Browser navigation with keyboard."
 msgstr "Webbläsarnavigering med tangentbord."
 
-#: src/widgets/views/ShortcutsDialog.qml:24
+#: src/widgets/views/ShortcutsDialog.qml:23
 #, kde-format
 msgid "New Tab"
 msgstr "Ny flik"
 
-#: src/widgets/views/ShortcutsDialog.qml:44
+#: src/widgets/views/ShortcutsDialog.qml:43
 #, kde-format
 msgid "Close Tab"
 msgstr "Stäng flik"
 
-#: src/widgets/views/ShortcutsDialog.qml:64
+#: src/widgets/views/ShortcutsDialog.qml:63
 #, kde-format
 msgid "Path Edit"
 msgstr "Sökvägsredigering"
 
-#: src/widgets/views/ShortcutsDialog.qml:99
+#: src/widgets/views/ShortcutsDialog.qml:98
 #, kde-format
 msgid "Split"
 msgstr "Dela"
 
-#: src/widgets/views/ShortcutsDialog.qml:114
+#: src/widgets/views/ShortcutsDialog.qml:113
 #, kde-format
 msgid "New File"
 msgstr "Ny fil"
 
-#: src/widgets/views/ShortcutsDialog.qml:134
+#: src/widgets/views/ShortcutsDialog.qml:133
 #, kde-format
 msgid "Preview"
 msgstr "Förhandsgranskning"
 
-#: src/widgets/views/ShortcutsDialog.qml:149
+#: src/widgets/views/ShortcutsDialog.qml:148
 #, kde-format
 msgid "Find Tab"
 msgstr "Sök flik"
