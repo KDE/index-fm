@@ -20,7 +20,6 @@
 #endif
 
 #include <MauiKit3/Core/mauiapp.h>
-#include <MauiKit3/Core/moduleinfo.h>
 #include <MauiKit3/FileBrowsing/moduleinfo.h>
 
 #include <KIO/kio_version.h>

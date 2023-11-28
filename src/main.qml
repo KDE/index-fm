@@ -91,7 +91,7 @@ Maui.ApplicationWindow
         property bool group: false
     }
 
-    onClosing:
+    onClosing: (close) =>
     {
         close.accepted = !settings.restoreSession
         var tabs = []
