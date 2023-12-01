@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 00:40+0000\n"
-"PO-Revision-Date: 2023-07-06 12:08+0200\n"
+"POT-Creation-Date: 2023-12-01 00:40+0000\n"
+"PO-Revision-Date: 2023-11-30 09:49+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -17,33 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/main.cpp:69
+#: src/main.cpp:68
 #, kde-format
 msgid "Index"
 msgstr "Index (Indice)"
 
-#: src/main.cpp:71
+#: src/main.cpp:70
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Naviga, organisa e vide preliminarmente tu files."
 
-#: src/main.cpp:73
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#: src/main.cpp:72
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019-%1 Equipa de disveloppamento de Maui"
+msgstr "© 2019-2023 Equipa de disveloppamento de Maui"
 
-#: src/main.cpp:76
+#: src/main.cpp:75
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:76 src/main.cpp:77
+#: src/main.cpp:75 src/main.cpp:76
 #, kde-format
 msgid "Developer"
 msgstr "Disveloppator"
 
-#: src/main.cpp:77
+#: src/main.cpp:76
 #, kde-format
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
@@ -79,10 +78,9 @@ msgid "Archive name..."
 msgstr "Nomine de archivo..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "Claude scheda"
+msgstr "Claude"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -526,7 +524,7 @@ msgstr "Monta"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Comportamento"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -550,10 +548,9 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Terminal"
+msgstr "Sync Terminal"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
@@ -561,16 +558,14 @@ msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Vista preliminar"
+msgstr "Vistas preliminar"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Aperi in nove fenestra"
+msgstr "Aperi in Fenestra"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
@@ -580,7 +575,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Reproduction automatic"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
@@ -588,10 +583,9 @@ msgid "Auto start playing audio and video file previews."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Vista preliminar"
+msgstr "Prefere vista preliminar"
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
@@ -601,10 +595,9 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "Navigation"
+msgstr "Browsing (navigar) & Navigation"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
@@ -712,20 +705,20 @@ msgstr "Modo obscur"
 #: src/widgets/views/SettingsDialog.qml:370
 #, kde-format
 msgid "Switch between light and dark colorscheme."
-msgstr ""
+msgstr "Commuta inter schema de color clar e obscur"
 
 #: src/widgets/views/SettingsDialog.qml:386
 #: src/widgets/views/SettingsDialog.qml:412
 #, kde-format
 msgid "Quick places"
-msgstr ""
+msgstr "Placias rapide"
 
 #: src/widgets/views/SettingsDialog.qml:387
 #: src/widgets/views/SettingsDialog.qml:413
 #: src/widgets/views/SettingsDialog.qml:426
 #, kde-format
 msgid "Access to standard locations."
-msgstr ""
+msgstr "Accesso a locationes standard"
 
 #: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
@@ -740,7 +733,7 @@ msgstr "Remote"
 #: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to network locations."
-msgstr ""
+msgstr "Accesso a locationes de rete"
 
 #: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
@@ -770,7 +763,7 @@ msgstr "Navigation"
 #: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Browser navigation with keyboard."
-msgstr ""
+msgstr "Navigation de browser con claviero."
 
 #: src/widgets/views/ShortcutsDialog.qml:23
 #, kde-format
@@ -810,7 +803,7 @@ msgstr "Trova scheda"
 #: src/widgets/views/TagsSection.qml:22
 #, kde-format
 msgid "Tagged files for quick access"
-msgstr ""
+msgstr "Files etiquettateper rapide accesso"
 
 #~ msgid "Configure the app plugins and behavior."
 #~ msgstr "Configura le pliugins e comportamento de de app."
