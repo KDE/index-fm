@@ -168,6 +168,9 @@ https://cdn.kde.org/screenshots/index/index.png
   <content_rating type="oars-1.0"/>
   <project_group>KDE</project_group>
   <releases>
+    <release version="3.0.2" date="2023-11-30">
+      <url>https://mauikit.org/blog/maui-release-briefing-4/</url>
+    </release>
     <release version="3.0.1" date="2023-08-28">
       <url>https://mauikit.org/blog/maui-release-briefing-3/</url>
     </release>
