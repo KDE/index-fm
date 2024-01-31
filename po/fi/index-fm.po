@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-01 00:40+0000\n"
-"PO-Revision-Date: 2023-04-20 10:38+0300\n"
+"PO-Revision-Date: 2023-11-15 18:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -28,10 +28,9 @@ msgid "Browse, organize and preview your files."
 msgstr "Selaa, järjestä ja esikatsele tiedostoja."
 
 #: src/main.cpp:72
-#, fuzzy, kde-format
-#| msgid "© 2019-%1 Maui Development Team"
+#, kde-format
 msgid "© 2019-2023 Maui Development Team"
-msgstr "© 2019–%1 Maui-kehitysryhmä"
+msgstr "© 2021–2023 Maui-kehitysryhmä"
 
 #: src/main.cpp:75
 #, kde-format
@@ -81,10 +80,9 @@ msgid "Archive name..."
 msgstr "Arkiston nimi…"
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "Sulje välilehti"
+msgstr "Sulje"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
@@ -529,7 +527,7 @@ msgstr "Liitä"
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Toiminta"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -551,68 +549,61 @@ msgstr "Dynaamiset valinnat"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Tallenna mukautetut asetukset kansioittain ja muulloin käytä oletusasetuksia."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Pääte"
+msgstr "Tahdista pääte"
 
 #: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
-msgstr ""
+msgstr "Tahdista päätteen työkansio ja selaimen sijainti."
 
 #: src/widgets/views/SettingsDialog.qml:60
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Esikatselu"
+msgstr "Esikatselut"
 
 #: src/widgets/views/SettingsDialog.qml:66
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Avaa uuteen ikkunaan"
+msgstr "Avaa ikkunaan"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Näytä tiedostoesikatselut uudessa ikkunassa."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Toista automaattisesti"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Käynnistä ääni- ja videotiedostoesikatselut automaattisesti."
 
 #: src/widgets/views/SettingsDialog.qml:92
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Esikatselu"
+msgstr "Suosi esikatselua"
 
 #: src/widgets/views/SettingsDialog.qml:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
+#, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
-"Avaa tiedoston tiedot näyttävän pikaesikatselun sen sijaan että tiedosto "
-"avattaisiin ulkoiseen ohjelmaan"
+"Avaa tiedostot esikatselutilaan sen sijaan että ne avattaisiin toiseen "
+"sovellukseen."
 
 #: src/widgets/views/SettingsDialog.qml:106
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "Navigointi"
+msgstr "Selaus ja siirtyminen"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
