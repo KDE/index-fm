@@ -23,8 +23,7 @@ Maui.ApplicationWindow
     id: root
     title: currentTab ? currentTab.title : ""
 
-    Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
-    Maui.Style.accentColor : Maui.Handy.isAndroid ?"#6765C2": undefined
+    Maui.Style.accentColor : Maui.Handy.isAndroid ? "#6765C2": undefined
 
     readonly property alias dialog : dialogLoader.item
     readonly property alias selectionBar : _browserView.selectionBar
@@ -71,7 +70,6 @@ Maui.ApplicationWindow
             FB.FMList.REMOVABLE_PATH,
             FB.FMList.DRIVES_PATH]
 
-        property bool darkMode: Maui.Style.styleType === Maui.Style.Dark
 
         property alias sideBarWidth : _sideBarView.sideBar.preferredWidth
 
@@ -503,8 +501,9 @@ Maui.ApplicationWindow
     {
         if(Maui.Handy.isAndroid)
         {
-            Maui.Android.statusbarColor( Maui.Theme.backgroundColor, !appSettings.darkMode)
-            Maui.Android.navBarColor( Maui.Theme.backgroundColor, !appSettings.darkMode)
+            const dark = Maui.Style.styleType === Maui.Style.Dark
+            Maui.Android.statusbarColor( Maui.Theme.backgroundColor, !dark)
+            Maui.Android.navBarColor( Maui.Theme.backgroundColor, !dark)
         }
     }
 

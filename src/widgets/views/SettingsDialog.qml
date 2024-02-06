@@ -362,23 +362,6 @@ Maui.SettingsDialog
                 onToggled: appSettings.overviewStart = !appSettings.overviewStart
             }
         }
-
-        Maui.SectionItem
-        {
-            visible: Maui.Handy.isAndroid
-            label1.text: i18n("Dark Mode")
-            label2.text: i18n("Switch between light and dark colorscheme.")
-
-            Switch
-            {
-                checked: appSettings.darkMode
-                onToggled:
-                {
-                    appSettings.darkMode = !appSettings.darkMode
-                    setAndroidStatusBarColor()
-                }
-            }
-        }
     }
 
     Maui.SectionItem
