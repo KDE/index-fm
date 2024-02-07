@@ -3,6 +3,7 @@
         <file>main.qml</file>
         <file>widgets/views/Browser.qml</file>
         <file>widgets/views/Terminal.qml</file>
+        <file>widgets/views/TerminalColorSchemes.qml</file>
         <file>widgets/views/PlacesSideBar.qml</file>
         <file>widgets/views/BrowserLayout.qml</file>
         <file>widgets/views/SettingsDialog.qml</file>

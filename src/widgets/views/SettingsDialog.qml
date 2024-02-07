@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.3 as FB
 
+
 Maui.SettingsDialog
 {
     id: control
@@ -363,6 +364,44 @@ Maui.SettingsDialog
             }
         }
     }
+    
+      Maui.SectionGroup
+    {
+        title: i18n("Terminal")
+       description: i18n("Embedded terminal options.")       
+       enabled: Maui.Handy.isLinux
+
+        Maui.SectionItem
+        {
+           label1.text: i18n("Adaptive Color Scheme")
+            label2.text: i18n("Colors based on the current style.")
+
+            Switch
+            {
+                checked: appSettings.terminalFollowsColorScheme
+                onToggled: appSettings.terminalFollowsColorScheme = !appSettings.terminalFollowsColorScheme
+            }
+        }
+        
+        Maui.SectionItem
+        {
+            label1.text: i18n("Color Scheme")
+            label2.text: i18n("Change the color scheme of the terminal.")
+            enabled: !appSettings.terminalFollowsColorScheme
+
+            ToolButton
+            {
+                checkable: true
+                icon.name: "go-next"
+                onToggled: 
+                {
+                    var component = Qt.createComponent("TerminalColorSchemes.qml");
+    var page = component.createObject(control);
+                    control.addPage(page)
+                }
+            }
+        }
+    }
 
     Maui.SectionItem
     {
@@ -376,6 +415,7 @@ Maui.SettingsDialog
             onToggled: control.addPage(_sidebarPlacesComponent)
         }
     }
+    
 
     Component
     {

@@ -77,6 +77,8 @@ Maui.ApplicationWindow
         property bool syncTerminal: true
         property bool previewerWindow: Maui.Handy.isLinux && !Maui.Handy.isMobile
         property bool autoPlayPreviews: true
+        property bool terminalFollowsColorScheme: true
+        property string terminalColorScheme: "Maui-Dark"
     }
 
     Settings

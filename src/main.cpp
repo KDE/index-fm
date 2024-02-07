@@ -69,11 +69,11 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                      INDEX_VERSION_STRING,
                      i18n("Browse, organize and preview your files."),
                      KAboutLicense::LGPL_V3,
-                     i18n("© 2019-2023 Maui Development Team"),
+                     INDEX_COPYRIGHT_NOTICE,
                      QString(GIT_BRANCH) + "/" + QString(GIT_COMMIT_HASH));
 
-    about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
-    about.addAuthor(i18n("Gabriel Dominguez"), i18n("Developer"), QStringLiteral("gabriel@gabrieldominguez.es"));
+    about.addAuthor(QStringLiteral("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
+    about.addAuthor(QStringLiteral("Gabriel Dominguez"), i18n("Developer"), QStringLiteral("gabriel@gabrieldominguez.es"));
     about.setHomepage("https://mauikit.org");
     about.setProductName("maui/index");
     about.setBugAddress("https://invent.kde.org/maui/index-fm/-/issues");
@@ -109,45 +109,37 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 
-
     if(parser.isSet(newWindowOption))
     {
         paths = QStringList() << QUrl::fromUserInput(parser.value(newWindowOption)).toString() ;
     }else
-    {
-
-    if (IndexInstance::attachToExistingInstance(QUrl::fromStringList(paths), false, false))
-    {
-        // Successfully attached to existing instance of Dolphin
-        return 0;
-    }else
-    {
-//        const QString serviceName = QStringLiteral("org.kde.index-%1").arg(QCoreApplication::applicationPid());
-//        auto instances = IndexInstance::appInstances(serviceName);
-//        if(instances.size() > 0)
-//        {
-//            instances.first().first->activateWindow();
-//        }
-    }
+    {        
+        if (IndexInstance::attachToExistingInstance(QUrl::fromStringList(paths), false, false))
+        {
+            // Successfully attached to existing instance of Index
+            return 0;
+        }
     }
 
     IndexInstance::registerService();
 #endif
-    auto index = std::make_unique<Index>();
+
+    auto index = std::make_unique<Index>(nullptr);
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
+
     QObject::connect(
-                &engine,
-                &QQmlApplicationEngine::objectCreated,
-                &app,
-                [url, &index](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
+        &engine,
+        &QQmlApplicationEngine::objectCreated,
+        &app,
+        [url, &index](QObject *obj, const QUrl &objUrl) {
+            if (!obj && url == objUrl)
+                QCoreApplication::exit(-1);
 
-        index->setQmlObject(obj);
+            index->setQmlObject(obj);
 
-    }, Qt::QueuedConnection);
+        }, Qt::QueuedConnection);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 

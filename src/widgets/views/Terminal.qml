@@ -13,7 +13,7 @@ Term.Terminal
     Maui.Theme.colorSet: Maui.Theme.Window
     Maui.Theme.inherit: false
 
-    kterminal.colorScheme: "Adaptive"
+    kterminal.colorScheme: appSettings.terminalFollowsColorScheme ? "Adaptive" : appSettings.terminalColorScheme
 
     onUrlsDropped: (urls) =>
     {
