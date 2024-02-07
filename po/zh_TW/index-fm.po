@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-02-07 01:34+0000\n"
 "PO-Revision-Date: 2023-12-20 17:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -50,78 +50,78 @@ msgstr "開發者"
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:165 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "解開"
 
-#: src/main.qml:168
+#: src/main.qml:166
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
 "subdirectory or inside the current directory."
 msgstr "解開壓縮檔的內容到新的子目錄、現有的子目錄或目前目錄中。"
 
-#: src/main.qml:185
+#: src/main.qml:183
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "壓縮 %1 個檔案"
 
-#: src/main.qml:186
+#: src/main.qml:184
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "將已選檔案壓縮到新檔案裡。"
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "封存名稱…"
 
-#: src/main.qml:233
+#: src/main.qml:231
 #, kde-format
 msgid "Close"
 msgstr "關閉"
 
-#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:237 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "壓縮"
 
-#: src/main.qml:289 src/widgets/views/HomeView.qml:53
+#: src/main.qml:287 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "開啟資料夾"
 
-#: src/main.qml:298
+#: src/main.qml:296
 #, kde-format
 msgid "Extracted"
 msgstr "已解壓縮"
 
-#: src/main.qml:299
+#: src/main.qml:297
 #, kde-format
 msgid "File was extracted"
 msgstr "已解壓縮檔案"
 
-#: src/main.qml:369
+#: src/main.qml:367
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "切換側邊欄"
 
-#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:425 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "書籤"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:432 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
-#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:440 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
@@ -482,8 +482,8 @@ msgid "Your most recent image files"
 msgstr "您最近的影像檔案"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:403
-#: src/widgets/views/SettingsDialog.qml:407
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:390
 #, kde-format
 msgid "Places"
 msgstr "快速存取"
@@ -698,59 +698,49 @@ msgid "Use overview mode as default on launch."
 msgstr "啟動時使用總覽模式作為預設。"
 
 #: src/widgets/views/SettingsDialog.qml:369
-#, kde-format
-msgid "Dark Mode"
-msgstr "暗色模式"
-
-#: src/widgets/views/SettingsDialog.qml:370
-#, kde-format
-msgid "Switch between light and dark colorscheme."
-msgstr "在明亮和暗色配色方案間切換。"
-
-#: src/widgets/views/SettingsDialog.qml:386
-#: src/widgets/views/SettingsDialog.qml:412
+#: src/widgets/views/SettingsDialog.qml:395
 #, kde-format
 msgid "Quick places"
 msgstr "快速地點"
 
-#: src/widgets/views/SettingsDialog.qml:387
-#: src/widgets/views/SettingsDialog.qml:413
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:370
+#: src/widgets/views/SettingsDialog.qml:396
+#: src/widgets/views/SettingsDialog.qml:409
 #, kde-format
 msgid "Access to standard locations."
 msgstr "標準位置的存取。"
 
-#: src/widgets/views/SettingsDialog.qml:425
+#: src/widgets/views/SettingsDialog.qml:408
 #, kde-format
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: src/widgets/views/SettingsDialog.qml:441
+#: src/widgets/views/SettingsDialog.qml:424
 #, kde-format
 msgid "Remote"
 msgstr "遠端"
 
-#: src/widgets/views/SettingsDialog.qml:442
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Access to network locations."
 msgstr "網路位置的存取。"
 
-#: src/widgets/views/SettingsDialog.qml:458
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Removable"
 msgstr "可移除"
 
-#: src/widgets/views/SettingsDialog.qml:459
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "USB 隨身碟和 SD 卡的存取。"
 
-#: src/widgets/views/SettingsDialog.qml:474
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Devices"
 msgstr "裝置"
 
-#: src/widgets/views/SettingsDialog.qml:475
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Access drives."
 msgstr "存取硬碟。"
@@ -804,6 +794,12 @@ msgstr "尋找分頁"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "快速存取用的已加標籤檔案"
+
+#~ msgid "Dark Mode"
+#~ msgstr "暗色模式"
+
+#~ msgid "Switch between light and dark colorscheme."
+#~ msgstr "在明亮和暗色配色方案間切換。"
 
 #~ msgid "Configure the app plugins and behavior."
 #~ msgstr "設定應用程式外掛與行為。"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-02-07 01:34+0000\n"
 "PO-Revision-Date: 2023-11-04 14:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -48,13 +48,13 @@ msgstr "Razvijalec"
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:165 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Izvleci"
 
-#: src/main.qml:168
+#: src/main.qml:166
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -63,7 +63,7 @@ msgstr ""
 "Izvlecite vsebino stisnjene datoteke v novo ali obstoječo podmapo ali "
 "znotraj trenutne mape."
 
-#: src/main.qml:185
+#: src/main.qml:183
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
@@ -72,59 +72,59 @@ msgstr[1] "Stisni %1 datoteki"
 msgstr[2] "Stisni %1 datoteke"
 msgstr[3] "Stisni %1 datotek"
 
-#: src/main.qml:186
+#: src/main.qml:184
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Stisni izbrane datoteke v novo datoteko."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "Ime arhiva ..."
 
-#: src/main.qml:233
+#: src/main.qml:231
 #, kde-format
 msgid "Close"
 msgstr "Zapri"
 
-#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:237 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Stisni"
 
-#: src/main.qml:289 src/widgets/views/HomeView.qml:53
+#: src/main.qml:287 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Odpri mapo"
 
-#: src/main.qml:298
+#: src/main.qml:296
 #, kde-format
 msgid "Extracted"
 msgstr "Izvlečeno"
 
-#: src/main.qml:299
+#: src/main.qml:297
 #, kde-format
 msgid "File was extracted"
 msgstr "Pridobili smo izvleček datoteke"
 
-#: src/main.qml:369
+#: src/main.qml:367
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Preklopi stransko vrstico"
 
-#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:425 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:432 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:440 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
@@ -487,8 +487,8 @@ msgid "Your most recent image files"
 msgstr "Zadnje nedavno prenesene datoteke slik"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:403
-#: src/widgets/views/SettingsDialog.qml:407
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:390
 #, kde-format
 msgid "Places"
 msgstr "Mesta"
@@ -707,59 +707,49 @@ msgid "Use overview mode as default on launch."
 msgstr "Ob zagonu privzeto uporabi predogledni način."
 
 #: src/widgets/views/SettingsDialog.qml:369
-#, kde-format
-msgid "Dark Mode"
-msgstr "Temni način"
-
-#: src/widgets/views/SettingsDialog.qml:370
-#, kde-format
-msgid "Switch between light and dark colorscheme."
-msgstr "Preklop med svetlo in temno barvno shemo."
-
-#: src/widgets/views/SettingsDialog.qml:386
-#: src/widgets/views/SettingsDialog.qml:412
+#: src/widgets/views/SettingsDialog.qml:395
 #, kde-format
 msgid "Quick places"
 msgstr "Hitre lokacije"
 
-#: src/widgets/views/SettingsDialog.qml:387
-#: src/widgets/views/SettingsDialog.qml:413
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:370
+#: src/widgets/views/SettingsDialog.qml:396
+#: src/widgets/views/SettingsDialog.qml:409
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Dostop do standardnih lokacij."
 
-#: src/widgets/views/SettingsDialog.qml:425
+#: src/widgets/views/SettingsDialog.qml:408
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zaznamki"
 
-#: src/widgets/views/SettingsDialog.qml:441
+#: src/widgets/views/SettingsDialog.qml:424
 #, kde-format
 msgid "Remote"
 msgstr "Oddaljena"
 
-#: src/widgets/views/SettingsDialog.qml:442
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Access to network locations."
 msgstr "Dostop do omrežnih lokacij."
 
-#: src/widgets/views/SettingsDialog.qml:458
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Removable"
 msgstr "Je možno odstraniti"
 
-#: src/widgets/views/SettingsDialog.qml:459
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Dostop do ključkov USB in kartic SD."
 
-#: src/widgets/views/SettingsDialog.qml:474
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Devices"
 msgstr "Naprave"
 
-#: src/widgets/views/SettingsDialog.qml:475
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Access drives."
 msgstr "Dostop do naprav."
@@ -813,6 +803,12 @@ msgstr "Poišči zavihek"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označene datoteke za hitri dostop"
+
+#~ msgid "Dark Mode"
+#~ msgstr "Temni način"
+
+#~ msgid "Switch between light and dark colorscheme."
+#~ msgstr "Preklop med svetlo in temno barvno shemo."
 
 #~ msgid "Configure the app plugins and behavior."
 #~ msgstr "Nastavi vtičnike in obnašanje."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-02-07 01:34+0000\n"
 "PO-Revision-Date: 2023-04-21 23:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -48,13 +48,13 @@ msgstr "개발자"
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:165 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "압축 풀기"
 
-#: src/main.qml:168
+#: src/main.qml:166
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -63,66 +63,66 @@ msgstr ""
 "압축 파일의 내용을 새 디렉터리, 기존 하위 디렉터리, 현재 디렉터리 내에 풉니"
 "다."
 
-#: src/main.qml:185
+#: src/main.qml:183
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "파일 %1개 압축"
 
-#: src/main.qml:186
+#: src/main.qml:184
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "선택한 파일을 새 파일로 압축합니다."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "압축 파일 이름..."
 
-#: src/main.qml:233
+#: src/main.qml:231
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgid "Close"
 msgstr "탭 닫기"
 
-#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:237 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "압축"
 
-#: src/main.qml:289 src/widgets/views/HomeView.qml:53
+#: src/main.qml:287 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "폴더 열기"
 
-#: src/main.qml:298
+#: src/main.qml:296
 #, kde-format
 msgid "Extracted"
 msgstr "압축 풀림"
 
-#: src/main.qml:299
+#: src/main.qml:297
 #, kde-format
 msgid "File was extracted"
 msgstr "파일 압축이 풀림"
 
-#: src/main.qml:369
+#: src/main.qml:367
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "사이드바 전환"
 
-#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:425 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "책갈피"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:432 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "새 탭으로 열기"
 
-#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:440 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
@@ -483,8 +483,8 @@ msgid "Your most recent image files"
 msgstr "최근에 사용한 그림 파일"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:403
-#: src/widgets/views/SettingsDialog.qml:407
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:390
 #, kde-format
 msgid "Places"
 msgstr "위치"
@@ -707,59 +707,49 @@ msgid "Use overview mode as default on launch."
 msgstr "실행할 때 기본값으로 요약 보기를 사용합니다."
 
 #: src/widgets/views/SettingsDialog.qml:369
-#, kde-format
-msgid "Dark Mode"
-msgstr "어두운 모드"
-
-#: src/widgets/views/SettingsDialog.qml:370
-#, kde-format
-msgid "Switch between light and dark colorscheme."
-msgstr "밝은 색상과 어두운 색상을 전환합니다."
-
-#: src/widgets/views/SettingsDialog.qml:386
-#: src/widgets/views/SettingsDialog.qml:412
+#: src/widgets/views/SettingsDialog.qml:395
 #, kde-format
 msgid "Quick places"
 msgstr "빠른 위치"
 
-#: src/widgets/views/SettingsDialog.qml:387
-#: src/widgets/views/SettingsDialog.qml:413
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:370
+#: src/widgets/views/SettingsDialog.qml:396
+#: src/widgets/views/SettingsDialog.qml:409
 #, kde-format
 msgid "Access to standard locations."
 msgstr "표준 위치에 접근합니다."
 
-#: src/widgets/views/SettingsDialog.qml:425
+#: src/widgets/views/SettingsDialog.qml:408
 #, kde-format
 msgid "Bookmarks"
 msgstr "책갈피"
 
-#: src/widgets/views/SettingsDialog.qml:441
+#: src/widgets/views/SettingsDialog.qml:424
 #, kde-format
 msgid "Remote"
 msgstr "원격"
 
-#: src/widgets/views/SettingsDialog.qml:442
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Access to network locations."
 msgstr "네트워크 위치에 접근합니다."
 
-#: src/widgets/views/SettingsDialog.qml:458
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Removable"
 msgstr "제거 가능"
 
-#: src/widgets/views/SettingsDialog.qml:459
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "USB 메모리와 SD 카드에 접근합니다."
 
-#: src/widgets/views/SettingsDialog.qml:474
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Devices"
 msgstr "장치"
 
-#: src/widgets/views/SettingsDialog.qml:475
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Access drives."
 msgstr "드라이브에 접근합니다."
@@ -813,6 +803,12 @@ msgstr "탭 찾기"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "빨리 접근할 수 있도록 태그된 파일"
+
+#~ msgid "Dark Mode"
+#~ msgstr "어두운 모드"
+
+#~ msgid "Switch between light and dark colorscheme."
+#~ msgstr "밝은 색상과 어두운 색상을 전환합니다."
 
 #~ msgid "Configure the app plugins and behavior."
 #~ msgstr "앱 플러그인과 행동을 설정합니다."

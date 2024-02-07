@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-02-07 01:34+0000\n"
 "PO-Revision-Date: 2023-04-14 23:34+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -49,13 +49,13 @@ msgstr "Entwickler"
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:165 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Entpacken"
 
-#: src/main.qml:168
+#: src/main.qml:166
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -64,67 +64,67 @@ msgstr ""
 "Entpackt den Inhalt einer komprimierten Datei in einen neuen oder "
 "vorhandenen Unterordner oder in den aktuellen Ordner."
 
-#: src/main.qml:185
+#: src/main.qml:183
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "%1 Datei komprimieren"
 msgstr[1] "%1 Dateien komprimieren"
 
-#: src/main.qml:186
+#: src/main.qml:184
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Ausgewählte Dateien in eine neue Datei komprimieren."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "Archivname ..."
 
-#: src/main.qml:233
+#: src/main.qml:231
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgid "Close"
 msgstr "Unterfenster schließen"
 
-#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:237 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Komprimieren"
 
-#: src/main.qml:289 src/widgets/views/HomeView.qml:53
+#: src/main.qml:287 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Ordner öffnen"
 
-#: src/main.qml:298
+#: src/main.qml:296
 #, kde-format
 msgid "Extracted"
 msgstr "Entpackt"
 
-#: src/main.qml:299
+#: src/main.qml:297
 #, kde-format
 msgid "File was extracted"
 msgstr "Datei wurde entpackt"
 
-#: src/main.qml:369
+#: src/main.qml:367
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Seitenleiste umschalten"
 
-#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:425 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Lesezeichen"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:432 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr "In neuem Unterfenster öffnen"
 
-#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:440 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
@@ -485,8 +485,8 @@ msgid "Your most recent image files"
 msgstr "Ihre neusten Bilddateien"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:403
-#: src/widgets/views/SettingsDialog.qml:407
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:390
 #, kde-format
 msgid "Places"
 msgstr "Orte"
@@ -713,59 +713,49 @@ msgid "Use overview mode as default on launch."
 msgstr "Übersichtsmodus beim Start als Voreinstellung verwenden"
 
 #: src/widgets/views/SettingsDialog.qml:369
-#, kde-format
-msgid "Dark Mode"
-msgstr "Dunkler Modus"
-
-#: src/widgets/views/SettingsDialog.qml:370
-#, kde-format
-msgid "Switch between light and dark colorscheme."
-msgstr "Zwischen hellem und dunklem Farbschema umschalten."
-
-#: src/widgets/views/SettingsDialog.qml:386
-#: src/widgets/views/SettingsDialog.qml:412
+#: src/widgets/views/SettingsDialog.qml:395
 #, kde-format
 msgid "Quick places"
 msgstr "Schnellorte"
 
-#: src/widgets/views/SettingsDialog.qml:387
-#: src/widgets/views/SettingsDialog.qml:413
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:370
+#: src/widgets/views/SettingsDialog.qml:396
+#: src/widgets/views/SettingsDialog.qml:409
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Zugriff auf Standardorte."
 
-#: src/widgets/views/SettingsDialog.qml:425
+#: src/widgets/views/SettingsDialog.qml:408
 #, kde-format
 msgid "Bookmarks"
 msgstr "Lesezeichen"
 
-#: src/widgets/views/SettingsDialog.qml:441
+#: src/widgets/views/SettingsDialog.qml:424
 #, kde-format
 msgid "Remote"
 msgstr "Fremdgerät"
 
-#: src/widgets/views/SettingsDialog.qml:442
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Access to network locations."
 msgstr "Zugriff auf Netzwerkorte."
 
-#: src/widgets/views/SettingsDialog.qml:458
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Removable"
 msgstr "Wechselbar"
 
-#: src/widgets/views/SettingsDialog.qml:459
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Zugriff auf USB-Sticks und SD-Karten."
 
-#: src/widgets/views/SettingsDialog.qml:474
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Devices"
 msgstr "Geräte"
 
-#: src/widgets/views/SettingsDialog.qml:475
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Access drives."
 msgstr "Zugriff auf Laufwerke."
@@ -819,6 +809,12 @@ msgstr "Unterfenster suchen"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Dateien mit Stichwörtern zum schnellen Zugriff"
+
+#~ msgid "Dark Mode"
+#~ msgstr "Dunkler Modus"
+
+#~ msgid "Switch between light and dark colorscheme."
+#~ msgstr "Zwischen hellem und dunklem Farbschema umschalten."
 
 #~ msgid "Configure the app plugins and behavior."
 #~ msgstr "Module und Verhalten der App einrichten."

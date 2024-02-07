@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-02-07 01:34+0000\n"
 "PO-Revision-Date: 2022-08-14 16:11+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -49,13 +49,13 @@ msgstr "Dezvoltator"
 msgid "Gabriel Dominguez"
 msgstr "Gabriel Dominguez"
 
-#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:165 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "Extrage"
 
-#: src/main.qml:168
+#: src/main.qml:166
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
@@ -64,7 +64,7 @@ msgstr ""
 "Extrage conținutul fișierului comprimat într-un subdosar nou sau existent, "
 "sau în dosarul actual."
 
-#: src/main.qml:185
+#: src/main.qml:183
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
@@ -72,61 +72,61 @@ msgstr[0] "Comprimă %1 fișier"
 msgstr[1] "Comprimă %1 fișiere"
 msgstr[2] "Comprimă %1 de fișiere"
 
-#: src/main.qml:186
+#: src/main.qml:184
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "Comprimă fișierele alese într-un fișier nou."
 
-#: src/main.qml:192
+#: src/main.qml:190
 #, kde-format
 msgid "Archive name..."
 msgstr "Denumirea arhivei…"
 
-#: src/main.qml:233
+#: src/main.qml:231
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgid "Close"
 msgstr "Închide fila"
 
-#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:237 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "Comprimă"
 
-#: src/main.qml:289 src/widgets/views/HomeView.qml:53
+#: src/main.qml:287 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "Deschide dosarul"
 
-#: src/main.qml:298
+#: src/main.qml:296
 #, kde-format
 msgid "Extracted"
 msgstr "Extras"
 
-#: src/main.qml:299
+#: src/main.qml:297
 #, kde-format
 msgid "File was extracted"
 msgstr "Fișierul a fost extras"
 
-#: src/main.qml:369
+#: src/main.qml:367
 #, kde-format
 msgid "Toggle sidebar"
 msgstr ""
 
-#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:425 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Pune semn de carte"
 
-#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:432 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:90
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "Deschide în filă nouă"
 
-#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:440 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:106
 #, fuzzy, kde-format
 #| msgid "Open in split view"
@@ -496,8 +496,8 @@ msgid "Your most recent image files"
 msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:403
-#: src/widgets/views/SettingsDialog.qml:407
+#: src/widgets/views/SettingsDialog.qml:386
+#: src/widgets/views/SettingsDialog.qml:390
 #, kde-format
 msgid "Places"
 msgstr "Locuri"
@@ -720,59 +720,49 @@ msgid "Use overview mode as default on launch."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:369
-#, kde-format
-msgid "Dark Mode"
-msgstr ""
-
-#: src/widgets/views/SettingsDialog.qml:370
-#, kde-format
-msgid "Switch between light and dark colorscheme."
-msgstr ""
-
-#: src/widgets/views/SettingsDialog.qml:386
-#: src/widgets/views/SettingsDialog.qml:412
+#: src/widgets/views/SettingsDialog.qml:395
 #, kde-format
 msgid "Quick places"
 msgstr "Locuri rapide"
 
-#: src/widgets/views/SettingsDialog.qml:387
-#: src/widgets/views/SettingsDialog.qml:413
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:370
+#: src/widgets/views/SettingsDialog.qml:396
+#: src/widgets/views/SettingsDialog.qml:409
 #, kde-format
 msgid "Access to standard locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:425
+#: src/widgets/views/SettingsDialog.qml:408
 #, kde-format
 msgid "Bookmarks"
 msgstr "Semne de carte"
 
-#: src/widgets/views/SettingsDialog.qml:441
+#: src/widgets/views/SettingsDialog.qml:424
 #, kde-format
 msgid "Remote"
 msgstr "Distant"
 
-#: src/widgets/views/SettingsDialog.qml:442
+#: src/widgets/views/SettingsDialog.qml:425
 #, kde-format
 msgid "Access to network locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:458
+#: src/widgets/views/SettingsDialog.qml:441
 #, kde-format
 msgid "Removable"
 msgstr "Amovibil"
 
-#: src/widgets/views/SettingsDialog.qml:459
+#: src/widgets/views/SettingsDialog.qml:442
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:474
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Devices"
 msgstr "Dispozitive"
 
-#: src/widgets/views/SettingsDialog.qml:475
+#: src/widgets/views/SettingsDialog.qml:458
 #, kde-format
 msgid "Access drives."
 msgstr ""
