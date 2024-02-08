@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-07 01:34+0000\n"
+"POT-Creation-Date: 2024-02-08 01:39+0000\n"
 "PO-Revision-Date: 2024-02-05 11:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,98 +27,83 @@ msgstr "Index"
 msgid "Browse, organize and preview your files."
 msgstr "浏览、组织和预览您的文件。"
 
-#: src/main.cpp:72
-#, kde-format
-msgid "© 2019-2023 Maui Development Team"
-msgstr ""
-
-#: src/main.cpp:75
-#, kde-format
-msgid "Camilo Higuita"
-msgstr "Camilo Higuita"
-
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
 msgid "Developer"
 msgstr "开发人员"
 
-#: src/main.cpp:76
-#, kde-format
-msgid "Gabriel Dominguez"
-msgstr "Gabriel Dominguez"
-
-#: src/main.qml:165 src/widgets/previewer/CompressedPreview.qml:15
+#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
 #: src/widgets/views/FileMenu.qml:217
 #, kde-format
 msgid "Extract"
 msgstr "解压"
 
-#: src/main.qml:166
+#: src/main.qml:168
 #, kde-format
 msgid ""
 "Extract the content of the compressed file into a new or existing "
 "subdirectory or inside the current directory."
 msgstr "将压缩文件的内容解压到新建目录、已有目录或者当前目录。"
 
-#: src/main.qml:183
+#: src/main.qml:185
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
 msgstr[0] "压缩 %1 个文件"
 
-#: src/main.qml:184
+#: src/main.qml:186
 #, kde-format
 msgid "Compress selected files into a new file."
 msgstr "压缩选中的文件为新的压缩文件。"
 
-#: src/main.qml:190
+#: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
 msgstr "压缩文件名称..."
 
-#: src/main.qml:231
+#: src/main.qml:233
 #, kde-format
 msgid "Close"
 msgstr ""
 
-#: src/main.qml:237 src/widgets/views/BrowserView.qml:125
+#: src/main.qml:239 src/widgets/views/BrowserView.qml:125
 #: src/widgets/views/FileMenu.qml:229
 #, kde-format
 msgid "Compress"
 msgstr "压缩"
 
-#: src/main.qml:287 src/widgets/views/HomeView.qml:53
+#: src/main.qml:289 src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
 msgstr "打开文件夹"
 
-#: src/main.qml:296
+#: src/main.qml:298
 #, kde-format
 msgid "Extracted"
 msgstr "已解压"
 
-#: src/main.qml:297
+#: src/main.qml:299
 #, kde-format
 msgid "File was extracted"
 msgstr "文件已被解压"
 
-#: src/main.qml:367
+#: src/main.qml:369
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "显示/隐藏侧边栏"
 
-#: src/main.qml:425 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:427 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "书签"
 
-#: src/main.qml:432 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:434 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Tab"
 msgstr ""
 
-#: src/main.qml:440 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:442 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in Split View"
@@ -174,7 +159,7 @@ msgstr "执行"
 
 #: src/widgets/previewer/FileProperties.qml:80
 #: src/widgets/previewer/FileProperties.qml:161
-#: src/widgets/views/SettingsDialog.qml:245
+#: src/widgets/views/SettingsDialog.qml:246
 #, kde-format
 msgid "Group"
 msgstr "分组"
@@ -223,37 +208,37 @@ msgstr "下一个"
 msgid "Open"
 msgstr "打开"
 
-#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:134
+#: src/widgets/views/ActionBar.qml:43 src/widgets/views/SettingsDialog.qml:135
 #, kde-format
 msgid "List"
 msgstr "列表"
 
-#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:146
+#: src/widgets/views/ActionBar.qml:58 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Grid"
 msgstr "网格"
 
-#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:173
+#: src/widgets/views/ActionBar.qml:91 src/widgets/views/SettingsDialog.qml:174
 #, kde-format
 msgid "Type"
 msgstr "类型"
 
-#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:185
+#: src/widgets/views/ActionBar.qml:103 src/widgets/views/SettingsDialog.qml:186
 #, kde-format
 msgid "Date"
 msgstr "日期"
 
-#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:196
+#: src/widgets/views/ActionBar.qml:116 src/widgets/views/SettingsDialog.qml:197
 #, kde-format
 msgid "Modified"
 msgstr "修改日期"
 
-#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:207
+#: src/widgets/views/ActionBar.qml:129 src/widgets/views/SettingsDialog.qml:208
 #, kde-format
 msgid "Size"
 msgstr "大小"
 
-#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:218
+#: src/widgets/views/ActionBar.qml:142 src/widgets/views/SettingsDialog.qml:219
 #, kde-format
 msgid "Name"
 msgstr "名称"
@@ -289,7 +274,8 @@ msgstr ""
 msgid "Split View"
 msgstr ""
 
-#: src/widgets/views/ActionBar.qml:221 src/widgets/views/ShortcutsDialog.qml:83
+#: src/widgets/views/ActionBar.qml:221 src/widgets/views/SettingsDialog.qml:370
+#: src/widgets/views/ShortcutsDialog.qml:83
 #, kde-format
 msgid "Terminal"
 msgstr "终端"
@@ -479,8 +465,8 @@ msgid "Your most recent image files"
 msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:386
-#: src/widgets/views/SettingsDialog.qml:390
+#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:430
 #, kde-format
 msgid "Places"
 msgstr "位置"
@@ -518,226 +504,251 @@ msgstr "此设备需要先进行挂载才能访问。您想要安装此设备吗
 msgid "Mount"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:14
+#: src/widgets/views/SettingsDialog.qml:15
 #, kde-format
 msgid "Behaviour"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:19
+#: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Save Session"
 msgstr "保存会话"
 
-#: src/widgets/views/SettingsDialog.qml:20
+#: src/widgets/views/SettingsDialog.qml:21
 #, kde-format
 msgid "Save and restore tabs."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:32
+#: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid "Dynamic Preferences"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:33
+#: src/widgets/views/SettingsDialog.qml:34
 #, kde-format
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:46
+#: src/widgets/views/SettingsDialog.qml:47
 #, kde-format
 msgid "Sync Terminal"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:47
+#: src/widgets/views/SettingsDialog.qml:48
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:60
+#: src/widgets/views/SettingsDialog.qml:61
 #, kde-format
 msgid "Previews"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:66
+#: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Open in Window"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:67
+#: src/widgets/views/SettingsDialog.qml:68
 #, kde-format
 msgid "Show the file previews in a new window."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:79
+#: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
 msgid "Autoplay"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:80
+#: src/widgets/views/SettingsDialog.qml:81
 #, kde-format
 msgid "Auto start playing audio and video file previews."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:92
+#: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
 msgid "Prefer Preview"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:93
+#: src/widgets/views/SettingsDialog.qml:94
 #, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:106
+#: src/widgets/views/SettingsDialog.qml:107
 #, kde-format
 msgid "Browsing & Navigation"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:110
+#: src/widgets/views/SettingsDialog.qml:111
 #, kde-format
 msgid "Thumbnails"
 msgstr "缩略图"
 
-#: src/widgets/views/SettingsDialog.qml:111
+#: src/widgets/views/SettingsDialog.qml:112
 #, kde-format
 msgid "Show previews of images, videos and PDF files."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:123
+#: src/widgets/views/SettingsDialog.qml:124
 #, kde-format
 msgid "View Type"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:124
+#: src/widgets/views/SettingsDialog.qml:125
 #, kde-format
 msgid "Default view type."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:161
+#: src/widgets/views/SettingsDialog.qml:162
 #, kde-format
 msgid "Sort"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:162
+#: src/widgets/views/SettingsDialog.qml:163
 #, kde-format
 msgid "Default sorting value."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:231
+#: src/widgets/views/SettingsDialog.qml:232
 #, kde-format
 msgid "Show Folders First"
 msgstr "文件夹靠前显示"
 
-#: src/widgets/views/SettingsDialog.qml:261
+#: src/widgets/views/SettingsDialog.qml:262
 #, kde-format
 msgid "Interface"
 msgstr "界面"
 
-#: src/widgets/views/SettingsDialog.qml:266
+#: src/widgets/views/SettingsDialog.qml:267
 #, kde-format
 msgid "Grid Items Size"
 msgstr "网格项目尺寸"
 
-#: src/widgets/views/SettingsDialog.qml:267
+#: src/widgets/views/SettingsDialog.qml:268
 #, kde-format
 msgid "Size of the grid view."
 msgstr "网格视图的尺寸。"
 
-#: src/widgets/views/SettingsDialog.qml:285
-#: src/widgets/views/SettingsDialog.qml:333
+#: src/widgets/views/SettingsDialog.qml:286
+#: src/widgets/views/SettingsDialog.qml:334
 #, kde-format
 msgid "M"
 msgstr "中"
 
-#: src/widgets/views/SettingsDialog.qml:292
-#: src/widgets/views/SettingsDialog.qml:340
+#: src/widgets/views/SettingsDialog.qml:293
+#: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "L"
 msgstr "大"
 
-#: src/widgets/views/SettingsDialog.qml:299
-#: src/widgets/views/SettingsDialog.qml:347
+#: src/widgets/views/SettingsDialog.qml:300
+#: src/widgets/views/SettingsDialog.qml:348
 #, kde-format
 msgid "X"
 msgstr "特大"
 
-#: src/widgets/views/SettingsDialog.qml:306
+#: src/widgets/views/SettingsDialog.qml:307
 #, kde-format
 msgid "XL"
 msgstr "超大"
 
-#: src/widgets/views/SettingsDialog.qml:315
+#: src/widgets/views/SettingsDialog.qml:316
 #, kde-format
 msgid "List Items Size"
 msgstr "列表项目尺寸"
 
-#: src/widgets/views/SettingsDialog.qml:316
+#: src/widgets/views/SettingsDialog.qml:317
 #, kde-format
 msgid "Size of the list view."
 msgstr "列表视图的尺寸。"
 
-#: src/widgets/views/SettingsDialog.qml:326
+#: src/widgets/views/SettingsDialog.qml:327
 #, kde-format
 msgid "S"
 msgstr "小"
 
-#: src/widgets/views/SettingsDialog.qml:356
+#: src/widgets/views/SettingsDialog.qml:357
 #, kde-format
 msgid "Overview"
 msgstr "概览"
 
-#: src/widgets/views/SettingsDialog.qml:357
+#: src/widgets/views/SettingsDialog.qml:358
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:369
-#: src/widgets/views/SettingsDialog.qml:395
+#: src/widgets/views/SettingsDialog.qml:371
+#, kde-format
+msgid "Embedded terminal options."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:376
+#, kde-format
+msgid "Adaptive Color Scheme"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:377
+#, kde-format
+msgid "Colors based on the current style."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:388
+#, kde-format
+msgid "Color Scheme"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:389
+#, kde-format
+msgid "Change the color scheme of the terminal."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:408
+#: src/widgets/views/SettingsDialog.qml:435
 #, kde-format
 msgid "Quick places"
 msgstr "快速位置"
 
-#: src/widgets/views/SettingsDialog.qml:370
-#: src/widgets/views/SettingsDialog.qml:396
 #: src/widgets/views/SettingsDialog.qml:409
+#: src/widgets/views/SettingsDialog.qml:436
+#: src/widgets/views/SettingsDialog.qml:449
 #, kde-format
 msgid "Access to standard locations."
 msgstr "访问标准位置。"
 
-#: src/widgets/views/SettingsDialog.qml:408
+#: src/widgets/views/SettingsDialog.qml:448
 #, kde-format
 msgid "Bookmarks"
 msgstr "书签"
 
-#: src/widgets/views/SettingsDialog.qml:424
+#: src/widgets/views/SettingsDialog.qml:464
 #, kde-format
 msgid "Remote"
 msgstr "远程"
 
-#: src/widgets/views/SettingsDialog.qml:425
+#: src/widgets/views/SettingsDialog.qml:465
 #, kde-format
 msgid "Access to network locations."
 msgstr "访问网络位置。"
 
-#: src/widgets/views/SettingsDialog.qml:441
+#: src/widgets/views/SettingsDialog.qml:481
 #, kde-format
 msgid "Removable"
 msgstr "可移动"
 
-#: src/widgets/views/SettingsDialog.qml:442
+#: src/widgets/views/SettingsDialog.qml:482
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "访问 U 盘和 SD 卡。"
 
-#: src/widgets/views/SettingsDialog.qml:457
+#: src/widgets/views/SettingsDialog.qml:497
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: src/widgets/views/SettingsDialog.qml:458
+#: src/widgets/views/SettingsDialog.qml:498
 #, kde-format
 msgid "Access drives."
 msgstr "访问驱动器。"
@@ -791,6 +802,12 @@ msgstr "查找标签页"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "带标签文件供快速访问"
+
+#~ msgid "Camilo Higuita"
+#~ msgstr "Camilo Higuita"
+
+#~ msgid "Gabriel Dominguez"
+#~ msgstr "Gabriel Dominguez"
 
 #~ msgid "Dark Mode"
 #~ msgstr "深色模式"
