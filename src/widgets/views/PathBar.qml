@@ -87,7 +87,7 @@ Item
         sourceComponent: Item
         {
             implicitWidth: _layout.implicitWidth
-            implicitHeight: _layout.implicitHeight
+            implicitHeight: _layout.implicitHeight           
 
             TextField
             {
@@ -147,7 +147,7 @@ Item
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
                 ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
-                implicitHeight: _listView.currentItem.implicitHeight + topPadding + bottomPadding
+                implicitHeight: _listView.currentItem ? _listView.currentItem.implicitHeight + topPadding + bottomPadding : 48
                 contentHeight: availableHeight
                 leftPadding: 8
 
@@ -155,11 +155,6 @@ Item
                 {
                     radius: Maui.Style.radiusV
                     color : Maui.Theme.alternateBackgroundColor
-                    MouseArea
-                    {
-                        anchors.fill: parent
-                        onClicked:  control.showEntryBar()
-                    }
                 }
 
                 ListView
@@ -191,6 +186,18 @@ Item
                         flat: true
                         icon.name: "filename-space-amarok"
                         onClicked:  control.showEntryBar()
+                    }
+
+                    MouseArea
+                    {
+                         z: -1
+                        anchors.fill: parent
+                        preventStealing: true
+                        onClicked:
+                        {
+                            console.log("PATHBAR CLICKED")
+                            control.showEntryBar()
+                        }
                     }
 
                     model: Maui.BaseModel
