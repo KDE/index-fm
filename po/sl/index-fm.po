@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-08 01:39+0000\n"
-"PO-Revision-Date: 2023-11-04 14:10+0100\n"
+"PO-Revision-Date: 2024-02-08 09:17+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: src/main.cpp:68
 #, kde-format
@@ -695,27 +695,27 @@ msgstr "Ob zagonu privzeto uporabi predogledni način."
 #: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Embedded terminal options."
-msgstr ""
+msgstr "Vdelane možnosti terminala."
 
 #: src/widgets/views/SettingsDialog.qml:376
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Prilagodljiva barvna shema"
 
 #: src/widgets/views/SettingsDialog.qml:377
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Barve na osnovi trenutnega sloga."
 
 #: src/widgets/views/SettingsDialog.qml:388
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Barvna shema"
 
 #: src/widgets/views/SettingsDialog.qml:389
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Spremeni barvno shemo terminala."
 
 #: src/widgets/views/SettingsDialog.qml:408
 #: src/widgets/views/SettingsDialog.qml:435

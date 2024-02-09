@@ -690,22 +690,22 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:376
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Adaptivní barevné schéma"
 
 #: src/widgets/views/SettingsDialog.qml:377
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Barvy založené na současném stylu."
 
 #: src/widgets/views/SettingsDialog.qml:388
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Barevné schéma"
 
 #: src/widgets/views/SettingsDialog.qml:389
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Změnit barevné schéma terminálu."
 
 #: src/widgets/views/SettingsDialog.qml:408
 #: src/widgets/views/SettingsDialog.qml:435
@@ -804,18 +804,3 @@ msgstr "Najít kartu"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
-
-#~ msgid "© 2019-2023 Maui Development Team"
-#~ msgstr "© 2019-2023 Vývojový tým Maui"
-
-#~ msgid "Camilo Higuita"
-#~ msgstr "Camilo Higuita"
-
-#~ msgid "Gabriel Dominguez"
-#~ msgstr "Gabriel Dominguez"
-
-#~ msgid "Dark Mode"
-#~ msgstr "Tmavý režim"
-
-#~ msgid "Switch between light and dark colorscheme."
-#~ msgstr "Přepínač mezi světlým a tmavým barevným schématem."

@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-08 01:39+0000\n"
-"PO-Revision-Date: 2023-11-04 10:08+0100\n"
+"PO-Revision-Date: 2024-02-08 14:10+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: src/main.cpp:68
 #, kde-format
@@ -694,30 +694,29 @@ msgid "Use overview mode as default on launch."
 msgstr "Modus overzicht als standaard gebruiken bij starten."
 
 #: src/widgets/views/SettingsDialog.qml:371
-#, fuzzy, kde-format
-#| msgid "Embedded Terminal"
+#, kde-format
 msgid "Embedded terminal options."
-msgstr "Ingebedde terminal"
+msgstr "Ingebedde terminalopties."
 
 #: src/widgets/views/SettingsDialog.qml:376
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Adaptief kleurenschema"
 
 #: src/widgets/views/SettingsDialog.qml:377
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Kleuren gebaseerd op de huidige stijl."
 
 #: src/widgets/views/SettingsDialog.qml:388
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Kleurenschema"
 
 #: src/widgets/views/SettingsDialog.qml:389
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Het kleurenschema van de terminal wijzigen."
 
 #: src/widgets/views/SettingsDialog.qml:408
 #: src/widgets/views/SettingsDialog.qml:435
