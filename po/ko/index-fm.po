@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-08 01:39+0000\n"
-"PO-Revision-Date: 2024-02-10 00:28+0100\n"
+"PO-Revision-Date: 2024-02-10 22:46+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -683,30 +683,29 @@ msgid "Use overview mode as default on launch."
 msgstr "실행할 때 기본값으로 요약 보기를 사용합니다."
 
 #: src/widgets/views/SettingsDialog.qml:371
-#, fuzzy, kde-format
-#| msgid "Embedded Terminal"
+#, kde-format
 msgid "Embedded terminal options."
-msgstr "내장 터미널"
+msgstr "내장 터미널 옵션입니다."
 
 #: src/widgets/views/SettingsDialog.qml:376
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "적응형 색 구성표"
 
 #: src/widgets/views/SettingsDialog.qml:377
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "현재 스타일에 기반한 색상입니다."
 
 #: src/widgets/views/SettingsDialog.qml:388
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "색 구성표"
 
 #: src/widgets/views/SettingsDialog.qml:389
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "터미널의 색 구성표를 변경합니다."
 
 #: src/widgets/views/SettingsDialog.qml:408
 #: src/widgets/views/SettingsDialog.qml:435
