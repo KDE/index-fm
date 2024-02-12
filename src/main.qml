@@ -471,8 +471,6 @@ Maui.ApplicationWindow
 
     Component.onCompleted:
     {
-        setAndroidStatusBarColor()
-
         if(settings.overviewStart)
         {
             root.openTab(FB.FM.homePath())
@@ -497,16 +495,6 @@ Maui.ApplicationWindow
         }
 
         root.openTab(FB.FM.homePath())
-    }
-
-    function setAndroidStatusBarColor()
-    {
-        if(Maui.Handy.isAndroid)
-        {
-            const dark = Maui.Style.styleType === Maui.Style.Dark
-            Maui.Android.statusbarColor( Maui.Theme.backgroundColor, !dark)
-            Maui.Android.navBarColor( Maui.Theme.backgroundColor, !dark)
-        }
     }
 
     function toogleSplitView()
