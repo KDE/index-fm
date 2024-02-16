@@ -280,7 +280,7 @@ Maui.SplitViewItem
 
             onRightClicked:
             {
-                _actionBarLoader.item.popupMainMenu()
+                popupMainMenu()
             }
         }
 

@@ -13,7 +13,7 @@ Maui.SettingsDialog
     Maui.SectionGroup
     {
         title: i18n("Behaviour")
-//        description: i18n("Configure the app plugins and behavior.")      
+        //        description: i18n("Configure the app plugins and behavior.")
 
         Maui.SectionItem
         {
@@ -40,26 +40,12 @@ Maui.SettingsDialog
                 onToggled: settings.dirConf = !settings.dirConf
             }
         }
-
-        Maui.SectionItem
-        {
-            enabled: Maui.Handy.isLinux
-            label1.text:  i18n("Sync Terminal")
-            label2.text: i18n("Sync the terminal current working directory to the browser location.")
-
-            Switch
-            {
-                checkable: true
-                checked:  settings.syncTerminal
-                onToggled: settings.syncTerminal = !settings.syncTerminal
-            }
-        }
-    }    
+    }
     
     Maui.SectionGroup
     {
         title: i18n("Previews")
-//        description: i18n("Configure the app plugins and behavior.")      
+        //        description: i18n("Configure the app plugins and behavior.")
 
         Maui.SectionItem
         {
@@ -235,7 +221,7 @@ Maui.SettingsDialog
 
                     onTriggered:
                     {
-                    sortSettings.foldersFirst =  !sortSettings.foldersFirst
+                        sortSettings.foldersFirst =  !sortSettings.foldersFirst
 
                     }
                 }
@@ -253,14 +239,12 @@ Maui.SettingsDialog
                 }
             }
         }
-
-
     }
 
     Maui.SectionGroup
     {
         title: i18n("Interface")
-//        description: i18n("Configure the app UI.")
+        //        description: i18n("Configure the app UI.")
 
         Maui.SectionItem
         {
@@ -365,15 +349,28 @@ Maui.SettingsDialog
         }
     }
     
-      Maui.SectionGroup
+    Maui.SectionGroup
     {
         title: i18n("Terminal")
-       description: i18n("Embedded terminal options.")       
-       enabled: Maui.Handy.isLinux
+        description: i18n("Embedded terminal options.")
+        enabled: Maui.Handy.isLinux
 
         Maui.SectionItem
         {
-           label1.text: i18n("Adaptive Color Scheme")
+            label1.text:  i18n("Sync Terminal")
+            label2.text: i18n("Sync the terminal current working directory to the browser location.")
+
+            Switch
+            {
+                checkable: true
+                checked:  settings.syncTerminal
+                onToggled: settings.syncTerminal = !settings.syncTerminal
+            }
+        }
+
+        Maui.SectionItem
+        {
+            label1.text: i18n("Adaptive Color Scheme")
             label2.text: i18n("Colors based on the current style.")
 
             Switch
@@ -393,10 +390,10 @@ Maui.SettingsDialog
             {
                 checkable: true
                 icon.name: "go-next"
-                onToggled: 
+                onToggled:
                 {
                     var component = Qt.createComponent("TerminalColorSchemes.qml");
-    var page = component.createObject(control);
+                    var page = component.createObject(control);
                     control.addPage(page)
                 }
             }
@@ -428,7 +425,7 @@ Maui.SettingsDialog
             Maui.SectionGroup
             {
                 title: i18n("Places")
-//                description: i18n("Toggle sidebar sections.")
+                //                description: i18n("Toggle sidebar sections.")
 
                 Maui.SectionItem
                 {

@@ -60,7 +60,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #endif
 
     app.setOrganizationName(QStringLiteral("Maui"));
-    app.setWindowIcon(QIcon(":/index.png"));
+    app.setWindowIcon(QIcon("://assets/index.png"));
 
     KLocalizedString::setApplicationDomain("index-fm");
 

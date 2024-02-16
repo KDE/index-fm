@@ -33,7 +33,7 @@ Loader
         signal placeClicked (string path, var mouse)
 
         holder.visible: count === 0
-        holder.title: i18n("Bookmarks!")
+        holder.title: i18n("Bookmarks")
         holder.body: i18n("Your bookmarks will be listed here")
 
         Binding on currentIndex

@@ -20,6 +20,7 @@ Maui.Page
     property alias browserList : _browserList
 
     floatingFooter: true
+    headBar.visible: false
 
     footer: Maui.SelectionBar
     {
@@ -70,12 +71,12 @@ Maui.Page
             iconSizeHint: Maui.Style.iconSizes.big
             onToggled: _selectionBar.removeAtIndex(index)
             background: Item {}
-            onClicked: (index) =>
+            onClicked: (mouse) =>
                        {
                            _selectionBar.selectionList.currentIndex = index
                        }
 
-            onPressAndHold: (index) => removeAtIndex(index)
+            onPressAndHold: (mouse) => removeAtIndex(index)
         }
 
         Action
