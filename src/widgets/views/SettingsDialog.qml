@@ -49,7 +49,7 @@ Maui.SettingsDialog
 
         Maui.SectionItem
         {
-            enabled: Maui.Handy.isLinux && !Maui.Handy.islinux
+            enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
             label1.text: i18n("Open in Window")
             label2.text: i18n("Show the file previews in a new window.")
 
