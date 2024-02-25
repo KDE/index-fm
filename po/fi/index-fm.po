@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2022, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-17 01:39+0000\n"
-"PO-Revision-Date: 2023-11-15 18:19+0200\n"
+"PO-Revision-Date: 2024-02-23 19:42+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -690,10 +690,9 @@ msgid "Use overview mode as default on launch."
 msgstr "Käynnistä oletuksena yleisnäkymään."
 
 #: src/widgets/views/SettingsDialog.qml:355
-#, fuzzy, kde-format
-#| msgid "Embedded Terminal"
+#, kde-format
 msgid "Embedded terminal options."
-msgstr "Upotettu pääte"
+msgstr "Upotetun päätteen asetukset"
 
 #: src/widgets/views/SettingsDialog.qml:360
 #, kde-format
@@ -708,22 +707,22 @@ msgstr "Tahdista päätteen työkansio ja selaimen sijainti."
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Mukautuva väriteema"
 
 #: src/widgets/views/SettingsDialog.qml:374
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Nykyiseen tyyliin perustuvat värit."
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Väriteema"
 
 #: src/widgets/views/SettingsDialog.qml:386
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Vaihda päätteen väriteemaa."
 
 #: src/widgets/views/SettingsDialog.qml:405
 #: src/widgets/views/SettingsDialog.qml:432
