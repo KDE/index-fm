@@ -1,0 +1,811 @@
+# translation of index-fm.pot to Esperanto
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the index-fm package.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-02-17 01:39+0000\n"
+"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/main.cpp:68
+#, kde-format
+msgid "Index"
+msgstr "Indekso"
+
+#: src/main.cpp:70
+#, kde-format
+msgid "Browse, organize and preview your files."
+msgstr ""
+
+#: src/main.cpp:75 src/main.cpp:76
+#, kde-format
+msgid "Developer"
+msgstr "Ellaboranto"
+
+#: src/main.qml:167 src/widgets/previewer/CompressedPreview.qml:15
+#: src/widgets/views/FileMenu.qml:217
+#, kde-format
+msgid "Extract"
+msgstr "Ekstrakti"
+
+#: src/main.qml:168
+#, kde-format
+msgid ""
+"Extract the content of the compressed file into a new or existing "
+"subdirectory or inside the current directory."
+msgstr ""
+
+#: src/main.qml:185
+#, kde-format
+msgid "Compress %1 file"
+msgid_plural "Compress %1 files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/main.qml:186
+#, kde-format
+msgid "Compress selected files into a new file."
+msgstr ""
+
+#: src/main.qml:192
+#, kde-format
+msgid "Archive name..."
+msgstr ""
+
+#: src/main.qml:233
+#, kde-format
+msgid "Close"
+msgstr "Fermi"
+
+#: src/main.qml:239 src/widgets/views/BrowserView.qml:126
+#: src/widgets/views/FileMenu.qml:229
+#, kde-format
+msgid "Compress"
+msgstr "Kunpremi"
+
+#: src/main.qml:289 src/widgets/views/HomeView.qml:53
+#, kde-format
+msgid "Open folder"
+msgstr "Malfermi dosierujon"
+
+#: src/main.qml:298
+#, kde-format
+msgid "Extracted"
+msgstr ""
+
+#: src/main.qml:299
+#, kde-format
+msgid "File was extracted"
+msgstr ""
+
+#: src/main.qml:355
+#, kde-format
+msgid "Toggle sidebar"
+msgstr ""
+
+#: src/main.qml:387 src/widgets/views/ActionBar.qml:43
+#: src/widgets/views/SettingsDialog.qml:121
+#, kde-format
+msgid "List"
+msgstr "Listo"
+
+#: src/main.qml:402 src/widgets/views/ActionBar.qml:58
+#: src/widgets/views/SettingsDialog.qml:133
+#, kde-format
+msgid "Grid"
+msgstr "Krado"
+
+#: src/main.qml:435 src/widgets/views/ActionBar.qml:91
+#: src/widgets/views/SettingsDialog.qml:160
+#, kde-format
+msgid "Type"
+msgstr "Tipo"
+
+#: src/main.qml:447 src/widgets/views/ActionBar.qml:103
+#: src/widgets/views/SettingsDialog.qml:172
+#, kde-format
+msgid "Date"
+msgstr "Dato"
+
+#: src/main.qml:460 src/widgets/views/ActionBar.qml:116
+#: src/widgets/views/SettingsDialog.qml:183
+#, kde-format
+msgid "Modified"
+msgstr "Modifita"
+
+#: src/main.qml:473 src/widgets/views/ActionBar.qml:129
+#: src/widgets/views/SettingsDialog.qml:194
+#, kde-format
+msgid "Size"
+msgstr "Grandeco"
+
+#: src/main.qml:486 src/widgets/views/ActionBar.qml:142
+#: src/widgets/views/SettingsDialog.qml:205
+#, kde-format
+msgid "Name"
+msgstr "Nomo"
+
+#: src/main.qml:512 src/widgets/views/ActionBar.qml:168
+#, kde-format
+msgid "Paste"
+msgstr "Alglui"
+
+#: src/main.qml:521 src/widgets/views/ActionBar.qml:177
+#: src/widgets/views/ShortcutsDialog.qml:168
+#, kde-format
+msgid "Select All"
+msgstr "Elekti Ĉion"
+
+#: src/main.qml:528 src/widgets/views/ActionBar.qml:184
+#, kde-format
+msgid "New Item"
+msgstr "Nova ero"
+
+#: src/main.qml:541 src/widgets/views/ActionBar.qml:197
+#, kde-format
+msgid "New tab"
+msgstr "Nova langeto"
+
+#: src/main.qml:548 src/widgets/views/ActionBar.qml:204
+#, kde-format
+msgid "View Hidden"
+msgstr ""
+
+#: src/main.qml:556 src/widgets/views/ActionBar.qml:212
+#, kde-format
+msgid "Split View"
+msgstr "Dividita rigardo"
+
+#: src/main.qml:565 src/widgets/views/ActionBar.qml:221
+#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/ShortcutsDialog.qml:83
+#, kde-format
+msgid "Terminal"
+msgstr "Terminalo"
+
+#: src/main.qml:578 src/widgets/views/ActionBar.qml:234
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Malfermi Terminalon Ĉi tie"
+
+#: src/main.qml:591 src/widgets/views/ActionBar.qml:247
+#: src/widgets/views/ShortcutsDialog.qml:11
+#, kde-format
+msgid "Shortcuts"
+msgstr "Ŝparvojoj"
+
+#: src/main.qml:602 src/widgets/views/ActionBar.qml:258
+#, kde-format
+msgid "Settings"
+msgstr "Agordoj"
+
+#: src/main.qml:609 src/widgets/views/ActionBar.qml:265
+#, kde-format
+msgid "About"
+msgstr "Pri"
+
+#: src/main.qml:667 src/widgets/views/FileMenu.qml:177
+#, kde-format
+msgid "Bookmark"
+msgstr "Legosigno"
+
+#: src/main.qml:674 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:90
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Malfermi en Nova Langeto"
+
+#: src/main.qml:682 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:106
+#, kde-format
+msgid "Open in Split View"
+msgstr "Malfermi en Dividita Vido"
+
+#: src/widgets/previewer/FilePreviewer.qml:119
+#, kde-format
+msgid "Details"
+msgstr "Detaloj"
+
+#: src/widgets/previewer/FilePreviewer.qml:120
+#, kde-format
+msgid "File information"
+msgstr "Dosiera informo"
+
+#: src/widgets/previewer/FileProperties.qml:43
+#, kde-format
+msgid "Permissions"
+msgstr "Permesoj"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:150
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr ""
+
+#: src/widgets/previewer/FileProperties.qml:48
+#: src/widgets/previewer/FileProperties.qml:154
+#, kde-format
+msgid "Owner"
+msgstr "Posedanto"
+
+#: src/widgets/previewer/FileProperties.qml:58
+#: src/widgets/previewer/FileProperties.qml:91
+#: src/widgets/previewer/FileProperties.qml:124
+#, kde-format
+msgid "Read"
+msgstr "Legi"
+
+#: src/widgets/previewer/FileProperties.qml:65
+#: src/widgets/previewer/FileProperties.qml:98
+#: src/widgets/previewer/FileProperties.qml:130
+#, kde-format
+msgid "Write"
+msgstr "Skribi"
+
+#: src/widgets/previewer/FileProperties.qml:72
+#: src/widgets/previewer/FileProperties.qml:106
+#: src/widgets/previewer/FileProperties.qml:136
+#, kde-format
+msgid "Execute"
+msgstr "Lanĉi"
+
+#: src/widgets/previewer/FileProperties.qml:80
+#: src/widgets/previewer/FileProperties.qml:161
+#: src/widgets/views/SettingsDialog.qml:232
+#, kde-format
+msgid "Group"
+msgstr "Grupo"
+
+#: src/widgets/previewer/FileProperties.qml:114
+#, kde-format
+msgid "Everyone"
+msgstr "Ĉiuj"
+
+#: src/widgets/previewer/FileProperties.qml:149
+#, kde-format
+msgid "Ownership"
+msgstr "Posedo"
+
+#: src/widgets/previewer/FileProperties.qml:167
+#, kde-format
+msgid "Users"
+msgstr "Uzantoj"
+
+#: src/widgets/previewer/FileProperties.qml:177
+#, kde-format
+msgid "Groups"
+msgstr "Grupoj"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "Instali"
+
+#: src/widgets/previewer/PreviewerDialog.qml:34
+#: src/widgets/previewer/PreviewerWindow.qml:44
+#, kde-format
+msgid "Previous"
+msgstr "Antaŭa"
+
+#: src/widgets/previewer/PreviewerDialog.qml:41
+#: src/widgets/previewer/PreviewerWindow.qml:51
+#, kde-format
+msgid "Next"
+msgstr "Sekva"
+
+#: src/widgets/previewer/PreviewerDialog.qml:49
+#: src/widgets/previewer/PreviewerWindow.qml:69
+#: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "Malfermi"
+
+#: src/widgets/views/Browser.qml:50
+#, kde-format
+msgid "Edit"
+msgstr "Redakti"
+
+#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
+#, kde-format
+msgid "Remove"
+msgstr "Forigi"
+
+#: src/widgets/views/Browser.qml:76
+#, kde-format
+msgid "Remove '%1'"
+msgstr ""
+
+#: src/widgets/views/Browser.qml:79
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr ""
+
+#: src/widgets/views/Browser.qml:156
+#, kde-format
+msgid "Create new"
+msgstr "Krei novan"
+
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:50
+#, kde-format
+msgid "Copy"
+msgstr "Kopii"
+
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#, kde-format
+msgid "Cut"
+msgstr "Tondi"
+
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/HomeView.qml:47
+#, kde-format
+msgid "Share"
+msgstr "Kunhavigi"
+
+#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tags"
+msgstr "Etikedoj"
+
+#: src/widgets/views/BrowserView.qml:170
+#, kde-format
+msgid "Detach Tab"
+msgstr "Malligi Langeton"
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr ""
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr ""
+
+#: src/widgets/views/FavoritesSection.qml:20
+#, kde-format
+msgid "Favorite files"
+msgstr ""
+
+#: src/widgets/views/FavoritesSection.qml:21
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:41
+#, kde-format
+msgid " items"
+msgstr " eroj"
+
+#: src/widgets/views/FileMenu.qml:72
+#, kde-format
+msgid "Rename"
+msgstr "Alinomi"
+
+#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:188
+#, kde-format
+msgid "Select"
+msgstr "Elekti"
+
+#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
+#, kde-format
+msgid "Open with"
+msgstr "Malfermi kun"
+
+#: src/widgets/views/FileMenu.qml:123
+#, kde-format
+msgid "Preview and Info"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "UnFav"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:137
+#, kde-format
+msgid "Fav"
+msgstr ""
+
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
+#, kde-format
+msgid "Open in New Window"
+msgstr "Malfermi en Nova Fenestro"
+
+#: src/widgets/views/home/SectionGroup.qml:50
+#, kde-format
+msgid "Nothing in here yet."
+msgstr ""
+
+#: src/widgets/views/home/SectionGroup.qml:51
+#, kde-format
+msgid "Check back later."
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:65
+#, kde-format
+msgid "Search for files"
+msgstr "Serĉi dosierojn"
+
+#: src/widgets/views/HomeView.qml:75
+#, kde-format
+msgid "Browser"
+msgstr "Retumilo"
+
+#: src/widgets/views/HomeView.qml:132
+#, kde-format
+msgid "Downloads"
+msgstr "Elŝutoj"
+
+#: src/widgets/views/HomeView.qml:133
+#, kde-format
+msgid "Your most recent downloaded files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:173
+#, kde-format
+msgid "Music"
+msgstr "Muziko"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Your most recent music files"
+msgstr ""
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr "Bildoj"
+
+#: src/widgets/views/HomeView.qml:215
+#, kde-format
+msgid "Your most recent image files"
+msgstr ""
+
+#: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:423
+#: src/widgets/views/SettingsDialog.qml:427
+#, kde-format
+msgid "Places"
+msgstr "Lokoj"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, kde-format
+msgid "Quick access to common places."
+msgstr ""
+
+#: src/widgets/views/PlacesSection.qml:36
+#: src/widgets/views/RecentSection.qml:27
+#, kde-format
+msgid "More"
+msgstr "Pli"
+
+#: src/widgets/views/PlacesSideBar.qml:36
+#: src/widgets/views/SettingsDialog.qml:445
+#, kde-format
+msgid "Bookmarks"
+msgstr "Legosignoj"
+
+#: src/widgets/views/PlacesSideBar.qml:37
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr ""
+
+#: src/widgets/views/PlacesSideBar.qml:243
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr ""
+
+#: src/widgets/views/PlacesSideBar.qml:243
+#, kde-format
+msgid "Mount"
+msgstr "Munti"
+
+#: src/widgets/views/SettingsDialog.qml:15
+#, kde-format
+msgid "Behaviour"
+msgstr "Konduto"
+
+#: src/widgets/views/SettingsDialog.qml:20
+#, kde-format
+msgid "Save Session"
+msgstr "Konservi Seancon"
+
+#: src/widgets/views/SettingsDialog.qml:21
+#, kde-format
+msgid "Save and restore tabs."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:33
+#, kde-format
+msgid "Dynamic Preferences"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:34
+#, kde-format
+msgid ""
+"Save custom preferences per directory, otherwise use the default preferences."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:47
+#, kde-format
+msgid "Previews"
+msgstr "Antaŭrigardoj"
+
+#: src/widgets/views/SettingsDialog.qml:53
+#, kde-format
+msgid "Open in Window"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:54
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Autoplay"
+msgstr "Aŭtomata ludado"
+
+#: src/widgets/views/SettingsDialog.qml:67
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid "Prefer Preview"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:80
+#, kde-format
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:93
+#, kde-format
+msgid "Browsing & Navigation"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:97
+#, kde-format
+msgid "Thumbnails"
+msgstr "Miniaturoj"
+
+#: src/widgets/views/SettingsDialog.qml:98
+#, kde-format
+msgid "Show previews of images, videos and PDF files."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "View Type"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:111
+#, kde-format
+msgid "Default view type."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:148
+#, kde-format
+msgid "Sort"
+msgstr "Ordigi"
+
+#: src/widgets/views/SettingsDialog.qml:149
+#, kde-format
+msgid "Default sorting value."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:218
+#, kde-format
+msgid "Show Folders First"
+msgstr "Montri Dosierujojn Unue"
+
+#: src/widgets/views/SettingsDialog.qml:246
+#, kde-format
+msgid "Interface"
+msgstr "Interfaco"
+
+#: src/widgets/views/SettingsDialog.qml:251
+#, kde-format
+msgid "Grid Items Size"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:252
+#, kde-format
+msgid "Size of the grid view."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:270
+#: src/widgets/views/SettingsDialog.qml:318
+#, kde-format
+msgid "M"
+msgstr "M"
+
+#: src/widgets/views/SettingsDialog.qml:277
+#: src/widgets/views/SettingsDialog.qml:325
+#, kde-format
+msgid "L"
+msgstr "L"
+
+#: src/widgets/views/SettingsDialog.qml:284
+#: src/widgets/views/SettingsDialog.qml:332
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#: src/widgets/views/SettingsDialog.qml:291
+#, kde-format
+msgid "XL"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:300
+#, kde-format
+msgid "List Items Size"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:301
+#, kde-format
+msgid "Size of the list view."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:311
+#, kde-format
+msgid "S"
+msgstr "S"
+
+#: src/widgets/views/SettingsDialog.qml:341
+#, kde-format
+msgid "Overview"
+msgstr "Superrigardo"
+
+#: src/widgets/views/SettingsDialog.qml:342
+#, kde-format
+msgid "Use overview mode as default on launch."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:355
+#, kde-format
+msgid "Embedded terminal options."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:360
+#, kde-format
+msgid "Sync Terminal"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:361
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:373
+#, kde-format
+msgid "Adaptive Color Scheme"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:374
+#, kde-format
+msgid "Colors based on the current style."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:385
+#, kde-format
+msgid "Color Scheme"
+msgstr "Kolorskemo"
+
+#: src/widgets/views/SettingsDialog.qml:386
+#, kde-format
+msgid "Change the color scheme of the terminal."
+msgstr "Ŝanĝi kolorskemon de la terminalo."
+
+#: src/widgets/views/SettingsDialog.qml:405
+#: src/widgets/views/SettingsDialog.qml:432
+#, kde-format
+msgid "Quick places"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:406
+#: src/widgets/views/SettingsDialog.qml:433
+#: src/widgets/views/SettingsDialog.qml:446
+#, kde-format
+msgid "Access to standard locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:461
+#, kde-format
+msgid "Remote"
+msgstr "Malproksima"
+
+#: src/widgets/views/SettingsDialog.qml:462
+#, kde-format
+msgid "Access to network locations."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:478
+#, kde-format
+msgid "Removable"
+msgstr "Forprenebla"
+
+#: src/widgets/views/SettingsDialog.qml:479
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:494
+#, kde-format
+msgid "Devices"
+msgstr "Aparatoj"
+
+#: src/widgets/views/SettingsDialog.qml:495
+#, kde-format
+msgid "Access drives."
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:18
+#, kde-format
+msgid "Navigation"
+msgstr "Navigado"
+
+#: src/widgets/views/ShortcutsDialog.qml:19
+#, kde-format
+msgid "Browser navigation with keyboard."
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:23
+#, kde-format
+msgid "New Tab"
+msgstr "Nova Langeto"
+
+#: src/widgets/views/ShortcutsDialog.qml:43
+#, kde-format
+msgid "Close Tab"
+msgstr "Fermi Langeton"
+
+#: src/widgets/views/ShortcutsDialog.qml:63
+#, kde-format
+msgid "Path Edit"
+msgstr ""
+
+#: src/widgets/views/ShortcutsDialog.qml:98
+#, kde-format
+msgid "Split"
+msgstr "Dividi"
+
+#: src/widgets/views/ShortcutsDialog.qml:113
+#, kde-format
+msgid "New File"
+msgstr "Nova Dosiero"
+
+#: src/widgets/views/ShortcutsDialog.qml:133
+#, kde-format
+msgid "Preview"
+msgstr "Antaŭrigardo"
+
+#: src/widgets/views/ShortcutsDialog.qml:148
+#, kde-format
+msgid "Find Tab"
+msgstr ""
+
+#: src/widgets/views/TagsSection.qml:22
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr ""
