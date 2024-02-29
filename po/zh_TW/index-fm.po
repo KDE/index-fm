@@ -4,13 +4,13 @@
 # This file is distributed under the same license as the index-fm package.
 #
 # Automatically generated, 2022.
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-17 01:39+0000\n"
-"PO-Revision-Date: 2023-12-20 17:38+0900\n"
+"PO-Revision-Date: 2024-02-29 03:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: src/main.cpp:68
 #, kde-format
@@ -686,7 +686,7 @@ msgstr "啟動時使用總覽模式作為預設。"
 #: src/widgets/views/SettingsDialog.qml:355
 #, kde-format
 msgid "Embedded terminal options."
-msgstr ""
+msgstr "嵌入式終端機選項。"
 
 #: src/widgets/views/SettingsDialog.qml:360
 #, kde-format
@@ -701,22 +701,22 @@ msgstr "同步終端機目前工作目錄與瀏覽器的目前位置。"
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "自動調整配色方案"
 
 #: src/widgets/views/SettingsDialog.qml:374
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "基於目前風格的色彩。"
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "配色方案"
 
 #: src/widgets/views/SettingsDialog.qml:386
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "變更終端機的配色方案。"
 
 #: src/widgets/views/SettingsDialog.qml:405
 #: src/widgets/views/SettingsDialog.qml:432
