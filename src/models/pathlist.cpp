@@ -41,6 +41,9 @@ const FMH::MODEL_LIST &PathList::items() const
 
 void PathList::setList()
 {
+  if(m_path.isEmpty())
+    return;
+  
   const auto paths = PathList::splitPath(m_path);
 
   Q_EMIT this->preListChanged();

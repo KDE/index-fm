@@ -147,7 +147,7 @@ Item
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
                 ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
-                implicitHeight: _listView.currentItem ? _listView.currentItem.implicitHeight + topPadding + bottomPadding : 48
+                implicitHeight: _listView.currentItem ? _listView.currentItem.implicitHeight + topPadding + bottomPadding : 32
                 contentHeight: availableHeight
                 leftPadding: 8
 
@@ -168,6 +168,14 @@ Item
                     clip: true
                     spacing: -6
                     currentIndex: _pathList.count - 1
+
+                    Component.onCompleted:
+                    {
+                        console.log("PATHBAR LIST READY",  _pathList.count)
+                        _listView.currentIndex = Qt.binding( ()=>{return  _pathList.count - 1} )
+                        _layout.implicitHeight = Qt.binding( ()=>{return _listView.itemAtIndex( _pathList.count - 1).implicitHeight} )
+                    }
+
                     focus: true
                     interactive: Maui.Handy.isTouch
                     highlightFollowsCurrentItem: true

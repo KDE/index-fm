@@ -615,7 +615,7 @@ Maui.ApplicationWindow
             ]
 
 
-            middleContent: Loader
+            headBar.middleContent: Loader
             {
                 id: _pathBarLoader
 

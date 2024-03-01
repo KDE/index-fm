@@ -7,23 +7,18 @@ import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.3 as FB
 
 
-Maui.ApplicationWindow
+Maui.DialogWindow
 {
     id: control
     readonly property alias previewer : _previewer
-    flags: Maui.CSD.enabled ? (Qt.FramelessWindowHint | Qt.Dialog ): (Qt.Dialog & ~Qt.FramelessWindowHint)
 
     title: _previewer.title
     width: 700
     height: 1000
 
-    Maui.Page
-    {
-        showCSDControls: true
-        anchors.fill: parent
-        title: _previewer.title
-        showTitle: true
-        headBar.forceCenterMiddleContent: isWide
+
+        page.showTitle: true
+        page.headBar.forceCenterMiddleContent: isWide
 
         FilePreviewer
         {
@@ -31,7 +26,7 @@ Maui.ApplicationWindow
             anchors.fill: parent
         }
 
-        footBar.leftContent: Maui.ToolActions
+        page.footBar.leftContent: Maui.ToolActions
         {
             visible: !Maui.Handy.isMobile
             expanded: true
@@ -54,7 +49,7 @@ Maui.ApplicationWindow
             }
         }
 
-        footBar.rightContent: [
+        page.footBar.rightContent: [
             ToolButton
             {
                 icon.name: "love"
@@ -76,12 +71,12 @@ Maui.ApplicationWindow
             }
         ]
 
-        headBar.rightContent: ToolButton
+        page.headBar.rightContent: ToolButton
         {
             icon.name: "documentinfo"
             checkable: true
             checked: _previewer.showInfo
             onClicked: _previewer.toggleInfo()
         }
-    }
+
 }
