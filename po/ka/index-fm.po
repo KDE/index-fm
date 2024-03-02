@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-17 01:39+0000\n"
+"POT-Creation-Date: 2024-03-02 01:36+0000\n"
 "PO-Revision-Date: 2023-11-04 06:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -295,19 +295,19 @@ msgid "Install"
 msgstr "დაყენება"
 
 #: src/widgets/previewer/PreviewerDialog.qml:34
-#: src/widgets/previewer/PreviewerWindow.qml:44
+#: src/widgets/previewer/PreviewerWindow.qml:39
 #, kde-format
 msgid "Previous"
 msgstr "წინა"
 
 #: src/widgets/previewer/PreviewerDialog.qml:41
-#: src/widgets/previewer/PreviewerWindow.qml:51
+#: src/widgets/previewer/PreviewerWindow.qml:46
 #, kde-format
 msgid "Next"
 msgstr "შემდეგი"
 
 #: src/widgets/previewer/PreviewerDialog.qml:49
-#: src/widgets/previewer/PreviewerWindow.qml:69
+#: src/widgets/previewer/PreviewerWindow.qml:64
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
