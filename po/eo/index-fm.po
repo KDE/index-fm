@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-02 01:36+0000\n"
-"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"PO-Revision-Date: 2024-03-24 10:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -26,7 +26,7 @@ msgstr "Indekso"
 #: src/main.cpp:70
 #, kde-format
 msgid "Browse, organize and preview your files."
-msgstr ""
+msgstr "Foliumu, organizu kaj antaŭrigardu viajn dosierojn."
 
 #: src/main.cpp:75 src/main.cpp:76
 #, kde-format
@@ -56,12 +56,12 @@ msgstr[1] ""
 #: src/main.qml:186
 #, kde-format
 msgid "Compress selected files into a new file."
-msgstr ""
+msgstr "Kunpremu elektitajn dosierojn en novan dosieron."
 
 #: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
-msgstr ""
+msgstr "Arkiva nomo..."
 
 #: src/main.qml:233
 #, kde-format
@@ -82,17 +82,17 @@ msgstr "Malfermi dosierujon"
 #: src/main.qml:298
 #, kde-format
 msgid "Extracted"
-msgstr ""
+msgstr "Ekstraktita"
 
 #: src/main.qml:299
 #, kde-format
 msgid "File was extracted"
-msgstr ""
+msgstr "Dosiero estis eltirita"
 
 #: src/main.qml:355
 #, kde-format
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "Baskuligi flankbreton"
 
 #: src/main.qml:387 src/widgets/views/ActionBar.qml:43
 #: src/widgets/views/SettingsDialog.qml:121
@@ -160,7 +160,7 @@ msgstr "Nova langeto"
 #: src/main.qml:548 src/widgets/views/ActionBar.qml:204
 #, kde-format
 msgid "View Hidden"
-msgstr ""
+msgstr "Vido Kaŝita"
 
 #: src/main.qml:556 src/widgets/views/ActionBar.qml:212
 #, kde-format
@@ -231,7 +231,7 @@ msgstr "Permesoj"
 #: src/widgets/previewer/FileProperties.qml:150
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "Agordi dosiero-permesojn por aliri ĉi tiun dosieron"
 
 #: src/widgets/previewer/FileProperties.qml:48
 #: src/widgets/previewer/FileProperties.qml:154
@@ -325,7 +325,7 @@ msgstr "Forigi"
 #: src/widgets/views/Browser.qml:76
 #, kde-format
 msgid "Remove '%1'"
-msgstr ""
+msgstr "Forigi '%1'"
 
 #: src/widgets/views/Browser.qml:79
 #, kde-format
@@ -368,22 +368,22 @@ msgstr "Malligi Langeton"
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
 msgid "Devices and Remote"
-msgstr ""
+msgstr "Aparatoj kaj Remote"
 
 #: src/widgets/views/DisksSection.qml:19
 #, kde-format
 msgid "Remote locations and devices like disks, phones and cameras"
-msgstr ""
+msgstr "Foraj lokoj kaj aparatoj kiel diskoj, telefonoj kaj fotiloj"
 
 #: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
-msgstr ""
+msgstr "Plej ŝatataj dosieroj"
 
 #: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
-msgstr ""
+msgstr "Viaj dosieroj markitaj kiel plej ŝatataj"
 
 #: src/widgets/views/FileMenu.qml:41
 #, kde-format
@@ -408,17 +408,17 @@ msgstr "Malfermi kun"
 #: src/widgets/views/FileMenu.qml:123
 #, kde-format
 msgid "Preview and Info"
-msgstr ""
+msgstr "Antaŭrigardo kaj Informoj"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
 msgid "UnFav"
-msgstr ""
+msgstr "UnFav"
 
 #: src/widgets/views/FileMenu.qml:137
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Fav"
 
 #: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
@@ -428,12 +428,12 @@ msgstr "Malfermi en Nova Fenestro"
 #: src/widgets/views/home/SectionGroup.qml:50
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Nenio ĉi tie ankoraŭ."
 
 #: src/widgets/views/home/SectionGroup.qml:51
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Kontrolu poste."
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
@@ -453,7 +453,7 @@ msgstr "Elŝutoj"
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr ""
+msgstr "Viaj plej lastatempaj elŝutitaj dosieroj"
 
 #: src/widgets/views/HomeView.qml:173
 #, kde-format
@@ -463,7 +463,7 @@ msgstr "Muziko"
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Viaj plej lastatempaj muzikdosieroj"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
@@ -473,7 +473,7 @@ msgstr "Bildoj"
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr ""
+msgstr "Viaj plej lastatempaj bilddosieroj"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:423
@@ -485,7 +485,7 @@ msgstr "Lokoj"
 #: src/widgets/views/PlacesSection.qml:20
 #, kde-format
 msgid "Quick access to common places."
-msgstr ""
+msgstr "Rapida aliro al komunaj lokoj."
 
 #: src/widgets/views/PlacesSection.qml:36
 #: src/widgets/views/RecentSection.qml:27
@@ -502,7 +502,7 @@ msgstr "Legosignoj"
 #: src/widgets/views/PlacesSideBar.qml:37
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr ""
+msgstr "Viaj legosignoj estos listigitaj ĉi tie"
 
 #: src/widgets/views/PlacesSideBar.qml:243
 #, kde-format
@@ -529,12 +529,12 @@ msgstr "Konservi Seancon"
 #: src/widgets/views/SettingsDialog.qml:21
 #, kde-format
 msgid "Save and restore tabs."
-msgstr ""
+msgstr "Konservi kaj restarigi langetojn."
 
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dinamikaj Preferoj"
 
 #: src/widgets/views/SettingsDialog.qml:34
 #, kde-format
@@ -550,12 +550,12 @@ msgstr "Antaŭrigardoj"
 #: src/widgets/views/SettingsDialog.qml:53
 #, kde-format
 msgid "Open in Window"
-msgstr ""
+msgstr "Malfermi en Fenestro"
 
 #: src/widgets/views/SettingsDialog.qml:54
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Montri la dosierajn antaŭrigardojn en nova fenestro."
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
@@ -565,12 +565,12 @@ msgstr "Aŭtomata ludado"
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Aŭtomate komenci ludi aŭd- kaj film-dosierajn antaŭprezentojn."
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid "Prefer Preview"
-msgstr ""
+msgstr "Preferi Antaŭrigardon"
 
 #: src/widgets/views/SettingsDialog.qml:80
 #, kde-format
@@ -582,7 +582,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:93
 #, kde-format
 msgid "Browsing & Navigation"
-msgstr ""
+msgstr "Foliumado kaj Navigado"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
@@ -592,17 +592,17 @@ msgstr "Miniaturoj"
 #: src/widgets/views/SettingsDialog.qml:98
 #, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr ""
+msgstr "Montri antaŭrigardojn de bildoj, filmetoj kaj PDF-dosieroj."
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
 msgid "View Type"
-msgstr ""
+msgstr "Vido-Tipo"
 
 #: src/widgets/views/SettingsDialog.qml:111
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Defaŭlta vidotipo."
 
 #: src/widgets/views/SettingsDialog.qml:148
 #, kde-format
@@ -612,7 +612,7 @@ msgstr "Ordigi"
 #: src/widgets/views/SettingsDialog.qml:149
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Defaŭlta ordiga valoro."
 
 #: src/widgets/views/SettingsDialog.qml:218
 #, kde-format
@@ -627,12 +627,12 @@ msgstr "Interfaco"
 #: src/widgets/views/SettingsDialog.qml:251
 #, kde-format
 msgid "Grid Items Size"
-msgstr ""
+msgstr "Krado Eroj Grandeco"
 
 #: src/widgets/views/SettingsDialog.qml:252
 #, kde-format
 msgid "Size of the grid view."
-msgstr ""
+msgstr "Grandeco de la kradvido."
 
 #: src/widgets/views/SettingsDialog.qml:270
 #: src/widgets/views/SettingsDialog.qml:318
@@ -655,17 +655,17 @@ msgstr "X"
 #: src/widgets/views/SettingsDialog.qml:291
 #, kde-format
 msgid "XL"
-msgstr ""
+msgstr "XL"
 
 #: src/widgets/views/SettingsDialog.qml:300
 #, kde-format
 msgid "List Items Size"
-msgstr ""
+msgstr "Listo de Eroj Grandeco"
 
 #: src/widgets/views/SettingsDialog.qml:301
 #, kde-format
 msgid "Size of the list view."
-msgstr ""
+msgstr "Grandeco de la listvido."
 
 #: src/widgets/views/SettingsDialog.qml:311
 #, kde-format
@@ -680,32 +680,33 @@ msgstr "Superrigardo"
 #: src/widgets/views/SettingsDialog.qml:342
 #, kde-format
 msgid "Use overview mode as default on launch."
-msgstr ""
+msgstr "Uzi superrigardan reĝimon kiel defaŭltan ĉe lanĉo."
 
 #: src/widgets/views/SettingsDialog.qml:355
 #, kde-format
 msgid "Embedded terminal options."
-msgstr ""
+msgstr "Enkonstruitaj terminalaj opcioj."
 
 #: src/widgets/views/SettingsDialog.qml:360
 #, kde-format
 msgid "Sync Terminal"
-msgstr ""
+msgstr "Sinkronigi Terminalon"
 
 #: src/widgets/views/SettingsDialog.qml:361
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
+"Sinkronigi la aktualan labordosierujon de la fina stacio al la retumila loko."
 
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Adapta Kolorskemo"
 
 #: src/widgets/views/SettingsDialog.qml:374
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Koloroj bazitaj sur la nuna stilo."
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
@@ -721,14 +722,14 @@ msgstr "Ŝanĝi kolorskemon de la terminalo."
 #: src/widgets/views/SettingsDialog.qml:432
 #, kde-format
 msgid "Quick places"
-msgstr ""
+msgstr "Rapidaj lokoj"
 
 #: src/widgets/views/SettingsDialog.qml:406
 #: src/widgets/views/SettingsDialog.qml:433
 #: src/widgets/views/SettingsDialog.qml:446
 #, kde-format
 msgid "Access to standard locations."
-msgstr ""
+msgstr "Aliro al normaj lokoj."
 
 #: src/widgets/views/SettingsDialog.qml:461
 #, kde-format
@@ -738,7 +739,7 @@ msgstr "Malproksima"
 #: src/widgets/views/SettingsDialog.qml:462
 #, kde-format
 msgid "Access to network locations."
-msgstr ""
+msgstr "Aliro al retlokoj."
 
 #: src/widgets/views/SettingsDialog.qml:478
 #, kde-format
@@ -748,7 +749,7 @@ msgstr "Forprenebla"
 #: src/widgets/views/SettingsDialog.qml:479
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr ""
+msgstr "Aliro al USB-memoroj kaj SD-Kartoj."
 
 #: src/widgets/views/SettingsDialog.qml:494
 #, kde-format
@@ -758,7 +759,7 @@ msgstr "Aparatoj"
 #: src/widgets/views/SettingsDialog.qml:495
 #, kde-format
 msgid "Access drives."
-msgstr ""
+msgstr "Aliri stiradojn."
 
 #: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
@@ -768,7 +769,7 @@ msgstr "Navigado"
 #: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
 msgid "Browser navigation with keyboard."
-msgstr ""
+msgstr "Retumila navigado kun klavaro."
 
 #: src/widgets/views/ShortcutsDialog.qml:23
 #, kde-format
@@ -783,7 +784,7 @@ msgstr "Fermi Langeton"
 #: src/widgets/views/ShortcutsDialog.qml:63
 #, kde-format
 msgid "Path Edit"
-msgstr ""
+msgstr "Vojo Redakti"
 
 #: src/widgets/views/ShortcutsDialog.qml:98
 #, kde-format
@@ -803,9 +804,9 @@ msgstr "Antaŭrigardo"
 #: src/widgets/views/ShortcutsDialog.qml:148
 #, kde-format
 msgid "Find Tab"
-msgstr ""
+msgstr "Trovi Tab"
 
 #: src/widgets/views/TagsSection.qml:22
 #, kde-format
 msgid "Tagged files for quick access"
-msgstr ""
+msgstr "Etikeditaj dosieroj por rapida aliro"
