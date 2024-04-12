@@ -1,7 +1,7 @@
 #include "recentfilesmodel.h"
 
-#include <MauiKit3/FileBrowsing/fileloader.h>
-#include <MauiKit3/FileBrowsing/fmstatic.h>
+#include <MauiKit4/FileBrowsing/fileloader.h>
+#include <MauiKit4/FileBrowsing/fmstatic.h>
 
 #include <QFileSystemWatcher>
 #include <QDebug>

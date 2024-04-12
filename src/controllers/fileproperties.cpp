@@ -27,7 +27,7 @@ void FileProperties::setUrl(const QUrl &newUrl)
   if (m_url == newUrl)
     return;
   m_url = newUrl;
-  emit urlChanged();
+  Q_EMIT urlChanged();
 }
 
 bool Permission::checkPermission(const QUrl &url, const Permission::UserType &user, const Permission::PermissionType &type)
@@ -176,8 +176,8 @@ void FileProperties::setData()
   m_group = file.group ();
   m_owner = file.owner ();
 
-  emit groupChanged ();
-  emit ownerChanged ();
+  Q_EMIT groupChanged ();
+  Q_EMIT ownerChanged ();
 
 
   m_users = KUser::allUserNames (MAXENTRIES);
@@ -186,8 +186,8 @@ void FileProperties::setData()
   m_users.sort();
   m_groups.sort();
 
-  emit groupsChanged ();
-  emit usersChanged ();
+  Q_EMIT groupsChanged ();
+  Q_EMIT usersChanged ();
 }
 
 const QString &FileProperties::group() const
@@ -200,7 +200,7 @@ void FileProperties::setGroup(const QString &newGroup)
   if (m_group == newGroup)
     return;
   m_group = newGroup;
-  emit groupChanged();
+  Q_EMIT groupChanged();
 }
 
 const QStringList &FileProperties::groups() const
@@ -218,7 +218,7 @@ void FileProperties::setOwner(const QString &newOwner)
   if (m_owner == newOwner)
     return;
   m_owner = newOwner;
-  emit ownerChanged();
+  Q_EMIT ownerChanged();
 }
 
 const QStringList &FileProperties::users() const
@@ -249,7 +249,7 @@ void Permission::setUrl(const QUrl &newUrl)
   if (m_url == newUrl)
     return;
   m_url = newUrl;
-  emit urlChanged();
+  Q_EMIT urlChanged();
 }
 
 Permission::PermissionType Permission::type() const
@@ -262,7 +262,7 @@ void Permission::setType(PermissionType newType)
   if (m_type == newType)
     return;
   m_type = newType;
-  emit typeChanged();
+  Q_EMIT typeChanged();
 }
 
 Permission::UserType Permission::user() const
@@ -275,7 +275,7 @@ void Permission::setUser(UserType newUser)
   if (m_user == newUser)
     return;
   m_user = newUser;
-  emit userChanged();
+  Q_EMIT userChanged();
 }
 
 bool Permission::read() const
@@ -298,7 +298,7 @@ void Permission::setRead(bool newRead)
   qDebug() << "Setting permissions?";
 
   m_read = newRead;
-  emit readChanged();
+  Q_EMIT readChanged();
 
 }
 
@@ -318,7 +318,7 @@ void Permission::setWrite(bool newWrite)
     }
 
   m_write = newWrite;
-  emit writeChanged();
+  Q_EMIT writeChanged();
 }
 
 bool Permission::execute() const
@@ -337,7 +337,7 @@ void Permission::setExecute(bool newExecute)
     }
 
   m_execute = newExecute;
-  emit executeChanged();
+  Q_EMIT executeChanged();
 }
 
 void Permission::setData()
@@ -345,7 +345,7 @@ void Permission::setData()
   m_read = Permission::checkPermission (m_url, m_user, PermissionType::READ);
   m_write = Permission::checkPermission (m_url, m_user, PermissionType::WRITE);
   m_execute = Permission::checkPermission (m_url, m_user, PermissionType::EXECUTE);
-  emit this->readChanged ();
-  emit this->writeChanged ();
-  emit this->executeChanged ();
+  Q_EMIT this->readChanged ();
+  Q_EMIT this->writeChanged ();
+  Q_EMIT this->executeChanged ();
 }
