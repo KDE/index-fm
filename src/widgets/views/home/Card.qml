@@ -3,7 +3,7 @@ import QtQuick.Controls 2.14
 
 import org.mauikit.controls 1.2 as Maui
 
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 
 Maui.ListBrowserDelegate
 {

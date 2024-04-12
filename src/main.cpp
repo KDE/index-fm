@@ -10,21 +10,21 @@
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
-#include <MauiKit3/Core/mauiandroid.h>
+#include <MauiKit4/Core/mauiandroid.h>
 #else
 #include <QApplication>
 #endif
 
 #ifdef Q_OS_MACOS
-#include <MauiKit3/Core/mauimacos.h>
+#include <MauiKit4/Core/mauimacos.h>
 #endif
 
-#include <MauiKit3/Core/mauiapp.h>
-#include <MauiKit3/FileBrowsing/moduleinfo.h>
+#include <MauiKit4/Core/mauiapp.h>
+#include <MauiKit4/FileBrowsing/moduleinfo.h>
 
-#include <KIO/kio_version.h>
+#include <kio_version.h>
 #include <KAboutData>
-#include <KI18n/KLocalizedString>
+#include <KLocalizedString>
 
 #include "../index_version.h"
 
@@ -44,8 +44,6 @@
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
 #ifdef Q_OS_WIN32
     qputenv("QT_MULTIMEDIA_PREFERRED_PLUGINS", "w");

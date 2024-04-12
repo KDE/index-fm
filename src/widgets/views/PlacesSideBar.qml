@@ -266,7 +266,7 @@ Loader
         section.delegate: Maui.LabelDelegate
         {
             width: ListView.view.width
-            label: section
+            text: section
             isSection: true
             //                height: Maui.Style.toolBarHeightAlt
         }

@@ -6,25 +6,25 @@
 #endif
 
 #include <QDebug>
-#include <MauiKit3/FileBrowsing/fmstatic.h>
+#include <MauiKit4/FileBrowsing/fmstatic.h>
 
 DirInfo::DirInfo(QObject *parent) : QObject(parent)
 {
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
-    auto m_free =  KIO::fileSystemFreeSpace (QUrl("file:///"));
-    connect(m_free, &KIO::FileSystemFreeSpaceJob::result, [this, m_free](KJob *, KIO::filesize_t size, KIO::filesize_t available)
-    {
-        qDebug() << "got dir size info FREEE" << size << available;
-
-        m_totalSpace = size;
-        m_avaliableSpace = available;
-
-        Q_EMIT this->avaliableSpaceChanged(m_avaliableSpace);
-        Q_EMIT this->totalSpaceChanged(m_totalSpace);
-
-        m_free->deleteLater();
-
-    });
+    // auto m_free =  KIO::fileSystemFreeSpace (QUrl("file:///"));
+    // connect(m_free, &KIO::FileSystemFreeSpaceJob::result, [this, m_free](KJob *, KIO::filesize_t size, KIO::filesize_t available)
+    // {
+    //     qDebug() << "got dir size info FREEE" << size << available;
+    // 
+    //     m_totalSpace = size;
+    //     m_avaliableSpace = available;
+    // 
+    //     Q_EMIT this->avaliableSpaceChanged(m_avaliableSpace);
+    //     Q_EMIT this->totalSpaceChanged(m_totalSpace);
+    // 
+    //     m_free->deleteLater();
+    // 
+    // });
 #endif
 }
 

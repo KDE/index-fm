@@ -7,7 +7,6 @@
 
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 #include <KTerminalLauncherJob>
-#include <KWindowConfig>
 #endif
 
 #include <QGuiApplication>

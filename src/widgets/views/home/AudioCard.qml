@@ -1,7 +1,7 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.14
+import QtQuick
+import QtQuick.Controls 
 
-import QtMultimedia 5.8
+import QtMultimedia 
 
 Card
 {
@@ -12,6 +12,6 @@ Card
     MediaPlayer
     {
         id: _player
-        autoLoad: true
+        // autoPlay: true
     }
 }

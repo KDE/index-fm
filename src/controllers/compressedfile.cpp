@@ -1,20 +1,18 @@
 #include "compressedfile.h"
 
-#include <KArchive/KTar>
-#include <KArchive/KZip>
-#include <KArchive/kcompressiondevice.h>
-#include <KArchive/kfilterdev.h>
+#include <KTar>
+#include <KZip>
 
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
-#include <KArchive/k7zip.h>
+#include <K7Zip>
 #endif
 
-#include <KArchive/kar.h>
+#include <KAr>
 
 #include <QDirIterator>
 #include <QDebug>
 
-#include <MauiKit3/FileBrowsing/fmstatic.h>
+#include <MauiKit4/FileBrowsing/fmstatic.h>
 
 
 CompressedFile::CompressedFile(QObject *parent)

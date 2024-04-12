@@ -2,8 +2,8 @@
 
 #include <QObject>
 
-#include <MauiKit3/FileBrowsing/fmlist.h>
-#include <MauiKit3/FileBrowsing/fmstatic.h>
+#include <MauiKit4/FileBrowsing/fmlist.h>
+#include <MauiKit4/FileBrowsing/fmstatic.h>
 #include <QQmlParserStatus>
 
 class QSettings;
