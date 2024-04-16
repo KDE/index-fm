@@ -74,6 +74,10 @@
   <summary xml:lang="x-test">xxManage your filesxx</summary>
   <summary xml:lang="zh-CN">管理您的文件</summary>
   <summary xml:lang="zh-TW">管理您的檔案</summary>
+  <developer id="org.mauikit">
+    <name>maui</name>
+    <url>https://mauikit.org/</url>
+  </developer>
   <description>
     <p>Index allows you to navigate your computer and preview multimedia files.</p>
     <p xml:lang="az">İndeks kompyuterinizdə gəzinməyə və multimedia fayllarınıza baxmağa imkan verir.</p>
@@ -114,6 +118,7 @@
   <url type="homepage">https://mauikit.org/</url>
   <url type="bugtracker">https://invent.kde.org/maui/index-fm/-/issues</url>
   <url type="donation">https://www.kde.org/community/donations</url>
+  <url type="vcs-browser">https://invent.kde.org/maui/index-fm</url>
   <screenshots>
     <screenshot type="default">
       <caption>Index file manager</caption>
@@ -157,6 +162,11 @@ https://cdn.kde.org/screenshots/index/index.png
 </image>
     </screenshot>
   </screenshots>
+  <categories>
+    <category>Qt</category>
+    <category>System</category>
+    <category>FileManager</category>
+  </categories>
   <provides>
     <binary>index</binary>
   </provides>
