@@ -153,7 +153,7 @@ Item
                 background: Rectangle
                 {
                     radius: Maui.Style.radiusV
-                    color : Maui.Theme.alternateBackgroundColor
+                    color : _mouseArea.containsMouse ? Maui.Theme.backgroundColor : Maui.Theme.alternateBackgroundColor
                 }
 
                 ListView
@@ -197,8 +197,10 @@ Item
 
                     MouseArea
                     {
-                         z: -1
+                        id: _mouseArea
+                        z: -1
                         anchors.fill: parent
+                        hoverEnabled: true
                         preventStealing: true
                         onClicked:
                         {
