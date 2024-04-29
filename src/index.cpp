@@ -18,8 +18,8 @@
 
 #include <QProcess>
 
-#include <MauiKit3/Core/fmh.h>
-#include <MauiKit3/FileBrowsing/fmstatic.h>
+#include <MauiKit4/Core/fmh.h>
+#include <MauiKit4/FileBrowsing/fmstatic.h>
 
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 #include "indexinterface.h"
