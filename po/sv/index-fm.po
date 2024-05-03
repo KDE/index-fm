@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-02 01:36+0000\n"
-"PO-Revision-Date: 2023-11-06 21:06+0100\n"
+"PO-Revision-Date: 2024-05-02 14:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: src/main.cpp:68
 #, kde-format
@@ -689,10 +689,9 @@ msgid "Use overview mode as default on launch."
 msgstr "Använd överskrivning som förval vid start."
 
 #: src/widgets/views/SettingsDialog.qml:355
-#, fuzzy, kde-format
-#| msgid "Embedded Terminal"
+#, kde-format
 msgid "Embedded terminal options."
-msgstr "Inbäddad terminal"
+msgstr "Inbäddad terminalalternativ."
 
 #: src/widgets/views/SettingsDialog.qml:360
 #, kde-format
@@ -708,22 +707,22 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Adaptivt färgschema"
 
 #: src/widgets/views/SettingsDialog.qml:374
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Färger baserade på nuvarande stil."
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Färgschema"
 
 #: src/widgets/views/SettingsDialog.qml:386
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Ändra terminalens färgschema."
 
 #: src/widgets/views/SettingsDialog.qml:405
 #: src/widgets/views/SettingsDialog.qml:432
