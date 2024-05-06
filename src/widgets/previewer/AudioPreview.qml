@@ -1,10 +1,10 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import QtMultimedia 5.8
+import QtMultimedia
 
-import org.mauikit.controls 1.3 as Maui
+import org.mauikit.controls as Maui
 
 Item
 {
@@ -16,28 +16,25 @@ Item
     {
         id: player
         source: currentUrl
-        autoLoad: true
         autoPlay: appSettings.autoPlayPreviews
-        property string title : player.metaData.title
+        property string title : player.metaData.value(MediaMetaData.Title)
+
+        audioOutput: AudioOutput {}
 
         onTitleChanged:
         {
-            infoModel.append({key:"Title", value: player.metaData.title})
-            infoModel.append({key:"Artist", value: player.metaData.albumArtist})
-            infoModel.append({key:"Album", value: player.metaData.albumTitle})
-            infoModel.append({key:"Author", value: player.metaData.author})
-            infoModel.append({key:"Codec", value: player.metaData.audioCodec})
-            infoModel.append({key:"Copyright", value: player.metaData.copyright})
-            infoModel.append({key:"Duration", value: player.metaData.duration})
-            infoModel.append({key:"Track", value: player.metaData.trackNumber})
-            infoModel.append({key:"Year", value: player.metaData.year})
-            infoModel.append({key:"Rating", value: player.metaData.userRating})
-            infoModel.append({key:"Lyrics", value: player.metaData.lyrics})
-            infoModel.append({key:"Genre", value: player.metaData.genre})
-            infoModel.append({key:"Artwork", value: player.metaData.coverArtUrlLarge})
+            infoModel.append({key:"Title", value: player.metaData.value(MediaMetaData.Title)})
+            infoModel.append({key:"Artist", value: player.metaData.value(MediaMetaData.AlbumArtist)})
+            infoModel.append({key:"Album", value: player.metaData.value(MediaMetaData.AlbumTitle)})
+            infoModel.append({key:"Author", value: player.metaData.value(MediaMetaData.Author)})
+            infoModel.append({key:"Codec", value: player.metaData.value(MediaMetaData.AudioCodec)})
+            infoModel.append({key:"Copyright", value: player.metaData.value(MediaMetaData.Copyright)})
+            infoModel.append({key:"Duration", value: player.metaData.value(MediaMetaData.Duration)})
+            infoModel.append({key:"Track", value: player.metaData.value(MediaMetaData.TrackNumber)})
+            infoModel.append({key:"Year", value: player.metaData.value(MediaMetaData.Date)})
+            infoModel.append({key:"Genre", value: player.metaData.value(MediaMetaData.Genre)})
         }
     }
-
 
     ColumnLayout
     {
@@ -66,38 +63,40 @@ Item
         Maui.ListItemTemplate
         {
             Layout.fillWidth: true
-            label1.text:  player.metaData.title
+            label1.text:  player.metaData.value(MediaMetaData.Title)
             label1.font.weight: Font.DemiBold
             label1.font.pointSize: Maui.Style.fontSizes.big
 
-            label2.text: player.metaData.albumArtist || player.metaData.albumTitle
+            label2.text: player.metaData.value(MediaMetaData.AlbumArtist) || player.metaData.value(MediaMetaData.AlbumTitle)
         }
 
         RowLayout
         {
-                        Layout.fillWidth: true
-
-                        ToolButton
-                        {
-                            icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
-                            onClicked: 
-                            {
-                                if(player.playbackState === MediaPlayer.PlayingState)
-                                    player.pause()
-                                    else
-                                        player.play()
-                            }
-                        }
-        Slider
-        {
-            id: _slider
             Layout.fillWidth: true
-            orientation: Qt.Horizontal
-            from: 0
-            to: 1000
-            value: (1000 * player.position) / player.duration
-            onMoved: player.seek((_slider.value / 1000) * player.duration)
-        }
+
+            ToolButton
+            {
+                icon.name: player.playbackState === MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
+                onClicked:
+                {
+                    if(player.playbackState === MediaPlayer.PlayingState)
+                        player.pause()
+                    else
+                        player.play()
+                }
+            }
+
+            Slider
+            {
+                id: _slider
+                Layout.fillWidth: true
+                orientation: Qt.Horizontal
+                enabled: player.seekable
+                from: 0
+                to: 1000
+                value: (1000 * player.position) / player.duration
+                onMoved: player.position = ((_slider.value / 1000) * player.duration)
+            }
         }
     }
 }

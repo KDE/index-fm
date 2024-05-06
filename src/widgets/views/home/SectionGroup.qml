@@ -4,15 +4,16 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import QtQuick 2.14
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.mauikit.controls 1.3 as Maui
+import org.mauikit.controls as Maui
 
 Maui.SectionGroup
 {
     id: control
+
     Maui.Theme.colorSet: Maui.Theme.Window
     Maui.Theme.inherit: false
 
@@ -36,10 +37,12 @@ Maui.SectionGroup
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
         horizontalScrollBarPolicy:  ScrollBar.AsNeeded
         currentIndex: -1
+
         Layout.fillWidth: true
         Layout.preferredHeight: implicitHeight + topPadding + bottomPadding
         Layout.fillHeight: true
-        flickable.flow: GridView.FlowTopToBottom
+
+        // flickable.flow: GridView.FlowTopToBottom
         scrollView.orientation: Qt.Horizontal
 
         itemSize: 220

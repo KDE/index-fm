@@ -1,10 +1,10 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.mauikit.controls 1.3 as Maui
+import org.mauikit.controls as Maui
 
-import org.mauikit.filebrowsing 1.3 as FB
+import org.mauikit.filebrowsing as FB
 
 Item
 {
@@ -28,7 +28,6 @@ Item
 
     readonly property bool ready : list.status.code === FB.PathStatus.READY
 
-
     ListView
     {
         id: _listView
@@ -38,15 +37,15 @@ Item
         focus: true
         spacing: 0
 
-model: Maui.BaseModel
-{
-    id: _model
-    list: FB.FMList
-    {
-        id: _list
+        model: Maui.BaseModel
+        {
+            id: _model
+            list: FB.FMList
+            {
+                id: _list
 
-    }
-}
+            }
+        }
         interactive: Maui.Handy.hasTransientTouchInput
         boundsBehavior: Flickable.StopAtBounds
         boundsMovement: Flickable.StopAtBounds
@@ -70,10 +69,10 @@ model: Maui.BaseModel
 
             readonly property bool isCurrentItem : ListView.isCurrentItem
 
-           property url currentUrl: model.path
-           property var iteminfo : model
+            property url currentUrl: model.path
+            property var iteminfo : model
 
-           readonly property string title: model.label
+            readonly property string title: model.label
 
             Loader
             {
@@ -202,45 +201,45 @@ model: Maui.BaseModel
         }
     }
 
-   function goPrevious()
-   {
-       _listView.decrementCurrentIndex()
-   }
+    function goPrevious()
+    {
+        _listView.decrementCurrentIndex()
+    }
 
-   function goNext()
-   {
-       _listView.incrementCurrentIndex()
-   }
+    function goNext()
+    {
+        _listView.incrementCurrentIndex()
+    }
 
-   function toggleInfo()
-   {
-       control.showInfo = !control.showInfo
-   }
+    function toggleInfo()
+    {
+        control.showInfo = !control.showInfo
+    }
 
-   property int _index
+    property int _index
 
-   function setData(model, index)
-   {
-       control.list.path = model.list.path
-       control.list.hidden = model.list.hidden
-       control.list.onlyDirs = model.list.onlyDirs
-       control.list.foldersFirst = model.list.foldersFirst
-       control.list.filters = model.list.filters
-       control.list.filterType = model.list.filterType
-       control.list.sortBy = model.list.sortBy
-       control._index = index
-_timer.start()
+    function setData(model, index)
+    {
+        control.list.path = model.list.path
+        control.list.hidden = model.list.hidden
+        control.list.onlyDirs = model.list.onlyDirs
+        control.list.foldersFirst = model.list.foldersFirst
+        control.list.filters = model.list.filters
+        control.list.filterType = model.list.filterType
+        control.list.sortBy = model.list.sortBy
+        control._index = index
+        _timer.start()
 
-}
+    }
 
-Timer
-{
- id: _timer
-interval: 1500
-triggeredOnStart : false
- onTriggered:
- {
-     control.currentIndex= control._index
- }
-}
+    Timer
+    {
+        id: _timer
+        interval: 1500
+        triggeredOnStart : false
+        onTriggered:
+        {
+            control.currentIndex= control._index
+        }
+    }
 }

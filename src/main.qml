@@ -131,10 +131,10 @@ Maui.ApplicationWindow
             taglist.strict: false
             composerList.strict: false
 
-            onTagsReady:
-            {
-                composerList.updateToUrls(tags)
-            }
+            onTagsReady: (tags) =>
+                         {
+                             composerList.updateToUrls(tags)
+                         }
         }
     }
 
@@ -165,7 +165,7 @@ Maui.ApplicationWindow
             id: _extractDialog
 
             title: i18n("Extract")
-            message: i18n("Extract the content of the compressed file into a new or existing subdirectory or inside the current directory.")
+            message: i18n("Extract the content of the compressed file into a new or existing subdirectory, or in the current directory.")
 
             onFinished:
             {
@@ -413,7 +413,6 @@ Maui.ApplicationWindow
                         }
                     }
                 }
-
             ]
 
             rightContent: [
@@ -484,7 +483,7 @@ Maui.ApplicationWindow
                     MenuItem
                     {
                         text: i18n("Name")
-                        checked:  currentBrowser.sortBy === FB.FMList.LABEL
+                        checked: currentBrowser.sortBy === FB.FMList.LABEL
                         checkable: true
                         autoExclusive: true
 
@@ -498,6 +497,7 @@ Maui.ApplicationWindow
                 Loader
                 {
                     id: _mainMenuLoader
+
                     asynchronous: true
                     sourceComponent: Maui.ToolButtonMenu
                     {
@@ -534,7 +534,6 @@ Maui.ApplicationWindow
 
                         Maui.MenuItemActionRow
                         {
-
                             Action
                             {
                                 icon.name: "tab-new"
@@ -632,10 +631,12 @@ Maui.ApplicationWindow
                     PathBar
                     {
                         id: _pathBar
+
                         anchors.centerIn: parent
                         width: Math.min(parent.width, implicitWidth)
 
                         url: currentBrowser.currentPath
+
                         onPathChanged: (path) => currentBrowser.openFolder(path)
 
                         onHomeClicked: currentBrowser.openFolder(FB.FM.homePath())
@@ -683,7 +684,6 @@ Maui.ApplicationWindow
                                 icon.name: "view-split-left-right"
                                 onTriggered: currentTab.split(_pathBarmenu.path, Qt.Horizontal)
                             }
-
                         }
                     }
                 }
@@ -799,7 +799,7 @@ Maui.ApplicationWindow
     }
 
     /**
-     * For this to work the implementation needs to have passed a selectionBar
+     * Add the file urls to the selection
      **/
     function openWith(urls)
     {
@@ -864,6 +864,9 @@ Maui.ApplicationWindow
         currentTabIndex = settings.lastTabIndex
     }
 
+    /**
+      * Remove or add a sidebar section
+      */
     function toggleSection(section)
     {
         placesSidebar.list.toggleSection(section)
@@ -875,13 +878,19 @@ Maui.ApplicationWindow
         return _browserView.isUrlOpen(url);
     }
 
-        function openMainMenu()
-        {
-            _mainMenuLoader.item.open()
-        }
+    /**
+      * Open menu in the menu button position
+     */
+    function openMainMenu()
+    {
+        _mainMenuLoader.item.open()
+    }
 
-            function popupMainMenu()
-            {
-                _mainMenuLoader.item.popup()
-            }
-            }
+    /**
+      * Open menu in  the cursor position
+      */
+    function popupMainMenu()
+    {
+        _mainMenuLoader.item.popup()
+    }
+}
