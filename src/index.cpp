@@ -114,7 +114,7 @@ bool IndexInstance::attachToExistingInstance(const QList<QUrl>& inputUrls, bool 
         }
     }
 
-    for (const auto& interface: qAsConst(dolphinInterfaces))
+    for (const auto& interface: std::as_const(dolphinInterfaces))
     {
         auto reply = openFiles ? interface.first->openFiles(newUrls, splitView) : interface.first->openDirectories(newUrls, splitView);
         reply.waitForFinished();
@@ -165,12 +165,12 @@ Index::Index(QObject *parent)
 #endif
 }
 
-void Index::openDirectories(const QStringList &dirs, bool splitView)
+void Index::openDirectories(const QStringList &dirs, bool)
 {
     openPaths(dirs);
 }
 
-void Index::openFiles(const QStringList &files, bool splitView)
+void Index::openFiles(const QStringList &files, bool)
 {
     openPaths(files);
 }
@@ -205,12 +205,12 @@ void Index::pasteIntoFolder()
 
 }
 
-void Index::changeUrl(const QUrl &url)
+void Index::changeUrl(const QUrl &)
 {
 
 }
 
-void Index::slotTerminalDirectoryChanged(const QUrl &url)
+void Index::slotTerminalDirectoryChanged(const QUrl &)
 {
 
 }
@@ -220,12 +220,12 @@ void Index::quit()
     QCoreApplication::quit();
 }
 
-void Index::openNewTab(const QUrl &url)
+void Index::openNewTab(const QUrl &)
 {
 
 }
 
-void Index::openNewTabAndActivate(const QUrl &url)
+void Index::openNewTabAndActivate(const QUrl &)
 {
 
 }

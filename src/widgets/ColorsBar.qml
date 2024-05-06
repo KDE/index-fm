@@ -1,6 +1,6 @@
-import QtQuick 2.14
+import QtQuick
 
-import org.mauikit.controls 1.3 as Maui
+import org.mauikit.controls as Maui
 
 Maui.ColorsRow
 {

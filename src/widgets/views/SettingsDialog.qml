@@ -1,10 +1,9 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.mauikit.controls 1.3 as Maui
-import org.mauikit.filebrowsing 1.3 as FB
-
+import org.mauikit.controls as Maui
+import org.mauikit.filebrowsing as FB
 
 Maui.SettingsDialog
 {
@@ -15,7 +14,7 @@ Maui.SettingsDialog
         title: i18n("Behaviour")
         //        description: i18n("Configure the app plugins and behavior.")
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text:  i18n("Save Session")
             label2.text: i18n("Save and restore tabs.")
@@ -28,7 +27,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text:  i18n("Dynamic Preferences")
             label2.text: i18n("Save custom preferences per directory, otherwise use the default preferences.")
@@ -47,7 +46,7 @@ Maui.SettingsDialog
         title: i18n("Previews")
         //        description: i18n("Configure the app plugins and behavior.")
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             enabled: Maui.Handy.isLinux && !Maui.Handy.isMobile
             label1.text: i18n("Open in Window")
@@ -61,7 +60,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text:  i18n("Autoplay")
             label2.text: i18n("Auto start playing audio and video file previews.")
@@ -74,7 +73,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text:  i18n("Prefer Preview")
             label2.text: i18n("Open files in a preview mode instead of opening them in a dedicated application.")
@@ -92,7 +91,7 @@ Maui.SettingsDialog
     {
         title: i18n("Browsing & Navigation")
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text: i18n("Thumbnails")
             label2.text: i18n("Show previews of images, videos and PDF files.")
@@ -105,7 +104,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text:  i18n("View Type")
             label2.text: i18n("Default view type.")
@@ -143,7 +142,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text:  i18n("Sort")
             label2.text: i18n("Default sorting value.")
@@ -246,7 +245,7 @@ Maui.SettingsDialog
         title: i18n("Interface")
         //        description: i18n("Configure the app UI.")
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text: i18n("Grid Items Size")
             label2.text: i18n("Size of the grid view.")
@@ -295,7 +294,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text: i18n("List Items Size")
             label2.text: i18n("Size of the list view.")
@@ -336,7 +335,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text: i18n("Overview")
             label2.text: i18n("Use overview mode as default on launch.")
@@ -355,7 +354,7 @@ Maui.SettingsDialog
         description: i18n("Embedded terminal options.")
         enabled: Maui.Handy.isLinux
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text:  i18n("Sync Terminal")
             label2.text: i18n("Sync the terminal current working directory to the browser location.")
@@ -368,7 +367,7 @@ Maui.SettingsDialog
             }
         }
 
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text: i18n("Adaptive Color Scheme")
             label2.text: i18n("Colors based on the current style.")
@@ -380,7 +379,7 @@ Maui.SettingsDialog
             }
         }
         
-        Maui.SectionItem
+        Maui.FlexSectionItem
         {
             label1.text: i18n("Color Scheme")
             label2.text: i18n("Change the color scheme of the terminal.")
@@ -400,7 +399,7 @@ Maui.SettingsDialog
         }
     }
 
-    Maui.SectionItem
+    Maui.FlexSectionItem
     {
         label1.text: i18n("Quick places")
         label2.text: i18n("Access to standard locations.")
@@ -427,7 +426,7 @@ Maui.SettingsDialog
                 title: i18n("Places")
                 //                description: i18n("Toggle sidebar sections.")
 
-                Maui.SectionItem
+                Maui.FlexSectionItem
                 {
                     label1.text: i18n("Quick places")
                     label2.text: i18n("Access to standard locations.")
@@ -440,7 +439,7 @@ Maui.SettingsDialog
                     }
                 }
 
-                Maui.SectionItem
+                Maui.FlexSectionItem
                 {
                     label1.text: i18n("Bookmarks")
                     label2.text: i18n("Access to standard locations.")
@@ -456,7 +455,7 @@ Maui.SettingsDialog
                     }
                 }
 
-                Maui.SectionItem
+                Maui.FlexSectionItem
                 {
                     label1.text: i18n("Remote")
                     label2.text: i18n("Access to network locations.")
@@ -470,10 +469,9 @@ Maui.SettingsDialog
                             toggleSection(FB.FMList.REMOTE_PATH)
                         }
                     }
-
                 }
 
-                Maui.SectionItem
+                Maui.FlexSectionItem
                 {
                     label1.text: i18n("Removable")
                     label2.text: i18n("Access to USB sticks and SD Cards.")
@@ -489,7 +487,7 @@ Maui.SettingsDialog
                     }
                 }
 
-                Maui.SectionItem
+                Maui.FlexSectionItem
                 {
                     label1.text: i18n("Devices")
                     label2.text: i18n("Access drives.")

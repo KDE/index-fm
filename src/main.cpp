@@ -85,7 +85,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     KAboutData::setApplicationData(about);
     MauiApp::instance()->setIconName("qrc:/assets/index.png");
 
-    QCommandLineOption newWindowOption(QStringList() << "n" << "new", "Open url in a new window.", "url");
+    QCommandLineOption newWindowOption(QStringList() << "n" << "new", i18n("Open url in a new window."), "url");
 
     QCommandLineParser parser;
 
@@ -103,7 +103,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         for(const auto &path : args)
             paths << QUrl::fromUserInput(path).toString();
     }
-
 
 #if (defined Q_OS_LINUX || defined Q_OS_FREEBSD) && !defined Q_OS_ANDROID
 

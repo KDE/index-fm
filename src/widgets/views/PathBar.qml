@@ -17,13 +17,13 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-import QtQuick 2.14
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.mauikit.controls 1.3 as Maui
+import org.mauikit.controls as Maui
 
-import org.maui.index 1.0 as Index
+import org.maui.index as Index
 
 Item
 {
@@ -252,6 +252,5 @@ Item
     function showEntryBar()
     {
         control.pathEntry = !control.pathEntry
-
     }
 }

@@ -13,7 +13,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
@@ -37,16 +36,15 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 if(UNIX AND NOT APPLE AND NOT ANDROID)
     include(KDEInstallDirs)
     include(KDECMakeSettings)
-    include(ECMInstallIcons)
-    include(ECMAddAppIcon)
 endif()
 
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
+
 include(ECMSetupVersion)
 include(ECMSourceVersionControl)
+include(ECMFindQmlModule)
 include(FeatureSummary)
-include(ECMQMLModules)
 
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick QuickControls2)
 find_package(KF6 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons Archive)
@@ -56,6 +54,8 @@ if(ANDROID)
 elseif(UNIX)
     find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS DBus)
     find_package(KF6 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS KIO)
+
+    ecm_find_qmlmodule(org.mauikit.terminal)
 endif()
 
 if(UNIX OR WIN32 OR APPLE AND NOT ANDROID)
@@ -64,12 +64,12 @@ endif()
 
 find_package(MauiKit4 ${REQUIRED_MAUI_VERSION} REQUIRED COMPONENTS FileBrowsing)
 
-#ecm_find_qmlmodule(org.mauikit.filebrowsing)
-#ecm_find_qmlmodule(org.mauikit.controls)
-#ecm_find_qmlmodule(org.mauikit.texteditor 1.0)
-#ecm_find_qmlmodule(QMLTermWidget 1.0)
-#ecm_find_qmlmodule(QtQuick.Shapes 1.0)
-#ecm_find_qmlmodule(org.kde.kirigami 2.10)
+ecm_find_qmlmodule(org.mauikit.controls)
+ecm_find_qmlmodule(org.mauikit.filebrowsing)
+ecm_find_qmlmodule(org.mauikit.documents)
+
+ecm_find_qmlmodule(org.kde.purpose)
+
 
 if(ECM_SOURCE_UNDER_VERSION_CONTROL)
     execute_process(

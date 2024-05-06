@@ -1,12 +1,10 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.14
+import QtQuick
+import QtQuick.Controls
 
-import org.mauikit.controls 1.3 as Maui
-import org.maui.index 1.0 as Index
+import org.mauikit.controls as Maui
+import org.maui.index as Index
 
-import QtQuick.Templates 2.15 as T
-
-T.Control
+Control
 {
     id: control
 
@@ -51,7 +49,7 @@ T.Control
     background: Index.PathArrowBackground
     {
         id: _arrowBG
-        color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : (control.firstOne? "transparent": Maui.Theme.backgroundColor))
+        color: control.checked ? Maui.Theme.highlightColor : (control.hovered ? Maui.Theme.hoverColor : Maui.Theme.backgroundColor)
 
         arrowWidth: 8
     }
@@ -74,7 +72,7 @@ T.Control
         onDoubleClicked: control.doubleClicked()
         onPressAndHold : control.pressAndHold()
 
-        containmentMask:_arrowBG
+        containmentMask: _arrowBG
 
         Label
         {

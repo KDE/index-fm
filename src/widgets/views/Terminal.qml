@@ -4,8 +4,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import org.mauikit.controls 1.0 as Maui
-import org.mauikit.terminal 1.0 as Term
+import org.mauikit.controls as Maui
+import org.mauikit.terminal as Term
 
 Term.Terminal
 {

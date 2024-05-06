@@ -4,15 +4,15 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import QtQuick 2.14
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.mauikit.controls 1.3 as Maui
-import org.mauikit.filebrowsing 1.0 as FB
-import Qt.labs.platform 1.1
+import org.mauikit.controls as Maui
+import org.mauikit.filebrowsing as FB
+import QtCore
 
-import org.maui.index 1.0 as Index
+import org.maui.index as Index
 
 import "home"
 
