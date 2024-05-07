@@ -19,7 +19,7 @@ Term.Terminal
     {
         var str = ""
         for(var i in urls)
-            str = str + urls[i].replace("file://", "")+ " "
+            str = str + String(urls[i]).replace("file://", "")+ " "
 
         control.session.sendText(str)
     }
