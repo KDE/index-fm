@@ -1,8 +1,8 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.13
-import org.mauikit.controls 1.3 as Maui
-import org.maui.index 1.0 as Index
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import org.mauikit.controls as Maui
+import org.maui.index as Index
 
 
 ColumnLayout

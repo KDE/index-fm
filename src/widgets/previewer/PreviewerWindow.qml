@@ -1,10 +1,10 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.mauikit.controls 1.3 as Maui
+import org.mauikit.controls as Maui
 
-import org.mauikit.filebrowsing 1.3 as FB
+import org.mauikit.filebrowsing as FB
 
 
 Maui.DialogWindow
@@ -16,67 +16,66 @@ Maui.DialogWindow
     width: 700
     height: 1000
 
+    page.showTitle: true
+    page.headBar.forceCenterMiddleContent: isWide
 
-        page.showTitle: true
-        page.headBar.forceCenterMiddleContent: isWide
+    FilePreviewer
+    {
+        id: _previewer
+        anchors.fill: parent
+    }
 
-        FilePreviewer
+    page.footBar.leftContent: Maui.ToolActions
+    {
+        visible: !Maui.Handy.isMobile
+        expanded: true
+        autoExclusive: false
+        checkable: false
+        display: ToolButton.IconOnly
+
+        Action
         {
-            id: _previewer
-            anchors.fill: parent
+            text: i18n("Previous")
+            icon.name: "go-previous"
+            onTriggered :  _previewer.goPrevious()
         }
 
-        page.footBar.leftContent: Maui.ToolActions
+        Action
         {
-            visible: !Maui.Handy.isMobile
-            expanded: true
-            autoExclusive: false
-            checkable: false
-            display: ToolButton.IconOnly
+            text: i18n("Next")
+            icon.name: "go-next"
+            onTriggered: _previewer.goNext()
+        }
+    }
 
-            Action
-            {
-                text: i18n("Previous")
-                icon.name: "go-previous"
-                onTriggered :  _previewer.goPrevious()
-            }
+    page.footBar.rightContent: [
+        ToolButton
+        {
+            icon.name: "love"
+        },
 
-            Action
+        ToolButton
+        {
+            icon.name: "edit-share"
+        },
+        Button
+        {
+            text: i18n("Open")
+            icon.name: "document-open"
+            //        flat: true
+            onClicked:
             {
-                text: i18n("Next")
-                icon.name: "go-next"
-                onTriggered: _previewer.goNext()
+                FB.FM.openUrl(_previewer.currentUrl)
             }
         }
+    ]
 
-        page.footBar.rightContent: [
-            ToolButton
-            {
-                icon.name: "love"
-            },
-
-            ToolButton
-            {
-                icon.name: "edit-share"
-            },
-            Button
-            {
-                text: i18n("Open")
-                icon.name: "document-open"
-                //        flat: true
-                onClicked:
-                {
-                    FB.FM.openUrl(_previewer.currentUrl)
-                }
-            }
-        ]
-
-        page.headBar.rightContent: ToolButton
-        {
-            icon.name: "documentinfo"
-            checkable: true
-            checked: _previewer.showInfo
-            onClicked: _previewer.toggleInfo()
-        }
+    page.headBar.rightContent: ToolButton
+    {
+        icon.name: "documentinfo"
+        checkable: true
+        checked: _previewer.showInfo
+        onClicked: _previewer.toggleInfo()
+    }
 
 }

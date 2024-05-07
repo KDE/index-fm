@@ -4,13 +4,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
 
-import org.mauikit.controls 1.3 as Maui
-import org.mauikit.filebrowsing 1.3 as FB
+import org.mauikit.controls as Maui
+import org.mauikit.filebrowsing as FB
 
-import org.maui.index 1.0 as Index
+import org.maui.index as Index
 
 import "../previewer"
 import ".."
@@ -170,113 +170,113 @@ Maui.SplitViewItem
             }
 
             onKeyPress: (event) =>
-            {
-                if (event.key == Qt.Key_Forward)
-                {
-                    _browser.goForward()
-                    event.accepted = true
-                }
+                        {
+                            if (event.key === Qt.Key_Forward)
+                            {
+                                _browser.goForward()
+                                event.accepted = true
+                            }
 
-                if((event.key == Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
-                {
-                    openTab(control.currentPath)
-                    event.accepted = true
-                }
+                            if((event.key === Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
+                            {
+                                openTab(control.currentPath)
+                                event.accepted = true
+                            }
 
-                // Shortcut for closing tab
-                if((event.key == Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
-                {
-                    if(_browserView.browserList.count > 1)
-                        root.closeTab(tabsBar.currentIndex)
-                    event.accepted = true
-                }
+                            // Shortcut for closing tab
+                            if((event.key === Qt.Key_W) && (event.modifiers & Qt.ControlModifier))
+                            {
+                                if(_browserView.browserList.count > 1)
+                                root.closeTab(tabsBar.currentIndex)
+                                event.accepted = true
+                            }
 
-                if((event.key == Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
-                {
-                    pathBar.pathBar.showEntryBar()
-                    event.accepted = true
-                }
+                            if((event.key === Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
+                            {
+                                pathBar.pathBar.showEntryBar()
+                                event.accepted = true
+                            }
 
-                if(event.key === Qt.Key_F4)
-                {
-                    toogleTerminal()
-                    event.accepted = true
-                }
+                            if(event.key === Qt.Key_F4)
+                            {
+                                toogleTerminal()
+                                event.accepted = true
+                            }
 
-                if(event.key === Qt.Key_F3)
-                {
-                    toogleSplitView()
-                    event.accepted = true
-                }
+                            if(event.key === Qt.Key_F3)
+                            {
+                                toogleSplitView()
+                                event.accepted = true
+                            }
 
-                if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
-                {
-                    newItem()
-                    event.accepted = true
-                }
+                            if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
+                            {
+                                newItem()
+                                event.accepted = true
+                            }
 
-                if(event.key === Qt.Key_Space)
-                {
-                    if(_browser.currentIndex > -1 && _browser.currentView.count > 0)
-                    {
-                        openPreview(_browser.currentFMModel, _browser.currentIndex)
-                    }
-                    event.accepted = true
-                }
-            }
+                            if(event.key === Qt.Key_Space)
+                            {
+                                if(_browser.currentIndex > -1 && _browser.currentView.count > 0)
+                                {
+                                    openPreview(_browser.currentFMModel, _browser.currentIndex)
+                                }
+                                event.accepted = true
+                            }
+                        }
 
             onItemClicked: (index) =>
-            {
-                const item = currentFMModel.get(index)
+                           {
+                               const item = currentFMModel.get(index)
 
-                //                handleSelectionState(item)
+                               //                handleSelectionState(item)
 
-                if(Maui.Handy.singleClick)
-                {
-                    if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
-                    {
-                        openPreview(_browser.currentFMModel, _browser.currentIndex)
-                        return
-                    }
+                               if(Maui.Handy.singleClick)
+                               {
+                                   if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
+                                   {
+                                       openPreview(_browser.currentFMModel, _browser.currentIndex)
+                                       return
+                                   }
 
-                    openItem(index)
-                }
-            }
+                                   openItem(index)
+                               }
+                           }
 
             onItemDoubleClicked: (index) =>
-            {
-                const item = currentFMModel.get(index)
-                //                handleSelectionState(item)
+                                 {
+                                     const item = currentFMModel.get(index)
+                                     //                handleSelectionState(item)
 
-                if(!Maui.Handy.singleClick)
-                {
-                    if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
-                    {
-                        openPreview(_browser.currentFMModel, _browser.currentIndex)
-                        return
-                    }
+                                     if(!Maui.Handy.singleClick)
+                                     {
+                                         if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
+                                         {
+                                             openPreview(_browser.currentFMModel, _browser.currentIndex)
+                                             return
+                                         }
 
-                    openItem(index)
-                }
-            }
+                                         openItem(index)
+                                     }
+                                 }
 
             onItemRightClicked: (index) =>
-            {
-                const itemIndex = _browser.currentFMModel.mappedToSource(index)
-                const item = _browser.currentFMModel.get(index)
-                //                handleSelectionState(item)
+                                {
+                                    const itemIndex = _browser.currentFMModel.mappedToSource(index)
+                                    const item = _browser.currentFMModel.get(index)
+                                    //                handleSelectionState(item)
 
-                if(item.path.startsWith("tags://"))
-                {
-                    _tagMenu.tag = item.label
-                    _tagMenu.show()
-                }
+                                    if(item.path.startsWith("tags://"))
+                                    {
+                                        _tagMenu.tag = item.label
+                                        _tagMenu.show()
+                                    }
 
-                if(_browser.currentFMList.pathType !== FB.FMList.TRASH_PATH && _browser.currentFMList.pathType !== FB.FMList.REMOTE_PATH)
-                {
-                    itemMenu.showFor(itemIndex)
-                }
-            }
+                                    if(_browser.currentFMList.pathType !== FB.FMList.TRASH_PATH && _browser.currentFMList.pathType !== FB.FMList.REMOTE_PATH)
+                                    {
+                                        itemMenu.showFor(itemIndex)
+                                    }
+                                }
 
             onRightClicked:
             {

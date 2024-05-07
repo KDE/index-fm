@@ -1,7 +1,7 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick
+import QtQuick.Controls
 
-import org.mauikit.texteditor 1.0 as TE
+import org.mauikit.texteditor as TE
 
 TE.TextEditor
 {

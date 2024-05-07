@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import org.mauikit.documents 1.0 as Poppler
+import QtQuick
+import org.mauikit.documents as Poppler
 
 Poppler.PDFViewer
 {

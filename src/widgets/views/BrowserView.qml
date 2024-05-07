@@ -3,11 +3,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.13
-import QtQuick.Controls 2.13
+import QtQuick
+import QtQuick.Controls
 
-import org.mauikit.controls 1.3 as Maui
-import org.mauikit.filebrowsing 1.0 as FB
+import org.mauikit.controls as Maui
+import org.mauikit.filebrowsing as FB
 
 Maui.Page
 {
@@ -71,10 +71,10 @@ Maui.Page
             iconSizeHint: Maui.Style.iconSizes.big
             onToggled: _selectionBar.removeAtIndex(index)
             background: Item {}
-            onClicked: (mouse) =>
-                       {
-                           _selectionBar.selectionList.currentIndex = index
-                       }
+            onClicked:
+            {
+                _selectionBar.selectionList.currentIndex = index
+            }
 
             onPressAndHold: (mouse) => removeAtIndex(index)
         }
