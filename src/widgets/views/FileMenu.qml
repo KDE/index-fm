@@ -124,7 +124,7 @@ Maui.ContextualMenu
         icon.name: "view-preview"
         onTriggered:
         {
-            openPreview(_browser.currentFMModel, _browser.currentIndex)
+            openPreview(control.item.path)
         }
     }
 
