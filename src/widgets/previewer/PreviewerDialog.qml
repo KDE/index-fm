@@ -14,34 +14,12 @@ Maui.PopupPage
     hint: 1
     maxWidth: 800
     maxHeight: implicitHeight
+
     stack: FilePreviewer
     {
         id: _previewer
         Layout.fillWidth: true
         Layout.fillHeight: true
-    }
-    
-    footBar.leftContent: Maui.ToolActions
-    {
-        visible: !Maui.Handy.isMobile
-        expanded: true
-        autoExclusive: false
-        checkable: false
-        display: ToolButton.IconOnly
-
-        Action
-        {
-            text: i18n("Previous")
-            icon.name: "go-previous"
-            onTriggered :  _previewer.goPrevious()
-        }
-
-        Action
-        {
-            text: i18n("Next")
-            icon.name: "go-next"
-            onTriggered: _previewer.goNext()
-        }
     }
 
     footBar.rightContent: Button

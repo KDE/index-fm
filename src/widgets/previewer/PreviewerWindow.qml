@@ -25,29 +25,6 @@ Maui.DialogWindow
         anchors.fill: parent
     }
 
-    page.footBar.leftContent: Maui.ToolActions
-    {
-        visible: !Maui.Handy.isMobile
-        expanded: true
-        autoExclusive: false
-        checkable: false
-        display: ToolButton.IconOnly
-
-        Action
-        {
-            text: i18n("Previous")
-            icon.name: "go-previous"
-            onTriggered :  _previewer.goPrevious()
-        }
-
-        Action
-        {
-            text: i18n("Next")
-            icon.name: "go-next"
-            onTriggered: _previewer.goNext()
-        }
-    }
-
     page.footBar.rightContent: [
         ToolButton
         {
@@ -58,6 +35,7 @@ Maui.DialogWindow
         {
             icon.name: "edit-share"
         },
+
         Button
         {
             text: i18n("Open")
@@ -77,5 +55,4 @@ Maui.DialogWindow
         checked: _previewer.showInfo
         onClicked: _previewer.toggleInfo()
     }
-
 }

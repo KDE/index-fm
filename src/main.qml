@@ -832,16 +832,16 @@ Maui.ApplicationWindow
         Maui.Platform.shareFiles(urls)
     }
 
-    function openPreview(model, index)
+    function openPreview(url)
     {
         if(appSettings.previewerWindow)
         {
             var previewer = _previewerWindowComponent.createObject(root)
-            previewer.previewer.setData(model, index)
+            previewer.previewer.setData(url)
         }else
         {
             dialogLoader.sourceComponent = _previewerComponent
-            dialog.previewer.setData(model, index)
+            dialog.previewer.setData(url)
             dialog.open()
         }
     }
