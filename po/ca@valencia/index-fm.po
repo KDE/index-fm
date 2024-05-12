@@ -65,7 +65,7 @@ msgstr "Comprimix els fitxers seleccionats en un fitxer nou."
 #: src/main.qml:192
 #, kde-format
 msgid "Archive name..."
-msgstr "Nom de l'arxiu..."
+msgstr "Nom de l'arxiu…"
 
 #: src/main.qml:233
 #, kde-format
@@ -777,7 +777,7 @@ msgstr "Accés a unitats."
 #: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
 msgid "Navigation"
-msgstr "Navegació"
+msgstr "Navegueu"
 
 #: src/widgets/views/ShortcutsDialog.qml:19
 #, kde-format
@@ -823,6 +823,3 @@ msgstr "Busca la pestanya"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxers etiquetats per a un accés ràpid"
-
-#~ msgid "Bookmarks!"
-#~ msgstr "Adreces d'interés!"
