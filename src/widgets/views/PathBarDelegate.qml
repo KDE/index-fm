@@ -61,7 +61,7 @@ Control
         preventStealing: false
         hoverEnabled: !Maui.Handy.isMobile
         acceptedButtons:  Qt.RightButton | Qt.LeftButton
-        onClicked:
+        onClicked: (mouse) =>
         {
             if(!Maui.Handy.isMobile && mouse.button === Qt.RightButton)
                 control.rightClicked()

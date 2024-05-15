@@ -139,9 +139,12 @@ Loader
                 {
                     id: _quickSection
                     width: Math.min(parent.width, 180)
+
                     anchors.centerIn: parent
+
                     rows: 3
                     columns: 3
+
                     columnSpacing: Maui.Style.space.small
                     rowSpacing: Maui.Style.space.small
 
@@ -165,7 +168,7 @@ Loader
                             labelsVisible: false
                             tooltipText: modelData.label
                             flat: false
-                            onClicked:
+                            onClicked: (mouse) =>
                             {
                                 if(modelData.path === "overview:///")
                                 {
@@ -236,7 +239,7 @@ Loader
                 placesList.requestSetup(index);
             }
 
-            onClicked:
+            onClicked: (mouse) =>
             {
                 if( placesList.isDevice(index) && placesList.setupNeeded(index))
                 {
