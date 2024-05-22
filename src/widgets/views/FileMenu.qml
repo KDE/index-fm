@@ -218,8 +218,10 @@ Maui.ContextualMenu
         icon.name: "archive-extract"
         onTriggered:
         {
-            _compressedFile.url = control.item.path
             dialogLoader.sourceComponent= _extractDialogComponent
+            dialog.fileUrl = control.item.path
+            dialog.dirName = control.item.label.replace(control.item.suffix, "")
+            dialog.destination = currentBrowser.currentPath
             dialog.open()
         }
     }
