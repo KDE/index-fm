@@ -12,6 +12,7 @@ import QtQuick.Layouts
 import org.mauikit.controls as Maui
 
 import org.mauikit.filebrowsing as FB
+import org.mauikit.archiver as Arc
 import org.maui.index as Index
 
 import "widgets"
@@ -160,17 +161,9 @@ Maui.ApplicationWindow
     {
         id: _extractDialogComponent
 
-        Maui.InputDialog
+        Arc.ExtractDialog
         {
-            id: _extractDialog
-
-            title: i18n("Extract")
-            message: i18n("Extract the content of the compressed file into a new or existing subdirectory, or in the current directory.")
-
-            onFinished:
-            {
-                _compressedFile.extract(currentBrowser.currentPath, text)
-            }
+            destination:  currentBrowser.currentPath
         }
     }
 
@@ -283,25 +276,25 @@ Maui.ApplicationWindow
         BrowserLayout {}
     }
 
-    Maui.NotifyAction
-    {
-        id: _extractionFinishedAction
-        text: i18n("Open folder")
-    }
+    // Maui.NotifyAction
+    // {
+    //     id: _extractionFinishedAction
+    //     text: i18n("Open folder")
+    // }
 
-    Index.CompressedFile
-    {
-        id: _compressedFile
+    // Index.CompressedFile
+    // {
+    //     id: _compressedFile
 
-        onExtractionFinished:
-        {
-            _notifyOperation.title = i18n("Extracted")
-            _notifyOperation.message = i18n("File was extracted")
-            _notifyOperation.defaultAction = _extractionFinishedAction
-            _notifyOperation.iconName = "application-x-archive"
-            _notifyOperation.send()
-        }
-    }
+    //     onExtractionFinished:
+    //     {
+    //         _notifyOperation.title = i18n("Extracted")
+    //         _notifyOperation.message = i18n("File was extracted")
+    //         _notifyOperation.defaultAction = _extractionFinishedAction
+    //         _notifyOperation.iconName = "application-x-archive"
+    //         _notifyOperation.send()
+    //     }
+    // }
 
     Loader
     {
@@ -425,75 +418,6 @@ Maui.ApplicationWindow
                     onClicked: currentBrowser.toggleSearchBar()
                 },
 
-                Maui.ToolButtonMenu
-                {
-                    icon.name: "view-sort"
-
-                    MenuItem
-                    {
-                        text: i18n("Type")
-                        checked: currentBrowser.sortBy === FB.FMList.MIME
-                        checkable: true
-                        autoExclusive: true
-                        onTriggered:
-                        {
-                            currentBrowser.sortBy = FB.FMList.MIME
-                        }
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Date")
-                        checked: currentBrowser.sortBy === FB.FMList.DATE
-                        checkable: true
-                        autoExclusive: true
-
-                        onTriggered:
-                        {
-                            currentBrowser.sortBy = FB.FMList.DATE
-                        }
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Modified")
-                        checked: currentBrowser.sortBy === FB.FMList.MODIFIED
-                        checkable: true
-                        autoExclusive: true
-
-                        onTriggered:
-                        {
-                            currentBrowser.sortBy = FB.FMList.MODIFIED
-                        }
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Size")
-                        checked: currentBrowser.sortBy === FB.FMList.SIZE
-                        checkable: true
-                        autoExclusive: true
-
-                        onTriggered:
-                        {
-                            currentBrowser.sortBy = FB.FMList.SIZE
-                        }
-                    }
-
-                    MenuItem
-                    {
-                        text: i18n("Name")
-                        checked: currentBrowser.sortBy === FB.FMList.LABEL
-                        checkable: true
-                        autoExclusive: true
-
-                        onTriggered:
-                        {
-                            currentBrowser.sortBy = FB.FMList.LABEL
-                        }
-                    }
-                },
-
                 Loader
                 {
                     id: _mainMenuLoader
@@ -528,6 +452,76 @@ Maui.ApplicationWindow
                             text: i18n("New Item")
                             icon.name: "folder-new"
                             onTriggered: currentBrowser.newItem()
+                        }
+
+                        Menu
+                        {
+                            icon.name: "view-sort"
+                            title: i18n("Sort")
+
+                            MenuItem
+                            {
+                                text: i18n("Type")
+                                checked: currentBrowser.sortBy === FB.FMList.MIME
+                                checkable: true
+                                autoExclusive: true
+                                onTriggered:
+                                {
+                                    currentBrowser.sortBy = FB.FMList.MIME
+                                }
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Date")
+                                checked: currentBrowser.sortBy === FB.FMList.DATE
+                                checkable: true
+                                autoExclusive: true
+
+                                onTriggered:
+                                {
+                                    currentBrowser.sortBy = FB.FMList.DATE
+                                }
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Modified")
+                                checked: currentBrowser.sortBy === FB.FMList.MODIFIED
+                                checkable: true
+                                autoExclusive: true
+
+                                onTriggered:
+                                {
+                                    currentBrowser.sortBy = FB.FMList.MODIFIED
+                                }
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Size")
+                                checked: currentBrowser.sortBy === FB.FMList.SIZE
+                                checkable: true
+                                autoExclusive: true
+
+                                onTriggered:
+                                {
+                                    currentBrowser.sortBy = FB.FMList.SIZE
+                                }
+                            }
+
+                            MenuItem
+                            {
+                                text: i18n("Name")
+                                checked: currentBrowser.sortBy === FB.FMList.LABEL
+                                checkable: true
+                                autoExclusive: true
+
+                                onTriggered:
+                                {
+                                    currentBrowser.sortBy = FB.FMList.LABEL
+                                }
+                            }
                         }
 
                         MenuSeparator {}

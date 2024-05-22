@@ -67,6 +67,7 @@ find_package(MauiKit4 ${REQUIRED_MAUI_VERSION} REQUIRED COMPONENTS FileBrowsing)
 ecm_find_qmlmodule(org.mauikit.controls)
 ecm_find_qmlmodule(org.mauikit.filebrowsing)
 ecm_find_qmlmodule(org.mauikit.documents)
+ecm_find_qmlmodule(org.mauikit.archiver)
 
 ecm_find_qmlmodule(org.kde.purpose)
 
