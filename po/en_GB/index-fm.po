@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-02 01:36+0000\n"
-"PO-Revision-Date: 2023-04-22 10:53+0100\n"
+"PO-Revision-Date: 2024-05-24 19:17+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: src/main.cpp:68
 #, kde-format
@@ -65,10 +65,9 @@ msgid "Archive name..."
 msgstr "Archive name..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "Close Tab"
+msgstr "Close"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:126
 #: src/widgets/views/FileMenu.qml:229
@@ -524,7 +523,7 @@ msgstr "Mount"
 #: src/widgets/views/SettingsDialog.qml:15
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Behaviour"
 
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
@@ -546,57 +545,51 @@ msgstr "Dynamic Preferences"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Save custom preferences per directory, otherwise use the default preferences."
 
 #: src/widgets/views/SettingsDialog.qml:47
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Preview"
+msgstr "Previews"
 
 #: src/widgets/views/SettingsDialog.qml:53
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "Open in New Window"
+msgstr "Open in Window"
 
 #: src/widgets/views/SettingsDialog.qml:54
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Show the file previews in a new window."
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Autoplay"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Auto start playing audio and video file previews."
 
 #: src/widgets/views/SettingsDialog.qml:79
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Preview"
+msgstr "Prefer Preview"
 
 #: src/widgets/views/SettingsDialog.qml:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
+#, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
-"Opens a quick preview with information of the file instead of opening it "
-"with an external application"
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
 
 #: src/widgets/views/SettingsDialog.qml:93
-#, fuzzy, kde-format
-#| msgid "Navigation"
+#, kde-format
 msgid "Browsing & Navigation"
-msgstr "Navigation"
+msgstr "Browsing & Navigation"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
@@ -697,41 +690,39 @@ msgid "Use overview mode as default on launch."
 msgstr "Use overview mode as default on launch."
 
 #: src/widgets/views/SettingsDialog.qml:355
-#, fuzzy, kde-format
-#| msgid "Embedded Terminal"
+#, kde-format
 msgid "Embedded terminal options."
-msgstr "Embedded Terminal"
+msgstr "Embedded terminal options."
 
 #: src/widgets/views/SettingsDialog.qml:360
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgid "Sync Terminal"
-msgstr "Terminal"
+msgstr "Sync Terminal"
 
 #: src/widgets/views/SettingsDialog.qml:361
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
-msgstr ""
+msgstr "Sync the terminal current working directory to the browser location."
 
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Adaptive Colour Scheme"
 
 #: src/widgets/views/SettingsDialog.qml:374
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Colours based on the current style."
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Colour Scheme"
 
 #: src/widgets/views/SettingsDialog.qml:386
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Change the colour scheme of the terminal."
 
 #: src/widgets/views/SettingsDialog.qml:405
 #: src/widgets/views/SettingsDialog.qml:432
