@@ -78,6 +78,13 @@ Item
       */
     signal placeRightClicked(string path)
 
+    PathBarDelegate
+    {
+        id: _dummyDelegate
+        visible: false
+        text: "test"
+    }
+
     Loader
     {
         id: _loader
@@ -146,7 +153,7 @@ Item
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
                 ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
-                implicitHeight: _listView.currentItem ? _listView.currentItem.implicitHeight + topPadding + bottomPadding : 32
+                implicitHeight: _listView.currentItem ? _listView.currentItem.implicitHeight + topPadding + bottomPadding : _dummyDelegate.implicitHeight
                 contentHeight: availableHeight
                 leftPadding: 8
 
@@ -221,10 +228,8 @@ Item
 
                     delegate: PathBarDelegate
                     {
-                        id: delegate
-
 //                        height: ListView.view.height
-                        width: Math.max(Maui.Style.iconSizes.medium * 2, delegate.implicitWidth)
+                        width: Math.max(Maui.Style.iconSizes.medium * 2, implicitWidth)
 
                         onClicked:
                         {
