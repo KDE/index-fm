@@ -26,6 +26,7 @@ Control
     ToolTip.text: model.path
 
 
+    property alias text : _label.text
     /**
       *
       */
