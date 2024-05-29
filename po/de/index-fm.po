@@ -1,22 +1,23 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 # Burkhard Lück <lueck@hube-lueck.de>, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2022, 2023.
+# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-17 01:39+0000\n"
-"PO-Revision-Date: 2023-04-14 23:34+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"POT-Creation-Date: 2024-03-02 01:36+0000\n"
+"PO-Revision-Date: 2024-03-21 18:30+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: src/main.cpp:68
 #, kde-format
@@ -66,10 +67,9 @@ msgid "Archive name..."
 msgstr "Archivname ..."
 
 #: src/main.qml:233
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "Close"
-msgstr "Unterfenster schließen"
+msgstr "Schließen"
 
 #: src/main.qml:239 src/widgets/views/BrowserView.qml:126
 #: src/widgets/views/FileMenu.qml:229
@@ -296,19 +296,19 @@ msgid "Install"
 msgstr "Installieren"
 
 #: src/widgets/previewer/PreviewerDialog.qml:34
-#: src/widgets/previewer/PreviewerWindow.qml:44
+#: src/widgets/previewer/PreviewerWindow.qml:39
 #, kde-format
 msgid "Previous"
 msgstr "Zurück"
 
 #: src/widgets/previewer/PreviewerDialog.qml:41
-#: src/widgets/previewer/PreviewerWindow.qml:51
+#: src/widgets/previewer/PreviewerWindow.qml:46
 #, kde-format
 msgid "Next"
 msgstr "Weiter"
 
 #: src/widgets/previewer/PreviewerDialog.qml:49
-#: src/widgets/previewer/PreviewerWindow.qml:69
+#: src/widgets/previewer/PreviewerWindow.qml:64
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -524,7 +524,7 @@ msgstr "Einhängen"
 #: src/widgets/views/SettingsDialog.qml:15
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Verhalten"
 
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
@@ -548,16 +548,14 @@ msgid ""
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:47
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Vorschau"
+msgstr "Vorschauen"
 
 #: src/widgets/views/SettingsDialog.qml:53
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open in Window"
-msgstr "In neuem Fenster öffnen"
+msgstr "Im Fenster öffnen"
 
 #: src/widgets/views/SettingsDialog.qml:54
 #, kde-format
@@ -567,7 +565,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Automatische Wiedergabe"
 
 #: src/widgets/views/SettingsDialog.qml:67
 #, kde-format
@@ -575,22 +573,16 @@ msgid "Auto start playing audio and video file previews."
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:79
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Vorschau"
+msgstr "Vorschau bevorzugen"
 
 #: src/widgets/views/SettingsDialog.qml:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "Opens a quick preview with information of the file instead of opening it "
-#| "with an external application"
+#, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
-msgstr ""
-"Öffnet eine schnelle Vorschau mit Informationen zur Datei, anstatt mit einer "
-"externen Anwendung"
+msgstr "Dateien im Vorschaumodus anstelle in einer externen Anwendung öffnen."
 
 #: src/widgets/views/SettingsDialog.qml:93
 #, fuzzy, kde-format
@@ -726,12 +718,12 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Farbschema"
 
 #: src/widgets/views/SettingsDialog.qml:386
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Das Farbschema der Eingabeaufforderung ändern."
 
 #: src/widgets/views/SettingsDialog.qml:405
 #: src/widgets/views/SettingsDialog.qml:432
