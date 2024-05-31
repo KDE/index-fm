@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-30 01:47+0000\n"
-"PO-Revision-Date: 2024-05-24 19:17+0100\n"
+"PO-Revision-Date: 2024-05-30 16:30+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -33,10 +33,9 @@ msgid "Developer"
 msgstr "Developer"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Open in New Window"
+msgstr "Open URL in a new window."
 
 #: src/main.qml:178
 #, kde-format

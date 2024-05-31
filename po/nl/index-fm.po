@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-30 01:47+0000\n"
-"PO-Revision-Date: 2024-02-08 14:10+0100\n"
+"PO-Revision-Date: 2024-05-30 21:08+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -33,10 +33,9 @@ msgid "Developer"
 msgstr "Ontwikkelaar"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "In nieuw venster openen"
+msgstr "URL in nieuw venster openen"
 
 #: src/main.qml:178
 #, kde-format

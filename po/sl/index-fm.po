@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-30 01:47+0000\n"
-"PO-Revision-Date: 2024-02-08 09:17+0100\n"
+"PO-Revision-Date: 2024-05-30 06:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -34,10 +34,9 @@ msgid "Developer"
 msgstr "Razvijalec"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Odpri v novem oknu"
+msgstr "Odpri url v novem oknu."
 
 #: src/main.qml:178
 #, kde-format

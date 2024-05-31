@@ -772,20 +772,3 @@ msgstr "查找标签页"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "带标签文件供快速访问"
-
-#~ msgid ""
-#~ "Extract the content of the compressed file into a new or existing "
-#~ "subdirectory or inside the current directory."
-#~ msgstr "将压缩文件的内容解压到新建目录、已有目录或者当前目录。"
-
-#~ msgid "Extracted"
-#~ msgstr "已解压"
-
-#~ msgid "File was extracted"
-#~ msgstr "文件已被解压"
-
-#~ msgid "Previous"
-#~ msgstr "上一个"
-
-#~ msgid "Next"
-#~ msgstr "下一个"
