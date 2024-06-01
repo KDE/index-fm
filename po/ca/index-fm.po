@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-30 01:47+0000\n"
-"PO-Revision-Date: 2024-05-30 10:11+0200\n"
+"PO-Revision-Date: 2024-05-31 09:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -38,7 +38,7 @@ msgstr "Desenvolupador"
 #: src/main.cpp:88
 #, kde-format
 msgid "Open url in a new window."
-msgstr "Obre l'URL en una finestra nova"
+msgstr "Obre l'URL en una finestra nova."
 
 #: src/main.qml:178
 #, kde-format

@@ -1,15 +1,15 @@
 # translation of index-fm.pot to Esperanto
 # Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the index-fm package.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2024.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-30 01:47+0000\n"
-"PO-Revision-Date: 2024-03-24 10:34+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-31 19:37+0200\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -34,17 +34,16 @@ msgid "Developer"
 msgstr "Ellaboranto"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Malfermi en Nova Fenestro"
+msgstr "Malfermi URL en nova fenestro."
 
 #: src/main.qml:178
 #, kde-format
 msgid "Compress %1 file"
 msgid_plural "Compress %1 files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kunpremi %1 dosieron"
+msgstr[1] "Kunpremi %1 dosierojn"
 
 #: src/main.qml:179
 #, kde-format
@@ -293,6 +292,8 @@ msgstr "Forigi '%1'"
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
+"Ĉu vi certas, ke vi volas forigi ĉi etikedon? Tiu operacio ne povas esti "
+"malfarita."
 
 #: src/widgets/views/Browser.qml:156
 #, kde-format
@@ -481,6 +482,8 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
+"Ĉi tiu aparato devas esti muntita antaŭ aliri ĝin. Ĉu vi volas agordi ĉi "
+"aparaton?"
 
 #: src/widgets/views/PlacesSideBar.qml:246
 #, kde-format
@@ -512,6 +515,7 @@ msgstr "Dinamikaj Preferoj"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Konservi proprajn preferojn po dosierujo, alie uzi la defaŭltajn preferojn."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -549,6 +553,8 @@ msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
+"Malfermi dosierojn en antaŭrigarda reĝimo anstataŭ malfermi ilin en dediĉita "
+"aplikaĵo."
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
@@ -776,15 +782,3 @@ msgstr "Trovi Tab"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Etikeditaj dosieroj por rapida aliro"
-
-#~ msgid "Extracted"
-#~ msgstr "Ekstraktita"
-
-#~ msgid "File was extracted"
-#~ msgstr "Dosiero estis eltirita"
-
-#~ msgid "Previous"
-#~ msgstr "Antaŭa"
-
-#~ msgid "Next"
-#~ msgstr "Sekva"
