@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-30 01:47+0000\n"
-"PO-Revision-Date: 2024-02-17 20:02+0100\n"
+"PO-Revision-Date: 2024-06-08 17:37+0200\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -36,10 +36,9 @@ msgid "Developer"
 msgstr "Desarrollador"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Abrir en nueva ventana"
+msgstr "Abrir URL en nueva ventana."
 
 #: src/main.qml:178
 #, kde-format
@@ -787,22 +786,3 @@ msgstr "Encontrar pestaña"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Archivos etiquetados para acceso rápido"
-
-#~ msgid ""
-#~ "Extract the content of the compressed file into a new or existing "
-#~ "subdirectory or inside the current directory."
-#~ msgstr ""
-#~ "Extraer el contenido del archivo comprimido en un subdirectorio nuevo o "
-#~ "existente o dentro del directorio actual."
-
-#~ msgid "Extracted"
-#~ msgstr "Extraído"
-
-#~ msgid "File was extracted"
-#~ msgstr "El archivo fue extraído"
-
-#~ msgid "Previous"
-#~ msgstr "Previo"
-
-#~ msgid "Next"
-#~ msgstr "Siguiente"
