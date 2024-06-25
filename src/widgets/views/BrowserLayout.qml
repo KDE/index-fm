@@ -30,8 +30,9 @@ Item
     readonly property FB.FileBrowser browser : currentItem.browser
     readonly property Maui.SplitView splitView : _splitView
 
-    Maui.TabViewInfo.tabTitle: title
-    Maui.TabViewInfo.tabToolTipText: browser.currentPath
+    Maui.Controls.title: title
+    Maui.Controls.toolTipText: browser.currentPath
+    Maui.Controls.iconName: "folder"
 
     Maui.SplitView
     {

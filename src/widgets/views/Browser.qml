@@ -27,6 +27,8 @@ Maui.SplitViewItem
     property alias currentPath: _browser.currentPath
     property alias terminalVisible : _dirConf.terminalVisible
 
+    Maui.Controls.title : currentPath
+
     onCurrentPathChanged:
     {
         if(currentBrowser)
