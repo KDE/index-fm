@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 01:47+0000\n"
+"POT-Creation-Date: 2024-06-26 01:46+0000\n"
 "PO-Revision-Date: 2024-06-22 06:02+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -270,30 +270,30 @@ msgstr "Instalar"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/widgets/views/Browser.qml:50
+#: src/widgets/views/Browser.qml:52
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
 
-#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
 #, kde-format
 msgid "Remove"
 msgstr "Retirar"
 
-#: src/widgets/views/Browser.qml:76
+#: src/widgets/views/Browser.qml:78
 #, kde-format
 msgid "Remove '%1'"
 msgstr "Retirar «%1»"
 
-#: src/widgets/views/Browser.qml:79
+#: src/widgets/views/Browser.qml:81
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
 "Seguro que quere eliminar a etiqueta? A operación non se pode desfacer."
 
-#: src/widgets/views/Browser.qml:156
+#: src/widgets/views/Browser.qml:158
 #, kde-format
 msgid "Create new"
 msgstr "Crear un novo"

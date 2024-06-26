@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-30 01:47+0000\n"
-"PO-Revision-Date: 2024-05-30 13:46+0200\n"
+"POT-Creation-Date: 2024-06-26 01:46+0000\n"
+"PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -271,29 +271,29 @@ msgstr "Instalovat"
 msgid "Open"
 msgstr "Otevřít"
 
-#: src/widgets/views/Browser.qml:50
+#: src/widgets/views/Browser.qml:52
 #, kde-format
 msgid "Edit"
 msgstr "Upravit"
 
-#: src/widgets/views/Browser.qml:58 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
 #, kde-format
 msgid "Remove"
 msgstr "Odstranit"
 
-#: src/widgets/views/Browser.qml:76
+#: src/widgets/views/Browser.qml:78
 #, kde-format
 msgid "Remove '%1'"
 msgstr "Odstranit '%1'"
 
-#: src/widgets/views/Browser.qml:79
+#: src/widgets/views/Browser.qml:81
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr "Opravdu si přejete odstranit tuto značku? Tento krok nejde vrátit."
 
-#: src/widgets/views/Browser.qml:156
+#: src/widgets/views/Browser.qml:158
 #, kde-format
 msgid "Create new"
 msgstr "Vytvořit nový"
@@ -655,7 +655,7 @@ msgstr "Možnosti zabudovaného terminálu."
 #: src/widgets/views/SettingsDialog.qml:359
 #, kde-format
 msgid "Sync Terminal"
-msgstr ""
+msgstr "Synchronizovat Terminál"
 
 #: src/widgets/views/SettingsDialog.qml:360
 #, kde-format
