@@ -23,7 +23,6 @@ Control
     ToolTip.delay: 1000
     ToolTip.timeout: 5000
     ToolTip.visible: _mouseArea.containsMouse || _mouseArea.containsPress
-    ToolTip.text: model.path
 
 
     property alias text : _label.text
@@ -78,7 +77,6 @@ Control
         Label
         {
             id: _label
-            text: model.label
             anchors.fill: parent
 
             horizontalAlignment: Qt.AlignHCenter

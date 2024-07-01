@@ -6,7 +6,7 @@
 import QtQuick
 import QtCore
 
-import QtQuick.Controls 
+import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.mauikit.controls as Maui
@@ -607,7 +607,6 @@ Maui.ApplicationWindow
                 }
             ]
 
-
             headBar.middleContent: Loader
             {
                 id: _pathBarLoader
@@ -617,10 +616,19 @@ Maui.ApplicationWindow
                 Layout.fillWidth: true
                 Layout.minimumWidth: 100
 
+
                 sourceComponent: Item
                 {
                     implicitHeight: _pathBar.implicitHeight
                     readonly property alias pathBar: _pathBar
+
+                    OpacityAnimator on opacity
+                    {
+                        from: 0
+                        to: 1
+                        duration: Maui.Style.units.longDuration
+                        running: parent.visible
+                    }
 
                     PathBar
                     {

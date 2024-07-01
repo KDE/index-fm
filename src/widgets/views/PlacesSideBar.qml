@@ -21,6 +21,14 @@ Loader
 
     readonly property var list: item.list
 
+    OpacityAnimator on opacity
+    {
+        from: 0
+        to: 1
+        duration: Maui.Style.units.longDuration
+        running: control.status === Loader.Ready
+    }
+
     sourceComponent: Maui.ListBrowser
     {
         id: _listBrowser
@@ -125,11 +133,20 @@ Loader
         flickable.bottomMargin: Maui.Style.contentMargins
         flickable.header: Loader
         {
-            //            asynchronous: true
+            id: _quickSectionLoader
+                       asynchronous: true
             width: parent.width
             //                height: item ? item.implicitHeight : 0
             active: appSettings.quickSidebarSection
             visible: active
+
+            OpacityAnimator on opacity
+            {
+                from: 0
+                to: 1
+                duration: Maui.Style.units.longDuration
+                running: _quickSectionLoader.status === Loader.Ready
+            }
 
             sourceComponent: Item
             {

@@ -93,7 +93,7 @@ Item
         sourceComponent: Item
         {
             implicitWidth: _layout.implicitWidth
-            implicitHeight: _layout.implicitHeight           
+            implicitHeight: _layout.implicitHeight
 
             TextField
             {
@@ -229,6 +229,8 @@ Item
                     delegate: PathBarDelegate
                     {
 //                        height: ListView.view.height
+                        text: model.label
+                        ToolTip.text: model.path
                         width: Math.max(Maui.Style.iconSizes.medium * 2, implicitWidth)
 
                         onClicked:
