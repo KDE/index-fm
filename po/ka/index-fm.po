@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 01:46+0000\n"
+"POT-Creation-Date: 2024-07-02 01:44+0000\n"
 "PO-Revision-Date: 2023-11-04 06:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -168,19 +168,19 @@ msgstr "პარამეტრები"
 msgid "About"
 msgstr "შესახებ"
 
-#: src/main.qml:662 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:670 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: src/main.qml:669 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:90
+#: src/main.qml:677 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "ახალ ჩანართში გახსნა"
 
-#: src/main.qml:677 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:106
+#: src/main.qml:685 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
 msgstr "დაყოფილ ხედში გახსნა"
@@ -278,7 +278,7 @@ msgid "Edit"
 msgstr "ჩასწორება"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "წაშლა"
@@ -384,7 +384,7 @@ msgstr "რჩეულებიდანამოღება"
 msgid "Fav"
 msgstr "რჩეულებში"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "ახალ ფანჯარაში გახსნა"
@@ -467,18 +467,18 @@ msgstr "სწრაფი წვდომა საერთო ადგილ
 msgid "More"
 msgstr "მეტი"
 
-#: src/widgets/views/PlacesSideBar.qml:36
+#: src/widgets/views/PlacesSideBar.qml:44
 #: src/widgets/views/SettingsDialog.qml:444
 #, kde-format
 msgid "Bookmarks"
 msgstr "სანიშნები"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:45
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "თქვენი სანიშნები აქ ჩამოითვლება"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -487,7 +487,7 @@ msgstr ""
 "ამ მოწყობილობასთან წვდომისთვის ჯერ მისი მიმაგრებაა საჭირო. გნებავთ, მოირგოთ "
 "ეს მოწყობილობა?"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid "Mount"
 msgstr "მიმაგრება"

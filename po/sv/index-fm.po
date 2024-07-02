@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 01:46+0000\n"
+"POT-Creation-Date: 2024-07-02 01:44+0000\n"
 "PO-Revision-Date: 2024-06-01 06:53+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -166,19 +166,19 @@ msgstr "Inställningar"
 msgid "About"
 msgstr "Om"
 
-#: src/main.qml:662 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:670 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Bokmärke"
 
-#: src/main.qml:669 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:90
+#: src/main.qml:677 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Öppna under ny flik"
 
-#: src/main.qml:677 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:106
+#: src/main.qml:685 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
 msgstr "Öppna i delad vy"
@@ -276,7 +276,7 @@ msgid "Edit"
 msgstr "Redigera"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Ta bort"
@@ -380,7 +380,7 @@ msgstr "Ej favorit"
 msgid "Fav"
 msgstr "Favorit"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "Öppna i nytt fönster"
@@ -463,18 +463,18 @@ msgstr "Snabbåtkomst till vanliga platser."
 msgid "More"
 msgstr "Mer"
 
-#: src/widgets/views/PlacesSideBar.qml:36
+#: src/widgets/views/PlacesSideBar.qml:44
 #: src/widgets/views/SettingsDialog.qml:444
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bokmärken"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:45
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Dina bokmärken listas här"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -482,7 +482,7 @@ msgid ""
 msgstr ""
 "Enheten måste monteras innan den kan kommas åt. Vill du ställa in enheten?"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid "Mount"
 msgstr "Montera"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 01:46+0000\n"
+"POT-Creation-Date: 2024-07-02 01:44+0000\n"
 "PO-Revision-Date: 2024-05-31 14:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -166,19 +166,19 @@ msgstr "Ayarlar"
 msgid "About"
 msgstr "Hakkında"
 
-#: src/main.qml:662 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:670 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Yer imi"
 
-#: src/main.qml:669 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:90
+#: src/main.qml:677 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Yeni Sekmede Aç"
 
-#: src/main.qml:677 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:106
+#: src/main.qml:685 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
 msgstr "Bölünmüş Görünümde Aç"
@@ -276,7 +276,7 @@ msgid "Edit"
 msgstr "Düzen"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Kaldır"
@@ -380,7 +380,7 @@ msgstr "Sık kullanılanlardan kaldır"
 msgid "Fav"
 msgstr "Sık kullanılanlara ekle"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "Yeni Pencerede Aç"
@@ -463,18 +463,18 @@ msgstr "Ortak yerlere hızlı erişim."
 msgid "More"
 msgstr "Daha Fazla"
 
-#: src/widgets/views/PlacesSideBar.qml:36
+#: src/widgets/views/PlacesSideBar.qml:44
 #: src/widgets/views/SettingsDialog.qml:444
 #, kde-format
 msgid "Bookmarks"
 msgstr "Yer imleri"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:45
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Yer imleriniz burada listelenecek"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -482,7 +482,7 @@ msgid ""
 msgstr ""
 "Bu aygıta erişmek için bağlanması gerekiyor. Ayarlamak istiyor musunuz?"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid "Mount"
 msgstr "Bağla"

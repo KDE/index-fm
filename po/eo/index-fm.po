@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 01:46+0000\n"
+"POT-Creation-Date: 2024-07-02 01:44+0000\n"
 "PO-Revision-Date: 2024-05-31 19:37+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -167,19 +167,19 @@ msgstr "Agordoj"
 msgid "About"
 msgstr "Pri"
 
-#: src/main.qml:662 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:670 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Legosigno"
 
-#: src/main.qml:669 src/widgets/views/FileMenu.qml:191
-#: src/widgets/views/PlacesSideBar.qml:90
+#: src/main.qml:677 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Malfermi en Nova Langeto"
 
-#: src/main.qml:677 src/widgets/views/FileMenu.qml:207
-#: src/widgets/views/PlacesSideBar.qml:106
+#: src/main.qml:685 src/widgets/views/FileMenu.qml:207
+#: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
 msgstr "Malfermi en Dividita Vido"
@@ -277,7 +277,7 @@ msgid "Edit"
 msgstr "Redakti"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:116
+#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Forigi"
@@ -382,7 +382,7 @@ msgstr "UnFav"
 msgid "Fav"
 msgstr "Fav"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "Malfermi en Nova Fenestro"
@@ -465,18 +465,18 @@ msgstr "Rapida aliro al komunaj lokoj."
 msgid "More"
 msgstr "Pli"
 
-#: src/widgets/views/PlacesSideBar.qml:36
+#: src/widgets/views/PlacesSideBar.qml:44
 #: src/widgets/views/SettingsDialog.qml:444
 #, kde-format
 msgid "Bookmarks"
 msgstr "Legosignoj"
 
-#: src/widgets/views/PlacesSideBar.qml:37
+#: src/widgets/views/PlacesSideBar.qml:45
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Viaj legosignoj estos listigitaj ĉi tie"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -485,7 +485,7 @@ msgstr ""
 "Ĉi tiu aparato devas esti muntita antaŭ aliri ĝin. Ĉu vi volas agordi ĉi "
 "aparaton?"
 
-#: src/widgets/views/PlacesSideBar.qml:246
+#: src/widgets/views/PlacesSideBar.qml:263
 #, kde-format
 msgid "Mount"
 msgstr "Munti"
