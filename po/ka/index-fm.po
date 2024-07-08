@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-02 01:44+0000\n"
-"PO-Revision-Date: 2023-11-04 06:25+0100\n"
+"PO-Revision-Date: 2024-07-07 06:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -34,10 +34,9 @@ msgid "Developer"
 msgstr "პროგრამისტი"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "ახალ ფანჯარაში გახსნა"
+msgstr "URL-ის ახალ ფანჯარაში გახსნა."
 
 #: src/main.qml:178
 #, kde-format
@@ -659,7 +658,7 @@ msgstr "გაშვებისას გადახედვის რეჟ�
 #: src/widgets/views/SettingsDialog.qml:354
 #, kde-format
 msgid "Embedded terminal options."
-msgstr ""
+msgstr "ჩაშენებული ტერმინალის მორგება."
 
 #: src/widgets/views/SettingsDialog.qml:359
 #, kde-format
@@ -676,22 +675,22 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "ადაპტიური ფერების სქემა"
 
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "მიმდინარე სტილზე ბაზირებული ფერები."
 
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "ფერების სქემა"
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "ტერმინალის ფერის სქემის შეცვლა."
 
 #: src/widgets/views/SettingsDialog.qml:404
 #: src/widgets/views/SettingsDialog.qml:431
