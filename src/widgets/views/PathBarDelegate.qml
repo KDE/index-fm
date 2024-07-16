@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 
 import org.mauikit.controls as Maui
 import org.maui.index as Index
@@ -11,8 +12,8 @@ Control
     Maui.Theme.colorSet: Maui.Theme.Button
     Maui.Theme.inherit: false
 
-    implicitWidth: _label.implicitWidth + rightPadding + leftPadding
-    implicitHeight: _label.implicitHeight + topPadding + bottomPadding
+    implicitWidth: _layout.implicitWidth + rightPadding + leftPadding
+    implicitHeight: _layout.implicitHeight + topPadding + bottomPadding
 
     padding: Maui.Style.defaultPadding
     rightPadding: Maui.Style.space.big
@@ -74,13 +75,19 @@ Control
 
         containmentMask: _arrowBG
 
+        RowLayout
+        {
+          id: _layout
+          anchors.fill: parent
         Label
         {
             id: _label
-            anchors.fill: parent
+
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment:  Qt.AlignVCenter
+            verticalAlignment: Qt.AlignVCenter
 
             elide: Qt.ElideRight
             wrapMode: Text.NoWrap
@@ -88,6 +95,18 @@ Control
 
             font.weight: control.checked ? Font.DemiBold : Font.Normal
             color: control.checked ? Maui.Theme.highlightedTextColor : Maui.Theme.textColor
+        }
+
+        Maui.Icon
+        {
+          Layout.alignment: Qt.AlignVCenter
+
+          visible: control.checked
+          color: _label.color
+          implicitHeight: 8
+          implicitWidth: 8
+          source: "qrc:/assets/arrow-down.svg"
+        }
         }
     }
 }
