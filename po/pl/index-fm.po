@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-02 01:44+0000\n"
-"PO-Revision-Date: 2023-11-04 12:49+0100\n"
+"PO-Revision-Date: 2024-07-21 07:05+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -33,10 +34,9 @@ msgid "Developer"
 msgstr "Programista"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Otwórz w nowym oknie"
+msgstr "Otwórz adres URL w nowym oknie."
 
 #: src/main.qml:178
 #, kde-format
@@ -654,10 +654,9 @@ msgid "Use overview mode as default on launch."
 msgstr "Użyj trybu przeglądu jako domyślnego po uruchomieniu."
 
 #: src/widgets/views/SettingsDialog.qml:354
-#, fuzzy, kde-format
-#| msgid "Embedded Terminal"
+#, kde-format
 msgid "Embedded terminal options."
-msgstr "Osadzony terminal"
+msgstr "Ustawienia osadzonego terminalu"
 
 #: src/widgets/views/SettingsDialog.qml:359
 #, kde-format
@@ -674,22 +673,22 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Dostosowujący się zestaw barw"
 
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Barwy oparte na bieżącym wyglądzie."
 
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Zestaw barw"
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Zmień zestaw barw terminalu."
 
 #: src/widgets/views/SettingsDialog.qml:404
 #: src/widgets/views/SettingsDialog.qml:431
