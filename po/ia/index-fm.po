@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# giovanni <g.sora@tiscali.it>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-02 01:44+0000\n"
-"PO-Revision-Date: 2023-11-30 09:49+0100\n"
+"PO-Revision-Date: 2024-07-25 15:38+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: src/main.cpp:66
 #, kde-format
@@ -33,10 +33,9 @@ msgid "Developer"
 msgstr "Disveloppator"
 
 #: src/main.cpp:88
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Aperi in nove fenestra"
+msgstr "Aperi url in nove fenestra"
 
 #: src/main.qml:178
 #, kde-format
@@ -677,7 +676,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Schema de color"
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
