@@ -310,7 +310,7 @@ Maui.SplitViewItem
 
     function syncTerminal(path)
     {
-        if(terminalLoader.item && appSettings.syncTerminal)
+        if(terminalLoader.item && appSettings.syncTerminal && FB.FM.fileExists(path))
             terminalLoader.item.session.changeDir(path.replace("file://", ""))
     }
 

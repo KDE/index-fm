@@ -5,7 +5,7 @@
 
 FolderConfig::FolderConfig(QObject *parent) : QObject(parent)
   ,m_settings(nullptr)
-{      
+{
 
 }
 
@@ -154,6 +154,10 @@ void FolderConfig::setValues()
     if (!m_path.isValid() || !m_path.isLocalFile() || !FMH::fileExists(m_path))
     {
         qWarning() << "URL recived is not a local file" << m_path;
+
+        this->m_terminalVisible = false;
+        Q_EMIT terminalVisibleChanged();
+
         return;
     }
 

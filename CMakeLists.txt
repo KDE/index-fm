@@ -47,13 +47,13 @@ include(ECMFindQmlModule)
 include(FeatureSummary)
 
 find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick QuickControls2)
-find_package(KF6 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons Archive)
+find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS I18n CoreAddons Archive)
 
 if(ANDROID)
     find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras QuickControls2)
 elseif(UNIX)
     find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS DBus)
-    find_package(KF6 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS KIO)
+    find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS KIO)
 
     ecm_find_qmlmodule(org.mauikit.terminal)
 endif()

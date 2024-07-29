@@ -19,7 +19,7 @@ Control
     rightPadding: Maui.Style.space.big
     leftPadding: rightPadding
 
-    property bool checked :  ListView.isCurrentItem
+    property bool checked : ListView.isCurrentItem
 
     ToolTip.delay: 1000
     ToolTip.timeout: 5000

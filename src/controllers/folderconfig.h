@@ -28,7 +28,7 @@ class FolderConfig : public QObject , public QQmlParserStatus
 
 public:
     explicit FolderConfig(QObject *parent = nullptr);
-~FolderConfig();
+    ~FolderConfig();
 
     void setSortKey(const FMList::SORTBY &value);
     FMList::SORTBY sortKey() const;
