@@ -221,7 +221,7 @@ Maui.SplitViewItem
                             {
                                 if(_browser.currentIndex > -1 && _browser.currentView.count > 0)
                                 {
-                                    openPreview(_browser.currentFMModel, _browser.currentIndex)
+                                    openPreview(_browser.currentFMModel.get(_browser.currentIndex).path)
                                 }
                                 event.accepted = true
                             }
@@ -237,7 +237,7 @@ Maui.SplitViewItem
                                {
                                    if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                                    {
-                                       openPreview(_browser.currentFMModel, _browser.currentIndex)
+                                       openPreview(item.path)
                                        return
                                    }
 
@@ -254,7 +254,7 @@ Maui.SplitViewItem
                                      {
                                          if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                                          {
-                                             openPreview(_browser.currentFMModel, _browser.currentIndex)
+                                             openPreview(item.path)
                                              return
                                          }
 

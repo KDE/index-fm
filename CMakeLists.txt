@@ -46,20 +46,20 @@ include(ECMSourceVersionControl)
 include(ECMFindQmlModule)
 include(FeatureSummary)
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick QuickControls2)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Core Multimedia Sql Qml Quick QuickControls2)
 find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS I18n CoreAddons Archive)
 
 if(ANDROID)
-    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras QuickControls2)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS QuickControls2)
 elseif(UNIX)
-    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS DBus)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS DBus)
     find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS KIO)
 
     ecm_find_qmlmodule(org.mauikit.terminal)
 endif()
 
 if(UNIX OR WIN32 OR APPLE AND NOT ANDROID)
-    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Widgets)
 endif()
 
 find_package(MauiKit4 ${REQUIRED_MAUI_VERSION} REQUIRED COMPONENTS FileBrowsing)
@@ -70,7 +70,6 @@ ecm_find_qmlmodule(org.mauikit.documents)
 ecm_find_qmlmodule(org.mauikit.archiver)
 
 ecm_find_qmlmodule(org.kde.purpose)
-
 
 if(ECM_SOURCE_UNDER_VERSION_CONTROL)
     execute_process(
@@ -111,3 +110,5 @@ feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+
+qt_finalize_project()

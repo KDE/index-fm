@@ -22,13 +22,15 @@
 #include <MauiKit4/Core/mauiapp.h>
 #include <MauiKit4/FileBrowsing/moduleinfo.h>
 
-#include <kio_version.h>
+#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
+#include <KF6/KIO/kio_version.h>
+#endif
+
 #include <KAboutData>
 #include <KLocalizedString>
 
 #include "../index_version.h"
 
-#include "controllers/compressedfile.h"
 #include "controllers/filepreviewer.h"
 #include "controllers/dirinfo.h"
 #include "controllers/folderconfig.h"
@@ -44,7 +46,6 @@
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-
 #ifdef Q_OS_WIN32
     qputenv("QT_MULTIMEDIA_PREFERRED_PLUGINS", "w");
 #endif
@@ -77,7 +78,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     about.setBugAddress("https://invent.kde.org/maui/index-fm/-/issues");
     about.setOrganizationDomain(INDEX_URI);
     about.setProgramLogo(app.windowIcon());
+
+#if defined Q_OS_LINUX && !defined Q_OS_ANDROID
     about.addComponent("KIO", "", KIO_VERSION_STRING);
+#endif
 
     const auto FBData = MauiKitFileBrowsing::aboutData();
     about.addComponent(FBData.name(), MauiKitFileBrowsing::buildVersion(), FBData.version(), FBData.webAddress());
@@ -124,7 +128,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     auto index = std::make_unique<Index>(nullptr);
 
     QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
+    // const QUrl url(QStringLiteral("qrc:/qt/qml/org/maui/index/main.qml"));
+    const QUrl url(QStringLiteral("qrc:/app/maui/index/main.qml"));
 
     QObject::connect(
         &engine,
@@ -143,7 +148,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("initPaths", paths);
 
     engine.rootContext()->setContextProperty("inx", index.get());
-    qmlRegisterType<CompressedFile>(INDEX_URI, 1, 0, "CompressedFile");
     qmlRegisterType<FilePreviewer>(INDEX_URI, 1, 0, "FilePreviewProvider");
     qmlRegisterType<RecentFilesModel>(INDEX_URI, 1, 0, "RecentFiles");
     qmlRegisterType<DirInfo>(INDEX_URI, 1, 0, "DirInfo");

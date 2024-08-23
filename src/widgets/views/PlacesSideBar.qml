@@ -19,7 +19,7 @@ Loader
     asynchronous: true
     active: (control.enabled && control.visible) || item
 
-    readonly property var list: item.list
+    readonly property QtObject list: item ? item.list : null
 
     OpacityAnimator on opacity
     {
