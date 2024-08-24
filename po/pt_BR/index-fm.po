@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:44+0000\n"
+"POT-Creation-Date: 2024-08-24 01:47+0000\n"
 "PO-Revision-Date: 2023-11-14 11:49-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -18,22 +18,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Navegue, organize e visualize seus arquivos."
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:74 src/main.cpp:75
 #, kde-format
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: src/main.cpp:88
+#: src/main.cpp:92
 #, fuzzy, kde-format
 #| msgid "Open in New Window"
 msgid "Open url in a new window."

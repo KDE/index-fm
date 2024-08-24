@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:44+0000\n"
+"POT-Creation-Date: 2024-08-24 01:47+0000\n"
 "PO-Revision-Date: 2024-05-31 14:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 24.07.70\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "Index"
 msgstr "İndeks"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Dosyalarınıza göz atın, onları organize edin ve önizleyin."
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:74 src/main.cpp:75
 #, kde-format
 msgid "Developer"
 msgstr "Geliştirici"
 
-#: src/main.cpp:88
+#: src/main.cpp:92
 #, kde-format
 msgid "Open url in a new window."
 msgstr "URL’yi yeni bir pencerede açın."

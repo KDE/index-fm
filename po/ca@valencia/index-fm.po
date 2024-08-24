@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:44+0000\n"
+"POT-Creation-Date: 2024-08-24 01:47+0000\n"
 "PO-Revision-Date: 2024-05-31 09:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -20,22 +20,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "Index"
 msgstr "Índex"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Navega, organitza i previsualitza els vostres fitxers."
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:74 src/main.cpp:75
 #, kde-format
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: src/main.cpp:88
+#: src/main.cpp:92
 #, kde-format
 msgid "Open url in a new window."
 msgstr "Obri l'URL en una finestra nova."

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:44+0000\n"
+"POT-Creation-Date: 2024-08-24 01:47+0000\n"
 "PO-Revision-Date: 2024-05-31 11:10+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -18,22 +18,22 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: src/main.cpp:66
+#: src/main.cpp:67
 #, kde-format
 msgid "Index"
 msgstr "Indice"
 
-#: src/main.cpp:68
+#: src/main.cpp:69
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Naviguer, organiser et afficher des aperçus de vos fichiers."
 
-#: src/main.cpp:73 src/main.cpp:74
+#: src/main.cpp:74 src/main.cpp:75
 #, kde-format
 msgid "Developer"
 msgstr "Développeur"
 
-#: src/main.cpp:88
+#: src/main.cpp:92
 #, kde-format
 msgid "Open url in a new window."
 msgstr "Ouvrir l'URL dans une nouvelle fenêtre."
