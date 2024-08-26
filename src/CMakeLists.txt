@@ -32,6 +32,9 @@ if(ANDROID)
         MANUAL_FINALIZATION
         ${index_SRCS}
         ${index_RSCRS})
+
+    set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android_files/version.gradle.in ${CMAKE_BINARY_DIR}/src/version.gradle)
 else()
     qt_add_executable(${PROJECT_NAME}
         ${index_SRCS}

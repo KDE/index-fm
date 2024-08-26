@@ -25,9 +25,7 @@ set(REQUIRED_KF_VERSION 5.240.0)
 set(REQUIRED_MAUI_VERSION 3.0.0)
 
 if(ANDROID)
-    set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
     set(ANDROID_ABIS "armeabi-v7a")
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android_files/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 endif()
 
 find_package(ECM ${REQUIRED_KF_VERSION} NO_MODULE)

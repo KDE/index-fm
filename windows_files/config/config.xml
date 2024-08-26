@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Installer>
-    <Name>Index</Name>
-    <Version>1.2.0</Version>
-    <Title>Index File Manager</Title>
-    <Publisher>Maui</Publisher>
-    <StartMenuDir>Index</StartMenuDir>
-    <TargetDir>@ApplicationsDir@/Index</TargetDir>
-</Installer>

@@ -35,81 +35,61 @@ Maui.Page
         }
     }
 
-    Maui.ScrollView
+    Maui.ScrollColumn
     {
         anchors.fill: parent
-        padding:  Maui.Style.space.big
-        rightPadding: padding
-        leftPadding: padding
-        topPadding: padding
 
-        contentHeight: _layout.implicitHeight
-        contentWidth: availableWidth
-
-        Flickable
+        Label
         {
-            boundsBehavior: Flickable.StopAtBounds
-            boundsMovement: Flickable.StopAtBounds
+            font.family: _font.name
+            Layout.fillWidth: true
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            text: abc.toUpperCase()
+            color: Maui.Theme.textColor
+            font.pointSize: 30
+            font.bold: true
+            font.weight: Font.Bold
+        }
 
-            ColumnLayout
-            {
-                id: _layout
-                width: parent.width
-                spacing: Maui.Style.space.medium
+        Label
+        {
+            font.family: _font.name
+            Layout.fillWidth: true
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            text: abc
+            color: Maui.Theme.textColor
+            font.pointSize: 20
+        }
 
-                Label
-                {
-                    font.family: _font.name
-                    Layout.fillWidth: true
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    text: abc.toUpperCase()
-                    color: Maui.Theme.textColor
-                    font.pointSize: 30
-                    font.bold: true
-                    font.weight: Font.Bold
-                }
+        Label
+        {
+            font.family: _font.name
+            Layout.fillWidth: true
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            text: nums
+            color: Maui.Theme.textColor
+            font.pointSize: 30
+            font.weight: Font.Light
+        }
 
-                Label
-                {
-                    font.family: _font.name
-                    Layout.fillWidth: true
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    text: abc
-                    color: Maui.Theme.textColor
-                    font.pointSize: 20
-                }
+        Label
+        {
+            font.family: _font.name
+            Layout.fillWidth: true
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            text: paragraph
+            color: Maui.Theme.textColor
+            font.pointSize: Maui.Style.fontSizes.huge
+        }
 
-                Label
-                {
-                    font.family: _font.name
-                    Layout.fillWidth: true
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    text: nums
-                    color: Maui.Theme.textColor
-                    font.pointSize: 30
-                    font.weight: Font.Light
-                }
-
-                Label
-                {
-                    font.family: _font.name
-                    Layout.fillWidth: true
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    text: paragraph
-                    color: Maui.Theme.textColor
-                    font.pointSize: Maui.Style.fontSizes.huge
-                }
-
-                Label
-                {
-                    font.family: _font.name
-                    Layout.fillWidth: true
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    text: symbols
-                    color: Maui.Theme.textColor
-                    font.pointSize: 15
-                }
-            }
+        Label
+        {
+            font.family: _font.name
+            Layout.fillWidth: true
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            text: symbols
+            color: Maui.Theme.textColor
+            font.pointSize: 15
         }
     }
 }
