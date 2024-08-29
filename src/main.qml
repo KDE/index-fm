@@ -171,80 +171,11 @@ Maui.ApplicationWindow
     {
         id: _compressDialogComponent
 
-        Maui.FileListingDialog
+        Arc.NewArchiveDialog
         {
             id: _compressDialog
-
-            title: i18np("Compress %1 file", "Compress %1 files", urls.length)
-            message: i18n("Compress selected files into a new file.")
-
-            TextField
-            {
-                id: _textEntry
-                Layout.fillWidth: true
-                placeholderText: i18n("Archive name...")
-            }
-
-            function clear()
-            {
-                _textEntry.clear()
-                compressType.type = "zip"
-                urls = []
-                _showCompressedFiles.checked = false
-            }
-
-            Maui.ToolActions
-            {
-                id: compressType
-                autoExclusive: true
-                expanded: true
-                property string type: "zip"
-
-                Action
-                {
-                    text: ".ZIP"
-                    checked: compressType.type === "zip"
-                }
-
-                Action
-                {
-                    text: ".TAR"
-                    checked: compressType.type === "tar"
-                }
-
-                Action
-                {
-                    text: ".7ZIP"
-                    checked: compressType.type === "7zip"
-                }
-            }
-
-            actions:
-                [
-                Action
-                {
-                    text: i18n("Close")
-                    onTriggered:  _compressDialog.close()
-                },
-
-                Action
-                {
-                    text: i18n("Compress")
-                    onTriggered:
-                    {
-                        var error = _compressedFile.compress(urls, currentBrowser.currentPath, _textEntry.text, compressType.currentIndex)
-
-                        if(error)
-                        {
-                            root.notify("","Compress Error", "Some error occurs. Maybe current user does not have permission for writing in this directory.")
-                        }
-                        else
-                        {
-                            _compressDialog.close()
-                        }
-                    }
-                }
-            ]
+            destination: currentBrowser.currentPath
+            onDone: _compressDialog.compress()
         }
     }
 

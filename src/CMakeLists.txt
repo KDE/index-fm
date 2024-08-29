@@ -9,7 +9,7 @@ set(index_SRCS
     main.cpp
     index.cpp
     controllers/filepreviewer.cpp
-    controllers/compressedfile.cpp
+
     controllers/dirinfo.cpp
     controllers/folderconfig.cpp
     controllers/sessionmanager.cpp

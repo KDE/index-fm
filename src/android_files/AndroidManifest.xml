@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.maui.index" android:installLocation="auto" android:versionCode="${versionCode}" android:versionName="${versionName}">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.maui.index"
+    android:installLocation="auto"
+    android:versionCode="${versionCode}"
+    android:versionName="${versionName}">
     <!-- %%INSERT_PERMISSIONS -->
     <!-- %%INSERT_FEATURES -->
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
@@ -11,6 +16,8 @@
             </intent-filter>
             <meta-data android:name="android.app.lib_name" android:value="index"/>
             <meta-data android:name="android.app.arguments" android:value="-- %%INSERT_APP_ARGUMENTS%% --"/>
+            <meta-data android:name="android.app.extract_android_style" android:value="none"/>
+            <meta-data android:name="android.app.background_running" android:value="false"/>
         </activity>
 
         <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.qtprovider" android:exported="false" android:grantUriPermissions="true">
@@ -19,7 +26,7 @@
 
         <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.provider" android:grantUriPermissions="true" android:exported="false">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths"/>
-            </provider>
+        </provider>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
