@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-24 01:47+0000\n"
+"POT-Creation-Date: 2024-08-30 01:54+0000\n"
 "PO-Revision-Date: 2024-08-19 22:32+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -37,146 +37,119 @@ msgstr "개발자"
 msgid "Open url in a new window."
 msgstr "URL을 새 창으로 엽니다."
 
-#: src/main.qml:178
-#, kde-format
-msgid "Compress %1 file"
-msgid_plural "Compress %1 files"
-msgstr[0] "파일 %1개 압축"
-
-#: src/main.qml:179
-#, kde-format
-msgid "Compress selected files into a new file."
-msgstr "선택한 파일을 새 파일로 압축합니다."
-
-#: src/main.qml:185
-#, kde-format
-msgid "Archive name..."
-msgstr "압축 파일 이름..."
-
-#: src/main.qml:226
-#, kde-format
-msgid "Close"
-msgstr "닫기"
-
-#: src/main.qml:232 src/widgets/views/BrowserView.qml:126
-#: src/widgets/views/FileMenu.qml:231
-#, kde-format
-msgid "Compress"
-msgstr "압축"
-
-#: src/main.qml:348
+#: src/main.qml:279
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "사이드바 전환"
 
-#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:311 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "목록"
 
-#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:326 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "격자"
 
-#: src/main.qml:436
+#: src/main.qml:367
 #, kde-format
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: src/main.qml:445 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:376 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "모두 선택"
 
-#: src/main.qml:452
+#: src/main.qml:383
 #, kde-format
 msgid "New Item"
 msgstr "새 항목"
 
-#: src/main.qml:460 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:391 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "정렬"
 
-#: src/main.qml:464 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "형식"
 
-#: src/main.qml:476 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "날짜"
 
-#: src/main.qml:489 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:420 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "수정됨"
 
-#: src/main.qml:502 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "크기"
 
-#: src/main.qml:515 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:446 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "이름"
 
-#: src/main.qml:534
+#: src/main.qml:465
 #, kde-format
 msgid "New tab"
 msgstr "새 탭"
 
-#: src/main.qml:541
+#: src/main.qml:472
 #, kde-format
 msgid "View Hidden"
 msgstr "숨김 항목 표시"
 
-#: src/main.qml:549
+#: src/main.qml:480
 #, kde-format
 msgid "Split View"
 msgstr "보기 나누기"
 
-#: src/main.qml:558 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:489 src/widgets/views/SettingsDialog.qml:353
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "터미널"
 
-#: src/main.qml:571
+#: src/main.qml:502
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "여기에서 터미널 열기"
 
-#: src/main.qml:584 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:515 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "단축키"
 
-#: src/main.qml:595
+#: src/main.qml:526
 #, kde-format
 msgid "Settings"
 msgstr "설정"
 
-#: src/main.qml:602
+#: src/main.qml:533
 #, kde-format
 msgid "About"
 msgstr "정보"
 
-#: src/main.qml:670 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:601 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "책갈피"
 
-#: src/main.qml:677 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:608 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "새 탭으로 열기"
 
-#: src/main.qml:685 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:616 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -311,6 +284,11 @@ msgstr "잘라내기"
 #, kde-format
 msgid "Share"
 msgstr "공유"
+
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:231
+#, kde-format
+msgid "Compress"
+msgstr "압축"
 
 #: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:20
@@ -772,6 +750,19 @@ msgstr "탭 찾기"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "빨리 접근할 수 있도록 태그된 파일"
+
+#~ msgid "Compress %1 file"
+#~ msgid_plural "Compress %1 files"
+#~ msgstr[0] "파일 %1개 압축"
+
+#~ msgid "Compress selected files into a new file."
+#~ msgstr "선택한 파일을 새 파일로 압축합니다."
+
+#~ msgid "Archive name..."
+#~ msgstr "압축 파일 이름..."
+
+#~ msgid "Close"
+#~ msgstr "닫기"
 
 #~ msgid ""
 #~ "Extract the content of the compressed file into a new or existing "
