@@ -750,18 +750,3 @@ msgstr "Najít kartu"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr ""
-
-#~ msgid "Compress %1 file"
-#~ msgid_plural "Compress %1 files"
-#~ msgstr[0] "Komprimovat %1 soubor"
-#~ msgstr[1] "Komprimovat %1 soubory"
-#~ msgstr[2] "Komprimovat %1 souborů"
-
-#~ msgid "Compress selected files into a new file."
-#~ msgstr "Zkomprimovat vybrané soubory do nového souboru."
-
-#~ msgid "Archive name..."
-#~ msgstr "Název archivu..."
-
-#~ msgid "Close"
-#~ msgstr "Zavřít"
