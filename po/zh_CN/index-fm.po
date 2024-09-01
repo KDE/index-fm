@@ -750,13 +750,3 @@ msgstr "查找标签页"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "带标签文件供快速访问"
-
-#~ msgid "Compress %1 file"
-#~ msgid_plural "Compress %1 files"
-#~ msgstr[0] "压缩 %1 个文件"
-
-#~ msgid "Compress selected files into a new file."
-#~ msgstr "压缩选中的文件为新的压缩文件。"
-
-#~ msgid "Archive name..."
-#~ msgstr "压缩文件名称..."
