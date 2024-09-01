@@ -1,10 +1,5 @@
 <?xml version="1.0"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.maui.index"
-    android:installLocation="auto"
-    android:versionCode="${versionCode}"
-    android:versionName="${versionName}">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.maui.index" android:installLocation="auto" android:versionCode="${versionCode}" android:versionName="${versionName}">
     <!-- %%INSERT_PERMISSIONS -->
     <!-- %%INSERT_FEATURES -->
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
