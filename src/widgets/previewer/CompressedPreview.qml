@@ -31,5 +31,12 @@ Maui.Page
     {
         id: _archiver
         anchors.fill: parent
+        onItemClicked: (index, item) =>
+                       {
+                           if(item.isdir === "true")
+                           {
+                               openItem(item)
+                           }
+                       }
     }
 }
