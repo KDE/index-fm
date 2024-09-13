@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-30 01:54+0000\n"
+"POT-Creation-Date: 2024-09-13 01:49+0000\n"
 "PO-Revision-Date: 2024-06-22 06:02+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.0\n"
 
-#: src/main.cpp:67
+#: src/main.cpp:65
 #, kde-format
 msgid "Index"
 msgstr "Index"
 
-#: src/main.cpp:69
+#: src/main.cpp:67
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "Navegue, organize e obteña unha vista previa de ficheiros."
 
-#: src/main.cpp:74 src/main.cpp:75
+#: src/main.cpp:72 src/main.cpp:73
 #, kde-format
 msgid "Developer"
 msgstr "Desenvolvemento."
 
-#: src/main.cpp:92
+#: src/main.cpp:90
 #, kde-format
 msgid "Open url in a new window."
 msgstr "Abrir o URL na nova xanela."

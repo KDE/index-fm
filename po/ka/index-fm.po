@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-30 01:54+0000\n"
+"POT-Creation-Date: 2024-09-13 01:49+0000\n"
 "PO-Revision-Date: 2024-07-07 06:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,22 +18,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: src/main.cpp:67
+#: src/main.cpp:65
 #, kde-format
 msgid "Index"
 msgstr "ინდექსი"
 
-#: src/main.cpp:69
+#: src/main.cpp:67
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr "დაათვალიერეთ, დაალაგეთ და გადახედეთ თქვენს ფაილებს."
 
-#: src/main.cpp:74 src/main.cpp:75
+#: src/main.cpp:72 src/main.cpp:73
 #, kde-format
 msgid "Developer"
 msgstr "პროგრამისტი"
 
-#: src/main.cpp:92
+#: src/main.cpp:90
 #, kde-format
 msgid "Open url in a new window."
 msgstr "URL-ის ახალ ფანჯარაში გახსნა."
