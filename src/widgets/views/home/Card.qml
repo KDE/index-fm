@@ -2,14 +2,13 @@ import QtQuick
 import QtQuick.Controls
 
 import org.mauikit.controls as Maui
-
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 Maui.ListBrowserDelegate
 {
     id: control
 
-//    template.headerSizeHint: iconSizeHint + Maui.Style.space.small
+    //    template.headerSizeHint: iconSizeHint + Maui.Style.space.small
 
     label1.font.pointSize: Maui.Style.fontSizes.big
     label1.font.weight: Font.Bold
@@ -28,16 +27,22 @@ Maui.ListBrowserDelegate
             color: Maui.Theme.backgroundColor
             clip: true
 
-            FastBlur
+
+            MultiEffect
             {
                 id: fastBlur
+                visible: true
+
+                blurEnabled: true
+                blur: 1.0
+                blurMax: 64
+                brightness: 0.4
+                saturation: 0.2
+
                 height: parent.height * 2
                 width: parent.width * 2
                 anchors.centerIn: parent
                 source: control.template.iconItem
-                radius: 64
-                transparentBorder: true
-                cached: true
             }
 
             Rectangle
@@ -48,37 +53,38 @@ Maui.ListBrowserDelegate
             }
         }
 
-        OpacityMask
-        {
-            source: mask
-            maskSource: _iconRec
-        }
+        // OpacityMask
+        // {
+        //     source: mask
+        //     maskSource: _iconRec
+        // }
 
-        LinearGradient
+        Rectangle
         {
             id: mask
             anchors.fill: parent
-            gradient: Gradient {
+            gradient: Gradient
+            {
                 GradientStop { position: 0.2; color: "transparent"}
                 GradientStop { position: 0.5; color: control.background.color}
             }
-
-            start: Qt.point(0, 0)
-            end: Qt.point(_iconRec.width, _iconRec.height)
         }
     }
 
     layer.enabled: true
-    layer.effect: OpacityMask
+    layer.effect: MultiEffect
     {
-        maskSource: Item
+        maskEnabled: true
+        maskThresholdMin: 0.5
+        maskSpreadAtMin: 1.0
+        maskSpreadAtMax: 0.0
+        maskThresholdMax: 1.0
+        maskSource: ShaderEffectSource
         {
-            width: control.width
-            height: control.height
-
-            Rectangle
+            sourceItem: Rectangle
             {
-                anchors.fill: parent
+                width: control.width
+                height: control.height
                 radius: Maui.Style.radiusV
             }
         }

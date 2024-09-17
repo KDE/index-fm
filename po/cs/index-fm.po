@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-24 01:47+0000\n"
+"POT-Creation-Date: 2024-09-13 01:49+0000\n"
 "PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -17,168 +17,139 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 24.05.1\n"
 
-#: src/main.cpp:67
+#: src/main.cpp:65
 #, kde-format
 msgid "Index"
 msgstr "Rejstřík"
 
-#: src/main.cpp:69
+#: src/main.cpp:67
 #, kde-format
 msgid "Browse, organize and preview your files."
 msgstr ""
 
-#: src/main.cpp:74 src/main.cpp:75
+#: src/main.cpp:72 src/main.cpp:73
 #, kde-format
 msgid "Developer"
 msgstr "Vývojář"
 
-#: src/main.cpp:92
+#: src/main.cpp:90
 #, kde-format
 msgid "Open url in a new window."
 msgstr "Otevřít URL v novém okně"
 
-#: src/main.qml:178
-#, kde-format
-msgid "Compress %1 file"
-msgid_plural "Compress %1 files"
-msgstr[0] "Komprimovat %1 soubor"
-msgstr[1] "Komprimovat %1 soubory"
-msgstr[2] "Komprimovat %1 souborů"
-
-#: src/main.qml:179
-#, kde-format
-msgid "Compress selected files into a new file."
-msgstr "Zkomprimovat vybrané soubory do nového souboru."
-
-#: src/main.qml:185
-#, kde-format
-msgid "Archive name..."
-msgstr "Název archivu..."
-
-#: src/main.qml:226
-#, kde-format
-msgid "Close"
-msgstr "Zavřít"
-
-#: src/main.qml:232 src/widgets/views/BrowserView.qml:126
-#: src/widgets/views/FileMenu.qml:231
-#, kde-format
-msgid "Compress"
-msgstr "Zkomprimovat"
-
-#: src/main.qml:348
+#: src/main.qml:279
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Přepnout postranní panel"
 
-#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:311 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "Seznam"
 
-#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:326 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "Mřížka"
 
-#: src/main.qml:436
+#: src/main.qml:367
 #, kde-format
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/main.qml:445 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:376 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/main.qml:452
+#: src/main.qml:383
 #, kde-format
 msgid "New Item"
 msgstr "Nová položka"
 
-#: src/main.qml:460 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:391 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "Seřadit"
 
-#: src/main.qml:464 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "Typ"
 
-#: src/main.qml:476 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: src/main.qml:489 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:420 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "Změněno"
 
-#: src/main.qml:502 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
 
-#: src/main.qml:515 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:446 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "Název"
 
-#: src/main.qml:534
+#: src/main.qml:465
 #, kde-format
 msgid "New tab"
 msgstr "Nová karta"
 
-#: src/main.qml:541
+#: src/main.qml:472
 #, kde-format
 msgid "View Hidden"
 msgstr "Zobrazit skryté"
 
-#: src/main.qml:549
+#: src/main.qml:480
 #, kde-format
 msgid "Split View"
 msgstr "Rozdělit pohled"
 
-#: src/main.qml:558 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:489 src/widgets/views/SettingsDialog.qml:353
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Terminál"
 
-#: src/main.qml:571
+#: src/main.qml:502
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Zde otevřít terminál"
 
-#: src/main.qml:584 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:515 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Zkratky"
 
-#: src/main.qml:595
+#: src/main.qml:526
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
 
-#: src/main.qml:602
+#: src/main.qml:533
 #, kde-format
 msgid "About"
 msgstr "O aplikaci"
 
-#: src/main.qml:670 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:601 src/widgets/views/FileMenu.qml:177
 #, kde-format
 msgid "Bookmark"
 msgstr "Záložka"
 
-#: src/main.qml:677 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:608 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Otevřít v nové kartě"
 
-#: src/main.qml:685 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:616 src/widgets/views/FileMenu.qml:207
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -313,6 +284,11 @@ msgstr "Vyjmout"
 #, kde-format
 msgid "Share"
 msgstr "Sdílet"
+
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:231
+#, kde-format
+msgid "Compress"
+msgstr "Zkomprimovat"
 
 #: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:153
 #: src/widgets/views/TagsSection.qml:20
