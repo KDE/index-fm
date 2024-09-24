@@ -123,7 +123,7 @@ Loader
                     enabled: _menu.bookmarkIndex >= 0
                     text: i18n("Remove")
                     icon.name: "edit-delete"
-                    Maui.Theme.textColor: Maui.Theme.negativeTextColor
+                    Maui.Controls.status: Maui.Controls.Negative
                     onTriggered: placesList.removePlace(_menu.bookmarkIndex)
                 }
             }
@@ -251,16 +251,18 @@ Loader
                 onClicked: placesList.requestSetup(index)
             }
 
-            function mount()
+            Action
             {
-                placesList.requestSetup(index);
+                id: _mountAction
+                text: i18n("Mount")
+                ontriggered: placesList.requestSetup(index);
             }
 
             onClicked: (mouse) =>
             {
                 if( placesList.isDevice(index) && placesList.setupNeeded(index))
                 {
-                    notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), mount, i18n("Mount"))
+                    notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), [_mountAction])
                 }
 
                 placeClicked(model.path, mouse)
