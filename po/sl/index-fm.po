@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-13 01:49+0000\n"
+"POT-Creation-Date: 2024-09-25 01:49+0000\n"
 "PO-Revision-Date: 2024-05-30 06:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -139,18 +139,18 @@ msgstr "Nastavitve"
 msgid "About"
 msgstr "O programu"
 
-#: src/main.qml:601 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:601 src/widgets/views/FileMenu.qml:194
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:608 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:608 src/widgets/views/FileMenu.qml:208
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:616 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:616 src/widgets/views/FileMenu.qml:224
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -249,7 +249,7 @@ msgid "Edit"
 msgstr "Uredi"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
@@ -272,28 +272,28 @@ msgstr ""
 msgid "Create new"
 msgstr "Ustvari novo"
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:50
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
 #, kde-format
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
 #, kde-format
 msgid "Cut"
 msgstr "Izreži"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:183
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Deli"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:231
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:248
 #, kde-format
 msgid "Compress"
 msgstr "Stisni"
 
-#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:170
 #: src/widgets/views/TagsSection.qml:20
 #, kde-format
 msgid "Tags"
@@ -324,47 +324,47 @@ msgstr "Priljubljene datoteke"
 msgid "Your files marked as favorites"
 msgstr "Vaše datoteke označene kot priljubljene"
 
-#: src/widgets/views/FileMenu.qml:41
+#: src/widgets/views/FileMenu.qml:43
 #, kde-format
 msgid " items"
 msgstr " postavke"
 
-#: src/widgets/views/FileMenu.qml:72
+#: src/widgets/views/FileMenu.qml:89
 #, kde-format
 msgid "Rename"
 msgstr "Preimenuj"
 
-#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:183
+#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
 msgstr "Izberi"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:129 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Odpri z"
 
-#: src/widgets/views/FileMenu.qml:123
+#: src/widgets/views/FileMenu.qml:140
 #, kde-format
 msgid "Preview and Info"
 msgstr "Predogled in informacije"
 
-#: src/widgets/views/FileMenu.qml:137
+#: src/widgets/views/FileMenu.qml:154
 #, kde-format
 msgid "UnFav"
 msgstr "Iz priljubljenih"
 
-#: src/widgets/views/FileMenu.qml:137
+#: src/widgets/views/FileMenu.qml:154
 #, kde-format
 msgid "Fav"
 msgstr "Med priljubljene"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:216 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "Odpri v novem oknu"
 
-#: src/widgets/views/FileMenu.qml:217
+#: src/widgets/views/FileMenu.qml:234
 #, kde-format
 msgid "Extract"
 msgstr "Izvleci"
@@ -453,7 +453,12 @@ msgstr "Zaznamki"
 msgid "Your bookmarks will be listed here"
 msgstr "Vaši zaznamki bodo prikazani tukaj"
 
-#: src/widgets/views/PlacesSideBar.qml:263
+#: src/widgets/views/PlacesSideBar.qml:257
+#, kde-format
+msgid "Mount"
+msgstr "Priklopi"
+
+#: src/widgets/views/PlacesSideBar.qml:265
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -461,11 +466,6 @@ msgid ""
 msgstr ""
 "To napravo je treba priklopiti pred dostopom do nje. Ali želite nastaviti to "
 "napravo?"
-
-#: src/widgets/views/PlacesSideBar.qml:263
-#, kde-format
-msgid "Mount"
-msgstr "Priklopi"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format

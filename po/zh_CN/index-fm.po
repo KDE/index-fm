@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-13 01:49+0000\n"
+"POT-Creation-Date: 2024-09-25 01:49+0000\n"
 "PO-Revision-Date: 2024-04-22 16:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -138,18 +138,18 @@ msgstr "设置"
 msgid "About"
 msgstr "关于"
 
-#: src/main.qml:601 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:601 src/widgets/views/FileMenu.qml:194
 #, kde-format
 msgid "Bookmark"
 msgstr "书签"
 
-#: src/main.qml:608 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:608 src/widgets/views/FileMenu.qml:208
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr ""
 
-#: src/main.qml:616 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:616 src/widgets/views/FileMenu.qml:224
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -248,7 +248,7 @@ msgid "Edit"
 msgstr "编辑"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "移除"
@@ -269,28 +269,28 @@ msgstr "您确定要移除此标签吗？此操作无法撤消。"
 msgid "Create new"
 msgstr "新建"
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:50
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
 #, kde-format
 msgid "Copy"
 msgstr "复制"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
 #, kde-format
 msgid "Cut"
 msgstr "剪切"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:183
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "分享"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:231
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:248
 #, kde-format
 msgid "Compress"
 msgstr "压缩"
 
-#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:170
 #: src/widgets/views/TagsSection.qml:20
 #, kde-format
 msgid "Tags"
@@ -321,47 +321,47 @@ msgstr "收藏文件"
 msgid "Your files marked as favorites"
 msgstr "已标记收藏的文件"
 
-#: src/widgets/views/FileMenu.qml:41
+#: src/widgets/views/FileMenu.qml:43
 #, kde-format
 msgid " items"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:72
+#: src/widgets/views/FileMenu.qml:89
 #, kde-format
 msgid "Rename"
 msgstr "重命名"
 
-#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:183
+#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
 msgstr "选择"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:129 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "打开方式"
 
-#: src/widgets/views/FileMenu.qml:123
+#: src/widgets/views/FileMenu.qml:140
 #, kde-format
 msgid "Preview and Info"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:137
+#: src/widgets/views/FileMenu.qml:154
 #, kde-format
 msgid "UnFav"
 msgstr "取消收藏"
 
-#: src/widgets/views/FileMenu.qml:137
+#: src/widgets/views/FileMenu.qml:154
 #, kde-format
 msgid "Fav"
 msgstr "收藏"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:216 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:217
+#: src/widgets/views/FileMenu.qml:234
 #, kde-format
 msgid "Extract"
 msgstr "解压"
@@ -450,17 +450,17 @@ msgstr "书签"
 msgid "Your bookmarks will be listed here"
 msgstr "您的书签将显示在此处"
 
-#: src/widgets/views/PlacesSideBar.qml:263
+#: src/widgets/views/PlacesSideBar.qml:257
+#, kde-format
+msgid "Mount"
+msgstr ""
+
+#: src/widgets/views/PlacesSideBar.qml:265
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr "此设备需要先进行挂载才能访问。您想要安装此设备吗？"
-
-#: src/widgets/views/PlacesSideBar.qml:263
-#, kde-format
-msgid "Mount"
-msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
