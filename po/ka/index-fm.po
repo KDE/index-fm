@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 01:49+0000\n"
+"POT-Creation-Date: 2024-10-22 01:48+0000\n"
 "PO-Revision-Date: 2024-07-07 06:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -38,130 +38,135 @@ msgstr "პროგრამისტი"
 msgid "Open url in a new window."
 msgstr "URL-ის ახალ ფანჯარაში გახსნა."
 
-#: src/main.qml:279
+#: src/main.qml:280
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "გვერდითი ზოლის ჩართ/გამორთ"
 
-#: src/main.qml:311 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:312 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "სია"
 
-#: src/main.qml:326 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:327 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "ბადე"
 
-#: src/main.qml:367
+#: src/main.qml:368
 #, kde-format
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: src/main.qml:376 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:380 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
 
-#: src/main.qml:383
+#: src/main.qml:391
 #, kde-format
 msgid "New Item"
 msgstr "ახალი ელემენტი"
 
-#: src/main.qml:391 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:403 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "დალაგება"
 
-#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "ტიპით"
 
-#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:419 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "თარიღი"
 
-#: src/main.qml:420 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:432 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "შეცვლილია"
 
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "ზომა"
 
-#: src/main.qml:446 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: src/main.qml:465
+#: src/main.qml:477
 #, kde-format
 msgid "New tab"
 msgstr "ახალი ჩანართი"
 
-#: src/main.qml:472
+#: src/main.qml:484
 #, kde-format
 msgid "View Hidden"
 msgstr "დამალულის ნახვა"
 
-#: src/main.qml:480
+#: src/main.qml:492
 #, kde-format
 msgid "Split View"
 msgstr "ხედის გაყოფა"
 
-#: src/main.qml:489 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:501 src/widgets/views/SettingsDialog.qml:353
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#: src/main.qml:502
+#: src/main.qml:514
+#, kde-format
+msgid "Cover Flow"
+msgstr ""
+
+#: src/main.qml:524
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "ტერმინალის გახსნა აქ"
 
-#: src/main.qml:515 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:537 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "მალსახმობები"
 
-#: src/main.qml:526
+#: src/main.qml:548
 #, kde-format
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: src/main.qml:533
+#: src/main.qml:555
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
 
-#: src/main.qml:601 src/widgets/views/FileMenu.qml:194
+#: src/main.qml:623 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: src/main.qml:608 src/widgets/views/FileMenu.qml:208
+#: src/main.qml:630 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "ახალ ჩანართში გახსნა"
 
-#: src/main.qml:616 src/widgets/views/FileMenu.qml:224
+#: src/main.qml:638 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
 msgstr "დაყოფილ ხედში გახსნა"
 
-#: src/widgets/previewer/FilePreviewer.qml:65
+#: src/widgets/previewer/FilePreviewer.qml:71
 #, kde-format
 msgid "Details"
 msgstr "დეტალები"
 
-#: src/widgets/previewer/FilePreviewer.qml:66
+#: src/widgets/previewer/FilePreviewer.qml:72
 #, kde-format
 msgid "File information"
 msgstr "ფაილის ინფორმაცია"
@@ -236,7 +241,7 @@ msgstr "ჯგუფები"
 msgid "Install"
 msgstr "დაყენება"
 
-#: src/widgets/previewer/PreviewerDialog.qml:27
+#: src/widgets/previewer/PreviewerDialog.qml:28
 #: src/widgets/previewer/PreviewerWindow.qml:41
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
@@ -266,7 +271,7 @@ msgid ""
 msgstr ""
 "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ჭდე? ქმედება შეუქცევადია."
 
-#: src/widgets/views/Browser.qml:158
+#: src/widgets/views/Browser.qml:163
 #, kde-format
 msgid "Create new"
 msgstr "ახლის შექმნა"
@@ -281,18 +286,18 @@ msgstr "კოპირება"
 msgid "Cut"
 msgstr "ამოჭრა"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:183
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "გაზიარება"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:248
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:256
 #, kde-format
 msgid "Compress"
 msgstr "შეკუმშვა"
 
-#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:170
+#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:178
 #: src/widgets/views/TagsSection.qml:20
 #, kde-format
 msgid "Tags"
@@ -340,32 +345,32 @@ msgstr "გადარქმევა"
 msgid "Select"
 msgstr "არჩევა"
 
-#: src/widgets/views/FileMenu.qml:129 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "გამხსნელი პროგრამა"
 
-#: src/widgets/views/FileMenu.qml:140
+#: src/widgets/views/FileMenu.qml:144
 #, kde-format
 msgid "Preview and Info"
 msgstr "გადახედვა და ინფორმაცია"
 
-#: src/widgets/views/FileMenu.qml:154
+#: src/widgets/views/FileMenu.qml:162
 #, kde-format
 msgid "UnFav"
 msgstr "რჩეულებიდანამოღება"
 
-#: src/widgets/views/FileMenu.qml:154
+#: src/widgets/views/FileMenu.qml:162
 #, kde-format
 msgid "Fav"
 msgstr "რჩეულებში"
 
-#: src/widgets/views/FileMenu.qml:216 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:224 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "ახალ ფანჯარაში გახსნა"
 
-#: src/widgets/views/FileMenu.qml:234
+#: src/widgets/views/FileMenu.qml:242
 #, kde-format
 msgid "Extract"
 msgstr "გაშლა"
