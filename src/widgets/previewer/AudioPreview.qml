@@ -21,19 +21,19 @@ Item
 
         audioOutput: AudioOutput {}
 
-        onTitleChanged:
-        {
-            infoModel.append({key:"Title", value: player.metaData.value(MediaMetaData.Title)})
-            infoModel.append({key:"Artist", value: player.metaData.value(MediaMetaData.AlbumArtist)})
-            infoModel.append({key:"Album", value: player.metaData.value(MediaMetaData.AlbumTitle)})
-            infoModel.append({key:"Author", value: player.metaData.value(MediaMetaData.Author)})
-            infoModel.append({key:"Codec", value: player.metaData.value(MediaMetaData.AudioCodec)})
-            infoModel.append({key:"Copyright", value: player.metaData.value(MediaMetaData.Copyright)})
-            infoModel.append({key:"Duration", value: player.metaData.value(MediaMetaData.Duration)})
-            infoModel.append({key:"Track", value: player.metaData.value(MediaMetaData.TrackNumber)})
-            infoModel.append({key:"Year", value: player.metaData.value(MediaMetaData.Date)})
-            infoModel.append({key:"Genre", value: player.metaData.value(MediaMetaData.Genre)})
-        }
+        // onTitleChanged:
+        // {
+        //     infoModel.append({key:"Title", value: player.metaData.value(MediaMetaData.Title)})
+        //     infoModel.append({key:"Artist", value: player.metaData.value(MediaMetaData.AlbumArtist)})
+        //     infoModel.append({key:"Album", value: player.metaData.value(MediaMetaData.AlbumTitle)})
+        //     infoModel.append({key:"Author", value: player.metaData.value(MediaMetaData.Author)})
+        //     infoModel.append({key:"Codec", value: player.metaData.value(MediaMetaData.AudioCodec)})
+        //     infoModel.append({key:"Copyright", value: player.metaData.value(MediaMetaData.Copyright)})
+        //     infoModel.append({key:"Duration", value: player.metaData.value(MediaMetaData.Duration)})
+        //     infoModel.append({key:"Track", value: player.metaData.value(MediaMetaData.TrackNumber)})
+        //     infoModel.append({key:"Year", value: player.metaData.value(MediaMetaData.Date)})
+        //     infoModel.append({key:"Genre", value: player.metaData.value(MediaMetaData.Genre)})
+        // }
     }
 
     ColumnLayout

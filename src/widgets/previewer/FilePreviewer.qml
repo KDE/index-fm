@@ -16,12 +16,18 @@ Item
     ListModel { id: infoModel }
 
     readonly property string title : iteminfo.title
-    readonly property var iteminfo : FB.FM.getFileInfo(control.currentUrl)
+    property var iteminfo : ({})
 
     property bool isFav : false
     property bool isDir : false
 
     property bool showInfo: true
+
+    onCurrentUrlChanged:
+    {
+        console.log("PREVIEWER URL CHANGED", control.currentUrl)
+        show()
+    }
 
     Loader
     {
@@ -29,7 +35,7 @@ Item
         asynchronous: true
         visible: !control.showInfo
         anchors.fill: parent
-        onActiveChanged: if(active) show(currentUrl)
+        // onActiveChanged: if(active) show()
     }
 
     Loader
@@ -88,13 +94,15 @@ Item
         }
     }
 
-    function show(path)
+    function show()
     {
-        control.currentUrl = path
+        // if(!previewLoader.active)
+        //     return
+        console.log("ASKIGN TO PREVIEW FILE <<", control.currentUrl, iteminfo.mime)
 
-        console.log("ASKIGN TO PREVIEW FILE <<", path, iteminfo.mime)
-        initModel()
+        // if(control.showInfo)
 
+        control.iteminfo = FB.FM.getFileInfo(control.currentUrl)
         control.isDir = iteminfo.isdir == "true"
         control.isFav = FB.Tagging.isFav(control.currentUrl)
 
@@ -125,9 +133,15 @@ Item
             source = "DefaultPreview.qml"
         }
 
-        console.log("previe mime", iteminfo.mime)
+        if(previewLoader.source == source)
+        {
+            console.log("SAME PREVIEWER SOURCE DO NOT REUPDATE", source, previewLoader.source)
+            return
+        }
+        console.log("previe mime", iteminfo.mime, previewLoader.source)
         previewLoader.source = source
         control.showInfo = (source === "DefaultPreview.qml")
+        initModel()
     }
 
     function initModel()
@@ -154,6 +168,6 @@ Item
 
     function setData(url)
     {
-        show(url)
+        control.currentUrl = url
     }
 }

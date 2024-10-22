@@ -80,6 +80,7 @@ Maui.ApplicationWindow
         property bool autoPlayPreviews: true
         property bool terminalFollowsColorScheme: true
         property string terminalColorScheme: "Maui-Dark"
+        property bool showCoverFlow : false
     }
 
     Settings
@@ -366,7 +367,10 @@ Maui.ApplicationWindow
                         {
                             text: i18n("Paste")
                             enabled: _mainMenu.canPaste
-
+                            action: Action
+                            {
+                                shortcut: "Ctrl+V"
+                            }
                             icon.name: "edit-paste"
                             onTriggered: currentBrowser.paste()
                         }
@@ -375,6 +379,10 @@ Maui.ApplicationWindow
                         {
                             text: i18n("Select All")
                             icon.name: "edit-select-all"
+                            action: Action
+                            {
+                                shortcut: "Ctrl+A"
+                            }
                             onTriggered: currentBrowser.selectAll()
                         }
 
@@ -382,6 +390,10 @@ Maui.ApplicationWindow
                         {
                             text: i18n("New Item")
                             icon.name: "folder-new"
+                            action: Action
+                            {
+                                shortcut: "Ctrl+N"
+                            }
                             onTriggered: currentBrowser.newItem()
                         }
 
@@ -494,6 +506,16 @@ Maui.ApplicationWindow
 
                                 onTriggered: currentTab.currentItem.toogleTerminal()
                             }
+                        }
+
+                        MenuItem
+                        {
+                            enabled: !Maui.Handy.isMobile
+                            text: i18n("Cover Flow")
+                            icon.name: "quickview" //"preview"
+                            onToggled: appSettings.showCoverFlow = !appSettings.showCoverFlow
+                            checkable: true
+                            checked: appSettings.showCoverFlow
                         }
 
                         MenuItem
@@ -774,7 +796,6 @@ Maui.ApplicationWindow
         }else
         {
             dialogLoader.sourceComponent = _previewerComponent
-            dialog.previewer.setData(url)
             dialog.open()
         }
     }

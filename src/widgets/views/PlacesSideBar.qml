@@ -255,7 +255,7 @@ Loader
             {
                 id: _mountAction
                 text: i18n("Mount")
-                ontriggered: placesList.requestSetup(index);
+                onTriggered: placesList.requestSetup(index);
             }
 
             onClicked: (mouse) =>

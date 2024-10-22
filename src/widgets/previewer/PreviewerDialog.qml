@@ -20,6 +20,7 @@ Maui.PopupPage
         id: _previewer
         Layout.fillWidth: true
         Layout.fillHeight: true
+        currentUrl:  currentBrowser.currentFMModel.get(currentBrowser.currentIndex).url
     }
 
     footBar.rightContent: Button
@@ -30,6 +31,23 @@ Maui.PopupPage
         onClicked:
         {
             FB.FM.openUrl(_previewer.currentUrl)
+        }
+    }
+
+
+    footBar.leftContent: Maui.ToolActions
+    {
+        checkable: false
+        Action
+        {
+            icon.name:"go-previous"
+            onTriggered: currentBrowser.previousItem()
+        }
+
+        Action
+        {
+            icon.name:"go-next"
+            onTriggered: currentBrowser.nextItem()
         }
     }
 
