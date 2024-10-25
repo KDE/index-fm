@@ -22,7 +22,7 @@ Maui.SplitViewItem
     readonly property alias browser : _browser
     readonly property alias settings : _browser.settings
     readonly property alias title : _browser.title
-    readonly property bool supportsTerminal : terminalLoader.item
+    readonly property bool supportsTerminal : Maui.Handy.isLinux
 
     property alias currentPath: _browser.currentPath
     property alias terminalVisible : _dirConf.terminalVisible
@@ -301,23 +301,13 @@ Maui.SplitViewItem
             autoClose: false
             visible: control.terminalVisible || appSettings.showCoverFlow
 
-            Connections
-            {
-                target: _browser
-                function onCurrentPathChanged()
-                {
-                    if(!control.terminalVisible)
-                        _embeddedViews.currentIndex = 1
-                }
-            }
-
             Maui.SwipeView
             {
-                            id: _embeddedViews
+                id: _embeddedViews
                 anchors.fill: parent
                 floatingHeader: true
                 autoHideHeader: true
-                headBar.visible: control.terminalVisible && appSettings.showCoverFlow
+                // headBar.visible: control.terminalVisible && appSettings.showCoverFlow
 
                 Maui.Theme.colorSet: Maui.Theme.Complementary
                 Maui.Theme.inherit: false
@@ -332,16 +322,17 @@ Maui.SplitViewItem
                     id: terminalLoader
                     Maui.Controls.title: "Terminal"
 
-                    visible: control.terminalVisible
+                    visible: control.terminalVisible && active
                     asynchronous: true
-                    active: Maui.Handy.isLinux
+                    active: (Maui.Handy.isLinux && control.terminalVisible) || item
                 }
 
                 Maui.SwipeViewLoader
                 {
                     Maui.Controls.title: "Preview"
-                    visible: appSettings.showCoverFlow
-                    // focus: false
+                    visible: appSettings.showCoverFlow && active
+                    active: (Maui.Handy.isLinux && !Maui.Handy.isMobile && appSettings.showCoverFlow)|| item
+                    asynchronous: true
 
                     ListView
                     {
@@ -361,14 +352,14 @@ Maui.SplitViewItem
                         snapMode: ListView.SnapOneItem
 
                         boundsBehavior: Flickable.StopAtBounds
-                                    boundsMovement: Flickable.StopAtBounds
+                        boundsMovement: Flickable.StopAtBounds
 
-                                    interactive: Maui.Handy.isTouch
-                                    highlightFollowsCurrentItem: true
-                                    highlightMoveDuration: 0
-                                    highlightResizeDuration : 0
+                        interactive: Maui.Handy.isTouch
+                        highlightFollowsCurrentItem: true
+                        highlightMoveDuration: 0
+                        highlightResizeDuration : 0
 
-                                    onCurrentIndexChanged: positionViewAtIndex(currentIndex, ListView.Center)
+                        onCurrentIndexChanged: positionViewAtIndex(currentIndex, ListView.Center)
 
                         delegate: Maui.IconItem
                         {
