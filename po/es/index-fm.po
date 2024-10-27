@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the index-fm package.
 #
 # Automatically generated, 2020.
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2020, 2021, 2022, 2023, 2024, %Y.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2020, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2024 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
+# SPDX-FileCopyrightText: 2020, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-22 01:48+0000\n"
-"PO-Revision-Date: 2024-06-08 17:37+0200\n"
+"PO-Revision-Date: 2024-10-26 18:31+0200\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -124,7 +124,7 @@ msgstr "Terminal"
 #: src/main.qml:514
 #, kde-format
 msgid "Cover Flow"
-msgstr ""
+msgstr "Carrusel"
 
 #: src/main.qml:524
 #, kde-format
@@ -768,17 +768,3 @@ msgstr "Encontrar pestaña"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Archivos etiquetados para acceso rápido"
-
-#~ msgid "Compress %1 file"
-#~ msgid_plural "Compress %1 files"
-#~ msgstr[0] "Comprimir %1 archivo"
-#~ msgstr[1] "Comprimir %1 archivos"
-
-#~ msgid "Compress selected files into a new file."
-#~ msgstr "Comprimir los archivos seleccionados en un nuevo archivo."
-
-#~ msgid "Archive name..."
-#~ msgstr "Nombre del archivo..."
-
-#~ msgid "Close"
-#~ msgstr "Cerrar"

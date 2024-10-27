@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-22 01:48+0000\n"
-"PO-Revision-Date: 2024-07-21 07:05+0200\n"
+"PO-Revision-Date: 2024-10-26 12:35+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -122,7 +122,7 @@ msgstr "Terminal"
 #: src/main.qml:514
 #, kde-format
 msgid "Cover Flow"
-msgstr ""
+msgstr "Obieg okładek"
 
 #: src/main.qml:524
 #, kde-format
