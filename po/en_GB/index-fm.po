@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-22 01:48+0000\n"
-"PO-Revision-Date: 2024-05-30 16:30+0100\n"
+"PO-Revision-Date: 2024-11-01 14:17+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -121,7 +121,7 @@ msgstr "Terminal"
 #: src/main.qml:514
 #, kde-format
 msgid "Cover Flow"
-msgstr ""
+msgstr "Cover Flow"
 
 #: src/main.qml:524
 #, kde-format
