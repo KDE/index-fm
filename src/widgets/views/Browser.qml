@@ -95,12 +95,12 @@ Maui.SplitViewItem
         anchors.bottomMargin: !selectionBar.hidden && (terminalVisible) ? selectionBar.height : 0
         spacing: 0
         orientation: Qt.Vertical
+
         Maui.SplitViewItem
         {
             SplitView.fillWidth: true
             SplitView.fillHeight: true
             autoClose: false
-
 
             FB.FileBrowser
             {
@@ -299,83 +299,16 @@ Maui.SplitViewItem
             SplitView.maximumHeight: parent.height * 0.5
             SplitView.minimumHeight : 100
             autoClose: false
-            visible: control.terminalVisible || appSettings.showCoverFlow
+            visible: control.terminalVisible
 
-            Maui.SwipeView
+            Loader
             {
-                id: _embeddedViews
+                id: terminalLoader
+                Maui.Controls.title: "Terminal"
                 anchors.fill: parent
-                floatingHeader: true
-                autoHideHeader: true
-                // headBar.visible: control.terminalVisible && appSettings.showCoverFlow
-
-                Maui.Theme.colorSet: Maui.Theme.Complementary
-                Maui.Theme.inherit: false
-
-                background: Rectangle
-                {
-                    color: Maui.Theme.backgroundColor
-                }
-
-                Loader
-                {
-                    id: terminalLoader
-                    Maui.Controls.title: "Terminal"
-
-                    visible: control.terminalVisible && active
-                    asynchronous: true
-                    active: (Maui.Handy.isLinux && control.terminalVisible) || item
-                }
-
-                Maui.SwipeViewLoader
-                {
-                    Maui.Controls.title: "Preview"
-                    visible: appSettings.showCoverFlow && active
-                    active: (Maui.Handy.isLinux && !Maui.Handy.isMobile && appSettings.showCoverFlow)|| item
-                    asynchronous: true
-
-                    ListView
-                    {
-                        focus: true
-
-                        Keys.enabled: true
-                        Keys.forwardTo: _browser
-                        Keys.onLeftPressed: _browser.previousItem()
-                        Keys.onRightPressed: _browser.nextItem()
-                        Keys.onPressed: console.log("KEY PRESSED")
-
-                        model: _browser.currentFMModel
-                        currentIndex: _browser.currentIndex
-                        orientation: Qt.Horizontal
-
-                        spacing: Maui.Style.space.huge
-                        snapMode: ListView.SnapOneItem
-
-                        boundsBehavior: Flickable.StopAtBounds
-                        boundsMovement: Flickable.StopAtBounds
-
-                        interactive: Maui.Handy.isTouch
-                        highlightFollowsCurrentItem: true
-                        highlightMoveDuration: 0
-                        highlightResizeDuration : 0
-
-                        onCurrentIndexChanged: positionViewAtIndex(currentIndex, ListView.Center)
-
-                        delegate: Maui.IconItem
-                        {
-
-                            scale: ListView.view.currentIndex === index ? 1 : 0.6
-                            height: ListView.view.height
-                            width: ListView.view.width /3
-                            iconSource: model.icon
-                            imageSource: model.thumbnail
-                            fillMode: Image.PreserveAspectFit
-
-                            iconSizeHint: Maui.Style.iconSizes.huge
-                            imageSizeHint: height
-                        }
-                    }
-                }
+                visible: control.terminalVisible && active
+                asynchronous: true
+                active: (Maui.Handy.isLinux && control.terminalVisible) || item
             }
         }
     }

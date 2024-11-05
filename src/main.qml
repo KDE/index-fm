@@ -80,7 +80,6 @@ Maui.ApplicationWindow
         property bool autoPlayPreviews: true
         property bool terminalFollowsColorScheme: true
         property string terminalColorScheme: "Maui-Dark"
-        property bool showCoverFlow : false
     }
 
     Settings
@@ -506,16 +505,6 @@ Maui.ApplicationWindow
 
                                 onTriggered: currentTab.currentItem.toogleTerminal()
                             }
-                        }
-
-                        MenuItem
-                        {
-                            enabled: !Maui.Handy.isMobile
-                            text: i18n("Cover Flow")
-                            icon.name: "quickview" //"preview"
-                            onToggled: appSettings.showCoverFlow = !appSettings.showCoverFlow
-                            checkable: true
-                            checked: appSettings.showCoverFlow
                         }
 
                         MenuItem
