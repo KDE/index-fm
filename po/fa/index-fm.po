@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-22 01:48+0000\n"
+"POT-Creation-Date: 2024-11-06 01:50+0000\n"
 "PO-Revision-Date: 2024-08-13 17:51+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -40,124 +40,119 @@ msgstr "توسعه‌دهنده"
 msgid "Open url in a new window."
 msgstr "باز کردن نشانی در پنجرهٔ جدید"
 
-#: src/main.qml:280
+#: src/main.qml:279
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "نهان/آشکار کردن نوارکناری"
 
-#: src/main.qml:312 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:311 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "فهرست"
 
-#: src/main.qml:327 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:326 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "شبکه"
 
-#: src/main.qml:368
+#: src/main.qml:367
 #, kde-format
 msgid "Paste"
 msgstr "جایگذاری"
 
-#: src/main.qml:380 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:379 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "برگزیدن همه"
 
-#: src/main.qml:391
+#: src/main.qml:390
 #, kde-format
 msgid "New Item"
 msgstr "چیز جدید"
 
-#: src/main.qml:403 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:402 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "مرتب‌سازی"
 
-#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:406 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "نوع"
 
-#: src/main.qml:419 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:418 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "تاریخ"
 
-#: src/main.qml:432 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:431 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "تغییرکرده"
 
-#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:444 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "اندازه"
 
-#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:457 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "نام"
 
-#: src/main.qml:477
+#: src/main.qml:476
 #, kde-format
 msgid "New tab"
 msgstr "برگه جدید"
 
-#: src/main.qml:484
+#: src/main.qml:483
 #, kde-format
 msgid "View Hidden"
 msgstr "نمایش پنهان‌شده‌ها"
 
-#: src/main.qml:492
+#: src/main.qml:491
 #, kde-format
 msgid "Split View"
 msgstr "نمای تقسیم‌شده"
 
-#: src/main.qml:501 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:353
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "پایانه"
 
-#: src/main.qml:514
-#, kde-format
-msgid "Cover Flow"
-msgstr ""
-
-#: src/main.qml:524
+#: src/main.qml:513
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "بازکردن پایانه در اینجا"
 
-#: src/main.qml:537 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:526 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "میانبرها"
 
-#: src/main.qml:548
+#: src/main.qml:537
 #, kde-format
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: src/main.qml:555
+#: src/main.qml:544
 #, kde-format
 msgid "About"
 msgstr "درباره"
 
-#: src/main.qml:623 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:612 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "نشانک"
 
-#: src/main.qml:630 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:619 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "بازکردن در برگه جدید"
 
-#: src/main.qml:638 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:627 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
