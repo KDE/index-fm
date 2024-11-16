@@ -95,7 +95,7 @@ Item
             implicitWidth: _layout.implicitWidth
             implicitHeight: _layout.implicitHeight
 
-            TextField
+            Maui.TextField
             {
                 id: entry
                 anchors.fill: parent
@@ -110,13 +110,14 @@ Item
                     pathChanged(text)
                 }
 
-                onActiveFocusChanged:
+               onActiveFocusChanged:
                 {
-                    if(!activeFocus)
+                    if(!entry.activeFocus)
                     {
                         control.pathEntry = false
                     }
                 }
+
 
                 actions: Action
                 {
