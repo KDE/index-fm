@@ -29,13 +29,34 @@ Item
         show()
     }
 
-    Loader
+    ColumnLayout
     {
-        id: previewLoader
-        asynchronous: true
-        visible: !control.showInfo
         anchors.fill: parent
-        // onActiveChanged: if(active) show()
+        Loader
+        {
+            id: previewLoader
+            asynchronous: true
+            visible: !control.showInfo
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            // onActiveChanged: if(active) show()
+        }
+
+        Loader
+        {
+            active: visible || item
+            Layout.fillWidth: true
+            asynchronous: true
+            sourceComponent: FB.TagsBar
+            {
+                allowEditMode: true
+                list.urls: [control.currentUrl]
+                list.strict: false
+
+                onTagRemovedClicked: (index) => list.removeFromUrls(index)
+                onTagsEdited: (tags) => list.updateToUrls(tags)
+            }
+        }
     }
 
     Loader

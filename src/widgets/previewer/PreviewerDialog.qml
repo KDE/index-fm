@@ -23,17 +23,35 @@ Maui.PopupPage
         currentUrl:  currentBrowser.currentFMModel.get(currentBrowser.currentIndex).url
     }
 
-    footBar.rightContent: Button
-    {
-        text: i18n("Open")
-        icon.name: "document-open"
-        //        flat: true
-        onClicked:
+    footBar.rightContent: [
+        ToolButton
         {
-            FB.FM.openUrl(_previewer.currentUrl)
-        }
-    }
+            icon.name: "love"
+            checked: _previewer.isFav
+            onClicked:
+            {
+                FB.Tagging.toggleFav(_previewer.currentUrl)
+                _previewer.isFav = FB.Tagging.isFav(_previewer.currentUrl)
+            }
+        },
 
+        ToolButton
+        {
+            icon.name: "edit-share"
+            onClicked: shareFiles([_previewer.currentUrl])
+        },
+
+        Button
+        {
+            text: i18n("Open")
+            icon.name: "document-open"
+            //        flat: true
+            onClicked:
+            {
+                FB.FM.openUrl(_previewer.currentUrl)
+            }
+        }
+    ]
 
     footBar.leftContent: Maui.ToolActions
     {

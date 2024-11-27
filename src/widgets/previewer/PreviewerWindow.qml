@@ -29,11 +29,18 @@ Maui.DialogWindow
         ToolButton
         {
             icon.name: "love"
+            checked: _previewer.isFav
+            onClicked:
+            {
+                FB.Tagging.toggleFav(_previewer.currentUrl)
+                _previewer.isFav = FB.Tagging.isFav(_previewer.currentUrl)
+            }
         },
 
         ToolButton
         {
             icon.name: "edit-share"
+            onClicked: shareFiles([_previewer.currentUrl])
         },
 
         Button
