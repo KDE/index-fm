@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-06 01:50+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2023-11-14 11:49-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -157,12 +157,12 @@ msgstr "Abrir em nova aba"
 msgid "Open in Split View"
 msgstr "Abrir em visualização dividida"
 
-#: src/widgets/previewer/FilePreviewer.qml:71
+#: src/widgets/previewer/FilePreviewer.qml:92
 #, kde-format
 msgid "Details"
 msgstr "Detalhes"
 
-#: src/widgets/previewer/FilePreviewer.qml:72
+#: src/widgets/previewer/FilePreviewer.qml:93
 #, kde-format
 msgid "File information"
 msgstr "Informações do arquivo"
@@ -237,8 +237,8 @@ msgstr "Grupos"
 msgid "Install"
 msgstr "Instalar"
 
-#: src/widgets/previewer/PreviewerDialog.qml:28
-#: src/widgets/previewer/PreviewerWindow.qml:41
+#: src/widgets/previewer/PreviewerDialog.qml:46
+#: src/widgets/previewer/PreviewerWindow.qml:48
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"

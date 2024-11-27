@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-06 01:50+0000\n"
+"POT-Creation-Date: 2024-11-27 01:51+0000\n"
 "PO-Revision-Date: 2024-08-19 22:32+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -155,12 +155,12 @@ msgstr "새 탭으로 열기"
 msgid "Open in Split View"
 msgstr "분할 보기로 열기"
 
-#: src/widgets/previewer/FilePreviewer.qml:71
+#: src/widgets/previewer/FilePreviewer.qml:92
 #, kde-format
 msgid "Details"
 msgstr "자세히"
 
-#: src/widgets/previewer/FilePreviewer.qml:72
+#: src/widgets/previewer/FilePreviewer.qml:93
 #, kde-format
 msgid "File information"
 msgstr "파일 정보"
@@ -235,8 +235,8 @@ msgstr "그룹"
 msgid "Install"
 msgstr "설치"
 
-#: src/widgets/previewer/PreviewerDialog.qml:28
-#: src/widgets/previewer/PreviewerWindow.qml:41
+#: src/widgets/previewer/PreviewerDialog.qml:46
+#: src/widgets/previewer/PreviewerWindow.qml:48
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
