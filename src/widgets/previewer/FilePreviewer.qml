@@ -18,7 +18,6 @@ Item
     readonly property string title : iteminfo.title
     property var iteminfo : ({})
 
-    property bool isFav : false
     property bool isDir : false
 
     property bool showInfo: true
@@ -125,7 +124,6 @@ Item
 
         control.iteminfo = FB.FM.getFileInfo(control.currentUrl)
         control.isDir = iteminfo.isdir == "true"
-        control.isFav = FB.Tagging.isFav(control.currentUrl)
 
         var source = "DefaultPreview.qml"
         if(FB.FM.checkFileType(FB.FMList.AUDIO, iteminfo.mime))

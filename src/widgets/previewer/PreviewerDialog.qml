@@ -24,15 +24,9 @@ Maui.PopupPage
     }
 
     footBar.rightContent: [
-        ToolButton
+        FB.FavButton
         {
-            icon.name: "love"
-            checked: _previewer.isFav
-            onClicked:
-            {
-                FB.Tagging.toggleFav(_previewer.currentUrl)
-                _previewer.isFav = FB.Tagging.isFav(_previewer.currentUrl)
-            }
+            url: _previewer.currentUrl
         },
 
         ToolButton
