@@ -31,7 +31,7 @@ Maui.PopupPage
 
         ToolButton
         {
-            icon.name: "edit-share"
+            icon.name: "document-share"
             onClicked: shareFiles([_previewer.currentUrl])
         },
 

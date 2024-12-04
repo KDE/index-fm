@@ -31,11 +31,12 @@ Item
     ColumnLayout
     {
         anchors.fill: parent
+        visible: !control.showInfo
+
         Loader
         {
             id: previewLoader
             asynchronous: true
-            visible: !control.showInfo
             Layout.fillHeight: true
             Layout.fillWidth: true
             // onActiveChanged: if(active) show()
