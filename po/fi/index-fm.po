@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 01:48+0000\n"
+"POT-Creation-Date: 2024-12-05 01:51+0000\n"
 "PO-Revision-Date: 2024-11-13 16:57+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -155,12 +155,12 @@ msgstr "Avaa uuteen välilehteen"
 msgid "Open in Split View"
 msgstr "Avaa jaettuun näkymään"
 
-#: src/widgets/previewer/FilePreviewer.qml:91
+#: src/widgets/previewer/FilePreviewer.qml:92
 #, kde-format
 msgid "Details"
 msgstr "Tiedot"
 
-#: src/widgets/previewer/FilePreviewer.qml:92
+#: src/widgets/previewer/FilePreviewer.qml:93
 #, kde-format
 msgid "File information"
 msgstr "Tiedoston tiedot"
