@@ -26,14 +26,15 @@ Maui.DialogWindow
     }
 
     page.footBar.rightContent: [
-        ToolButton
+        FB.FavButton
         {
-            icon.name: "love"
+            url: _previewer.currentUrl
         },
 
         ToolButton
         {
-            icon.name: "edit-share"
+            icon.name: "document-share"
+            onClicked: shareFiles([_previewer.currentUrl])
         },
 
         Button

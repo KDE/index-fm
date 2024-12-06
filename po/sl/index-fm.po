@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-13 01:49+0000\n"
-"PO-Revision-Date: 2024-05-30 06:30+0200\n"
+"POT-Creation-Date: 2024-12-05 01:51+0000\n"
+"PO-Revision-Date: 2024-10-22 06:20+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -58,110 +58,110 @@ msgstr "Mreža"
 msgid "Paste"
 msgstr "Prilepi"
 
-#: src/main.qml:376 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:379 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/main.qml:383
+#: src/main.qml:390
 #, kde-format
 msgid "New Item"
 msgstr "Nova postavka"
 
-#: src/main.qml:391 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:402 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "Razvrsti"
 
-#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:406 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "Vrsta"
 
-#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:418 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: src/main.qml:420 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:431 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "Spremenjeno"
 
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:444 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
 
-#: src/main.qml:446 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:457 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "Ime"
 
-#: src/main.qml:465
+#: src/main.qml:476
 #, kde-format
 msgid "New tab"
 msgstr "Nov zavihek"
 
-#: src/main.qml:472
+#: src/main.qml:483
 #, kde-format
 msgid "View Hidden"
 msgstr "Pogled skrit"
 
-#: src/main.qml:480
+#: src/main.qml:491
 #, kde-format
 msgid "Split View"
 msgstr "Razdeli pogled"
 
-#: src/main.qml:489 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:353
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/main.qml:502
+#: src/main.qml:513
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Odpri terminal tukaj"
 
-#: src/main.qml:515 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:526 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Bližnjice"
 
-#: src/main.qml:526
+#: src/main.qml:537
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/main.qml:533
+#: src/main.qml:544
 #, kde-format
 msgid "About"
 msgstr "O programu"
 
-#: src/main.qml:601 src/widgets/views/FileMenu.qml:177
+#: src/main.qml:612 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:608 src/widgets/views/FileMenu.qml:191
+#: src/main.qml:619 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:616 src/widgets/views/FileMenu.qml:207
+#: src/main.qml:627 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
 msgstr "Odpri v razcepljenem pogledu"
 
-#: src/widgets/previewer/FilePreviewer.qml:65
+#: src/widgets/previewer/FilePreviewer.qml:92
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: src/widgets/previewer/FilePreviewer.qml:66
+#: src/widgets/previewer/FilePreviewer.qml:93
 #, kde-format
 msgid "File information"
 msgstr "Informacije o datoteki"
@@ -236,8 +236,8 @@ msgstr "Skupine"
 msgid "Install"
 msgstr "Namesti"
 
-#: src/widgets/previewer/PreviewerDialog.qml:27
-#: src/widgets/previewer/PreviewerWindow.qml:41
+#: src/widgets/previewer/PreviewerDialog.qml:40
+#: src/widgets/previewer/PreviewerWindow.qml:42
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -249,7 +249,7 @@ msgid "Edit"
 msgstr "Uredi"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:82 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
@@ -267,33 +267,33 @@ msgstr ""
 "Ali ste prepričani, da želite odstraniti to oznako? Te operacije ni mogoče "
 "povrniti."
 
-#: src/widgets/views/Browser.qml:158
+#: src/widgets/views/Browser.qml:163
 #, kde-format
 msgid "Create new"
 msgstr "Ustvari novo"
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:50
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
 #, kde-format
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:61
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
 #, kde-format
 msgid "Cut"
 msgstr "Izreži"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Deli"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:231
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:256
 #, kde-format
 msgid "Compress"
 msgstr "Stisni"
 
-#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:153
+#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:178
 #: src/widgets/views/TagsSection.qml:20
 #, kde-format
 msgid "Tags"
@@ -324,47 +324,47 @@ msgstr "Priljubljene datoteke"
 msgid "Your files marked as favorites"
 msgstr "Vaše datoteke označene kot priljubljene"
 
-#: src/widgets/views/FileMenu.qml:41
+#: src/widgets/views/FileMenu.qml:43
 #, kde-format
 msgid " items"
 msgstr " postavke"
 
-#: src/widgets/views/FileMenu.qml:72
+#: src/widgets/views/FileMenu.qml:89
 #, kde-format
 msgid "Rename"
 msgstr "Preimenuj"
 
-#: src/widgets/views/FileMenu.qml:98 src/widgets/views/ShortcutsDialog.qml:183
+#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
 msgstr "Izberi"
 
-#: src/widgets/views/FileMenu.qml:112 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Odpri z"
 
-#: src/widgets/views/FileMenu.qml:123
+#: src/widgets/views/FileMenu.qml:144
 #, kde-format
 msgid "Preview and Info"
 msgstr "Predogled in informacije"
 
-#: src/widgets/views/FileMenu.qml:137
+#: src/widgets/views/FileMenu.qml:162
 #, kde-format
 msgid "UnFav"
 msgstr "Iz priljubljenih"
 
-#: src/widgets/views/FileMenu.qml:137
+#: src/widgets/views/FileMenu.qml:162
 #, kde-format
 msgid "Fav"
 msgstr "Med priljubljene"
 
-#: src/widgets/views/FileMenu.qml:199 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:224 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "Odpri v novem oknu"
 
-#: src/widgets/views/FileMenu.qml:217
+#: src/widgets/views/FileMenu.qml:242
 #, kde-format
 msgid "Extract"
 msgstr "Izvleci"
@@ -453,7 +453,12 @@ msgstr "Zaznamki"
 msgid "Your bookmarks will be listed here"
 msgstr "Vaši zaznamki bodo prikazani tukaj"
 
-#: src/widgets/views/PlacesSideBar.qml:263
+#: src/widgets/views/PlacesSideBar.qml:257
+#, kde-format
+msgid "Mount"
+msgstr "Priklopi"
+
+#: src/widgets/views/PlacesSideBar.qml:265
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -461,11 +466,6 @@ msgid ""
 msgstr ""
 "To napravo je treba priklopiti pred dostopom do nje. Ali želite nastaviti to "
 "napravo?"
-
-#: src/widgets/views/PlacesSideBar.qml:263
-#, kde-format
-msgid "Mount"
-msgstr "Priklopi"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
@@ -757,6 +757,9 @@ msgstr "Poišči zavihek"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Označene datoteke za hitri dostop"
+
+#~ msgid "Cover Flow"
+#~ msgstr "Pokrivaj pretok"
 
 #~ msgid "Compress %1 file"
 #~ msgid_plural "Compress %1 files"

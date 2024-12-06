@@ -16,20 +16,47 @@ Item
     ListModel { id: infoModel }
 
     readonly property string title : iteminfo.title
-    readonly property var iteminfo : FB.FM.getFileInfo(control.currentUrl)
+    property var iteminfo : ({})
 
-    property bool isFav : false
     property bool isDir : false
 
     property bool showInfo: true
 
-    Loader
+    onCurrentUrlChanged:
     {
-        id: previewLoader
-        asynchronous: true
-        visible: !control.showInfo
+        console.log("PREVIEWER URL CHANGED", control.currentUrl)
+        show()
+    }
+
+    ColumnLayout
+    {
         anchors.fill: parent
-        onActiveChanged: if(active) show(currentUrl)
+        visible: !control.showInfo
+
+        Loader
+        {
+            id: previewLoader
+            asynchronous: true
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            // onActiveChanged: if(active) show()
+        }
+
+        Loader
+        {
+            active: visible || item
+            Layout.fillWidth: true
+            asynchronous: true
+            sourceComponent: FB.TagsBar
+            {
+                allowEditMode: true
+                list.urls: [control.currentUrl]
+                list.strict: false
+
+                onTagRemovedClicked: (index) => list.removeFromUrls(index)
+                onTagsEdited: (tags) => list.updateToUrls(tags)
+            }
+        }
     }
 
     Loader
@@ -88,15 +115,16 @@ Item
         }
     }
 
-    function show(path)
+    function show()
     {
-        control.currentUrl = path
+        // if(!previewLoader.active)
+        //     return
+        console.log("ASKIGN TO PREVIEW FILE <<", control.currentUrl, iteminfo.mime)
 
-        console.log("ASKIGN TO PREVIEW FILE <<", path, iteminfo.mime)
-        initModel()
+        // if(control.showInfo)
 
+        control.iteminfo = FB.FM.getFileInfo(control.currentUrl)
         control.isDir = iteminfo.isdir == "true"
-        control.isFav = FB.Tagging.isFav(control.currentUrl)
 
         var source = "DefaultPreview.qml"
         if(FB.FM.checkFileType(FB.FMList.AUDIO, iteminfo.mime))
@@ -125,9 +153,15 @@ Item
             source = "DefaultPreview.qml"
         }
 
-        console.log("previe mime", iteminfo.mime)
+        if(previewLoader.source == source)
+        {
+            console.log("SAME PREVIEWER SOURCE DO NOT REUPDATE", source, previewLoader.source)
+            return
+        }
+        console.log("previe mime", iteminfo.mime, previewLoader.source)
         previewLoader.source = source
         control.showInfo = (source === "DefaultPreview.qml")
+        initModel()
     }
 
     function initModel()
@@ -154,6 +188,6 @@ Item
 
     function setData(url)
     {
-        show(url)
+        control.currentUrl = url
     }
 }

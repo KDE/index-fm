@@ -1,3 +1,4 @@
+
 import QtQuick
 import QtQuick.Controls
 import QtQml
@@ -35,12 +36,28 @@ Maui.ContextualMenu
     /**
       *
       */
+
     property bool isFav: false
 
     title:  control.item ? control.item.label : ""
-    subtitle: control.item.mime ? (control.item.mime === "inode/directory" ? (control.item.count ? control.item.count + i18n(" items") : "") : Maui.Handy.formatSize(control.item.size)) : ""
-    titleImageSource: control.item ? control.item.thumbnail : ""
-    titleIconSource:  control.item ? control.item.icon : ""
+    Maui.Controls.subtitle: control.item.mime ? (control.item.mime === "inode/directory" ? (control.item.count ? control.item.count + i18n(" items") : "") : Maui.Handy.formatSize(control.item.size)) : ""
+    icon.source: control.item ? control.item.thumbnail : ""
+    icon.name: control.item ? control.item.icon : ""
+    // Maui.Controls.item: Maui.SectionHeader
+    // {
+    //     // height: visible ? implicitContentHeight + topPadding + bottomPadding : 0
+    //     label1.text: control.title
+    //     label1.elide:Text.ElideMiddle
+    //     template.iconSource: control.item.icon
+    //     template.imageSource: control.item.thumbnail
+    //     template.iconSizeHint: Maui.Style.iconSizes.big
+
+    //     background: Rectangle
+    //     {
+    //         color: Maui.Theme.backgroundColor
+    //         radius: Maui.Style.radiusV
+    //     }
+    // }
 
     Maui.MenuItemActionRow
     {
@@ -97,6 +114,10 @@ Maui.ContextualMenu
         enabled: !control.isExec
         text: i18n("Select")
         icon.name: "edit-select"
+        action: Action
+        {
+            shortcut: "Ctrl+Shift+→"
+        }
         onTriggered:
         {
             _browser.addToSelection(control.item)
@@ -122,6 +143,10 @@ Maui.ContextualMenu
         enabled: !control.isExec
         text: i18n("Preview and Info")
         icon.name: "view-preview"
+        action: Action
+        {
+            shortcut: "Spacebar"
+        }
         onTriggered:
         {
             openPreview(control.item.path)

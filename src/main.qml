@@ -366,7 +366,10 @@ Maui.ApplicationWindow
                         {
                             text: i18n("Paste")
                             enabled: _mainMenu.canPaste
-
+                            action: Action
+                            {
+                                shortcut: "Ctrl+V"
+                            }
                             icon.name: "edit-paste"
                             onTriggered: currentBrowser.paste()
                         }
@@ -375,6 +378,10 @@ Maui.ApplicationWindow
                         {
                             text: i18n("Select All")
                             icon.name: "edit-select-all"
+                            action: Action
+                            {
+                                shortcut: "Ctrl+A"
+                            }
                             onTriggered: currentBrowser.selectAll()
                         }
 
@@ -382,6 +389,10 @@ Maui.ApplicationWindow
                         {
                             text: i18n("New Item")
                             icon.name: "folder-new"
+                            action: Action
+                            {
+                                shortcut: "Ctrl+N"
+                            }
                             onTriggered: currentBrowser.newItem()
                         }
 
@@ -774,7 +785,6 @@ Maui.ApplicationWindow
         }else
         {
             dialogLoader.sourceComponent = _previewerComponent
-            dialog.previewer.setData(url)
             dialog.open()
         }
     }
