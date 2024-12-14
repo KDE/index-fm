@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 01:48+0000\n"
+"POT-Creation-Date: 2024-12-05 01:51+0000\n"
 "PO-Revision-Date: 2023-07-31 21:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -157,12 +157,12 @@ msgstr "Opna i ny fane"
 msgid "Open in Split View"
 msgstr "Opna i delt vising"
 
-#: src/widgets/previewer/FilePreviewer.qml:91
+#: src/widgets/previewer/FilePreviewer.qml:92
 #, kde-format
 msgid "Details"
 msgstr "Detaljar"
 
-#: src/widgets/previewer/FilePreviewer.qml:92
+#: src/widgets/previewer/FilePreviewer.qml:93
 #, kde-format
 msgid "File information"
 msgstr "Filinformasjon"
