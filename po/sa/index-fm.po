@@ -1,0 +1,755 @@
+# Sanskrit translations for index-fm package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the index-fm package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-12-05 01:51+0000\n"
+"PO-Revision-Date: 2024-12-29 16:05+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Index"
+msgstr "अनुक्रमणिका"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Browse, organize and preview your files."
+msgstr "स्वसञ्चिकाः ब्राउज् कुर्वन्तु, व्यवस्थितं कुर्वन्तु, पूर्वावलोकनं च कुर्वन्तु ।"
+
+#: src/main.cpp:72 src/main.cpp:73
+#, kde-format
+msgid "Developer"
+msgstr "विकासकः"
+
+#: src/main.cpp:90
+#, kde-format
+msgid "Open url in a new window."
+msgstr "नूतने विण्डो मध्ये url उद्घाटयन्तु ।"
+
+#: src/main.qml:279
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "पार्श्वपट्टिकां टॉगलं कुर्वन्तु"
+
+#: src/main.qml:311 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "सूची"
+
+#: src/main.qml:326 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "गृध्र"
+
+#: src/main.qml:367
+#, kde-format
+msgid "Paste"
+msgstr "चिनोतु"
+
+#: src/main.qml:379 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "सर्वं चिनोतु"
+
+#: src/main.qml:390
+#, kde-format
+msgid "New Item"
+msgstr "नवीन मद"
+
+#: src/main.qml:402 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr "प्रकारं"
+
+#: src/main.qml:406 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "प्रकारः"
+
+#: src/main.qml:418 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "दिनाङ्कः"
+
+#: src/main.qml:431 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "परिवर्तित"
+
+#: src/main.qml:444 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "आकृति"
+
+#: src/main.qml:457 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "नामः"
+
+#: src/main.qml:476
+#, kde-format
+msgid "New tab"
+msgstr "नवीनं ट्याब्"
+
+#: src/main.qml:483
+#, kde-format
+msgid "View Hidden"
+msgstr "दृश्यं गुप्तम्"
+
+#: src/main.qml:491
+#, kde-format
+msgid "Split View"
+msgstr "विभक्त दृश्य"
+
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:353
+#: src/widgets/views/ShortcutsDialog.qml:78
+#, kde-format
+msgid "Terminal"
+msgstr "टर्मिनल्"
+
+#: src/main.qml:513
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "अत्र टर्मिनल् उद्घाटयन्तु"
+
+#: src/main.qml:526 src/widgets/views/ShortcutsDialog.qml:9
+#, kde-format
+msgid "Shortcuts"
+msgstr "शॉर्टकट"
+
+#: src/main.qml:537
+#, kde-format
+msgid "Settings"
+msgstr "सेटिंग्स्"
+
+#: src/main.qml:544
+#, kde-format
+msgid "About"
+msgstr "विषये"
+
+#: src/main.qml:612 src/widgets/views/FileMenu.qml:202
+#, kde-format
+msgid "Bookmark"
+msgstr "बुकमार्क"
+
+#: src/main.qml:619 src/widgets/views/FileMenu.qml:216
+#: src/widgets/views/PlacesSideBar.qml:98
+#, kde-format
+msgid "Open in New Tab"
+msgstr "New Tab इत्यत्र उद्घाटयन्तु"
+
+#: src/main.qml:627 src/widgets/views/FileMenu.qml:232
+#: src/widgets/views/PlacesSideBar.qml:114
+#, kde-format
+msgid "Open in Split View"
+msgstr "Split View इत्यत्र उद्घाटयन्तु"
+
+#: src/widgets/previewer/FilePreviewer.qml:92
+#, kde-format
+msgid "Details"
+msgstr "वर्णन"
+
+#: src/widgets/previewer/FilePreviewer.qml:93
+#, kde-format
+msgid "File information"
+msgstr "सञ्चिकासूचना"
+
+#: src/widgets/previewer/FileProperties.qml:43
+#, kde-format
+msgid "Permissions"
+msgstr "अनुमतिः"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:147
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr "एतां सञ्चिकां प्राप्तुं सञ्चिकायाः अनुमतिः सेट् कुर्वन्तु"
+
+#: src/widgets/previewer/FileProperties.qml:48
+#: src/widgets/previewer/FileProperties.qml:151
+#, kde-format
+msgid "Owner"
+msgstr "स्वामी"
+
+#: src/widgets/previewer/FileProperties.qml:57
+#: src/widgets/previewer/FileProperties.qml:89
+#: src/widgets/previewer/FileProperties.qml:121
+#, kde-format
+msgid "Read"
+msgstr "पठतु"
+
+#: src/widgets/previewer/FileProperties.qml:64
+#: src/widgets/previewer/FileProperties.qml:96
+#: src/widgets/previewer/FileProperties.qml:127
+#, kde-format
+msgid "Write"
+msgstr "लिखतु"
+
+#: src/widgets/previewer/FileProperties.qml:71
+#: src/widgets/previewer/FileProperties.qml:104
+#: src/widgets/previewer/FileProperties.qml:133
+#, kde-format
+msgid "Execute"
+msgstr "प्रभज्"
+
+#: src/widgets/previewer/FileProperties.qml:79
+#: src/widgets/previewer/FileProperties.qml:158
+#: src/widgets/views/SettingsDialog.qml:231
+#, kde-format
+msgid "Group"
+msgstr "समूह"
+
+#: src/widgets/previewer/FileProperties.qml:112
+#, kde-format
+msgid "Everyone"
+msgstr "प्रत्येकं"
+
+#: src/widgets/previewer/FileProperties.qml:146
+#, kde-format
+msgid "Ownership"
+msgstr "स्वामित्वम्"
+
+#: src/widgets/previewer/FileProperties.qml:164
+#, kde-format
+msgid "Users"
+msgstr "उपयोक्तारः"
+
+#: src/widgets/previewer/FileProperties.qml:174
+#, kde-format
+msgid "Groups"
+msgstr "समूहाः"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "प्रतिस्था"
+
+#: src/widgets/previewer/PreviewerDialog.qml:40
+#: src/widgets/previewer/PreviewerWindow.qml:42
+#: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "उद्घाटित"
+
+#: src/widgets/views/Browser.qml:52
+#, kde-format
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
+#, kde-format
+msgid "Remove"
+msgstr "अपाकरोति"
+
+#: src/widgets/views/Browser.qml:78
+#, kde-format
+msgid "Remove '%1'"
+msgstr "'%1' निष्कासयन्तु।"
+
+#: src/widgets/views/Browser.qml:81
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr ""
+"किं भवान् निश्चितः अस्ति यत् भवान् एतत् टैग् अपसारयितुम् इच्छति? एतत् शल्यक्रिया अकृतुं न शक्यते "
+"।"
+
+#: src/widgets/views/Browser.qml:163
+#, kde-format
+msgid "Create new"
+msgstr "नवीनं रचयतु"
+
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
+#, kde-format
+msgid "Copy"
+msgstr "प्रतिलिपि"
+
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
+#, kde-format
+msgid "Cut"
+msgstr "छिन्न"
+
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/HomeView.qml:47
+#, kde-format
+msgid "Share"
+msgstr "संविभागः"
+
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:256
+#, kde-format
+msgid "Compress"
+msgstr "संपीडयन्तु"
+
+#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:178
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr "टैग्स"
+
+#: src/widgets/views/BrowserView.qml:170
+#, kde-format
+msgid "Detach Tab"
+msgstr "ट्याब् विच्छेदं कुर्वन्तु"
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr "उपकरणानि दूरस्थानि च"
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr "दूरस्थस्थानानि तथा डिस्क, दूरभाषः, कॅमेरा इत्यादीनि उपकरणानि च"
+
+#: src/widgets/views/FavoritesSection.qml:20
+#, kde-format
+msgid "Favorite files"
+msgstr "प्रियसञ्चिकाः"
+
+#: src/widgets/views/FavoritesSection.qml:21
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr "भवतः सञ्चिकाः प्रियाः इति चिह्निताः"
+
+#: src/widgets/views/FileMenu.qml:43
+#, kde-format
+msgid " items"
+msgstr "मदा :"
+
+#: src/widgets/views/FileMenu.qml:89
+#, kde-format
+msgid "Rename"
+msgstr "पुनर्नाम"
+
+#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
+#, kde-format
+msgid "Select"
+msgstr "विचि"
+
+#: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
+#, kde-format
+msgid "Open with"
+msgstr "सह उद्घाटयतु"
+
+#: src/widgets/views/FileMenu.qml:144
+#, kde-format
+msgid "Preview and Info"
+msgstr "पूर्वावलोकनं तथा सूचना"
+
+#: src/widgets/views/FileMenu.qml:162
+#, kde-format
+msgid "UnFav"
+msgstr "UnFav"
+
+#: src/widgets/views/FileMenu.qml:162
+#, kde-format
+msgid "Fav"
+msgstr "Fav"
+
+#: src/widgets/views/FileMenu.qml:224 src/widgets/views/PlacesSideBar.qml:106
+#, kde-format
+msgid "Open in New Window"
+msgstr "New Window इत्यत्र उद्घाटयन्तु"
+
+#: src/widgets/views/FileMenu.qml:242
+#, kde-format
+msgid "Extract"
+msgstr "निष्कर्शन"
+
+#: src/widgets/views/home/SectionGroup.qml:53
+#, kde-format
+msgid "Nothing in here yet."
+msgstr "अत्र अद्यापि किमपि नास्ति।"
+
+#: src/widgets/views/home/SectionGroup.qml:54
+#, kde-format
+msgid "Check back later."
+msgstr "पश्चात् पुनः पश्यन्तु।"
+
+#: src/widgets/views/HomeView.qml:53
+#, kde-format
+msgid "Open folder"
+msgstr "पुटं उद्घाटयन्तु"
+
+#: src/widgets/views/HomeView.qml:65
+#, kde-format
+msgid "Search for files"
+msgstr "सञ्चिकाः अन्वेष्टुम्"
+
+#: src/widgets/views/HomeView.qml:75
+#, kde-format
+msgid "Browser"
+msgstr "ब्राउज़र"
+
+#: src/widgets/views/HomeView.qml:132
+#, kde-format
+msgid "Downloads"
+msgstr "डाउनलोड्स्"
+
+#: src/widgets/views/HomeView.qml:133
+#, kde-format
+msgid "Your most recent downloaded files"
+msgstr "भवतः अद्यतनतमानि अवतरणं कृतानि सञ्चिकाः"
+
+#: src/widgets/views/HomeView.qml:173
+#, kde-format
+msgid "Music"
+msgstr "संगीतं"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Your most recent music files"
+msgstr "भवतः नवीनतमाः सङ्गीतसञ्चिकाः"
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr "बिम्बाः"
+
+#: src/widgets/views/HomeView.qml:215
+#, kde-format
+msgid "Your most recent image files"
+msgstr "भवतः अद्यतनतमानि चित्रसञ्चिकाः"
+
+#: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:422
+#: src/widgets/views/SettingsDialog.qml:426
+#, kde-format
+msgid "Places"
+msgstr "स्थानाः"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, kde-format
+msgid "Quick access to common places."
+msgstr "सामान्यस्थानेषु शीघ्रं प्रवेशः।"
+
+#: src/widgets/views/PlacesSection.qml:36
+#: src/widgets/views/RecentSection.qml:27
+#, kde-format
+msgid "More"
+msgstr "अधिकः"
+
+#: src/widgets/views/PlacesSideBar.qml:44
+#: src/widgets/views/SettingsDialog.qml:444
+#, kde-format
+msgid "Bookmarks"
+msgstr "बुकमार्क्स"
+
+#: src/widgets/views/PlacesSideBar.qml:45
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr "भवतः पुस्तकचिह्नानि अत्र सूचीबद्धानि भविष्यन्ति"
+
+#: src/widgets/views/PlacesSideBar.qml:257
+#, kde-format
+msgid "Mount"
+msgstr "माउण्ट्"
+
+#: src/widgets/views/PlacesSideBar.qml:265
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr "एतत् यन्त्रं प्राप्तुं पूर्वं माउण्ट् करणीयम् । किं भवान् एतत् यन्त्रं स्थापयितुम् इच्छति ?"
+
+#: src/widgets/views/SettingsDialog.qml:14
+#, kde-format
+msgid "Behaviour"
+msgstr "व्यवहार"
+
+#: src/widgets/views/SettingsDialog.qml:19
+#, kde-format
+msgid "Save Session"
+msgstr "सत्रं रक्षतु"
+
+#: src/widgets/views/SettingsDialog.qml:20
+#, kde-format
+msgid "Save and restore tabs."
+msgstr "ट्याब्स् रक्षन्तु पुनर्स्थापयन्तु च।"
+
+#: src/widgets/views/SettingsDialog.qml:32
+#, kde-format
+msgid "Dynamic Preferences"
+msgstr "गतिशील वरीयताएँ"
+
+#: src/widgets/views/SettingsDialog.qml:33
+#, kde-format
+msgid ""
+"Save custom preferences per directory, otherwise use the default preferences."
+msgstr ""
+"प्रतिनिर्देशिकां कस्टम् प्राधान्यानि रक्षन्तु, अन्यथा पूर्वनिर्धारितप्राथमिकतानां उपयोगं कुर्वन्तु "
+"।"
+
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Previews"
+msgstr "पूर्वावलोकनम्"
+
+#: src/widgets/views/SettingsDialog.qml:52
+#, kde-format
+msgid "Open in Window"
+msgstr "विण्डो मध्ये उद्घाटयन्तु"
+
+#: src/widgets/views/SettingsDialog.qml:53
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr "नूतने विण्डो मध्ये सञ्चिकापूर्वावलोकनानि दर्शयन्तु ।"
+
+#: src/widgets/views/SettingsDialog.qml:65
+#, kde-format
+msgid "Autoplay"
+msgstr "स्वतः क्रीडा"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr "ऑडियो तथा विडियो सञ्चिका पूर्वावलोकनं स्वयमेव वादयितुं आरभत।"
+
+#: src/widgets/views/SettingsDialog.qml:78
+#, kde-format
+msgid "Prefer Preview"
+msgstr "पूर्वावलोकनं प्राधान्यं ददातु"
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr "समर्पिते अनुप्रयोगे उद्घाटनस्य स्थाने पूर्वावलोकनविधाने सञ्चिकाः उद्घाटयन्तु ।"
+
+#: src/widgets/views/SettingsDialog.qml:92
+#, kde-format
+msgid "Browsing & Navigation"
+msgstr "ब्राउजिंग एवं नेविगेशन"
+
+#: src/widgets/views/SettingsDialog.qml:96
+#, kde-format
+msgid "Thumbnails"
+msgstr "लघुचित्रम्"
+
+#: src/widgets/views/SettingsDialog.qml:97
+#, kde-format
+msgid "Show previews of images, videos and PDF files."
+msgstr "चित्राणां, विडियोनां, PDF सञ्चिकानां च पूर्वावलोकनं दर्शयतु ।"
+
+#: src/widgets/views/SettingsDialog.qml:109
+#, kde-format
+msgid "View Type"
+msgstr "दृश्यप्रकारः"
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "Default view type."
+msgstr "पूर्वनिर्धारितदृश्यप्रकारः ।"
+
+#: src/widgets/views/SettingsDialog.qml:148
+#, kde-format
+msgid "Default sorting value."
+msgstr "पूर्वनिर्धारितं क्रमणमूल्यम् ।"
+
+#: src/widgets/views/SettingsDialog.qml:217
+#, kde-format
+msgid "Show Folders First"
+msgstr "प्रथमं पुटं दर्शयतु"
+
+#: src/widgets/views/SettingsDialog.qml:245
+#, kde-format
+msgid "Interface"
+msgstr "अन्तरफलकम्"
+
+#: src/widgets/views/SettingsDialog.qml:250
+#, kde-format
+msgid "Grid Items Size"
+msgstr "जालवस्तूनि आकारः"
+
+#: src/widgets/views/SettingsDialog.qml:251
+#, kde-format
+msgid "Size of the grid view."
+msgstr "जालदृश्यस्य आकारः ।"
+
+#: src/widgets/views/SettingsDialog.qml:269
+#: src/widgets/views/SettingsDialog.qml:317
+#, kde-format
+msgid "M"
+msgstr "म"
+
+#: src/widgets/views/SettingsDialog.qml:276
+#: src/widgets/views/SettingsDialog.qml:324
+#, kde-format
+msgid "L"
+msgstr "ल"
+
+#: src/widgets/views/SettingsDialog.qml:283
+#: src/widgets/views/SettingsDialog.qml:331
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#: src/widgets/views/SettingsDialog.qml:290
+#, kde-format
+msgid "XL"
+msgstr "XL"
+
+#: src/widgets/views/SettingsDialog.qml:299
+#, kde-format
+msgid "List Items Size"
+msgstr "सूची आइटम आकार"
+
+#: src/widgets/views/SettingsDialog.qml:300
+#, kde-format
+msgid "Size of the list view."
+msgstr "सूचीदृश्यस्य आकारः ।"
+
+#: src/widgets/views/SettingsDialog.qml:310
+#, kde-format
+msgid "S"
+msgstr "स"
+
+#: src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr "अवलोकनम्"
+
+#: src/widgets/views/SettingsDialog.qml:341
+#, kde-format
+msgid "Use overview mode as default on launch."
+msgstr "प्रक्षेपणसमये पूर्वनिर्धारितरूपेण अवलोकनविधानस्य उपयोगं कुर्वन्तु ।"
+
+#: src/widgets/views/SettingsDialog.qml:354
+#, kde-format
+msgid "Embedded terminal options."
+msgstr "एम्बेडेड् टर्मिनल् विकल्पाः ।"
+
+#: src/widgets/views/SettingsDialog.qml:359
+#, kde-format
+msgid "Sync Terminal"
+msgstr "समन्वयन टर्मिनल"
+
+#: src/widgets/views/SettingsDialog.qml:360
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr "टर्मिनल् वर्तमानकार्यनिर्देशिकां ब्राउजर् स्थाने समन्वययन्तु ।"
+
+#: src/widgets/views/SettingsDialog.qml:372
+#, kde-format
+msgid "Adaptive Color Scheme"
+msgstr "अनुकूली रंग योजना"
+
+#: src/widgets/views/SettingsDialog.qml:373
+#, kde-format
+msgid "Colors based on the current style."
+msgstr "वर्तमानशैल्याः आधारेण वर्णाः।"
+
+#: src/widgets/views/SettingsDialog.qml:384
+#, kde-format
+msgid "Color Scheme"
+msgstr "रङ्ग योजना"
+
+#: src/widgets/views/SettingsDialog.qml:385
+#, kde-format
+msgid "Change the color scheme of the terminal."
+msgstr "टर्मिनलस्य वर्णयोजनां परिवर्तयन्तु ।"
+
+#: src/widgets/views/SettingsDialog.qml:404
+#: src/widgets/views/SettingsDialog.qml:431
+#, kde-format
+msgid "Quick places"
+msgstr "द्रुतस्थानानि"
+
+#: src/widgets/views/SettingsDialog.qml:405
+#: src/widgets/views/SettingsDialog.qml:432
+#: src/widgets/views/SettingsDialog.qml:445
+#, kde-format
+msgid "Access to standard locations."
+msgstr "मानकस्थानेषु प्रवेशः।"
+
+#: src/widgets/views/SettingsDialog.qml:460
+#, kde-format
+msgid "Remote"
+msgstr "दूरस्थ"
+
+#: src/widgets/views/SettingsDialog.qml:461
+#, kde-format
+msgid "Access to network locations."
+msgstr "जालस्थानेषु प्रवेशः ।"
+
+#: src/widgets/views/SettingsDialog.qml:476
+#, kde-format
+msgid "Removable"
+msgstr "हटनीयम्"
+
+#: src/widgets/views/SettingsDialog.qml:477
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr "USB sticks तथा SD Cards इत्येतयोः प्रवेशः ।"
+
+#: src/widgets/views/SettingsDialog.qml:492
+#, kde-format
+msgid "Devices"
+msgstr "यन्त्राणि"
+
+#: src/widgets/views/SettingsDialog.qml:493
+#, kde-format
+msgid "Access drives."
+msgstr "अभिगमन-ड्राइवः ।"
+
+#: src/widgets/views/ShortcutsDialog.qml:13
+#, kde-format
+msgid "Navigation"
+msgstr "नौकायानम्"
+
+#: src/widgets/views/ShortcutsDialog.qml:14
+#, kde-format
+msgid "Browser navigation with keyboard."
+msgstr "कीबोर्डसहितं ब्राउजर् नेविगेशनम्।"
+
+#: src/widgets/views/ShortcutsDialog.qml:18
+#, kde-format
+msgid "New Tab"
+msgstr "नवीन ट्याब्"
+
+#: src/widgets/views/ShortcutsDialog.qml:38
+#, kde-format
+msgid "Close Tab"
+msgstr "ट्याब् बन्दं कुर्वन्तु"
+
+#: src/widgets/views/ShortcutsDialog.qml:58
+#, kde-format
+msgid "Path Edit"
+msgstr "पथ सम्पादन"
+
+#: src/widgets/views/ShortcutsDialog.qml:93
+#, kde-format
+msgid "Split"
+msgstr "भंज"
+
+#: src/widgets/views/ShortcutsDialog.qml:108
+#, kde-format
+msgid "New File"
+msgstr "नवीन सञ्चिका"
+
+#: src/widgets/views/ShortcutsDialog.qml:128
+#, kde-format
+msgid "Preview"
+msgstr "पूर्वावलोकनम्"
+
+#: src/widgets/views/ShortcutsDialog.qml:143
+#, kde-format
+msgid "Find Tab"
+msgstr "ट्याब् अन्वेष्यताम्"
+
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr "द्रुतप्रवेशार्थं टैग् कृताः सञ्चिकाः"
