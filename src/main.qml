@@ -134,7 +134,7 @@ Maui.ApplicationWindow
                 id: _taggedNotification
                 iconName: "dialog-info"
                 title: i18n("Tagged")
-                message: i18n("File was tagged sucessfully")
+                message: i18n("File was tagged successfully")
 
                 Action
                 {
