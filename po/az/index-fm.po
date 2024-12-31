@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-05 01:51+0000\n"
+"POT-Creation-Date: 2024-12-31 00:40+0000\n"
 "PO-Revision-Date: 2023-07-07 14:54+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -38,119 +38,129 @@ msgstr "Tərtibatçı"
 msgid "Open url in a new window."
 msgstr "Yeni pəncərədə açın"
 
-#: src/main.qml:279
+#: src/main.qml:136
+#, kde-format
+msgid "Tagged"
+msgstr ""
+
+#: src/main.qml:137
+#, kde-format
+msgid "File was tagged sucessfully"
+msgstr ""
+
+#: src/main.qml:306
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Yan panelə keçid"
 
-#: src/main.qml:311 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "Siyahı"
 
-#: src/main.qml:326 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "Tor"
 
-#: src/main.qml:367
+#: src/main.qml:394
 #, kde-format
 msgid "Paste"
 msgstr "Yerləşdir"
 
-#: src/main.qml:379 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "Hamısını seçin"
 
-#: src/main.qml:390
+#: src/main.qml:417
 #, kde-format
 msgid "New Item"
 msgstr "Yeni element"
 
-#: src/main.qml:402 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "Çeşidləmək"
 
-#: src/main.qml:406 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "Növ"
 
-#: src/main.qml:418 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "Tarix"
 
-#: src/main.qml:431 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "Dəyişdirilib"
 
-#: src/main.qml:444 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "Ölçü"
 
-#: src/main.qml:457 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "Adı"
 
-#: src/main.qml:476
+#: src/main.qml:503
 #, kde-format
 msgid "New tab"
 msgstr "Yeni vərəq"
 
-#: src/main.qml:483
+#: src/main.qml:510
 #, kde-format
 msgid "View Hidden"
 msgstr "Gizli olanı göstərmək"
 
-#: src/main.qml:491
+#: src/main.qml:518
 #, kde-format
 msgid "Split View"
 msgstr "Bölünmüş görünüş"
 
-#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/main.qml:513
+#: src/main.qml:540
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Terminalı burada açın"
 
-#: src/main.qml:526 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Qısayollar"
 
-#: src/main.qml:537
+#: src/main.qml:564
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/main.qml:544
+#: src/main.qml:571
 #, kde-format
 msgid "About"
 msgstr "Haqqında"
 
-#: src/main.qml:612 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:638 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "Əlfəcin"
 
-#: src/main.qml:619 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:645 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Yeni vərəqdə açın"
 
-#: src/main.qml:627 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:653 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
