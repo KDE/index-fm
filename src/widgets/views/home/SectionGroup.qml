@@ -43,7 +43,7 @@ Maui.SectionGroup
         Layout.fillHeight: true
 
         // flickable.flow: GridView.FlowTopToBottom
-        scrollView.orientation: Qt.Horizontal
+        Maui.Controls.orientation: Qt.Horizontal
 
         itemSize: 220
         itemHeight: 70

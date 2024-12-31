@@ -148,7 +148,7 @@ Item
                 visible: !pathEntry
                 anchors.fill: parent
 
-                orientation: Qt.Horizontal
+                Maui.Controls.orientation: Qt.Horizontal
                 implicitWidth: contentWidth + leftPadding + rightPadding
 
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff

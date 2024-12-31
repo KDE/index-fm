@@ -129,11 +129,37 @@ Maui.ApplicationWindow
 
         FB.TagsDialog
         {
+            Maui.Notification
+            {
+                id: _taggedNotification
+                iconName: "dialog-info"
+                title: i18n("Tagged")
+                message: i18n("File was tagged sucessfully")
+
+                Action
+                {
+                    property string tag
+                    id: _openTagAction
+                    text: tag
+                    onTriggered:
+                    {
+                        openTab("tags:///"+tag)
+                    }
+                }
+            }
+
             taglist.strict: false
             composerList.strict: false
 
             onTagsReady: (tags) =>
                          {
+                             if(tags.length === 1)
+                             {
+                                 _openTagAction.tag = tags[0]
+
+                                 _taggedNotification.dispatch()
+                             }
+
                              composerList.updateToUrls(tags)
                          }
         }
@@ -249,6 +275,7 @@ Maui.ApplicationWindow
 
         Maui.PageLayout
         {
+            id: _pageLayout
             anchors.fill: parent
 
             split: width < 800
@@ -558,7 +585,6 @@ Maui.ApplicationWindow
                 Layout.fillWidth: true
                 Layout.minimumWidth: 100
 
-
                 sourceComponent: Item
                 {
                     implicitHeight: _pathBar.implicitHeight
@@ -577,7 +603,7 @@ Maui.ApplicationWindow
                         id: _pathBar
 
                         anchors.centerIn: parent
-                        width: Math.min(parent.width, implicitWidth)
+                        width: _pageLayout.split ? parent.width : Math.min(parent.width, implicitWidth)
 
                         url: currentBrowser.currentPath
 
