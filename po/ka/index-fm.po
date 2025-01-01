@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-31 00:40+0000\n"
-"PO-Revision-Date: 2024-07-07 06:58+0200\n"
+"POT-Creation-Date: 2025-01-01 00:40+0000\n"
+"PO-Revision-Date: 2024-12-31 04:38+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -41,12 +41,13 @@ msgstr "URL-ის ახალ ფანჯარაში გახსნა."
 #: src/main.qml:136
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "ჭდეებიანი"
 
 #: src/main.qml:137
-#, kde-format
-msgid "File was tagged sucessfully"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "File was tagged sucessfully"
+msgid "File was tagged successfully"
+msgstr "ფაილს ჭდე წარმატებით დაემატა"
 
 #: src/main.qml:306
 #, kde-format
