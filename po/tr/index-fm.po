@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-01 00:40+0000\n"
-"PO-Revision-Date: 2024-12-31 11:47+0300\n"
+"PO-Revision-Date: 2025-01-01 11:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -43,8 +43,7 @@ msgid "Tagged"
 msgstr "Künyelendi"
 
 #: src/main.qml:137
-#, fuzzy, kde-format
-#| msgid "File was tagged sucessfully"
+#, kde-format
 msgid "File was tagged successfully"
 msgstr "Dosya başarıyla künyelendi"
 
