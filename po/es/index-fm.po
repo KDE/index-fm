@@ -2,15 +2,15 @@
 # Copyright (C) 2020 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# Automatically generated, 2020.
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2024 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2024, 2025 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
 # SPDX-FileCopyrightText: 2020, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# Automatically generated, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-01 00:40+0000\n"
-"PO-Revision-Date: 2024-10-26 18:31+0200\n"
+"PO-Revision-Date: 2025-01-04 20:30+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -43,12 +43,12 @@ msgstr "Abrir URL en nueva ventana."
 #: src/main.qml:136
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Etiquetado"
 
 #: src/main.qml:137
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "El archivo se etiquetó exitosamente"
 
 #: src/main.qml:306
 #, kde-format
@@ -773,6 +773,3 @@ msgstr "Encontrar pestaña"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Archivos etiquetados para acceso rápido"
-
-#~ msgid "Cover Flow"
-#~ msgstr "Carrusel"

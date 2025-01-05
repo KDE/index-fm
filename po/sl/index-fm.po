@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Matjaž Jeran <matjaz.jeran@amis.net>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2025 Matjaž Jeran <matjaz.jeran@amis.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-01 00:40+0000\n"
-"PO-Revision-Date: 2024-10-22 06:20+0200\n"
+"PO-Revision-Date: 2025-01-04 10:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -41,12 +41,12 @@ msgstr "Odpri url v novem oknu."
 #: src/main.qml:136
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Označeno"
 
 #: src/main.qml:137
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "Datoteka je bila uspešno označena"
 
 #: src/main.qml:306
 #, kde-format
