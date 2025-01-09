@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-01 00:40+0000\n"
-"PO-Revision-Date: 2024-07-25 15:38+0200\n"
+"PO-Revision-Date: 2025-01-08 12:45+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -40,12 +40,12 @@ msgstr "Aperi url in nove fenestra"
 #: src/main.qml:136
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Etiquettate"
 
 #: src/main.qml:137
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "File esseve atiquettate con successo"
 
 #: src/main.qml:306
 #, kde-format
@@ -361,7 +361,7 @@ msgstr "Vista preliminar e Info"
 #: src/widgets/views/FileMenu.qml:162
 #, kde-format
 msgid "UnFav"
-msgstr ""
+msgstr "UnFav lo (levar lo ex favoritos)"
 
 #: src/widgets/views/FileMenu.qml:162
 #, kde-format
@@ -386,7 +386,7 @@ msgstr "Ancora nulle cosa hic."
 #: src/widgets/views/home/SectionGroup.qml:54
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Verifica de retorno plus tarde"
 
 #: src/widgets/views/HomeView.qml:53
 #, kde-format
@@ -411,7 +411,7 @@ msgstr "Discargamentos"
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr ""
+msgstr "Tu files discargate plus recentemente"
 
 #: src/widgets/views/HomeView.qml:173
 #, kde-format
@@ -421,7 +421,7 @@ msgstr "Musica"
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Tu files de musica plus recente"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
@@ -431,7 +431,7 @@ msgstr "Imagines"
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr ""
+msgstr "Tu files de imagines plus recente"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:422
@@ -443,7 +443,7 @@ msgstr "Placias"
 #: src/widgets/views/PlacesSection.qml:20
 #, kde-format
 msgid "Quick access to common places."
-msgstr ""
+msgstr "Accesso rapide a placias commun."
 
 #: src/widgets/views/PlacesSection.qml:36
 #: src/widgets/views/RecentSection.qml:27
@@ -460,7 +460,7 @@ msgstr "Marcatores de libro"
 #: src/widgets/views/PlacesSideBar.qml:45
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr ""
+msgstr "Tu marcatores de libro essera listate hic"
 
 #: src/widgets/views/PlacesSideBar.qml:257
 #, kde-format
@@ -473,6 +473,8 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
+"Iste dispositivo debe esser montate ante acceder a illo. Tu vole consigurar "
+"iste dispositivo?"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
@@ -492,13 +494,15 @@ msgstr "Salveguarda e restabili schedas."
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Preferentias Dynamic"
 
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Salveguarda preferentias personalisate per direstorio, alteremente usa le "
+"preferentias predefinite."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -513,7 +517,7 @@ msgstr "Aperi in Fenestra"
 #: src/widgets/views/SettingsDialog.qml:53
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Monstra le vistas preliminar de file in un nove fenestra."
 
 #: src/widgets/views/SettingsDialog.qml:65
 #, kde-format
@@ -523,7 +527,7 @@ msgstr "Reproduction automatic"
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Reproduce automaticamente vistas preliminar de file audio e video."
 
 #: src/widgets/views/SettingsDialog.qml:78
 #, kde-format
@@ -536,6 +540,8 @@ msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
+"Aperi file in modo de vista preliminar in loco de aperir los in un "
+"application dedicate."
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
@@ -560,12 +566,12 @@ msgstr "Vide typo"
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Typo de vista predefinite."
 
 #: src/widgets/views/SettingsDialog.qml:148
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Valor de ordinar predefinite."
 
 #: src/widgets/views/SettingsDialog.qml:217
 #, kde-format
@@ -580,12 +586,12 @@ msgstr "Interfacie"
 #: src/widgets/views/SettingsDialog.qml:250
 #, kde-format
 msgid "Grid Items Size"
-msgstr ""
+msgstr "Grandor de elemento de grillia"
 
 #: src/widgets/views/SettingsDialog.qml:251
 #, kde-format
 msgid "Size of the grid view."
-msgstr ""
+msgstr "Grandor del vista de grillia."
 
 #: src/widgets/views/SettingsDialog.qml:269
 #: src/widgets/views/SettingsDialog.qml:317
@@ -613,12 +619,12 @@ msgstr "XL"
 #: src/widgets/views/SettingsDialog.qml:299
 #, kde-format
 msgid "List Items Size"
-msgstr ""
+msgstr "Grandor de elementos de lista"
 
 #: src/widgets/views/SettingsDialog.qml:300
 #, kde-format
 msgid "Size of the list view."
-msgstr ""
+msgstr "Grandor del vista de lista."
 
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
@@ -633,12 +639,12 @@ msgstr "Vista de insimul"
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Use overview mode as default on launch."
-msgstr ""
+msgstr "Usa modo de panorama como predefinite al lancear."
 
 #: src/widgets/views/SettingsDialog.qml:354
 #, kde-format
 msgid "Embedded terminal options."
-msgstr ""
+msgstr "Optiones de terminal incorporate"
 
 #: src/widgets/views/SettingsDialog.qml:359
 #, kde-format
@@ -649,16 +655,18 @@ msgstr "Sync Terminal"
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
+"Synchronisa le directorio in usage currente de terminal al location de "
+"navigator."
 
 #: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Schema de color adaptative"
 
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Colores basate sur le stilo curente"
 
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
@@ -668,7 +676,7 @@ msgstr "Schema de color"
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Cambia le schema de color del terminal."
 
 #: src/widgets/views/SettingsDialog.qml:404
 #: src/widgets/views/SettingsDialog.qml:431
@@ -701,7 +709,7 @@ msgstr "Removibile"
 #: src/widgets/views/SettingsDialog.qml:477
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr ""
+msgstr "Accesso a bastones USB e Cartas SD."
 
 #: src/widgets/views/SettingsDialog.qml:492
 #, kde-format
@@ -711,7 +719,7 @@ msgstr "Dispositivos"
 #: src/widgets/views/SettingsDialog.qml:493
 #, kde-format
 msgid "Access drives."
-msgstr ""
+msgstr "Drives de accesso."
 
 #: src/widgets/views/ShortcutsDialog.qml:13
 #, kde-format
