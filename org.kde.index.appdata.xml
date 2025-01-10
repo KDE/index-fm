@@ -18,6 +18,7 @@
   <name xml:lang="fi">Index</name>
   <name xml:lang="fr">Index</name>
   <name xml:lang="gl">Index</name>
+  <name xml:lang="he">מפתח</name>
   <name xml:lang="hi">निर्देशिका (Index)</name>
   <name xml:lang="hu">Index</name>
   <name xml:lang="ia">Indice</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="fi">Hallitse tiedostojasi</summary>
   <summary xml:lang="fr">Gérer vos fichiers</summary>
   <summary xml:lang="gl">Xestione os seus ficheiros.</summary>
+  <summary xml:lang="he">ניהול הקבצים שלך</summary>
   <summary xml:lang="hi">फ़ाइलों का प्रबंधन करें</summary>
   <summary xml:lang="hu">Fájlkezelő</summary>
   <summary xml:lang="ia">Gere tu files</summary>
@@ -99,6 +101,7 @@
     <p xml:lang="fi">Indexillä voi tarkastella koneen talletustilaa ja esikatsella multimediatiedostoja.</p>
     <p xml:lang="fr">Index vous permet de naviguer dans les fichiers de votre ordinateurs et d'avoir un aperçu des fichiers multimédia.</p>
     <p xml:lang="gl">Index permítelle explorar o seu computador e obter unha vista previa de ficheiros multimedia.</p>
+    <p xml:lang="he">מפתח מאפשר לך לנווט במחשב שלך ולהציג תצוגה מקדימה של קובצי מולטימדיה.</p>
     <p xml:lang="hi">निर्देशिका (Index) आपको अपने कंप्यूटर पर मल़टीमिडिया फाइल संचालन व देखने देता है</p>
     <p xml:lang="hu">Az Index lehetővé teszi a számítógépe böngészését, és a multimédiás fájlok előnézetének megtekintését.</p>
     <p xml:lang="ia">Index (indice) te permitte navigar transfiles de tu computator e previe multimedia. </p>
@@ -144,6 +147,7 @@
       <caption xml:lang="fi">Index-tiedostonhallinta</caption>
       <caption xml:lang="fr">Gestionnaire de fichiers Index</caption>
       <caption xml:lang="gl">Xestor de ficheiros Index.</caption>
+      <caption xml:lang="he">מנהל הקבצים מפתח</caption>
       <caption xml:lang="hi">निर्देशिका (Index) फ़ाइल प्रबंधक</caption>
       <caption xml:lang="hu">Index fájlkezelő</caption>
       <caption xml:lang="ia">Gerente de File de Indice</caption>
