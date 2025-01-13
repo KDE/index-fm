@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-01 00:40+0000\n"
-"PO-Revision-Date: 2020-06-23 02:06+0200\n"
+"PO-Revision-Date: 2025-01-12 20:17+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,454 +17,457 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/main.cpp:65
 #, kde-format
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: src/main.cpp:67
 #, kde-format
 msgid "Browse, organize and preview your files."
-msgstr ""
+msgstr "Naršyti, tvarkyti ir peržiūrėti failus."
 
 #: src/main.cpp:72 src/main.cpp:73
 #, kde-format
 msgid "Developer"
-msgstr ""
+msgstr "Plėtotojas"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Open url in a new window."
-msgstr ""
+msgstr "Atverti URL naujame lange."
 
 #: src/main.qml:136
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Su žyme"
 
 #: src/main.qml:137
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "Failui buvo sėkmingai pridėta žymė"
 
 #: src/main.qml:306
 #, kde-format
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "Perjungti šoninę juostą"
 
 #: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
-msgstr ""
+msgstr "Sąrašas"
 
 #: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
-msgstr ""
+msgstr "Tinklelis"
 
 #: src/main.qml:394
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Įdėti"
 
 #: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
-msgstr ""
+msgstr "Žymėti viską"
 
 #: src/main.qml:417
 #, kde-format
 msgid "New Item"
-msgstr ""
+msgstr "Naujas elementas"
 
 #: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
-msgstr ""
+msgstr "Rikiuoti"
 
 #: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
-msgstr ""
+msgstr "Tipas"
 
 #: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
-msgstr ""
+msgstr "Modifikuota"
 
 #: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "Dydis"
 
 #: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Pavadinimas"
 
 #: src/main.qml:503
 #, kde-format
 msgid "New tab"
-msgstr ""
+msgstr "Nauja kortelė"
 
 #: src/main.qml:510
 #, kde-format
 msgid "View Hidden"
-msgstr ""
+msgstr "Rodyti paslėptus"
 
 #: src/main.qml:518
 #, kde-format
 msgid "Split View"
-msgstr ""
+msgstr "Padalytas rodinys"
 
 #: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
-msgstr ""
+msgstr "Terminalas"
 
 #: src/main.qml:540
 #, kde-format
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Atverti čia terminalą"
 
 #: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
-msgstr ""
+msgstr "Spartieji klavišai"
 
 #: src/main.qml:564
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Nuostatos"
 
 #: src/main.qml:571
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "Apie"
 
 #: src/main.qml:638 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Žymelė"
 
 #: src/main.qml:645 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
-msgstr ""
+msgstr "Atverti naujoje kortelėje"
 
 #: src/main.qml:653 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
-msgstr ""
+msgstr "Atverti padalytame rodinyje"
 
 #: src/widgets/previewer/FilePreviewer.qml:92
 #, kde-format
 msgid "Details"
-msgstr ""
+msgstr "Išsamiau"
 
 #: src/widgets/previewer/FilePreviewer.qml:93
 #, kde-format
 msgid "File information"
-msgstr ""
+msgstr "Informacija apie failą"
 
 #: src/widgets/previewer/FileProperties.qml:43
 #, kde-format
 msgid "Permissions"
-msgstr ""
+msgstr "Leidimai"
 
 #: src/widgets/previewer/FileProperties.qml:44
 #: src/widgets/previewer/FileProperties.qml:147
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "Nustatyti failo leidimus, kad gautumėte prieiga prie šio failo"
 
 #: src/widgets/previewer/FileProperties.qml:48
 #: src/widgets/previewer/FileProperties.qml:151
 #, kde-format
 msgid "Owner"
-msgstr ""
+msgstr "Savininkas"
 
 #: src/widgets/previewer/FileProperties.qml:57
 #: src/widgets/previewer/FileProperties.qml:89
 #: src/widgets/previewer/FileProperties.qml:121
 #, kde-format
 msgid "Read"
-msgstr ""
+msgstr "Skaityti"
 
 #: src/widgets/previewer/FileProperties.qml:64
 #: src/widgets/previewer/FileProperties.qml:96
 #: src/widgets/previewer/FileProperties.qml:127
 #, kde-format
 msgid "Write"
-msgstr ""
+msgstr "Rašyti"
 
 #: src/widgets/previewer/FileProperties.qml:71
 #: src/widgets/previewer/FileProperties.qml:104
 #: src/widgets/previewer/FileProperties.qml:133
 #, kde-format
 msgid "Execute"
-msgstr ""
+msgstr "Vykdyti"
 
 #: src/widgets/previewer/FileProperties.qml:79
 #: src/widgets/previewer/FileProperties.qml:158
 #: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Group"
-msgstr ""
+msgstr "Grupė"
 
 #: src/widgets/previewer/FileProperties.qml:112
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "Visi"
 
 #: src/widgets/previewer/FileProperties.qml:146
 #, kde-format
 msgid "Ownership"
-msgstr ""
+msgstr "Nuosavybė"
 
 #: src/widgets/previewer/FileProperties.qml:164
 #, kde-format
 msgid "Users"
-msgstr ""
+msgstr "Naudotojai"
 
 #: src/widgets/previewer/FileProperties.qml:174
 #, kde-format
 msgid "Groups"
-msgstr ""
+msgstr "Grupės"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Įdiegti"
 
 #: src/widgets/previewer/PreviewerDialog.qml:40
 #: src/widgets/previewer/PreviewerWindow.qml:42
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
-msgstr ""
+msgstr "Atverti"
 
 #: src/widgets/views/Browser.qml:52
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Taisyti"
 
 #: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Šalinti"
 
 #: src/widgets/views/Browser.qml:78
 #, kde-format
 msgid "Remove '%1'"
-msgstr ""
+msgstr "Šalinti „%1“"
 
 #: src/widgets/views/Browser.qml:81
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
+"Ar tikrai norite pašalinti šią žymę? Šios operacijos neįmanoma bus atšaukti."
 
 #: src/widgets/views/Browser.qml:163
 #, kde-format
 msgid "Create new"
-msgstr ""
+msgstr "Sukurti naują"
 
 #: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopijuoti"
 
 #: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Iškirpti"
 
 #: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:191
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Bendrinti"
 
 #: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:256
 #, kde-format
 msgid "Compress"
-msgstr ""
+msgstr "Glaudinti"
 
 #: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:178
 #: src/widgets/views/TagsSection.qml:20
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "Žymės"
 
 #: src/widgets/views/BrowserView.qml:170
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "Atkabinti kortelę"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
 msgid "Devices and Remote"
-msgstr ""
+msgstr "Įrenginiai ir nuotolinės vietos"
 
 #: src/widgets/views/DisksSection.qml:19
 #, kde-format
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr ""
+"Nuotolinės vietos ir įrenginiai, tokie kaip diskai, telefonai ir fotoaparatai"
 
 #: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
 msgid "Favorite files"
-msgstr ""
+msgstr "Mėgstami failai"
 
 #: src/widgets/views/FavoritesSection.qml:21
 #, kde-format
 msgid "Your files marked as favorites"
-msgstr ""
+msgstr "Failai, kuriuos pažymėjote kaip mėgstamus"
 
 #: src/widgets/views/FileMenu.qml:43
 #, kde-format
 msgid " items"
-msgstr ""
+msgstr " elementai"
 
 #: src/widgets/views/FileMenu.qml:89
 #, kde-format
 msgid "Rename"
-msgstr ""
+msgstr "Pervadinti"
 
 #: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
-msgstr ""
+msgstr "Žymėti"
 
 #: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
-msgstr ""
+msgstr "Atverti naudojant"
 
 #: src/widgets/views/FileMenu.qml:144
 #, kde-format
 msgid "Preview and Info"
-msgstr ""
+msgstr "Peržiūra ir informacija"
 
 #: src/widgets/views/FileMenu.qml:162
 #, kde-format
 msgid "UnFav"
-msgstr ""
+msgstr "Nebemėgstamas"
 
 #: src/widgets/views/FileMenu.qml:162
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Mėgstamas"
 
 #: src/widgets/views/FileMenu.qml:224 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
-msgstr ""
+msgstr "Atverti naujame lange"
 
 #: src/widgets/views/FileMenu.qml:242
 #, kde-format
 msgid "Extract"
-msgstr ""
+msgstr "Išpakuoti"
 
 #: src/widgets/views/home/SectionGroup.qml:53
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Čia kol kas nieko nėra."
 
 #: src/widgets/views/home/SectionGroup.qml:54
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Sugrįžkite vėliau."
 
 #: src/widgets/views/HomeView.qml:53
 #, kde-format
 msgid "Open folder"
-msgstr ""
+msgstr "Atverti aplanką"
 
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
-msgstr ""
+msgstr "Ieškoti failų"
 
 #: src/widgets/views/HomeView.qml:75
 #, kde-format
 msgid "Browser"
-msgstr ""
+msgstr "Naršyklė"
 
 #: src/widgets/views/HomeView.qml:132
 #, kde-format
 msgid "Downloads"
-msgstr ""
+msgstr "Atsiuntimai"
 
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr ""
+msgstr "Paskiausiai atsiųsti failai"
 
 #: src/widgets/views/HomeView.qml:173
 #, kde-format
 msgid "Music"
-msgstr ""
+msgstr "Muzika"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Paskiausiai naudoti muzikiniai failai"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Paveikslai"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr ""
+msgstr "Paskiausiai naudoti paveikslų failai"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:422
 #: src/widgets/views/SettingsDialog.qml:426
 #, kde-format
 msgid "Places"
-msgstr ""
+msgstr "Vietos"
 
 #: src/widgets/views/PlacesSection.qml:20
 #, kde-format
 msgid "Quick access to common places."
-msgstr ""
+msgstr "Greita prieiga prie įprastų vietų."
 
 #: src/widgets/views/PlacesSection.qml:36
 #: src/widgets/views/RecentSection.qml:27
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Daugiau"
 
 #: src/widgets/views/PlacesSideBar.qml:44
 #: src/widgets/views/SettingsDialog.qml:444
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Žymelės"
 
 #: src/widgets/views/PlacesSideBar.qml:45
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr ""
+msgstr "Čia bus išvardytos jūsų žymelės"
 
 #: src/widgets/views/PlacesSideBar.qml:257
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "Prijungti"
 
 #: src/widgets/views/PlacesSideBar.qml:265
 #, kde-format
@@ -472,292 +475,296 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
+"Prieš gaunant prieigą prie šio įrenginio, jį reikia prijungti. Ar norite "
+"nusistatyti šį įrenginį?"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Elgsena"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
 msgid "Save Session"
-msgstr ""
+msgstr "Įrašyti seansą"
 
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Save and restore tabs."
-msgstr ""
+msgstr "Įrašyti ir atkurti korteles."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Dinaminės nuostatos"
 
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Kiekvienam katalogui įrašyti tinkintas nuostatas, priešingu atveju, naudoti "
+"numatytąsias nuostatas."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
 msgid "Previews"
-msgstr ""
+msgstr "Peržiūros"
 
 #: src/widgets/views/SettingsDialog.qml:52
 #, kde-format
 msgid "Open in Window"
-msgstr ""
+msgstr "Atverti lange"
 
 #: src/widgets/views/SettingsDialog.qml:53
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Rodyti failų peržiūras naujame lange."
 
 #: src/widgets/views/SettingsDialog.qml:65
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Automatinis atkūrimas"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Pradėti automatinį garso ir vaizdo įrašų failų atkūrimą."
 
 #: src/widgets/views/SettingsDialog.qml:78
 #, kde-format
 msgid "Prefer Preview"
-msgstr ""
+msgstr "Teikti pirmenybę peržiūrai"
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
-msgstr ""
+msgstr "Atverti failus peržiūros veiksenoje, o ne paskirtose programose."
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
 msgid "Browsing & Navigation"
-msgstr ""
+msgstr "Naršymas"
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
 msgid "Thumbnails"
-msgstr ""
+msgstr "Miniatiūros"
 
 #: src/widgets/views/SettingsDialog.qml:97
 #, kde-format
 msgid "Show previews of images, videos and PDF files."
-msgstr ""
+msgstr "Rodyti paveikslų, vaizdo įrašų ir PDF failų peržiūras."
 
 #: src/widgets/views/SettingsDialog.qml:109
 #, kde-format
 msgid "View Type"
-msgstr ""
+msgstr "Rodinio tipas"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Numatytasis rodinio tipas."
 
 #: src/widgets/views/SettingsDialog.qml:148
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Numatytoji rikiavimo reikšmė."
 
 #: src/widgets/views/SettingsDialog.qml:217
 #, kde-format
 msgid "Show Folders First"
-msgstr ""
+msgstr "Pirmiausia rodyti aplankus"
 
 #: src/widgets/views/SettingsDialog.qml:245
 #, kde-format
 msgid "Interface"
-msgstr ""
+msgstr "Sąsaja"
 
 #: src/widgets/views/SettingsDialog.qml:250
 #, kde-format
 msgid "Grid Items Size"
-msgstr ""
+msgstr "Elementų tinklelyje dydis"
 
 #: src/widgets/views/SettingsDialog.qml:251
 #, kde-format
 msgid "Size of the grid view."
-msgstr ""
+msgstr "Tinklelio rodinio dydis."
 
 #: src/widgets/views/SettingsDialog.qml:269
 #: src/widgets/views/SettingsDialog.qml:317
 #, kde-format
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/widgets/views/SettingsDialog.qml:276
 #: src/widgets/views/SettingsDialog.qml:324
 #, kde-format
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: src/widgets/views/SettingsDialog.qml:283
 #: src/widgets/views/SettingsDialog.qml:331
 #, kde-format
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: src/widgets/views/SettingsDialog.qml:290
 #, kde-format
 msgid "XL"
-msgstr ""
+msgstr "XL"
 
 #: src/widgets/views/SettingsDialog.qml:299
 #, kde-format
 msgid "List Items Size"
-msgstr ""
+msgstr "Sąrašo elementų dydis"
 
 #: src/widgets/views/SettingsDialog.qml:300
 #, kde-format
 msgid "Size of the list view."
-msgstr ""
+msgstr "Sąrašo rodinio dydis."
 
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: src/widgets/views/SettingsDialog.qml:340
 #, kde-format
 msgid "Overview"
-msgstr ""
+msgstr "Apžvalga"
 
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Use overview mode as default on launch."
-msgstr ""
+msgstr "Paleidimo metu apžvalgos veikseną naudoti kaip numatytąją."
 
 #: src/widgets/views/SettingsDialog.qml:354
 #, kde-format
 msgid "Embedded terminal options."
-msgstr ""
+msgstr "Įterptos terminalo parinktys."
 
 #: src/widgets/views/SettingsDialog.qml:359
 #, kde-format
 msgid "Sync Terminal"
-msgstr ""
+msgstr "Sinchronizuoti terminalą"
 
 #: src/widgets/views/SettingsDialog.qml:360
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
-msgstr ""
+msgstr "Sinchronizuoti terminalo esamą darbinį katalogą su naršyklės vieta."
 
 #: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Prisitaikantis spalvų rinkinys"
 
 #: src/widgets/views/SettingsDialog.qml:373
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Spalvos, paremtos dabartiniu stiliumi."
 
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Spalvų rinkinys"
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Keisti terminalo spalvų rinkinį."
 
 #: src/widgets/views/SettingsDialog.qml:404
 #: src/widgets/views/SettingsDialog.qml:431
 #, kde-format
 msgid "Quick places"
-msgstr ""
+msgstr "Greitos vietos"
 
 #: src/widgets/views/SettingsDialog.qml:405
 #: src/widgets/views/SettingsDialog.qml:432
 #: src/widgets/views/SettingsDialog.qml:445
 #, kde-format
 msgid "Access to standard locations."
-msgstr ""
+msgstr "Prieiga prie standartinių vietų."
 
 #: src/widgets/views/SettingsDialog.qml:460
 #, kde-format
 msgid "Remote"
-msgstr ""
+msgstr "Nuotoliniai"
 
 #: src/widgets/views/SettingsDialog.qml:461
 #, kde-format
 msgid "Access to network locations."
-msgstr ""
+msgstr "Prieiga prie tinklo vietų."
 
 #: src/widgets/views/SettingsDialog.qml:476
 #, kde-format
 msgid "Removable"
-msgstr ""
+msgstr "Keičiamieji"
 
 #: src/widgets/views/SettingsDialog.qml:477
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr ""
+msgstr "Prieiga prie USB atmintukų ir SD kortelių."
 
 #: src/widgets/views/SettingsDialog.qml:492
 #, kde-format
 msgid "Devices"
-msgstr ""
+msgstr "Įrenginiai"
 
 #: src/widgets/views/SettingsDialog.qml:493
 #, kde-format
 msgid "Access drives."
-msgstr ""
+msgstr "Prieiga prie diskų."
 
 #: src/widgets/views/ShortcutsDialog.qml:13
 #, kde-format
 msgid "Navigation"
-msgstr ""
+msgstr "Naršymas"
 
 #: src/widgets/views/ShortcutsDialog.qml:14
 #, kde-format
 msgid "Browser navigation with keyboard."
-msgstr ""
+msgstr "Naršyti klaviatūra."
 
 #: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
 msgid "New Tab"
-msgstr ""
+msgstr "Nauja kortelė"
 
 #: src/widgets/views/ShortcutsDialog.qml:38
 #, kde-format
 msgid "Close Tab"
-msgstr ""
+msgstr "Užverti kortelę"
 
 #: src/widgets/views/ShortcutsDialog.qml:58
 #, kde-format
 msgid "Path Edit"
-msgstr ""
+msgstr "Kelio taisymas"
 
 #: src/widgets/views/ShortcutsDialog.qml:93
 #, kde-format
 msgid "Split"
-msgstr ""
+msgstr "Padalyti"
 
 #: src/widgets/views/ShortcutsDialog.qml:108
 #, kde-format
 msgid "New File"
-msgstr ""
+msgstr "Naujas failas"
 
 #: src/widgets/views/ShortcutsDialog.qml:128
 #, kde-format
 msgid "Preview"
-msgstr ""
+msgstr "Peržiūra"
 
 #: src/widgets/views/ShortcutsDialog.qml:143
 #, kde-format
 msgid "Find Tab"
-msgstr ""
+msgstr "Rasti kortelę"
 
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tagged files for quick access"
-msgstr ""
+msgstr "Failai su žyme greitai prieigai"
