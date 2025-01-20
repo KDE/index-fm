@@ -40,12 +40,12 @@ msgstr ""
 #: src/main.qml:136
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "已标记"
 
 #: src/main.qml:137
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "文件标记成功"
 
 #: src/main.qml:306
 #, kde-format
