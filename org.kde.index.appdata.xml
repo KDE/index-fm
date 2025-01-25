@@ -198,6 +198,9 @@ https://cdn.kde.org/screenshots/index/index.png
     <control>keyboard</control>
     <control>touch</control>
   </recommends>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
   <content_rating type="oars-1.0"/>
   <project_group>KDE</project_group>
   <releases>
