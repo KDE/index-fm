@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-01 00:40+0000\n"
-"PO-Revision-Date: 2024-11-13 16:57+0200\n"
+"PO-Revision-Date: 2025-01-12 19:38+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -40,12 +40,12 @@ msgstr "Avaa verkko-osoite uuteen ikkunaan."
 #: src/main.qml:136
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Luokiteltu"
 
 #: src/main.qml:137
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "Tiedosto luokiteltiin onnistuneesti"
 
 #: src/main.qml:306
 #, kde-format
