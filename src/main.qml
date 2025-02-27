@@ -80,6 +80,7 @@ Maui.ApplicationWindow
         property bool autoPlayPreviews: true
         property bool terminalFollowsColorScheme: true
         property string terminalColorScheme: "Maui-Dark"
+        property bool showActionsBar: true
     }
 
     Settings
@@ -122,6 +123,47 @@ Maui.ApplicationWindow
 
                    close.accepted = true
                }
+
+    ///////Actions
+    Action
+    {
+        id: _newTabAction
+        icon.name: "tab-new"
+        text: i18n("New tab")
+        onTriggered: root.openTab(currentBrowser.currentPath)
+    }
+
+    Action
+    {
+        id: _viewHiddenAction
+        icon.name: "view-hidden"
+        text: i18n("View Hidden")
+        checkable: true
+        checked: settings.showHiddenFiles
+        onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
+    }
+
+    Action
+    {
+        id: _splitViewAction
+        text: i18n("Split View")
+        icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+        checked: currentTab.count === 2
+        checkable: true
+        onTriggered: toogleSplitView()
+    }
+
+    Action
+    {
+        id: _showTerminalAction
+        text: i18n("Terminal")
+        enabled: !Maui.Handy.isAndroid && currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+        icon.name: "dialog-scripts"
+        checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+        checkable: true
+
+        onTriggered: currentTab.currentItem.toogleTerminal()
+    }
 
     Component
     {
@@ -497,41 +539,7 @@ Maui.ApplicationWindow
 
                         Maui.MenuItemActionRow
                         {
-                            Action
-                            {
-                                icon.name: "tab-new"
-                                text: i18n("New tab")
-                                onTriggered: root.openTab(currentBrowser.currentPath)
-                            }
-
-                            Action
-                            {
-                                icon.name: "view-hidden"
-                                text: i18n("View Hidden")
-                                checkable: true
-                                checked: settings.showHiddenFiles
-                                onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
-                            }
-
-                            Action
-                            {
-                                text: i18n("Split View")
-                                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                                checked: currentTab.count === 2
-                                checkable: true
-                                onTriggered: toogleSplitView()
-                            }
-
-                            Action
-                            {
-                                text: i18n("Terminal")
-                                enabled: !Maui.Handy.isAndroid && currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                                icon.name: "dialog-scripts"
-                                checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-                                checkable: true
-
-                                onTriggered: currentTab.currentItem.toogleTerminal()
-                            }
+                            actions: [_newTabAction, _viewHiddenAction, _splitViewAction, _showTerminalAction]
                         }
 
                         MenuItem

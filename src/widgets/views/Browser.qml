@@ -23,6 +23,7 @@ Maui.SplitViewItem
     readonly property alias settings : _browser.settings
     readonly property alias title : _browser.title
     readonly property bool supportsTerminal : Maui.Handy.isLinux
+    readonly property int terminalPanelHeight: _terminalSplitView.height
 
     property alias currentPath: _browser.currentPath
     property alias terminalVisible : _dirConf.terminalVisible
@@ -294,6 +295,7 @@ Maui.SplitViewItem
 
         Maui.SplitViewItem
         {
+            id: _terminalSplitView
             SplitView.fillWidth: true
             SplitView.preferredHeight: 200
             SplitView.maximumHeight: parent.height * 0.5
@@ -312,6 +314,7 @@ Maui.SplitViewItem
             }
         }
     }
+
 
     Component.onCompleted:
     {
