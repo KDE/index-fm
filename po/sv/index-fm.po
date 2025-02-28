@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 00:40+0000\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
 "PO-Revision-Date: 2025-01-11 12:05+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -37,129 +37,129 @@ msgstr "Utvecklare"
 msgid "Open url in a new window."
 msgstr "Öppna webbadress i ett nytt fönster"
 
-#: src/main.qml:136
-#, kde-format
-msgid "Tagged"
-msgstr "Med etikett"
-
-#: src/main.qml:137
-#, kde-format
-msgid "File was tagged successfully"
-msgstr "Filen etiketterades med lyckat resultat"
-
-#: src/main.qml:306
-#, kde-format
-msgid "Toggle sidebar"
-msgstr "Visa eller dölj sidorad"
-
-#: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
-#, kde-format
-msgid "List"
-msgstr "Lista"
-
-#: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
-#, kde-format
-msgid "Grid"
-msgstr "Rutnät"
-
-#: src/main.qml:394
-#, kde-format
-msgid "Paste"
-msgstr "Klistra in"
-
-#: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
-#, kde-format
-msgid "Select All"
-msgstr "Markera alla"
-
-#: src/main.qml:417
-#, kde-format
-msgid "New Item"
-msgstr "Nytt objekt"
-
-#: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
-#, kde-format
-msgid "Sort"
-msgstr "Sortera"
-
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
-#, kde-format
-msgid "Type"
-msgstr "Typ"
-
-#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
-#, kde-format
-msgid "Date"
-msgstr "Datum"
-
-#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
-#, kde-format
-msgid "Modified"
-msgstr "Ändrad"
-
-#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
-#, kde-format
-msgid "Size"
-msgstr "Storlek"
-
-#: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
-#, kde-format
-msgid "Name"
-msgstr "Namn"
-
-#: src/main.qml:503
+#: src/main.qml:132
 #, kde-format
 msgid "New tab"
 msgstr "Ny flik"
 
-#: src/main.qml:510
+#: src/main.qml:140
 #, kde-format
 msgid "View Hidden"
 msgstr "Visa dolda"
 
-#: src/main.qml:518
+#: src/main.qml:149
 #, kde-format
 msgid "Split View"
 msgstr "Dela vy"
 
-#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/main.qml:540
+#: src/main.qml:178
+#, kde-format
+msgid "Tagged"
+msgstr "Med etikett"
+
+#: src/main.qml:179
+#, kde-format
+msgid "File was tagged successfully"
+msgstr "Filen etiketterades med lyckat resultat"
+
+#: src/main.qml:348
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "Visa eller dölj sidorad"
+
+#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "Lista"
+
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "Rutnät"
+
+#: src/main.qml:436
+#, kde-format
+msgid "Paste"
+msgstr "Klistra in"
+
+#: src/main.qml:448 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "Markera alla"
+
+#: src/main.qml:459
+#, kde-format
+msgid "New Item"
+msgstr "Nytt objekt"
+
+#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr "Sortera"
+
+#: src/main.qml:475 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "Typ"
+
+#: src/main.qml:487 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "Datum"
+
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "Ändrad"
+
+#: src/main.qml:513 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "Storlek"
+
+#: src/main.qml:526 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "Namn"
+
+#: src/main.qml:548
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Öppna terminal här"
 
-#: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:561 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Genvägar"
 
-#: src/main.qml:564
+#: src/main.qml:572
 #, kde-format
 msgid "Settings"
 msgstr "Inställningar"
 
-#: src/main.qml:571
+#: src/main.qml:579
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: src/main.qml:638 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:646 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "Bokmärke"
 
-#: src/main.qml:645 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:653 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Öppna under ny flik"
 
-#: src/main.qml:653 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:661 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -252,30 +252,30 @@ msgstr "Installera"
 msgid "Open"
 msgstr "Öppna"
 
-#: src/widgets/views/Browser.qml:52
+#: src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
 msgstr "Redigera"
 
-#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Ta bort"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid "Remove '%1'"
 msgstr "Ta bort '%1'"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:82
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
 "Är du säker på att du vill ta bort etiketten? Åtgärden går inte att ångra."
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:164
 #, kde-format
 msgid "Create new"
 msgstr "Skapa ny"
@@ -433,8 +433,8 @@ msgid "Your most recent image files"
 msgstr "De senaste bildfilerna"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:422
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
 #, kde-format
 msgid "Places"
 msgstr "Platser"
@@ -451,7 +451,7 @@ msgid "More"
 msgstr "Mer"
 
 #: src/widgets/views/PlacesSideBar.qml:44
-#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bokmärken"
@@ -638,81 +638,94 @@ msgstr "Översikt"
 msgid "Use overview mode as default on launch."
 msgstr "Använd överskrivning som förval vid start."
 
-#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/SettingsDialog.qml:352
+#, fuzzy, kde-format
+#| msgid "Action Bar"
+msgid "Actions Bar"
+msgstr "Åtgärdsrad"
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
 msgstr "Inbäddad terminalalternativ."
 
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
 msgstr "Synkronisera terminal"
 
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 "Synkronisera terminalens nuvarande arbetskatalog till webbläsarens plats."
 
-#: src/widgets/views/SettingsDialog.qml:372
+#: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
 msgstr "Adaptivt färgschema"
 
-#: src/widgets/views/SettingsDialog.qml:373
+#: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
 msgstr "Färger baserade på nuvarande stil."
 
-#: src/widgets/views/SettingsDialog.qml:384
+#: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
 msgstr "Färgschema"
 
-#: src/widgets/views/SettingsDialog.qml:385
+#: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
 msgstr "Ändra terminalens färgschema."
 
-#: src/widgets/views/SettingsDialog.qml:404
-#: src/widgets/views/SettingsDialog.qml:431
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
 msgstr "Snabbplatser"
 
-#: src/widgets/views/SettingsDialog.qml:405
-#: src/widgets/views/SettingsDialog.qml:432
-#: src/widgets/views/SettingsDialog.qml:445
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Åtkomst till standardplatser."
 
-#: src/widgets/views/SettingsDialog.qml:460
+#: src/widgets/views/SettingsDialog.qml:472
 #, kde-format
 msgid "Remote"
 msgstr "Fjärrplatser"
 
-#: src/widgets/views/SettingsDialog.qml:461
+#: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
 msgstr "Åtkomst till nätverksplatser."
 
-#: src/widgets/views/SettingsDialog.qml:476
+#: src/widgets/views/SettingsDialog.qml:488
 #, kde-format
 msgid "Removable"
 msgstr "Flyttbara"
 
-#: src/widgets/views/SettingsDialog.qml:477
+#: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Åtkomst till USB-minnen och SD-kort."
 
-#: src/widgets/views/SettingsDialog.qml:492
+#: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Enheter"
 
-#: src/widgets/views/SettingsDialog.qml:493
+#: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
 msgstr "Åtkomst till diskar."
@@ -861,9 +874,6 @@ msgstr "Etiketterade filer för snabbåtkomst"
 
 #~ msgid "View"
 #~ msgstr "Visa"
-
-#~ msgid "Action Bar"
-#~ msgstr "Åtgärdsrad"
 
 #~ msgid "Extra toolbar with quick actions."
 #~ msgstr "Extra verktygsrad med snabbåtgärder."

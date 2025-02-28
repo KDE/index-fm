@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 00:40+0000\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 16:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -37,129 +37,129 @@ msgstr "开发人员"
 msgid "Open url in a new window."
 msgstr ""
 
-#: src/main.qml:136
-#, kde-format
-msgid "Tagged"
-msgstr "已标记"
-
-#: src/main.qml:137
-#, kde-format
-msgid "File was tagged successfully"
-msgstr "文件标记成功"
-
-#: src/main.qml:306
-#, kde-format
-msgid "Toggle sidebar"
-msgstr "显示/隐藏侧边栏"
-
-#: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
-#, kde-format
-msgid "List"
-msgstr "列表"
-
-#: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
-#, kde-format
-msgid "Grid"
-msgstr "网格"
-
-#: src/main.qml:394
-#, kde-format
-msgid "Paste"
-msgstr "粘贴"
-
-#: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
-#, kde-format
-msgid "Select All"
-msgstr "全部选择"
-
-#: src/main.qml:417
-#, kde-format
-msgid "New Item"
-msgstr ""
-
-#: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
-#, kde-format
-msgid "Sort"
-msgstr ""
-
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
-#, kde-format
-msgid "Type"
-msgstr "类型"
-
-#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
-#, kde-format
-msgid "Date"
-msgstr "日期"
-
-#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
-#, kde-format
-msgid "Modified"
-msgstr "修改日期"
-
-#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
-#, kde-format
-msgid "Size"
-msgstr "大小"
-
-#: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
-#, kde-format
-msgid "Name"
-msgstr "名称"
-
-#: src/main.qml:503
+#: src/main.qml:132
 #, kde-format
 msgid "New tab"
 msgstr ""
 
-#: src/main.qml:510
+#: src/main.qml:140
 #, kde-format
 msgid "View Hidden"
 msgstr ""
 
-#: src/main.qml:518
+#: src/main.qml:149
 #, kde-format
 msgid "Split View"
 msgstr ""
 
-#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "终端"
 
-#: src/main.qml:540
+#: src/main.qml:178
+#, kde-format
+msgid "Tagged"
+msgstr "已标记"
+
+#: src/main.qml:179
+#, kde-format
+msgid "File was tagged successfully"
+msgstr "文件标记成功"
+
+#: src/main.qml:348
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "显示/隐藏侧边栏"
+
+#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "列表"
+
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "网格"
+
+#: src/main.qml:436
+#, kde-format
+msgid "Paste"
+msgstr "粘贴"
+
+#: src/main.qml:448 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "全部选择"
+
+#: src/main.qml:459
+#, kde-format
+msgid "New Item"
+msgstr ""
+
+#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr ""
+
+#: src/main.qml:475 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "类型"
+
+#: src/main.qml:487 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "日期"
+
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "修改日期"
+
+#: src/main.qml:513 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "大小"
+
+#: src/main.qml:526 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "名称"
+
+#: src/main.qml:548
 #, kde-format
 msgid "Open Terminal Here"
 msgstr ""
 
-#: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:561 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "快捷键"
 
-#: src/main.qml:564
+#: src/main.qml:572
 #, kde-format
 msgid "Settings"
 msgstr "设置"
 
-#: src/main.qml:571
+#: src/main.qml:579
 #, kde-format
 msgid "About"
 msgstr "关于"
 
-#: src/main.qml:638 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:646 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "书签"
 
-#: src/main.qml:645 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:653 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr ""
 
-#: src/main.qml:653 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:661 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -252,29 +252,29 @@ msgstr "安装"
 msgid "Open"
 msgstr "打开"
 
-#: src/widgets/views/Browser.qml:52
+#: src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
 msgstr "编辑"
 
-#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "移除"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid "Remove '%1'"
 msgstr "移除“%1”"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:82
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr "您确定要移除此标签吗？此操作无法撤消。"
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:164
 #, kde-format
 msgid "Create new"
 msgstr "新建"
@@ -432,8 +432,8 @@ msgid "Your most recent image files"
 msgstr ""
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:422
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
 #, kde-format
 msgid "Places"
 msgstr "位置"
@@ -450,7 +450,7 @@ msgid "More"
 msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:44
-#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "书签"
@@ -633,80 +633,92 @@ msgstr "概览"
 msgid "Use overview mode as default on launch."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/SettingsDialog.qml:352
+#, kde-format
+msgid "Actions Bar"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:372
+#: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:373
+#: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:384
+#: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:385
+#: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:404
-#: src/widgets/views/SettingsDialog.qml:431
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
 msgstr "快速位置"
 
-#: src/widgets/views/SettingsDialog.qml:405
-#: src/widgets/views/SettingsDialog.qml:432
-#: src/widgets/views/SettingsDialog.qml:445
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
 msgstr "访问标准位置。"
 
-#: src/widgets/views/SettingsDialog.qml:460
+#: src/widgets/views/SettingsDialog.qml:472
 #, kde-format
 msgid "Remote"
 msgstr "远程"
 
-#: src/widgets/views/SettingsDialog.qml:461
+#: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
 msgstr "访问网络位置。"
 
-#: src/widgets/views/SettingsDialog.qml:476
+#: src/widgets/views/SettingsDialog.qml:488
 #, kde-format
 msgid "Removable"
 msgstr "可移动"
 
-#: src/widgets/views/SettingsDialog.qml:477
+#: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "访问 U 盘和 SD 卡。"
 
-#: src/widgets/views/SettingsDialog.qml:492
+#: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "设备"
 
-#: src/widgets/views/SettingsDialog.qml:493
+#: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
 msgstr "访问驱动器。"

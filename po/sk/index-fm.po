@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 00:40+0000\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
 "PO-Revision-Date: 2021-01-24 12:16+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -41,137 +41,137 @@ msgstr "Vývojár"
 msgid "Open url in a new window."
 msgstr "Otvoriť na novej karte"
 
-#: src/main.qml:136
-#, kde-format
-msgid "Tagged"
-msgstr ""
-
-#: src/main.qml:137
-#, kde-format
-msgid "File was tagged successfully"
-msgstr ""
-
-#: src/main.qml:306
-#, fuzzy, kde-format
-#| msgid "Toogle SideBar"
-msgid "Toggle sidebar"
-msgstr "Prepnúť bočný panel"
-
-#: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
-#, kde-format
-msgid "List"
-msgstr "Zoznam"
-
-#: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
-#, kde-format
-msgid "Grid"
-msgstr "Mriežka"
-
-#: src/main.qml:394
-#, kde-format
-msgid "Paste"
-msgstr ""
-
-#: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
-#, kde-format
-msgid "Select All"
-msgstr ""
-
-#: src/main.qml:417
-#, fuzzy, kde-format
-#| msgid "Preview Files"
-msgid "New Item"
-msgstr "Náhľad súborov"
-
-#: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
-#, fuzzy, kde-format
-#| msgid "Sorting by"
-msgid "Sort"
-msgstr "Triedenie podľa"
-
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
-#, kde-format
-msgid "Type"
-msgstr "Typ"
-
-#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
-#, kde-format
-msgid "Date"
-msgstr "Dátum"
-
-#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
-#, kde-format
-msgid "Modified"
-msgstr "Zmenené"
-
-#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
-#, kde-format
-msgid "Size"
-msgstr "Veľkosť"
-
-#: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
-#, kde-format
-msgid "Name"
-msgstr "Názov"
-
-#: src/main.qml:503
+#: src/main.qml:132
 #, kde-format
 msgid "New tab"
 msgstr ""
 
-#: src/main.qml:510
+#: src/main.qml:140
 #, fuzzy, kde-format
 #| msgid "Hidden Files"
 msgid "View Hidden"
 msgstr "Skryté súbory"
 
-#: src/main.qml:518
+#: src/main.qml:149
 #, fuzzy, kde-format
 #| msgid "Split Views"
 msgid "Split View"
 msgstr "Rozdelené zobrazenia"
 
-#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr ""
 
-#: src/main.qml:540
+#: src/main.qml:178
+#, kde-format
+msgid "Tagged"
+msgstr ""
+
+#: src/main.qml:179
+#, kde-format
+msgid "File was tagged successfully"
+msgstr ""
+
+#: src/main.qml:348
+#, fuzzy, kde-format
+#| msgid "Toogle SideBar"
+msgid "Toggle sidebar"
+msgstr "Prepnúť bočný panel"
+
+#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "Zoznam"
+
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "Mriežka"
+
+#: src/main.qml:436
+#, kde-format
+msgid "Paste"
+msgstr ""
+
+#: src/main.qml:448 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr ""
+
+#: src/main.qml:459
+#, fuzzy, kde-format
+#| msgid "Preview Files"
+msgid "New Item"
+msgstr "Náhľad súborov"
+
+#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:147
+#, fuzzy, kde-format
+#| msgid "Sorting by"
+msgid "Sort"
+msgstr "Triedenie podľa"
+
+#: src/main.qml:475 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "Typ"
+
+#: src/main.qml:487 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "Dátum"
+
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "Zmenené"
+
+#: src/main.qml:513 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "Veľkosť"
+
+#: src/main.qml:526 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "Názov"
+
+#: src/main.qml:548
 #, fuzzy, kde-format
 #| msgid "Open terminal here"
 msgid "Open Terminal Here"
 msgstr "Otvoriť terminál tu"
 
-#: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:561 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr ""
 
-#: src/main.qml:564
+#: src/main.qml:572
 #, kde-format
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: src/main.qml:571
+#: src/main.qml:579
 #, kde-format
 msgid "About"
 msgstr ""
 
-#: src/main.qml:638 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:646 src/widgets/views/FileMenu.qml:202
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "Bookmark"
 msgstr "Záložky"
 
-#: src/main.qml:645 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:653 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "Otvoriť na novej karte"
 
-#: src/main.qml:653 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:661 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, fuzzy, kde-format
 #| msgid "Open in split view"
@@ -266,31 +266,31 @@ msgstr "Inštalovať"
 msgid "Open"
 msgstr "Otvoriť"
 
-#: src/widgets/views/Browser.qml:52
+#: src/widgets/views/Browser.qml:53
 #, fuzzy, kde-format
 #| msgid "Edit..."
 msgid "Edit"
 msgstr "Upraviť..."
 
-#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Odstrániť"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:79
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove '%1'"
 msgstr "Odstrániť"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:82
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:164
 #, kde-format
 msgid "Create new"
 msgstr ""
@@ -452,8 +452,8 @@ msgid "Your most recent image files"
 msgstr "Vaše najnovšie stiahnuté súbory, zvuk a obrázky"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:422
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
 #, kde-format
 msgid "Places"
 msgstr ""
@@ -471,7 +471,7 @@ msgid "More"
 msgstr ""
 
 #: src/widgets/views/PlacesSideBar.qml:44
-#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Záložky"
@@ -668,83 +668,95 @@ msgstr "Prehľad"
 msgid "Use overview mode as default on launch."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/SettingsDialog.qml:352
+#, kde-format
+msgid "Actions Bar"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:371
 #, fuzzy, kde-format
 #| msgid "Open terminal here"
 msgid "Sync Terminal"
 msgstr "Otvoriť terminál tu"
 
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:372
+#: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:373
+#: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:384
+#: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:385
+#: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:404
-#: src/widgets/views/SettingsDialog.qml:431
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:405
-#: src/widgets/views/SettingsDialog.qml:432
-#: src/widgets/views/SettingsDialog.qml:445
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:460
+#: src/widgets/views/SettingsDialog.qml:472
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remote"
 msgstr "Odstrániť"
 
-#: src/widgets/views/SettingsDialog.qml:461
+#: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:476
+#: src/widgets/views/SettingsDialog.qml:488
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Removable"
 msgstr "Odstrániť"
 
-#: src/widgets/views/SettingsDialog.qml:477
+#: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:492
+#: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
 msgstr ""
 
-#: src/widgets/views/SettingsDialog.qml:493
+#: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
 msgstr ""

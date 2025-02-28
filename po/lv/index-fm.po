@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 00:40+0000\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
 "PO-Revision-Date: 2025-02-10 16:37+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -38,129 +38,129 @@ msgstr "Izstrādātājs"
 msgid "Open url in a new window."
 msgstr "Atvērt URL jaunā logā."
 
-#: src/main.qml:136
-#, kde-format
-msgid "Tagged"
-msgstr "Pievienot birka"
-
-#: src/main.qml:137
-#, kde-format
-msgid "File was tagged successfully"
-msgstr "Datnei ir pievienota birka"
-
-#: src/main.qml:306
-#, kde-format
-msgid "Toggle sidebar"
-msgstr "Pārslēgt sānu joslu"
-
-#: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
-#, kde-format
-msgid "List"
-msgstr "Saraksts"
-
-#: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
-#, kde-format
-msgid "Grid"
-msgstr "Režģis"
-
-#: src/main.qml:394
-#, kde-format
-msgid "Paste"
-msgstr "Ielīmēt"
-
-#: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
-#, kde-format
-msgid "Select All"
-msgstr "Atlasīt visu"
-
-#: src/main.qml:417
-#, kde-format
-msgid "New Item"
-msgstr "Jauns vienums"
-
-#: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
-#, kde-format
-msgid "Sort"
-msgstr "Kārtot"
-
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
-#, kde-format
-msgid "Type"
-msgstr "Tips"
-
-#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
-#, kde-format
-msgid "Date"
-msgstr "Datums"
-
-#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
-#, kde-format
-msgid "Modified"
-msgstr "Mainīts"
-
-#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
-#, kde-format
-msgid "Size"
-msgstr "Izmērs"
-
-#: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
-#, kde-format
-msgid "Name"
-msgstr "Nosaukums"
-
-#: src/main.qml:503
+#: src/main.qml:132
 #, kde-format
 msgid "New tab"
 msgstr "Jauna cilne"
 
-#: src/main.qml:510
+#: src/main.qml:140
 #, kde-format
 msgid "View Hidden"
 msgstr "Skatīt slēptos"
 
-#: src/main.qml:518
+#: src/main.qml:149
 #, kde-format
 msgid "Split View"
 msgstr "Dalīts skats"
 
-#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Terminālis"
 
-#: src/main.qml:540
+#: src/main.qml:178
+#, kde-format
+msgid "Tagged"
+msgstr "Pievienot birka"
+
+#: src/main.qml:179
+#, kde-format
+msgid "File was tagged successfully"
+msgstr "Datnei ir pievienota birka"
+
+#: src/main.qml:348
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "Pārslēgt sānu joslu"
+
+#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "Saraksts"
+
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "Režģis"
+
+#: src/main.qml:436
+#, kde-format
+msgid "Paste"
+msgstr "Ielīmēt"
+
+#: src/main.qml:448 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "Atlasīt visu"
+
+#: src/main.qml:459
+#, kde-format
+msgid "New Item"
+msgstr "Jauns vienums"
+
+#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr "Kārtot"
+
+#: src/main.qml:475 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "Tips"
+
+#: src/main.qml:487 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "Datums"
+
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "Mainīts"
+
+#: src/main.qml:513 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "Izmērs"
+
+#: src/main.qml:526 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "Nosaukums"
+
+#: src/main.qml:548
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Atvērt termināli šeit"
 
-#: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:561 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Saīsnes"
 
-#: src/main.qml:564
+#: src/main.qml:572
 #, kde-format
 msgid "Settings"
 msgstr "Iestatījumi"
 
-#: src/main.qml:571
+#: src/main.qml:579
 #, kde-format
 msgid "About"
 msgstr "Par"
 
-#: src/main.qml:638 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:646 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "Grāmatzīme"
 
-#: src/main.qml:645 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:653 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Atvērt jaunā cilnē"
 
-#: src/main.qml:653 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:661 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -253,29 +253,29 @@ msgstr "Instalēt"
 msgid "Open"
 msgstr "Atvērt"
 
-#: src/widgets/views/Browser.qml:52
+#: src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
 msgstr "Rediģēt"
 
-#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Noņemt"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid "Remove '%1'"
 msgstr "Noņemt „%1“"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:82
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr "Vai tiešām vēlaties noņemt šo birku? Šo operāciju atcelt nevarēs."
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:164
 #, kde-format
 msgid "Create new"
 msgstr "Izveidot jaunu"
@@ -433,8 +433,8 @@ msgid "Your most recent image files"
 msgstr "Nesen aplūkoto attēlu datnes"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:422
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
 #, kde-format
 msgid "Places"
 msgstr "Vietas"
@@ -451,7 +451,7 @@ msgid "More"
 msgstr "Vairāk"
 
 #: src/widgets/views/PlacesSideBar.qml:44
-#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Grāmatzīmes"
@@ -638,80 +638,92 @@ msgstr "Kopskats"
 msgid "Use overview mode as default on launch."
 msgstr "Palaižot kā noklusējumu lietot kopskatu"
 
-#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/SettingsDialog.qml:352
+#, kde-format
+msgid "Actions Bar"
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
 msgstr "Iegultā termināļa opcijas."
 
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
 msgstr "Sinhronizēt termināli"
 
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr "Sinhronizēt terminālī atvērto dati ar vietu pārlūkā."
 
-#: src/widgets/views/SettingsDialog.qml:372
+#: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
 msgstr "Adaptīva krāsu shēma"
 
-#: src/widgets/views/SettingsDialog.qml:373
+#: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
 msgstr "Krāsas balstās uz pašreizējo stilu."
 
-#: src/widgets/views/SettingsDialog.qml:384
+#: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
 msgstr "Krāsu shēma"
 
-#: src/widgets/views/SettingsDialog.qml:385
+#: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
 msgstr "Mainīt termināļa krāsu shēmu."
 
-#: src/widgets/views/SettingsDialog.qml:404
-#: src/widgets/views/SettingsDialog.qml:431
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
 msgstr "Ātrās vietas"
 
-#: src/widgets/views/SettingsDialog.qml:405
-#: src/widgets/views/SettingsDialog.qml:432
-#: src/widgets/views/SettingsDialog.qml:445
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Piekļuve standarta vietām."
 
-#: src/widgets/views/SettingsDialog.qml:460
+#: src/widgets/views/SettingsDialog.qml:472
 #, kde-format
 msgid "Remote"
 msgstr "Attālās"
 
-#: src/widgets/views/SettingsDialog.qml:461
+#: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
 msgstr "Piekļuva attālajām vietām."
 
-#: src/widgets/views/SettingsDialog.qml:476
+#: src/widgets/views/SettingsDialog.qml:488
 #, kde-format
 msgid "Removable"
 msgstr "Noņemams"
 
-#: src/widgets/views/SettingsDialog.qml:477
+#: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Piekļuve USB zibatmiņām un SD kartēm."
 
-#: src/widgets/views/SettingsDialog.qml:492
+#: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Ierīces"
 
-#: src/widgets/views/SettingsDialog.qml:493
+#: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
 msgstr "Piekļūt datu nesējiem."

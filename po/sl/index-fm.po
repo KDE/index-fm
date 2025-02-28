@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 00:40+0000\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
 "PO-Revision-Date: 2025-01-04 10:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -38,129 +38,129 @@ msgstr "Razvijalec"
 msgid "Open url in a new window."
 msgstr "Odpri url v novem oknu."
 
-#: src/main.qml:136
-#, kde-format
-msgid "Tagged"
-msgstr "Označeno"
-
-#: src/main.qml:137
-#, kde-format
-msgid "File was tagged successfully"
-msgstr "Datoteka je bila uspešno označena"
-
-#: src/main.qml:306
-#, kde-format
-msgid "Toggle sidebar"
-msgstr "Preklopi stransko vrstico"
-
-#: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
-#, kde-format
-msgid "List"
-msgstr "Seznam"
-
-#: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
-#, kde-format
-msgid "Grid"
-msgstr "Mreža"
-
-#: src/main.qml:394
-#, kde-format
-msgid "Paste"
-msgstr "Prilepi"
-
-#: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
-#, kde-format
-msgid "Select All"
-msgstr "Izberi vse"
-
-#: src/main.qml:417
-#, kde-format
-msgid "New Item"
-msgstr "Nova postavka"
-
-#: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
-#, kde-format
-msgid "Sort"
-msgstr "Razvrsti"
-
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
-#, kde-format
-msgid "Type"
-msgstr "Vrsta"
-
-#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
-#, kde-format
-msgid "Date"
-msgstr "Datum"
-
-#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
-#, kde-format
-msgid "Modified"
-msgstr "Spremenjeno"
-
-#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
-#, kde-format
-msgid "Size"
-msgstr "Velikost"
-
-#: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
-#, kde-format
-msgid "Name"
-msgstr "Ime"
-
-#: src/main.qml:503
+#: src/main.qml:132
 #, kde-format
 msgid "New tab"
 msgstr "Nov zavihek"
 
-#: src/main.qml:510
+#: src/main.qml:140
 #, kde-format
 msgid "View Hidden"
 msgstr "Pogled skrit"
 
-#: src/main.qml:518
+#: src/main.qml:149
 #, kde-format
 msgid "Split View"
 msgstr "Razdeli pogled"
 
-#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/main.qml:540
+#: src/main.qml:178
+#, kde-format
+msgid "Tagged"
+msgstr "Označeno"
+
+#: src/main.qml:179
+#, kde-format
+msgid "File was tagged successfully"
+msgstr "Datoteka je bila uspešno označena"
+
+#: src/main.qml:348
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "Preklopi stransko vrstico"
+
+#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "Seznam"
+
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "Mreža"
+
+#: src/main.qml:436
+#, kde-format
+msgid "Paste"
+msgstr "Prilepi"
+
+#: src/main.qml:448 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "Izberi vse"
+
+#: src/main.qml:459
+#, kde-format
+msgid "New Item"
+msgstr "Nova postavka"
+
+#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr "Razvrsti"
+
+#: src/main.qml:475 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "Vrsta"
+
+#: src/main.qml:487 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "Datum"
+
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "Spremenjeno"
+
+#: src/main.qml:513 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "Velikost"
+
+#: src/main.qml:526 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "Ime"
+
+#: src/main.qml:548
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Odpri terminal tukaj"
 
-#: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:561 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Bližnjice"
 
-#: src/main.qml:564
+#: src/main.qml:572
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/main.qml:571
+#: src/main.qml:579
 #, kde-format
 msgid "About"
 msgstr "O programu"
 
-#: src/main.qml:638 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:646 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: src/main.qml:645 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:653 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: src/main.qml:653 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:661 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -253,23 +253,23 @@ msgstr "Namesti"
 msgid "Open"
 msgstr "Odpri"
 
-#: src/widgets/views/Browser.qml:52
+#: src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
 msgstr "Uredi"
 
-#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid "Remove '%1'"
 msgstr "Odstrani '%1'"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:82
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
@@ -277,7 +277,7 @@ msgstr ""
 "Ali ste prepričani, da želite odstraniti to oznako? Te operacije ni mogoče "
 "povrniti."
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:164
 #, kde-format
 msgid "Create new"
 msgstr "Ustvari novo"
@@ -435,8 +435,8 @@ msgid "Your most recent image files"
 msgstr "Zadnje nedavno prenesene datoteke slik"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:422
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
 #, kde-format
 msgid "Places"
 msgstr "Mesta"
@@ -453,7 +453,7 @@ msgid "More"
 msgstr "Več"
 
 #: src/widgets/views/PlacesSideBar.qml:44
-#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zaznamki"
@@ -640,80 +640,93 @@ msgstr "Predogled"
 msgid "Use overview mode as default on launch."
 msgstr "Ob zagonu privzeto uporabi predogledni način."
 
-#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/SettingsDialog.qml:352
+#, fuzzy, kde-format
+#| msgid "Action Bar"
+msgid "Actions Bar"
+msgstr "Vrstica akcij"
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
 msgstr "Vdelane možnosti terminala."
 
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
 msgstr "Sinhroniziraj terminal"
 
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr "Sinhroniziraj trenutni delovni imenik terminala z lokacijo brskalnika."
 
-#: src/widgets/views/SettingsDialog.qml:372
+#: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
 msgstr "Prilagodljiva barvna shema"
 
-#: src/widgets/views/SettingsDialog.qml:373
+#: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
 msgstr "Barve na osnovi trenutnega sloga."
 
-#: src/widgets/views/SettingsDialog.qml:384
+#: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
 msgstr "Barvna shema"
 
-#: src/widgets/views/SettingsDialog.qml:385
+#: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
 msgstr "Spremeni barvno shemo terminala."
 
-#: src/widgets/views/SettingsDialog.qml:404
-#: src/widgets/views/SettingsDialog.qml:431
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
 msgstr "Hitre lokacije"
 
-#: src/widgets/views/SettingsDialog.qml:405
-#: src/widgets/views/SettingsDialog.qml:432
-#: src/widgets/views/SettingsDialog.qml:445
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Dostop do standardnih lokacij."
 
-#: src/widgets/views/SettingsDialog.qml:460
+#: src/widgets/views/SettingsDialog.qml:472
 #, kde-format
 msgid "Remote"
 msgstr "Oddaljena"
 
-#: src/widgets/views/SettingsDialog.qml:461
+#: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
 msgstr "Dostop do omrežnih lokacij."
 
-#: src/widgets/views/SettingsDialog.qml:476
+#: src/widgets/views/SettingsDialog.qml:488
 #, kde-format
 msgid "Removable"
 msgstr "Je možno odstraniti"
 
-#: src/widgets/views/SettingsDialog.qml:477
+#: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Dostop do ključkov USB in kartic SD."
 
-#: src/widgets/views/SettingsDialog.qml:492
+#: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Naprave"
 
-#: src/widgets/views/SettingsDialog.qml:493
+#: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
 msgstr "Dostop do naprav."
@@ -870,9 +883,6 @@ msgstr "Označene datoteke za hitri dostop"
 
 #~ msgid "View"
 #~ msgstr "Pogled"
-
-#~ msgid "Action Bar"
-#~ msgstr "Vrstica akcij"
 
 #~ msgid "Extra toolbar with quick actions."
 #~ msgstr "Dodatna vrstica s hitrimi akcijami."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-01 00:40+0000\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
 "PO-Revision-Date: 2025-01-01 17:00+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -37,129 +37,129 @@ msgstr "Sviluppatore"
 msgid "Open url in a new window."
 msgstr "Apri l'URL in una nuova finestra."
 
-#: src/main.qml:136
-#, kde-format
-msgid "Tagged"
-msgstr "Con etichette"
-
-#: src/main.qml:137
-#, kde-format
-msgid "File was tagged successfully"
-msgstr "Il file è stato etichettato correttamente"
-
-#: src/main.qml:306
-#, kde-format
-msgid "Toggle sidebar"
-msgstr "Commuta la barra laterale"
-
-#: src/main.qml:338 src/widgets/views/SettingsDialog.qml:120
-#, kde-format
-msgid "List"
-msgstr "Elenco"
-
-#: src/main.qml:353 src/widgets/views/SettingsDialog.qml:132
-#, kde-format
-msgid "Grid"
-msgstr "Griglia"
-
-#: src/main.qml:394
-#, kde-format
-msgid "Paste"
-msgstr "Incolla"
-
-#: src/main.qml:406 src/widgets/views/ShortcutsDialog.qml:163
-#, kde-format
-msgid "Select All"
-msgstr "Seleziona tutto"
-
-#: src/main.qml:417
-#, kde-format
-msgid "New Item"
-msgstr "Nuovo elemento"
-
-#: src/main.qml:429 src/widgets/views/SettingsDialog.qml:147
-#, kde-format
-msgid "Sort"
-msgstr "Ordina"
-
-#: src/main.qml:433 src/widgets/views/SettingsDialog.qml:159
-#, kde-format
-msgid "Type"
-msgstr "Tipo"
-
-#: src/main.qml:445 src/widgets/views/SettingsDialog.qml:171
-#, kde-format
-msgid "Date"
-msgstr "Data"
-
-#: src/main.qml:458 src/widgets/views/SettingsDialog.qml:182
-#, kde-format
-msgid "Modified"
-msgstr "Modificato"
-
-#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:193
-#, kde-format
-msgid "Size"
-msgstr "Dimensione"
-
-#: src/main.qml:484 src/widgets/views/SettingsDialog.qml:204
-#, kde-format
-msgid "Name"
-msgstr "Nome"
-
-#: src/main.qml:503
+#: src/main.qml:132
 #, kde-format
 msgid "New tab"
 msgstr "Nuova scheda"
 
-#: src/main.qml:510
+#: src/main.qml:140
 #, kde-format
 msgid "View Hidden"
 msgstr "Visualizza nascosti"
 
-#: src/main.qml:518
+#: src/main.qml:149
 #, kde-format
 msgid "Split View"
 msgstr "Vista divisa"
 
-#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Terminale"
 
-#: src/main.qml:540
+#: src/main.qml:178
+#, kde-format
+msgid "Tagged"
+msgstr "Con etichette"
+
+#: src/main.qml:179
+#, kde-format
+msgid "File was tagged successfully"
+msgstr "Il file è stato etichettato correttamente"
+
+#: src/main.qml:348
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "Commuta la barra laterale"
+
+#: src/main.qml:380 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "Elenco"
+
+#: src/main.qml:395 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "Griglia"
+
+#: src/main.qml:436
+#, kde-format
+msgid "Paste"
+msgstr "Incolla"
+
+#: src/main.qml:448 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "Seleziona tutto"
+
+#: src/main.qml:459
+#, kde-format
+msgid "New Item"
+msgstr "Nuovo elemento"
+
+#: src/main.qml:471 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr "Ordina"
+
+#: src/main.qml:475 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "Tipo"
+
+#: src/main.qml:487 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "Data"
+
+#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "Modificato"
+
+#: src/main.qml:513 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "Dimensione"
+
+#: src/main.qml:526 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "Nome"
+
+#: src/main.qml:548
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Apri il terminale qui"
 
-#: src/main.qml:553 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:561 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Scorciatoie"
 
-#: src/main.qml:564
+#: src/main.qml:572
 #, kde-format
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: src/main.qml:571
+#: src/main.qml:579
 #, kde-format
 msgid "About"
 msgstr "Informazioni"
 
-#: src/main.qml:638 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:646 src/widgets/views/FileMenu.qml:202
 #, kde-format
 msgid "Bookmark"
 msgstr "Segnalibro"
 
-#: src/main.qml:645 src/widgets/views/FileMenu.qml:216
+#: src/main.qml:653 src/widgets/views/FileMenu.qml:216
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Apri in nuova scheda"
 
-#: src/main.qml:653 src/widgets/views/FileMenu.qml:232
+#: src/main.qml:661 src/widgets/views/FileMenu.qml:232
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -252,23 +252,23 @@ msgstr "Installa"
 msgid "Open"
 msgstr "Apri"
 
-#: src/widgets/views/Browser.qml:52
+#: src/widgets/views/Browser.qml:53
 #, kde-format
 msgid "Edit"
 msgstr "Modifica"
 
-#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
 #: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Rimuovi"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:79
 #, kde-format
 msgid "Remove '%1'"
 msgstr "Rimuovi «%1»"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:82
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
@@ -276,7 +276,7 @@ msgstr ""
 "Sei sicuro di voler rimuovere questa etichetta? Questa operazione non può "
 "essere annullata."
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:164
 #, kde-format
 msgid "Create new"
 msgstr "Crea nuovo"
@@ -434,8 +434,8 @@ msgid "Your most recent image files"
 msgstr "Le tue immagini più recenti"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:422
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
 #, kde-format
 msgid "Places"
 msgstr "Risorse"
@@ -452,7 +452,7 @@ msgid "More"
 msgstr "Altro"
 
 #: src/widgets/views/PlacesSideBar.qml:44
-#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Segnalibri"
@@ -642,82 +642,95 @@ msgstr "Panoramica"
 msgid "Use overview mode as default on launch."
 msgstr "Usa la modalità panoramica come predefinita all'avvio."
 
-#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/SettingsDialog.qml:352
+#, fuzzy, kde-format
+#| msgid "Action Bar"
+msgid "Actions Bar"
+msgstr "Barra delle azioni"
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+
+#: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
 msgstr "Opzioni del terminale integrato."
 
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
 msgstr "Sincronizza terminale"
 
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 "Sincronizza la cartella di lavoro attuale del terminale con la posizione del "
 "browser."
 
-#: src/widgets/views/SettingsDialog.qml:372
+#: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
 msgstr "Schema di colori adattivo"
 
-#: src/widgets/views/SettingsDialog.qml:373
+#: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
 msgstr "Colori basati sullo stile attuale."
 
-#: src/widgets/views/SettingsDialog.qml:384
+#: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
 msgstr "Schema di colori"
 
-#: src/widgets/views/SettingsDialog.qml:385
+#: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
 msgstr "Cambia lo schema di colori del terminale."
 
-#: src/widgets/views/SettingsDialog.qml:404
-#: src/widgets/views/SettingsDialog.qml:431
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
 msgstr "Risorse rapide"
 
-#: src/widgets/views/SettingsDialog.qml:405
-#: src/widgets/views/SettingsDialog.qml:432
-#: src/widgets/views/SettingsDialog.qml:445
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Accesso a posizioni standard."
 
-#: src/widgets/views/SettingsDialog.qml:460
+#: src/widgets/views/SettingsDialog.qml:472
 #, kde-format
 msgid "Remote"
 msgstr "Remoto"
 
-#: src/widgets/views/SettingsDialog.qml:461
+#: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
 msgstr "Accesso a posizioni di rete."
 
-#: src/widgets/views/SettingsDialog.qml:476
+#: src/widgets/views/SettingsDialog.qml:488
 #, kde-format
 msgid "Removable"
 msgstr "Rimovibile"
 
-#: src/widgets/views/SettingsDialog.qml:477
+#: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Accesso a chiavette USB e schede SD."
 
-#: src/widgets/views/SettingsDialog.qml:492
+#: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivi"
 
-#: src/widgets/views/SettingsDialog.qml:493
+#: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
 msgstr "Accesso ai dischi."
@@ -872,9 +885,6 @@ msgstr "File etichettati per un accesso rapido"
 
 #~ msgid "View"
 #~ msgstr "Visualizza"
-
-#~ msgid "Action Bar"
-#~ msgstr "Barra delle azioni"
 
 #~ msgid "Extra toolbar with quick actions."
 #~ msgstr "Barra degli strumenti aggiuntiva con azioni rapide."
