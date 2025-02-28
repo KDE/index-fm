@@ -42,30 +42,12 @@ Item
         orientation: width > 600 ? Qt.Horizontal :  Qt.Vertical
     }
 
-
     Loader
     {
         id: _actionsBarLoader
         active: settings.showActionsBar
-        visible: active
+        visible: status == Loader.Ready
         asynchronous: true
-
-        ScaleAnimator on scale
-        {
-            from: 0
-            to: 1
-            duration: Maui.Style.units.longDuration
-            running: _actionsBarLoader.visible
-            easing.type: Easing.OutInQuad
-        }
-
-        OpacityAnimator on opacity
-        {
-            from: 0
-            to: 1
-            duration: Maui.Style.units.longDuration
-            running: _actionsBarLoader.status === Loader.Ready || _actionsBarLoader.visible
-        }
 
         sourceComponent: Pane
         {
@@ -87,6 +69,23 @@ Item
                     shadowEnabled: true
                     shadowColor: "#000000"
                 }
+            }
+
+            ScaleAnimator on scale
+            {
+                from: 0
+                to: 1
+                duration: Maui.Style.units.longDuration
+                running: visible
+                easing.type: Easing.OutInQuad
+            }
+
+            OpacityAnimator on opacity
+            {
+                from: 0
+                to: 1
+                duration: Maui.Style.units.longDuration
+                running: visible
             }
 
             contentItem:  Maui.MenuItemActionRow
@@ -111,10 +110,9 @@ Item
                     {
                         console.log(centroid.position, centroid.scenePosition, centroid.velocity.x)
 
-                        let leftPos = Maui.Style.space.big
-                        let rightPos = control.width - _pane.width - Maui.Style.space.big
-                        let finalPos = centroid.velocity.x < 0 ? leftPos : rightPos
-                        _pane.x = Qt.binding(()=> { return finalPos })
+                        let pos = centroid.velocity.x
+                        _pane.x = Qt.binding(()=> { return pos < 0 ? Maui.Style.space.big : control.width - _pane.width - Maui.Style.space.big })
+                        _pane.y = Qt.binding(()=> { return control.height - _pane.height - control.currentItem.terminalPanelHeight - Maui.Style.space.big })
                     }
                 }
             }
