@@ -91,7 +91,7 @@ Item
             contentItem:  Maui.MenuItemActionRow
             {
                 actions: [_newTabAction, _viewHiddenAction, _splitViewAction, _showTerminalAction]
-
+                display: ToolButton.IconOnly
             }
 
             DragHandler
