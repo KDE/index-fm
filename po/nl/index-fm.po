@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:40+0000\n"
-"PO-Revision-Date: 2025-01-01 10:56+0100\n"
+"PO-Revision-Date: 2025-02-28 10:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -642,8 +642,7 @@ msgid "Use overview mode as default on launch."
 msgstr "Modus overzicht als standaard gebruiken bij starten."
 
 #: src/widgets/views/SettingsDialog.qml:352
-#, fuzzy, kde-format
-#| msgid "Action Bar"
+#, kde-format
 msgid "Actions Bar"
 msgstr "Actiebalk"
 
@@ -653,6 +652,8 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"De actiebalk in de hoofdweergave tonen. Anders zal het in het "
+"toepassingsmenu worden getoond."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
