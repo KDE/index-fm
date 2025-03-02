@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:40+0000\n"
-"PO-Revision-Date: 2025-01-01 17:00+0100\n"
+"PO-Revision-Date: 2025-03-01 07:47+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -643,8 +643,7 @@ msgid "Use overview mode as default on launch."
 msgstr "Usa la modalità panoramica come predefinita all'avvio."
 
 #: src/widgets/views/SettingsDialog.qml:352
-#, fuzzy, kde-format
-#| msgid "Action Bar"
+#, kde-format
 msgid "Actions Bar"
 msgstr "Barra delle azioni"
 
@@ -654,6 +653,8 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"Mostra la barra delle azioni nella vista principale. Altrimenti sarà "
+"mostrata nel menu dell'applicazione."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
