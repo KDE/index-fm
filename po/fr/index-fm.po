@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:40+0000\n"
-"PO-Revision-Date: 2025-01-02 09:07+0100\n"
+"PO-Revision-Date: 2025-03-01 09:50+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 "X-Text-Markup: kde4\n"
 
 #: src/main.cpp:65
@@ -645,10 +645,9 @@ msgid "Use overview mode as default on launch."
 msgstr "Utiliser le mode d'aperçu par défaut au démarrage."
 
 #: src/widgets/views/SettingsDialog.qml:352
-#, fuzzy, kde-format
-#| msgid "Action Bar"
+#, kde-format
 msgid "Actions Bar"
-msgstr "Barres des actions"
+msgstr "Barres d'actions"
 
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
@@ -656,6 +655,8 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"Afficher la barre d'actions dans la vue principale. Sinon, elle sera "
+"affichée dans le menu de l'application."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
