@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:40+0000\n"
-"PO-Revision-Date: 2025-01-08 12:45+0100\n"
+"PO-Revision-Date: 2025-03-04 12:48+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -644,7 +644,7 @@ msgstr "Usa modo de panorama como predefinite al lancear."
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
 msgid "Actions Bar"
-msgstr ""
+msgstr "Barra de Actiones"
 
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
@@ -652,6 +652,8 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"Monstra le barra de actiones in le vista principal. Alteremente il essera "
+"monstrate in le menu de application."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
