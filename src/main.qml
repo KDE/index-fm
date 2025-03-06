@@ -81,6 +81,7 @@ Maui.ApplicationWindow
         property bool terminalFollowsColorScheme: true
         property string terminalColorScheme: "Maui-Dark"
         property bool showActionsBar: true
+        property string lastUsedTag
     }
 
     Settings
@@ -198,9 +199,10 @@ Maui.ApplicationWindow
                              if(tags.length === 1)
                              {
                                  _openTagAction.tag = tags[0]
-
                                  _taggedNotification.dispatch()
                              }
+
+                             settings.lastUsedTag = tags[0]
 
                              composerList.updateToUrls(tags)
                          }

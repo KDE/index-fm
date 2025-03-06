@@ -155,6 +155,35 @@ Maui.ContextualMenu
 
     MenuSeparator {}
 
+    MenuItem
+    {
+        enabled: !control.isExec
+
+        visible: appSettings.lastUsedTag.length > 0
+        height: visible ? implicitHeight : -control.spacing
+        text: i18n("Add to '%1'", appSettings.lastUsedTag)
+        icon.name: "tag"
+        onTriggered:
+        {
+            FB.Tagging.tagUrl(control.item.path, appSettings.lastUsedTag)
+        }
+    }
+
+    Action
+    {
+        enabled: !control.isExec
+        text: i18n("Add Tag")
+        icon.name: "tag"
+        onTriggered:
+        {
+            dialogLoader.sourceComponent = _tagsDialogComponent
+            dialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
+            dialog.open()
+        }
+    }
+
+     MenuSeparator {}
+
     Maui.MenuItemActionRow
     {
         Action
@@ -169,19 +198,6 @@ Maui.ContextualMenu
                 {
                     control.isFav = !control.isFav
                 }
-            }
-        }
-
-        Action
-        {
-            enabled: !control.isExec
-            text: i18n("Tags")
-            icon.name: "tag"
-            onTriggered:
-            {
-                dialogLoader.sourceComponent = _tagsDialogComponent
-                dialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
-                dialog.open()
             }
         }
 
