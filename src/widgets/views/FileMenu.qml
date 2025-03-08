@@ -224,11 +224,17 @@ Maui.ContextualMenu
         }
     }
 
-    MenuSeparator {}
+    MenuSeparator
+    {
+        visible: control.isDir
+        height: visible ? implicitHeight : -control.spacing
+    }
 
     MenuItem
     {
         enabled: control.isDir
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Open in New Tab")
         icon.name: "tab-new"
         onTriggered: root.openTab(control.item.path)
@@ -237,6 +243,8 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: control.isDir && Maui.Handy.isLinux
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Open in New Window")
         icon.name: "window-new"
         onTriggered: inx.openNewWindow(control.item.path)
@@ -245,6 +253,8 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: control.isDir && root.currentTab.count === 1
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Open in Split View")
         icon.name: "view-split-left-right"
         onTriggered: root.currentTab.split(control.item.path, Qt.Horizontal)
@@ -255,6 +265,8 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: FB.FM.checkFileType(FB.FMList.COMPRESSED, control.item.mime)
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Extract")
         icon.name: "archive-extract"
         onTriggered:
@@ -279,7 +291,11 @@ Maui.ContextualMenu
         }
     }
 
-    MenuSeparator {}
+    MenuSeparator
+    {
+        visible: control.isDir
+        height: visible ? implicitHeight : -control.spacing
+    }
 
     ColorsBar
     {
@@ -287,7 +303,8 @@ Maui.ContextualMenu
         padding: control.padding
         width: parent.width
         enabled: control.isDir
-
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         Binding on folderColor {
             value: control.item.icon
             restoreMode: Binding.RestoreBindingOrValue
