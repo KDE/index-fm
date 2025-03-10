@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:41+0000\n"
-"PO-Revision-Date: 2025-03-01 09:50+0100\n"
+"PO-Revision-Date: 2025-03-08 10:16+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 "X-Text-Markup: kde4\n"
 
 #: src/main.cpp:65
@@ -363,12 +363,12 @@ msgstr "Aperçu et informations"
 #: src/widgets/views/FileMenu.qml:164
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Ajouter à « %1 »."
 
 #: src/widgets/views/FileMenu.qml:175
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Ajouter une étiquette"
 
 #: src/widgets/views/FileMenu.qml:191
 #, kde-format
