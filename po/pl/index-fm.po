@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:41+0000\n"
-"PO-Revision-Date: 2025-01-04 07:45+0100\n"
+"PO-Revision-Date: 2025-03-15 10:53+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -360,12 +360,12 @@ msgstr "Podgląd i szczegóły"
 #: src/widgets/views/FileMenu.qml:164
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Dodaj do '%1'"
 
 #: src/widgets/views/FileMenu.qml:175
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Dodaj znacznik"
 
 #: src/widgets/views/FileMenu.qml:191
 #, kde-format
@@ -649,8 +649,7 @@ msgid "Use overview mode as default on launch."
 msgstr "Użyj trybu przeglądu jako domyślnego po uruchomieniu."
 
 #: src/widgets/views/SettingsDialog.qml:352
-#, fuzzy, kde-format
-#| msgid "Action Bar"
+#, kde-format
 msgid "Actions Bar"
 msgstr "Pasek działań"
 
@@ -660,6 +659,8 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"Pokaż pasek działań na głównym widoku. W przeciwnym przypadku zostanie "
+"pokazany w menu aplikacji."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
