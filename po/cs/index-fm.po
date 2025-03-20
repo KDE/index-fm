@@ -363,7 +363,7 @@ msgstr ""
 #: src/widgets/views/FileMenu.qml:175
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Přidat značku"
 
 #: src/widgets/views/FileMenu.qml:191
 #, kde-format

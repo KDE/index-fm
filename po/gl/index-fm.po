@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:41+0000\n"
-"PO-Revision-Date: 2025-03-01 08:35+0100\n"
+"PO-Revision-Date: 2025-03-19 13:15+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -359,12 +359,12 @@ msgstr "Vista previa e información"
 #: src/widgets/views/FileMenu.qml:164
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Engadir a «%1»"
 
 #: src/widgets/views/FileMenu.qml:175
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Engadir unha etiqueta"
 
 #: src/widgets/views/FileMenu.qml:191
 #, kde-format
