@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:41+0000\n"
-"PO-Revision-Date: 2025-01-02 19:04+0900\n"
+"PO-Revision-Date: 2025-03-26 18:19+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: src/main.cpp:65
 #, kde-format
@@ -361,12 +361,12 @@ msgstr "預覽與資訊"
 #: src/widgets/views/FileMenu.qml:164
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "新增到「%1」"
 
 #: src/widgets/views/FileMenu.qml:175
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "新增標籤"
 
 #: src/widgets/views/FileMenu.qml:191
 #, kde-format
@@ -646,8 +646,7 @@ msgid "Use overview mode as default on launch."
 msgstr "啟動時使用總覽模式作為預設。"
 
 #: src/widgets/views/SettingsDialog.qml:352
-#, fuzzy, kde-format
-#| msgid "Action Bar"
+#, kde-format
 msgid "Actions Bar"
 msgstr "動作列"
 
@@ -656,7 +655,7 @@ msgstr "動作列"
 msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
-msgstr ""
+msgstr "在主檢視當中顯示動作列。否則動作列則會顯示在應用程式選單中。"
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
