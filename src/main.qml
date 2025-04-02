@@ -443,6 +443,10 @@ Maui.ApplicationWindow
                             }
                             icon.name: "edit-paste"
                             onTriggered: currentBrowser.paste()
+
+                            property int count
+                            onVisibleChanged: if(visible) count= currentBrowser.currentFMList.clipboardFilesCount()
+                            Maui.Controls.badgeText: count
                         }
 
                         MenuItem
