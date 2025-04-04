@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:41+0000\n"
-"PO-Revision-Date: 2025-01-12 19:38+0200\n"
+"PO-Revision-Date: 2025-03-23 15:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -360,12 +360,12 @@ msgstr "Esikatselu ja tiedot"
 #: src/widgets/views/FileMenu.qml:164
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Lisää kohteeseen ”%1”"
 
 #: src/widgets/views/FileMenu.qml:175
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Lisää luokitus"
 
 #: src/widgets/views/FileMenu.qml:191
 #, kde-format
@@ -649,8 +649,7 @@ msgid "Use overview mode as default on launch."
 msgstr "Käynnistä oletuksena yleisnäkymään."
 
 #: src/widgets/views/SettingsDialog.qml:352
-#, fuzzy, kde-format
-#| msgid "Action Bar"
+#, kde-format
 msgid "Actions Bar"
 msgstr "Toimintorivi"
 
@@ -660,6 +659,7 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"Näytä päänäkymässä toimintorivi, muuten se näytetään sovellusvalikossa."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
