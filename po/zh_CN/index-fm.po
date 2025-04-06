@@ -358,12 +358,12 @@ msgstr ""
 #: src/widgets/views/FileMenu.qml:164
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "添加到“%1”"
 
 #: src/widgets/views/FileMenu.qml:175
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "添加标签"
 
 #: src/widgets/views/FileMenu.qml:191
 #, kde-format
@@ -645,14 +645,14 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
 msgid "Actions Bar"
-msgstr ""
+msgstr "动作栏"
 
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
 msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
-msgstr ""
+msgstr "在主视图中显示动作栏，否则，将在程序菜单中显示。"
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
