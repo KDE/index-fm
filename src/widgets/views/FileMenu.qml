@@ -132,6 +132,8 @@ Maui.ContextualMenu
         enabled: !control.isExec
         text: i18n("Open with")
         icon.name: "document-open"
+        Maui.Controls.badgeText: _browser.filterSelection(currentPath, control.item.path).length
+
         onTriggered:
         {
             openWith(_browser.filterSelection(currentPath, control.item.path))

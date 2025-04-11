@@ -60,7 +60,7 @@ Item
             background: Rectangle
             {
                 radius: Maui.Style.radiusV
-                color: Maui.Theme.backgroundColor
+                color: Maui.Theme.alternateBackgroundColor
 
                 layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                 layer.effect: MultiEffect
@@ -88,10 +88,24 @@ Item
                 running: visible
             }
 
-            contentItem:  Maui.MenuItemActionRow
+            contentItem:  Grid
             {
-                actions: [_newTabAction, _viewHiddenAction, _splitViewAction, _showTerminalAction]
-                display: ToolButton.IconOnly
+                columns: 2
+                rows: 2
+                spacing: Maui.Style.defaultSpacing
+                Repeater
+                {
+                    model: [_newTabAction, _viewHiddenAction, _splitViewAction, _showTerminalAction]
+
+                    ToolButton
+                    {
+                        Maui.Theme.colorSet: Maui.Theme.Complementary
+
+                        action: modelData
+                        display: ToolButton.IconOnly
+                        flat: false
+                    }
+                }
             }
 
             DragHandler
