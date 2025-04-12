@@ -43,24 +43,11 @@ Maui.ContextualMenu
     Maui.Controls.subtitle: control.item.mime ? (control.item.mime === "inode/directory" ? (control.item.count ? control.item.count + i18n(" items") : "") : Maui.Handy.formatSize(control.item.size)) : ""
     icon.source: control.item ? control.item.thumbnail : ""
     icon.name: control.item ? control.item.icon : ""
-    // Maui.Controls.item: Maui.SectionHeader
-    // {
-    //     // height: visible ? implicitContentHeight + topPadding + bottomPadding : 0
-    //     label1.text: control.title
-    //     label1.elide:Text.ElideMiddle
-    //     template.iconSource: control.item.icon
-    //     template.imageSource: control.item.thumbnail
-    //     template.iconSizeHint: Maui.Style.iconSizes.big
-
-    //     background: Rectangle
-    //     {
-    //         color: Maui.Theme.backgroundColor
-    //         radius: Maui.Style.radiusV
-    //     }
-    // }
+    Maui.Controls.badgeText: _browser.filterSelection(currentPath, control.item.path).length
 
     Maui.MenuItemActionRow
     {
+
         Action
         {
             enabled: !control.isExec
@@ -132,7 +119,6 @@ Maui.ContextualMenu
         enabled: !control.isExec
         text: i18n("Open with")
         icon.name: "document-open"
-        Maui.Controls.badgeText: _browser.filterSelection(currentPath, control.item.path).length
 
         onTriggered:
         {
