@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-12 00:40+0000\n"
+"POT-Creation-Date: 2025-04-13 00:40+0000\n"
 "PO-Revision-Date: 2025-03-23 15:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -148,18 +148,18 @@ msgstr "Asetukset"
 msgid "About"
 msgstr "Tietoa"
 
-#: src/main.qml:652 src/widgets/views/FileMenu.qml:220
+#: src/main.qml:652 src/widgets/views/FileMenu.qml:206
 #, kde-format
 msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
-#: src/main.qml:659 src/widgets/views/FileMenu.qml:240
+#: src/main.qml:659 src/widgets/views/FileMenu.qml:226
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Avaa uuteen välilehteen"
 
-#: src/main.qml:667 src/widgets/views/FileMenu.qml:260
+#: src/main.qml:667 src/widgets/views/FileMenu.qml:246
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -258,7 +258,7 @@ msgid "Edit"
 msgstr "Muokkaa"
 
 #: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Poista"
@@ -280,23 +280,23 @@ msgstr ""
 msgid "Create new"
 msgstr "Luo uusi"
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:54
 #, kde-format
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:65
 #, kde-format
 msgid "Cut"
 msgstr "Leikkaa"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:209
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:195
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Jaa"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:286
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:272
 #, kde-format
 msgid "Compress"
 msgstr "Pakkaa"
@@ -337,52 +337,52 @@ msgstr "Suosikeiksi merkityt tiedostot"
 msgid " items"
 msgstr " kohdetta"
 
-#: src/widgets/views/FileMenu.qml:89
+#: src/widgets/views/FileMenu.qml:76
 #, kde-format
 msgid "Rename"
 msgstr "Muuta nimeä"
 
-#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
+#: src/widgets/views/FileMenu.qml:102 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
 msgstr "Valitse"
 
-#: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:120 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Avaa ohjelmalla"
 
-#: src/widgets/views/FileMenu.qml:146
+#: src/widgets/views/FileMenu.qml:132
 #, kde-format
 msgid "Preview and Info"
 msgstr "Esikatselu ja tiedot"
 
-#: src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
 msgstr "Lisää kohteeseen ”%1”"
 
-#: src/widgets/views/FileMenu.qml:177
+#: src/widgets/views/FileMenu.qml:163
 #, kde-format
 msgid "Add Tag"
 msgstr "Lisää luokitus"
 
-#: src/widgets/views/FileMenu.qml:193
+#: src/widgets/views/FileMenu.qml:179
 #, kde-format
 msgid "UnFav"
 msgstr "Poista suosikeista"
 
-#: src/widgets/views/FileMenu.qml:193
+#: src/widgets/views/FileMenu.qml:179
 #, kde-format
 msgid "Fav"
 msgstr "Suosikki"
 
-#: src/widgets/views/FileMenu.qml:250 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:236 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "Avaa uuteen ikkunaan"
 
-#: src/widgets/views/FileMenu.qml:272
+#: src/widgets/views/FileMenu.qml:258
 #, kde-format
 msgid "Extract"
 msgstr "Pura"

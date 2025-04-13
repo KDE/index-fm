@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-12 00:40+0000\n"
+"POT-Creation-Date: 2025-04-13 00:40+0000\n"
 "PO-Revision-Date: 2021-10-07 17:48-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -156,19 +156,19 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: src/main.qml:652 src/widgets/views/FileMenu.qml:220
+#: src/main.qml:652 src/widgets/views/FileMenu.qml:206
 #, kde-format
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: src/main.qml:659 src/widgets/views/FileMenu.qml:240
+#: src/main.qml:659 src/widgets/views/FileMenu.qml:226
 #: src/widgets/views/PlacesSideBar.qml:98
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "ਨਵੀਂ ਟੈਬ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 
-#: src/main.qml:667 src/widgets/views/FileMenu.qml:260
+#: src/main.qml:667 src/widgets/views/FileMenu.qml:246
 #: src/widgets/views/PlacesSideBar.qml:114
 #, fuzzy, kde-format
 #| msgid "Open in split view"
@@ -269,7 +269,7 @@ msgid "Edit"
 msgstr "ਮਾਰਗ ਸੋਧੋ"
 
 #: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
@@ -291,23 +291,23 @@ msgstr ""
 msgid "Create new"
 msgstr ""
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:54
 #, kde-format
 msgid "Copy"
 msgstr "ਕਾਪੀ ਕਰੋ"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:65
 #, kde-format
 msgid "Cut"
 msgstr "ਕੱਟੋ"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:209
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:195
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "ਸਾਂਝਾ ਕਰੋ"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:286
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:272
 #, kde-format
 msgid "Compress"
 msgstr "ਕੰਪਰੈਸ ਕਰੋ"
@@ -347,54 +347,54 @@ msgstr "ਪਸੰਦ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਈਆਂ ਤੁਹਾ�
 msgid " items"
 msgstr "ਚੀਜ਼ਾਂ"
 
-#: src/widgets/views/FileMenu.qml:89
+#: src/widgets/views/FileMenu.qml:76
 #, kde-format
 msgid "Rename"
 msgstr "ਨਾਂ-ਬਦਲੋ"
 
-#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
+#: src/widgets/views/FileMenu.qml:102 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
 msgstr "ਚੁਣੋ"
 
-#: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:120 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "ਇਸ ਨਾਲ ਖੋਲ੍ਹੋ"
 
-#: src/widgets/views/FileMenu.qml:146
+#: src/widgets/views/FileMenu.qml:132
 #, fuzzy, kde-format
 #| msgid "Preview and info"
 msgid "Preview and Info"
 msgstr "ਝਲਕ ਤੇ ਜਾਣਕਾਰੀ"
 
-#: src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:177
+#: src/widgets/views/FileMenu.qml:163
 #, kde-format
 msgid "Add Tag"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:193
+#: src/widgets/views/FileMenu.qml:179
 #, kde-format
 msgid "UnFav"
 msgstr "ਨਾ-ਪਸੰਦ"
 
-#: src/widgets/views/FileMenu.qml:193
+#: src/widgets/views/FileMenu.qml:179
 #, kde-format
 msgid "Fav"
 msgstr "ਪਸੰਦ"
 
-#: src/widgets/views/FileMenu.qml:250 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:236 src/widgets/views/PlacesSideBar.qml:106
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Window"
 msgstr "ਨਵੀਂ ਟੈਬ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 
-#: src/widgets/views/FileMenu.qml:272
+#: src/widgets/views/FileMenu.qml:258
 #, kde-format
 msgid "Extract"
 msgstr "ਖਿਲਾਰੋ"

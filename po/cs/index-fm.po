@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-12 00:40+0000\n"
+"POT-Creation-Date: 2025-04-13 00:40+0000\n"
 "PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -148,18 +148,18 @@ msgstr "Nastavení"
 msgid "About"
 msgstr "O aplikaci"
 
-#: src/main.qml:652 src/widgets/views/FileMenu.qml:220
+#: src/main.qml:652 src/widgets/views/FileMenu.qml:206
 #, kde-format
 msgid "Bookmark"
 msgstr "Záložka"
 
-#: src/main.qml:659 src/widgets/views/FileMenu.qml:240
+#: src/main.qml:659 src/widgets/views/FileMenu.qml:226
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Otevřít v nové kartě"
 
-#: src/main.qml:667 src/widgets/views/FileMenu.qml:260
+#: src/main.qml:667 src/widgets/views/FileMenu.qml:246
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -258,7 +258,7 @@ msgid "Edit"
 msgstr "Upravit"
 
 #: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "Odstranit"
@@ -279,23 +279,23 @@ msgstr "Opravdu si přejete odstranit tuto značku? Tento krok nejde vrátit."
 msgid "Create new"
 msgstr "Vytvořit nový"
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
+#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:54
 #, kde-format
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
+#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:65
 #, kde-format
 msgid "Cut"
 msgstr "Vyjmout"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:209
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:195
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Sdílet"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:286
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:272
 #, kde-format
 msgid "Compress"
 msgstr "Zkomprimovat"
@@ -335,52 +335,52 @@ msgstr "Vaše soubory označené jako oblíbené"
 msgid " items"
 msgstr "položky"
 
-#: src/widgets/views/FileMenu.qml:89
+#: src/widgets/views/FileMenu.qml:76
 #, kde-format
 msgid "Rename"
 msgstr "Přejmenovat"
 
-#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
+#: src/widgets/views/FileMenu.qml:102 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
 msgstr "Vybrat"
 
-#: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:120 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Otevřít pomocí"
 
-#: src/widgets/views/FileMenu.qml:146
+#: src/widgets/views/FileMenu.qml:132
 #, kde-format
 msgid "Preview and Info"
 msgstr "Náhled a informace"
 
-#: src/widgets/views/FileMenu.qml:166
+#: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:177
+#: src/widgets/views/FileMenu.qml:163
 #, kde-format
 msgid "Add Tag"
 msgstr "Přidat značku"
 
-#: src/widgets/views/FileMenu.qml:193
+#: src/widgets/views/FileMenu.qml:179
 #, kde-format
 msgid "UnFav"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:193
+#: src/widgets/views/FileMenu.qml:179
 #, kde-format
 msgid "Fav"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:250 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:236 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "Otevřít v novém okně"
 
-#: src/widgets/views/FileMenu.qml:272
+#: src/widgets/views/FileMenu.qml:258
 #, kde-format
 msgid "Extract"
 msgstr "Rozbalit"
