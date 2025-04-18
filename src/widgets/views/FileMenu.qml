@@ -43,7 +43,7 @@ Maui.ContextualMenu
     Maui.Controls.subtitle: control.item.mime ? (control.item.mime === "inode/directory" ? (control.item.count ? control.item.count + i18n(" items") : "") : Maui.Handy.formatSize(control.item.size)) : ""
     icon.source: control.item ? control.item.thumbnail : ""
     icon.name: control.item ? control.item.icon : ""
-    Maui.Controls.badgeText: _browser.filterSelection(currentPath, control.item.path).length
+    Maui.Controls.badgeText: _browser.filterSelection(currentPath, control.item.path).length > 1 ?  _browser.filterSelection(currentPath, control.item.path).length : ""
 
     Maui.MenuItemActionRow
     {

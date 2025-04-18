@@ -545,6 +545,8 @@ Maui.ApplicationWindow
 
                         Maui.MenuItemActionRow
                         {
+                            visible: !appSettings.showActionsBar
+                            height: visible ? implicitHeight: -_mainMenu.spacing
                             actions: [_newTabAction, _viewHiddenAction, _splitViewAction, _showTerminalAction]
                         }
 
