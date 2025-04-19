@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-13 00:40+0000\n"
+"POT-Creation-Date: 2025-04-19 00:40+0000\n"
 "PO-Revision-Date: 2023-07-31 21:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -130,38 +130,38 @@ msgstr "Storleik"
 msgid "Name"
 msgstr "Namn"
 
-#: src/main.qml:554
+#: src/main.qml:556
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Opna terminal her"
 
-#: src/main.qml:567 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:569 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Snarvegar"
 
-#: src/main.qml:578
+#: src/main.qml:580
 #, kde-format
 msgid "Settings"
 msgstr "Innstillingar"
 
-#: src/main.qml:585
+#: src/main.qml:587
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: src/main.qml:652 src/widgets/views/FileMenu.qml:206
+#: src/main.qml:654 src/widgets/views/FileMenu.qml:206
 #, kde-format
 msgid "Bookmark"
 msgstr "Bokmerke"
 
-#: src/main.qml:659 src/widgets/views/FileMenu.qml:226
+#: src/main.qml:661 src/widgets/views/FileMenu.qml:226
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Opna i ny fane"
 
-#: src/main.qml:667 src/widgets/views/FileMenu.qml:246
+#: src/main.qml:669 src/widgets/views/FileMenu.qml:246
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
