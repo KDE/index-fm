@@ -95,6 +95,9 @@ ecm_setup_version(${INDEX_VERSION}
     VARIABLE_PREFIX INDEX
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/index_version.h")
 
+    qt_policy(SET QTP0001 NEW)
+    qt_policy(SET QTP0004 NEW)
+
 add_subdirectory(src)
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)
