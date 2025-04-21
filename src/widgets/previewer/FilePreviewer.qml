@@ -10,7 +10,7 @@ Item
 {
     id: control
 
-    implicitHeight: 1000
+    implicitHeight: 600
     property url currentUrl: ""
 
     ListModel { id: infoModel }
@@ -25,6 +25,10 @@ Item
     onCurrentUrlChanged:
     {
         console.log("PREVIEWER URL CHANGED", control.currentUrl)
+
+        iteminfo = FB.FM.getFileInfo(currentUrl)
+        initModel()
+
         show()
     }
 
@@ -61,23 +65,23 @@ Item
 
     Loader
     {
+        id: _infoLoader
         anchors.fill: parent
         visible: control.showInfo
         asynchronous: true
 
         sourceComponent: Maui.ScrollColumn
         {
-            spacing: Maui.Style.space.huge
-
             Item
             {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 150
 
-                Maui.IconItem
+                Maui.GridItemTemplate
                 {
                     height: parent.height * 0.9
                     width: height
+                    label1.text: iteminfo.label
                     anchors.centerIn: parent
                     iconSource: iteminfo.icon
                     imageSource: iteminfo.thumbnail
@@ -91,16 +95,23 @@ Item
 
                 title: i18n("Details")
                 description: i18n("File information")
-                Repeater
+
+                Flow
                 {
-                    model: infoModel
-                    delegate:  Maui.SectionItem
+                    Layout.fillWidth: true
+                    spacing: Maui.Style.defaultSpacing
+
+                    Repeater
                     {
-                        visible:  model.value ? true : false
-                        Layout.fillWidth: true
-                        label1.text: model.key
-                        label2.text: model.value
-                        label2.wrapMode: Text.Wrap
+                        model: infoModel
+                        delegate:  Maui.SectionItem
+                        {
+                            flat: false
+                            visible:  model.value ? true : false
+                            label1.text: model.key
+                            label2.text: model.value
+                            label2.wrapMode: Text.Wrap
+                        }
                     }
                 }
             }
@@ -123,7 +134,6 @@ Item
 
         // if(control.showInfo)
 
-        control.iteminfo = FB.FM.getFileInfo(control.currentUrl)
         control.isDir = iteminfo.isdir == "true"
 
         var source = "DefaultPreview.qml"
@@ -161,13 +171,12 @@ Item
         console.log("previe mime", iteminfo.mime, previewLoader.source)
         previewLoader.source = source
         control.showInfo = (source === "DefaultPreview.qml")
-        initModel()
     }
 
     function initModel()
     {
         infoModel.clear()
-        infoModel.append({key: "Name", value: iteminfo.label})
+        // infoModel.append({key: "Name", value: iteminfo.label})
         infoModel.append({key: "Type", value: iteminfo.mime})
         infoModel.append({key: "Date", value: Qt.formatDateTime(new Date(iteminfo.date), "d MMM yyyy")})
         infoModel.append({key: "Modified", value: Qt.formatDateTime(new Date(iteminfo.modified), "d MMM yyyy")})
@@ -177,8 +186,8 @@ Item
         infoModel.append({key: "Size", value: Maui.Handy.formatSize(iteminfo.size)})
         infoModel.append({key: "Symbolic Link", value: iteminfo.symlink})
         infoModel.append({key: "Path", value: iteminfo.path})
-        infoModel.append({key: "Thumbnail", value: iteminfo.thumbnail})
-        infoModel.append({key: "Icon Name", value: iteminfo.icon})
+        // infoModel.append({key: "Thumbnail", value: iteminfo.thumbnail})
+        // infoModel.append({key: "Icon Name", value: iteminfo.icon})
     }
 
     function toggleInfo()

@@ -12,7 +12,7 @@ Maui.PopupPage
     title: _previewer.title
     readonly property alias previewer : _previewer
     hint: 1
-    maxWidth: 800
+    maxWidth: 600
     maxHeight: implicitHeight
 
     stack: FilePreviewer
@@ -20,7 +20,7 @@ Maui.PopupPage
         id: _previewer
         Layout.fillWidth: true
         Layout.fillHeight: true
-        currentUrl:  currentBrowser.currentFMModel.get(currentBrowser.currentIndex).url
+        currentUrl: currentBrowser.currentFMModel.get(currentBrowser.currentIndex).url
     }
 
     footBar.rightContent: [
