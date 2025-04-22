@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:40+0000\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
 "PO-Revision-Date: 2025-03-08 10:16+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -166,12 +166,12 @@ msgstr "Ouvrir dans un nouvel onglet"
 msgid "Open in Split View"
 msgstr "Ouvrir dans un affichage scindé"
 
-#: src/widgets/previewer/FilePreviewer.qml:92
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "Détails"
 
-#: src/widgets/previewer/FilePreviewer.qml:93
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "Informations sur le fichier"
@@ -182,64 +182,54 @@ msgid "Permissions"
 msgstr "Droits d'accès"
 
 #: src/widgets/previewer/FileProperties.qml:44
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr "Définir les droits d'accès pour accéder à ce fichier"
 
-#: src/widgets/previewer/FileProperties.qml:48
-#: src/widgets/previewer/FileProperties.qml:151
+#: src/widgets/previewer/FileProperties.qml:52
+#: src/widgets/previewer/FileProperties.qml:163
 #, kde-format
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: src/widgets/previewer/FileProperties.qml:57
-#: src/widgets/previewer/FileProperties.qml:89
-#: src/widgets/previewer/FileProperties.qml:121
+#: src/widgets/previewer/FileProperties.qml:62
+#: src/widgets/previewer/FileProperties.qml:95
+#: src/widgets/previewer/FileProperties.qml:128
 #, kde-format
 msgid "Read"
 msgstr "Lecture"
 
-#: src/widgets/previewer/FileProperties.qml:64
-#: src/widgets/previewer/FileProperties.qml:96
-#: src/widgets/previewer/FileProperties.qml:127
+#: src/widgets/previewer/FileProperties.qml:69
+#: src/widgets/previewer/FileProperties.qml:102
+#: src/widgets/previewer/FileProperties.qml:134
 #, kde-format
 msgid "Write"
 msgstr "Écriture"
 
-#: src/widgets/previewer/FileProperties.qml:71
-#: src/widgets/previewer/FileProperties.qml:104
-#: src/widgets/previewer/FileProperties.qml:133
+#: src/widgets/previewer/FileProperties.qml:76
+#: src/widgets/previewer/FileProperties.qml:110
+#: src/widgets/previewer/FileProperties.qml:140
 #, kde-format
 msgid "Execute"
 msgstr "Exécuter"
 
-#: src/widgets/previewer/FileProperties.qml:79
-#: src/widgets/previewer/FileProperties.qml:158
+#: src/widgets/previewer/FileProperties.qml:84
+#: src/widgets/previewer/FileProperties.qml:170
 #: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Group"
 msgstr "Groupe"
 
-#: src/widgets/previewer/FileProperties.qml:112
+#: src/widgets/previewer/FileProperties.qml:118
 #, kde-format
 msgid "Everyone"
 msgstr "Tout le monde"
 
-#: src/widgets/previewer/FileProperties.qml:146
+#: src/widgets/previewer/FileProperties.qml:153
 #, kde-format
 msgid "Ownership"
 msgstr "Propriété"
-
-#: src/widgets/previewer/FileProperties.qml:164
-#, kde-format
-msgid "Users"
-msgstr "Utilisateurs"
-
-#: src/widgets/previewer/FileProperties.qml:174
-#, kde-format
-msgid "Groups"
-msgstr "Groupes"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
@@ -796,6 +786,12 @@ msgstr "Trouver un onglet"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fichiers étiquetés pour un accès rapide"
+
+#~ msgid "Users"
+#~ msgstr "Utilisateurs"
+
+#~ msgid "Groups"
+#~ msgstr "Groupes"
 
 #~ msgid "Cover Flow"
 #~ msgstr "Cover Flow"

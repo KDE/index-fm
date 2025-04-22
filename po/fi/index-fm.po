@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:40+0000\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
 "PO-Revision-Date: 2025-03-23 15:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -165,12 +165,12 @@ msgstr "Avaa uuteen välilehteen"
 msgid "Open in Split View"
 msgstr "Avaa jaettuun näkymään"
 
-#: src/widgets/previewer/FilePreviewer.qml:92
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "Tiedot"
 
-#: src/widgets/previewer/FilePreviewer.qml:93
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "Tiedoston tiedot"
@@ -181,64 +181,54 @@ msgid "Permissions"
 msgstr "Käyttöoikeudet"
 
 #: src/widgets/previewer/FileProperties.qml:44
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr "Aseta tiedoston käyttöoikeudet"
 
-#: src/widgets/previewer/FileProperties.qml:48
-#: src/widgets/previewer/FileProperties.qml:151
+#: src/widgets/previewer/FileProperties.qml:52
+#: src/widgets/previewer/FileProperties.qml:163
 #, kde-format
 msgid "Owner"
 msgstr "Omistaja"
 
-#: src/widgets/previewer/FileProperties.qml:57
-#: src/widgets/previewer/FileProperties.qml:89
-#: src/widgets/previewer/FileProperties.qml:121
+#: src/widgets/previewer/FileProperties.qml:62
+#: src/widgets/previewer/FileProperties.qml:95
+#: src/widgets/previewer/FileProperties.qml:128
 #, kde-format
 msgid "Read"
 msgstr "Luku"
 
-#: src/widgets/previewer/FileProperties.qml:64
-#: src/widgets/previewer/FileProperties.qml:96
-#: src/widgets/previewer/FileProperties.qml:127
+#: src/widgets/previewer/FileProperties.qml:69
+#: src/widgets/previewer/FileProperties.qml:102
+#: src/widgets/previewer/FileProperties.qml:134
 #, kde-format
 msgid "Write"
 msgstr "Kirjoitus"
 
-#: src/widgets/previewer/FileProperties.qml:71
-#: src/widgets/previewer/FileProperties.qml:104
-#: src/widgets/previewer/FileProperties.qml:133
+#: src/widgets/previewer/FileProperties.qml:76
+#: src/widgets/previewer/FileProperties.qml:110
+#: src/widgets/previewer/FileProperties.qml:140
 #, kde-format
 msgid "Execute"
 msgstr "Suoritus"
 
-#: src/widgets/previewer/FileProperties.qml:79
-#: src/widgets/previewer/FileProperties.qml:158
+#: src/widgets/previewer/FileProperties.qml:84
+#: src/widgets/previewer/FileProperties.qml:170
 #: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Group"
 msgstr "Ryhmä"
 
-#: src/widgets/previewer/FileProperties.qml:112
+#: src/widgets/previewer/FileProperties.qml:118
 #, kde-format
 msgid "Everyone"
 msgstr "Kaikki"
 
-#: src/widgets/previewer/FileProperties.qml:146
+#: src/widgets/previewer/FileProperties.qml:153
 #, kde-format
 msgid "Ownership"
 msgstr "Omistaja"
-
-#: src/widgets/previewer/FileProperties.qml:164
-#, kde-format
-msgid "Users"
-msgstr "Käyttäjät"
-
-#: src/widgets/previewer/FileProperties.qml:174
-#, kde-format
-msgid "Groups"
-msgstr "Ryhmät"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
@@ -788,6 +778,12 @@ msgstr "Etsi välilehti"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Pikaista käyttöä varten luokitellut tiedostot"
+
+#~ msgid "Users"
+#~ msgstr "Käyttäjät"
+
+#~ msgid "Groups"
+#~ msgstr "Ryhmät"
 
 #~ msgid "Compress %1 file"
 #~ msgid_plural "Compress %1 files"

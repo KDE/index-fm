@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-19 00:40+0000\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
 "PO-Revision-Date: 2025-01-01 08:30+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -168,12 +168,12 @@ msgstr "Ireki fitxa berrian"
 msgid "Open in Split View"
 msgstr "Ireki ikuspegi zatituan"
 
-#: src/widgets/previewer/FilePreviewer.qml:92
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: src/widgets/previewer/FilePreviewer.qml:93
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "Fitxategi-informazioa"
@@ -184,64 +184,54 @@ msgid "Permissions"
 msgstr "Baimenak"
 
 #: src/widgets/previewer/FileProperties.qml:44
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr "Ezarri fitxategi hau atzitzeko baimenak"
 
-#: src/widgets/previewer/FileProperties.qml:48
-#: src/widgets/previewer/FileProperties.qml:151
+#: src/widgets/previewer/FileProperties.qml:52
+#: src/widgets/previewer/FileProperties.qml:163
 #, kde-format
 msgid "Owner"
 msgstr "Jabea"
 
-#: src/widgets/previewer/FileProperties.qml:57
-#: src/widgets/previewer/FileProperties.qml:89
-#: src/widgets/previewer/FileProperties.qml:121
+#: src/widgets/previewer/FileProperties.qml:62
+#: src/widgets/previewer/FileProperties.qml:95
+#: src/widgets/previewer/FileProperties.qml:128
 #, kde-format
 msgid "Read"
 msgstr "Irakurri"
 
-#: src/widgets/previewer/FileProperties.qml:64
-#: src/widgets/previewer/FileProperties.qml:96
-#: src/widgets/previewer/FileProperties.qml:127
+#: src/widgets/previewer/FileProperties.qml:69
+#: src/widgets/previewer/FileProperties.qml:102
+#: src/widgets/previewer/FileProperties.qml:134
 #, kde-format
 msgid "Write"
 msgstr "Idatzi"
 
-#: src/widgets/previewer/FileProperties.qml:71
-#: src/widgets/previewer/FileProperties.qml:104
-#: src/widgets/previewer/FileProperties.qml:133
+#: src/widgets/previewer/FileProperties.qml:76
+#: src/widgets/previewer/FileProperties.qml:110
+#: src/widgets/previewer/FileProperties.qml:140
 #, kde-format
 msgid "Execute"
 msgstr "Exekutatu"
 
-#: src/widgets/previewer/FileProperties.qml:79
-#: src/widgets/previewer/FileProperties.qml:158
+#: src/widgets/previewer/FileProperties.qml:84
+#: src/widgets/previewer/FileProperties.qml:170
 #: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Group"
 msgstr "Taldea"
 
-#: src/widgets/previewer/FileProperties.qml:112
+#: src/widgets/previewer/FileProperties.qml:118
 #, kde-format
 msgid "Everyone"
 msgstr "Edonor"
 
-#: src/widgets/previewer/FileProperties.qml:146
+#: src/widgets/previewer/FileProperties.qml:153
 #, kde-format
 msgid "Ownership"
 msgstr "Jabetza"
-
-#: src/widgets/previewer/FileProperties.qml:164
-#, kde-format
-msgid "Users"
-msgstr "Erabiltzaileak"
-
-#: src/widgets/previewer/FileProperties.qml:174
-#, kde-format
-msgid "Groups"
-msgstr "Taldeak"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
@@ -794,6 +784,12 @@ msgstr "Bilatu fitxa"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Fitxategi etiketatuak atzipen bizkorrerako"
+
+#~ msgid "Users"
+#~ msgstr "Erabiltzaileak"
+
+#~ msgid "Groups"
+#~ msgstr "Taldeak"
 
 #~ msgid "Cover Flow"
 #~ msgstr "Estalki jarioa"
