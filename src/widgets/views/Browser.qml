@@ -311,6 +311,8 @@ Maui.SplitViewItem
                 visible: control.terminalVisible && active
                 asynchronous: true
                 active: (Maui.Handy.isLinux && control.terminalVisible) || item
+
+                onVisibleChanged: if(visible) syncTerminal(currentBrowser.currentPath)
             }
         }
     }
