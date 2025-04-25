@@ -776,9 +776,3 @@ msgstr ""
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Merkte filer for kjapp tilgang"
-
-#~ msgid "Users"
-#~ msgstr "Brukarar"
-
-#~ msgid "Groups"
-#~ msgstr "Grupper"
