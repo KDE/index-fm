@@ -162,12 +162,7 @@ Maui.ContextualMenu
         enabled: !control.isExec
         text: i18n("Add Tag")
         icon.name: "tag"
-        onTriggered:
-        {
-            dialogLoader.sourceComponent = _tagsDialogComponent
-            dialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
-            dialog.open()
-        }
+        onTriggered: tagFiles(_browser.filterSelection(currentPath, control.item.path))
     }
 
      MenuSeparator {}
@@ -259,10 +254,10 @@ Maui.ContextualMenu
         icon.name: "archive-extract"
         onTriggered:
         {
-            dialogLoader.sourceComponent= _extractDialogComponent
-            dialog.fileUrl = control.item.path
-            dialog.dirName = control.item.label.replace(control.item.suffix, "")
-            dialog.destination = currentBrowser.currentPath
+            let props = ({ 'fileUrl': control.item.path,
+                             'dirName' : control.item.label.replace(control.item.suffix, ""),
+                             'destination': currentBrowser.currentPath})
+            var dialog = _extractDialogComponent.createObject(root, props)
             dialog.open()
         }
     }
@@ -273,8 +268,7 @@ Maui.ContextualMenu
         icon.name: "archive-insert"
         onTriggered:
         {
-            dialogLoader.sourceComponent= _compressDialogComponent
-            dialog.urls = _browser.filterSelection(currentPath, control.item.path)
+           var dialog = _compressDialogComponent.createObject(root, ({'urls': _browser.filterSelection(currentPath, control.item.path)}))
             dialog.open()
         }
     }

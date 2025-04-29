@@ -9,13 +9,13 @@ import org.mauikit.filebrowsing as FB
 Item
 {
     id: control
-
+    focus: true
     implicitHeight: 600
     property url currentUrl: ""
 
     ListModel { id: infoModel }
 
-    readonly property string title : iteminfo.title
+    readonly property string title : iteminfo.label
     property var iteminfo : ({})
 
     property bool isDir : false

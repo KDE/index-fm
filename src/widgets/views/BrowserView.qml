@@ -127,8 +127,7 @@ Maui.Page
                 icon.name: "archive-insert"
                 onTriggered:
                 {
-                    dialogLoader.sourceComponent= _compressDialogComponent
-                    dialog.urls = selectionBar.uris
+                   var dialog = _compressDialogComponent.createObject(root, ({'urls': selectionBar.uris}))
                     dialog.open()
                 }
             },

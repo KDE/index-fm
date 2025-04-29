@@ -17,12 +17,20 @@ Maui.DialogWindow
     height: 1000
 
     page.showTitle: true
-    page.headBar.forceCenterMiddleContent: isWide
 
     FilePreviewer
     {
         id: _previewer
         anchors.fill: parent
+
+        focus: true
+        Keys.enabled: true
+        Keys.onPressed: (event) => console.log("Key pressed on preview popup", event.key)
+        Keys.onEscapePressed: (event) =>
+                              {
+                                  control.close()
+                                  event.accepted= true
+                              }
     }
 
     page.footBar.rightContent: [
@@ -55,5 +63,10 @@ Maui.DialogWindow
         checkable: true
         checked: _previewer.showInfo
         onClicked: _previewer.toggleInfo()
+    }
+
+    function forceActiveFocus()
+    {
+        _previewer.forceActiveFocus()
     }
 }

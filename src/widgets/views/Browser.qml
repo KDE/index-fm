@@ -62,8 +62,7 @@ Maui.SplitViewItem
             icon.name: "edit-delete"
             onTriggered:
             {
-                dialogLoader.sourceComponent = _removeTagDialogComponent
-                dialog.tag = _tagMenu.tag
+                var dialog = _removeTagDialogComponent.createObject(root, ({'tag' : _tagMenu.tag}))
                 dialog.open()
             }
         }
@@ -183,12 +182,14 @@ Maui.SplitViewItem
                                 {
                                     _browser.goForward()
                                     event.accepted = true
+                                    return
                                 }
 
                                 if((event.key === Qt.Key_T) && (event.modifiers & Qt.ControlModifier))
                                 {
                                     openTab(control.currentPath)
                                     event.accepted = true
+                                    return
                                 }
 
                                 // Shortcut for closing tab
@@ -197,30 +198,35 @@ Maui.SplitViewItem
                                     if(_browserView.browserList.count > 1)
                                     root.closeTab(tabsBar.currentIndex)
                                     event.accepted = true
+                                    return
                                 }
 
                                 if((event.key === Qt.Key_K) && (event.modifiers & Qt.ControlModifier))
                                 {
                                     pathBar.pathBar.showEntryBar()
                                     event.accepted = true
+                                    return
                                 }
 
                                 if(event.key === Qt.Key_F4)
                                 {
                                     toogleTerminal()
                                     event.accepted = true
+                                    return
                                 }
 
                                 if(event.key === Qt.Key_F3)
                                 {
                                     toogleSplitView()
                                     event.accepted = true
+                                    return
                                 }
 
                                 if((event.key === Qt.Key_N) && (event.modifiers & Qt.ControlModifier))
                                 {
                                     newItem()
                                     event.accepted = true
+                                    return
                                 }
 
                                 if(event.key === Qt.Key_Space)
@@ -230,6 +236,7 @@ Maui.SplitViewItem
                                         openPreview(_browser.currentFMModel.get(_browser.currentIndex).path)
                                     }
                                     event.accepted = true
+                                    return
                                 }
                             }
 
@@ -244,10 +251,10 @@ Maui.SplitViewItem
                                        if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                                        {
                                            openPreview(item.path)
-                                           return
+                                       }else
+                                       {
+                                           openItem(index)
                                        }
-
-                                       openItem(index)
                                    }
                                }
 
@@ -261,10 +268,10 @@ Maui.SplitViewItem
                                              if(appSettings.previewFiles && item.isdir != "true" && !root.selectionMode)
                                              {
                                                  openPreview(item.path)
-                                                 return
+                                             }else
+                                             {
+                                                 openItem(index)
                                              }
-
-                                             openItem(index)
                                          }
                                      }
 

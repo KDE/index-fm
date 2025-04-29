@@ -26,7 +26,6 @@ Maui.ApplicationWindow
 
     Maui.Style.accentColor : Maui.Handy.isAndroid ? "#6765C2": undefined
 
-    readonly property alias dialog : dialogLoader.item
     readonly property alias selectionBar : _browserView.selectionBar
     readonly property alias pathBar: _pathBarLoader.item
 
@@ -212,19 +211,19 @@ Maui.ApplicationWindow
     Component
     {
         id: _openWithDialogComponent
-        FB.OpenWithDialog {}
+        FB.OpenWithDialog { onClosed: destroy() }
     }
 
     Component
     {
         id: _configDialogComponent
-        SettingsDialog {}
+        SettingsDialog { onClosed: destroy()}
     }
 
     Component
     {
         id: _shortcutsDialogComponent
-        ShortcutsDialog {}
+        ShortcutsDialog { onClosed: destroy()}
     }
 
     Component
@@ -234,6 +233,7 @@ Maui.ApplicationWindow
         Arc.ExtractDialog
         {
             destination:  currentBrowser.currentPath
+            onClosed: destroy()
         }
     }
 
@@ -246,6 +246,7 @@ Maui.ApplicationWindow
             id: _compressDialog
             destination: currentBrowser.currentPath
             onDone: _compressDialog.compress()
+            onClosed: destroy()
         }
     }
 
@@ -255,10 +256,7 @@ Maui.ApplicationWindow
 
         PreviewerDialog
         {
-            onClosed:
-            {
-                dialogLoader.sourceComponent = null
-            }
+            onClosed: destroy()
         }
     }
 
@@ -296,11 +294,6 @@ Maui.ApplicationWindow
     //         _notifyOperation.send()
     //     }
     // }
-
-    Loader
-    {
-        id: dialogLoader
-    }
 
     Maui.SideBarView
     {
@@ -570,7 +563,7 @@ Maui.ApplicationWindow
                             icon.name: "configure-shortcuts"
                             onTriggered:
                             {
-                                dialogLoader.sourceComponent = _shortcutsDialogComponent
+                                var dialog = _shortcutsDialogComponent.createObject(root)
                                 dialog.open()
                             }
                         }
@@ -745,7 +738,7 @@ Maui.ApplicationWindow
 
     function openConfigDialog()
     {
-        dialogLoader.sourceComponent = _configDialogComponent
+        var dialog = _configDialogComponent.createObject(root)
         dialog.open()
     }
 
@@ -779,8 +772,7 @@ Maui.ApplicationWindow
             return
         }
 
-        dialogLoader.sourceComponent = _tagsDialogComponent
-        dialog.composerList.urls =urls
+       var dialog = _tagsDialogComponent.createObject(root, ({'composerList.urls' : urls}))
         dialog.open()
     }
 
@@ -800,8 +792,7 @@ Maui.ApplicationWindow
             return
         }
 
-        dialogLoader.sourceComponent = _openWithDialogComponent
-        dialog.urls = urls
+        var dialog = _openWithDialogComponent.createObject(root, {'urls': urls})
         dialog.open()
     }
 
@@ -824,10 +815,14 @@ Maui.ApplicationWindow
         {
             var previewer = _previewerWindowComponent.createObject(root)
             previewer.previewer.setData(url)
+            previewer.forceActiveFocus()
+
         }else
         {
-            dialogLoader.sourceComponent = _previewerComponent
+            var dialog = _previewerComponent.createObject(root)
+            dialog.previewer.setData(url)
             dialog.open()
+            dialog.forceActiveFocus()
         }
     }
 
