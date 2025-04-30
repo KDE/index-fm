@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 00:40+0000\n"
+"POT-Creation-Date: 2025-04-30 00:41+0000\n"
 "PO-Revision-Date: 2025-03-26 18:19+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -40,129 +40,129 @@ msgstr "開發者"
 msgid "Open url in a new window."
 msgstr "在新視窗開啟網址。"
 
-#: src/main.qml:133
+#: src/main.qml:132
 #, kde-format
 msgid "New tab"
 msgstr "新增分頁"
 
-#: src/main.qml:141
+#: src/main.qml:140
 #, kde-format
 msgid "View Hidden"
 msgstr "檢視隱藏"
 
-#: src/main.qml:150
+#: src/main.qml:149
 #, kde-format
 msgid "Split View"
 msgstr "分割檢視"
 
-#: src/main.qml:160 src/widgets/views/SettingsDialog.qml:365
+#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "終端機"
 
-#: src/main.qml:179
+#: src/main.qml:178
 #, kde-format
 msgid "Tagged"
 msgstr "已加上標籤"
 
-#: src/main.qml:180
+#: src/main.qml:179
 #, kde-format
 msgid "File was tagged successfully"
 msgstr "檔案已成功加上標籤"
 
-#: src/main.qml:350
+#: src/main.qml:343
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "切換側邊欄"
 
-#: src/main.qml:382 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:375 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "列表"
 
-#: src/main.qml:397 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:390 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "格線"
 
-#: src/main.qml:438
+#: src/main.qml:431
 #, kde-format
 msgid "Paste"
 msgstr "貼上"
 
-#: src/main.qml:454 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:447 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "全部選取"
 
-#: src/main.qml:465
+#: src/main.qml:458
 #, kde-format
 msgid "New Item"
 msgstr "新增項目"
 
-#: src/main.qml:477 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:470 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "排序"
 
-#: src/main.qml:481 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:474 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "類型"
 
-#: src/main.qml:493 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:486 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "日期"
 
-#: src/main.qml:506 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:499 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "修改時間"
 
-#: src/main.qml:519 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:512 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "大小"
 
-#: src/main.qml:532 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:525 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "名稱"
 
-#: src/main.qml:556
+#: src/main.qml:549
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "在此開啟終端機"
 
-#: src/main.qml:569 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:562 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "快捷鍵"
 
-#: src/main.qml:580
+#: src/main.qml:573
 #, kde-format
 msgid "Settings"
 msgstr "設定"
 
-#: src/main.qml:587
+#: src/main.qml:580
 #, kde-format
 msgid "About"
 msgstr "關於"
 
-#: src/main.qml:654 src/widgets/views/FileMenu.qml:206
+#: src/main.qml:647 src/widgets/views/FileMenu.qml:201
 #, kde-format
 msgid "Bookmark"
 msgstr "書籤"
 
-#: src/main.qml:661 src/widgets/views/FileMenu.qml:226
+#: src/main.qml:654 src/widgets/views/FileMenu.qml:221
 #: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
-#: src/main.qml:669 src/widgets/views/FileMenu.qml:246
+#: src/main.qml:662 src/widgets/views/FileMenu.qml:241
 #: src/widgets/views/PlacesSideBar.qml:114
 #, kde-format
 msgid "Open in Split View"
@@ -238,8 +238,8 @@ msgstr "擁有權"
 msgid "Install"
 msgstr "安裝"
 
-#: src/widgets/previewer/PreviewerDialog.qml:40
-#: src/widgets/previewer/PreviewerWindow.qml:42
+#: src/widgets/previewer/PreviewerDialog.qml:52
+#: src/widgets/previewer/PreviewerWindow.qml:50
 #: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
@@ -250,24 +250,24 @@ msgstr "開啟"
 msgid "Edit"
 msgstr "編輯"
 
-#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:148
+#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:147
 #: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:124
 #, kde-format
 msgid "Remove"
 msgstr "移除"
 
-#: src/widgets/views/Browser.qml:79
+#: src/widgets/views/Browser.qml:78
 #, kde-format
 msgid "Remove '%1'"
 msgstr "移除 '%1'"
 
-#: src/widgets/views/Browser.qml:82
+#: src/widgets/views/Browser.qml:81
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr "您確定要移除這個標籤嗎？這個動作無法復原。"
 
-#: src/widgets/views/Browser.qml:164
+#: src/widgets/views/Browser.qml:163
 #, kde-format
 msgid "Create new"
 msgstr "建立新的"
@@ -282,23 +282,23 @@ msgstr "複製"
 msgid "Cut"
 msgstr "剪下"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:195
+#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:190
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "分享"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:272
+#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:267
 #, kde-format
 msgid "Compress"
 msgstr "壓縮"
 
-#: src/widgets/views/BrowserView.qml:138 src/widgets/views/TagsSection.qml:20
+#: src/widgets/views/BrowserView.qml:137 src/widgets/views/TagsSection.qml:20
 #, kde-format
 msgid "Tags"
 msgstr "標籤"
 
-#: src/widgets/views/BrowserView.qml:170
+#: src/widgets/views/BrowserView.qml:169
 #, kde-format
 msgid "Detach Tab"
 msgstr "分離分頁"
@@ -358,22 +358,22 @@ msgstr "新增到「%1」"
 msgid "Add Tag"
 msgstr "新增標籤"
 
-#: src/widgets/views/FileMenu.qml:179
+#: src/widgets/views/FileMenu.qml:174
 #, kde-format
 msgid "UnFav"
 msgstr "從最愛中移除"
 
-#: src/widgets/views/FileMenu.qml:179
+#: src/widgets/views/FileMenu.qml:174
 #, kde-format
 msgid "Fav"
 msgstr "加到最愛"
 
-#: src/widgets/views/FileMenu.qml:236 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:106
 #, kde-format
 msgid "Open in New Window"
 msgstr "在新分頁開啟"
 
-#: src/widgets/views/FileMenu.qml:258
+#: src/widgets/views/FileMenu.qml:253
 #, kde-format
 msgid "Extract"
 msgstr "解開"
