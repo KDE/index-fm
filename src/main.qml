@@ -26,6 +26,8 @@ Maui.ApplicationWindow
 
     Maui.Style.accentColor : Maui.Handy.isAndroid ? "#6765C2": undefined
 
+    property QtObject tagsDialog : null
+
     readonly property alias selectionBar : _browserView.selectionBar
     readonly property alias pathBar: _pathBarLoader.item
 
@@ -767,13 +769,20 @@ Maui.ApplicationWindow
 
     function tagFiles(urls)
     {
-        if(urls.length <= 0)
+        if(urls.length < 1)
         {
             return
         }
 
-       var dialog = _tagsDialogComponent.createObject(root, ({'composerList.urls' : urls}))
-        dialog.open()
+        if(root.tagsDialog)
+        {
+            root.tagsDialog.composerList.urls = urls
+        }else
+        {
+           root.tagsDialog = _tagsDialogComponent.createObject(root, ({'composerList.urls' : urls}))
+        }
+
+        root.tagsDialog.open()
     }
 
     /**

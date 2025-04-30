@@ -313,13 +313,13 @@ Maui.SplitViewItem
             Loader
             {
                 id: terminalLoader
-                Maui.Controls.title: "Terminal"
+                Maui.Controls.title: i18n("Terminal")
                 anchors.fill: parent
-                visible: control.terminalVisible && active
+                visible: active
                 asynchronous: true
-                active: (Maui.Handy.isLinux && control.terminalVisible) || item
+                active: (Maui.Handy.isLinux) || item
 
-                onVisibleChanged: if(visible) syncTerminal(currentBrowser.currentPath)
+                // onVisibleChanged: if(visible) syncTerminal(currentBrowser.currentPath)
             }
         }
     }

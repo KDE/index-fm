@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
+import QtQuick.Controls
 import org.mauikit.controls as Maui
 import org.mauikit.terminal as Term
 
@@ -22,6 +22,13 @@ Term.Terminal
             str = str + String(urls[i]).replace("file://", "")+ " "
 
         control.session.sendText(str)
+    }
+
+    menu : Action
+    {
+        text: i18n("Sync")
+        shortcut: "Ctrl+."
+        onTriggered: syncTerminal(currentBrowser.currentPath)
     }
 
     onKeyPressed: (event) =>
