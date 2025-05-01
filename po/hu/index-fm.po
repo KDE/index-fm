@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-30 00:41+0000\n"
+"POT-Creation-Date: 2025-05-01 00:41+0000\n"
 "PO-Revision-Date: 2021-01-10 13:12+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -42,136 +42,137 @@ msgstr "Fejlesztő"
 msgid "Open url in a new window."
 msgstr "Megnyitás új lapon"
 
-#: src/main.qml:132
+#: src/main.qml:134
 #, kde-format
 msgid "New tab"
 msgstr ""
 
-#: src/main.qml:140
+#: src/main.qml:142
 #, fuzzy, kde-format
 #| msgid "Hidden Files"
 msgid "View Hidden"
 msgstr "Rejtett fájlok"
 
-#: src/main.qml:149
+#: src/main.qml:151
 #, fuzzy, kde-format
 #| msgid "Split Views"
 msgid "Split View"
 msgstr "Osztott nézet"
 
-#: src/main.qml:159 src/widgets/views/SettingsDialog.qml:365
+#: src/main.qml:161 src/widgets/views/Browser.qml:316
+#: src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr ""
 
-#: src/main.qml:178
+#: src/main.qml:180
 #, kde-format
 msgid "Tagged"
 msgstr ""
 
-#: src/main.qml:179
+#: src/main.qml:181
 #, kde-format
 msgid "File was tagged successfully"
 msgstr ""
 
-#: src/main.qml:343
+#: src/main.qml:345
 #, fuzzy, kde-format
 #| msgid "Toogle SideBar"
 msgid "Toggle sidebar"
 msgstr "Oldalsáv be/ki"
 
-#: src/main.qml:375 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:377 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "Lista"
 
-#: src/main.qml:390 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:392 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "Rács"
 
-#: src/main.qml:431
+#: src/main.qml:433
 #, kde-format
 msgid "Paste"
 msgstr ""
 
-#: src/main.qml:447 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:449 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr ""
 
-#: src/main.qml:458
+#: src/main.qml:460
 #, fuzzy, kde-format
 #| msgid "Preview Files"
 msgid "New Item"
 msgstr "Fájlok előnézete"
 
-#: src/main.qml:470 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:472 src/widgets/views/SettingsDialog.qml:147
 #, fuzzy, kde-format
 #| msgid "Sorting by"
 msgid "Sort"
 msgstr "Rendezés eszerint:"
 
-#: src/main.qml:474 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:476 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "Típus"
 
-#: src/main.qml:486 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:488 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "Dátum"
 
-#: src/main.qml:499 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:501 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "Módosítva"
 
-#: src/main.qml:512 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:514 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "Méret"
 
-#: src/main.qml:525 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "Név"
 
-#: src/main.qml:549
+#: src/main.qml:551
 #, fuzzy, kde-format
 #| msgid "Open terminal here"
 msgid "Open Terminal Here"
 msgstr "Terminál megnyitása itt"
 
-#: src/main.qml:562 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:564 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr ""
 
-#: src/main.qml:573
+#: src/main.qml:575
 #, kde-format
 msgid "Settings"
 msgstr "Beállítások"
 
-#: src/main.qml:580
+#: src/main.qml:582
 #, kde-format
 msgid "About"
 msgstr ""
 
-#: src/main.qml:647 src/widgets/views/FileMenu.qml:201
+#: src/main.qml:649 src/widgets/views/FileMenu.qml:201
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: src/main.qml:654 src/widgets/views/FileMenu.qml:221
+#: src/main.qml:656 src/widgets/views/FileMenu.qml:221
 #: src/widgets/views/PlacesSideBar.qml:98
 #, fuzzy, kde-format
 #| msgid "Open in new tab"
 msgid "Open in New Tab"
 msgstr "Megnyitás új lapon"
 
-#: src/main.qml:662 src/widgets/views/FileMenu.qml:241
+#: src/main.qml:664 src/widgets/views/FileMenu.qml:241
 #: src/widgets/views/PlacesSideBar.qml:114
 #, fuzzy, kde-format
 #| msgid "Open in split view"
@@ -808,6 +809,11 @@ msgstr ""
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
 msgid "Tagged files for quick access"
+msgstr ""
+
+#: src/widgets/views/Terminal.qml:29
+#, kde-format
+msgid "Sync"
 msgstr ""
 
 #, fuzzy
