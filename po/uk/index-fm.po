@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-01 00:41+0000\n"
-"PO-Revision-Date: 2025-03-07 16:12+0200\n"
+"PO-Revision-Date: 2025-05-01 12:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -789,7 +789,7 @@ msgstr "Позначені файли для швидкого доступу"
 #: src/widgets/views/Terminal.qml:29
 #, kde-format
 msgid "Sync"
-msgstr ""
+msgstr "Синхронізувати"
 
 #~ msgid "Users"
 #~ msgstr "Користувачі"
