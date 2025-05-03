@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-01 00:41+0000\n"
-"PO-Revision-Date: 2025-03-07 09:34+0100\n"
+"PO-Revision-Date: 2025-05-01 10:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -791,10 +791,4 @@ msgstr "Fitxers etiquetats per a un accés ràpid"
 #: src/widgets/views/Terminal.qml:29
 #, kde-format
 msgid "Sync"
-msgstr ""
-
-#~ msgid "Users"
-#~ msgstr "Usuaris"
-
-#~ msgid "Groups"
-#~ msgstr "Grups"
+msgstr "Sincronitza"
