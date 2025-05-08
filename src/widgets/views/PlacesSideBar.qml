@@ -18,7 +18,8 @@ Loader
     id: control
     asynchronous: true
     active: (control.enabled && control.visible) || item
-
+    Keys.enabled: false
+    focus: false
     readonly property QtObject list: item ? item.list : null
 
     OpacityAnimator on opacity
@@ -35,6 +36,9 @@ Loader
         topPadding: 0
         bottomPadding: 0
         verticalScrollBarPolicy: ScrollBar.AlwaysOff
+        focus: false
+        focusPolicy: Qt.NoFocus
+        Keys.enabled: false
 
         readonly property alias list : placesList
 
@@ -134,7 +138,7 @@ Loader
         flickable.header: Loader
         {
             id: _quickSectionLoader
-                       asynchronous: true
+            asynchronous: true
             width: parent.width
             //                height: item ? item.implicitHeight : 0
             active: appSettings.quickSidebarSection
@@ -186,17 +190,17 @@ Loader
                             tooltipText: modelData.label
                             flat: false
                             onClicked: (mouse) =>
-                            {
-                                if(modelData.path === "overview:///")
-                                {
-                                    _stackView.push(_homeViewComponent)
-                                    if(control.collapsed)
-                                        control.close()
-                                    return
-                                }
+                                       {
+                                           if(modelData.path === "overview:///")
+                                           {
+                                               _stackView.push(_homeViewComponent)
+                                               if(control.collapsed)
+                                               control.close()
+                                               return
+                                           }
 
-                                placeClicked(modelData.path, mouse)
-                            }
+                                           placeClicked(modelData.path, mouse)
+                                       }
 
                             onRightClicked:
                             {
@@ -259,14 +263,14 @@ Loader
             }
 
             onClicked: (mouse) =>
-            {
-                if( placesList.isDevice(index) && placesList.setupNeeded(index))
-                {
-                    notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), [_mountAction])
-                }
+                       {
+                           if( placesList.isDevice(index) && placesList.setupNeeded(index))
+                           {
+                               notify(model.icon, model.label, i18n("This device needs to be mounted before accessing it. Do you want to set up this device?"), [_mountAction])
+                           }
 
-                placeClicked(model.path, mouse)
-            }
+                           placeClicked(model.path, mouse)
+                       }
 
             onRightClicked:
             {

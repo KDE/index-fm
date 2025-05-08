@@ -309,6 +309,8 @@ Maui.ApplicationWindow
         sideBarContent: PlacesSideBar
         {
             id: placesSidebar
+            focus: false
+            focusPolicy: Qt.NoFocus
             anchors.fill: parent
         }
 
@@ -675,11 +677,12 @@ Maui.ApplicationWindow
                 id: _stackView
                 anchors.fill: parent
                 clip: false
+                Keys.enabled: true
+                Keys.forwardTo: currentItem
 
                 initialItem: BrowserView
                 {
                     id: _browserView
-
                     flickable: currentBrowser.flickable
                 }
 

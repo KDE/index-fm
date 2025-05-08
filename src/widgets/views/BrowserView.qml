@@ -13,6 +13,9 @@ Maui.Page
 {
     id: control
 
+    Keys.enabled: true
+    Keys.forwardTo: _browserList
+
     property alias selectionBar: _selectionBar
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
@@ -162,6 +165,8 @@ Maui.Page
         currentIndex : -1
         onNewTabClicked: openTab(currentBrowser.currentPath)
         onCloseTabClicked: (index) => closeTab(index)
+        Keys.enabled: true
+        Keys.forwardTo: currentTab
 
         menuActions: Action
         {

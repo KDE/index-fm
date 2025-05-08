@@ -28,6 +28,8 @@ import org.maui.index as Index
 Item
 {
     id: control
+    focus: false
+    focusPolicy: Qt.NoFocus
 
     property int preferredWidth: visible ? Math.max(500, item.implicitWidth): 0
 

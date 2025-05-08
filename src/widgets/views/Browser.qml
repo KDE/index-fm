@@ -29,6 +29,8 @@ Maui.SplitViewItem
     property alias terminalVisible : _dirConf.terminalVisible
 
     Maui.Controls.title : currentPath
+    Keys.enabled: true
+    Keys.forwardTo: _browser
 
     onCurrentPathChanged:
     {
@@ -309,6 +311,8 @@ Maui.SplitViewItem
             SplitView.minimumHeight : 100
             autoClose: false
             visible: control.terminalVisible
+            focus: false
+            focusPolicy: Qt.NoFocus
 
             Loader
             {
@@ -317,9 +321,13 @@ Maui.SplitViewItem
                 anchors.fill: parent
                 visible: active
                 asynchronous: true
-                active: (Maui.Handy.isLinux) || item
-
-                // onVisibleChanged: if(visible) syncTerminal(currentBrowser.currentPath)
+                active: (Maui.Handy.isLinux && terminalVisible) || item
+                focus: false
+                onLoaded:
+                {
+                    control.forceActiveFocus()
+                    syncTerminal(currentBrowser.currentPath)
+                }
             }
         }
     }
@@ -332,6 +340,7 @@ Maui.SplitViewItem
         settings.group = sortSettings.group
 
         terminalLoader.setSource("Terminal.qml", ({'session.initialWorkingDirectory': control.currentPath.replace("file://", "")}))
+        control.forceActiveFocus()
     }
 
     function syncTerminal(path)
