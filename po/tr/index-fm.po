@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-01 00:41+0000\n"
+"POT-Creation-Date: 2025-05-09 00:40+0000\n"
 "PO-Revision-Date: 2025-05-03 20:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -52,7 +52,7 @@ msgstr "Gizliyi Görüntüle"
 msgid "Split View"
 msgstr "Bölünmüş Görünüm"
 
-#: src/main.qml:161 src/widgets/views/Browser.qml:316
+#: src/main.qml:161 src/widgets/views/Browser.qml:320
 #: src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
@@ -69,99 +69,99 @@ msgstr "Künyelendi"
 msgid "File was tagged successfully"
 msgstr "Dosya başarıyla künyelendi"
 
-#: src/main.qml:345
+#: src/main.qml:347
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "Kenar çubuğunu aç/kapat"
 
-#: src/main.qml:377 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:379 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "Liste"
 
-#: src/main.qml:392 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:394 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "Izgara"
 
-#: src/main.qml:433
+#: src/main.qml:435
 #, kde-format
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/main.qml:449 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:451 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/main.qml:460
+#: src/main.qml:462
 #, kde-format
 msgid "New Item"
 msgstr "Yeni Öge"
 
-#: src/main.qml:472 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:474 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "Sırala"
 
-#: src/main.qml:476 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:478 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "Tür"
 
-#: src/main.qml:488 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:490 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "Tarih"
 
-#: src/main.qml:501 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:503 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "Değiştirilme"
 
-#: src/main.qml:514 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:516 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "Boyut"
 
-#: src/main.qml:527 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:529 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "Ad"
 
-#: src/main.qml:551
+#: src/main.qml:553
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Burada Uçbirim Aç"
 
-#: src/main.qml:564 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:566 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Kısayollar"
 
-#: src/main.qml:575
+#: src/main.qml:577
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/main.qml:582
+#: src/main.qml:584
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
 
-#: src/main.qml:649 src/widgets/views/FileMenu.qml:201
+#: src/main.qml:651 src/widgets/views/FileMenu.qml:201
 #, kde-format
 msgid "Bookmark"
 msgstr "Yer imi"
 
-#: src/main.qml:656 src/widgets/views/FileMenu.qml:221
-#: src/widgets/views/PlacesSideBar.qml:98
+#: src/main.qml:658 src/widgets/views/FileMenu.qml:221
+#: src/widgets/views/PlacesSideBar.qml:102
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Yeni Sekmede Aç"
 
-#: src/main.qml:664 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:114
+#: src/main.qml:666 src/widgets/views/FileMenu.qml:241
+#: src/widgets/views/PlacesSideBar.qml:118
 #, kde-format
 msgid "Open in Split View"
 msgstr "Bölünmüş Görünümde Aç"
@@ -238,66 +238,66 @@ msgstr "Kur"
 
 #: src/widgets/previewer/PreviewerDialog.qml:52
 #: src/widgets/previewer/PreviewerWindow.qml:50
-#: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
+#: src/widgets/views/BrowserView.qml:118 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Aç"
 
-#: src/widgets/views/Browser.qml:53
+#: src/widgets/views/Browser.qml:55
 #, kde-format
 msgid "Edit"
 msgstr "Düzen"
 
-#: src/widgets/views/Browser.qml:61 src/widgets/views/BrowserView.qml:147
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/Browser.qml:63 src/widgets/views/BrowserView.qml:150
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:128
 #, kde-format
 msgid "Remove"
 msgstr "Kaldır"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:80
 #, kde-format
 msgid "Remove '%1'"
 msgstr "'%1' kaldır"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:83
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
 "Bu künyeyi kaldırmak istediğinizden emin misiniz? Bu işlem geri alınamaz."
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:165
 #, kde-format
 msgid "Create new"
 msgstr "Yeni oluştur"
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:54
+#: src/widgets/views/BrowserView.qml:87 src/widgets/views/FileMenu.qml:54
 #, kde-format
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:65
+#: src/widgets/views/BrowserView.qml:97 src/widgets/views/FileMenu.qml:65
 #, kde-format
 msgid "Cut"
 msgstr "Kes"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:190
+#: src/widgets/views/BrowserView.qml:107 src/widgets/views/FileMenu.qml:190
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Paylaş"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:267
+#: src/widgets/views/BrowserView.qml:129 src/widgets/views/FileMenu.qml:267
 #, kde-format
 msgid "Compress"
 msgstr "Sıkıştır"
 
-#: src/widgets/views/BrowserView.qml:137 src/widgets/views/TagsSection.qml:20
+#: src/widgets/views/BrowserView.qml:140 src/widgets/views/TagsSection.qml:20
 #, kde-format
 msgid "Tags"
 msgstr "Künyeler"
 
-#: src/widgets/views/BrowserView.qml:169
+#: src/widgets/views/BrowserView.qml:174
 #, kde-format
 msgid "Detach Tab"
 msgstr "Sekmeyi Ayır"
@@ -367,7 +367,7 @@ msgstr "Sık kullanılanlardan kaldır"
 msgid "Fav"
 msgstr "Sık kullanılanlara ekle"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:110
 #, kde-format
 msgid "Open in New Window"
 msgstr "Yeni Pencerede Aç"
@@ -450,23 +450,23 @@ msgstr "Ortak yerlere tez erişim."
 msgid "More"
 msgstr "Daha Fazla"
 
-#: src/widgets/views/PlacesSideBar.qml:44
+#: src/widgets/views/PlacesSideBar.qml:48
 #: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Yer imleri"
 
-#: src/widgets/views/PlacesSideBar.qml:45
+#: src/widgets/views/PlacesSideBar.qml:49
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Yer imleriniz burada listelenecek"
 
-#: src/widgets/views/PlacesSideBar.qml:257
+#: src/widgets/views/PlacesSideBar.qml:261
 #, kde-format
 msgid "Mount"
 msgstr "Bağla"
 
-#: src/widgets/views/PlacesSideBar.qml:265
+#: src/widgets/views/PlacesSideBar.qml:269
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -779,7 +779,7 @@ msgstr "Sekme Bul"
 msgid "Tagged files for quick access"
 msgstr "Tez erişim için künyelenen dosyalar"
 
-#: src/widgets/views/Terminal.qml:29
+#: src/widgets/views/Terminal.qml:30
 #, kde-format
 msgid "Sync"
 msgstr "Eşzamanla"
