@@ -776,7 +776,7 @@ msgstr ""
 #: src/widgets/views/Terminal.qml:30
 #, kde-format
 msgid "Sync"
-msgstr ""
+msgstr "Synchronizovat"
 
 #~ msgid "Users"
 #~ msgstr "Uživatelé"
