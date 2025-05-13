@@ -777,9 +777,3 @@ msgstr ""
 #, kde-format
 msgid "Sync"
 msgstr "Synchronizovat"
-
-#~ msgid "Users"
-#~ msgstr "Uživatelé"
-
-#~ msgid "Groups"
-#~ msgstr "Skupiny"
