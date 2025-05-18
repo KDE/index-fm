@@ -5,6 +5,7 @@
   <project_license>LGPL-3.0</project_license>
   <launchable type="desktop-id">org.kde.index.desktop</launchable>
   <name>Index</name>
+  <name xml:lang="ar">دليل</name>
   <name xml:lang="az">İndeks</name>
   <name xml:lang="ca">Índex</name>
   <name xml:lang="ca-valencia">Índex</name>
@@ -46,6 +47,7 @@
   <name xml:lang="zh-CN">Index</name>
   <name xml:lang="zh-TW">Index</name>
   <summary>Manage your files</summary>
+  <summary xml:lang="ar">أدر ملفاتك</summary>
   <summary xml:lang="az">Fayllarınızı idarəsə edin</summary>
   <summary xml:lang="ca">Gestioneu els fitxers</summary>
   <summary xml:lang="ca-valencia">Gestioneu els fitxers</summary>
@@ -93,6 +95,7 @@
   </developer>
   <description>
     <p>Index allows you to navigate your computer and preview multimedia files.</p>
+    <p xml:lang="ar">يسمح لك الدليل بالتنقل في حاسوبك ومعاينة ملفات الوسائط.</p>
     <p xml:lang="az">İndeks kompyuterinizdə gəzinməyə və multimedia fayllarınıza baxmağa imkan verir.</p>
     <p xml:lang="ca">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
     <p xml:lang="ca-valencia">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
@@ -140,6 +143,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>Index file manager</caption>
+      <caption xml:lang="ar">دليل مدير ملفات</caption>
       <caption xml:lang="az">İndeks fayl meneceri</caption>
       <caption xml:lang="ca">Gestor de fitxers Índex</caption>
       <caption xml:lang="ca-valencia">Gestor de fitxers Índex</caption>
