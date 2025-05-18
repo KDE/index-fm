@@ -6,6 +6,7 @@
 
 [Desktop Entry]
 Name=Index
+Name[ar]=دليل
 Name[az]=İndeks
 Name[ca]=Índex
 Name[ca@valencia]=Índex
@@ -47,6 +48,7 @@ Name[x-test]=xxIndexxx
 Name[zh_CN]=Index
 Name[zh_TW]=Index
 Comment=File manager
+Comment[ar]=مدير الملفات
 Comment[az]=Fayl meneceri
 Comment[ca]=Gestor de fitxers
 Comment[ca@valencia]=Gestor de fitxers
@@ -93,6 +95,7 @@ Terminal=false
 Type=Application
 Categories=Qt;KDE;System;FileTools;FileManager;
 GenericName=File Manager
+GenericName[ar]=مدير ملفات
 GenericName[az]=Fayl meneceri
 GenericName[ca]=Gestor de fitxers
 GenericName[ca@valencia]=Gestor de fitxers

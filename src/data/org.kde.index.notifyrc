@@ -1,6 +1,7 @@
 [Global]
 IconName=system-file-manager
 Name=Index
+Name[ar]=دليل
 Name[az]=İndeks
 Name[ca]=Índex
 Name[ca@valencia]=Índex
@@ -42,6 +43,7 @@ Name[x-test]=xxIndexxx
 Name[zh_CN]=Index
 Name[zh_TW]=Index
 Comment=File Manager
+Comment[ar]=مدير ملفات
 Comment[az]=Fayl meneceri
 Comment[ca]=Gestor de fitxers
 Comment[ca@valencia]=Gestor de fitxers
@@ -83,6 +85,7 @@ DesktopEntry=org.kde.index.desktop
 
 [Context/operations]
 Name=Operations
+Name[ar]=العمليات
 Name[az]=Əməliyyatlar
 Name[ca]=Operacions
 Name[ca@valencia]=Operacions
@@ -120,6 +123,7 @@ Name[x-test]=xxOperationsxx
 Name[zh_CN]=操作
 Name[zh_TW]=操作
 Comment=File operations
+Comment[ar]=عمليات الملف
 Comment[az]=Fayl əməliyyatları
 Comment[ca]=Operacions amb fitxers
 Comment[ca@valencia]=Operacions amb fitxers
@@ -159,6 +163,7 @@ Comment[zh_TW]=檔案操作
 
 [Event/fileOperation]
 Name=File Operation
+Name[ar]=عملية الملف
 Name[az]=Fayl əməliyyatı
 Name[ca]=Operació sobre el fitxer
 Name[ca@valencia]=Operació sobre el fitxer
@@ -196,6 +201,7 @@ Name[x-test]=xxFile Operationxx
 Name[zh_CN]=文件操作
 Name[zh_TW]=檔案操作
 Comment=Performing a file operation
+Comment[ar]=تأدية عملية الملف
 Comment[az]=Fayl əməliyyatının yerinə yetririlməsi
 Comment[ca]=Realitza una operació sobre el fitxer
 Comment[ca@valencia]=Realitza una operació sobre el fitxer
