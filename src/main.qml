@@ -83,6 +83,7 @@ Maui.ApplicationWindow
         property string terminalColorScheme: "Maui-Dark"
         property bool showActionsBar: true
         property string lastUsedTag
+        property bool floatyUI : false
     }
 
     Settings
@@ -301,9 +302,11 @@ Maui.ApplicationWindow
     {
         id: _sideBarView
         anchors.fill: parent
-        sideBar.preferredWidth: 200
+        sideBar.preferredWidth: Maui.Style.units.gridUnit * 12
+        sideBar.minimumWidth: Maui.Style.units.gridUnit * 12
+        Maui.Theme.colorSet: Maui.Theme.View
+        // sideBar.background:null
 
-        sideBar.minimumWidth: 200
         sideBar.autoShow: true
         sideBar.autoHide: true
         sideBarContent: PlacesSideBar
@@ -312,6 +315,7 @@ Maui.ApplicationWindow
             focus: false
             focusPolicy: Qt.NoFocus
             anchors.fill: parent
+            anchors.margins: settings.floatyUI ? Maui.Style.contentMargins : 0
         }
 
         Maui.PageLayout
@@ -320,13 +324,17 @@ Maui.ApplicationWindow
             anchors.fill: parent
 
             split: width < 800
-            splitIn: ToolBar.Header
+            splitIn: ToolBar.Footer
 
             altHeader: Maui.Handy.isMobile
             Maui.Controls.showCSD: true
 
             headBar.visible: !_homeViewComponent.visible
             headBar.forceCenterMiddleContent: width > 1000
+            headerMargins: settings.floatyUI ? Maui.Style.contentMargins : 0
+            footerMargins: headerMargins
+
+            Maui.Theme.colorSet: Maui.Theme.View
 
             leftContent:  [
 
@@ -679,6 +687,7 @@ Maui.ApplicationWindow
                 clip: false
                 Keys.enabled: true
                 Keys.forwardTo: currentItem
+                background: null
 
                 initialItem: BrowserView
                 {

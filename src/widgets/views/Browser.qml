@@ -32,6 +32,8 @@ Maui.SplitViewItem
     Keys.enabled: true
     Keys.forwardTo: _browser
 
+    background: null
+
     onCurrentPathChanged:
     {
         if(currentBrowser)
@@ -97,12 +99,15 @@ Maui.SplitViewItem
         anchors.bottomMargin: !selectionBar.hidden && (terminalVisible) ? selectionBar.height : 0
         spacing: 0
         orientation: Qt.Vertical
+        background: null
 
         Maui.SplitViewItem
         {
             SplitView.fillWidth: true
             SplitView.fillHeight: true
             autoClose: false
+            Maui.Theme.colorSet: Maui.Theme.View
+            padding: 0
 
             FB.FileBrowser
             {
@@ -112,6 +117,7 @@ Maui.SplitViewItem
                 property alias sortBy : _dirConf.sortKey
 
                 anchors.fill: parent
+                // browser.padding: 0
 
                 altHeader: _browserView.altHeader
                 selectionBar: root.selectionBar
@@ -313,7 +319,7 @@ Maui.SplitViewItem
             visible: control.terminalVisible
             focus: false
             focusPolicy: Qt.NoFocus
-
+            background: null
             Loader
             {
                 id: terminalLoader

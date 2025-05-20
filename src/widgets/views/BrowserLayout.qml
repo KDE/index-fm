@@ -40,6 +40,7 @@ Item
         id: _splitView
         anchors.fill: parent
         orientation: width > 600 ? Qt.Horizontal :  Qt.Vertical
+        background: null
     }
 
     Loader

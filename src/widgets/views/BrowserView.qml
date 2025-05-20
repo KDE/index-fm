@@ -24,6 +24,7 @@ Maui.Page
 
     floatingFooter: true
     headBar.visible: false
+    background: null
 
     footer: Maui.SelectionBar
     {
@@ -162,11 +163,14 @@ Maui.Page
     {
         id: _browserList
         anchors.fill: parent
+        tabBarMargins: settings.floatyUI ? Maui.Style.contentMargins : 0
         currentIndex : -1
         onNewTabClicked: openTab(currentBrowser.currentPath)
         onCloseTabClicked: (index) => closeTab(index)
         Keys.enabled: true
         Keys.forwardTo: currentTab
+        background: null
+        // tabBar.background: null
 
         menuActions: Action
         {
