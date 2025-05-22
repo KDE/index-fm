@@ -83,7 +83,7 @@ Maui.ApplicationWindow
         property string terminalColorScheme: "Maui-Dark"
         property bool showActionsBar: true
         property string lastUsedTag
-        property bool floatyUI : false
+        property bool floatyUI : root.isWide
     }
 
     Settings
@@ -308,6 +308,7 @@ Maui.ApplicationWindow
         // sideBar.background:null
 
         sideBar.autoShow: true
+        sideBar.floats: sideBar.collapsed
         sideBar.autoHide: true
         sideBarContent: PlacesSideBar
         {
@@ -322,6 +323,7 @@ Maui.ApplicationWindow
         {
             id: _pageLayout
             anchors.fill: parent
+            clip: true
 
             split: width < 800
             splitIn: ToolBar.Footer
