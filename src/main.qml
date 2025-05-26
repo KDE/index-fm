@@ -40,6 +40,15 @@ Maui.ApplicationWindow
     property alias currentTabIndex : _browserView.currentTabIndex
     property bool selectionMode: false
 
+    Maui.WindowBlur
+    {
+        id: _translucencyManager
+        view: root
+        geometry: Qt.rect(root.x, root.y, root.width, root.height)
+        windowRadius: Maui.Style.radiusV
+        enabled: !Maui.Handy.isMobile && settings.windowTranslucency && Maui.Style.enableEffects
+    }
+
     Maui.Notify
     {
         id: _notifyOperation
@@ -84,6 +93,7 @@ Maui.ApplicationWindow
         property bool showActionsBar: true
         property string lastUsedTag
         property bool floatyUI : root.isWide
+        property bool windowTranslucency : Maui.Handy.isLinux
     }
 
     Settings
@@ -305,7 +315,12 @@ Maui.ApplicationWindow
         sideBar.preferredWidth: Maui.Style.units.gridUnit * 12
         sideBar.minimumWidth: Maui.Style.units.gridUnit * 12
         Maui.Theme.colorSet: Maui.Theme.View
-        // sideBar.background:null
+
+        background: Rectangle
+        {
+            color: Maui.Theme.backgroundColor
+            opacity: _translucencyManager.enabled ? 0.8 : 1
+        }
 
         sideBar.autoShow: true
         sideBar.floats: sideBar.collapsed
@@ -317,6 +332,7 @@ Maui.ApplicationWindow
             focusPolicy: Qt.NoFocus
             anchors.fill: parent
             anchors.margins: settings.floatyUI ? Maui.Style.contentMargins : 0
+            anchors.rightMargin: 0
         }
 
         Maui.PageLayout
@@ -337,6 +353,7 @@ Maui.ApplicationWindow
             footerMargins: headerMargins
 
             Maui.Theme.colorSet: Maui.Theme.View
+            background: null
 
             leftContent:  [
 

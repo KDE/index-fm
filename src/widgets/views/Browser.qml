@@ -108,10 +108,13 @@ Maui.SplitViewItem
             SplitView.fillWidth: true
             SplitView.fillHeight: true
             Maui.Theme.colorSet: Maui.Theme.View
+            background: null
 
             property alias viewType : _dirConf.viewType
             property alias sortBy : _dirConf.sortKey
 
+            headerContainer.margins: appSettings.floatyUI ? Maui.Style.contentMargins : 0
+            headerContainer.topMargin: 0
 
             altHeader: _browserView.altHeader
             selectionBar: root.selectionBar

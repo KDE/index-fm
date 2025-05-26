@@ -123,6 +123,7 @@ Loader
                 //                height: item ? item.implicitHeight : 0
                 active: appSettings.quickSidebarSection
                 visible: active
+                anchors.centerIn: parent
 
                 OpacityAnimator on opacity
                 {
@@ -132,22 +133,15 @@ Loader
                     running: _quickSectionLoader.status === Loader.Ready
                 }
 
-                sourceComponent: Item
-                {
-                    implicitHeight: _quickSection.implicitHeight
-
-                    GridLayout
+                sourceComponent: GridLayout
                     {
                         id: _quickSection
-                        width: Math.min(parent.width, 180)
-
-                        anchors.centerIn: parent
 
                         rows: 3
                         columns: 3
 
-                        columnSpacing: Maui.Style.space.small
-                        rowSpacing: Maui.Style.space.small
+                        columnSpacing: Maui.Style.defaultSpacing
+                        rowSpacing: Maui.Style.defaultSpacing
 
                         Repeater
                         {
@@ -200,7 +194,7 @@ Loader
                             }
                         }
                     }
-                }
+
             }
 
             model: Maui.BaseModel
