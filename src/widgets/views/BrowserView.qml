@@ -163,7 +163,8 @@ Maui.Page
     {
         id: _browserList
         anchors.fill: parent
-        tabBarMargins: settings.floatyUI ? Maui.Style.contentMargins : 0
+        tabBar.margins: settings.floatyUI ? Maui.Style.contentMargins : 0
+        tabBar.topMargin: 0
         currentIndex : -1
         onNewTabClicked: openTab(currentBrowser.currentPath)
         onCloseTabClicked: (index) => closeTab(index)
