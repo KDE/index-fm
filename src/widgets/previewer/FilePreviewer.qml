@@ -48,6 +48,7 @@ Item
 
         Loader
         {
+            active: visible || item
             Layout.fillWidth: true
             asynchronous: true
             sourceComponent: FB.TagsBar

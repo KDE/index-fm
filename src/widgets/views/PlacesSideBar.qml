@@ -86,7 +86,6 @@ Loader
 
                     MenuItem
                     {
-                        enabled: control.isDir && Maui.Handy.isLinux
                         text: i18n("Open in New Window")
                         icon.name: "window-new"
                         onTriggered: inx.openNewWindow(_menu.path)
@@ -120,10 +119,8 @@ Loader
                 id: _quickSectionLoader
                 asynchronous: true
                 width: parent.width
-                //                height: item ? item.implicitHeight : 0
+                height: implicitHeight + _listBrowser.spacing*2
                 active: appSettings.quickSidebarSection
-                visible: active
-                anchors.centerIn: parent
 
                 OpacityAnimator on opacity
                 {
@@ -134,67 +131,67 @@ Loader
                 }
 
                 sourceComponent: GridLayout
+                {
+                    id: _quickSection
+
+                    rows: 3
+                    columns: 3
+
+                    columnSpacing: Maui.Style.defaultSpacing
+                    rowSpacing: Maui.Style.defaultSpacing
+
+                    Repeater
                     {
-                        id: _quickSection
+                        model: inx.quickPaths()
 
-                        rows: 3
-                        columns: 3
-
-                        columnSpacing: Maui.Style.defaultSpacing
-                        rowSpacing: Maui.Style.defaultSpacing
-
-                        Repeater
+                        delegate: Maui.GridBrowserDelegate
                         {
-                            model: inx.quickPaths()
+                            Maui.Theme.colorSet: Maui.Theme.Button
+                            Maui.Theme.inherit: false
 
-                            delegate: Maui.GridBrowserDelegate
-                            {
-                                Maui.Theme.colorSet: Maui.Theme.Button
-                                Maui.Theme.inherit: false
+                            Layout.preferredHeight: Math.min(50, width)
+                            Layout.preferredWidth: 50
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
 
-                                Layout.preferredHeight: Math.min(50, width)
-                                Layout.preferredWidth: 50
-                                Layout.fillWidth: true
-                                Layout.fillHeight: true
-                                Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
+                            isCurrentItem: modelData.path === "overview:///" ? _stackView.depth === 2 : (currentBrowser.currentPath === modelData.path && _stackView.depth === 1)
+                            iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
+                            iconSizeHint: Maui.Style.iconSize
+                            template.isMask: true
+                            label1.text: modelData.label
+                            labelsVisible: false
+                            tooltipText: modelData.label
+                            flat: false
 
-                                isCurrentItem: modelData.path === "overview:///" ? _stackView.depth === 2 : (currentBrowser.currentPath === modelData.path && _stackView.depth === 1)
-                                iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
-                                iconSizeHint: Maui.Style.iconSize
-                                template.isMask: true
-                                label1.text: modelData.label
-                                labelsVisible: false
-                                tooltipText: modelData.label
-                                flat: false
-                                onClicked: (mouse) =>
+                            onClicked: (mouse) =>
+                                       {
+                                           if(modelData.path === "overview:///")
                                            {
-                                               if(modelData.path === "overview:///")
-                                               {
-                                                   _stackView.push(_homeViewComponent)
-                                                   if(control.collapsed)
-                                                   control.close()
-                                                   return
-                                               }
-
-                                               openPlace(modelData.path, mouse)
-
+                                               _stackView.push(_homeViewComponent)
+                                               if(control.collapsed)
+                                               control.close()
+                                               return
                                            }
 
-                                onRightClicked:
-                                {
-                                    _menuLoader.item.path = modelData.path
-                                    _menuLoader.item.show()
-                                }
+                                           openPlace(modelData.path, mouse)
 
-                                onPressAndHold:
-                                {
-                                    _menuLoader.item.path = modelData.path
-                                    _menuLoader.item.show()
-                                }
+                                       }
+
+                            onRightClicked:
+                            {
+                                _menuLoader.item.path = modelData.path
+                                _menuLoader.item.show()
+                            }
+
+                            onPressAndHold:
+                            {
+                                _menuLoader.item.path = modelData.path
+                                _menuLoader.item.show()
                             }
                         }
                     }
-
+                }
             }
 
             model: Maui.BaseModel
