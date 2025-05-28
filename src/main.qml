@@ -26,7 +26,8 @@ Maui.ApplicationWindow
 
     Maui.Style.accentColor : Maui.Handy.isAndroid ? "#6765C2": undefined
 
-    readonly property alias dialog : dialogLoader.item
+    property QtObject tagsDialog : null
+
     readonly property alias selectionBar : _browserView.selectionBar
     readonly property alias pathBar: _pathBarLoader.item
 
@@ -38,6 +39,15 @@ Maui.ApplicationWindow
 
     property alias currentTabIndex : _browserView.currentTabIndex
     property bool selectionMode: false
+
+    Maui.WindowBlur
+    {
+        id: _translucencyManager
+        view: root
+        geometry: Qt.rect(root.x, root.y, root.width, root.height)
+        windowRadius: Maui.Style.radiusV
+        enabled: !Maui.Handy.isMobile && settings.windowTranslucency && Maui.Style.enableEffects
+    }
 
     Maui.Notify
     {
@@ -80,6 +90,10 @@ Maui.ApplicationWindow
         property bool autoPlayPreviews: true
         property bool terminalFollowsColorScheme: true
         property string terminalColorScheme: "Maui-Dark"
+        property bool showActionsBar: true
+        property string lastUsedTag
+        property bool floatyUI : root.isWide
+        property bool windowTranslucency : Maui.Handy.isLinux
     }
 
     Settings
@@ -123,17 +137,85 @@ Maui.ApplicationWindow
                    close.accepted = true
                }
 
+    ///////Actions
+    Action
+    {
+        id: _newTabAction
+        icon.name: "tab-new"
+        text: i18n("New tab")
+        onTriggered: root.openTab(currentBrowser.currentPath)
+    }
+
+    Action
+    {
+        id: _viewHiddenAction
+        icon.name: "view-hidden"
+        text: i18n("View Hidden")
+        checkable: true
+        checked: settings.showHiddenFiles
+        onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
+    }
+
+    Action
+    {
+        id: _splitViewAction
+        text: i18n("Split View")
+        icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
+        checked: currentTab.count === 2
+        checkable: true
+        onTriggered: toogleSplitView()
+    }
+
+    Action
+    {
+        id: _showTerminalAction
+        text: i18n("Terminal")
+        enabled: !Maui.Handy.isAndroid && currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
+        icon.name: "dialog-scripts"
+        checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
+        checkable: true
+
+        onTriggered: currentTab.currentItem.toogleTerminal()
+    }
+
     Component
     {
         id: _tagsDialogComponent
 
         FB.TagsDialog
         {
+            Maui.Notification
+            {
+                id: _taggedNotification
+                iconName: "dialog-info"
+                title: i18n("Tagged")
+                message: i18n("File was tagged successfully")
+
+                Action
+                {
+                    property string tag
+                    id: _openTagAction
+                    text: tag
+                    onTriggered:
+                    {
+                        openTab("tags:///"+tag)
+                    }
+                }
+            }
+
             taglist.strict: false
             composerList.strict: false
 
             onTagsReady: (tags) =>
                          {
+                             if(tags.length === 1)
+                             {
+                                 _openTagAction.tag = tags[0]
+                                 _taggedNotification.dispatch()
+                             }
+
+                             settings.lastUsedTag = tags[0]
+
                              composerList.updateToUrls(tags)
                          }
         }
@@ -142,19 +224,19 @@ Maui.ApplicationWindow
     Component
     {
         id: _openWithDialogComponent
-        FB.OpenWithDialog {}
+        FB.OpenWithDialog { onClosed: destroy() }
     }
 
     Component
     {
         id: _configDialogComponent
-        SettingsDialog {}
+        SettingsDialog { onClosed: destroy()}
     }
 
     Component
     {
         id: _shortcutsDialogComponent
-        ShortcutsDialog {}
+        ShortcutsDialog { onClosed: destroy()}
     }
 
     Component
@@ -164,6 +246,7 @@ Maui.ApplicationWindow
         Arc.ExtractDialog
         {
             destination:  currentBrowser.currentPath
+            onClosed: destroy()
         }
     }
 
@@ -176,6 +259,7 @@ Maui.ApplicationWindow
             id: _compressDialog
             destination: currentBrowser.currentPath
             onDone: _compressDialog.compress()
+            onClosed: destroy()
         }
     }
 
@@ -185,10 +269,7 @@ Maui.ApplicationWindow
 
         PreviewerDialog
         {
-            onClosed:
-            {
-                dialogLoader.sourceComponent = null
-            }
+            onClosed: destroy()
         }
     }
 
@@ -227,38 +308,52 @@ Maui.ApplicationWindow
     //     }
     // }
 
-    Loader
-    {
-        id: dialogLoader
-    }
-
     Maui.SideBarView
     {
         id: _sideBarView
         anchors.fill: parent
-        sideBar.preferredWidth: 200
+        sideBar.preferredWidth: Maui.Style.units.gridUnit * 12
+        sideBar.minimumWidth: Maui.Style.units.gridUnit * 12
+        Maui.Theme.colorSet: Maui.Theme.View
 
-        sideBar.minimumWidth: 200
+        background: Rectangle
+        {
+            color: Maui.Theme.backgroundColor
+            opacity: _translucencyManager.enabled ? 0.8 : 1
+        }
+
         sideBar.autoShow: true
+        sideBar.floats: sideBar.collapsed
         sideBar.autoHide: true
         sideBarContent: PlacesSideBar
         {
             id: placesSidebar
+            focus: false
+            focusPolicy: Qt.NoFocus
             anchors.fill: parent
+            anchors.margins: settings.floatyUI ? Maui.Style.contentMargins : 0
+            anchors.rightMargin: 0
         }
 
         Maui.PageLayout
         {
+            id: _pageLayout
             anchors.fill: parent
+            clip: true
 
             split: width < 800
-            splitIn: ToolBar.Header
+            splitIn: ToolBar.Footer
 
             altHeader: Maui.Handy.isMobile
             Maui.Controls.showCSD: true
 
             headBar.visible: !_homeViewComponent.visible
             headBar.forceCenterMiddleContent: width > 1000
+            headerMargins: settings.floatyUI ? Maui.Style.contentMargins : 0
+            footerMargins: headerMargins
+
+            Maui.Theme.colorSet: Maui.Theme.View
+            background: null
 
             leftContent:  [
 
@@ -372,6 +467,10 @@ Maui.ApplicationWindow
                             }
                             icon.name: "edit-paste"
                             onTriggered: currentBrowser.paste()
+
+                            property int count
+                            onVisibleChanged: if(visible) count= currentBrowser.currentFMList.clipboardFilesCount()
+                            Maui.Controls.badgeText: count
                         }
 
                         MenuItem
@@ -470,41 +569,9 @@ Maui.ApplicationWindow
 
                         Maui.MenuItemActionRow
                         {
-                            Action
-                            {
-                                icon.name: "tab-new"
-                                text: i18n("New tab")
-                                onTriggered: root.openTab(currentBrowser.currentPath)
-                            }
-
-                            Action
-                            {
-                                icon.name: "view-hidden"
-                                text: i18n("View Hidden")
-                                checkable: true
-                                checked: settings.showHiddenFiles
-                                onTriggered: settings.showHiddenFiles = !settings.showHiddenFiles
-                            }
-
-                            Action
-                            {
-                                text: i18n("Split View")
-                                icon.name: currentTab.orientation === Qt.Horizontal ? "view-split-left-right" : "view-split-top-bottom"
-                                checked: currentTab.count === 2
-                                checkable: true
-                                onTriggered: toogleSplitView()
-                            }
-
-                            Action
-                            {
-                                text: i18n("Terminal")
-                                enabled: !Maui.Handy.isAndroid && currentTab && currentTab.currentItem ? currentTab.currentItem.supportsTerminal : false
-                                icon.name: "dialog-scripts"
-                                checked : currentTab && currentBrowser ? currentTab.currentItem.terminalVisible : false
-                                checkable: true
-
-                                onTriggered: currentTab.currentItem.toogleTerminal()
-                            }
+                            visible: !appSettings.showActionsBar
+                            height: visible ? implicitHeight: -_mainMenu.spacing
+                            actions: [_newTabAction, _viewHiddenAction, _splitViewAction, _showTerminalAction]
                         }
 
                         MenuItem
@@ -527,7 +594,7 @@ Maui.ApplicationWindow
                             icon.name: "configure-shortcuts"
                             onTriggered:
                             {
-                                dialogLoader.sourceComponent = _shortcutsDialogComponent
+                                var dialog = _shortcutsDialogComponent.createObject(root)
                                 dialog.open()
                             }
                         }
@@ -558,7 +625,6 @@ Maui.ApplicationWindow
                 Layout.fillWidth: true
                 Layout.minimumWidth: 100
 
-
                 sourceComponent: Item
                 {
                     implicitHeight: _pathBar.implicitHeight
@@ -577,7 +643,7 @@ Maui.ApplicationWindow
                         id: _pathBar
 
                         anchors.centerIn: parent
-                        width: Math.min(parent.width, implicitWidth)
+                        width: _pageLayout.split ? parent.width : Math.min(parent.width, implicitWidth)
 
                         url: currentBrowser.currentPath
 
@@ -638,11 +704,13 @@ Maui.ApplicationWindow
                 id: _stackView
                 anchors.fill: parent
                 clip: false
+                Keys.enabled: true
+                Keys.forwardTo: currentItem
+                background: null
 
                 initialItem: BrowserView
                 {
                     id: _browserView
-
                     flickable: currentBrowser.flickable
                 }
 
@@ -703,7 +771,7 @@ Maui.ApplicationWindow
 
     function openConfigDialog()
     {
-        dialogLoader.sourceComponent = _configDialogComponent
+        var dialog = _configDialogComponent.createObject(root)
         dialog.open()
     }
 
@@ -732,14 +800,20 @@ Maui.ApplicationWindow
 
     function tagFiles(urls)
     {
-        if(urls.length <= 0)
+        if(urls.length < 1)
         {
             return
         }
 
-        dialogLoader.sourceComponent = _tagsDialogComponent
-        dialog.composerList.urls =urls
-        dialog.open()
+        if(root.tagsDialog)
+        {
+            root.tagsDialog.composerList.urls = urls
+        }else
+        {
+           root.tagsDialog = _tagsDialogComponent.createObject(root, ({'composerList.urls' : urls}))
+        }
+
+        root.tagsDialog.open()
     }
 
     /**
@@ -758,8 +832,7 @@ Maui.ApplicationWindow
             return
         }
 
-        dialogLoader.sourceComponent = _openWithDialogComponent
-        dialog.urls = urls
+        var dialog = _openWithDialogComponent.createObject(root, {'urls': urls})
         dialog.open()
     }
 
@@ -782,10 +855,14 @@ Maui.ApplicationWindow
         {
             var previewer = _previewerWindowComponent.createObject(root)
             previewer.previewer.setData(url)
+            previewer.forceActiveFocus()
+
         }else
         {
-            dialogLoader.sourceComponent = _previewerComponent
+            var dialog = _previewerComponent.createObject(root)
+            dialog.previewer.setData(url)
             dialog.open()
+            dialog.forceActiveFocus()
         }
     }
 

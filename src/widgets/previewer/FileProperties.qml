@@ -43,14 +43,19 @@ ColumnLayout
         title: i18n("Permissions")
         description: i18n("Set file permissions to access this file")
 
+        Flow
+        {
+            Layout.fillWidth: true
+spacing: Maui.Style.defaultSpacing
         Maui.SectionItem
         {
             label1.text: i18n("Owner")
-
+        flat: false
             Maui.ToolActions
             {
                 Layout.fillWidth: true
                 autoExclusive: false
+                checkable: false
 
                 Action
                 {
@@ -77,11 +82,12 @@ ColumnLayout
         Maui.SectionItem
         {
             label1.text: i18n("Group")
-
+            flat: false
             Maui.ToolActions
             {
                 Layout.fillWidth: true
                 autoExclusive: false
+                checkable: false
                 //                checkable: true
 
                 Action
@@ -110,11 +116,12 @@ ColumnLayout
         Maui.SectionItem
         {
             label1.text: i18n("Everyone")
-
+            flat: false
             Maui.ToolActions
             {
                 Layout.fillWidth: true
                 autoExclusive: false
+                checkable: false
 
                 Action
                 {
@@ -136,7 +143,7 @@ ColumnLayout
                 }
             }
         }
-
+        }
     }
 
     Maui.SectionGroup
@@ -146,37 +153,46 @@ ColumnLayout
         title: i18n("Ownership")
         description: i18n("Set file permissions to access this file")
 
+        Flow
+        {
+            Layout.fillWidth: true
+            spacing: Maui.Style.defaultSpacing
+
         Maui.SectionItem
         {
             label1.text: i18n("Owner")
             label2.text: _permissions.owner
-
+            flat: false
         }
 
         Maui.SectionItem
         {
             label1.text: i18n("Group")
             label2.text: _permissions.group
+            flat: false
 
         }
-        Maui.SectionItem
-        {
-            label1.text: i18n("Users")
-
-            ComboBox
-            {
-                model: _permissions.users
-            }
-        }
-
-        Maui.SectionItem
-        {
-            label1.text: i18n("Groups")
-
-            ComboBox
-            {
-                model: _permissions.groups
-            }
+        // Maui.SectionItem
+        // {
+        //     label1.text: i18n("Users")
+        //     flat: false
+        //
+        //     ComboBox
+        //     {
+        //         model: _permissions.users
+        //     }
+        // }
+        //
+        // Maui.SectionItem
+        // {
+        //     label1.text: i18n("Groups")
+        //     flat: false
+        //
+        //     ComboBox
+        //     {
+        //         model: _permissions.groups
+        //     }
+        // }
         }
     }
 }

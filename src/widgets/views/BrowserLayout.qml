@@ -6,6 +6,7 @@
 
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Effects
 
 import org.mauikit.controls as Maui
 import org.mauikit.filebrowsing as FB
@@ -39,6 +40,98 @@ Item
         id: _splitView
         anchors.fill: parent
         orientation: width > 600 ? Qt.Horizontal :  Qt.Vertical
+        background: null
+    }
+
+    Loader
+    {
+        id: _actionsBarLoader
+        active: settings.showActionsBar
+        visible: status == Loader.Ready
+        asynchronous: true
+
+        sourceComponent: Pane
+        {
+            id: _pane
+            Maui.Theme.colorSet: Maui.Theme.Complementary
+            Maui.Theme.inherit: false
+
+            x: control.width - width - Maui.Style.space.big
+            y: control.height - height - currentItem.terminalPanelHeight - Maui.Style.space.big
+            background: Rectangle
+            {
+                radius: Maui.Style.radiusV
+                color: Maui.Theme.alternateBackgroundColor
+
+                layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
+                layer.effect: MultiEffect
+                {
+                    autoPaddingEnabled: true
+                    shadowEnabled: true
+                    shadowColor: "#000000"
+                }
+            }
+
+            ScaleAnimator on scale
+            {
+                from: 0
+                to: 1
+                duration: Maui.Style.units.longDuration
+                running: visible
+                easing.type: Easing.OutInQuad
+            }
+
+            OpacityAnimator on opacity
+            {
+                from: 0
+                to: 1
+                duration: Maui.Style.units.longDuration
+                running: visible
+            }
+
+            contentItem:  Grid
+            {
+                columns: 2
+                rows: 2
+                spacing: Maui.Style.defaultSpacing
+                Repeater
+                {
+                    model: [_newTabAction, _viewHiddenAction, _splitViewAction, _showTerminalAction]
+
+                    ToolButton
+                    {
+                        Maui.Theme.colorSet: Maui.Theme.Complementary
+
+                        action: modelData
+                        display: ToolButton.IconOnly
+                        flat: false
+                    }
+                }
+            }
+
+            DragHandler
+            {
+                target: _pane
+                // target: _actionsBarLoader
+                // grabPermissions: PointerHandler.TakeOverForbidden | PointerHandler.CanTakeOverFromAnything
+                xAxis.maximum: control.width - _pane.width
+                xAxis.minimum: 0
+
+                yAxis.enabled : false
+
+                onActiveChanged:
+                {
+                    if(!active)
+                    {
+                        console.log(centroid.position, centroid.scenePosition, centroid.velocity.x)
+
+                        let pos = centroid.velocity.x
+                        _pane.x = Qt.binding(()=> { return pos < 0 ? Maui.Style.space.big : control.width - _pane.width - Maui.Style.space.big })
+                        _pane.y = Qt.binding(()=> { return control.height - _pane.height - control.currentItem.terminalPanelHeight - Maui.Style.space.big })
+                    }
+                }
+            }
+        }
     }
 
     Component.onCompleted: split(control.path, Qt.Vertical)

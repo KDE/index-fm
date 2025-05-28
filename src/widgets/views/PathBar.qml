@@ -28,6 +28,8 @@ import org.maui.index as Index
 Item
 {
     id: control
+    focus: false
+    focusPolicy: Qt.NoFocus
 
     property int preferredWidth: visible ? Math.max(500, item.implicitWidth): 0
 
@@ -36,6 +38,7 @@ Item
         NumberAnimation
         {
             duration: Maui.Style.units.shortDuration
+            easing.type: Easing.InOutQuad
         }
     }
 
@@ -78,13 +81,6 @@ Item
       */
     signal placeRightClicked(string path)
 
-    PathBarDelegate
-    {
-        id: _dummyDelegate
-        visible: false
-        text: "test"
-    }
-
     Loader
     {
         id: _loader
@@ -93,7 +89,7 @@ Item
         sourceComponent: Item
         {
             implicitWidth: _layout.implicitWidth
-            implicitHeight: _layout.implicitHeight
+            implicitHeight: entry.implicitHeight
 
             Maui.TextField
             {
@@ -110,7 +106,7 @@ Item
                     pathChanged(text)
                 }
 
-               onActiveFocusChanged:
+                onActiveFocusChanged:
                 {
                     if(!entry.activeFocus)
                     {
@@ -145,16 +141,27 @@ Item
             ScrollView
             {
                 id: _layout
-                visible: !pathEntry
+                visible: opacity > 0
+
+                opacity: pathEntry ? 0 : 1
+
+                Behavior on opacity
+                {
+                    NumberAnimation
+                    {
+                        duration: Maui.Style.units.longDuration
+                        easing.type: Easing.InOutQuad
+                    }
+                }
+
                 anchors.fill: parent
 
-                orientation: Qt.Horizontal
+                Maui.Controls.orientation: Qt.Horizontal
                 implicitWidth: contentWidth + leftPadding + rightPadding
 
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
                 ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
-                implicitHeight: _listView.currentItem ? _listView.currentItem.implicitHeight + topPadding + bottomPadding : _dummyDelegate.implicitHeight
                 contentHeight: availableHeight
                 leftPadding: 8
 
@@ -167,6 +174,7 @@ Item
                 ListView
                 {
                     id: _listView
+                    height: parent.height
 
                     Maui.Theme.colorSet: control.Maui.Theme.colorSet
                     Maui.Theme.inherit: false
@@ -229,7 +237,7 @@ Item
 
                     delegate: PathBarDelegate
                     {
-//                        height: ListView.view.height
+                        height: ListView.view.height
                         text: model.label
                         ToolTip.text: model.path
                         width: Math.max(Maui.Style.iconSizes.medium * 2, implicitWidth)

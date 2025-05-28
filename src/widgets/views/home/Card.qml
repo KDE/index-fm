@@ -31,7 +31,7 @@ Maui.ListBrowserDelegate
             MultiEffect
             {
                 id: fastBlur
-                visible: true
+                visible: GraphicsInfo.api !== GraphicsInfo.Software
 
                 blurEnabled: true
                 blur: 1.0
@@ -71,7 +71,7 @@ Maui.ListBrowserDelegate
         }
     }
 
-    layer.enabled: true
+    layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
     layer.effect: MultiEffect
     {
         maskEnabled: true

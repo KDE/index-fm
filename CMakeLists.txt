@@ -5,8 +5,8 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-set(INDEX_VERSION 4.0.1)
-add_compile_definitions(INDEX_COPYRIGHT_NOTICE="© 2019-2024 Maui Development Team")
+set(INDEX_VERSION 4.0.2)
+add_compile_definitions(INDEX_COPYRIGHT_NOTICE="© 2019-2025 Maui Development Team")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -25,7 +25,7 @@ set(REQUIRED_KF_VERSION 5.240.0)
 set(REQUIRED_MAUI_VERSION 3.0.0)
 
 if(ANDROID)
-    set(ANDROID_ABIS "armeabi-v7a")
+    set(ANDROID_ABIS "arm64-v8a")
 endif()
 
 find_package(ECM ${REQUIRED_KF_VERSION} NO_MODULE)
@@ -94,6 +94,9 @@ endif()
 ecm_setup_version(${INDEX_VERSION}
     VARIABLE_PREFIX INDEX
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/index_version.h")
+
+qt_policy(SET QTP0001 OLD)
+qt_policy(SET QTP0004 NEW)
 
 add_subdirectory(src)
 

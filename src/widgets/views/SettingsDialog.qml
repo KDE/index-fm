@@ -40,7 +40,7 @@ Maui.SettingsDialog
             }
         }
     }
-    
+
     Maui.SectionGroup
     {
         title: i18n("Previews")
@@ -346,8 +346,20 @@ Maui.SettingsDialog
                 onToggled: appSettings.overviewStart = !appSettings.overviewStart
             }
         }
+
+        Maui.FlexSectionItem
+        {
+            label1.text: i18n("Actions Bar")
+            label2.text: i18n("Show the actions bar in the main view. Otherwise it will be shown in the application menu.")
+
+            Switch
+            {
+                checked:  appSettings.showActionsBar
+                onToggled: appSettings.showActionsBar = !appSettings.showActionsBar
+            }
+        }
     }
-    
+
     Maui.SectionGroup
     {
         title: i18n("Terminal")
@@ -378,7 +390,7 @@ Maui.SettingsDialog
                 onToggled: appSettings.terminalFollowsColorScheme = !appSettings.terminalFollowsColorScheme
             }
         }
-        
+
         Maui.FlexSectionItem
         {
             label1.text: i18n("Color Scheme")
@@ -411,7 +423,7 @@ Maui.SettingsDialog
             onToggled: control.addPage(_sidebarPlacesComponent)
         }
     }
-    
+
 
     Component
     {

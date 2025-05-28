@@ -5,6 +5,7 @@
   <project_license>LGPL-3.0</project_license>
   <launchable type="desktop-id">org.kde.index.desktop</launchable>
   <name>Index</name>
+  <name xml:lang="ar">دليل</name>
   <name xml:lang="az">İndeks</name>
   <name xml:lang="ca">Índex</name>
   <name xml:lang="ca-valencia">Índex</name>
@@ -18,6 +19,7 @@
   <name xml:lang="fi">Index</name>
   <name xml:lang="fr">Index</name>
   <name xml:lang="gl">Index</name>
+  <name xml:lang="he">מפתח</name>
   <name xml:lang="hi">निर्देशिका (Index)</name>
   <name xml:lang="hu">Index</name>
   <name xml:lang="ia">Indice</name>
@@ -26,6 +28,8 @@
   <name xml:lang="it">Index</name>
   <name xml:lang="ka">ინდექსი</name>
   <name xml:lang="ko">Index</name>
+  <name xml:lang="lt">Index</name>
+  <name xml:lang="lv">Index</name>
   <name xml:lang="nl">Index</name>
   <name xml:lang="nn">Index</name>
   <name xml:lang="pa">ਇੰਡੈਕਸ</name>
@@ -33,6 +37,7 @@
   <name xml:lang="pt">Índice</name>
   <name xml:lang="pt-BR">Index</name>
   <name xml:lang="ro">Index</name>
+  <name xml:lang="sa">अनुक्रमणिका</name>
   <name xml:lang="sk">Index</name>
   <name xml:lang="sl">Indeks</name>
   <name xml:lang="sv">Index</name>
@@ -42,6 +47,7 @@
   <name xml:lang="zh-CN">Index</name>
   <name xml:lang="zh-TW">Index</name>
   <summary>Manage your files</summary>
+  <summary xml:lang="ar">أدر ملفاتك</summary>
   <summary xml:lang="az">Fayllarınızı idarəsə edin</summary>
   <summary xml:lang="ca">Gestioneu els fitxers</summary>
   <summary xml:lang="ca-valencia">Gestioneu els fitxers</summary>
@@ -55,7 +61,8 @@
   <summary xml:lang="fa">پرونده‌های خود را مدیریت کنید</summary>
   <summary xml:lang="fi">Hallitse tiedostojasi</summary>
   <summary xml:lang="fr">Gérer vos fichiers</summary>
-  <summary xml:lang="gl">Xestione os seus ficheiros.</summary>
+  <summary xml:lang="gl">Xestione os seus ficheiros</summary>
+  <summary xml:lang="he">ניהול הקבצים שלך</summary>
   <summary xml:lang="hi">फ़ाइलों का प्रबंधन करें</summary>
   <summary xml:lang="hu">Fájlkezelő</summary>
   <summary xml:lang="ia">Gere tu files</summary>
@@ -64,6 +71,8 @@
   <summary xml:lang="it">Gestisci i tuoi file</summary>
   <summary xml:lang="ka">მართეთ თქვენი ფაილები</summary>
   <summary xml:lang="ko">내 파일 관리</summary>
+  <summary xml:lang="lt">Tvarkyti failus</summary>
+  <summary xml:lang="lv">Pārvaldiet savas datnes</summary>
   <summary xml:lang="nl">Uw bestanden beheren</summary>
   <summary xml:lang="nn">Handsam filene dine</summary>
   <summary xml:lang="pa">ਆਪਣੀਆਂ ਫਾਇਲਾਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ</summary>
@@ -71,6 +80,7 @@
   <summary xml:lang="pt">Faz a gestão dos seus ficheiros</summary>
   <summary xml:lang="pt-BR">Gerencie seus arquivos</summary>
   <summary xml:lang="ro">Gestionați-vă fișierele</summary>
+  <summary xml:lang="sa">स्वसञ्चिकाः प्रबन्धयन्तु</summary>
   <summary xml:lang="sk">Spravovať vaše súbory</summary>
   <summary xml:lang="sl">Upravljanje vaših datotek</summary>
   <summary xml:lang="sv">Hantera dina filer</summary>
@@ -85,6 +95,7 @@
   </developer>
   <description>
     <p>Index allows you to navigate your computer and preview multimedia files.</p>
+    <p xml:lang="ar">يسمح لك الدليل بالتنقل في حاسوبك ومعاينة ملفات الوسائط.</p>
     <p xml:lang="az">İndeks kompyuterinizdə gəzinməyə və multimedia fayllarınıza baxmağa imkan verir.</p>
     <p xml:lang="ca">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
     <p xml:lang="ca-valencia">L'Índex permet navegar per l'ordinador i previsualitzar fitxers multimèdia.</p>
@@ -97,6 +108,7 @@
     <p xml:lang="fi">Indexillä voi tarkastella koneen talletustilaa ja esikatsella multimediatiedostoja.</p>
     <p xml:lang="fr">Index vous permet de naviguer dans les fichiers de votre ordinateurs et d'avoir un aperçu des fichiers multimédia.</p>
     <p xml:lang="gl">Index permítelle explorar o seu computador e obter unha vista previa de ficheiros multimedia.</p>
+    <p xml:lang="he">מפתח מאפשר לך לנווט במחשב שלך ולהציג תצוגה מקדימה של קובצי מולטימדיה.</p>
     <p xml:lang="hi">निर्देशिका (Index) आपको अपने कंप्यूटर पर मल़टीमिडिया फाइल संचालन व देखने देता है</p>
     <p xml:lang="hu">Az Index lehetővé teszi a számítógépe böngészését, és a multimédiás fájlok előnézetének megtekintését.</p>
     <p xml:lang="ia">Index (indice) te permitte navigar transfiles de tu computator e previe multimedia. </p>
@@ -105,6 +117,8 @@
     <p xml:lang="it">Index ti consente di navigare il tuo computer e offre un'anteprima dei file multimediali.</p>
     <p xml:lang="ka">ინდექსი თქვენს კომპიუტერში ნავიგაციისა და მულტიმედია ფაილებზე გადახედვის საშუალებას გაძლევთ.</p>
     <p xml:lang="ko">Index 파일 관리자로 컴퓨터를 탐색하고 멀티미디어 파일을 미리 볼 수 있습니다.</p>
+    <p xml:lang="lt">Index leidžia naršyti kompiuteryje ir peržiūrėti multimedijos failus.</p>
+    <p xml:lang="lv">„Index“ ļauj apskatīt ierīcē esošās datnes un atvērt multivides datņu priekšskatījumus.</p>
     <p xml:lang="nl">Index biedt u het navigeren in uw computer en multimediabestanden te bekijken.</p>
     <p xml:lang="nn">Index lèt deg bla gjennom filer på maskina og førehandsvisa multimediefiler.</p>
     <p xml:lang="pa">ਇੰਡੈਕਸ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਨੂੰ ਫੋਲਣ ਤੇ ਮਲਟੀਮੀਡੀਆ ਫਾਇਲਾਂ ਦੀ ਝਲਕ ਵੇਖਣ ਲਈ ਮਦਦਗਾਰ ਹੈ।</p>
@@ -112,6 +126,7 @@
     <p xml:lang="pt">O Índice permite-lhe navegar pelo seu computador e antever os ficheiros multimédia.</p>
     <p xml:lang="pt-BR">O Index permite que você navegue no seu computador e visualize arquivos multimídia.</p>
     <p xml:lang="ro">Index vă permite să răsfoiți calculatorul și să previzualizați fișiere multimedia.</p>
+    <p xml:lang="sa">अनुक्रमणिका भवन्तं स्वसङ्गणकं नेविगेट् कर्तुं बहुमाध्यमसञ्चिकानां पूर्वावलोकनं च कर्तुं शक्नोति ।</p>
     <p xml:lang="sk">Index vám umožní prechádzať váš počítač a prehliadať multimediálne súbory.</p>
     <p xml:lang="sl">Kazalo omogoča krmarjenje po računalniku in predogled večpredstavnostnih datotek.</p>
     <p xml:lang="sv">Index låter dig navigera på datorn och förhandsgranska multimediafiler.</p>
@@ -128,6 +143,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>Index file manager</caption>
+      <caption xml:lang="ar">دليل مدير ملفات</caption>
       <caption xml:lang="az">İndeks fayl meneceri</caption>
       <caption xml:lang="ca">Gestor de fitxers Índex</caption>
       <caption xml:lang="ca-valencia">Gestor de fitxers Índex</caption>
@@ -141,6 +157,7 @@
       <caption xml:lang="fi">Index-tiedostonhallinta</caption>
       <caption xml:lang="fr">Gestionnaire de fichiers Index</caption>
       <caption xml:lang="gl">Xestor de ficheiros Index.</caption>
+      <caption xml:lang="he">מנהל הקבצים מפתח</caption>
       <caption xml:lang="hi">निर्देशिका (Index) फ़ाइल प्रबंधक</caption>
       <caption xml:lang="hu">Index fájlkezelő</caption>
       <caption xml:lang="ia">Gerente de File de Indice</caption>
@@ -149,6 +166,8 @@
       <caption xml:lang="it">Gestore dei file Index</caption>
       <caption xml:lang="ka">ინდექსის ფაილების მმართველი</caption>
       <caption xml:lang="ko">Index 파일 관리자</caption>
+      <caption xml:lang="lt">Index failų tvarkytuvė</caption>
+      <caption xml:lang="lv">„Index“ datņu pārvaldnieks</caption>
       <caption xml:lang="nl">Indexbestandsbeheerder</caption>
       <caption xml:lang="nn">Index filhandsamar</caption>
       <caption xml:lang="pa">ਇੰਡੈਕਸ ਫਾਇਲ ਮੈਨੇਜਰ</caption>
@@ -156,6 +175,7 @@
       <caption xml:lang="pt">Gestor de ficheiros Índice</caption>
       <caption xml:lang="pt-BR">Gerenciador de arquivos Index</caption>
       <caption xml:lang="ro">Gestionarul de fișiere Index</caption>
+      <caption xml:lang="sa">अनुक्रमणिका सञ्चिकाप्रबन्धकः</caption>
       <caption xml:lang="sk">Správca súborov Index</caption>
       <caption xml:lang="sl">Upravljalnik indeksa datotek</caption>
       <caption xml:lang="sv">Index filhanterare</caption>
@@ -182,9 +202,15 @@ https://cdn.kde.org/screenshots/index/index.png
     <control>keyboard</control>
     <control>touch</control>
   </recommends>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
   <content_rating type="oars-1.0"/>
   <project_group>KDE</project_group>
   <releases>
+    <release version="4.0.1" date="2024-12-02">
+      <url>https://mauikit.org/blog/maui-release-briefing-7/</url>
+    </release>
     <release version="4.0.0" date="2024-09-09">
       <url>https://mauikit.org/blog/maui-release-briefing-6/</url>
     </release>

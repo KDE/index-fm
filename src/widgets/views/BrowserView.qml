@@ -13,6 +13,9 @@ Maui.Page
 {
     id: control
 
+    Keys.enabled: true
+    Keys.forwardTo: _browserList
+
     property alias selectionBar: _selectionBar
     property alias currentTabIndex : _browserList.currentIndex
     property alias currentTab : _browserList.currentItem
@@ -21,6 +24,7 @@ Maui.Page
 
     floatingFooter: true
     headBar.visible: false
+    background: null
 
     footer: Maui.SelectionBar
     {
@@ -127,8 +131,7 @@ Maui.Page
                 icon.name: "archive-insert"
                 onTriggered:
                 {
-                    dialogLoader.sourceComponent= _compressDialogComponent
-                    dialog.urls = selectionBar.uris
+                   var dialog = _compressDialogComponent.createObject(root, ({'urls': selectionBar.uris}))
                     dialog.open()
                 }
             },
@@ -160,9 +163,15 @@ Maui.Page
     {
         id: _browserList
         anchors.fill: parent
+        tabBar.margins: settings.floatyUI ? Maui.Style.contentMargins : 0
+        tabBar.topMargin: 0
         currentIndex : -1
         onNewTabClicked: openTab(currentBrowser.currentPath)
         onCloseTabClicked: (index) => closeTab(index)
+        Keys.enabled: true
+        Keys.forwardTo: currentTab
+        background: null
+        // tabBar.background: null
 
         menuActions: Action
         {

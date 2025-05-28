@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-05 01:51+0000\n"
-"PO-Revision-Date: 2024-10-22 17:19+0300\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
+"PO-Revision-Date: 2025-05-01 12:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -19,6 +19,23 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
+
+#: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr "Огляд"
+
+#: src/index.cpp:298
+#, fuzzy, kde-format
+#| msgid "Favorite files"
+msgid "Favorite"
+msgstr "Вибрані файли"
+
+#: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr "Мітки"
 
 #: src/main.cpp:65
 #, kde-format
@@ -40,130 +57,141 @@ msgstr "Розробник"
 msgid "Open url in a new window."
 msgstr "Відкрити адресу у новому вікні."
 
-#: src/main.qml:279
-#, kde-format
-msgid "Toggle sidebar"
-msgstr "Увімкнути/Вимкнути бічну панель"
-
-#: src/main.qml:311 src/widgets/views/SettingsDialog.qml:120
-#, kde-format
-msgid "List"
-msgstr "Список"
-
-#: src/main.qml:326 src/widgets/views/SettingsDialog.qml:132
-#, kde-format
-msgid "Grid"
-msgstr "Таблиця"
-
-#: src/main.qml:367
-#, kde-format
-msgid "Paste"
-msgstr "Вставити"
-
-#: src/main.qml:379 src/widgets/views/ShortcutsDialog.qml:163
-#, kde-format
-msgid "Select All"
-msgstr "Позначити все"
-
-#: src/main.qml:390
-#, kde-format
-msgid "New Item"
-msgstr "Створити запис"
-
-#: src/main.qml:402 src/widgets/views/SettingsDialog.qml:147
-#, kde-format
-msgid "Sort"
-msgstr "Упорядкування"
-
-#: src/main.qml:406 src/widgets/views/SettingsDialog.qml:159
-#, kde-format
-msgid "Type"
-msgstr "Тип"
-
-#: src/main.qml:418 src/widgets/views/SettingsDialog.qml:171
-#, kde-format
-msgid "Date"
-msgstr "Дата"
-
-#: src/main.qml:431 src/widgets/views/SettingsDialog.qml:182
-#, kde-format
-msgid "Modified"
-msgstr "Змінено"
-
-#: src/main.qml:444 src/widgets/views/SettingsDialog.qml:193
-#, kde-format
-msgid "Size"
-msgstr "Розмір"
-
-#: src/main.qml:457 src/widgets/views/SettingsDialog.qml:204
-#, kde-format
-msgid "Name"
-msgstr "Назва"
-
-#: src/main.qml:476
+#: src/main.qml:145
 #, kde-format
 msgid "New tab"
 msgstr "Створити вкладку"
 
-#: src/main.qml:483
+#: src/main.qml:153
 #, kde-format
 msgid "View Hidden"
 msgstr "Переглянути приховані"
 
-#: src/main.qml:491
+#: src/main.qml:162
 #, kde-format
 msgid "Split View"
 msgstr "Розділити перегляд"
 
-#: src/main.qml:500 src/widgets/views/SettingsDialog.qml:353
+#: src/main.qml:172 src/widgets/views/Browser.qml:322
+#: src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "Термінал"
 
-#: src/main.qml:513
+#: src/main.qml:191
+#, kde-format
+msgid "Tagged"
+msgstr "З міткою"
+
+#: src/main.qml:192
+#, kde-format
+msgid "File was tagged successfully"
+msgstr "До файла було успішно додано мітку"
+
+#: src/main.qml:374
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "Увімкнути/Вимкнути бічну панель"
+
+#: src/main.qml:406 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "Список"
+
+#: src/main.qml:421 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "Таблиця"
+
+#: src/main.qml:462
+#, kde-format
+msgid "Paste"
+msgstr "Вставити"
+
+#: src/main.qml:478 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "Позначити все"
+
+#: src/main.qml:489
+#, kde-format
+msgid "New Item"
+msgstr "Створити запис"
+
+#: src/main.qml:501 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr "Упорядкування"
+
+#: src/main.qml:505 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "Тип"
+
+#: src/main.qml:517 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "Дата"
+
+#: src/main.qml:530 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "Змінено"
+
+#: src/main.qml:543 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "Розмір"
+
+#: src/main.qml:556 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "Назва"
+
+#: src/main.qml:580
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "Відкрити термінал тут"
 
-#: src/main.qml:526 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "Скорочення"
 
-#: src/main.qml:537
+#: src/main.qml:604
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
-#: src/main.qml:544
+#: src/main.qml:611
 #, kde-format
 msgid "About"
 msgstr "Про програму"
 
-#: src/main.qml:612 src/widgets/views/FileMenu.qml:202
+#: src/main.qml:678 src/widgets/views/FileMenu.qml:201
 #, kde-format
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: src/main.qml:619 src/widgets/views/FileMenu.qml:216
-#: src/widgets/views/PlacesSideBar.qml:98
+#: src/main.qml:685 src/widgets/views/FileMenu.qml:221
+#: src/widgets/views/PlacesSideBar.qml:82
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Відкрити у новій вкладці"
 
-#: src/main.qml:627 src/widgets/views/FileMenu.qml:232
-#: src/widgets/views/PlacesSideBar.qml:114
+#: src/main.qml:693 src/widgets/views/FileMenu.qml:241
+#: src/widgets/views/PlacesSideBar.qml:97
 #, kde-format
 msgid "Open in Split View"
 msgstr "Відкрити у розділеному перегляді"
 
-#: src/widgets/previewer/FilePreviewer.qml:92
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "Подробиці"
 
-#: src/widgets/previewer/FilePreviewer.qml:93
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "Інформація про файл"
@@ -174,132 +202,116 @@ msgid "Permissions"
 msgstr "Права доступу"
 
 #: src/widgets/previewer/FileProperties.qml:44
-#: src/widgets/previewer/FileProperties.qml:147
+#: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Set file permissions to access this file"
 msgstr "Встановити права для доступу до цього файла"
 
-#: src/widgets/previewer/FileProperties.qml:48
-#: src/widgets/previewer/FileProperties.qml:151
+#: src/widgets/previewer/FileProperties.qml:52
+#: src/widgets/previewer/FileProperties.qml:163
 #, kde-format
 msgid "Owner"
 msgstr "Власник"
 
-#: src/widgets/previewer/FileProperties.qml:57
-#: src/widgets/previewer/FileProperties.qml:89
-#: src/widgets/previewer/FileProperties.qml:121
+#: src/widgets/previewer/FileProperties.qml:62
+#: src/widgets/previewer/FileProperties.qml:95
+#: src/widgets/previewer/FileProperties.qml:128
 #, kde-format
 msgid "Read"
 msgstr "Читання"
 
-#: src/widgets/previewer/FileProperties.qml:64
-#: src/widgets/previewer/FileProperties.qml:96
-#: src/widgets/previewer/FileProperties.qml:127
+#: src/widgets/previewer/FileProperties.qml:69
+#: src/widgets/previewer/FileProperties.qml:102
+#: src/widgets/previewer/FileProperties.qml:134
 #, kde-format
 msgid "Write"
 msgstr "Запис"
 
-#: src/widgets/previewer/FileProperties.qml:71
-#: src/widgets/previewer/FileProperties.qml:104
-#: src/widgets/previewer/FileProperties.qml:133
+#: src/widgets/previewer/FileProperties.qml:76
+#: src/widgets/previewer/FileProperties.qml:110
+#: src/widgets/previewer/FileProperties.qml:140
 #, kde-format
 msgid "Execute"
 msgstr "Виконання"
 
-#: src/widgets/previewer/FileProperties.qml:79
-#: src/widgets/previewer/FileProperties.qml:158
+#: src/widgets/previewer/FileProperties.qml:84
+#: src/widgets/previewer/FileProperties.qml:170
 #: src/widgets/views/SettingsDialog.qml:231
 #, kde-format
 msgid "Group"
 msgstr "Група"
 
-#: src/widgets/previewer/FileProperties.qml:112
+#: src/widgets/previewer/FileProperties.qml:118
 #, kde-format
 msgid "Everyone"
 msgstr "Будь-хто"
 
-#: src/widgets/previewer/FileProperties.qml:146
+#: src/widgets/previewer/FileProperties.qml:153
 #, kde-format
 msgid "Ownership"
 msgstr "Власник"
-
-#: src/widgets/previewer/FileProperties.qml:164
-#, kde-format
-msgid "Users"
-msgstr "Користувачі"
-
-#: src/widgets/previewer/FileProperties.qml:174
-#, kde-format
-msgid "Groups"
-msgstr "Групи"
 
 #: src/widgets/previewer/FontPreviewer.qml:31
 #, kde-format
 msgid "Install"
 msgstr "Встановити"
 
-#: src/widgets/previewer/PreviewerDialog.qml:40
-#: src/widgets/previewer/PreviewerWindow.qml:42
-#: src/widgets/views/BrowserView.qml:115 src/widgets/views/HomeView.qml:35
+#: src/widgets/previewer/PreviewerDialog.qml:52
+#: src/widgets/previewer/PreviewerWindow.qml:50
+#: src/widgets/views/BrowserView.qml:119 src/widgets/views/HomeView.qml:35
 #, kde-format
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/widgets/views/Browser.qml:52
+#: src/widgets/views/Browser.qml:57
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
 
-#: src/widgets/views/Browser.qml:60 src/widgets/views/BrowserView.qml:148
-#: src/widgets/views/FileMenu.qml:99 src/widgets/views/PlacesSideBar.qml:124
+#: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Remove"
 msgstr "Вилучити"
 
-#: src/widgets/views/Browser.qml:78
+#: src/widgets/views/Browser.qml:82
 #, kde-format
 msgid "Remove '%1'"
 msgstr "Вилучити «%1»"
 
-#: src/widgets/views/Browser.qml:81
+#: src/widgets/views/Browser.qml:85
 #, kde-format
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr "Ви справді хочете вилучити цю мітку? Скасувати таку дію неможливо."
 
-#: src/widgets/views/Browser.qml:163
+#: src/widgets/views/Browser.qml:168
 #, kde-format
 msgid "Create new"
 msgstr "Створити"
 
-#: src/widgets/views/BrowserView.qml:84 src/widgets/views/FileMenu.qml:67
+#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:54
 #, kde-format
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/widgets/views/BrowserView.qml:94 src/widgets/views/FileMenu.qml:78
+#: src/widgets/views/BrowserView.qml:98 src/widgets/views/FileMenu.qml:65
 #, kde-format
 msgid "Cut"
 msgstr "Вирізати"
 
-#: src/widgets/views/BrowserView.qml:104 src/widgets/views/FileMenu.qml:191
+#: src/widgets/views/BrowserView.qml:108 src/widgets/views/FileMenu.qml:190
 #: src/widgets/views/HomeView.qml:47
 #, kde-format
 msgid "Share"
 msgstr "Оприлюднити"
 
-#: src/widgets/views/BrowserView.qml:126 src/widgets/views/FileMenu.qml:256
+#: src/widgets/views/BrowserView.qml:130 src/widgets/views/FileMenu.qml:267
 #, kde-format
 msgid "Compress"
 msgstr "Стиснути"
 
-#: src/widgets/views/BrowserView.qml:138 src/widgets/views/FileMenu.qml:178
-#: src/widgets/views/TagsSection.qml:20
-#, kde-format
-msgid "Tags"
-msgstr "Мітки"
-
-#: src/widgets/views/BrowserView.qml:170
+#: src/widgets/views/BrowserView.qml:179
 #, kde-format
 msgid "Detach Tab"
 msgstr "Від'єднати вкладку"
@@ -329,42 +341,52 @@ msgstr "Ваші файли, позначені як улюблені"
 msgid " items"
 msgstr " об'єктів"
 
-#: src/widgets/views/FileMenu.qml:89
+#: src/widgets/views/FileMenu.qml:76
 #, kde-format
 msgid "Rename"
 msgstr "Перейменувати"
 
-#: src/widgets/views/FileMenu.qml:115 src/widgets/views/ShortcutsDialog.qml:183
+#: src/widgets/views/FileMenu.qml:102 src/widgets/views/ShortcutsDialog.qml:183
 #, kde-format
 msgid "Select"
 msgstr "Позначити"
 
-#: src/widgets/views/FileMenu.qml:133 src/widgets/views/HomeView.qml:41
+#: src/widgets/views/FileMenu.qml:120 src/widgets/views/HomeView.qml:41
 #, kde-format
 msgid "Open with"
 msgstr "Відкрити за допомогою"
 
-#: src/widgets/views/FileMenu.qml:144
+#: src/widgets/views/FileMenu.qml:132
 #, kde-format
 msgid "Preview and Info"
 msgstr "Попередній перегляд і відомості"
 
-#: src/widgets/views/FileMenu.qml:162
+#: src/widgets/views/FileMenu.qml:152
+#, kde-format
+msgid "Add to '%1'"
+msgstr "Додати до «%1»"
+
+#: src/widgets/views/FileMenu.qml:163
+#, kde-format
+msgid "Add Tag"
+msgstr "Додати мітку"
+
+#: src/widgets/views/FileMenu.qml:174
 #, kde-format
 msgid "UnFav"
 msgstr "Не улюбл."
 
-#: src/widgets/views/FileMenu.qml:162
+#: src/widgets/views/FileMenu.qml:174
 #, kde-format
 msgid "Fav"
 msgstr "Улюбл."
 
-#: src/widgets/views/FileMenu.qml:224 src/widgets/views/PlacesSideBar.qml:106
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
 #, kde-format
 msgid "Open in New Window"
 msgstr "Відкрити у новому вікні"
 
-#: src/widgets/views/FileMenu.qml:242
+#: src/widgets/views/FileMenu.qml:253
 #, kde-format
 msgid "Extract"
 msgstr "Видобути"
@@ -425,8 +447,8 @@ msgid "Your most recent image files"
 msgstr "Ваші найсвіжіші файли зображень"
 
 #: src/widgets/views/PlacesSection.qml:19
-#: src/widgets/views/SettingsDialog.qml:422
-#: src/widgets/views/SettingsDialog.qml:426
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
 #, kde-format
 msgid "Places"
 msgstr "Місця"
@@ -442,23 +464,23 @@ msgstr "Швидкий доступ до типових місць."
 msgid "More"
 msgstr "Більше"
 
-#: src/widgets/views/PlacesSideBar.qml:44
-#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/PlacesSideBar.qml:57
+#: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: src/widgets/views/PlacesSideBar.qml:45
+#: src/widgets/views/PlacesSideBar.qml:58
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Тут буде наведено список ваших закладок"
 
-#: src/widgets/views/PlacesSideBar.qml:257
+#: src/widgets/views/PlacesSideBar.qml:236
 #, kde-format
 msgid "Mount"
 msgstr "Змонтувати"
 
-#: src/widgets/views/PlacesSideBar.qml:265
+#: src/widgets/views/PlacesSideBar.qml:244
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -623,91 +645,100 @@ msgstr "Розмір списку перегляду."
 msgid "S"
 msgstr "S"
 
-#: src/widgets/views/SettingsDialog.qml:340
-#, kde-format
-msgid "Overview"
-msgstr "Огляд"
-
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Use overview mode as default on launch."
 msgstr "Використовувати режим огляду як типовий після запуску."
 
-#: src/widgets/views/SettingsDialog.qml:354
+#: src/widgets/views/SettingsDialog.qml:352
+#, kde-format
+msgid "Actions Bar"
+msgstr "Панель дій"
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+"Показувати панель дій в основному вікні. Якщо не позначено, панель буде "
+"показано у меню програми."
+
+#: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
 msgstr "Параметри вбудованого термінала."
 
-#: src/widgets/views/SettingsDialog.qml:359
+#: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
 msgstr "Синхронізувати термінал"
 
-#: src/widgets/views/SettingsDialog.qml:360
+#: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
 msgstr ""
 "Синхронізувати поточний робочий каталог термінала з каталогом навігатора."
 
-#: src/widgets/views/SettingsDialog.qml:372
+#: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
 msgstr "Адаптивна схема кольорів"
 
-#: src/widgets/views/SettingsDialog.qml:373
+#: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
 msgstr "Кольори, які засновано на поточному стилі."
 
-#: src/widgets/views/SettingsDialog.qml:384
+#: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
 msgstr "Схема кольорів"
 
-#: src/widgets/views/SettingsDialog.qml:385
+#: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
 msgstr "Зміна кольорової схеми термінала."
 
-#: src/widgets/views/SettingsDialog.qml:404
-#: src/widgets/views/SettingsDialog.qml:431
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
 msgstr "Швидкий доступ"
 
-#: src/widgets/views/SettingsDialog.qml:405
-#: src/widgets/views/SettingsDialog.qml:432
-#: src/widgets/views/SettingsDialog.qml:445
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
 msgstr "Доступ до стандартних місць."
 
-#: src/widgets/views/SettingsDialog.qml:460
+#: src/widgets/views/SettingsDialog.qml:472
 #, kde-format
 msgid "Remote"
 msgstr "Віддалений"
 
-#: src/widgets/views/SettingsDialog.qml:461
+#: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
 msgstr "Доступ до місць у мережі."
 
-#: src/widgets/views/SettingsDialog.qml:476
+#: src/widgets/views/SettingsDialog.qml:488
 #, kde-format
 msgid "Removable"
 msgstr "Портативний"
 
-#: src/widgets/views/SettingsDialog.qml:477
+#: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
 msgstr "Доступ до флешок USB та SD-карток."
 
-#: src/widgets/views/SettingsDialog.qml:492
+#: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
 msgstr "Пристрої"
 
-#: src/widgets/views/SettingsDialog.qml:493
+#: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
 msgstr "Доступ до дисків."
@@ -761,6 +792,17 @@ msgstr "Знайти вкладку"
 #, kde-format
 msgid "Tagged files for quick access"
 msgstr "Позначені файли для швидкого доступу"
+
+#: src/widgets/views/Terminal.qml:30
+#, kde-format
+msgid "Sync"
+msgstr "Синхронізувати"
+
+#~ msgid "Users"
+#~ msgstr "Користувачі"
+
+#~ msgid "Groups"
+#~ msgstr "Групи"
 
 #~ msgid "Cover Flow"
 #~ msgstr "Потік обкладинок"
@@ -865,9 +907,6 @@ msgstr "Позначені файли для швидкого доступу"
 
 #~ msgid "View"
 #~ msgstr "Перегляд"
-
-#~ msgid "Action Bar"
-#~ msgstr "Панель дій"
 
 #~ msgid "Extra toolbar with quick actions."
 #~ msgstr "Додаткова панель із кнопками дій."

@@ -18,6 +18,8 @@
 
 #include <QProcess>
 
+#include <KF6/KI18n/KLazyLocalizedString>
+
 #include <MauiKit4/Core/fmh.h>
 #include <MauiKit4/FileBrowsing/fmstatic.h>
 
@@ -32,9 +34,9 @@ QVector<QPair<QSharedPointer<OrgKdeIndexActionsInterface>, QStringList>> IndexIn
     if (!preferredService.isEmpty())
     {
         QSharedPointer<OrgKdeIndexActionsInterface> preferredInterface(
-                    new OrgKdeIndexActionsInterface(preferredService,
-                                                    QStringLiteral("/Actions"),
-                                                    QDBusConnection::sessionBus()));
+            new OrgKdeIndexActionsInterface(preferredService,
+                                            QStringLiteral("/Actions"),
+                                            QDBusConnection::sessionBus()));
 
         qDebug() << "IS PREFRFRED INTERFACE VALID?" << preferredInterface->isValid() << preferredInterface->lastError().message();
         if (preferredInterface->isValid() && !preferredInterface->lastError().isValid()) {
@@ -42,13 +44,13 @@ QVector<QPair<QSharedPointer<OrgKdeIndexActionsInterface>, QStringList>> IndexIn
         }
     }
 
-    // Look for dolphin instances among all available dbus services.
+           // Look for dolphin instances among all available dbus services.
     QDBusConnectionInterface *sessionInterface = QDBusConnection::sessionBus().interface();
     const QStringList dbusServices = sessionInterface ? sessionInterface->registeredServiceNames().value() : QStringList();
     // Don't match the service without trailing "-" (unique instance)
     const QString pattern = QStringLiteral("org.kde.index-");
 
-    // Don't match the pid without leading "-"
+           // Don't match the pid without leading "-"
     const QString myPid = QLatin1Char('-') + QString::number(QCoreApplication::applicationPid());
 
     for (const QString& service : dbusServices)
@@ -57,11 +59,11 @@ QVector<QPair<QSharedPointer<OrgKdeIndexActionsInterface>, QStringList>> IndexIn
         {
             qDebug() << "EXISTING INTANCES" << service;
 
-            // Check if instance can handle our URLs
+                   // Check if instance can handle our URLs
             QSharedPointer<OrgKdeIndexActionsInterface> interface(
-                        new OrgKdeIndexActionsInterface(service,
-                                                        QStringLiteral("/Actions"),
-                                                        QDBusConnection::sessionBus()));
+                new OrgKdeIndexActionsInterface(service,
+                                                QStringLiteral("/Actions"),
+                                                QDBusConnection::sessionBus()));
             if (interface->isValid() && !interface->lastError().isValid())
             {
                 dolphinInterfaces.append(qMakePair(interface, QStringList()));
@@ -89,7 +91,7 @@ bool IndexInstance::attachToExistingInstance(const QList<QUrl>& inputUrls, bool 
 
     QStringList newUrls;
 
-    // check to see if any instances already have any of the given URLs open
+           // check to see if any instances already have any of the given URLs open
     const auto urls = QUrl::toStringList(inputUrls);
     for (const QString& url : urls)
     {
@@ -242,21 +244,21 @@ void Index::openNewWindow(const QUrl &url)
 void Index::openPaths(const QStringList &paths)
 {
     QStringList urls = std::accumulate(paths.constBegin(), paths.constEnd(), QStringList(), [](QStringList &list, const QString &path) -> QStringList {
-            const auto url = QUrl::fromUserInput(path);
-            if (url.isLocalFile())
-    {
+        const auto url = QUrl::fromUserInput(path);
+        if (url.isLocalFile())
+        {
             if (FMStatic::isDir(url))
-    {
-            list << url.toString();
-}
+            {
+                list << url.toString();
+            }
             else
-    {
-            list <<  FMStatic::fileDir(url).toString();
-}
-}
+            {
+                list <<  FMStatic::fileDir(url).toString();
+            }
+        }
 
-            return list;
-});
+        return list;
+    });
 
     if(m_qmlObject)
         QMetaObject::invokeMethod(m_qmlObject, "openDirs",
@@ -285,16 +287,33 @@ QVariantList Index::quickPaths()
 {
     FMH::MODEL_LIST paths;
 
-    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "overview:///"}, {FMH::MODEL_KEY::ICON, "folder-recent"}, {FMH::MODEL_KEY::LABEL, "Overview"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
+    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "overview:///"},
+                        {FMH::MODEL_KEY::ICON, "folder-recent"},
+                        {FMH::MODEL_KEY::LABEL, i18n("Overview")},
+                        {FMH::MODEL_KEY::TYPE, "Quick"},
+                        {FMH::MODEL_KEY::COLOR, "green"}};
 
-    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, FMStatic::PATHTYPE_URI[FMStatic::PATHTYPE_KEY::TAGS_PATH] + "fav"}, {FMH::MODEL_KEY::ICON, "love"}, {FMH::MODEL_KEY::LABEL, "Favorite"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
+    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, FMStatic::PATHTYPE_URI[FMStatic::PATHTYPE_KEY::TAGS_PATH] + "fav"},
+                        {FMH::MODEL_KEY::ICON, "love"},
+                        {FMH::MODEL_KEY::LABEL, i18n("Favorite")},
+                        {FMH::MODEL_KEY::TYPE, "Quick"},
+                        {FMH::MODEL_KEY::COLOR, "pink"}};
 
-paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "tags:///"}, {FMH::MODEL_KEY::ICON, "tag"}, {FMH::MODEL_KEY::LABEL, "Tags"}, {FMH::MODEL_KEY::TYPE, "Quick"}};
+    paths << FMH::MODEL {{FMH::MODEL_KEY::PATH, "tags:///"},
+                        {FMH::MODEL_KEY::ICON, "tag"},
+                        {FMH::MODEL_KEY::LABEL, i18n("Tags")}, {FMH::MODEL_KEY::TYPE, "Quick"},
+                        {FMH::MODEL_KEY::COLOR, "blue"}};
 
-paths << FMStatic::getDefaultPaths();
+    auto defaultPaths = FMStatic::getDefaultPaths();
 
+    // std::for_each(defaultPaths.begin(), defaultPaths.end(), [](auto &item)
+    //               {
+    //                   item.insert(FMH::MODEL_KEY::COLOR, "orange");
+    //               });
 
-return FMH::toMapList(paths);
+    paths << defaultPaths;
+
+    return FMH::toMapList(paths);
 }
 
 QUrl Index::cameraPath()

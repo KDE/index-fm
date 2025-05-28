@@ -43,24 +43,11 @@ Maui.ContextualMenu
     Maui.Controls.subtitle: control.item.mime ? (control.item.mime === "inode/directory" ? (control.item.count ? control.item.count + i18n(" items") : "") : Maui.Handy.formatSize(control.item.size)) : ""
     icon.source: control.item ? control.item.thumbnail : ""
     icon.name: control.item ? control.item.icon : ""
-    // Maui.Controls.item: Maui.SectionHeader
-    // {
-    //     // height: visible ? implicitContentHeight + topPadding + bottomPadding : 0
-    //     label1.text: control.title
-    //     label1.elide:Text.ElideMiddle
-    //     template.iconSource: control.item.icon
-    //     template.imageSource: control.item.thumbnail
-    //     template.iconSizeHint: Maui.Style.iconSizes.big
-
-    //     background: Rectangle
-    //     {
-    //         color: Maui.Theme.backgroundColor
-    //         radius: Maui.Style.radiusV
-    //     }
-    // }
+    Maui.Controls.badgeText: _browser.filterSelection(currentPath, control.item.path).length > 1 ?  _browser.filterSelection(currentPath, control.item.path).length : ""
 
     Maui.MenuItemActionRow
     {
+
         Action
         {
             enabled: !control.isExec
@@ -132,6 +119,7 @@ Maui.ContextualMenu
         enabled: !control.isExec
         text: i18n("Open with")
         icon.name: "document-open"
+
         onTriggered:
         {
             openWith(_browser.filterSelection(currentPath, control.item.path))
@@ -155,6 +143,30 @@ Maui.ContextualMenu
 
     MenuSeparator {}
 
+    MenuItem
+    {
+        enabled: !control.isExec
+
+        visible: appSettings.lastUsedTag.length > 0
+        height: visible ? implicitHeight : -control.spacing
+        text: i18n("Add to '%1'", appSettings.lastUsedTag)
+        icon.name: "tag"
+        onTriggered:
+        {
+            FB.Tagging.tagUrl(control.item.path, appSettings.lastUsedTag)
+        }
+    }
+
+    Action
+    {
+        enabled: !control.isExec
+        text: i18n("Add Tag")
+        icon.name: "tag"
+        onTriggered: tagFiles(_browser.filterSelection(currentPath, control.item.path))
+    }
+
+     MenuSeparator {}
+
     Maui.MenuItemActionRow
     {
         Action
@@ -169,19 +181,6 @@ Maui.ContextualMenu
                 {
                     control.isFav = !control.isFav
                 }
-            }
-        }
-
-        Action
-        {
-            enabled: !control.isExec
-            text: i18n("Tags")
-            icon.name: "tag"
-            onTriggered:
-            {
-                dialogLoader.sourceComponent = _tagsDialogComponent
-                dialog.composerList.urls = _browser.filterSelection(currentPath, control.item.path)
-                dialog.open()
             }
         }
 
@@ -208,11 +207,17 @@ Maui.ContextualMenu
         }
     }
 
-    MenuSeparator {}
+    MenuSeparator
+    {
+        visible: control.isDir
+        height: visible ? implicitHeight : -control.spacing
+    }
 
     MenuItem
     {
         enabled: control.isDir
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Open in New Tab")
         icon.name: "tab-new"
         onTriggered: root.openTab(control.item.path)
@@ -221,6 +226,8 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: control.isDir && Maui.Handy.isLinux
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Open in New Window")
         icon.name: "window-new"
         onTriggered: inx.openNewWindow(control.item.path)
@@ -229,6 +236,8 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: control.isDir && root.currentTab.count === 1
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Open in Split View")
         icon.name: "view-split-left-right"
         onTriggered: root.currentTab.split(control.item.path, Qt.Horizontal)
@@ -239,14 +248,16 @@ Maui.ContextualMenu
     MenuItem
     {
         enabled: FB.FM.checkFileType(FB.FMList.COMPRESSED, control.item.mime)
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         text: i18n("Extract")
         icon.name: "archive-extract"
         onTriggered:
         {
-            dialogLoader.sourceComponent= _extractDialogComponent
-            dialog.fileUrl = control.item.path
-            dialog.dirName = control.item.label.replace(control.item.suffix, "")
-            dialog.destination = currentBrowser.currentPath
+            let props = ({ 'fileUrl': control.item.path,
+                             'dirName' : control.item.label.replace(control.item.suffix, ""),
+                             'destination': currentBrowser.currentPath})
+            var dialog = _extractDialogComponent.createObject(root, props)
             dialog.open()
         }
     }
@@ -257,13 +268,16 @@ Maui.ContextualMenu
         icon.name: "archive-insert"
         onTriggered:
         {
-            dialogLoader.sourceComponent= _compressDialogComponent
-            dialog.urls = _browser.filterSelection(currentPath, control.item.path)
+           var dialog = _compressDialogComponent.createObject(root, ({'urls': _browser.filterSelection(currentPath, control.item.path)}))
             dialog.open()
         }
     }
 
-    MenuSeparator {}
+    MenuSeparator
+    {
+        visible: control.isDir
+        height: visible ? implicitHeight : -control.spacing
+    }
 
     ColorsBar
     {
@@ -271,7 +285,8 @@ Maui.ContextualMenu
         padding: control.padding
         width: parent.width
         enabled: control.isDir
-
+        visible: enabled
+        height: visible ? implicitHeight : -control.spacing
         Binding on folderColor {
             value: control.item.icon
             restoreMode: Binding.RestoreBindingOrValue
