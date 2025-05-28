@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
 "PO-Revision-Date: 2025-05-01 04:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -17,6 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
+
+#: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr "მიმოხილვა"
+
+#: src/index.cpp:298
+#, fuzzy, kde-format
+#| msgid "Favorite files"
+msgid "Favorite"
+msgstr "რჩეული ფაილები"
+
+#: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr "ჭდეები"
 
 #: src/main.cpp:65
 #, kde-format
@@ -162,17 +179,17 @@ msgid "Open in New Tab"
 msgstr "ახალ ჩანართში გახსნა"
 
 #: src/main.qml:693 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/PlacesSideBar.qml:97
 #, kde-format
 msgid "Open in Split View"
 msgstr "დაყოფილ ხედში გახსნა"
 
-#: src/widgets/previewer/FilePreviewer.qml:95
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "დეტალები"
 
-#: src/widgets/previewer/FilePreviewer.qml:96
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "ფაილის ინფორმაცია"
@@ -250,7 +267,7 @@ msgid "Edit"
 msgstr "ჩასწორება"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Remove"
 msgstr "წაშლა"
@@ -292,11 +309,6 @@ msgstr "გაზიარება"
 #, kde-format
 msgid "Compress"
 msgstr "შეკუმშვა"
-
-#: src/widgets/views/BrowserView.qml:141 src/widgets/views/TagsSection.qml:20
-#, kde-format
-msgid "Tags"
-msgstr "ჭდეები"
 
 #: src/widgets/views/BrowserView.qml:179
 #, kde-format
@@ -370,7 +382,7 @@ msgstr "რჩეულებიდანამოღება"
 msgid "Fav"
 msgstr "რჩეულებში"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
 #, kde-format
 msgid "Open in New Window"
 msgstr "ახალ ფანჯარაში გახსნა"
@@ -464,12 +476,12 @@ msgstr "სანიშნები"
 msgid "Your bookmarks will be listed here"
 msgstr "თქვენი სანიშნები აქ ჩამოითვლება"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:236
 #, kde-format
 msgid "Mount"
 msgstr "მიმაგრება"
 
-#: src/widgets/views/PlacesSideBar.qml:247
+#: src/widgets/views/PlacesSideBar.qml:244
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -631,11 +643,6 @@ msgstr "სიის ხედის ზომა."
 #, kde-format
 msgid "S"
 msgstr "S"
-
-#: src/widgets/views/SettingsDialog.qml:340
-#, kde-format
-msgid "Overview"
-msgstr "მიმოხილვა"
 
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format

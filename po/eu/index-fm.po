@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
 "PO-Revision-Date: 2025-05-01 15:00+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -19,6 +19,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.0\n"
+
+#: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr "Ikuspegi orokorra"
+
+#: src/index.cpp:298
+#, fuzzy, kde-format
+#| msgid "Favorite files"
+msgid "Favorite"
+msgstr "Gogoko fitxategiak"
+
+#: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr "Etiketak"
 
 #: src/main.cpp:65
 #, kde-format
@@ -164,17 +181,17 @@ msgid "Open in New Tab"
 msgstr "Ireki fitxa berrian"
 
 #: src/main.qml:693 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/PlacesSideBar.qml:97
 #, kde-format
 msgid "Open in Split View"
 msgstr "Ireki ikuspegi zatituan"
 
-#: src/widgets/previewer/FilePreviewer.qml:95
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: src/widgets/previewer/FilePreviewer.qml:96
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "Fitxategi-informazioa"
@@ -252,7 +269,7 @@ msgid "Edit"
 msgstr "Editatu"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Remove"
 msgstr "Kendu"
@@ -294,11 +311,6 @@ msgstr "Partekatu"
 #, kde-format
 msgid "Compress"
 msgstr "Konprimatu"
-
-#: src/widgets/views/BrowserView.qml:141 src/widgets/views/TagsSection.qml:20
-#, kde-format
-msgid "Tags"
-msgstr "Etiketak"
 
 #: src/widgets/views/BrowserView.qml:179
 #, kde-format
@@ -371,7 +383,7 @@ msgstr "EzGog"
 msgid "Fav"
 msgstr "Gog"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
 #, kde-format
 msgid "Open in New Window"
 msgstr "Ireki leiho berrian"
@@ -465,12 +477,12 @@ msgstr "Laster-markak"
 msgid "Your bookmarks will be listed here"
 msgstr "Zure laster-markak hemen zerrendatuko dira"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:236
 #, kde-format
 msgid "Mount"
 msgstr "Muntatu"
 
-#: src/widgets/views/PlacesSideBar.qml:247
+#: src/widgets/views/PlacesSideBar.qml:244
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -633,11 +645,6 @@ msgstr "Zerrenda ikuspegiaren neurria."
 #, kde-format
 msgid "S"
 msgstr "S"
-
-#: src/widgets/views/SettingsDialog.qml:340
-#, kde-format
-msgid "Overview"
-msgstr "Ikuspegi orokorra"
 
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -13,6 +13,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+
+#: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr ""
+
+#: src/index.cpp:298
+#, kde-format
+msgid "Favorite"
+msgstr ""
+
+#: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr ""
 
 #: src/main.cpp:65
 #, kde-format
@@ -158,17 +174,17 @@ msgid "Open in New Tab"
 msgstr ""
 
 #: src/main.qml:693 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/PlacesSideBar.qml:97
 #, kde-format
 msgid "Open in Split View"
 msgstr ""
 
-#: src/widgets/previewer/FilePreviewer.qml:95
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: src/widgets/previewer/FilePreviewer.qml:96
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr ""
@@ -246,7 +262,7 @@ msgid "Edit"
 msgstr ""
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Remove"
 msgstr ""
@@ -286,11 +302,6 @@ msgstr ""
 #: src/widgets/views/BrowserView.qml:130 src/widgets/views/FileMenu.qml:267
 #, kde-format
 msgid "Compress"
-msgstr ""
-
-#: src/widgets/views/BrowserView.qml:141 src/widgets/views/TagsSection.qml:20
-#, kde-format
-msgid "Tags"
 msgstr ""
 
 #: src/widgets/views/BrowserView.qml:179
@@ -363,7 +374,7 @@ msgstr ""
 msgid "Fav"
 msgstr ""
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
 #, kde-format
 msgid "Open in New Window"
 msgstr ""
@@ -457,12 +468,12 @@ msgstr ""
 msgid "Your bookmarks will be listed here"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:236
 #, kde-format
 msgid "Mount"
 msgstr ""
 
-#: src/widgets/views/PlacesSideBar.qml:247
+#: src/widgets/views/PlacesSideBar.qml:244
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -618,11 +629,6 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
 msgid "S"
-msgstr ""
-
-#: src/widgets/views/SettingsDialog.qml:340
-#, kde-format
-msgid "Overview"
 msgstr ""
 
 #: src/widgets/views/SettingsDialog.qml:341

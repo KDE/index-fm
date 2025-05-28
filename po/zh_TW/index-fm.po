@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
 "PO-Revision-Date: 2025-05-01 17:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -19,6 +19,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.07.70\n"
+
+#: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr "總覽"
+
+#: src/index.cpp:298
+#, fuzzy, kde-format
+#| msgid "Favorite files"
+msgid "Favorite"
+msgstr "最愛的檔案"
+
+#: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr "標籤"
 
 #: src/main.cpp:65
 #, kde-format
@@ -164,17 +181,17 @@ msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
 #: src/main.qml:693 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/PlacesSideBar.qml:97
 #, kde-format
 msgid "Open in Split View"
 msgstr "用分割檢視開啟"
 
-#: src/widgets/previewer/FilePreviewer.qml:95
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "詳細資料"
 
-#: src/widgets/previewer/FilePreviewer.qml:96
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "檔案資訊"
@@ -252,7 +269,7 @@ msgid "Edit"
 msgstr "編輯"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Remove"
 msgstr "移除"
@@ -293,11 +310,6 @@ msgstr "分享"
 #, kde-format
 msgid "Compress"
 msgstr "壓縮"
-
-#: src/widgets/views/BrowserView.qml:141 src/widgets/views/TagsSection.qml:20
-#, kde-format
-msgid "Tags"
-msgstr "標籤"
 
 #: src/widgets/views/BrowserView.qml:179
 #, kde-format
@@ -369,7 +381,7 @@ msgstr "從最愛中移除"
 msgid "Fav"
 msgstr "加到最愛"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
 #, kde-format
 msgid "Open in New Window"
 msgstr "在新分頁開啟"
@@ -463,12 +475,12 @@ msgstr "書籤"
 msgid "Your bookmarks will be listed here"
 msgstr "您的書籤將會列於此處"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:236
 #, kde-format
 msgid "Mount"
 msgstr "掛載"
 
-#: src/widgets/views/PlacesSideBar.qml:247
+#: src/widgets/views/PlacesSideBar.qml:244
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -625,11 +637,6 @@ msgstr "列表檢視的大小。"
 #, kde-format
 msgid "S"
 msgstr "小"
-
-#: src/widgets/views/SettingsDialog.qml:340
-#, kde-format
-msgid "Overview"
-msgstr "總覽"
 
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format

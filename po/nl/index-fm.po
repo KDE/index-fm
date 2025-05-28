@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
 "PO-Revision-Date: 2025-05-01 10:26+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -16,6 +16,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
+
+#: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr "Overzicht"
+
+#: src/index.cpp:298
+#, fuzzy, kde-format
+#| msgid "Favorite files"
+msgid "Favorite"
+msgstr "Favoriete bestanden"
+
+#: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr "Tags"
 
 #: src/main.cpp:65
 #, kde-format
@@ -161,17 +178,17 @@ msgid "Open in New Tab"
 msgstr "In nieuw tabblad openen"
 
 #: src/main.qml:693 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:98
+#: src/widgets/views/PlacesSideBar.qml:97
 #, kde-format
 msgid "Open in Split View"
 msgstr "In gesplitste weergave openen"
 
-#: src/widgets/previewer/FilePreviewer.qml:95
+#: src/widgets/previewer/FilePreviewer.qml:96
 #, kde-format
 msgid "Details"
 msgstr "Details"
 
-#: src/widgets/previewer/FilePreviewer.qml:96
+#: src/widgets/previewer/FilePreviewer.qml:97
 #, kde-format
 msgid "File information"
 msgstr "Bestandsinformatie"
@@ -249,7 +266,7 @@ msgid "Edit"
 msgstr "Bewerken"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
 #, kde-format
 msgid "Remove"
 msgstr "Verwijderen"
@@ -291,11 +308,6 @@ msgstr "Delen"
 #, kde-format
 msgid "Compress"
 msgstr "Comprimeren"
-
-#: src/widgets/views/BrowserView.qml:141 src/widgets/views/TagsSection.qml:20
-#, kde-format
-msgid "Tags"
-msgstr "Tags"
 
 #: src/widgets/views/BrowserView.qml:179
 #, kde-format
@@ -367,7 +379,7 @@ msgstr "Fav. opheffen"
 msgid "Fav"
 msgstr "Fav"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
 #, kde-format
 msgid "Open in New Window"
 msgstr "In nieuw venster openen"
@@ -461,12 +473,12 @@ msgstr "Bladwijzers"
 msgid "Your bookmarks will be listed here"
 msgstr "Uw bladwijzers komen hier"
 
-#: src/widgets/views/PlacesSideBar.qml:239
+#: src/widgets/views/PlacesSideBar.qml:236
 #, kde-format
 msgid "Mount"
 msgstr "Aankoppelen"
 
-#: src/widgets/views/PlacesSideBar.qml:247
+#: src/widgets/views/PlacesSideBar.qml:244
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
@@ -630,11 +642,6 @@ msgstr "Grootte van de lijstweergave."
 #, kde-format
 msgid "S"
 msgstr "S"
-
-#: src/widgets/views/SettingsDialog.qml:340
-#, kde-format
-msgid "Overview"
-msgstr "Overzicht"
 
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
