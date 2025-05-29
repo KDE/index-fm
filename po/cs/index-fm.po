@@ -23,10 +23,9 @@ msgid "Overview"
 msgstr "Přehled"
 
 #: src/index.cpp:298
-#, fuzzy, kde-format
-#| msgid "Favorite files"
+#, kde-format
 msgid "Favorite"
-msgstr "Oblíbené soubory"
+msgstr "Oblíbené"
 
 #: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
 #: src/widgets/views/TagsSection.qml:20
