@@ -40,14 +40,14 @@ Maui.ApplicationWindow
     property alias currentTabIndex : _browserView.currentTabIndex
     property bool selectionMode: false
 
-    Maui.WindowBlur
-    {
-        id: _translucencyManager
-        view: root
-        geometry: Qt.rect(root.x, root.y, root.width, root.height)
-        windowRadius: Maui.Style.radiusV
-        enabled: !Maui.Handy.isMobile && settings.windowTranslucency && Maui.Style.enableEffects
-    }
+    // Maui.WindowBlur
+    // {
+    //     id: _translucencyManager
+    //     view: root
+    //     geometry: Qt.rect(root.x, root.y, root.width, root.height)
+    //     windowRadius: Maui.Style.radiusV
+    //     enabled: !Maui.Handy.isMobile && settings.windowTranslucency && Maui.Style.enableEffects && Maui.Handy.isPlasma
+    // }
 
     Maui.Notify
     {
@@ -319,7 +319,7 @@ Maui.ApplicationWindow
         background: Rectangle
         {
             color: Maui.Theme.backgroundColor
-            opacity: _translucencyManager.enabled ? 0.8 : 1
+            // opacity: _translucencyManager.enabled ? 0.8 : 1
         }
 
         sideBar.autoShow: true
@@ -360,7 +360,7 @@ Maui.ApplicationWindow
                 Loader
                 {
                     asynchronous: true
-                    active: _sideBarView.sideBar.collapsed
+                    active: _sideBarView.sideBar.collapsed || !_sideBarView.sideBar.visible
                     visible: active
 
                     sourceComponent: ToolButton
