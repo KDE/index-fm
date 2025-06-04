@@ -216,7 +216,7 @@ Loader
 
                 iconSize: Maui.Style.iconSize
                 label: model.label
-                iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
+                iconName: model.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "-symbolic")
                 iconVisible: true
                 template.isMask: iconSize <= Maui.Style.iconSizes.medium
 
