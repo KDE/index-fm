@@ -156,8 +156,8 @@ Loader
                             Layout.columnSpan: modelData.path === "overview:///" ? 2 : 1
 
                             isCurrentItem: modelData.path === "overview:///" ? _stackView.depth === 2 : (currentBrowser.currentPath === modelData.path && _stackView.depth === 1)
-                            iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "")
-                            iconSizeHint: Maui.Style.iconSize
+                            iconSource: modelData.icon +  (Qt.platform.os == "android" || Qt.platform.os == "osx" ? ("-sidebar") : "-symbolic")
+                            iconSizeHint: 16
                             template.isMask: true
                             label1.text: modelData.label
                             labelsVisible: false
