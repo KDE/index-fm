@@ -168,13 +168,23 @@ Item
                 background: Rectangle
                 {
                     radius: Maui.Style.radiusV
-                    color : _mouseArea.containsMouse ? Maui.Theme.backgroundColor : Maui.Theme.alternateBackgroundColor
+                    color : _hoverHandler.hovered ? Maui.Theme.backgroundColor : Maui.Theme.alternateBackgroundColor
                 }
-
                 ListView
                 {
                     id: _listView
                     height: parent.height
+
+
+                    TapHandler
+                    {
+                        onTapped: control.showEntryBar()
+                    }
+
+                    HoverHandler
+                    {
+                        id: _hoverHandler
+                    }
 
                     Maui.Theme.colorSet: control.Maui.Theme.colorSet
                     Maui.Theme.inherit: false
@@ -209,20 +219,6 @@ Item
                         flat: true
                         icon.name: "filename-space-amarok"
                         onClicked:  control.showEntryBar()
-                    }
-
-                    MouseArea
-                    {
-                        id: _mouseArea
-                        z: -1
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        preventStealing: true
-                        onClicked:
-                        {
-                            console.log("PATHBAR CLICKED")
-                            control.showEntryBar()
-                        }
                     }
 
                     model: Maui.BaseModel
