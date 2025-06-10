@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:41+0000\n"
+"POT-Creation-Date: 2025-06-10 00:41+0000\n"
 "PO-Revision-Date: 2025-05-28 04:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -54,130 +54,130 @@ msgstr "პროგრამისტი"
 msgid "Open url in a new window."
 msgstr "URL-ის ახალ ფანჯარაში გახსნა."
 
-#: src/main.qml:145
+#: src/main.qml:146
 #, kde-format
 msgid "New tab"
 msgstr "ახალი ჩანართი"
 
-#: src/main.qml:153
+#: src/main.qml:154
 #, kde-format
 msgid "View Hidden"
 msgstr "დამალულის ნახვა"
 
-#: src/main.qml:162
+#: src/main.qml:163
 #, kde-format
 msgid "Split View"
 msgstr "ხედის გაყოფა"
 
-#: src/main.qml:172 src/widgets/views/Browser.qml:322
+#: src/main.qml:173 src/widgets/views/Browser.qml:322
 #: src/widgets/views/SettingsDialog.qml:365
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#: src/main.qml:191
+#: src/main.qml:192
 #, kde-format
 msgid "Tagged"
 msgstr "ჭდეებიანი"
 
-#: src/main.qml:192
+#: src/main.qml:193
 #, kde-format
 msgid "File was tagged successfully"
 msgstr "ფაილს ჭდე წარმატებით დაემატა"
 
-#: src/main.qml:374
+#: src/main.qml:375
 #, kde-format
 msgid "Toggle sidebar"
 msgstr "გვერდითი ზოლის ჩართ/გამორთ"
 
-#: src/main.qml:406 src/widgets/views/SettingsDialog.qml:120
+#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
 msgid "List"
 msgstr "სია"
 
-#: src/main.qml:421 src/widgets/views/SettingsDialog.qml:132
+#: src/main.qml:422 src/widgets/views/SettingsDialog.qml:132
 #, kde-format
 msgid "Grid"
 msgstr "ბადე"
 
-#: src/main.qml:462
+#: src/main.qml:463
 #, kde-format
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: src/main.qml:478 src/widgets/views/ShortcutsDialog.qml:163
+#: src/main.qml:479 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
 
-#: src/main.qml:489
+#: src/main.qml:490
 #, kde-format
 msgid "New Item"
 msgstr "ახალი ელემენტი"
 
-#: src/main.qml:501 src/widgets/views/SettingsDialog.qml:147
+#: src/main.qml:502 src/widgets/views/SettingsDialog.qml:147
 #, kde-format
 msgid "Sort"
 msgstr "დალაგება"
 
-#: src/main.qml:505 src/widgets/views/SettingsDialog.qml:159
+#: src/main.qml:506 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
 msgid "Type"
 msgstr "ტიპით"
 
-#: src/main.qml:517 src/widgets/views/SettingsDialog.qml:171
+#: src/main.qml:518 src/widgets/views/SettingsDialog.qml:171
 #, kde-format
 msgid "Date"
 msgstr "თარიღი"
 
-#: src/main.qml:530 src/widgets/views/SettingsDialog.qml:182
+#: src/main.qml:531 src/widgets/views/SettingsDialog.qml:182
 #, kde-format
 msgid "Modified"
 msgstr "შეცვლილია"
 
-#: src/main.qml:543 src/widgets/views/SettingsDialog.qml:193
+#: src/main.qml:544 src/widgets/views/SettingsDialog.qml:193
 #, kde-format
 msgid "Size"
 msgstr "ზომა"
 
-#: src/main.qml:556 src/widgets/views/SettingsDialog.qml:204
+#: src/main.qml:557 src/widgets/views/SettingsDialog.qml:204
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: src/main.qml:580
+#: src/main.qml:581
 #, kde-format
 msgid "Open Terminal Here"
 msgstr "ტერმინალის გახსნა აქ"
 
-#: src/main.qml:593 src/widgets/views/ShortcutsDialog.qml:9
+#: src/main.qml:594 src/widgets/views/ShortcutsDialog.qml:9
 #, kde-format
 msgid "Shortcuts"
 msgstr "მალსახმობები"
 
-#: src/main.qml:604
+#: src/main.qml:605
 #, kde-format
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: src/main.qml:611
+#: src/main.qml:612
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
 
-#: src/main.qml:678 src/widgets/views/FileMenu.qml:201
+#: src/main.qml:679 src/widgets/views/FileMenu.qml:201
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: src/main.qml:685 src/widgets/views/FileMenu.qml:221
+#: src/main.qml:686 src/widgets/views/FileMenu.qml:221
 #: src/widgets/views/PlacesSideBar.qml:82
 #, kde-format
 msgid "Open in New Tab"
 msgstr "ახალ ჩანართში გახსნა"
 
-#: src/main.qml:693 src/widgets/views/FileMenu.qml:241
+#: src/main.qml:694 src/widgets/views/FileMenu.qml:241
 #: src/widgets/views/PlacesSideBar.qml:97
 #, kde-format
 msgid "Open in Split View"
