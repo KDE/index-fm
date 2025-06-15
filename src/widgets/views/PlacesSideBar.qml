@@ -41,6 +41,7 @@ Loader
         {
             color: Maui.Theme.alternateBackgroundColor
             radius: settings.floatyUI ? Maui.Style.radiusV : 0
+            border.color:  settings.floatyUI ? Maui.Theme.backgroundColor : "transparent"
         }
 
         contentItem: Maui.ListBrowser
