@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:41+0000\n"
+"POT-Creation-Date: 2025-06-16 00:41+0000\n"
 "PO-Revision-Date: 2023-07-29 23:52+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -174,13 +174,13 @@ msgid "Bookmark"
 msgstr "Σελιδοδείκτης"
 
 #: src/main.qml:686 src/widgets/views/FileMenu.qml:221
-#: src/widgets/views/PlacesSideBar.qml:82
+#: src/widgets/views/PlacesSideBar.qml:83
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
 #: src/main.qml:694 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:97
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in Split View"
 msgstr "Άνοιγμα σε διαχωρισμένη προβολή"
@@ -269,7 +269,7 @@ msgid "Edit"
 msgstr "Επεξεργασία"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
 #, kde-format
 msgid "Remove"
 msgstr "Αφαίρεση"
@@ -384,7 +384,7 @@ msgstr "ΜηΠροτιμ"
 msgid "Fav"
 msgstr "Προτιμ"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
@@ -467,23 +467,23 @@ msgstr "Γρήγορη πρόσβαση σε συνήθης τοποθεσίες
 msgid "More"
 msgstr "Περισσότερα"
 
-#: src/widgets/views/PlacesSideBar.qml:57
+#: src/widgets/views/PlacesSideBar.qml:58
 #: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Σελιδοδείκτες"
 
-#: src/widgets/views/PlacesSideBar.qml:58
+#: src/widgets/views/PlacesSideBar.qml:59
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Η λίστα με τους σελιδοδείκτες σας θα βρίσκεται εδώ"
 
-#: src/widgets/views/PlacesSideBar.qml:236
+#: src/widgets/views/PlacesSideBar.qml:237
 #, kde-format
 msgid "Mount"
 msgstr "Προσάρτηση"
 
-#: src/widgets/views/PlacesSideBar.qml:244
+#: src/widgets/views/PlacesSideBar.qml:245
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "

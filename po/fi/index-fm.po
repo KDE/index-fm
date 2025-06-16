@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:41+0000\n"
+"POT-Creation-Date: 2025-06-16 00:41+0000\n"
 "PO-Revision-Date: 2025-03-23 15:55+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -172,13 +172,13 @@ msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
 #: src/main.qml:686 src/widgets/views/FileMenu.qml:221
-#: src/widgets/views/PlacesSideBar.qml:82
+#: src/widgets/views/PlacesSideBar.qml:83
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Avaa uuteen välilehteen"
 
 #: src/main.qml:694 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:97
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in Split View"
 msgstr "Avaa jaettuun näkymään"
@@ -266,7 +266,7 @@ msgid "Edit"
 msgstr "Muokkaa"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
 #, kde-format
 msgid "Remove"
 msgstr "Poista"
@@ -380,7 +380,7 @@ msgstr "Poista suosikeista"
 msgid "Fav"
 msgstr "Suosikki"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Window"
 msgstr "Avaa uuteen ikkunaan"
@@ -463,23 +463,23 @@ msgstr "Pikapääsy yleissijainteihin."
 msgid "More"
 msgstr "Lisää"
 
-#: src/widgets/views/PlacesSideBar.qml:57
+#: src/widgets/views/PlacesSideBar.qml:58
 #: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Kirjanmerkit"
 
-#: src/widgets/views/PlacesSideBar.qml:58
+#: src/widgets/views/PlacesSideBar.qml:59
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Kirjanmerkkisi tulevat tähän"
 
-#: src/widgets/views/PlacesSideBar.qml:236
+#: src/widgets/views/PlacesSideBar.qml:237
 #, kde-format
 msgid "Mount"
 msgstr "Liitä"
 
-#: src/widgets/views/PlacesSideBar.qml:244
+#: src/widgets/views/PlacesSideBar.qml:245
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:41+0000\n"
+"POT-Creation-Date: 2025-06-16 00:41+0000\n"
 "PO-Revision-Date: 2025-01-12 20:17+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -174,13 +174,13 @@ msgid "Bookmark"
 msgstr "Žymelė"
 
 #: src/main.qml:686 src/widgets/views/FileMenu.qml:221
-#: src/widgets/views/PlacesSideBar.qml:82
+#: src/widgets/views/PlacesSideBar.qml:83
 #, kde-format
 msgid "Open in New Tab"
 msgstr "Atverti naujoje kortelėje"
 
 #: src/main.qml:694 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:97
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in Split View"
 msgstr "Atverti padalytame rodinyje"
@@ -268,7 +268,7 @@ msgid "Edit"
 msgstr "Taisyti"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
 #, kde-format
 msgid "Remove"
 msgstr "Šalinti"
@@ -382,7 +382,7 @@ msgstr "Nebemėgstamas"
 msgid "Fav"
 msgstr "Mėgstamas"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Window"
 msgstr "Atverti naujame lange"
@@ -465,23 +465,23 @@ msgstr "Greita prieiga prie įprastų vietų."
 msgid "More"
 msgstr "Daugiau"
 
-#: src/widgets/views/PlacesSideBar.qml:57
+#: src/widgets/views/PlacesSideBar.qml:58
 #: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "Žymelės"
 
-#: src/widgets/views/PlacesSideBar.qml:58
+#: src/widgets/views/PlacesSideBar.qml:59
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "Čia bus išvardytos jūsų žymelės"
 
-#: src/widgets/views/PlacesSideBar.qml:236
+#: src/widgets/views/PlacesSideBar.qml:237
 #, kde-format
 msgid "Mount"
 msgstr "Prijungti"
 
-#: src/widgets/views/PlacesSideBar.qml:244
+#: src/widgets/views/PlacesSideBar.qml:245
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "

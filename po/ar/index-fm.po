@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:41+0000\n"
+"POT-Creation-Date: 2025-06-16 00:41+0000\n"
 "PO-Revision-Date: 2025-05-29 09:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -172,13 +172,13 @@ msgid "Bookmark"
 msgstr "علامة"
 
 #: src/main.qml:686 src/widgets/views/FileMenu.qml:221
-#: src/widgets/views/PlacesSideBar.qml:82
+#: src/widgets/views/PlacesSideBar.qml:83
 #, kde-format
 msgid "Open in New Tab"
 msgstr "افتح في لسان جديد"
 
 #: src/main.qml:694 src/widgets/views/FileMenu.qml:241
-#: src/widgets/views/PlacesSideBar.qml:97
+#: src/widgets/views/PlacesSideBar.qml:98
 #, kde-format
 msgid "Open in Split View"
 msgstr "افتح في عرض منقسم"
@@ -266,7 +266,7 @@ msgid "Edit"
 msgstr "حرّر"
 
 #: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
-#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:107
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
 #, kde-format
 msgid "Remove"
 msgstr "أزل"
@@ -378,7 +378,7 @@ msgstr "أزل التفضيل"
 msgid "Fav"
 msgstr "فضل"
 
-#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:89
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
 #, kde-format
 msgid "Open in New Window"
 msgstr "افتح في نافذة جديدة"
@@ -461,23 +461,23 @@ msgstr "الوصول السريع إلى الأماكن المشتركة."
 msgid "More"
 msgstr "المزيد"
 
-#: src/widgets/views/PlacesSideBar.qml:57
+#: src/widgets/views/PlacesSideBar.qml:58
 #: src/widgets/views/SettingsDialog.qml:456
 #, kde-format
 msgid "Bookmarks"
 msgstr "العلامات"
 
-#: src/widgets/views/PlacesSideBar.qml:58
+#: src/widgets/views/PlacesSideBar.qml:59
 #, kde-format
 msgid "Your bookmarks will be listed here"
 msgstr "ستدرج إشاراتك المرجعية هنا"
 
-#: src/widgets/views/PlacesSideBar.qml:236
+#: src/widgets/views/PlacesSideBar.qml:237
 #, kde-format
 msgid "Mount"
 msgstr "ضمّ"
 
-#: src/widgets/views/PlacesSideBar.qml:244
+#: src/widgets/views/PlacesSideBar.qml:245
 #, kde-format
 msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
