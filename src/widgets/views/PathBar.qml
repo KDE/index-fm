@@ -168,8 +168,9 @@ Item
                 background: Rectangle
                 {
                     radius: Maui.Style.radiusV
-                    color : _hoverHandler.hovered ? Maui.Theme.backgroundColor : Maui.Theme.alternateBackgroundColor
+                    color : _hoverHandler.hovered ? Maui.Theme.hoverColor : Maui.Theme.alternateBackgroundColor
                 }
+
                 ListView
                 {
                     id: _listView

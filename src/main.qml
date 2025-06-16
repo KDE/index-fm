@@ -25,7 +25,7 @@ Maui.ApplicationWindow
     title: currentTab ? currentTab.title : ""
 
     Maui.Style.accentColor : Maui.Handy.isAndroid ? "#6765C2": undefined
-    Maui.Handy.singleClick: true
+    Maui.Handy.singleClick: Maui.Handy.hasTransientTouchInput
 
     property QtObject tagsDialog : null
 
