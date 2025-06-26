@@ -164,6 +164,7 @@ Item
 
                 contentHeight: availableHeight
                 leftPadding: 8
+                padding: 0
 
                 background: Rectangle
                 {
@@ -174,8 +175,6 @@ Item
                 ListView
                 {
                     id: _listView
-                    height: parent.height
-
 
                     TapHandler
                     {
@@ -214,12 +213,10 @@ Item
                     ListView.onRemove: _listView.positionViewAtEnd()
 
                     footerPositioning: ListView.OverlayFooter
-                    footer: ToolButton
+                    footer: Item
                     {
                         height: parent.height
-                        flat: true
-                        icon.name: "filename-space-amarok"
-                        onClicked:  control.showEntryBar()
+                        width: height
                     }
 
                     model: Maui.BaseModel

@@ -62,7 +62,7 @@ Item
             {
                 radius: Maui.Style.radiusV
                 color: Maui.Theme.alternateBackgroundColor
-
+                border.color: Maui.Theme.alternateBackgroundColor
                 layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                 layer.effect: MultiEffect
                 {

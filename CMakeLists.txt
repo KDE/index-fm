@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-set(INDEX_VERSION 4.0.2)
+set(INDEX_VERSION 4.0.3)
 add_compile_definitions(INDEX_COPYRIGHT_NOTICE="© 2019-2025 Maui Development Team")
 
 set(CMAKE_CXX_STANDARD 17)
