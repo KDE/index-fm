@@ -25,7 +25,7 @@ msgstr "概览"
 #: src/index.cpp:298
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "喜欢"
 
 #: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
 #: src/widgets/views/TagsSection.qml:20
@@ -782,4 +782,4 @@ msgstr "带标签文件供快速访问"
 #: src/widgets/views/Terminal.qml:30
 #, kde-format
 msgid "Sync"
-msgstr ""
+msgstr "同步"

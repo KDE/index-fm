@@ -578,12 +578,12 @@ msgstr "ხედის ტიპი"
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
 msgid "Default view type."
-msgstr "ნაგულისხმები ხედის ტიპი."
+msgstr "ნაგულისხმევი ხედის ტიპი."
 
 #: src/widgets/views/SettingsDialog.qml:148
 #, kde-format
 msgid "Default sorting value."
-msgstr "დალაგების ნაგულისხმები მნიშვნელობა."
+msgstr "დალაგების ნაგულისხმევი მნიშვნელობა."
 
 #: src/widgets/views/SettingsDialog.qml:217
 #, kde-format
@@ -646,7 +646,7 @@ msgstr "S"
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "გაშვებისას გადახედვის რეჟიმის ნაგულისხმებად გამოყენება."
+msgstr "გაშვებისას გადახედვის რეჟიმის ნაგულისხმევად გამოყენება."
 
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
