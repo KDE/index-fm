@@ -1,22 +1,23 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-16 00:41+0000\n"
-"PO-Revision-Date: 2023-11-14 11:49-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-08-29 08:57-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
 #, kde-format
@@ -24,10 +25,9 @@ msgid "Overview"
 msgstr "Visão geral"
 
 #: src/index.cpp:298
-#, fuzzy, kde-format
-#| msgid "Favorite files"
+#, kde-format
 msgid "Favorite"
-msgstr "Arquivos favoritos"
+msgstr "Favorito"
 
 #: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
 #: src/widgets/views/TagsSection.qml:20
@@ -51,10 +51,9 @@ msgid "Developer"
 msgstr "Desenvolvedor"
 
 #: src/main.cpp:90
-#, fuzzy, kde-format
-#| msgid "Open in New Window"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Abrir em nova janela"
+msgstr "Abrir URL em um nova janela"
 
 #: src/main.qml:146
 #, kde-format
@@ -81,12 +80,12 @@ msgstr "Terminal"
 #: src/main.qml:192
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Com etiqueta"
 
 #: src/main.qml:193
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "O arquivo foi etiquetado com sucesso"
 
 #: src/main.qml:375
 #, kde-format
@@ -366,12 +365,12 @@ msgstr "Pré-visualização e informações"
 #: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Adicionar à '%1'"
 
 #: src/widgets/views/FileMenu.qml:163
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Adicionar etiqueta"
 
 #: src/widgets/views/FileMenu.qml:174
 #, kde-format
@@ -654,10 +653,9 @@ msgid "Use overview mode as default on launch."
 msgstr "Define o modo Visão geral como padrão ao lançar o aplicativo."
 
 #: src/widgets/views/SettingsDialog.qml:352
-#, fuzzy, kde-format
-#| msgid "Action Bar"
+#, kde-format
 msgid "Actions Bar"
-msgstr "Barra de ação"
+msgstr "Barra de ações"
 
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
@@ -665,12 +663,13 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"Mostra a barra de ações na visualização principal. Caso contrário, ela será "
+"exibida no menu do aplicativo."
 
 #: src/widgets/views/SettingsDialog.qml:366
-#, fuzzy, kde-format
-#| msgid "Embedded Terminal"
+#, kde-format
 msgid "Embedded terminal options."
-msgstr "Terminal embutido"
+msgstr "Opções de terminal embutido."
 
 #: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
@@ -687,22 +686,22 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Esquema de cores adaptativo"
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Cores baseadas no estilo atual."
 
 #: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Esquema de cores"
 
 #: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Alterar o esquema de cores do terminal."
 
 #: src/widgets/views/SettingsDialog.qml:416
 #: src/widgets/views/SettingsDialog.qml:443
@@ -800,7 +799,7 @@ msgstr "Acesso rápido a arquivos com etiqueta"
 #: src/widgets/views/Terminal.qml:30
 #, kde-format
 msgid "Sync"
-msgstr ""
+msgstr "Sincronizar"
 
 #~ msgid "Users"
 #~ msgstr "Usuários"
