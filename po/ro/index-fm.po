@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# Sergiu Bivol <sergiu@cip.md>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-16 00:41+0000\n"
-"PO-Revision-Date: 2022-08-14 16:11+0100\n"
+"PO-Revision-Date: 2025-10-01 16:45+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
 #, kde-format
@@ -24,10 +24,9 @@ msgid "Overview"
 msgstr "Privire generală"
 
 #: src/index.cpp:298
-#, fuzzy, kde-format
-#| msgid "Favorite files"
+#, kde-format
 msgid "Favorite"
-msgstr "Fișiere favorite"
+msgstr "Favorite"
 
 #: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
 #: src/widgets/views/TagsSection.qml:20
@@ -51,10 +50,9 @@ msgid "Developer"
 msgstr "Dezvoltator"
 
 #: src/main.cpp:90
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open url in a new window."
-msgstr "Deschide în filă nouă"
+msgstr "Deschide URL într-o fereastră nouă."
 
 #: src/main.qml:146
 #, kde-format
@@ -62,16 +60,14 @@ msgid "New tab"
 msgstr "Filă nouă"
 
 #: src/main.qml:154
-#, fuzzy, kde-format
-#| msgid "Hidden"
+#, kde-format
 msgid "View Hidden"
-msgstr "Ascuns"
+msgstr "Vizualizare ascunse"
 
 #: src/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Split"
+#, kde-format
 msgid "Split View"
-msgstr "Desparte"
+msgstr "Desparte vizualizarea"
 
 #: src/main.qml:173 src/widgets/views/Browser.qml:322
 #: src/widgets/views/SettingsDialog.qml:365
@@ -83,17 +79,17 @@ msgstr "Terminal"
 #: src/main.qml:192
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Marcate"
 
 #: src/main.qml:193
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "Fișierul a fost marcat cu succes"
 
 #: src/main.qml:375
 #, kde-format
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "Comută bara laterală"
 
 #: src/main.qml:407 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
@@ -116,16 +112,14 @@ msgid "Select All"
 msgstr "Selectează tot"
 
 #: src/main.qml:490
-#, fuzzy, kde-format
-#| msgid "New tab"
+#, kde-format
 msgid "New Item"
-msgstr "Filă nouă"
+msgstr "Element nou"
 
 #: src/main.qml:502 src/widgets/views/SettingsDialog.qml:147
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgid "Sort"
-msgstr "Sortează după"
+msgstr "Sortează"
 
 #: src/main.qml:506 src/widgets/views/SettingsDialog.qml:159
 #, kde-format
@@ -153,8 +147,7 @@ msgid "Name"
 msgstr "Denumire"
 
 #: src/main.qml:581
-#, fuzzy, kde-format
-#| msgid "Open terminal here"
+#, kde-format
 msgid "Open Terminal Here"
 msgstr "Deschide un terminal aici"
 
@@ -180,15 +173,13 @@ msgstr "Pune semn de carte"
 
 #: src/main.qml:686 src/widgets/views/FileMenu.qml:221
 #: src/widgets/views/PlacesSideBar.qml:83
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Tab"
 msgstr "Deschide în filă nouă"
 
 #: src/main.qml:694 src/widgets/views/FileMenu.qml:241
 #: src/widgets/views/PlacesSideBar.qml:98
-#, fuzzy, kde-format
-#| msgid "Open in split view"
+#, kde-format
 msgid "Open in Split View"
 msgstr "Deschide în vizualizare despărțită"
 
@@ -211,7 +202,7 @@ msgstr "Permisiuni"
 #: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "Stabilește permisiuni pentru accesarea acestui fișier"
 
 #: src/widgets/previewer/FileProperties.qml:52
 #: src/widgets/previewer/FileProperties.qml:163
@@ -322,7 +313,7 @@ msgstr "Comprimă"
 #: src/widgets/views/BrowserView.qml:179
 #, kde-format
 msgid "Detach Tab"
-msgstr ""
+msgstr "Detașează fila"
 
 #: src/widgets/views/DisksSection.qml:18
 #, kde-format
@@ -333,6 +324,7 @@ msgstr "Dispozitive și distant"
 #, kde-format
 msgid "Remote locations and devices like disks, phones and cameras"
 msgstr ""
+"Locuri și dispozitive distante, cum ar fi discuri, telefoane și aparate foto"
 
 #: src/widgets/views/FavoritesSection.qml:20
 #, kde-format
@@ -365,20 +357,19 @@ msgid "Open with"
 msgstr "Deschide cu"
 
 #: src/widgets/views/FileMenu.qml:132
-#, fuzzy, kde-format
-#| msgid "Preview and info"
+#, kde-format
 msgid "Preview and Info"
 msgstr "Previzualizare și informații"
 
 #: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Adaugă la „%1”"
 
 #: src/widgets/views/FileMenu.qml:163
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Adaugă marcaj"
 
 #: src/widgets/views/FileMenu.qml:174
 #, kde-format
@@ -391,10 +382,9 @@ msgid "Fav"
 msgstr ""
 
 #: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in New Window"
-msgstr "Deschide în filă nouă"
+msgstr "Deschide în fereastră nouă"
 
 #: src/widgets/views/FileMenu.qml:253
 #, kde-format
@@ -404,12 +394,12 @@ msgstr "Extrage"
 #: src/widgets/views/home/SectionGroup.qml:53
 #, kde-format
 msgid "Nothing in here yet."
-msgstr ""
+msgstr "Încă nu e nimic aici."
 
 #: src/widgets/views/home/SectionGroup.qml:54
 #, kde-format
 msgid "Check back later."
-msgstr ""
+msgstr "Reveniți mai târziu."
 
 #: src/widgets/views/HomeView.qml:53
 #, kde-format
@@ -434,7 +424,7 @@ msgstr "Descărcări"
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr ""
+msgstr "Fișierele descărcate cel mai recent"
 
 #: src/widgets/views/HomeView.qml:173
 #, kde-format
@@ -444,17 +434,17 @@ msgstr "Muzică"
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Fișierele cele mai recente cu muzică"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Imagini"
 
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr ""
+msgstr "Cele mai recente fișiere cu imagini"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:434
@@ -464,16 +454,15 @@ msgid "Places"
 msgstr "Locuri"
 
 #: src/widgets/views/PlacesSection.qml:20
-#, fuzzy, kde-format
-#| msgid "Quick access to common collections"
+#, kde-format
 msgid "Quick access to common places."
-msgstr "Acces rapid la colecții comune"
+msgstr "Acces rapid la locuri obișnuite."
 
 #: src/widgets/views/PlacesSection.qml:36
 #: src/widgets/views/RecentSection.qml:27
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Mai multe"
 
 #: src/widgets/views/PlacesSideBar.qml:58
 #: src/widgets/views/SettingsDialog.qml:456
@@ -484,12 +473,12 @@ msgstr "Semne de carte"
 #: src/widgets/views/PlacesSideBar.qml:59
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr ""
+msgstr "Semnele de carte vor fi enumerate aici"
 
 #: src/widgets/views/PlacesSideBar.qml:237
 #, kde-format
 msgid "Mount"
-msgstr ""
+msgstr "Montează"
 
 #: src/widgets/views/PlacesSideBar.qml:245
 #, kde-format
@@ -497,11 +486,13 @@ msgid ""
 "This device needs to be mounted before accessing it. Do you want to set up "
 "this device?"
 msgstr ""
+"Acest dispozitiv trebuie montat înainte de a fi accesat. Doriți să "
+"configurați acest dispozitiv?"
 
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Comportament"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -511,51 +502,50 @@ msgstr "Salvează sesiunea"
 #: src/widgets/views/SettingsDialog.qml:20
 #, kde-format
 msgid "Save and restore tabs."
-msgstr ""
+msgstr "Salvează și restaurează filele."
 
 #: src/widgets/views/SettingsDialog.qml:32
 #, kde-format
 msgid "Dynamic Preferences"
-msgstr ""
+msgstr "Preferințe dinamice"
 
 #: src/widgets/views/SettingsDialog.qml:33
 #, kde-format
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Salvează preferințe personalizate pentru fiecare director, altfel folosește "
+"preferințele implicite."
 
 #: src/widgets/views/SettingsDialog.qml:46
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Previews"
-msgstr "Previzualizare"
+msgstr "Previzualizări"
 
 #: src/widgets/views/SettingsDialog.qml:52
-#, fuzzy, kde-format
-#| msgid "Open in new tab"
+#, kde-format
 msgid "Open in Window"
-msgstr "Deschide în filă nouă"
+msgstr "Deschide în fereastră"
 
 #: src/widgets/views/SettingsDialog.qml:53
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Arată previzualizările de fișiere într-o nouă fereastră."
 
 #: src/widgets/views/SettingsDialog.qml:65
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Redare automată"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Pornește automat redarea fișierelor audio și video previzualizate."
 
 #: src/widgets/views/SettingsDialog.qml:78
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgid "Prefer Preview"
-msgstr "Previzualizare"
+msgstr "Preferă previzualizare"
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
