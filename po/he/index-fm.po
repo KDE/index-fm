@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-16 00:41+0000\n"
-"PO-Revision-Date: 2025-05-28 09:51+0300\n"
+"PO-Revision-Date: 2025-10-05 12:21+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
 #, kde-format
@@ -406,7 +406,7 @@ msgstr "פתיחת תיקייה"
 #: src/widgets/views/HomeView.qml:65
 #, kde-format
 msgid "Search for files"
-msgstr "חיפוש  קבצים"
+msgstr "חיפוש קבצים"
 
 #: src/widgets/views/HomeView.qml:75
 #, kde-format
