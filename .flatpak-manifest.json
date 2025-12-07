@@ -1,96 +1,96 @@
 {
-  "id": "org.kde.index",
-  "rename-icon": "index",
-  "runtime": "org.kde.Platform",
-  "runtime-version": "5.15-22.08",
-  "sdk": "org.kde.Sdk",
-  "command": "index",
-  "finish-args": [
-      "--share=ipc",
-      "--share=network",
-      "--socket=fallback-x11",
-      "--socket=wayland",
-      "--device=dri",
-      "--filesystem=host"
-  ],
-  "modules": [
-      {
-          "name": "mauiman",
-          "buildsystem": "cmake-ninja",
-          "sources": [
-              {
-                  "type": "archive",
-                  "url": "https://download.kde.org/stable/maui/mauiman/1.0.1/mauiman-1.0.1.tar.xz",
-                  "sha256": "60400780c5d5478a1e32b3c0515dedfa1fd2f2fb0b150521cd91a9e7275a982b",
-                  "x-checker-data": {
-                      "type": "anitya",
-                      "project-id": 315311,
-                      "stable-only": true,
-                      "url-template": "https://download.kde.org/stable/maui/mauiman/$version/mauiman-$version.tar.xz"
-                  }
-              }
-          ]
-      },
-      {
-          "name": "mauikit",
-          "buildsystem": "cmake-ninja",
-          "sources": [
-              {
-                  "type": "archive",
-                  "sha256": "f02424973b9aa6362010380d9882f3465ca3b54d085190afde2c48819e689267",
-                  "url": "https://download.kde.org/stable/maui/mauikit/2.2.1/mauikit-2.2.1.tar.xz",
-                  "x-checker-data": {
-                      "type": "anitya",
-                      "project-id": 242845,
-                      "stable-only": true,
-                      "url-template": "https://download.kde.org/stable/maui/mauikit/$version/mauikit-$version.tar.xz"
-                  }
-              }
-          ]
-      },
-      {
-          "name": "mauikit-filebrowsing",
-          "buildsystem": "cmake-ninja",
-          "sources": [
-              {
-                  "type": "archive",
-                  "url": "https://download.kde.org/stable/maui/mauikit-filebrowsing/2.2.1/mauikit-filebrowsing-2.2.1.tar.xz",
-                  "sha256": "2cf46ff4e297849acf11349015a7d81dc77c6421636ad4b1d3fba61b6e85efeb",
-                  "x-checker-data": {
-                      "type": "anitya",
-                      "project-id": 242845,
-                      "stable-only": true,
-                      "url-template": "https://download.kde.org/stable/maui/mauikit-filebrowsing/$version/mauikit-filebrowsing-$version.tar.xz"
-                  }
-              }
-          ]
-      },
-      {
-          "name": "kio-extras",
-          "buildsystem": "cmake-ninja",
-          "sources": [
-              {
-                  "type": "archive",
-                  "url": "https://download.kde.org/stable/release-service/22.12.0/src/kio-extras-22.12.0.tar.xz",
-                  "sha256": "4815a2f231bb8aa29ac4d38ea5c243238d2042dab6261583e0282cc71c6efa51",
-                  "x-checker-data": {
-                      "type": "anitya",
-                      "project-id": 8763,
-                      "stable-only": true,
-                      "url-template": "https://download.kde.org/stable/release-service/$version/src/kio-extras-$version.tar.xz"
-                  }
-              }
-          ]
-      },
-      {
-          "name": "index-fm",
-          "buildsystem": "cmake-ninja",
-          "sources": [
-              {
-                  "type": "dir",
-                  "path": "."
-              }
-          ]
-      }
-  ]
+    "id": "org.kde.index",
+    "rename-icon": "index",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-22.08",
+    "sdk": "org.kde.Sdk",
+    "command": "index",
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--filesystem=host"
+    ],
+    "modules": [
+        {
+            "name": "mauiman",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/maui/mauiman/4.0.2/mauiman-4.0.2.tar.xz",
+                    "sha256": "81f9f25fbc959040b7efcca1d9d127c5894c6a6baf2ffe53ccba42d682258f00",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 315311,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/maui/mauiman/$version/mauiman-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mauikit",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "sha256": "054dc0e15242ffa6bb9b8b25515cebfc9a02347b679f3907dcb80673ca93dd40",
+                    "url": "https://download.kde.org/stable/maui/mauikit/4.0.2/mauikit-4.0.2.tar.xz",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 242845,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/maui/mauikit/$version/mauikit-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mauikit-filebrowsing",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/maui/mauikit-filebrowsing/4.0.2/mauikit-filebrowsing-4.0.2.tar.xz",
+                    "sha256": "cc6f522c6dd9b9ee7cef7adbae56a1a8a9e26cc31dfe2201a117601a10f58d21",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 242845,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/maui/mauikit-filebrowsing/$version/mauikit-filebrowsing-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kio-extras",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.08.3/src/kio-extras-25.08.3.tar.xz",
+                    "sha256": "99f966dcc663be8cb3c906778c82b32da4b178bd296d8cd85b9e3f56e8e9c2d2",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kio-extras-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "index-fm",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ]
+        }
+    ]
 }
