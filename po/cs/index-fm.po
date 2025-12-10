@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
-# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2024-06-25 10:58+0200\n"
+"PO-Revision-Date: 2025-12-05 10:22+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "Označkováno"
 #: src/main.qml:193
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "Soubor byl úspěšně označen"
 
 #: src/main.qml:375
 #, kde-format
@@ -360,7 +360,7 @@ msgstr "Náhled a informace"
 #: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Přidat k \"%1\""
 
 #: src/widgets/views/FileMenu.qml:163
 #, kde-format
@@ -642,7 +642,7 @@ msgstr "Použít režim přehledu jako výchozí při spuštění."
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
 msgid "Actions Bar"
-msgstr ""
+msgstr "Panel činností"
 
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
