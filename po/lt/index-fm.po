@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-01-12 20:17+0200\n"
+"PO-Revision-Date: 2025-12-20 21:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
 #, kde-format
@@ -25,10 +25,9 @@ msgid "Overview"
 msgstr "Apžvalga"
 
 #: src/index.cpp:298
-#, fuzzy, kde-format
-#| msgid "Favorite files"
+#, kde-format
 msgid "Favorite"
-msgstr "Mėgstami failai"
+msgstr "Mėgstama"
 
 #: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
 #: src/widgets/views/TagsSection.qml:20
@@ -365,12 +364,12 @@ msgstr "Peržiūra ir informacija"
 #: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Pridėti prie „%1“"
 
 #: src/widgets/views/FileMenu.qml:163
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Pridėti žymę"
 
 #: src/widgets/views/FileMenu.qml:174
 #, kde-format
@@ -651,7 +650,7 @@ msgstr "Paleidimo metu apžvalgos veikseną naudoti kaip numatytąją."
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
 msgid "Actions Bar"
-msgstr ""
+msgstr "Veiksmų juosta"
 
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
@@ -659,6 +658,8 @@ msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
 msgstr ""
+"Rodyti pagrindiniame rodinyje veiksmų juostą. Priešingu atveju, ji bus "
+"rodoma programos meniu."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
@@ -791,7 +792,7 @@ msgstr "Failai su žyme greitai prieigai"
 #: src/widgets/views/Terminal.qml:30
 #, kde-format
 msgid "Sync"
-msgstr ""
+msgstr "Sinchronizuoti"
 
 #~ msgid "Users"
 #~ msgstr "Naudotojai"
