@@ -74,7 +74,7 @@ msgstr "اقسم المنظور"
 #: src/widgets/views/ShortcutsDialog.qml:78
 #, kde-format
 msgid "Terminal"
-msgstr "الطّرفيّة"
+msgstr "الطرفية"
 
 #: src/main.qml:192
 #, kde-format
@@ -660,7 +660,7 @@ msgstr "خيارات الطرفية المضمنة."
 #: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
-msgstr "زامن الطّرفيّة"
+msgstr "زامن الطرفية"
 
 #: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
