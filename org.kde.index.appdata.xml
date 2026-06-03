@@ -42,6 +42,7 @@
   <name xml:lang="sl">Indeks</name>
   <name xml:lang="sv">Index</name>
   <name xml:lang="tr">İndeks</name>
+  <name xml:lang="ug">مۇندەرىجە</name>
   <name xml:lang="uk">Index</name>
   <name xml:lang="zh-CN">Index</name>
   <name xml:lang="zh-TW">Index</name>
@@ -84,6 +85,7 @@
   <summary xml:lang="sl">Upravljanje vaših datotek</summary>
   <summary xml:lang="sv">Hantera dina filer</summary>
   <summary xml:lang="tr">Dosyalarınızı yönetin</summary>
+  <summary xml:lang="ug">ھۆججەت باشقۇرۇش</summary>
   <summary xml:lang="uk">Керування вашими файлами</summary>
   <summary xml:lang="zh-CN">管理您的文件</summary>
   <summary xml:lang="zh-TW">管理您的檔案</summary>
