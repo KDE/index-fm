@@ -1,12 +1,12 @@
 # Translation of index-fm to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2023.
+# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2023, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2023-07-31 21:25+0200\n"
+"PO-Revision-Date: 2026-08-02 19:09+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 26.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -25,10 +25,9 @@ msgid "Overview"
 msgstr "Oversikt"
 
 #: src/index.cpp:298
-#, fuzzy, kde-format
-#| msgid "Favorite files"
+#, kde-format
 msgid "Favorite"
-msgstr "Favorittfiler"
+msgstr "Favoritt"
 
 #: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
 #: src/widgets/views/TagsSection.qml:20
@@ -44,7 +43,7 @@ msgstr "Index"
 #: src/main.cpp:67
 #, kde-format
 msgid "Browse, organize and preview your files."
-msgstr ""
+msgstr "Bla gjennom, organiser og førehandsvis filer."
 
 #: src/main.cpp:72 src/main.cpp:73
 #, kde-format
@@ -54,7 +53,7 @@ msgstr "Utviklar"
 #: src/main.cpp:90
 #, kde-format
 msgid "Open url in a new window."
-msgstr ""
+msgstr "Opna adresse i nytt vindauge."
 
 #: src/main.qml:146
 #, kde-format
@@ -91,7 +90,7 @@ msgstr ""
 #: src/main.qml:375
 #, kde-format
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "Vis/gøym sidestolpe"
 
 #: src/main.qml:407 src/widgets/views/SettingsDialog.qml:120
 #, kde-format
@@ -111,7 +110,7 @@ msgstr "Lim inn"
 #: src/main.qml:479 src/widgets/views/ShortcutsDialog.qml:163
 #, kde-format
 msgid "Select All"
-msgstr ""
+msgstr "Merk alle"
 
 #: src/main.qml:490
 #, kde-format
@@ -283,6 +282,8 @@ msgstr "Fjern «%1»"
 msgid ""
 "Are you sure you want to remove this tag? This operation can not be undone."
 msgstr ""
+"Er du sikker på at du vil fjerna denne merkelappen? Du kan ikkje angra denne "
+"handlinga."
 
 #: src/widgets/views/Browser.qml:168
 #, kde-format
@@ -364,12 +365,12 @@ msgstr "Førehandsvising og info"
 #: src/widgets/views/FileMenu.qml:152
 #, kde-format
 msgid "Add to '%1'"
-msgstr ""
+msgstr "Legg til i «%1»"
 
 #: src/widgets/views/FileMenu.qml:163
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Legg til merkelapp"
 
 #: src/widgets/views/FileMenu.qml:174
 #, kde-format
@@ -424,7 +425,7 @@ msgstr "Nedlastingar"
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr ""
+msgstr "Dine sist nedlasta filer"
 
 #: src/widgets/views/HomeView.qml:173
 #, kde-format
@@ -434,7 +435,7 @@ msgstr "Musikk"
 #: src/widgets/views/HomeView.qml:174
 #, kde-format
 msgid "Your most recent music files"
-msgstr ""
+msgstr "Dine sist nedlasta musikkfiler"
 
 #: src/widgets/views/HomeView.qml:214
 #, kde-format
@@ -444,7 +445,7 @@ msgstr "Bilete"
 #: src/widgets/views/HomeView.qml:215
 #, kde-format
 msgid "Your most recent image files"
-msgstr ""
+msgstr "Dine sist nedlasta biletfiler"
 
 #: src/widgets/views/PlacesSection.qml:19
 #: src/widgets/views/SettingsDialog.qml:434
@@ -456,7 +457,7 @@ msgstr "Stadar"
 #: src/widgets/views/PlacesSection.qml:20
 #, kde-format
 msgid "Quick access to common places."
-msgstr ""
+msgstr "Kjapp tilgang til vanlege mapper."
 
 #: src/widgets/views/PlacesSection.qml:36
 #: src/widgets/views/RecentSection.qml:27
@@ -473,7 +474,7 @@ msgstr "Bokmerke"
 #: src/widgets/views/PlacesSideBar.qml:59
 #, kde-format
 msgid "Your bookmarks will be listed here"
-msgstr ""
+msgstr "Bokmerka dine vert viste her"
 
 #: src/widgets/views/PlacesSideBar.qml:237
 #, kde-format
@@ -492,7 +493,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:14
 #, kde-format
 msgid "Behaviour"
-msgstr ""
+msgstr "Åtferd"
 
 #: src/widgets/views/SettingsDialog.qml:19
 #, kde-format
@@ -518,22 +519,22 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
 msgid "Previews"
-msgstr ""
+msgstr "Førehandsvising"
 
 #: src/widgets/views/SettingsDialog.qml:52
 #, kde-format
 msgid "Open in Window"
-msgstr ""
+msgstr "Opna i nytt vindauge"
 
 #: src/widgets/views/SettingsDialog.qml:53
 #, kde-format
 msgid "Show the file previews in a new window."
-msgstr ""
+msgstr "Førehandsvis filer i eit nytt vindauge."
 
 #: src/widgets/views/SettingsDialog.qml:65
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Autoavspeling"
 
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
@@ -648,7 +649,7 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
 msgid "Actions Bar"
-msgstr ""
+msgstr "Handlings­linje"
 
 #: src/widgets/views/SettingsDialog.qml:353
 #, kde-format
@@ -675,22 +676,22 @@ msgstr ""
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
 msgid "Adaptive Color Scheme"
-msgstr ""
+msgstr "Dynamisk fargeoppsett"
 
 #: src/widgets/views/SettingsDialog.qml:385
 #, kde-format
 msgid "Colors based on the current style."
-msgstr ""
+msgstr "Fargar baset på gjeldande stil."
 
 #: src/widgets/views/SettingsDialog.qml:396
 #, kde-format
 msgid "Color Scheme"
-msgstr ""
+msgstr "Fargeoppsett"
 
 #: src/widgets/views/SettingsDialog.qml:397
 #, kde-format
 msgid "Change the color scheme of the terminal."
-msgstr ""
+msgstr "Byt fargeoppsett for terminalen."
 
 #: src/widgets/views/SettingsDialog.qml:416
 #: src/widgets/views/SettingsDialog.qml:443
