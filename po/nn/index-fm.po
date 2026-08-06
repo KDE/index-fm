@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2026-08-02 19:09+0200\n"
+"PO-Revision-Date: 2026-08-05 19:23+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -80,12 +80,12 @@ msgstr "Terminal"
 #: src/main.qml:192
 #, kde-format
 msgid "Tagged"
-msgstr ""
+msgstr "Har merkelapp"
 
 #: src/main.qml:193
 #, kde-format
 msgid "File was tagged successfully"
-msgstr ""
+msgstr "Merkelapp for fila vart registrert"
 
 #: src/main.qml:375
 #, kde-format
@@ -203,7 +203,7 @@ msgstr "Løyve"
 #: src/widgets/previewer/FileProperties.qml:154
 #, kde-format
 msgid "Set file permissions to access this file"
-msgstr ""
+msgstr "Vel filløyve for tilgang til fila"
 
 #: src/widgets/previewer/FileProperties.qml:52
 #: src/widgets/previewer/FileProperties.qml:163
@@ -515,6 +515,8 @@ msgstr "Dynamiske innstillingar"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
+"Lgara eigne innstillingar per mappe. Elles vert standard­innstillingane "
+"brukte."
 
 #: src/widgets/views/SettingsDialog.qml:46
 #, kde-format
@@ -539,12 +541,12 @@ msgstr "Autoavspeling"
 #: src/widgets/views/SettingsDialog.qml:66
 #, kde-format
 msgid "Auto start playing audio and video file previews."
-msgstr ""
+msgstr "Start automatisk avspeling av lyd- og videofiler."
 
 #: src/widgets/views/SettingsDialog.qml:78
 #, kde-format
 msgid "Prefer Preview"
-msgstr ""
+msgstr "Føretrekk førehandsvising"
 
 #: src/widgets/views/SettingsDialog.qml:79
 #, kde-format
@@ -552,11 +554,13 @@ msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
 msgstr ""
+"Opna filer i førehands­visings­modus i staden for å opna dei i eit eksternt "
+"program."
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
 msgid "Browsing & Navigation"
-msgstr ""
+msgstr "Blaing og navigering"
 
 #: src/widgets/views/SettingsDialog.qml:96
 #, kde-format
@@ -571,17 +575,17 @@ msgstr "Vis førehandsvising av bilete, videoar og PDF-filer."
 #: src/widgets/views/SettingsDialog.qml:109
 #, kde-format
 msgid "View Type"
-msgstr ""
+msgstr "Visingstype"
 
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
 msgid "Default view type."
-msgstr ""
+msgstr "Standard visingstype."
 
 #: src/widgets/views/SettingsDialog.qml:148
 #, kde-format
 msgid "Default sorting value."
-msgstr ""
+msgstr "Standard sorteringsverdi."
 
 #: src/widgets/views/SettingsDialog.qml:217
 #, kde-format
@@ -601,7 +605,7 @@ msgstr "Storleik i rutenett"
 #: src/widgets/views/SettingsDialog.qml:251
 #, kde-format
 msgid "Size of the grid view."
-msgstr ""
+msgstr "Storleiken på rutenett-visinga."
 
 #: src/widgets/views/SettingsDialog.qml:269
 #: src/widgets/views/SettingsDialog.qml:317
@@ -634,7 +638,7 @@ msgstr "Storleik i lister"
 #: src/widgets/views/SettingsDialog.qml:300
 #, kde-format
 msgid "Size of the list view."
-msgstr ""
+msgstr "Storleiken på listevisinga."
 
 #: src/widgets/views/SettingsDialog.qml:310
 #, kde-format
@@ -644,7 +648,7 @@ msgstr "S"
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Use overview mode as default on launch."
-msgstr ""
+msgstr "Bruk oversiktsmodus som standard ved oppstart."
 
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
@@ -656,22 +660,22 @@ msgstr "Handlings­linje"
 msgid ""
 "Show the actions bar in the main view. Otherwise it will be shown in the "
 "application menu."
-msgstr ""
+msgstr "Vis handlingslinja i hovudvisinga. Elles vert ho vist i programmenyen."
 
 #: src/widgets/views/SettingsDialog.qml:366
 #, kde-format
 msgid "Embedded terminal options."
-msgstr ""
+msgstr "Val for innebygd terminal."
 
 #: src/widgets/views/SettingsDialog.qml:371
 #, kde-format
 msgid "Sync Terminal"
-msgstr ""
+msgstr "Synkroniser terminalen"
 
 #: src/widgets/views/SettingsDialog.qml:372
 #, kde-format
 msgid "Sync the terminal current working directory to the browser location."
-msgstr ""
+msgstr "Synkroniser gjeldande mappe i terminalen med mappa ein er i."
 
 #: src/widgets/views/SettingsDialog.qml:384
 #, kde-format
@@ -697,44 +701,44 @@ msgstr "Byt fargeoppsett for terminalen."
 #: src/widgets/views/SettingsDialog.qml:443
 #, kde-format
 msgid "Quick places"
-msgstr ""
+msgstr "Snøggmapper"
 
 #: src/widgets/views/SettingsDialog.qml:417
 #: src/widgets/views/SettingsDialog.qml:444
 #: src/widgets/views/SettingsDialog.qml:457
 #, kde-format
 msgid "Access to standard locations."
-msgstr ""
+msgstr "Tilgang til standardmapper."
 
 #: src/widgets/views/SettingsDialog.qml:472
 #, kde-format
 msgid "Remote"
-msgstr ""
+msgstr "Eksterne"
 
 #: src/widgets/views/SettingsDialog.qml:473
 #, kde-format
 msgid "Access to network locations."
-msgstr ""
+msgstr "Tilgang til nettverksmapper."
 
 #: src/widgets/views/SettingsDialog.qml:488
 #, kde-format
 msgid "Removable"
-msgstr ""
+msgstr "Flyttbare"
 
 #: src/widgets/views/SettingsDialog.qml:489
 #, kde-format
 msgid "Access to USB sticks and SD Cards."
-msgstr ""
+msgstr "Tilgang til USB-minnepennar og SD-minnekort."
 
 #: src/widgets/views/SettingsDialog.qml:504
 #, kde-format
 msgid "Devices"
-msgstr ""
+msgstr "Einingar"
 
 #: src/widgets/views/SettingsDialog.qml:505
 #, kde-format
 msgid "Access drives."
-msgstr ""
+msgstr "Tilgang til diskar."
 
 #: src/widgets/views/ShortcutsDialog.qml:13
 #, kde-format
@@ -744,32 +748,32 @@ msgstr "Navigering"
 #: src/widgets/views/ShortcutsDialog.qml:14
 #, kde-format
 msgid "Browser navigation with keyboard."
-msgstr ""
+msgstr "Navigering med tastaturet."
 
 #: src/widgets/views/ShortcutsDialog.qml:18
 #, kde-format
 msgid "New Tab"
-msgstr ""
+msgstr "Ny fane"
 
 #: src/widgets/views/ShortcutsDialog.qml:38
 #, kde-format
 msgid "Close Tab"
-msgstr ""
+msgstr "Lukk fana"
 
 #: src/widgets/views/ShortcutsDialog.qml:58
 #, kde-format
 msgid "Path Edit"
-msgstr ""
+msgstr "Rediger adresse"
 
 #: src/widgets/views/ShortcutsDialog.qml:93
 #, kde-format
 msgid "Split"
-msgstr ""
+msgstr "Del"
 
 #: src/widgets/views/ShortcutsDialog.qml:108
 #, kde-format
 msgid "New File"
-msgstr ""
+msgstr "Ny fil"
 
 #: src/widgets/views/ShortcutsDialog.qml:128
 #, kde-format
@@ -779,7 +783,7 @@ msgstr "Førehandsvis"
 #: src/widgets/views/ShortcutsDialog.qml:143
 #, kde-format
 msgid "Find Tab"
-msgstr ""
+msgstr "Finn fane"
 
 #: src/widgets/views/TagsSection.qml:21
 #, kde-format
@@ -789,4 +793,4 @@ msgstr "Merkte filer for kjapp tilgang"
 #: src/widgets/views/Terminal.qml:30
 #, kde-format
 msgid "Sync"
-msgstr ""
+msgstr "Synkroniser"
