@@ -396,7 +396,7 @@ msgstr "لا يوجد شيء هنا."
 #: src/widgets/views/home/SectionGroup.qml:54
 #, kde-format
 msgid "Check back later."
-msgstr "عاود الزيارة لاحقاً."
+msgstr "عاود الزيارة لاحقًا."
 
 #: src/widgets/views/HomeView.qml:53
 #, kde-format
@@ -421,7 +421,7 @@ msgstr "التنزيلات"
 #: src/widgets/views/HomeView.qml:133
 #, kde-format
 msgid "Your most recent downloaded files"
-msgstr "أحدث ملفاتك المنزلة حديثاً"
+msgstr "أحدث ملفاتك المنزلة حديثًا"
 
 #: src/widgets/views/HomeView.qml:173
 #, kde-format
@@ -545,7 +545,7 @@ msgstr "تفضيل المعاينة"
 msgid ""
 "Open files in a preview mode instead of opening them in a dedicated "
 "application."
-msgstr "افتح الملفات في وضع المعاينة بدلاً من فتحها في تطبيق مخصص."
+msgstr "افتح الملفات في وضع المعاينة بدلًا من فتحها في تطبيق مخصص."
 
 #: src/widgets/views/SettingsDialog.qml:92
 #, kde-format
