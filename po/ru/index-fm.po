@@ -1,0 +1,796 @@
+# Translation of index-fm into Russian.
+# This file is distributed under the same license as the index-fm package.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: index-fm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"PO-Revision-Date: 2026-10-10 12:36+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
+#, kde-format
+msgid "Overview"
+msgstr "Обзор"
+
+#: src/index.cpp:298
+#, kde-format
+msgid "Favorite"
+msgstr "Избранное"
+
+#: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
+#: src/widgets/views/TagsSection.qml:20
+#, kde-format
+msgid "Tags"
+msgstr "Метки"
+
+#: src/main.cpp:65
+#, kde-format
+msgid "Index"
+msgstr "Index"
+
+#: src/main.cpp:67
+#, kde-format
+msgid "Browse, organize and preview your files."
+msgstr "Обзор, упорядочивание и предварительный просмотр файлов."
+
+#: src/main.cpp:72 src/main.cpp:73
+#, kde-format
+msgid "Developer"
+msgstr "Разработчик"
+
+#: src/main.cpp:90
+#, kde-format
+msgid "Open url in a new window."
+msgstr "Открыть адрес в новом окне."
+
+#: src/main.qml:146
+#, kde-format
+msgid "New tab"
+msgstr "Новая вкладка"
+
+#: src/main.qml:154
+#, kde-format
+msgid "View Hidden"
+msgstr "Показывать скрытые"
+
+#: src/main.qml:163
+#, kde-format
+msgid "Split View"
+msgstr "Разделить окно"
+
+#: src/main.qml:173 src/widgets/views/Browser.qml:322
+#: src/widgets/views/SettingsDialog.qml:365
+#: src/widgets/views/ShortcutsDialog.qml:78
+#, kde-format
+msgid "Terminal"
+msgstr "Терминал"
+
+#: src/main.qml:192
+#, kde-format
+msgid "Tagged"
+msgstr "С меткой"
+
+#: src/main.qml:193
+#, kde-format
+msgid "File was tagged successfully"
+msgstr "Файл успешно помечен"
+
+#: src/main.qml:375
+#, kde-format
+msgid "Toggle sidebar"
+msgstr "Показать или скрыть боковую панель"
+
+#: src/main.qml:407 src/widgets/views/SettingsDialog.qml:120
+#, kde-format
+msgid "List"
+msgstr "Список"
+
+#: src/main.qml:422 src/widgets/views/SettingsDialog.qml:132
+#, kde-format
+msgid "Grid"
+msgstr "Сетка"
+
+#: src/main.qml:463
+#, kde-format
+msgid "Paste"
+msgstr "Вставить"
+
+#: src/main.qml:479 src/widgets/views/ShortcutsDialog.qml:163
+#, kde-format
+msgid "Select All"
+msgstr "Выбрать все"
+
+#: src/main.qml:490
+#, kde-format
+msgid "New Item"
+msgstr "Новый элемент"
+
+#: src/main.qml:502 src/widgets/views/SettingsDialog.qml:147
+#, kde-format
+msgid "Sort"
+msgstr "Сортировка"
+
+#: src/main.qml:506 src/widgets/views/SettingsDialog.qml:159
+#, kde-format
+msgid "Type"
+msgstr "Тип"
+
+#: src/main.qml:518 src/widgets/views/SettingsDialog.qml:171
+#, kde-format
+msgid "Date"
+msgstr "Дата"
+
+#: src/main.qml:531 src/widgets/views/SettingsDialog.qml:182
+#, kde-format
+msgid "Modified"
+msgstr "Дата изменения"
+
+#: src/main.qml:544 src/widgets/views/SettingsDialog.qml:193
+#, kde-format
+msgid "Size"
+msgstr "Размер"
+
+#: src/main.qml:557 src/widgets/views/SettingsDialog.qml:204
+#, kde-format
+msgid "Name"
+msgstr "Имя"
+
+#: src/main.qml:581
+#, kde-format
+msgid "Open Terminal Here"
+msgstr "Открыть терминал здесь"
+
+#: src/main.qml:594 src/widgets/views/ShortcutsDialog.qml:9
+#, kde-format
+msgid "Shortcuts"
+msgstr "Комбинации клавиш"
+
+#: src/main.qml:605
+#, kde-format
+msgid "Settings"
+msgstr "Параметры"
+
+#: src/main.qml:612
+#, kde-format
+msgid "About"
+msgstr "О программе"
+
+#: src/main.qml:679 src/widgets/views/FileMenu.qml:201
+#, kde-format
+msgid "Bookmark"
+msgstr "Добавить закладку"
+
+#: src/main.qml:686 src/widgets/views/FileMenu.qml:221
+#: src/widgets/views/PlacesSideBar.qml:83
+#, kde-format
+msgid "Open in New Tab"
+msgstr "Открыть в новой вкладке"
+
+#: src/main.qml:694 src/widgets/views/FileMenu.qml:241
+#: src/widgets/views/PlacesSideBar.qml:98
+#, kde-format
+msgid "Open in Split View"
+msgstr "Открыть в разделённом окне"
+
+#: src/widgets/previewer/FilePreviewer.qml:96
+#, kde-format
+msgid "Details"
+msgstr "Подробности"
+
+#: src/widgets/previewer/FilePreviewer.qml:97
+#, kde-format
+msgid "File information"
+msgstr "Сведения о файле"
+
+#: src/widgets/previewer/FileProperties.qml:43
+#, kde-format
+msgid "Permissions"
+msgstr "Права доступа"
+
+#: src/widgets/previewer/FileProperties.qml:44
+#: src/widgets/previewer/FileProperties.qml:154
+#, kde-format
+msgid "Set file permissions to access this file"
+msgstr "Задать права доступа к этому файлу"
+
+#: src/widgets/previewer/FileProperties.qml:52
+#: src/widgets/previewer/FileProperties.qml:163
+#, kde-format
+msgid "Owner"
+msgstr "Владелец"
+
+#: src/widgets/previewer/FileProperties.qml:62
+#: src/widgets/previewer/FileProperties.qml:95
+#: src/widgets/previewer/FileProperties.qml:128
+#, kde-format
+msgid "Read"
+msgstr "Чтение"
+
+#: src/widgets/previewer/FileProperties.qml:69
+#: src/widgets/previewer/FileProperties.qml:102
+#: src/widgets/previewer/FileProperties.qml:134
+#, kde-format
+msgid "Write"
+msgstr "Запись"
+
+#: src/widgets/previewer/FileProperties.qml:76
+#: src/widgets/previewer/FileProperties.qml:110
+#: src/widgets/previewer/FileProperties.qml:140
+#, kde-format
+msgid "Execute"
+msgstr "Выполнение"
+
+#: src/widgets/previewer/FileProperties.qml:84
+#: src/widgets/previewer/FileProperties.qml:170
+#: src/widgets/views/SettingsDialog.qml:231
+#, kde-format
+msgid "Group"
+msgstr "Группа"
+
+#: src/widgets/previewer/FileProperties.qml:118
+#, kde-format
+msgid "Everyone"
+msgstr "Все"
+
+#: src/widgets/previewer/FileProperties.qml:153
+#, kde-format
+msgid "Ownership"
+msgstr "Владение"
+
+#: src/widgets/previewer/FontPreviewer.qml:31
+#, kde-format
+msgid "Install"
+msgstr "Установить"
+
+#: src/widgets/previewer/PreviewerDialog.qml:52
+#: src/widgets/previewer/PreviewerWindow.qml:50
+#: src/widgets/views/BrowserView.qml:119 src/widgets/views/HomeView.qml:35
+#, kde-format
+msgid "Open"
+msgstr "Открыть"
+
+#: src/widgets/views/Browser.qml:57
+#, kde-format
+msgid "Edit"
+msgstr "Изменить"
+
+#: src/widgets/views/Browser.qml:65 src/widgets/views/BrowserView.qml:151
+#: src/widgets/views/FileMenu.qml:86 src/widgets/views/PlacesSideBar.qml:108
+#, kde-format
+msgid "Remove"
+msgstr "Удалить"
+
+#: src/widgets/views/Browser.qml:82
+#, kde-format
+msgid "Remove '%1'"
+msgstr "Удалить «%1»"
+
+#: src/widgets/views/Browser.qml:85
+#, kde-format
+msgid ""
+"Are you sure you want to remove this tag? This operation can not be undone."
+msgstr "Удалить метку? Это действие нельзя отменить."
+
+#: src/widgets/views/Browser.qml:168
+#, kde-format
+msgid "Create new"
+msgstr "Создать"
+
+#: src/widgets/views/BrowserView.qml:88 src/widgets/views/FileMenu.qml:54
+#, kde-format
+msgid "Copy"
+msgstr "Копировать"
+
+#: src/widgets/views/BrowserView.qml:98 src/widgets/views/FileMenu.qml:65
+#, kde-format
+msgid "Cut"
+msgstr "Вырезать"
+
+#: src/widgets/views/BrowserView.qml:108 src/widgets/views/FileMenu.qml:190
+#: src/widgets/views/HomeView.qml:47
+#, kde-format
+msgid "Share"
+msgstr "Поделиться"
+
+#: src/widgets/views/BrowserView.qml:130 src/widgets/views/FileMenu.qml:267
+#, kde-format
+msgid "Compress"
+msgstr "Сжать"
+
+#: src/widgets/views/BrowserView.qml:179
+#, kde-format
+msgid "Detach Tab"
+msgstr "Отделить вкладку"
+
+#: src/widgets/views/DisksSection.qml:18
+#, kde-format
+msgid "Devices and Remote"
+msgstr "Устройства и сетевые ресурсы"
+
+#: src/widgets/views/DisksSection.qml:19
+#, kde-format
+msgid "Remote locations and devices like disks, phones and cameras"
+msgstr "Сетевые расположения и устройства — диски, телефоны, камеры"
+
+#: src/widgets/views/FavoritesSection.qml:20
+#, kde-format
+msgid "Favorite files"
+msgstr "Избранные файлы"
+
+#: src/widgets/views/FavoritesSection.qml:21
+#, kde-format
+msgid "Your files marked as favorites"
+msgstr "Файлы, отмеченные как избранные"
+
+#: src/widgets/views/FileMenu.qml:43
+#, kde-format
+msgid " items"
+msgstr " элем."
+
+#: src/widgets/views/FileMenu.qml:76
+#, kde-format
+msgid "Rename"
+msgstr "Переименовать"
+
+#: src/widgets/views/FileMenu.qml:102 src/widgets/views/ShortcutsDialog.qml:183
+#, kde-format
+msgid "Select"
+msgstr "Выделить"
+
+#: src/widgets/views/FileMenu.qml:120 src/widgets/views/HomeView.qml:41
+#, kde-format
+msgid "Open with"
+msgstr "Открыть с помощью"
+
+#: src/widgets/views/FileMenu.qml:132
+#, kde-format
+msgid "Preview and Info"
+msgstr "Просмотр и сведения"
+
+#: src/widgets/views/FileMenu.qml:152
+#, kde-format
+msgid "Add to '%1'"
+msgstr "Добавить в «%1»"
+
+#: src/widgets/views/FileMenu.qml:163
+#, kde-format
+msgid "Add Tag"
+msgstr "Добавить метку"
+
+#: src/widgets/views/FileMenu.qml:174
+#, kde-format
+msgid "UnFav"
+msgstr "Убрать из избранного"
+
+#: src/widgets/views/FileMenu.qml:174
+#, kde-format
+msgid "Fav"
+msgstr "Добавить в избранное"
+
+#: src/widgets/views/FileMenu.qml:231 src/widgets/views/PlacesSideBar.qml:90
+#, kde-format
+msgid "Open in New Window"
+msgstr "Открыть в новом окне"
+
+#: src/widgets/views/FileMenu.qml:253
+#, kde-format
+msgid "Extract"
+msgstr "Извлечь"
+
+#: src/widgets/views/home/SectionGroup.qml:53
+#, kde-format
+msgid "Nothing in here yet."
+msgstr "Здесь пока ничего нет."
+
+#: src/widgets/views/home/SectionGroup.qml:54
+#, kde-format
+msgid "Check back later."
+msgstr "Загляните позже."
+
+#: src/widgets/views/HomeView.qml:53
+#, kde-format
+msgid "Open folder"
+msgstr "Открыть папку"
+
+#: src/widgets/views/HomeView.qml:65
+#, kde-format
+msgid "Search for files"
+msgstr "Найти файлы"
+
+#: src/widgets/views/HomeView.qml:75
+#, kde-format
+msgid "Browser"
+msgstr "Обзор файлов"
+
+#: src/widgets/views/HomeView.qml:132
+#, kde-format
+msgid "Downloads"
+msgstr "Загрузки"
+
+#: src/widgets/views/HomeView.qml:133
+#, kde-format
+msgid "Your most recent downloaded files"
+msgstr "Последние загруженные файлы"
+
+#: src/widgets/views/HomeView.qml:173
+#, kde-format
+msgid "Music"
+msgstr "Музыка"
+
+#: src/widgets/views/HomeView.qml:174
+#, kde-format
+msgid "Your most recent music files"
+msgstr "Последние музыкальные файлы"
+
+#: src/widgets/views/HomeView.qml:214
+#, kde-format
+msgid "Images"
+msgstr "Изображения"
+
+#: src/widgets/views/HomeView.qml:215
+#, kde-format
+msgid "Your most recent image files"
+msgstr "Последние файлы изображений"
+
+#: src/widgets/views/PlacesSection.qml:19
+#: src/widgets/views/SettingsDialog.qml:434
+#: src/widgets/views/SettingsDialog.qml:438
+#, kde-format
+msgid "Places"
+msgstr "Точки входа"
+
+#: src/widgets/views/PlacesSection.qml:20
+#, kde-format
+msgid "Quick access to common places."
+msgstr "Быстрый доступ к часто используемым точкам входа."
+
+#: src/widgets/views/PlacesSection.qml:36
+#: src/widgets/views/RecentSection.qml:27
+#, kde-format
+msgid "More"
+msgstr "Ещё"
+
+#: src/widgets/views/PlacesSideBar.qml:58
+#: src/widgets/views/SettingsDialog.qml:456
+#, kde-format
+msgid "Bookmarks"
+msgstr "Закладки"
+
+#: src/widgets/views/PlacesSideBar.qml:59
+#, kde-format
+msgid "Your bookmarks will be listed here"
+msgstr "Здесь будут показаны ваши закладки"
+
+#: src/widgets/views/PlacesSideBar.qml:237
+#, kde-format
+msgid "Mount"
+msgstr "Подключить"
+
+#: src/widgets/views/PlacesSideBar.qml:245
+#, kde-format
+msgid ""
+"This device needs to be mounted before accessing it. Do you want to set up "
+"this device?"
+msgstr ""
+"Для доступа к устройству его необходимо подключить. Настроить это устройство?"
+
+#: src/widgets/views/SettingsDialog.qml:14
+#, kde-format
+msgid "Behaviour"
+msgstr "Поведение"
+
+#: src/widgets/views/SettingsDialog.qml:19
+#, kde-format
+msgid "Save Session"
+msgstr "Сохранять сеанс"
+
+#: src/widgets/views/SettingsDialog.qml:20
+#, kde-format
+msgid "Save and restore tabs."
+msgstr "Сохранение и восстановление вкладок."
+
+#: src/widgets/views/SettingsDialog.qml:32
+#, kde-format
+msgid "Dynamic Preferences"
+msgstr "Динамические параметры"
+
+#: src/widgets/views/SettingsDialog.qml:33
+#, kde-format
+msgid ""
+"Save custom preferences per directory, otherwise use the default preferences."
+msgstr ""
+"Сохранять пользовательские параметры для каждой папки, иначе используются "
+"параметры по умолчанию."
+
+#: src/widgets/views/SettingsDialog.qml:46
+#, kde-format
+msgid "Previews"
+msgstr "Предварительный просмотр"
+
+#: src/widgets/views/SettingsDialog.qml:52
+#, kde-format
+msgid "Open in Window"
+msgstr "Открыть в окне"
+
+#: src/widgets/views/SettingsDialog.qml:53
+#, kde-format
+msgid "Show the file previews in a new window."
+msgstr "Показывает предварительный просмотр файлов в новом окне."
+
+#: src/widgets/views/SettingsDialog.qml:65
+#, kde-format
+msgid "Autoplay"
+msgstr "Автовоспроизведение"
+
+#: src/widgets/views/SettingsDialog.qml:66
+#, kde-format
+msgid "Auto start playing audio and video file previews."
+msgstr ""
+"Автоматически начинать воспроизведение аудио и видео при предварительном "
+"просмотре."
+
+#: src/widgets/views/SettingsDialog.qml:78
+#, kde-format
+msgid "Prefer Preview"
+msgstr "Предпочитать предварительный просмотр"
+
+#: src/widgets/views/SettingsDialog.qml:79
+#, kde-format
+msgid ""
+"Open files in a preview mode instead of opening them in a dedicated "
+"application."
+msgstr ""
+"Открывать файлы в режиме предварительного просмотра вместо открытия в "
+"отдельном приложении."
+
+#: src/widgets/views/SettingsDialog.qml:92
+#, kde-format
+msgid "Browsing & Navigation"
+msgstr "Просмотр и навигация"
+
+#: src/widgets/views/SettingsDialog.qml:96
+#, kde-format
+msgid "Thumbnails"
+msgstr "Миниатюры"
+
+#: src/widgets/views/SettingsDialog.qml:97
+#, kde-format
+msgid "Show previews of images, videos and PDF files."
+msgstr "Показывать миниатюры изображений, видео и файлов PDF."
+
+#: src/widgets/views/SettingsDialog.qml:109
+#, kde-format
+msgid "View Type"
+msgstr "Режим просмотра"
+
+#: src/widgets/views/SettingsDialog.qml:110
+#, kde-format
+msgid "Default view type."
+msgstr "Режим просмотра по умолчанию."
+
+#: src/widgets/views/SettingsDialog.qml:148
+#, kde-format
+msgid "Default sorting value."
+msgstr "Сортировка по умолчанию."
+
+#: src/widgets/views/SettingsDialog.qml:217
+#, kde-format
+msgid "Show Folders First"
+msgstr "Показывать папки первыми"
+
+#: src/widgets/views/SettingsDialog.qml:245
+#, kde-format
+msgid "Interface"
+msgstr "Интерфейс"
+
+#: src/widgets/views/SettingsDialog.qml:250
+#, kde-format
+msgid "Grid Items Size"
+msgstr "Размер элементов сетки"
+
+#: src/widgets/views/SettingsDialog.qml:251
+#, kde-format
+msgid "Size of the grid view."
+msgstr "Размер элементов в режиме сетки."
+
+#: src/widgets/views/SettingsDialog.qml:269
+#: src/widgets/views/SettingsDialog.qml:317
+#, kde-format
+msgid "M"
+msgstr "M"
+
+#: src/widgets/views/SettingsDialog.qml:276
+#: src/widgets/views/SettingsDialog.qml:324
+#, kde-format
+msgid "L"
+msgstr "L"
+
+#: src/widgets/views/SettingsDialog.qml:283
+#: src/widgets/views/SettingsDialog.qml:331
+#, kde-format
+msgid "X"
+msgstr "X"
+
+#: src/widgets/views/SettingsDialog.qml:290
+#, kde-format
+msgid "XL"
+msgstr "XL"
+
+#: src/widgets/views/SettingsDialog.qml:299
+#, kde-format
+msgid "List Items Size"
+msgstr "Размер элементов списка"
+
+#: src/widgets/views/SettingsDialog.qml:300
+#, kde-format
+msgid "Size of the list view."
+msgstr "Размер элементов в режиме списка."
+
+#: src/widgets/views/SettingsDialog.qml:310
+#, kde-format
+msgid "S"
+msgstr "S"
+
+#: src/widgets/views/SettingsDialog.qml:341
+#, kde-format
+msgid "Use overview mode as default on launch."
+msgstr "Использовать режим обзора по умолчанию при запуске."
+
+#: src/widgets/views/SettingsDialog.qml:352
+#, kde-format
+msgid "Actions Bar"
+msgstr "Панель действий"
+
+#: src/widgets/views/SettingsDialog.qml:353
+#, kde-format
+msgid ""
+"Show the actions bar in the main view. Otherwise it will be shown in the "
+"application menu."
+msgstr ""
+"Показывать панель действий в основном представлении. Иначе она показывается "
+"в меню приложения."
+
+#: src/widgets/views/SettingsDialog.qml:366
+#, kde-format
+msgid "Embedded terminal options."
+msgstr "Параметры встроенного терминала."
+
+#: src/widgets/views/SettingsDialog.qml:371
+#, kde-format
+msgid "Sync Terminal"
+msgstr "Синхронизировать терминал"
+
+#: src/widgets/views/SettingsDialog.qml:372
+#, kde-format
+msgid "Sync the terminal current working directory to the browser location."
+msgstr ""
+"Синхронизировать текущую рабочую папку терминала с расположением в окне "
+"просмотра."
+
+#: src/widgets/views/SettingsDialog.qml:384
+#, kde-format
+msgid "Adaptive Color Scheme"
+msgstr "Адаптивная цветовая схема"
+
+#: src/widgets/views/SettingsDialog.qml:385
+#, kde-format
+msgid "Colors based on the current style."
+msgstr "Цвета на основе текущего оформления."
+
+#: src/widgets/views/SettingsDialog.qml:396
+#, kde-format
+msgid "Color Scheme"
+msgstr "Цветовая схема"
+
+#: src/widgets/views/SettingsDialog.qml:397
+#, kde-format
+msgid "Change the color scheme of the terminal."
+msgstr "Изменение цветовой схемы терминала."
+
+#: src/widgets/views/SettingsDialog.qml:416
+#: src/widgets/views/SettingsDialog.qml:443
+#, kde-format
+msgid "Quick places"
+msgstr "Быстрые точки входа"
+
+#: src/widgets/views/SettingsDialog.qml:417
+#: src/widgets/views/SettingsDialog.qml:444
+#: src/widgets/views/SettingsDialog.qml:457
+#, kde-format
+msgid "Access to standard locations."
+msgstr "Доступ к стандартным расположениям."
+
+#: src/widgets/views/SettingsDialog.qml:472
+#, kde-format
+msgid "Remote"
+msgstr "Сетевые ресурсы"
+
+#: src/widgets/views/SettingsDialog.qml:473
+#, kde-format
+msgid "Access to network locations."
+msgstr "Доступ к сетевым расположениям."
+
+#: src/widgets/views/SettingsDialog.qml:488
+#, kde-format
+msgid "Removable"
+msgstr "Сменные носители"
+
+#: src/widgets/views/SettingsDialog.qml:489
+#, kde-format
+msgid "Access to USB sticks and SD Cards."
+msgstr "Доступ к USB-накопителям и SD-картам."
+
+#: src/widgets/views/SettingsDialog.qml:504
+#, kde-format
+msgid "Devices"
+msgstr "Устройства"
+
+#: src/widgets/views/SettingsDialog.qml:505
+#, kde-format
+msgid "Access drives."
+msgstr "Доступ к дискам."
+
+#: src/widgets/views/ShortcutsDialog.qml:13
+#, kde-format
+msgid "Navigation"
+msgstr "Навигация"
+
+#: src/widgets/views/ShortcutsDialog.qml:14
+#, kde-format
+msgid "Browser navigation with keyboard."
+msgstr "Навигация в окне просмотра с помощью клавиатуры."
+
+#: src/widgets/views/ShortcutsDialog.qml:18
+#, kde-format
+msgid "New Tab"
+msgstr "Новая вкладка"
+
+#: src/widgets/views/ShortcutsDialog.qml:38
+#, kde-format
+msgid "Close Tab"
+msgstr "Закрыть вкладку"
+
+#: src/widgets/views/ShortcutsDialog.qml:58
+#, kde-format
+msgid "Path Edit"
+msgstr "Изменение пути"
+
+#: src/widgets/views/ShortcutsDialog.qml:93
+#, kde-format
+msgid "Split"
+msgstr "Разделить"
+
+#: src/widgets/views/ShortcutsDialog.qml:108
+#, kde-format
+msgid "New File"
+msgstr "Создать файл"
+
+#: src/widgets/views/ShortcutsDialog.qml:128
+#, kde-format
+msgid "Preview"
+msgstr "Предварительный просмотр"
+
+#: src/widgets/views/ShortcutsDialog.qml:143
+#, kde-format
+msgid "Find Tab"
+msgstr "Поиск"
+
+#: src/widgets/views/TagsSection.qml:21
+#, kde-format
+msgid "Tagged files for quick access"
+msgstr "Помеченные файлы для быстрого доступа"
+
+#: src/widgets/views/Terminal.qml:30
+#, kde-format
+msgid "Sync"
+msgstr "Синхронизировать"
