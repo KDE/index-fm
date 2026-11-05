@@ -43,7 +43,7 @@
   <name xml:lang="sl">Indeks</name>
   <name xml:lang="sv">Index</name>
   <name xml:lang="tr">İndeks</name>
-  <name xml:lang="ug">مۇندەرىجە</name>
+  <name xml:lang="ug">Index</name>
   <name xml:lang="uk">Index</name>
   <name xml:lang="zh-CN">Index</name>
   <name xml:lang="zh-TW">Index</name>
@@ -135,6 +135,7 @@
     <p xml:lang="sl">Kazalo omogoča krmarjenje po računalniku in predogled večpredstavnostnih datotek.</p>
     <p xml:lang="sv">Index låter dig navigera på datorn och förhandsgranska multimediafiler.</p>
     <p xml:lang="tr">İndeks, bilgisayarınızda dolaşmanıza ve çoklu ortam dosyalarını önizlemenize izin verir.</p>
+    <p xml:lang="ug">Index كومپيۇتېردىكى مەزمۇنغا كۆز يۈگۈرتۈپ ۋە كۆپ ۋاسىتە ھۆججەتنى ئالدىن كۆزىتىشكە يول قويىدۇ.</p>
     <p xml:lang="uk">За допомогою Index ви зможете здійснювати навігацію файловою системою вашого комп'ютера і попереднього переглядати файли мультимедійних даних.</p>
     <p xml:lang="zh-CN">Index 让您可以浏览计算机中的内容，并预览多媒体文件。</p>
     <p xml:lang="zh-TW">Index 讓您瀏覽您的電腦並預覽多媒體檔案。</p>
@@ -184,6 +185,7 @@
       <caption xml:lang="sl">Upravljalnik indeksa datotek</caption>
       <caption xml:lang="sv">Index filhanterare</caption>
       <caption xml:lang="tr">İndeks dosya yöneticisi</caption>
+      <caption xml:lang="ug">Index ھۆججەت باشقۇرغۇچ</caption>
       <caption xml:lang="uk">Програма для керування файлами Index</caption>
       <caption xml:lang="zh-CN">Index 文件管理器</caption>
       <caption xml:lang="zh-TW">Index 檔案管理員</caption>
