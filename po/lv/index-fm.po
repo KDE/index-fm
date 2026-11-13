@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the index-fm package.
 #
-# SPDX-FileCopyrightText: 2025 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2025-2026 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-05-26 18:03+0300\n"
+"PO-Revision-Date: 2026-11-11 12:52+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
 #, kde-format
@@ -24,10 +24,9 @@ msgid "Overview"
 msgstr "Kopskats"
 
 #: src/index.cpp:298
-#, fuzzy, kde-format
-#| msgid "Favorite files"
+#, kde-format
 msgid "Favorite"
-msgstr "Pievienot datnes iecienītajām"
+msgstr "Izlase"
 
 #: src/index.cpp:304 src/widgets/views/BrowserView.qml:141
 #: src/widgets/views/TagsSection.qml:20
