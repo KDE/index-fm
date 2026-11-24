@@ -3,13 +3,13 @@
 #
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021, 2022, 2023.
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@kde.org>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-08-29 08:57-0300\n"
+"PO-Revision-Date: 2026-11-23 05:37-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: src/index.cpp:292 src/widgets/views/SettingsDialog.qml:340
 #, kde-format
@@ -430,7 +430,7 @@ msgstr "Seus arquivos baixados mais recentes"
 #: src/widgets/views/HomeView.qml:173
 #, kde-format
 msgid "Music"
-msgstr "Música"
+msgstr "Músicas"
 
 #: src/widgets/views/HomeView.qml:174
 #, kde-format

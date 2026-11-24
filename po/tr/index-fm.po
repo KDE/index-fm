@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: index-fm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2026-11-16 19:14+0300\n"
+"PO-Revision-Date: 2026-11-23 18:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -510,7 +510,7 @@ msgstr "Devingen Tercihler"
 msgid ""
 "Save custom preferences per directory, otherwise use the default preferences."
 msgstr ""
-"Özel tercihleri dizin başına kaydedin, aksi takdirde öntanımlı tercihleri "
+"Özel tercihleri dizin başına kaydedin, aksi takdirde varsayılan tercihleri "
 "kullanın."
 
 #: src/widgets/views/SettingsDialog.qml:46
@@ -573,12 +573,12 @@ msgstr "Görünüm Türü"
 #: src/widgets/views/SettingsDialog.qml:110
 #, kde-format
 msgid "Default view type."
-msgstr "Öntanımlı görünüm türü."
+msgstr "Varsayılan görünüm türü."
 
 #: src/widgets/views/SettingsDialog.qml:148
 #, kde-format
 msgid "Default sorting value."
-msgstr "Öntanımlı sıralama değeri."
+msgstr "Varsayılan sıralama değeri."
 
 #: src/widgets/views/SettingsDialog.qml:217
 #, kde-format
@@ -641,7 +641,7 @@ msgstr "K"
 #: src/widgets/views/SettingsDialog.qml:341
 #, kde-format
 msgid "Use overview mode as default on launch."
-msgstr "Başlangıçta genel görünüm kipini öntanımlı olarak kullanın."
+msgstr "Başlangıçta genel görünüm kipini varsayılan olarak kullanın."
 
 #: src/widgets/views/SettingsDialog.qml:352
 #, kde-format
